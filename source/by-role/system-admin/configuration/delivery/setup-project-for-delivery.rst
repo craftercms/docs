@@ -2,20 +2,18 @@
 :last-updated: 4.0.3
 
 
-.. index:: Setup Project for a Delivery Environment
+.. index:: Project Delivery, Delivery Environment
 
 .. _setup-project-for-delivery:
 
 ========================================
 Setup Project for a Delivery Environment
 ========================================
-
 In this section, we will be working in the delivery environment of CrafterCMS and describing how to setup your project for a delivery environment.
 
 -----------------------------
 Setup Crafter Deployer Target
 -----------------------------
-
 CrafterCMS out of the box has a script to help you create your deployer target for the delivery environment.
 
 In the ``bin`` folder in your CrafterCMS delivery environment, we will use the script ``init-site.sh`` to help us create the deployer target.
@@ -98,7 +96,6 @@ Here is an example project's published repo Git url when using a local repositor
 -----------------------------
 Viewing your Site for Testing
 -----------------------------
-
 To test viewing your project, open a browser and type in the url of your project.
 
 If you have multiple projects setup, to view a certain project, in your browser, enter the following:

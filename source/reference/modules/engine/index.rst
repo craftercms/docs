@@ -135,7 +135,6 @@ comma-separated list in the :ref:`server-config.properties <engine-configuration
 """""""""""""""
 System Services
 """""""""""""""
-
 .. warning:: This setting will disable restrictions for all projects/sites
 
 |
@@ -156,7 +155,6 @@ the following configuration in the :ref:`server-config.properties <engine-config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Script Sandbox Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 When a script is executed all code is validated against a blacklist of insecure expressions to prevent code that could
 compromise the system. When you try to execute a script that contains insecure expressions you will see an error
 similar to this:
@@ -178,7 +176,6 @@ is required, it is possible to override the blacklist configuration. Configurati
 """"""""""""""""""""""""
 Using a custom blacklist
 """"""""""""""""""""""""
-
 Crafter Engine includes a default blacklist that you can find
 `here <https://github.com/craftercms/engine/blob/develop/src/main/resources/crafter/engine/groovy/blacklist>`_. Make sure you review the branch/tag you're using.
 
@@ -208,7 +205,6 @@ Now you can execute the same script without any issues.
 """""""""""""""""""""""""""""""
 Adding dependencies with Grapes
 """""""""""""""""""""""""""""""
-
 If your Groovy code need to use external dependencies you can use Grapes, however, when the Groovy sandbox is enabled
 dependencies can only be downloaded during the initial compilation and not during runtime. For this reason it is
 required to add an extra parameter ``initClass=false`` in the annotations to prevent them to be copied to the classes:
@@ -225,7 +221,6 @@ required to add an extra parameter ``initClass=false`` in the annotations to pre
 """""""""""""""""""""""""""""""
 Disabling the Sandbox Blacklist
 """""""""""""""""""""""""""""""
-
 It is possible to disable the blacklist to allow the execution of most expressions, in
 case you need to use a considerable number of the expression included in the blacklist while keeping some basic
 restrictions. To disable the blacklist for all projects/sites update the server configuration file
@@ -242,7 +237,6 @@ restrictions. To disable the blacklist for all projects/sites update the server 
 """"""""""""""""""""""""""""
 Disabling the Groovy Sandbox
 """"""""""""""""""""""""""""
-
 It is possible to completely disable the Groovy sandbox for all scripts. To disable the sandbox for all sites update the server configuration file :ref:`server-config.properties <engine-configuration-files>`:
 
 .. code-block:: none
@@ -256,7 +250,6 @@ It is possible to completely disable the Groovy sandbox for all scripts. To disa
 """""""""""""""
 Important Notes
 """""""""""""""
-
 There are some limitations that should be noted when working with the Groovy Sandbox.
 
 One limitation is that an exception is thrown during execution when a Groovy class has a property and a getter method for the property. Here's an example code that throws an exception during execution:

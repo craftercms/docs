@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.2
 :orphan:
 
@@ -31,11 +31,9 @@ Crafter Deployer is the deployment agent for CrafterCMS.
 --------------
 Administration
 --------------
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 How to Start/Stop the Deployer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 If you're using CrafterCMS installed on a server, starting and stopping the Deployer is very easy. From the command line, navigate to the
 {env-directory}, authoring or delivery environment folder, and then inside the ``bin`` folder, run ``./crafter.sh start_deployer`` to start
 the Deployer or ``./crafter.sh stop_deployer`` to stop the Deployer.
@@ -43,11 +41,9 @@ the Deployer or ``./crafter.sh stop_deployer`` to stop the Deployer.
 ^^^^^^^^^^^^^
 Configuration
 ^^^^^^^^^^^^^
-
 """"""""""""""""""""
 Global Configuration
 """"""""""""""""""""
-
 Crafter Deployer has two main property configuration files found in ``{env-directory}/bin/crafter-deployer/config``:
 
 * **application.yaml:** contains the global application properties, like the server port and the locations of other configuration files.
@@ -190,7 +186,6 @@ where:
 """"""""""""""""""""
 Target Configuration
 """"""""""""""""""""
-
 Each deployment target has it's own YAML configuration file, where the properties of the target and it's entire deployment pipeline is specified.
 Without this file the Deployer doesn't know of the existence of the target. By default these configuration files reside under
 ``./config/targets`` (in the case of the CrafterCMS installed on a server, they're under ``CRAFTER_HOME/data/deployer/targets``).
@@ -298,11 +293,9 @@ The Deployer out of the box provides the following processor beans:
 ^^^^^^^^^^^^^^
 Manage Targets
 ^^^^^^^^^^^^^^
-
 """""""""""""""
 Create a Target
 """""""""""""""
-
 There are two different ways in which a target configuration file can be created:
 
 * By calling the API endpoint `createTarget <../../../_static/api/deployer.html#tag/target/operation/createTarget>`_, which creates a new target based on a template. The Deployer comes out
@@ -315,7 +308,6 @@ There are two different ways in which a target configuration file can be created
 """""""""""""""
 Update a Target
 """""""""""""""
-
 Updating a target is very similar to creating one:
 
 * Call the same API endpoint as create, but be sure that the ``replace`` parameter is ``true``. OR
@@ -325,7 +317,6 @@ Updating a target is very similar to creating one:
 """""""""""""""
 Delete a Target
 """""""""""""""
-
 There are two options for deleting a target:
 
 * Call the API endpoint `deleteTarget <../../../_static/api/deployer.html#tag/target/operation/deleteTarget>`_.
@@ -335,7 +326,6 @@ There are two options for deleting a target:
 ^^^^^^^^^^^^^^^
 Run Deployments
 ^^^^^^^^^^^^^^^
-
 Crafter Deployer has an option of running scheduled deployments for a target (``deployment.scheduling.enabled``), which is enabled by default, but if you
 want to manually trigger a deployment, you just need to call the API endpoint `deployTarget <../../../_static/api/deployer.html#tag/target/operation/deployTarget>`_ (or
 `deployAllTargets <../../../_static/api/deployer.html#tag/target/operation/deployAllTargets>`_). This will start the deployment if the request is correct. To watch the progress of a scheduled or a manually
@@ -345,7 +335,6 @@ CSV file with the final result of that particular deployment will be written und
 ^^^^^^^^^^^^^^^^^
 Processed Commits
 ^^^^^^^^^^^^^^^^^
-
 Crafter Deployer keeps track of the most recent commit id that was processed in the last deployment
 for each target, during a deployment it will use this commit id to get the list of files that have been
 changed in the repository.
@@ -376,7 +365,6 @@ the steps described in :ref:`crafter-studio-debugging-deployer-issues`
 -------------------
 Deployer Processors
 -------------------
-
 Crafter Deployer includes an extensive list of deployment processors that can be easily added to any target
 to meet specific requirements. Some examples of the use cases that can be addressed with deployment processors are:
 
@@ -395,7 +383,6 @@ to meet specific requirements. Some examples of the use cases that can be addres
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Main Deployment Processors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 The main deployment processors can do any task related to detect changed files or process changed files that were
 detected by other processors. To process changed files a processor may interact with any external service as needed.
 
@@ -468,7 +455,6 @@ All deployment processors support the following properties:
 """"""""""""""""""
 Git Pull Processor
 """"""""""""""""""
-
 Processor that clones/pulls a remote Git repository into a local path in the filesystem.
 
 .. note:: This needs to be the first processor in the pipeline
@@ -530,7 +516,6 @@ Processor that clones/pulls a remote Git repository into a local path in the fil
 """"""""""""""""""
 Git Diff Processor
 """"""""""""""""""
-
 Processor that, based on a previous processed commit that's stored, does a diff with the current commit of the
 deployment, to find out the change set. If there is no previous processed commit, then the entire repository becomes
 the change set.
@@ -566,7 +551,6 @@ the change set.
 """"""""""""""""""
 Git Push Processor
 """"""""""""""""""
-
 Processor that pushes a local repo to a remote Git repository.
 
 **Properties**
@@ -628,7 +612,6 @@ Processor that pushes a local repo to a remote Git repository.
 """"""""""""""""""""""""""""""
 Git Update Commit Id Processor
 """"""""""""""""""""""""""""""
-
 Processor that updates the processed commits value with the current commit
 
 **Example**
@@ -644,7 +627,6 @@ Processor that updates the processed commits value with the current commit
 """""""""""""""""""""""
 Groovy Script Processor
 """""""""""""""""""""""
-
 A custom Groovy processor that can process published content.
 
 **Properties**
@@ -709,7 +691,6 @@ Below is a script that only includes a file from the change set if a parameter i
 """""""""""""""""""""""""""""""""""""
 File Based Deployment Event Processor
 """""""""""""""""""""""""""""""""""""
-
 Processor that triggers a deployment event that consumers of the repository (Crafter Engines) can subscribe to by
 reading a file from the repository.
 
@@ -737,7 +718,6 @@ reading a file from the repository.
 """"""""""""""""""""""
 Command Line Processor
 """"""""""""""""""""""
-
 Processor that runs a command line process.
 
 **Properties**
@@ -774,7 +754,6 @@ Processor that runs a command line process.
 """""""""""""""""""""""""
 Search Indexing Processor
 """""""""""""""""""""""""
-
 Processor that indexes the files on the change set, using one or several BatchIndexer. After the files have been
 indexed it submits a commit.
 
@@ -803,7 +782,6 @@ indexed it submits a commit.
 """"""""""""""""""""""""""
 HTTP Method Call Processor
 """"""""""""""""""""""""""
-
 Processor that does a HTTP method call.
 
 **Properties**
@@ -829,7 +807,6 @@ Processor that does a HTTP method call.
 """""""""""""""
 Delay Processor
 """""""""""""""
-
 Processor that stops the pipeline execution for a given number of seconds.
 
 **Properties**
@@ -854,7 +831,6 @@ Processor that stops the pipeline execution for a given number of seconds.
 """"""""""""""""""""""""""
 Find And Replace Processor
 """"""""""""""""""""""""""
-
 Processor that replaces a pattern on the content of the created or updated files.
 
 .. note::
@@ -886,7 +862,6 @@ Processor that replaces a pattern on the content of the created or updated files
 """"""""""""""
 AWS Processors
 """"""""""""""
-
 All deployment processors related to AWS services support the following properties:
 
 +-------------+-----------+---------------------------+-------------------------------------------------------------+
@@ -910,7 +885,6 @@ All deployment processors related to AWS services support the following properti
 ~~~~~~~~~~~~~~~~~
 S3 Sync Processor
 ~~~~~~~~~~~~~~~~~
-
 Processor that syncs files to an AWS S3 Bucket.
 
 
@@ -931,7 +905,6 @@ Processor that syncs files to an AWS S3 Bucket.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 S3 Deployment Events Processor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Processor that uploads the deployment events to an AWS S3 Bucket
 
 **Properties**
@@ -960,7 +933,6 @@ Processor that uploads the deployment events to an AWS S3 Bucket
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Cloudfront Invalidation Processor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Processor that invalidates the changed files in the given AWS Cloudfront distributions.
 
 **Properties**
@@ -984,7 +956,6 @@ Processor that invalidates the changed files in the given AWS Cloudfront distrib
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Post Deployment Processors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 The post deployment processors assume that all changed files have been handled and the result of the deployment is
 already known (either successful or failed) and take actions based on those results, because of that they need to be
 placed after all main deployment processors to work properly.
@@ -992,7 +963,6 @@ placed after all main deployment processors to work properly.
 """""""""""""""""""""
 File Output Processor
 """""""""""""""""""""
-
 Post processor that writes the deployment result to an output CSV file under ``CRAFTER_HOME/logs/deployer`` for later access, whenever a deployment fails or
 files were processed.
 
@@ -1004,10 +974,11 @@ files were processed.
 
   - processorName: fileOutputProcessor
 
+.. _deployer-mail-notification-processor:
+
 """""""""""""""""""""""""""
 Mail Notification Processor
 """""""""""""""""""""""""""
-
 Post processor that sends an email notification with the result of a deployment, whenever a deployment fails or files
 were processed. The output file generated by the ``fileOutputProcessor`` is attached if it's available.
 
@@ -1064,7 +1035,6 @@ were processed. The output file generated by the ``fileOutputProcessor`` is atta
 ^^^^^^^^^^^^^^^^^^^^^
 Full Pipeline Example
 ^^^^^^^^^^^^^^^^^^^^^
-
 The following example shows how the deployment processors work together to deliver a serverless site using AWS services.
 
 .. code-block:: yaml
@@ -1241,14 +1211,12 @@ applied when the target is reloaded.
 ----------------
 Target Templates
 ----------------
-
 When you are creating a target in Crafter Deployer, you can use one of the included templates that can be easily
 customized with additional parameters during the creation.
 
 ^^^^^^^^^^^^^^^^^^
 Built-in Templates
 ^^^^^^^^^^^^^^^^^^
-
 All target templates support the following parameters:
 
 +-------------+-----------+------------------------------------+
@@ -1264,7 +1232,6 @@ All target templates support the following parameters:
 """"""""""""""""
 Authoring Target
 """"""""""""""""
-
 This is one of the templates used by Crafter Studio when a new project/site is created, this template will setup a target for
 Studio's search features including: indexing all xml files, binary files and indexing additional Git metadata from the
 site repository.
@@ -1283,7 +1250,6 @@ This target has no additional parameters.
 """"""""""""
 Local Target
 """"""""""""
-
 This is the other template used by Crafter Studio when a new project is created, this template will setup a target for
 previewing the project.
 
@@ -1311,7 +1277,6 @@ This target will:
 """""""""""""
 Remote Target
 """""""""""""
-
 This is the default template used for Crafter Engine in delivery environments, it is very similar to the Local Target
 but it adds support for remote Git repositories.
 
@@ -1352,7 +1317,6 @@ This target will:
 """""""""""""
 AWS S3 Target
 """""""""""""
-
 This template is used for Crafter Engine in serverless delivery environments, it is very similar to the Remote Target
 but it adds support for syncing files to an AWS S3 bucket and also handles AWS Cloudfront invalidations.
 
@@ -1409,10 +1373,9 @@ This target will:
 
 .. note:: For more details about setting up a serverless delivery see :ref:`setup-serverless-delivery`
 
-""""""""""""""""""""""
-AWS Cloudformed Target
-""""""""""""""""""""""
-
+"""""""""""""""""""""""""
+AWS CloudFormation Target
+"""""""""""""""""""""""""
 This template is used to provide a serverless delivery environment without the need to manually create all required
 resources in AWS. It works similar to the AWS S3 Target but uses an AWS CloudFormation template to create the AWS
 resources on target creation: the S3 bucket where the site content will be stored and a CloudFront distribution that
@@ -1489,13 +1452,11 @@ This target will:
 --------------------
 Search Configuration
 --------------------
-
 Crafter Deployer provides two ways to use search:
 
 ^^^^^^^^^^^^^^^^^^^^^
 Single Search Cluster
 ^^^^^^^^^^^^^^^^^^^^^
-
 This is the most common configuration used, all operations will be performed on a single search cluster:
 
 .. code-block:: yaml
@@ -1523,7 +1484,6 @@ This is the most common configuration used, all operations will be performed on 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Multiple Search Clusters
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
 Using this configuration all read operations will be performed on one search cluster but write operations will
 be performed on multiple search clusters:
 
@@ -1559,7 +1519,6 @@ be performed on multiple search clusters:
 ^^^^^^^^^^^^^^^^^^^
 Configuration Files
 ^^^^^^^^^^^^^^^^^^^
-
 The search configuration can be changed in two places:
 
 #. Global configuration file ``$CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml``, this will be applied to
@@ -1572,7 +1531,6 @@ The search configuration can be changed in two places:
 --------
 REST API
 --------
-
 To view the Crafter Deployer REST APIs:
 
 .. open_iframe_modal_button::
@@ -1591,5 +1549,4 @@ To view the Crafter Deployer REST APIs:
 -----------
 Source Code
 -----------
-
 Crafter Deployer's source code is managed in GitHub: https://github.com/craftercms/deployer

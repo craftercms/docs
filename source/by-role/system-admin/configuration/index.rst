@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.2
 
 .. index:: Configuration, Ports, Hostnames, Apache HTTPd, Configure Reverse Proxy
@@ -17,6 +17,8 @@ This section describes how to configure CrafterCMS.
 .. TODO
     General configuration topics that span all modules. Examples
         - How to configure Security
+        - How to set up a project/site for delivery
+        - How to configure Ports and Hostnames
         - How to configure logging
         - How to configure the reverse proxy
     Module-specific configuration topics. Examples
@@ -33,6 +35,13 @@ General Configuration
 Security
 ^^^^^^^^
 To secure your CrafterCMS install, please see :ref:`system-admin-security`.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Setup Project for a Delivery Environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Setting up a project or site for delivery can be done for traditional deployments or serverless deployments. Furthermore, a project or site can be set up as ``staging`` or ``live``.
+
+For traditional delivery, follow the article :ref:`setup-project-for-delivery`, and for serverless delivery, follow the article :ref:`setup-serverless-delivery`.
 
 ^^^^^^^^^^^^^^^^^^^
 Ports and Hostnames
@@ -68,6 +77,7 @@ CrafterCMS uses the following default ports and hostnames:
       - localhost
 
 .. _change-ports-and-hostnames:
+
 """"""""""""""""""""""""""
 Change Ports and Hostnames
 """"""""""""""""""""""""""
@@ -240,44 +250,23 @@ Depending on your setup, the following CrafterCMS properties may need to be setu
 - ``studio.security.saml.reverseProxy`` properties as describe in :ref:`crafter-studio-configure-studio-saml`
 
 
----------
-Authoring
----------
-In this section you'll find instructions how to set up and enhance the authoring environment.
+------
+Studio
+------
+Crafter Studio helps create and manage content and code in a project/site. Learn more about Crafter Studio configuration and administration in the article :ref:`Studio Configuration <studio-configuration>`.
 
-.. list-table::
-
-    * - :ref:`authoring-environment-ports-and-hostnames`
-    * - :ref:`navigating-main-menu`
-    * - :ref:`user-group-management`
-    * - :ref:`staging-env`
-
-..  TODO
-    * - :ref:`smtp-server`
-    * - :ref:`configure-reverse-proxy-for-authoring`
-    * - :ref:`configure-ssl-for-authoring`
-    * - :ref:`configure-ldap`
-    * - :ref:`configure-saml`
-    * - :ref:`cli-access-to-crafter-studio`
-
-Learn more about configuring Crafter Studio :ref:`here <studio-configuration>`.
+------
+Engine
+------
+Crafter Engine delivers the content to consumers/users. Learn more about Crafter Engine configuration and administration in the article :ref:`Engine Configuration <engine-configuration>`.
 
 --------
-Delivery
+Deployer
 --------
-In this section you'll find instructions how to set up and enhance the delivery environment.
+Crafter Deployer ties Studio and Engine together and is responsible for publishing content from Studio to Engine. Learn more about Crafter Deployer configuration and administration in :ref:`Deployer Administration and Configuration <crafter-deployer-administration>`.
 
-.. list-table::
-
-    * - :ref:`delivery-environment-ports-and-hostnames`
-    * - :ref:`setup-project-for-delivery`
-    * - :ref:`setup-serverless-delivery`
 
 .. TODO
-    --------
-    Deployer
-    --------
-    :ref:`Deployer Administration and Configuration <crafter-deployer-administration>`
     """""""""
     Main Menu
     """""""""
