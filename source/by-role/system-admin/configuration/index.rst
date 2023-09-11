@@ -16,16 +16,16 @@ This section describes how to configure CrafterCMS.
 
 .. TODO
     General configuration topics that span all modules. Examples
-        - How to configure Security
-        - How to set up a project/site for delivery
-        - How to configure Ports and Hostnames
-        - How to configure logging
-        - How to configure the reverse proxy
+        - [x] How to configure Security
+        - [x] How to set up a project/site for delivery
+        - [x] How to configure Ports and Hostnames
+        - [x] How to configure logging
+        - [x] How to configure the reverse proxy
     Module-specific configuration topics. Examples
-        - How to configure Studio
-        - How to configure Engine
-        - How to configure Deployer
-        - How to configure Profile
+        - [x] How to configure Studio
+        - [x] How to configure Engine
+        - [x] How to configure Deployer
+        - [x] How to configure Profile
         - How to configure Social
 
 ---------------------
@@ -265,6 +265,15 @@ Deployer
 --------
 Crafter Deployer ties Studio and Engine together and is responsible for publishing content from Studio to Engine. Learn more about Crafter Deployer configuration and administration in :ref:`Deployer Administration and Configuration <crafter-deployer-administration>`.
 
+-------
+Profile
+-------
+Crafter Profile provides a user identity augmentation capability. It allows the project/site developers to add metadata to existing identity (managed in LDAP for example) and add arbitrary metadata to it, or, it can manage the identity entirely if desired. Learn more about Crafter Profile configuration and administration in :ref:`Profile Configuration and Administration <crafter-profile-admin>`.
+
+.. toctree::
+    :hidden:
+
+    crafter-profile-admin
 
 .. TODO
     """""""""

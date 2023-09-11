@@ -19,7 +19,7 @@ Engine Crafter Profile Configuration
 Crafter Engine needs access tokens to use Crafter Profile's API. Each project must have it's own access token. Follow the
 next steps to create one:
 
-#. Login to Crafter Profile Admin Console as a ``PROFILE_SUPERADMIN`` (by default the admin user has this role). *See* :ref:`here <profile-admin-console>` *for more information on the Crafter Profile Admin Console UI.*
+#. Login to Crafter Profile Admin Console as a ``PROFILE_SUPERADMIN`` (by default the admin user has this role). *See* :ref:`here <crafter-profile-admin-console>` *for more information on the Crafter Profile Admin Console UI.*
 #. Click on **New Access Token** in the navigation. Enter your project's name on **Application**, leave the **Master** checkbox
     unselected, pick a proper Expiration Date (10 years from the current date is ok) and on **Tenant Permissions** add
     your tenant's name to the input (*Remember that your tenant's name has to have the same name as your project. See the note below*) and click on **Add**. By default the admin console auto-selects the 3 actions
