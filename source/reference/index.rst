@@ -42,6 +42,15 @@ The modules are
     * - :ref:`Social<crafter-Social>`
       - User generated content store
 
+.. toctree::
+    :hidden:
+
+    modules/studio/index
+    modules/engine/index
+    modules/deployer/index
+    modules/profile/index
+    modules/social/index
+
 |hr|
 
 ----
