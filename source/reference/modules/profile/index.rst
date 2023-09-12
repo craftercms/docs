@@ -8,6 +8,10 @@
 ===============
 Crafter Profile
 ===============
+.. contents::
+    :local:
+    :depth: 3
+
 .. figure:: /_static/images/architecture/crafter-profile.webp
     :alt: Crafter Profile
     :width: 60 %
