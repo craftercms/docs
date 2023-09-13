@@ -14,20 +14,6 @@ Configuration
 
 This section describes how to configure CrafterCMS.
 
-.. TODO
-    General configuration topics that span all modules. Examples
-        - [x] How to configure Security
-        - [x] How to set up a project/site for delivery
-        - [x] How to configure Ports and Hostnames
-        - [x] How to configure logging
-        - [x] How to configure the reverse proxy
-    Module-specific configuration topics. Examples
-        - [x] How to configure Studio
-        - [x] How to configure Engine
-        - [x] How to configure Deployer
-        - [x] How to configure Profile
-        - How to configure Social
-
 ---------------------
 General Configuration
 ---------------------
@@ -81,13 +67,13 @@ CrafterCMS uses the following default ports and hostnames:
 """"""""""""""""""""""""""
 Change Ports and Hostnames
 """"""""""""""""""""""""""
+
 There are times when you need to change the ports and/or hostnames in your CrafterCMS installation.
 Changes to the ports and/or hostnames may be required in the following cases:
 
 - If you need to change the port that an application in the current installation binds to. |br|
   To change the port, update the respective port variable.
-- If you need the applications in the current installation to communicate with another application that's in a
-  different host and/or port |br|
+- If you need the applications in the current installation to communicate with another application that's in a different host and/or port |br|
   To change the hostname (and port as required), update the hostname (and port) variable of the external application.
 
 .. _authoring-environment-ports-and-hostnames:
@@ -97,6 +83,8 @@ Authoring Environment Ports and Hostnames
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 You can change all the hostnames and ports used for communication by the CrafterCMS authoring applications in
 ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh``:
+
+.. TODO env vars are used to do this instead of modifying the files directly (better, but not a must)
 
 .. code-block:: bash
     :caption: *AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh hostnames and ports with defaults*
@@ -158,10 +146,10 @@ Learn more about how to configure CrafterCMS :ref:`logging`.
 
 .. _reverse-proxy-configuration:
 
-^^^^^^^^^^^^^
-Reverse Proxy
-^^^^^^^^^^^^^
-It's often times desirable to use a reverse proxy or a CDN to front the CrafterCMS Studio and Engine web applications. This can be helpful for faster serving of static assets, caching, and SSL termination among other benefits. In this section, we discuss how to configure a reverse proxy using Apache 2 HTTPd vhost configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Reverse Proxy (Apache HTTPd / NGINX)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+It's often times desirable to use a reverse proxy like Apache HTTPd, NGINX, or a CDN to front the CrafterCMS Studio and Engine web applications. This can be helpful for faster serving of static assets, caching, and SSL termination among other benefits. In this section, we discuss how to configure a reverse proxy using Apache 2 HTTPd vhost configuration
 for authoring and delivery. A similar approach can be used for other HTTPd servers.
 
 Below are the directives used for setting up a reverse proxy with Apache:
@@ -253,7 +241,7 @@ Depending on your setup, the following CrafterCMS properties may need to be setu
 ------
 Studio
 ------
-Crafter Studio helps create and manage content and code in a project/site. Learn more about Crafter Studio configuration and administration in the article :ref:`Studio Configuration <studio-configuration>`.
+Crafter Studio helps create and manage content and code in a project/site. Learn more about Crafter Studio configuration and administration in the articles :ref:`Studio Configuration <studio-config>` and :ref:`Studio Administration <studio-admin>`.
 
 ------
 Engine
@@ -277,12 +265,6 @@ Crafter Social provides a user generated content management system. It allows th
 
 
 .. TODO
-    """""""""
-    Main Menu
-    """""""""
-    .. TODO explain why would one want to edit this
-    :ref:`nav-menu-global-config`
-    .. TODO Add configuration tasks below detailing how to accomplish that task with references to the relevant configuration files
 
 .. .. toctree::
     :maxdepth: 1
