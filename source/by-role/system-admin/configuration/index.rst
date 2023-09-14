@@ -20,14 +20,18 @@ General Configuration
 ^^^^^^^^
 Security
 ^^^^^^^^
-To secure your CrafterCMS install, please see :ref:`system-admin-security`.
+To secure your CrafterCMS install, please see the article :ref:`system-admin-security`.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Setup Project for a Delivery Environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|hr|
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Setup Project in a Delivery Environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Setting up a project or site for delivery can be done for traditional deployments or serverless deployments. Furthermore, a project or site can be set up as ``staging`` or ``live``.
 
 For traditional delivery, follow the article :ref:`setup-project-for-delivery`, and for serverless delivery, follow the article :ref:`setup-serverless-delivery`.
+
+|hr|
 
 ^^^^^^^^^^^^^^^^^^^
 Ports and Hostnames
@@ -71,20 +75,18 @@ Change Ports and Hostnames
 There are times when you need to change the ports and/or hostnames in your CrafterCMS installation.
 Changes to the ports and/or hostnames may be required in the following cases:
 
-- If you need to change the port that an application in the current installation binds to. |br|
-  To change the port, update the respective port variable.
-- If you need the applications in the current installation to communicate with another application that's in a different host and/or port |br|
-  To change the hostname (and port as required), update the hostname (and port) variable of the external application.
+- If you need to change the port that an application in the current installation binds to.
+- If you need the applications in the current installation to communicate with another application that's in a different host and/or port.
+
+All the hostnames and ports used for communication by CrafterCMS applications are defined in
+``CRAFTER_HOME/bin/crafter-setenv.sh``. You can either modify the file directly or set the environment variables (which is much cleaner). The environment variables are noted in the file, for example, ``MAIL_HOST`` and ``MAIL_PORT`` are used to set the hostname and port for the mail server and CrafterCMS will use those environment variables if present before using the defaults.
 
 .. _authoring-environment-ports-and-hostnames:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Authoring Environment Ports and Hostnames
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-You can change all the hostnames and ports used for communication by the CrafterCMS authoring applications in
-``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh``:
-
-.. TODO env vars are used to do this instead of modifying the files directly (better, but not a must)
+The following is an example of the default values for the hostnames and ports used by the CrafterCMS authoring applications ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh``
 
 .. code-block:: bash
     :caption: *AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh hostnames and ports with defaults*
@@ -107,15 +109,12 @@ You can change all the hostnames and ports used for communication by the Crafter
     export TOMCAT_SHUTDOWN_PORT=${TOMCAT_SHUTDOWN_PORT:="8005"}
     export TOMCAT_DEBUG_PORT=${TOMCAT_DEBUG_PORT:="8000"}
 
-|
-
 .. _delivery-environment-ports-and-hostnames:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Delivery Environment Ports and Hostnames
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-You can change all the hostnames and ports used for communication by the CrafterCMS delivery applications in
-``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh``:
+The following is an example of the default values for the hostnames and ports used by the CrafterCMS delivery applications ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh``:
 
 .. code-block:: bash
     :caption: *DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh hostnames and ports with defaults*
@@ -137,12 +136,14 @@ You can change all the hostnames and ports used for communication by the Crafter
     export TOMCAT_SHUTDOWN_PORT=${TOMCAT_SHUTDOWN_PORT:="9005"}
     export TOMCAT_DEBUG_PORT=${TOMCAT_DEBUG_PORT:="9000"}
 
-|
+|hr|
 
 ^^^^^^^
 Logging
 ^^^^^^^
 Learn more about how to configure CrafterCMS :ref:`logging`.
+
+|hr|
 
 .. _reverse-proxy-configuration:
 
@@ -232,59 +233,48 @@ as a reverse proxy setup.
 
 Depending on your setup, the following CrafterCMS properties may need to be setup:
 
-- ``reverseProxy`` property when configuring :ref:`Engine SAML2 <engine-saml2-configuration>`
-- ``crafter.engine.forwarded.headers.enabled`` property under :ref:`engine-forwarded-headers` in :ref:`engine-saml2-configuration`
-- ``studio-config-forwarded-headers`` property under :ref:`studio-forwarded-headers` in ``studio-config-override.yaml`` file
-- ``studio.security.saml.reverseProxy`` properties as describe in :ref:`crafter-studio-configure-studio-saml`
+- ``crafter.engine.forwarded.headers.enabled`` property under :ref:`engine-forwarded-headers` in the ``server-config.properties`` file
+- ``studio-config-forwarded-headers`` property under :ref:`studio-forwarded-headers` in the ``studio-config-override.yaml`` file
 
+|hr|
 
 ------
 Studio
 ------
 Crafter Studio helps create and manage content and code in a project/site. Learn more about Crafter Studio configuration and administration in the articles :ref:`Studio Configuration <studio-config>` and :ref:`Studio Administration <studio-admin>`.
 
+|hr|
+
 ------
 Engine
 ------
-Crafter Engine delivers the content to consumers/users. Learn more about Crafter Engine configuration and administration in the article :ref:`Engine Configuration <engine-configuration>`.
+Crafter Engine delivers the content to consumers/users. Learn more about Crafter Engine configuration and administration in the article :ref:`Engine Configuration <engine-config>`.
+
+|hr|
 
 --------
 Deployer
 --------
 Crafter Deployer ties Studio and Engine together and is responsible for publishing content from Studio to Engine. Learn more about Crafter Deployer configuration and administration in :ref:`Deployer Administration and Configuration <crafter-deployer-administration>`.
 
+|hr|
+
 -------
 Profile
 -------
 Crafter Profile provides a user identity augmentation capability. It allows the project/site developers to add metadata to existing identity (managed in LDAP for example) and add arbitrary metadata to it, or, it can manage the identity entirely if desired. Learn more about Crafter Profile configuration and administration in :ref:`Profile Configuration and Administration <crafter-profile-admin>`.
+
+|hr|
 
 -------
 Social
 -------
 Crafter Social provides a user generated content management system. It allows the project/site developers to handle all actions related to user-generated content (UGC), including the creation, updating and moderation of content. Learn more about Crafter Social configuration and administration in :ref:`Social Configuration and Administration <crafter-social-admin>`.
 
+|hr|
 
 .. TODO
-
-.. .. toctree::
-    :maxdepth: 1
-
-..  studio/studio-configuration
-    studio/session-timeout-settings
-    studio/publishing-blacklist
 
 ..  engine/configure-engine-multi-tenancy
     engine/engine-configuration-overrides
     engine/turning-off-show-error
-
-..  deployer/admin-guide
-    deployer/processors-guide
-    deployer/templates-guide
-    deployer/elasticsearch-configuration-guide
-
-..  profile/index
-    profile/admin/index
-
-..  social/index
-    social/admin/index
-
