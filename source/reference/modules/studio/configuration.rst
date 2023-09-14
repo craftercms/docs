@@ -763,7 +763,7 @@ To change the session inactivity timeout, follow the instructions below:
    |
 
 
-Remember to keep the Studio session inactivity timeout ``inactivityTimeout`` from the :ref:`studio-config-override.yaml <studio-configuration-files>` file less than the Tomcat ``session-timeout`` from the ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/web.xml`` file.
+Remember to keep the Studio session inactivity timeout ``inactivityTimeout`` from the ``studio-config-override.yaml`` file less than the Tomcat ``session-timeout`` from the ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/web.xml`` file.
 
 Make sure to stop and **restart Studio after making your changes**.
 

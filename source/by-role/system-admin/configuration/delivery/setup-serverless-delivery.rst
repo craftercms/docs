@@ -188,8 +188,7 @@ authoring node. When there's multiple authoring nodes (a cluster), then you'll n
 from a load balanced SSH/HTTPS URL fronting the Studio Git repos.
 
 In both cases you still need to configure Studio to call the Deployer to create the serverless targets on site creation. 
-You can find this configuration under :ref:`CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml <studio-configuration-files>`. The
-properties are well documented in the file so they won't be explained here, but there are still some important things to 
+You can find this configuration under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``. The properties are well documented in the file so they won't be explained here, but there are still some important things to
 notice:
 
 - You need to add the URL of the Elasticsearch domain created in a previous step under

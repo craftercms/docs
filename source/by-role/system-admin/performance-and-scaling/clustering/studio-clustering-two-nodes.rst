@@ -37,7 +37,7 @@ Configuring Nodes in the Cluster
 
 #. Install the Enterprise version of CrafterCMS on all the nodes
 #. Configure the Git **repository clustering** for all nodes by configuring the following settings in the
-   :ref:`studio-config-override.yaml <studio-configuration-files>` file.
+   ``studio-config-override.yaml`` file.
 
    .. code-block:: yaml
       :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -284,7 +284,8 @@ Starting the Nodes in the Cluster
 After finishing the node configurations, we are now ready to start the cluster. Please start the cluster nodes
 in close succession, one after the other. If you take more than 5 minutes to start all the cluster nodes then
 the nodes already running will timeout while trying to synchronize for bootstrapping (you can configure this
-timeout in :ref:`studio-config-override.yaml <studio-configuration-files>`, under the property ``studio.db.cluster.nodes.startup.wait.timeout``).
+timeout in the ``bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml`` file,
+under the property ``studio.db.cluster.nodes.startup.wait.timeout``).
 
 There are a few ways to check that the cluster is running.
 
