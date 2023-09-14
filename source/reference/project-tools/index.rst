@@ -95,7 +95,7 @@ Configuration allows the user to configure the different settings in CrafterCMS 
 
 |
 
-For more information on what settings can be configured, see :ref:`studio-configuration` and :ref:`engine-configuration`
+For more information on what settings can be configured, see :ref:`studio-config` and :ref:`engine-configuration`
 For information on how to configure projects depending on the environment where they are deployed, see :ref:`here <multi-environment-support>`
 
 ^^^^^

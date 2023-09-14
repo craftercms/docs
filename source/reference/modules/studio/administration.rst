@@ -48,7 +48,7 @@ The tools available in the Navigation Menu is configured similar to how the Proj
 ^^^^^^^^
 Projects
 ^^^^^^^^
-``Projects`` contains a list of all the projects the logged in user has access to. The section :ref:`author-screens` in ``Content Authors`` contains descriptions on some of the actions that can be performed from the Projects screen.  This also allows users with the system admin role to create new projects either from a :ref:`blueprint <your-first-editorial-project>`` or a :ref:`remote repository <create-project-with-link-to-remote-repo>`.
+``Projects`` contains a list of all the projects the logged in user has access to. The section :ref:`author-screens` in ``Content Authors`` contains descriptions on some of the actions that can be performed from the Projects screen.  This also allows users with the system admin role to create new projects either from a :ref:`blueprint <your-first-editorial-project>` or a :ref:`remote repository <create-project-with-link-to-remote-repo>`.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-sites.webp
     :alt: System Administrator - Navigation Menu Projects
@@ -205,7 +205,7 @@ For more information on how to use the Account tool, see :ref:`account-managemen
 Navigation Menu Global Config
 -----------------------------
 CrafterCMS allows the user to edit the system settings for Studio without access to the physical server through ``Global Config`` under the ``Navigation Menu`` in Studio.
-This global configuration file overrides the :ref:`core configuration of Crafter Studio <studio-core-configuration>`, ``studio-config.yaml``,  found in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio``, and the Studio configuration override file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` in your Authoring installation (for more information on this file, see :ref:`studio-config-override`.
+This global configuration file overrides the core configuration of Crafter Studio, ``studio-config.yaml``,  found in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio``, and the Studio configuration override file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` in your Authoring installation (for more information on this file, see :ref:`studio-config`.
 
 Changes made to this file will spread to all nodes in a Studio cluster automatically. Please note that not all changes to this file can/will take effect without a restart, so expect to have to **restart Studio for most changes to take effect**. If in a cluster, you'll need a rolling restart for all nodes to pick up the changes.
 
@@ -216,9 +216,7 @@ To access the Global Config, click on the ``Navigation Menu`` icon at the top ri
     :align: center
     :width: 100%
 
-.. todo double check the link to studio-configuration below
-
-To find out more on what you can configure from the Global Config, see :ref:`studio-configuration`.
+To find out more on what you can configure from the Global Config, see :ref:`studio-config`.
 
 
 .. audit
@@ -1002,8 +1000,7 @@ Click on the **Review** button, then finally, the **Create Site** button.
 
 After a short while, your project will be imported.
 
-In case you want to publish the entire project, follow these optional steps:
-----------------------------------------------------------------------------
+**In case you want to publish the entire project**, follow these optional steps:
 
 #. In the project you just imported, click on **Project Tools**, then click on **Publishing**
 

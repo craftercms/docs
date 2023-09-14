@@ -231,10 +231,9 @@ measurements, language, etc., to make the application look and feel natural to t
 ~~~~~~~~~~~~~~~~~
 Project Time Zone
 ~~~~~~~~~~~~~~~~~
-The :ref:`default dates and times <server-time-zone>` used for displays in Studio is UTC. To
-customize how dates & times get displayed on Studio UI for a project, edit the following in the project
-configuration file, by clicking on |projectTools| from the *Sidebar*, then click on **Configuration**
-and finally selecting **Project Configuration** from the list:
+The default dates and times used for displays in Studio is UTC. To customize how dates & times get displayed
+on Studio UI for a project, edit the following in the project configuration file, by clicking on |projectTools|
+from the *Sidebar*, then click on **Configuration** and finally selecting **Project Configuration** from the list:
 
 .. code-block:: xml
    :linenos:

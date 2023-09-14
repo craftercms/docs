@@ -234,7 +234,7 @@ Depending on your setup, the following CrafterCMS properties may need to be setu
 
 - ``reverseProxy`` property when configuring :ref:`Engine SAML2 <engine-saml2-configuration>`
 - ``crafter.engine.forwarded.headers.enabled`` property under :ref:`engine-forwarded-headers` in :ref:`engine-saml2-configuration`
-- ``studio-config-forwarded-headers`` property under :ref:`studio-config-forwarded-headers` in :ref:`studio-config-override`
+- ``studio-config-forwarded-headers`` property under :ref:`studio-forwarded-headers` in ``studio-config-override.yaml`` file
 - ``studio.security.saml.reverseProxy`` properties as describe in :ref:`crafter-studio-configure-studio-saml`
 
 

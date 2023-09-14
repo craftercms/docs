@@ -795,9 +795,9 @@ The following authentication providers can be configured in a chain:
 
 .. note:: SAML2 authentication cannot be configured in a chain. SAML2 authentication is a standalone authentication provider.
 
-When an authentication chain is configured, when a user logs in, Studio will try to authenticate the user using the first security provider in the chain as defined in the :ref:`studio-config-override.yaml <studio-configuration-files>` file. If authentication fails, it will then move on to the next authentication provider in the list and try to authenticate the user again. It will continue moving on to the next security provider in the chain until the user is authenticated or the authentication fails.
+When an authentication chain is configured, when a user logs in, Studio will try to authenticate the user using the first security provider in the chain as defined in the ``studio-config-override.yaml`` file. If authentication fails, it will then move on to the next authentication provider in the list and try to authenticate the user again. It will continue moving on to the next security provider in the chain until the user is authenticated or the authentication fails.
 
-To setup the authentication chain, open the file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``. Another way to access the ``studio-config-override.yaml`` file is by clicking on the |mainMenu| **Main Menu** from the context nav in Studio, then clicking on ``Global Config``.
+To setup the authentication chain, open the file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``. Another way to access the ``studio-config-override.yaml`` file is by clicking on the |mainMenu| **Navigation Menu** from the context nav in Studio, then clicking on ``Global Config``.
 
 Below is a sample configuration for the authentication chain. There are four authentication providers in the example below: (1) Headers Authentication (2) LDAP1 (3) LDAP2 (4) Internal database
 
@@ -948,7 +948,7 @@ To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.s
 
 |
 
-Next we'll setup SAML configuration properties. Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add/uncomment the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+Next we'll setup SAML configuration properties. Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add/uncomment the following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -1061,7 +1061,7 @@ Crafter Studio is able to integrate with any authentication system that sends cu
 """"""""""""""""""""""""""""""""""""""""""""""""
 Configure Studio for Header-Based Authentication
 """"""""""""""""""""""""""""""""""""""""""""""""
-Configuring Studio for header-based authentication is very simple: in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+Configuring Studio for header-based authentication is very simple: in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: properties
     :linenos:
@@ -1113,7 +1113,7 @@ Configuring Logout
 ~~~~~~~~~~~~~~~~~~
 The **Sign out** button link is disabled/hidden by default when header-based authentication is enabled.
 
-To enable **Sign out** for users signed in using header-based authentication, change the following lines (as described from the above configuration) in your :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+To enable **Sign out** for users signed in using header-based authentication, change the following lines (as described from the above configuration) in your ``studio-config-override.yaml`` file (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
 
@@ -1132,7 +1132,7 @@ To enable **Sign out** for users signed in using header-based authentication, ch
 Configure LDAP Authentication |enterpriseOnly|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To configure LDAP authentication, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and uncomment the
-following lines to the :ref:`studio-config-override.yaml <studio-configuration-files>` file.
+following lines to the ``studio-config-override.yaml`` file.
 
 .. note:: The values for the parameters listed below are just examples. Remember to make any appropriate configuration changes according to your directory service in use.
 
@@ -1300,7 +1300,7 @@ Below, are some of the messages displayed as a user is inputting a new password:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Randomize Authoring's "admin" Password for CrafterCMS Fresh Install
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-CrafterCMS gives you the option to randomize the **admin** password on a fresh install. To randomize the **admin** password, before starting CrafterCMS for the very first time, in your Authoring installation, go to  the following folder: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/`` and add the following to the :ref:`studio-config-override.yaml <studio-configuration-files>` file:
+CrafterCMS gives you the option to randomize the **admin** password on a fresh install. To randomize the **admin** password, before starting CrafterCMS for the very first time, in your Authoring installation, go to  the following folder: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/`` and add the following to the ``studio-config-override.yaml`` file:
 
 .. code-block:: yaml
        :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
