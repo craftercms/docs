@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.2
 
 .. index:: Audit, Users, Groups, User Management, Group Management, Cluster, Log Console, Logging Levels, Global Config, Encryption Tool, Navigation Menu
@@ -13,6 +13,8 @@ Studio Administration
 .. contents::
     :local:
     :depth: 2
+
+Much of the administration of Crafter Studio can be done via the UI. This section describes how to perform these basic tasks.
 
 .. _navigating-main-menu:
 
@@ -89,9 +91,9 @@ A group consists of a collection of users. ``Groups`` lets the administrator man
 
 .. _main-menu-tool-cluster:
 
-^^^^^^^
-Cluster
-^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
+Cluster |enterpriseOnly|
+^^^^^^^^^^^^^^^^^^^^^^^^
 ``Cluster`` lets the administrator manage Studio clusters. See :ref:`clustering` for more information on how to setup clustering and available actions from ``Cluster`` from the Main Menu
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-cluster.webp
@@ -197,8 +199,6 @@ The ``Account Tool`` allows the user to change the user's personal Crafter Studi
 
 For more information on how to use the Account tool, see :ref:`account-management`.
 
-.. global-config
-
 .. _nav-menu-global-config:
 
 -----------------------------
@@ -218,8 +218,6 @@ To access the Global Config, click on the ``Navigation Menu`` icon at the top ri
 
 To find out more on what you can configure from the Global Config, see :ref:`studio-config`.
 
-
-.. audit
 
 .. _nav-menu-audit:
 
@@ -267,33 +265,6 @@ Audit Logs Operations Filter
     :align: center
     :width: 85%
 
-Here are the operations available for filtering:
-
-* Login
-* Login Failed
-* Logout
-* Create
-* Update
-* Delete
-* Move
-* Revert
-* Enable
-* Disable
-* Add User to Group
-* Remove User from Group
-* Add Remote
-* Remove Remote
-* Push to Remote
-* Pull from Remote
-* Request Publish
-* Approve
-* Approve Scheduled
-* Reject
-* Publish
-* Stop Publisher
-* Start Publisher
-* Remove Cluster Node
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Audit Logs Options Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -303,8 +274,6 @@ Audit Logs Options Filter
     :alt: System Administrator - Main Menu Audit Options Filter
     :align: center
     :width: 85%
-
-.. User and group management
 
 .. _user-group-management:
 
@@ -481,7 +450,6 @@ A notification will appear on the screen for a few seconds on successful deletio
       :alt: Users - Deleted Notification
       :width: 30%
       :align: center
-
 
 .. _groups-management:
 
@@ -880,8 +848,6 @@ For more information on editing a user, see :ref:`editing-a-user`
 Setting a User's Initial Password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The Crafter admin must set an initial password when creating a new user. To create a new user, please see :ref:`creating-a-user`
-
-.. Create site
 
 .. _create-project-with-link-to-remote-repo:
 

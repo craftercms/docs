@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.2
 
 .. index:: Studio Configuration, Studio Configuration Override
@@ -34,6 +34,7 @@ If the same property is present in more than one file, the value from the last c
 You'll note that the first override file from the ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` folder resides on the local file system. This makes it easy for system admins, but it will not replicate across a cluster. The second override file from the ``CRAFTER_HOME/data/repos/global/configuration`` folder is a repository item and will replicate across a cluster. Furthermore, the second override file can be managed from Studio without need to the operating system's file system. See :ref:`nav-menu-global-config` for more information on how to access the global configuration file from Studio.
 
 .. note:: Changing the configuration files requires a restart of Crafter Studio for the changes to take effect.
+.. note:: Environment variables can be used to override any property defined as ``${env:ENVIRONMENT_VARIABLE}`` in the configuration files.This allows you to inject these properties into a vanilla installation without having to modify any actual files, which is especially useful when using Docker or Kubernetes.
 
 -------------------------------
 Studio Configuration Properties
@@ -44,40 +45,46 @@ In this section we will highlight some of the more commonly used properties in t
     :header-rows: 1
 
     * - Property
-      - Purpose
+    - Purpose
 
     * - :ref:`SMTP Configuration (Email) <studio-smtp-config>`
       - Configure the SMTP server to be used by Crafter Studio when sending emails
-    * - :ref:`Commit Message <studio-commit-message>`
-      - Configure the commit messages used by Crafter Studio
+    * - :ref:`Access Tokens <studio-access-tokens>`
+      - Configure access tokens
+    * - :ref:`CORS <studio-cors>`
+      - Configure CORS
     * - :ref:`Editable Mime Types <editable-mime-types>`
       - Configure the MIME-types that are editable directly in Crafter Studio
-    * - :ref:`Cache Settings <cache-settings>`
-      - Configure the cache control settings for templates and assets
     * - :ref:`Project/Site Configuration <studio-project-config>`
       - Configure your project/site configuration
     * - :ref:`Preview Deployer Configuration <studio-preview-deployer-config>`
       - Configure your deployer URLs
     * - :ref:`Preview Search Configuration <studio-preview-search-config>`
       - Configure your search URLs
-    * - :ref:`Password Configuration <studio-password-config>`
-      - Configure password complexity to be used
-    * - :ref:`CORS <studio-cors>`
-      - Configure CORS
     * - :ref:`Search <studio-search>`
       - Configure Studio search
-    * - :ref:`Serverless Delivery Targets <studio-serverless-delivery-targets>`
-      - Configure serverless delivery
+    * - :ref:`Cache Settings <cache-settings>`
+      - Configure the cache control settings for templates and assets
     * - :ref:`Forwarded Headers <studio-forwarded-headers>`
       - Configure forwarded headers
-    * - :ref:`Access Tokens <studio-access-tokens>`
-      - Configure access tokens
     * - :ref:`crafterSite Cookie Domain <studio-crafterSite-cookie-domain>`
       - Configure the ``crafterSite`` cookie domain
+    * - :ref:`Serverless Delivery Targets <studio-serverless-delivery-targets>`
+      - Configure serverless delivery
     * - :ref:`Validations Regex <studio-validations-regex>`
       - Configure the regex used for validating various inputs
+    * - :ref:`Password Configuration <studio-password-config>`
+      - Configure password complexity to be used
+    * - :ref:`Commit Message <studio-commit-message>`
+      - Configure the commit messages used by Crafter Studio
     * - :ref:`Publishing Blacklist <publishing-blacklist>`
       - Configure the publishing blacklist
+
+.. TODO Add more configuration properties
+
+|
+
+|hr|
 
 .. _studio-smtp-config:
 
@@ -87,30 +94,32 @@ SMTP Configuration (Email)
 This section allows the user to setup a mail client by configuring the SMTP server to be used for sending emails from Crafter Studio, such as when authors request to publish content, or when a request to publish has been approved.
 
 .. code-block:: yaml
-   :linenos:
-   :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
+    :linenos:
+    :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
-   ##################################################
-   ##        SMTP Configuration (Email)            ##
-   ##################################################
-   # Default value for from header when sending emails.
-   # studio.mail.from.default: admin@example.com
-   # SMTP server name to send emails.
-   # studio.mail.host: ${env:MAIL_HOST}
-   # SMTP port number to send emails.
-   # studio.mail.port: ${env:MAIL_PORT}
-   # SMTP username for authenticated access when sending emails.
-   # studio.mail.username:
-   # SMTP password for authenticated access when sending emails.
-   # studio.mail.password:
-   # Turn on/off (value true/false) SMTP authenaticated access protocol.
-   # studio.mail.smtp.auth: false
-   # Enable/disable (value true/false) SMTP TLS protocol when sending emails.
-   # studio.mail.smtp.starttls.enable: false
-   # Enable/disable (value true/false) SMTP EHLO protocol when sending emails.
-   # studio.mail.smtp.ehlo: true
-   # Enable/disable (value true/false) debug mode for email service. Enabling debug mode allows tracking/debugging communication between email service and SMTP server.
-   # studio.mail.debug: false
+    ##################################################
+    ##        SMTP Configuration (Email)            ##
+    ##################################################
+    # Default value for from header when sending emails.
+    # studio.mail.from.default: admin@example.com
+    # SMTP server name to send emails.
+    # studio.mail.host: ${env:MAIL_HOST}
+    # SMTP port number to send emails.
+    # studio.mail.port: ${env:MAIL_PORT}
+    # SMTP username for authenticated access when sending emails.
+    # studio.mail.username:
+    # SMTP password for authenticated access when sending emails.
+    # studio.mail.password:
+    # Turn on/off (value true/false) SMTP authenaticated access protocol.
+    # studio.mail.smtp.auth: false
+    # Enable/disable (value true/false) SMTP TLS protocol when sending emails.
+    # studio.mail.smtp.starttls.enable: false
+    # Enable/disable (value true/false) SMTP EHLO protocol when sending emails.
+    # studio.mail.smtp.ehlo: true
+    # Enable/disable (value true/false) debug mode for email service. Enabling debug mode allows tracking/debugging communication between email service and SMTP server.
+    # studio.mail.debug: false
+
+|
 
 |hr|
 
@@ -123,36 +132,38 @@ Here are the default commit messages when someone makes content changes and can 
 using one of the override files.
 
 .. code-block:: yaml
-   :linenos:
+    :linenos:
 
-   # Repository commit prologue message
-   studio.repo.commitMessagePrologue:
-   # Repository commit postscript message
-   studio.repo.commitMessagePostscript:
-   # Sandbox repository write commit message
-   studio.repo.sandbox.write.commitMessage: "User {username} wrote content {path}"
-   # Published repository commit message
-   studio.repo.published.commitMessage: "Publish event triggered by {username} on {datetime} via {source}.\n\nPublish note from user: \"{message}\"\n\nCommit ID: {commit_id}\n\nPackage ID: {package_id}"
-   # Commit message to mark commit not to process when syncing database
-   studio.repo.syncDB.commitMessage.noProcessing: "STUDIO: NO PROCESSING"
-   # Create new repository commit message
-   studio.repo.createRepository.commitMessage: "Create new repository."
-   # Create sandbox branch commit message
-   studio.repo.createSandboxBranch.commitMessage: "Create {sandbox} branch."
-   # Initial commit message
-   studio.repo.initialCommit.commitMessage: "Initial commit."
-   # Create as orphan commit message
-   studio.repo.createAsOrphan.commitMessage: "Created as orphan."
-   # Blueprints updated commit message
-   studio.repo.blueprintsUpdated.commitMessage: "Blueprints updated."
-   # Create folder commit message
-   studio.repo.createFolder.commitMessage: "Created folder site: {site} path: {path}"
-   # Delete content commit message
-   studio.repo.deleteContent.commitMessage: "Delete file {path}"
-   # Move content commit message
-   studio.repo.moveContent.commitMessage: "Moving {fromPath} to {toPath}"
-   # Copy content commit message
-   studio.repo.copyContent.commitMessage: "Copying {fromPath} to {toPath}"
+    # Repository commit prologue message
+    studio.repo.commitMessagePrologue:
+    # Repository commit postscript message
+    studio.repo.commitMessagePostscript:
+    # Sandbox repository write commit message
+    studio.repo.sandbox.write.commitMessage: "User {username} wrote content {path}"
+    # Published repository commit message
+    studio.repo.published.commitMessage: "Publish event triggered by {username} on {datetime} via {source}.\n\nPublish note from user: \"{message}\"\n\nCommit ID: {commit_id}\n\nPackage ID: {package_id}"
+    # Commit message to mark commit not to process when syncing database
+    studio.repo.syncDB.commitMessage.noProcessing: "STUDIO: NO PROCESSING"
+    # Create new repository commit message
+    studio.repo.createRepository.commitMessage: "Create new repository."
+    # Create sandbox branch commit message
+    studio.repo.createSandboxBranch.commitMessage: "Create {sandbox} branch."
+    # Initial commit message
+    studio.repo.initialCommit.commitMessage: "Initial commit."
+    # Create as orphan commit message
+    studio.repo.createAsOrphan.commitMessage: "Created as orphan."
+    # Blueprints updated commit message
+    studio.repo.blueprintsUpdated.commitMessage: "Blueprints updated."
+    # Create folder commit message
+    studio.repo.createFolder.commitMessage: "Created folder site: {site} path: {path}"
+    # Delete content commit message
+    studio.repo.deleteContent.commitMessage: "Delete file {path}"
+    # Move content commit message
+    studio.repo.moveContent.commitMessage: "Moving {fromPath} to {toPath}"
+    # Copy content commit message
+    studio.repo.copyContent.commitMessage: "Copying {fromPath} to {toPath}"
+
+|
 
 |hr|
 
@@ -165,8 +176,8 @@ Here's the default list of MIME-types editable in Studio:
 
 .. code-block:: yaml
 
-   # Item MIME-types that are editable directly in Crafter Studio
-   studio.content.item.editableTypes:
+    # Item MIME-types that are editable directly in Crafter Studio
+    studio.content.item.editableTypes:
     - text/plain
     - text/html
     - text/css
@@ -175,6 +186,10 @@ Here's the default list of MIME-types editable in Studio:
     - application/json
     - application/xml
     - application/xhtml+xml
+
+These can be updated as needed by overriding the property in one of the override files.
+
+|
 
 |hr|
 
@@ -196,8 +211,8 @@ Here's the cache control settings for templates and assets:
     # The urls that should include max-age=<studio.cache.assets.maxAge> in Cache-Control header. Other urls will be set to default max-age=0, must-revalidate
     studio.cache.assets.maxAge.includeUrls: /static-assets/**,/1/plugin/file/**
 
+|
 
-.. TODO Add more configuration properties
 
 |hr|
 
@@ -206,9 +221,7 @@ Here's the cache control settings for templates and assets:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Project/Site Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. TODO Env vars
-
-The following section of Studio's configuration overrides allows you to setup your project configuration
+The following section of Studio's configuration overrides allows you to setup your project configuration.
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -243,6 +256,8 @@ The following section of Studio's configuration overrides allows you to setup yo
       /api/1/site/cache/clear,
       /api/1/site/cache/statistics
 
+|
+
 |hr|
 
 .. _studio-preview-deployer-config:
@@ -250,8 +265,6 @@ The following section of Studio's configuration overrides allows you to setup yo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Preview Deployer Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. TODO Remove this section? This is too slow to configure this way. Move to the bottom and explain why not
-
 The following section of Studio's configuration overrides allows you to setup your deployer URLs
 
 .. code-block:: yaml
@@ -271,6 +284,8 @@ The following section of Studio's configuration overrides allows you to setup yo
     # URL to the preview repository (aka Sandbox) where authors save work-in-progress
     studio.preview.repoUrl: ${env:CRAFTER_DATA_DIR}/repos/sites/{siteName}/sandbox
 
+|
+
 |hr|
 
 .. _studio-preview-search-config:
@@ -278,9 +293,6 @@ The following section of Studio's configuration overrides allows you to setup yo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Preview Search Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. TODO Indicate that you should use Env vars, otherwise, modify this.
-
-
 The following section of Studio's configuration overrides allows you to setup urls for search in preview
 
 .. code-block:: yaml
@@ -294,6 +306,8 @@ The following section of Studio's configuration overrides allows you to setup ur
     studio.preview.search.createUrl: ${env:SEARCH_URL}/api/2/admin/index/create
     studio.preview.search.deleteUrl: ${env:SEARCH_URL}/api/2/admin/index/delete/{siteName}
 
+|
+
 |hr|
 
 .. _studio-password-config:
@@ -301,8 +315,6 @@ The following section of Studio's configuration overrides allows you to setup ur
 ^^^^^^^^^^^^^^^^^^^^^^
 Password Configuration
 ^^^^^^^^^^^^^^^^^^^^^^
-.. TODO Indicate that env vars are to be used
-
 The following section of Studio's configuration overrides allows you to configure encryption and configure authentication method to be used (for more information, see: :ref:`configuring-studio-security`), configure password requirements validation (for more information see: :ref:`crafter-studio-configure-password-requirements`).
 
 .. code-block:: yaml
@@ -321,6 +333,8 @@ The following section of Studio's configuration overrides allows you to configur
     #  4 # very unguessable: strong protection from offline slow-hash scenario. (guesses >= 10^10)
     # The default value is 3
     # studio.security.passwordRequirements.minimumComplexity: 3
+
+|
 
 |hr|
 
@@ -354,6 +368,8 @@ Security
 
     # Defines name used for environment specific configuration. It is used for environment overrides in studio. Default value is default.
     studio.configuration.environment.active: ${env:CRAFTER_ENVIRONMENT}
+
+|
 
 |hr|
 
@@ -392,6 +408,8 @@ The CORS origins accepts regex patterns. Values are split using ``,``. Remember 
 patterns need to be escaped with a ``\`` like:
 ``studio.cors.origins: 'http://localhost:[8000\,3000],http://*.other.domain'``
 
+|
+
 |hr|
 
 .. _studio-search:
@@ -399,8 +417,6 @@ patterns need to be escaped with a ``\`` like:
 ^^^^^^
 Search
 ^^^^^^
-.. TODO Env vars
-
 The following section of Studio's configuration overrides allows you to setup the url for search
 
 .. code-block:: yaml
@@ -425,6 +441,8 @@ The following section of Studio's configuration overrides allows you to setup th
     # Indicates if keep alive should be enabled for sockets used by the search client, defaults to false
     studio.search.keepAlive: false
 
+|
+
 |hr|
 
 .. _studio-serverless-delivery-targets:
@@ -432,8 +450,6 @@ The following section of Studio's configuration overrides allows you to setup th
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Serverless Delivery Targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. TODO tells deployer to create serverless delivery sites
-
 The following section of Studio's configuration overrides allows you to setup serverless delivery
 
 .. code-block:: yaml
@@ -486,6 +502,8 @@ The following section of Studio's configuration overrides allows you to setup se
     #       # The alternate domains names (besides *.cloudfront.net) for the CloudFront CDN (optional when target template is aws-cloudformed-s3)
     #       alternateCloudFrontDomainNames:
 
+|
+
 |hr|
 
 .. _studio-forwarded-headers:
@@ -493,9 +511,7 @@ The following section of Studio's configuration overrides allows you to setup se
 ^^^^^^^^^^^^^^^^^
 Forwarded Headers
 ^^^^^^^^^^^^^^^^^
-.. TODO we set this to true in AWS since we're behind a load balancer
-
-The following section of Studio's configuration overrides allows you to configure forwarded headers to resolve the actual hostname and protocol when it is behind a load balancer or reverse proxy.
+The following section of Studio's configuration overrides allows you to configure forwarded headers to resolve the actual hostname and protocol when it is behind a load balancer or reverse proxy. This is especially useful when setting up Studio behind a load balancer in AWS.
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -508,6 +524,8 @@ The following section of Studio's configuration overrides allows you to configur
     # address. Enable when Studio is behind a reverse proxy or load balancer that sends these
     studio.forwarded.headers.enabled: false
 
+|
+
 |hr|
 
 .. _studio-access-tokens:
@@ -515,8 +533,6 @@ The following section of Studio's configuration overrides allows you to configur
 ^^^^^^^^^^^^^
 Access Tokens
 ^^^^^^^^^^^^^
-.. TODO env vars
-
 .. version_tag::
     :label: Since
     :version: 4.0.0
@@ -550,6 +566,8 @@ The following section of Studio's configuration overrides allows you to configur
     # Indicates if the refresh token cookie should be secure (should be true for production environments behind HTTPS)
     studio.security.token.cookie.secure: ${env:STUDIO_REFRESH_TOKEN_SECURE}
 
+|
+
 |hr|
 
 .. _studio-crafterSite-cookie-domain:
@@ -569,6 +587,8 @@ The following section of Studio's configuration overrides allows you to set the 
 
     # Use base domain instead of subdomain for the crafterSite cookie
     studio.cookie.useBaseDomain: false
+
+|
 
 |hr|
 
@@ -608,6 +628,8 @@ The following section of Studio's configuration overrides allows you to configur
     # studio.validation.regex.CONTENT_FILE_NAME_WRITE: "^((crafter\\-level\\-descriptor\\.level)|([a-z0-9_\\-])+)\\.xml$"
     # studio.validation.regex.CONFIGURATION_PATH: "^([a-z0-9\\-_/]+([.]*[a-z0-9\\-_])+)*(\\.[\w]+)?/?$"
 
+|
+
 |hr|
 
 .. _publishing-blacklist:
@@ -623,12 +645,12 @@ To configure the publishing blacklist, using your favorite editor open ``CRAFTER
 
 Add the following lines with the regex for the item you wish not to be published. By default, ``.keep`` files are not published by CrafterCMS. Just add a ``,`` then your regex after ``.*/\.keep``:
 
-   .. code-block:: yaml
-      :caption: *studio-config-override.yaml*
+.. code-block:: yaml
+    :caption: *studio-config-override.yaml*
 
-      # Publishing blacklist configuration, items matching regexes on this list will never be published
-      studio.configuration.publishing.blacklist.regex: >-
-        .*/\.keep
+    # Publishing blacklist configuration, items matching regexes on this list will never be published
+    studio.configuration.publishing.blacklist.regex: >-
+    .*/\.keep
 
    |
 
@@ -647,12 +669,12 @@ Create a site using the website editorial blueprint, then create the folder ``my
 
 Say, you do not want files under ``/static-assets/images/mytempimages`` to be published when a user performs a bulk publish or *Approve & Publish* of multiple items from the dashboard. We'll add to the ``studio.configuration.publishing.blacklist.regex`` the regex for items under ``/static-assets/images/mytempimages``
 
-   .. code-block:: yaml
-      :caption: *studio-config-override.yaml*
+.. code-block:: yaml
+    :caption: *studio-config-override.yaml*
 
-      # Publishing blacklist configuration, items matching regexes on this list will never be published
-      studio.configuration.publishing.blacklist.regex: >-
-        .*/\.keep,\/static-assets\/images\/mytempimages\/.*
+    # Publishing blacklist configuration, items matching regexes on this list will never be published
+    studio.configuration.publishing.blacklist.regex: >-
+    .*/\.keep,\/static-assets\/images\/mytempimages\/.*
 
    |
 
@@ -684,6 +706,8 @@ Let's take a look at the tomcat log, notice that it was logged that the file we 
    [DEBUG] 2021-04-22T12:48:28,990 [studio.clockTaskExecutor-36] [deployment.PublishingManagerImpl] | Environment is live, transition item to LIVE state mysite:/static-assets/images/mytempimages/26072150271_848c0008f0_o.jpg
    [DEBUG] 2021-04-22T12:48:28,992 [studio.clockTaskExecutor-36] [deployment.PublishingManagerImpl] | File /static-assets/images/mytempimages/26072150271_848c0008f0_o.jpg of the site mysite will not be published because it matches the configured publishing blacklist regex patterns.
    [INFO] 2021-04-22T12:48:29,014 [studio.clockTaskExecutor-36] [job.StudioPublisherTask] | Finished publishing environment live for site mysite
+
+|
 
 |hr|
 
@@ -801,6 +825,8 @@ Make sure to stop and **restart Studio after making your changes**.
 
 You can also change the Studio session timeouts from the |mainMenu| **Main Menu** in Studio under ``Global Config``
 
+|
+
 |hr|
 
 .. _studio-access-and-permissions:
@@ -809,7 +835,7 @@ You can also change the Studio session timeouts from the |mainMenu| **Main Menu*
 Access and Permissions
 ----------------------
 
-.. TODO Configure access to Crafter Studio
+To configure access to Crafter Studio beyond adding groups and users, you'll need to configure the following files:
 
 .. _global-permission-mappings-config:
 
@@ -876,6 +902,8 @@ CrafterCMS comes with a predefined global role ``system_admin`` out of the box.
 Users with the ``system_admin`` role have access to everything in the CMS such as all the modules in the Main Menu for managing users, groups, etc., all the sites and configuration files, creating/editing layouts, templates, taxonomies, content types, scripts, etc. in addition to creating and editing content, as well as the ability to approve and reject workflow.
 
 See :ref:`global-permission-mappings-config` for more information on all items accessible for the ``system_admin`` role.
+
+|
 
 |hr|
 
