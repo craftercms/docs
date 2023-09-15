@@ -13,17 +13,17 @@ Crafter Studio has been translated into a number of languages.  Here's a list of
 * ``en`` - English
 * ``sp`` - Spanish
 * ``de`` - German
-* ``kr`` - Korean
+* ``ko`` - Korean
 
 To reach more users, additional languages may need to be added in Crafter Studio.
 
 **Here are the steps to add a new language in Crafter Studio:**
 
 #. Add the new language to the ``get-available-languages`` API
-#. Update templates to add the new language imports into the runtime (i.e. via script[src] elements
 #. In Studio UI, add your new locale files to ui/app/src/translations. You may start by copying ``es.json`` and translating it into your target language.
 #. Open the file ``ui/app/src/utils/i18n.ts`` and add the locale code to ``createIntlInstance`` conditional statement, and add the switch statement case to ``fetchLocale``.
-#. Add the translation/s file for legacy forms and content type ``studio-ui/static-assets/components/cstudio-common/resources/**/base.js``
+#. Add the translation file/s for legacy forms and content type editor to ``studio-ui/static-assets/components/cstudio-common/resources/**/base.js``
+#. Update templates to add the new language imports into the runtime (i.e. via script[src] elements)
 #. Build, deploy and test your changes
 
 **where:**
@@ -52,7 +52,7 @@ Let's begin adding the language ``Japanese`` to Crafter Studio:
     	result[1].id = "es"
     	result[1].label = "español"
     	result[2] = [:]
-    	result[2].id = "kr"
+    	result[2].id = "ko"
     	result[2].label = "한국어"
     	result[3] = [:]
     	result[3].id = "de"
@@ -62,30 +62,8 @@ Let's begin adding the language ``Japanese`` to Crafter Studio:
         result[4].label = "日本語"
      return result
 
---------------------------------------------------------
-2. Add Your New Locale File/s to ui/app/src/translations
---------------------------------------------------------
-In your ``studio-ui`` code, add the new locale files to ``ui/app/src/translations``. You may start by copying ``es.json`` and translating it into your target language.
-
-.. code-block:: json
-    :force:
-    :caption: *ui/app/src/translations/ja.json*
-
-    {
-      "+E4CL4": "プロジェクト全体が公開されました",
-      "/A7dEh": "最後の投稿はエラーで完了しました、詳細についてはログを参照してください。",
-      ...
-      "about.versionNumber": "バージョン番号",
-      "aboutView.attribution": "CrafterCMS 他の人のおかげでそれは可能です <a>オープンソースソフトウェアプロジェクト</a>.",
-      "accountManagement.changeHelperText": "パスワードが正常に更新されると、再度ログインするように求められます.",
-      "accountManagement.changeLanguage": "言語の変更",
-      "accountManagement.changePassword": "パスワードを変更する",
-      ...
-    }
-
-
 ---------------------------------------------------------
-3. Add the New Language to the React Translations Manager
+2. Add the New Language to the React Translations Manager
 ---------------------------------------------------------
 Open the file ``ui/app/src/utils/i18n.ts`` and add the locale code to the ``createIntlInstance`` conditional statement, and add the switch statement case to ``fetchLocale``.
 
@@ -124,6 +102,26 @@ Open the file ``ui/app/src/utils/i18n.ts`` and add the locale code to the ``crea
         let fetchedTranslations = await fetchLocale(localeCode as BundledLocaleCodes);
         ...
 
+--------------------------------------------------------
+3. Add Your New Locale File/s to ui/app/src/translations
+--------------------------------------------------------
+In your ``studio-ui`` code, add the new locale files to ``ui/app/src/translations``. You may start by copying ``es.json`` and translating it into your target language.
+
+.. code-block:: json
+    :force:
+    :caption: *ui/app/src/translations/ja.json*
+
+    {
+      "+E4CL4": "プロジェクト全体が公開されました",
+      "/A7dEh": "最後の投稿はエラーで完了しました、詳細についてはログを参照してください。",
+      ...
+      "about.versionNumber": "バージョン番号",
+      "aboutView.attribution": "CrafterCMS 他の人のおかげでそれは可能です <a>オープンソースソフトウェアプロジェクト</a>.",
+      "accountManagement.changeHelperText": "パスワードが正常に更新されると、再度ログインするように求められます.",
+      "accountManagement.changeLanguage": "言語の変更",
+      "accountManagement.changePassword": "パスワードを変更する",
+      ...
+    }
 
 --------------------------------------------------------------------
 4. Update Templates to Add the New Language Imports Into the Runtime
@@ -186,6 +184,7 @@ Remember to change the language code in the all the ``registerBundle`` calls in 
 
      CStudioAuthoring.Messages.registerBundle("dialogs", "ja", {
 
+
 --------------------------------------
 6. Build, deploy and test your changes
 --------------------------------------
@@ -194,14 +193,8 @@ Don't forget to build and deploy.  Before building, remember to run prettier on 
 .. code-block:: bash
     :caption: *src/studio-ui*
 
-    prettier --write ui/app/src/utils/i18n.ts
-
-Or, if you have ``prettier`` installed via npm, run the following:
-
-.. code-block:: bash
-    :caption: *Run prettier using npm*
-
-    npx prettier ui/app/src/utils/i18n.ts --write
+    cd ui/app
+    yarn prettier --config ../../prettier.config.js --write ./src/utils/i18n.ts
 
 After running prettier, build and deploy your changes, then start it:
 
