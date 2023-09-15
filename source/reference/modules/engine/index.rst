@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.1.1
+:last-updated: 4.1.2
 :orphan:
 
 .. index:: Modules; Crafter Engine
@@ -32,6 +32,11 @@ Engine provides content delivery services to power any type of Web or mobile app
 Configuration
 -------------
 Learn about configuring Crafter Engine in the :ref:`Crafter Engine Configuration Guide <engine-config>`.
+
+.. toctree::
+   :hidden:
+
+   configuration
 
 --------
 REST API
