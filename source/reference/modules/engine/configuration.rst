@@ -25,6 +25,251 @@ In this section we will highlight some of the more commonly used properties in t
         - Purpose
 
       * - ``crafter.engine.host``
+        -
+      * - ``crafter.engine.site.default.rootFolder.path``
+        - Allows you to set the content root folder
+      * - ``crafter.engine.search.timeout.connect``
+          ``crafter.engine.search.timeout.socket``
+          ``crafter.engine.search.threads``
+        - Allows you to configure the search client connection timeout, socket timeout and number of threads
+
+|
+
+.. _engine-forwarded-headers:
+
+^^^^^^^^^^^^^^^^^
+Forwarded Headers
+^^^^^^^^^^^^^^^^^
+The following section allows you to configure forwarded headers to resolve the actual hostname and protocol when it is behind a load balancer or reverse proxy. Forwarded headers are disabled by default.
+
+.. code-block:: properties
+   :linenos:
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
+   # address. Enable when Engine is behind a reverse proxy or load balancer that sends these
+   crafter.engine.forwarded.headers.enabled=false
+
+|
+
+|hr|
+
+^^^^^^^^^^^^^^^^^^^^^^
+Content-Length Headers
+^^^^^^^^^^^^^^^^^^^^^^
+The following allows you to configure the content-length header sent for responses.
+The content-length header is sent for all responses by default.
+
+.. code-block:: properties
+   :linenos:
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # Indicates if the 'etag' header should be added
+   crafter.engine.header.etag.enable=false
+   # Indicates the urls that will have the 'etag' header (comma separated ant matchers)
+   crafter.engine.header.etag.include.urls=/**
+
+|
+
+|hr|
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Spring Expression Language
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following allows you to configure SpEL expressions for custom app contexts.
+SpEL expressions support is disabled by default.
+
+.. code-block:: properties
+   :linenos:
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # Indicates if the custom site application contexts should support SpEL expressions
+   crafter.engine.context.expressions.enable=false
+   # Indicates if the whole servlet & spring context should be available for templates & scripts
+   crafter.engine.disableVariableRestrictions=false
+   # Patterns for beans that should always be accessible from the site application context
+   crafter.engine.defaultPublicBeans=crafter\\.(targetIdManager|targetedUrlStrategy)
+
+|
+
+|hr|
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Groovy Sandbox Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following allows you to configure the Groovy sandbox.
+The Groovy sandbox is enabled by default.
+
+.. code-block:: properties
+   :linenos:
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # Indicates if the sandbox should be enabled for all sites
+   crafter.engine.groovy.sandbox.enable=true
+   # Indicates if the blacklist should be enabled for all sites (this will have no effect if the sandbox is disabled)
+   crafter.engine.groovy.sandbox.blacklist.enable=true
+   # The location of the default blacklist to use for all sites (this will have no effect if the sandbox is disabled)
+   crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/groovy/blacklist
+
+For more information on configuring the Groovy sandbox, see :ref:`here <script-sandbox-configuration>`
+
+|
+
+|hr|
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Static Methods in Freemarker Templates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following allows you to configure access to static methods in Freemarker templates.
+Access to static methods in Freemarker templates is disabled by default.
+
+.. code-block:: properties
+   :linenos:
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # Indicates if access for static methods should be allowed in Freemarker templates
+   crafter.engine.freemarker.statics.enable=false
+
+|
+
+|hr|
+
+^^^^^
+Cache
+^^^^^
+"""""""""
+Max Items
+"""""""""
+The following allows you to configure the maximum number of objects in Engine's cache:
+
+.. code-block:: properties
+
+   # The max number of items that each site cache can have
+   crafter.engine.site.default.cache.maxAllowedItems=250000
+
+"""""""""""""""""""
+URL Transformations
+"""""""""""""""""""
+The following allows you to configure whether the URL transformation performed by the view resolver will be cached:
+
+.. code-block:: properties
+
+   # Flag that indicates if the URL transformations performed by the view resolver should be cached
+   crafter.engine.page.view.resolver.url.transformation.cache=false
+
+"""""""""""""""""
+Preloaded Folders
+"""""""""""""""""
+The following allows you to configure folders to be preloaded in the cache:
+
+.. code-block:: properties
+    :emphasize-lines: 7,10,13
+
+    #################
+    # Cache Warm Up #
+    #################
+    # Indicates if cache warming should be enabled. This means the site cache will be warmed up (according to a list of
+    # cache warmers) on context init and instead of cache clear, a new cache will be warmed up and switched with the
+    # current one
+    crafter.engine.site.cache.warmUp.enabled=false
+    # The descriptor folders that need to be preloaded in cache, separated by comma. Specify the preload depth with
+    # :{depth} after the path. If no depth is specified, the folders will be fully preloaded.
+    crafter.engine.site.cache.warmUp.descriptor.folders=/site:4
+    # The content folders that need to be preloaded in cache, separated by comma. Specify the preload depth with
+    # :{depth} after the path. If no depth is specified, the folders will be fully preloaded.
+    crafter.engine.site.cache.warmUp.content.folders=/scripts,/templates
+
+where:
+
+  - The descriptor folders are paths that contain XML that needs to be parsed, loaded and merged e.g. for inheritance.
+    Most of the time this would be folders under ``/site``
+
+  - The content folders are mostly static, non-processed content, e.g. scripts, templates, static-assets
+
+For all projects, the cache is preloaded using the above configuration. CrafterCMS warms up the cache on every publish and startup. Note also that what's cache warmed will be warmed on every publish and startup and will live as long as nothing kicks it out of the cache due to least recently used (LRU) cache.
+
+.. _s3-object-caching:
+
+"""""""""
+S3 Object
+"""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.1.0
+
+The following allows you to configure a white list of paths for caching in memory when using S3 store and also the maximum content length for S3 objects allowed to be cached in memory
+
+.. code-block:: properties
+
+    # Maximum content length (in bytes) for S3 objects to be cached in memory. Larger files will be retrieved
+    # directly from S3 every time they are requested.
+    # Default set to 10M = 10 * 1024 * 1024
+    crafter.engine.store.s3.cache.contentMaxLength=10485760
+    # White list of paths to be cached in memory when using S3 store.
+    crafter.engine.store.s3.cache.allowedPaths=\
+      /config/.*,\
+      /site/.*,\
+      /scripts/.*,\
+      /templates/.*,\
+      /static-assets/css/.*,\
+      /static-assets/js/.*,\
+      /static-assets/fonts/.*
+
+|
+
+|hr|
+
+.. _request-filtering-configuration:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Request Filtering Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.1.0
+
+The following allows you to setup a filter to deny access to any request matching the value/s defined in the property.
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+    crafter.security.forbidden.urls=/templates/**
+
+|
+
+|hr|
+
+.. _engine-turn-off-show-error:
+
+^^^^^^^^^^^^^^^^^^^
+Turn Off Show Error
+^^^^^^^^^^^^^^^^^^^
+Templates in CrafterCMS will display the errors in line with content as they encounter them to help the template developer during the coding process. On production environments, you do not want the errors to show up because it will highlight site issues and expose information that may be a security concern.
+
+""""""
+Step 1
+""""""
+Place the following property and value in the ``server-config.properties`` file
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+	crafter.engine.template.error.displayInView=false
+
+""""""
+Step 2
+""""""
+Restart the Crafter Engine application or the Tomcat service.
+
+""""""
+Step 3
+""""""
+Test by deploying an FTL file with an error in it.
+Note that the error will not show up but is printed out in the server's log file.
+
+|
+
+|hr|
 
 .. _engine-site-configuration-files:
 
@@ -78,7 +323,7 @@ The main files for configuring Crafter Engine are the following:
       - More Information
     * - ``server-config.properties``
       - Contains server configurable parameters such as urls, paths, etc.
-      - - :ref:`engine-config-override`
+      - - :ref:`engine-config`
         - :ref:`configure-multi-tenancy-in-engine`
         - :ref:`engine-saml2-configuration`
         - :ref:`engine-turn-off-show-error`

@@ -112,6 +112,8 @@ This section allows the user to setup a mail client by configuring the SMTP serv
    # Enable/disable (value true/false) debug mode for email service. Enabling debug mode allows tracking/debugging communication between email service and SMTP server.
    # studio.mail.debug: false
 
+|hr|
+
 .. _studio-commit-message:
 
 ^^^^^^^^^^^^^^
@@ -152,6 +154,8 @@ using one of the override files.
    # Copy content commit message
    studio.repo.copyContent.commitMessage: "Copying {fromPath} to {toPath}"
 
+|hr|
+
 .. _editable-mime-types:
 
 ^^^^^^^^^^^^^^^^^^^
@@ -171,6 +175,8 @@ Here's the default list of MIME-types editable in Studio:
     - application/json
     - application/xml
     - application/xhtml+xml
+
+|hr|
 
 .. _cache-settings:
 
@@ -192,6 +198,8 @@ Here's the cache control settings for templates and assets:
 
 
 .. TODO Add more configuration properties
+
+|hr|
 
 .. _studio-project-config:
 
@@ -235,6 +243,8 @@ The following section of Studio's configuration overrides allows you to setup yo
       /api/1/site/cache/clear,
       /api/1/site/cache/statistics
 
+|hr|
+
 .. _studio-preview-deployer-config:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -261,6 +271,8 @@ The following section of Studio's configuration overrides allows you to setup yo
     # URL to the preview repository (aka Sandbox) where authors save work-in-progress
     studio.preview.repoUrl: ${env:CRAFTER_DATA_DIR}/repos/sites/{siteName}/sandbox
 
+|hr|
+
 .. _studio-preview-search-config:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -281,6 +293,8 @@ The following section of Studio's configuration overrides allows you to setup ur
 
     studio.preview.search.createUrl: ${env:SEARCH_URL}/api/2/admin/index/create
     studio.preview.search.deleteUrl: ${env:SEARCH_URL}/api/2/admin/index/delete/{siteName}
+
+|hr|
 
 .. _studio-password-config:
 
@@ -308,6 +322,7 @@ The following section of Studio's configuration overrides allows you to configur
     # The default value is 3
     # studio.security.passwordRequirements.minimumComplexity: 3
 
+|hr|
 
 ^^^^^^^^
 Security
@@ -339,6 +354,8 @@ Security
 
     # Defines name used for environment specific configuration. It is used for environment overrides in studio. Default value is default.
     studio.configuration.environment.active: ${env:CRAFTER_ENVIRONMENT}
+
+|hr|
 
 .. _studio-cors:
 
@@ -375,6 +392,8 @@ The CORS origins accepts regex patterns. Values are split using ``,``. Remember 
 patterns need to be escaped with a ``\`` like:
 ``studio.cors.origins: 'http://localhost:[8000\,3000],http://*.other.domain'``
 
+|hr|
+
 .. _studio-search:
 
 ^^^^^^
@@ -405,6 +424,8 @@ The following section of Studio's configuration overrides allows you to setup th
     studio.search.threads: -1
     # Indicates if keep alive should be enabled for sockets used by the search client, defaults to false
     studio.search.keepAlive: false
+
+|hr|
 
 .. _studio-serverless-delivery-targets:
 
@@ -465,6 +486,8 @@ The following section of Studio's configuration overrides allows you to setup se
     #       # The alternate domains names (besides *.cloudfront.net) for the CloudFront CDN (optional when target template is aws-cloudformed-s3)
     #       alternateCloudFrontDomainNames:
 
+|hr|
+
 .. _studio-forwarded-headers:
 
 ^^^^^^^^^^^^^^^^^
@@ -484,6 +507,8 @@ The following section of Studio's configuration overrides allows you to configur
     # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
     # address. Enable when Studio is behind a reverse proxy or load balancer that sends these
     studio.forwarded.headers.enabled: false
+
+|hr|
 
 .. _studio-access-tokens:
 
@@ -525,6 +550,8 @@ The following section of Studio's configuration overrides allows you to configur
     # Indicates if the refresh token cookie should be secure (should be true for production environments behind HTTPS)
     studio.security.token.cookie.secure: ${env:STUDIO_REFRESH_TOKEN_SECURE}
 
+|hr|
+
 .. _studio-crafterSite-cookie-domain:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -542,6 +569,8 @@ The following section of Studio's configuration overrides allows you to set the 
 
     # Use base domain instead of subdomain for the crafterSite cookie
     studio.cookie.useBaseDomain: false
+
+|hr|
 
 .. _studio-validations-regex:
 
@@ -579,6 +608,7 @@ The following section of Studio's configuration overrides allows you to configur
     # studio.validation.regex.CONTENT_FILE_NAME_WRITE: "^((crafter\\-level\\-descriptor\\.level)|([a-z0-9_\\-])+)\\.xml$"
     # studio.validation.regex.CONFIGURATION_PATH: "^([a-z0-9\\-_/]+([.]*[a-z0-9\\-_])+)*(\\.[\w]+)?/?$"
 
+|hr|
 
 .. _publishing-blacklist:
 
@@ -654,6 +684,8 @@ Let's take a look at the tomcat log, notice that it was logged that the file we 
    [DEBUG] 2021-04-22T12:48:28,990 [studio.clockTaskExecutor-36] [deployment.PublishingManagerImpl] | Environment is live, transition item to LIVE state mysite:/static-assets/images/mytempimages/26072150271_848c0008f0_o.jpg
    [DEBUG] 2021-04-22T12:48:28,992 [studio.clockTaskExecutor-36] [deployment.PublishingManagerImpl] | File /static-assets/images/mytempimages/26072150271_848c0008f0_o.jpg of the site mysite will not be published because it matches the configured publishing blacklist regex patterns.
    [INFO] 2021-04-22T12:48:29,014 [studio.clockTaskExecutor-36] [job.StudioPublisherTask] | Finished publishing environment live for site mysite
+
+|hr|
 
 .. _studio-timeout:
 
@@ -769,6 +801,8 @@ Make sure to stop and **restart Studio after making your changes**.
 
 You can also change the Studio session timeouts from the |mainMenu| **Main Menu** in Studio under ``Global Config``
 
+|hr|
+
 .. _studio-access-and-permissions:
 
 ----------------------
@@ -842,6 +876,8 @@ CrafterCMS comes with a predefined global role ``system_admin`` out of the box.
 Users with the ``system_admin`` role have access to everything in the CMS such as all the modules in the Main Menu for managing users, groups, etc., all the sites and configuration files, creating/editing layouts, templates, taxonomies, content types, scripts, etc. in addition to creating and editing content, as well as the ability to approve and reject workflow.
 
 See :ref:`global-permission-mappings-config` for more information on all items accessible for the ``system_admin`` role.
+
+|hr|
 
 .. _global-menu-config:
 

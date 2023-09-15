@@ -29,10 +29,20 @@ Configuration
 -------------
 Learn about configuring Crafter Studio in the :ref:`Crafter Studio Configuration Guide <studio-config>`.
 
+.. toctree::
+   :hidden:
+
+   configuration
+
 --------------
 Administration
 --------------
 Learn about administering Crafter Studio in the :ref:`Crafter Studio Administration Guide <studio-admin>`.
+
+.. toctree::
+   :hidden:
+
+   administration
 
 --------
 REST API
