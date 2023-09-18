@@ -49,8 +49,6 @@ In this section we will highlight some of the more commonly used properties in t
 
     * - :ref:`SMTP Configuration (Email) <studio-smtp-config>`
       - Configure the SMTP server to be used by Crafter Studio when sending emails
-    * - :ref:`Access Tokens <studio-access-tokens>`
-      - Configure access tokens
     * - :ref:`CORS <studio-cors>`
       - Configure CORS
     * - :ref:`Editable Mime Types <editable-mime-types>`
@@ -73,8 +71,6 @@ In this section we will highlight some of the more commonly used properties in t
       - Configure serverless delivery
     * - :ref:`Validations Regex <studio-validations-regex>`
       - Configure the regex used for validating various inputs
-    * - :ref:`Password Configuration <studio-password-config>`
-      - Configure password complexity to be used
     * - :ref:`Commit Message <studio-commit-message>`
       - Configure the commit messages used by Crafter Studio
     * - :ref:`Publishing Blacklist <publishing-blacklist>`
@@ -310,69 +306,6 @@ The following section of Studio's configuration overrides allows you to setup ur
 
 |hr|
 
-.. _studio-password-config:
-
-^^^^^^^^^^^^^^^^^^^^^^
-Password Configuration
-^^^^^^^^^^^^^^^^^^^^^^
-The following section of Studio's configuration overrides allows you to configure encryption and configure authentication method to be used (for more information, see: :ref:`configuring-studio-security`), configure password requirements validation (for more information see: :ref:`crafter-studio-configure-password-requirements`).
-
-.. code-block:: yaml
-    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
-    :linenos:
-
-    # Password requirements minimum complexity
-    # This is based on https://github.com/dropbox/zxcvbn
-    # The minimum complexity corresponds to the password score
-    # You can try this out here https://lowe.github.io/tryzxcvbn/
-    #  score      # Integer from 0-4 (useful for implementing a strength bar)
-    #  0 # too guessable: risky password. (guesses < 10^3)
-    #  1 # very guessable: protection from throttled online attacks. (guesses < 10^6)
-    #  2 # somewhat guessable: protection from unthrottled online attacks. (guesses < 10^8)
-    #  3 # safely unguessable: moderate protection from offline slow-hash scenario. (guesses < 10^10)
-    #  4 # very unguessable: strong protection from offline slow-hash scenario. (guesses >= 10^10)
-    # The default value is 3
-    # studio.security.passwordRequirements.minimumComplexity: 3
-
-|
-
-|hr|
-
-^^^^^^^^
-Security
-^^^^^^^^
-.. code-block:: yaml
-    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
-    :linenos:
-
-    ##################################################
-    ##                   Security                   ##
-    ##################################################
-    # Time in minutes after which active users will be required to login again
-    # studio.security.sessionTimeout: 480
-    # Time in minutes after which inactive users will be required to login again
-    # studio.security.inactivityTimeout: 30
-    #
-    # Salt for encrypting
-    studio.security.cipher.salt: ${env:CRAFTER_SYSTEM_ENCRYPTION_SALT}
-    # Key for encrypting
-    studio.security.cipher.key: ${env:CRAFTER_SYSTEM_ENCRYPTION_KEY}
-
-    # The key used for encryption of configuration properties
-    studio.security.encryption.key: ${env:CRAFTER_ENCRYPTION_KEY}
-    # The salt used for encryption of configuration properties
-    studio.security.encryption.salt: ${env:CRAFTER_ENCRYPTION_SALT}
-
-    # The path of the folder used for the SSH configuration
-    studio.security.ssh.config: ${env:CRAFTER_SSH_CONFIG}
-
-    # Defines name used for environment specific configuration. It is used for environment overrides in studio. Default value is default.
-    studio.configuration.environment.active: ${env:CRAFTER_ENVIRONMENT}
-
-|
-
-|hr|
-
 .. _studio-cors:
 
 ^^^^
@@ -523,48 +456,6 @@ The following section of Studio's configuration overrides allows you to configur
     # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
     # address. Enable when Studio is behind a reverse proxy or load balancer that sends these
     studio.forwarded.headers.enabled: false
-
-|
-
-|hr|
-
-.. _studio-access-tokens:
-
-^^^^^^^^^^^^^
-Access Tokens
-^^^^^^^^^^^^^
-.. version_tag::
-    :label: Since
-    :version: 4.0.0
-
-The following section of Studio's configuration overrides allows you to configure settings for the Studio access tokens. Access tokens can then be used to invoke `Crafter Studio's REST APIs <../../../../../_static/api/studio.html>`_, or used in :ref:`Crafter CLI <cli-access-to-crafter-studio>` to perform operations on Studio.
-
-.. code-block:: yaml
-    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
-    :linenos:
-
-    ##################################################
-    ##               Access Tokens                  ##
-    ##################################################
-
-    # Issuer for the generated access tokens
-    studio.security.token.issuer: ${env:STUDIO_TOKEN_ISSUER}
-    # List of accepted issuers for validation of access tokens (separated by commas)
-    studio.security.token.validIssuers: ${env:STUDIO_TOKEN_VALID_ISSUERS}
-    # The audience for generation and validation of access tokens (if empty the instance id will be used)
-    studio.security.token.audience: ${env:STUDIO_TOKEN_AUDIENCE}
-    # Time in minutes for the expiration of the access tokens
-    studio.security.token.timeout: ${env:STUDIO_TOKEN_TIMEOUT}
-    # Password for signing the access tokens (needs to be equal or greater than 512 bits in length)
-    studio.security.token.password.sign: ${env:STUDIO_TOKEN_SIGN_PASSWORD}
-    # Password for encrypting the access tokens
-    studio.security.token.password.encrypt: ${env:STUDIO_TOKEN_ENCRYPT_PASSWORD}
-    # Name of the cookie to store the refresh token
-    studio.security.token.cookie.name: ${env:STUDIO_REFRESH_TOKEN_NAME}
-    # Time in seconds for the expiration of the refresh token cookie
-    studio.security.token.cookie.maxAge: ${env:STUDIO_REFRESH_TOKEN_MAX_AGE}
-    # Indicates if the refresh token cookie should be secure (should be true for production environments behind HTTPS)
-    studio.security.token.cookie.secure: ${env:STUDIO_REFRESH_TOKEN_SECURE}
 
 |
 

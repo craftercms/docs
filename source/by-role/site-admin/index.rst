@@ -189,7 +189,7 @@ Additional Authentication Mechanisms
 """"""""""""""""""""""""""""""""""""
 There are other ways for configuring security for your authoring install such as authenticating via headers, SAML, etc.
 
-See :ref:`configuring-studio-security` for more information.
+See :ref:`studio-security` for more information.
 
 |hr|
 
@@ -537,7 +537,7 @@ For more information on the UrlRewriteFilter, see http://tuckey.org/urlrewrite/
 Security
 ^^^^^^^^
 There are various ways for securing access to restricted content in your CrafterCMS project in a delivery environment.
-See :ref:`here <configuring-engine-security>` for more information.
+See :ref:`here <engine-security>` for more information.
 
 |hr|
 

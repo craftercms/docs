@@ -39,6 +39,11 @@ Learn about configuring Crafter Engine in the :ref:`Crafter Engine Configuration
    configuration
 
 --------
+Security
+--------
+Learn about Crafter Engine's security features in the :ref:`Crafter Engine Security Guide <engine-security>`.
+
+--------
 REST API
 --------
 To view the Crafter Engine REST APIs:

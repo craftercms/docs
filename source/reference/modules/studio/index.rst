@@ -34,6 +34,11 @@ Learn about configuring Crafter Studio in the :ref:`Crafter Studio Configuration
 
    configuration
 
+--------
+Security
+--------
+Learn about securing Crafter Studio in the :ref:`Crafter Studio Security Guide <studio-security>`.
+
 --------------
 Administration
 --------------
