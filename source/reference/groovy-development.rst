@@ -32,7 +32,7 @@ scripts, page/component scripts and filter scripts):
 
 .. include:: /includes/request-groovy-variables.rst
 
-All scripts are executed in a sandbox to prevent insecure code from running, to change the configuration see 
+All scripts are executed in a sandbox to prevent insecure code from running, to change the configuration see
 :ref:`script-sandbox-configuration`
 
 To create unit tests for your groovy code, see :ref:`unit-testing-groovy-code`
@@ -471,20 +471,20 @@ To use Gradle the only requirement is to add a ``build.gradle`` in the root fold
    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/build.gradle*
    :linenos:
 
-   # Enable Gradle’s Groovy plugin
+   // Enable Gradle’s Groovy plugin
    plugins {
      id 'groovy'
    }
 
    sourceSets {
-     # Add the site Groovy classes that will be tested
+     // Add the site Groovy classes that will be tested
      main {
        groovy {
          srcDir 'scripts/classes'
        }
      }
 
-     # Add the Groovy classes & resources to perform the tests
+     // Add the Groovy classes & resources to perform the tests
      test {
        groovy {
          srcDir 'scripts/test/classes'
@@ -495,7 +495,7 @@ To use Gradle the only requirement is to add a ``build.gradle`` in the root fold
      }
    }
 
-   # Enable the testing framework of choice
+   // Enable the testing framework of choice
    test {
      useJUnit()
    }
@@ -504,16 +504,16 @@ To use Gradle the only requirement is to add a ``build.gradle`` in the root fold
      mavenCentral()
    }
 
-   # Include the required dependencies
+   // Include the required dependencies
    dependencies {
-     # This dependency is required for two reasons:
-     # 1. Make Engine’s classes available for compilation & testing
-     # 2. Include the Groovy dependencies required by Gradle
-     implementation 'org.craftercms:crafter-engine:3.1.13:classes'
+     // This dependency is required for two reasons:
+     // 1. Make Engine’s classes available for compilation & testing
+     // 2. Include the Groovy dependencies required by Gradle
+     implementation 'org.craftercms:crafter-engine:4.1.1:classes'
 
-     # Include the chosen testing dependencies
+     // Include the chosen testing dependencies
      testImplementation 'junit:junit:4.13.2'
-     testImplementation 'org.mockito:mockito-core:3.9.0'
+     testImplementation 'org.mockito:mockito-core:4.11.0'
    }
 
 |
@@ -600,7 +600,7 @@ Setup Your Unit Test to Run With Gradle
 """""""""""""""""""""""""""""""""""""""
 We'll now setup our unit test to run with Gradle, by adding a ``build.gradle`` file in the root folder of the site repository and execute the ``test`` task.
 
-.. literalinclude:: /_static/code/developer/groovy-unit-test/MyServiceImplTest.groovy
+.. literalinclude:: /_static/code/developer/groovy-unit-test/build.gradle
    :language: groovy
    :force:
    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/build.gradle*

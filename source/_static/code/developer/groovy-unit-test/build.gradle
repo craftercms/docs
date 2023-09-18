@@ -29,9 +29,9 @@ repositories {
 }
 
 dependencies {
-    implementation ('org.craftercms:crafter-engine:3.1.13:classes')
-    compile 'javax.servlet:servlet-api:2.5'
+    implementation ('org.craftercms:crafter-engine:4.1.1:classes')
+    compile 'javax.servlet:servlet-api:4.0.1'
 
     testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.mockito:mockito-core:3.9.0'
+    testImplementation 'org.mockito:mockito-core:4.11.0'
 }
