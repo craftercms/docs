@@ -45,7 +45,7 @@ In this section we will highlight some of the more commonly used properties in t
     :header-rows: 1
 
     * - Property
-    - Purpose
+      - Purpose
 
     * - :ref:`SMTP Configuration (Email) <studio-smtp-config>`
       - Configure the SMTP server to be used by Crafter Studio when sending emails
@@ -543,7 +543,7 @@ Add the following lines with the regex for the item you wish not to be published
     studio.configuration.publishing.blacklist.regex: >-
     .*/\.keep
 
-   |
+|
 
 Items in the publishing blacklist will not be published but will instead be marked as published and logged (debug level) in the tomcat log, why the item was not published.
 
@@ -567,7 +567,7 @@ Say, you do not want files under ``/static-assets/images/mytempimages`` to be pu
     studio.configuration.publishing.blacklist.regex: >-
     .*/\.keep,\/static-assets\/images\/mytempimages\/.*
 
-   |
+|
 
 Save your changes and restart Studio.
 

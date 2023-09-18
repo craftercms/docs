@@ -154,8 +154,8 @@ In the configuration above, when a user tries to authenticate, the user's creden
 Studio SAML2 Configuration |enterpriseOnly|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. version_tag::
-:label: Since
-:version: 4.0.3
+    :label: Since
+    :version: 4.0.3
 
 Crafter Studio can be configured to support SAML2 SSO out of the box without using any additional plugin.
 
