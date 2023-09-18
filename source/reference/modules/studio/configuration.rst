@@ -75,6 +75,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Configure the commit messages used by Crafter Studio
     * - :ref:`Publishing Blacklist <publishing-blacklist>`
       - Configure the publishing blacklist
+    * - :ref:`Studio Timeouts <studio-timeout>`
+      - Configure Studio timeouts
 
 .. TODO Add more configuration properties
 
@@ -119,45 +121,40 @@ This section allows the user to setup a mail client by configuring the SMTP serv
 
 |hr|
 
-.. _studio-commit-message:
+.. _studio-cors:
 
-^^^^^^^^^^^^^^
-Commit Message
-^^^^^^^^^^^^^^
-Here are the default commit messages when someone makes content changes and can be customized by overriding them
-using one of the override files.
+^^^^
+CORS
+^^^^
+The following section of Studio's configuration overrides allows you to setup CORS
 
 .. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
     :linenos:
+    :emphasize-lines: 10
 
-    # Repository commit prologue message
-    studio.repo.commitMessagePrologue:
-    # Repository commit postscript message
-    studio.repo.commitMessagePostscript:
-    # Sandbox repository write commit message
-    studio.repo.sandbox.write.commitMessage: "User {username} wrote content {path}"
-    # Published repository commit message
-    studio.repo.published.commitMessage: "Publish event triggered by {username} on {datetime} via {source}.\n\nPublish note from user: \"{message}\"\n\nCommit ID: {commit_id}\n\nPackage ID: {package_id}"
-    # Commit message to mark commit not to process when syncing database
-    studio.repo.syncDB.commitMessage.noProcessing: "STUDIO: NO PROCESSING"
-    # Create new repository commit message
-    studio.repo.createRepository.commitMessage: "Create new repository."
-    # Create sandbox branch commit message
-    studio.repo.createSandboxBranch.commitMessage: "Create {sandbox} branch."
-    # Initial commit message
-    studio.repo.initialCommit.commitMessage: "Initial commit."
-    # Create as orphan commit message
-    studio.repo.createAsOrphan.commitMessage: "Created as orphan."
-    # Blueprints updated commit message
-    studio.repo.blueprintsUpdated.commitMessage: "Blueprints updated."
-    # Create folder commit message
-    studio.repo.createFolder.commitMessage: "Created folder site: {site} path: {path}"
-    # Delete content commit message
-    studio.repo.deleteContent.commitMessage: "Delete file {path}"
-    # Move content commit message
-    studio.repo.moveContent.commitMessage: "Moving {fromPath} to {toPath}"
-    # Copy content commit message
-    studio.repo.copyContent.commitMessage: "Copying {fromPath} to {toPath}"
+    ################################################################
+    ##                             CORS                           ##
+    ################################################################
+    # This is configured as permissive by default for ease of deployment
+    # Remember to tighten this up for production
+
+    # Disable CORS headers completely
+    # studio.cors.disable: false
+    # Value for the Access-Control-Allow-Origin header
+    # studio.cors.origins: '*'
+    # Value for the Access-Control-Allow-Headers header
+    # studio.cors.headers: '*'
+    # Value for the Access-Control-Allow-Methods header
+    # studio.cors.methods: '*'
+    # Value for the Access-Control-Allow-Credentials header
+    # studio.cors.credentials: true
+    # Value for the Access-Control-Max-Age header
+    # studio.cors.maxage: -1
+
+The CORS origins accepts regex patterns. Values are split using ``,``. Remember that commas inside
+patterns need to be escaped with a ``\`` like:
+``studio.cors.origins: 'http://localhost:[8000\,3000],http://*.other.domain'``
 
 |
 
@@ -186,29 +183,6 @@ Here's the default list of MIME-types editable in Studio:
 These can be updated as needed by overriding the property in one of the override files.
 
 |
-
-|hr|
-
-.. _cache-settings:
-
-^^^^^^^^^^^^^^
-Cache Settings
-^^^^^^^^^^^^^^
-Here's the cache control settings for templates and assets:
-
-.. code-block:: yaml
-
-    # If Studio should cache its FreeMarker templates
-    studio.cache.templates: true
-    # Indicates if the browser should cache responses for static-assets
-    studio.cache.assets.enabled: true
-    # The max age in seconds that the browser should cache responses for requests matching `studio.cache.assets.maxAge.includeUrls`
-    studio.cache.assets.maxAge: 3600
-    # The urls that should include max-age=<studio.cache.assets.maxAge> in Cache-Control header. Other urls will be set to default max-age=0, must-revalidate
-    studio.cache.assets.maxAge.includeUrls: /static-assets/**,/1/plugin/file/**
-
-|
-
 
 |hr|
 
@@ -306,45 +280,6 @@ The following section of Studio's configuration overrides allows you to setup ur
 
 |hr|
 
-.. _studio-cors:
-
-^^^^
-CORS
-^^^^
-The following section of Studio's configuration overrides allows you to setup CORS
-
-.. code-block:: yaml
-    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
-    :linenos:
-    :emphasize-lines: 10
-
-    ################################################################
-    ##                             CORS                           ##
-    ################################################################
-    # This is configured as permissive by default for ease of deployment
-    # Remember to tighten this up for production
-
-    # Disable CORS headers completely
-    # studio.cors.disable: false
-    # Value for the Access-Control-Allow-Origin header
-    # studio.cors.origins: '*'
-    # Value for the Access-Control-Allow-Headers header
-    # studio.cors.headers: '*'
-    # Value for the Access-Control-Allow-Methods header
-    # studio.cors.methods: '*'
-    # Value for the Access-Control-Allow-Credentials header
-    # studio.cors.credentials: true
-    # Value for the Access-Control-Max-Age header
-    # studio.cors.maxage: -1
-
-The CORS origins accepts regex patterns. Values are split using ``,``. Remember that commas inside
-patterns need to be escaped with a ``\`` like:
-``studio.cors.origins: 'http://localhost:[8000\,3000],http://*.other.domain'``
-
-|
-
-|hr|
-
 .. _studio-search:
 
 ^^^^^^
@@ -373,6 +308,72 @@ The following section of Studio's configuration overrides allows you to setup th
     studio.search.threads: -1
     # Indicates if keep alive should be enabled for sockets used by the search client, defaults to false
     studio.search.keepAlive: false
+
+|
+
+|hr|
+
+.. _cache-settings:
+
+^^^^^^^^^^^^^^
+Cache Settings
+^^^^^^^^^^^^^^
+Here's the cache control settings for templates and assets:
+
+.. code-block:: yaml
+
+    # If Studio should cache its FreeMarker templates
+    studio.cache.templates: true
+    # Indicates if the browser should cache responses for static-assets
+    studio.cache.assets.enabled: true
+    # The max age in seconds that the browser should cache responses for requests matching `studio.cache.assets.maxAge.includeUrls`
+    studio.cache.assets.maxAge: 3600
+    # The urls that should include max-age=<studio.cache.assets.maxAge> in Cache-Control header. Other urls will be set to default max-age=0, must-revalidate
+    studio.cache.assets.maxAge.includeUrls: /static-assets/**,/1/plugin/file/**
+
+|
+
+|hr|
+
+.. _studio-forwarded-headers:
+
+^^^^^^^^^^^^^^^^^
+Forwarded Headers
+^^^^^^^^^^^^^^^^^
+The following section of Studio's configuration overrides allows you to configure forwarded headers to resolve the actual hostname and protocol when it is behind a load balancer or reverse proxy. This is especially useful when setting up Studio behind a load balancer in AWS.
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :linenos:
+
+    ##################################################
+    ##             Forwarded Headers                ##
+    ##################################################
+    # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
+    # address. Enable when Studio is behind a reverse proxy or load balancer that sends these
+    studio.forwarded.headers.enabled: false
+
+|
+
+|hr|
+
+.. _studio-crafterSite-cookie-domain:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^
+crafterSite Cookie Domain
+^^^^^^^^^^^^^^^^^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.0.1
+
+The following section of Studio's configuration overrides allows you to set the ``crafterSite`` cookie at the base domain instead of a subdomain, to allow visibility of the ``crafterSite`` cookie across subdomains.
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :linenos:
+
+    # Use base domain instead of subdomain for the crafterSite cookie
+    studio.cookie.useBaseDomain: false
 
 |
 
@@ -439,50 +440,6 @@ The following section of Studio's configuration overrides allows you to setup se
 
 |hr|
 
-.. _studio-forwarded-headers:
-
-^^^^^^^^^^^^^^^^^
-Forwarded Headers
-^^^^^^^^^^^^^^^^^
-The following section of Studio's configuration overrides allows you to configure forwarded headers to resolve the actual hostname and protocol when it is behind a load balancer or reverse proxy. This is especially useful when setting up Studio behind a load balancer in AWS.
-
-.. code-block:: yaml
-    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
-    :linenos:
-
-    ##################################################
-    ##             Forwarded Headers                ##
-    ##################################################
-    # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
-    # address. Enable when Studio is behind a reverse proxy or load balancer that sends these
-    studio.forwarded.headers.enabled: false
-
-|
-
-|hr|
-
-.. _studio-crafterSite-cookie-domain:
-
-^^^^^^^^^^^^^^^^^^^^^^^^^
-crafterSite Cookie Domain
-^^^^^^^^^^^^^^^^^^^^^^^^^
-.. version_tag::
-    :label: Since
-    :version: 4.0.1
-
-The following section of Studio's configuration overrides allows you to set the ``crafterSite`` cookie at the base domain instead of a subdomain, to allow visibility of the ``crafterSite`` cookie across subdomains.
-
-.. code-block:: yaml
-    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
-    :linenos:
-
-    # Use base domain instead of subdomain for the crafterSite cookie
-    studio.cookie.useBaseDomain: false
-
-|
-
-|hr|
-
 .. _studio-validations-regex:
 
 ^^^^^^^^^^^^^^^^^
@@ -518,6 +475,50 @@ The following section of Studio's configuration overrides allows you to configur
     # studio.validation.regex.CONTENT_PATH_READ: "^/?([\\w\\p{IsLatin}@$%^&{}\\[\\]()+\\-=,.:~'`]+(\\s*[\\w\\p{IsLatin}/@$%^&{}\\[\\]()+\\-=,.:~'`])*(/?))*$"
     # studio.validation.regex.CONTENT_FILE_NAME_WRITE: "^((crafter\\-level\\-descriptor\\.level)|([a-z0-9_\\-])+)\\.xml$"
     # studio.validation.regex.CONFIGURATION_PATH: "^([a-z0-9\\-_/]+([.]*[a-z0-9\\-_])+)*(\\.[\w]+)?/?$"
+
+|
+
+|hr|
+
+.. _studio-commit-message:
+
+^^^^^^^^^^^^^^
+Commit Message
+^^^^^^^^^^^^^^
+Here are the default commit messages when someone makes content changes and can be customized by overriding them
+using one of the override files.
+
+.. code-block:: yaml
+    :linenos:
+
+    # Repository commit prologue message
+    studio.repo.commitMessagePrologue:
+    # Repository commit postscript message
+    studio.repo.commitMessagePostscript:
+    # Sandbox repository write commit message
+    studio.repo.sandbox.write.commitMessage: "User {username} wrote content {path}"
+    # Published repository commit message
+    studio.repo.published.commitMessage: "Publish event triggered by {username} on {datetime} via {source}.\n\nPublish note from user: \"{message}\"\n\nCommit ID: {commit_id}\n\nPackage ID: {package_id}"
+    # Commit message to mark commit not to process when syncing database
+    studio.repo.syncDB.commitMessage.noProcessing: "STUDIO: NO PROCESSING"
+    # Create new repository commit message
+    studio.repo.createRepository.commitMessage: "Create new repository."
+    # Create sandbox branch commit message
+    studio.repo.createSandboxBranch.commitMessage: "Create {sandbox} branch."
+    # Initial commit message
+    studio.repo.initialCommit.commitMessage: "Initial commit."
+    # Create as orphan commit message
+    studio.repo.createAsOrphan.commitMessage: "Created as orphan."
+    # Blueprints updated commit message
+    studio.repo.blueprintsUpdated.commitMessage: "Blueprints updated."
+    # Create folder commit message
+    studio.repo.createFolder.commitMessage: "Created folder site: {site} path: {path}"
+    # Delete content commit message
+    studio.repo.deleteContent.commitMessage: "Delete file {path}"
+    # Move content commit message
+    studio.repo.moveContent.commitMessage: "Moving {fromPath} to {toPath}"
+    # Copy content commit message
+    studio.repo.copyContent.commitMessage: "Copying {fromPath} to {toPath}"
 
 |
 
