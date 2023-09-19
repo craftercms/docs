@@ -407,7 +407,7 @@ required to add an extra parameter ``initClass=false`` in the annotations to pre
 .. TODO: Link `Disabling the Sandbox Blacklist`
 .. TODO: Link `Disabling the Groovy Sandbox
 
-.. include:: /includes/engine-project-security-guide.rst
+.. .. include:: /includes/engine-project-security-guide.rst
 
 |hr|
 
