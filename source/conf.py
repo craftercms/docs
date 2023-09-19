@@ -29,7 +29,7 @@ author = u'CrafterCMS'
 # The short X.Y version.
 version = u'3.1'
 # The full version, including alpha/beta/rc tags.
-release = u'3.1.30'
+release = u'3.1.31'
 
 
 # -- General configuration ---------------------------------------------------
@@ -239,7 +239,7 @@ rst_epilog = """
 
 # Javadoc home and version
 javadoc_base = 'http://javadoc.craftercms.org/'
-javadoc_version = '3.1.30'
+javadoc_version = '3.1.31'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
