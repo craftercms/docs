@@ -43,6 +43,11 @@ Security
 --------
 Learn about Crafter Engine's security features in the :ref:`Crafter Engine Security Guide <engine-security>`.
 
+.. toctree::
+   :hidden:
+
+   security
+
 --------
 REST API
 --------

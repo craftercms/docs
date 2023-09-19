@@ -34,10 +34,19 @@ Learn about configuring Crafter Studio in the :ref:`Crafter Studio Configuration
 
    configuration
 
+|hr|
+
 --------
 Security
 --------
 Learn about securing Crafter Studio in the :ref:`Crafter Studio Security Guide <studio-security>`.
+
+.. toctree::
+   :hidden:
+
+   security
+
+|hr|
 
 --------------
 Administration
@@ -48,6 +57,8 @@ Learn about administering Crafter Studio in the :ref:`Crafter Studio Administrat
    :hidden:
 
    administration
+
+|hr|
 
 --------
 REST API
