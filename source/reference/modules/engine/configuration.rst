@@ -407,8 +407,6 @@ required to add an extra parameter ``initClass=false`` in the annotations to pre
 .. TODO: Link `Disabling the Sandbox Blacklist`
 .. TODO: Link `Disabling the Groovy Sandbox
 
-.. .. include:: /includes/engine-project-security-guide.rst
-
 |hr|
 
 .. _script-sandbox-configuration:
@@ -604,8 +602,6 @@ There are a couple of things you can do to get around the exception being thrown
      |
 
 |hr|
-
-.. Content from /includes/engine-project-configuration
 
 .. _engine-project-configuration:
 
@@ -823,10 +819,6 @@ Your configuration should look something like below:
 
 Please note that the ``Cache-Control`` header inserted to responses by default is set to ``No-Cache``.
 
-.. End of content from /includes/engine-project-configuration
-
-.. Start of content from /includes/engine-project-spring-configuration
-
 .. _engine-project-spring-configuration:
 
 ^^^^^^^^^^^^^^^^^^^^
@@ -878,4 +870,3 @@ also have access to Engine's global properties (like ``crafter.engine.preview``)
     Crafter Engine will not be able to load your Project Context if your context file contains invalid XML,
     incorrect configuration or if your beans do not properly handle their own errors on initialization.
 
-.. End of content from /includes/engine-project-spring-configuration

@@ -106,7 +106,6 @@ Here are the steps:
         response.sendRedirect(params.a)
       }
 
-.. Start content from /includes/engine-project-security-guide
 .. _engine-project-security-guide:
 
 -----------------------------
