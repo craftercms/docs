@@ -37,13 +37,38 @@ CrafterCMS is a truly decoupled content management system, yet it supports dynam
 delivery. To understand this better, Crafter's decoupled architecture is as follows:
 
 .. image:: /_static/images/architecture/decoupled-overview.webp
-    :width: 100%
+    :width: 75%
     :alt: CrafterCMS Decoupled Overview
     :align: center
 
 |
 
 You'll note that Crafter doesn't share a database between the authoring and delivery systems. Instead, the authoring system reduces the content to XML and static assets, and the delivery system rehydrates those for personalized, planet-scale, disconnected, and fast delivery.
+
+""""""""""""""""""""""""""""""""""""
+CrafterCMS Modules and Core Services
+""""""""""""""""""""""""""""""""""""
+CrafterCMS comprises a number of services that work together to provide a complete content management solution. These services are:
+
+.. list-table:: CrafterCMS Modules
+    :header-rows: 1
+    :widths: 25 75
+
+    * - Module
+      - Description
+    * - :ref:`Studio<crafter-studio>`
+      - Studio provides all the content management services to enable authoring, management, and publishing of all content.
+    * - :ref:`Engine<crafter-engine>`
+      - Engine provides content delivery services to power any type of Web or mobile application.
+    * - :ref:`Deployer<crafter-deployer>`
+      - The content deployment system which moves content from Studio to Engine and Search.
+
+.. image:: /_static/images/architecture/modules-overview.webp
+    :width: 75%
+    :alt: CrafterCMS Decoupled Overview
+    :align: center
+
+|
 
 In contrast, many coupled CMSs do claim to be decoupled, but are really not. These systems allow you to have an authoring tier that's separate from the delivery tier; however, these are connected via a database sync. That means that the delivery tiers cannot run without some level of connectivity to the authoring master, and indeed has limits on scale of the delivery tier.
 

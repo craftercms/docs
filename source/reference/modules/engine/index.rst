@@ -9,16 +9,16 @@
 ==============
 Crafter Engine
 ==============
+.. figure:: /_static/images/architecture/crafter-engine.webp
+    :alt: Crafter Engine
+    :width: 75%
+    :align: center
+
 .. contents::
     :local:
     :depth: 1
 
 .. TODO update the image to show the whole arch and highlight Engine
-
-.. figure:: /_static/images/architecture/crafter-engine.webp
-    :alt: Crafter Engine
-    :width: 40 %
-    :align: center
 
 Engine provides content delivery services to power any type of Web or mobile application. It consumes content published from Studio via the Deployer and provides developers with APIs to consume the content (content, search, GraphQL, etc.).
 

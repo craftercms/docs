@@ -9,17 +9,17 @@
 ================
 Crafter Deployer
 ================
-.. contents::
-    :local:
-    :depth: 2
-
 .. TODO Use an image that shows this component highlighted within the overall architecture (so it's not out of context)
 
 
 .. figure:: /_static/images/architecture/crafter-deployer.webp
    :alt: Crafter Deployer
-   :width: 40 %
+   :width: 75%
    :align: center
+
+.. contents::
+    :local:
+    :depth: 2
 
 Crafter Deployer is the deployment agent for CrafterCMS.
 

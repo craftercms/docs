@@ -8,14 +8,15 @@
 ==============
 Crafter Social
 ==============
-.. contents::
-    :local:
-    :depth: 3
 
 .. figure:: /_static/images/architecture/crafter-social.webp
     :alt: Crafter Social
-    :width: 60 %
+    :width: 75%
     :align: center
+
+.. contents::
+    :local:
+    :depth: 3
 
 |
 

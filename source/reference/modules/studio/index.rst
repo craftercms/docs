@@ -9,14 +9,15 @@
 ==============
 Crafter Studio
 ==============
+.. figure:: /_static/images/architecture/crafter-studio.webp
+    :alt: Crafter Studio
+    :width: 75%
+    :align: center
+
+
 .. contents::
     :local:
     :depth: 2
-
-.. figure:: /_static/images/architecture/crafter-studio.webp
-    :alt: Crafter Studio
-    :width: 40 %
-    :align: center
 
 |
 
