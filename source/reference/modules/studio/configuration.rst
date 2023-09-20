@@ -65,6 +65,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Configure the cache control settings for templates and assets
     * - :ref:`Forwarded Headers <studio-forwarded-headers>`
       - Configure forwarded headers
+    * - :ref:`Policy Headers <studio-policy-headers>`
+      - Configure policy headers
     * - :ref:`crafterSite Cookie Domain <studio-crafterSite-cookie-domain>`
       - Configure the ``crafterSite`` cookie domain
     * - :ref:`Serverless Delivery Targets <studio-serverless-delivery-targets>`
@@ -352,6 +354,51 @@ The following section of Studio's configuration overrides allows you to configur
     # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
     # address. Enable when Studio is behind a reverse proxy or load balancer that sends these
     studio.forwarded.headers.enabled: false
+
+|
+
+|hr|
+
+.. _studio-policy-headers:
+
+^^^^^^^^^^^^^^
+Policy Headers
+^^^^^^^^^^^^^^
+"""""""""""""""""""""""
+Content Security Policy
+"""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.1.2
+
+The following allows you to configure which resources can be loaded (e.g. JavaScript, CSS, Images, etc.)
+and the URLs that they can be loaded from.
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :linenos:
+
+    # Value for the Content-Security-Policy header
+    studio.security.headers.contentSecurityPolicy.value: default-src 'unsafe-inline'
+    # Set to true to enable the Content-Security-Policy-Report-Only header (this will report in the user agent console instead of actually blocking the requests)
+    studio.security.headers.contentSecurityPolicy.reportOnly: true
+
+To block offending requests, set ``studio.security.headers.contentSecurityPolicy.reportOnly`` to ``false``.
+This property is set to ``true`` by default
+
+"""""""""""""""""""""""""""""""""
+X-Permitted-Cross-Domain-Policies
+"""""""""""""""""""""""""""""""""
+The following allows you to configure what other domains you want to allow access to your domain.
+The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow any embedding) by default.
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :linenos:
+
+    # Value for the X-PERMITTED-CROSS-DOMAIN-POLICIES header
+    studio.security.headers.permittedCrossDomainPolicies.value: none
+
 
 |
 
