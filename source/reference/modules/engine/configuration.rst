@@ -115,7 +115,7 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure forwarded headers
     * - :ref:`engine-policy-headers`
       - Allows you to configure policy headers
-    * - Search Timeouts
+    * - :ref:`engine-search-timeouts`
       - Allows you to configure the search client connection timeout, socket timeout and number of threads
     * - :ref:`engine-content-length-headers`
       - Allows you to configure the content-length header
@@ -131,11 +131,12 @@ In this section we will highlight some of the more commonly used properties in t
 ^^^^^^^^^^^^^^^^^^
 Engine Root Folder
 ^^^^^^^^^^^^^^^^^^
+The following allows you to set the content root folder.
 
 .. code-block:: properties
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
-    crafter.engine.site.default.rootFolder.path=file:/opt/crafter/data/site-content/{siteName}/content
+    crafter.engine.site.default.rootFolder.path=file:${CRAFTER_DATA_DIR}/repos/sites/{siteName}/sandbox/
 
 
 .. _engine-turn-off-show-error:
@@ -195,6 +196,27 @@ The following section allows you to configure forwarded headers to resolve the a
    # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
    # address. Enable when Engine is behind a reverse proxy or load balancer that sends these
    crafter.engine.forwarded.headers.enabled=false
+
+|
+
+|hr|
+
+.. _engine-search-timeouts:
+
+^^^^^^^^^^^^^^^
+Search Timeouts
+^^^^^^^^^^^^^^^
+The following allows you to configure the search client connection timeout, socket timeout and number of threads.
+
+.. code-block:: properties
+    :linenos:
+
+    # The connection timeout in milliseconds, if set to -1 the default will be used
+    crafter.engine.search.timeout.connect=-1
+    # The socket timeout in milliseconds, if set to -1 the default will be used
+    crafter.engine.search.timeout.socket=-1
+    # The number of threads to use, if set to -1 the default will be used
+    crafter.engine.search.threads=-1
 
 |
 
