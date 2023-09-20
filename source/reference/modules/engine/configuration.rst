@@ -113,6 +113,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure request filtering
     * - :ref:`engine-forwarded-headers`
       - Allows you to configure forwarded headers
+    * - :ref:`engine-policy-headers`
+      - Allows you to configure policy headers
     * - Search Timeouts
       - Allows you to configure the search client connection timeout, socket timeout and number of threads
     * - :ref:`engine-content-length-headers`
@@ -214,6 +216,65 @@ The content-length header is sent for all responses by default.
    crafter.engine.header.etag.enable=false
    # Indicates the urls that will have the 'etag' header (comma separated ant matchers)
    crafter.engine.header.etag.include.urls=/**
+
+|
+
+|hr|
+
+.. _engine-policy-headers:
+
+^^^^^^^^^^^^^^
+Policy Headers
+^^^^^^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.1.2
+
+""""""""""""""
+Referer Policy
+""""""""""""""
+The following allows you to configure what information is made available in the Referer header in a request.
+This can be set to a different value as needed.
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+    :linenos:
+
+    # The value of the Referer-Policy header that should be set in all requests. Supported
+    # values are: no-referrer, no-referrer-when-downgrade, same-origin, origin, strict-origin,
+    # origin-when-cross-origin, strict-origin-when-cross-origin, unsafe-url
+    crafter.security.headers.referrerPolicy.value=no-referrer
+
+"""""""""""""""""""""""
+Content Security Policy
+"""""""""""""""""""""""
+The following allows you to configure which resources can be loaded (e.g. JavaScript, CSS, Images, etc.)
+and the URLs that they can be loaded from. This should be tuned to the specific requirements of each project.
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+    :linenos:
+
+    # The value of the Content-Security-Policy header that should be set in all requests.
+    crafter.security.headers.contentSecurityPolicy.value=default-src 'self' 'unsafe-inline'
+    # Set to true to enable the Content-Security-Policy-Report-Only header (this will report in the user agent console instead of actually blocking the requests)
+    crafter.security.headers.contentSecurityPolicy.reportOnly=true
+
+To block offending requests, set ``crafter.security.headers.contentSecurityPolicy.reportOnly`` to ``false``.
+This property is set to ``true`` by default.
+
+"""""""""""""""""""""""""""""""""
+X-Permitted-Cross-Domain-Policies
+"""""""""""""""""""""""""""""""""
+The following allows you to configure what other domains you want to allow access to your domain.
+The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow any embedding) by default.
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+    :linenos:
+
+    # The value of the X-PERMITTED-CROSS-DOMAIN-POLICIES header that should be set in all requests
+    crafter.security.headers.permittedCrossDomainPolicies.value=none
 
 |
 
