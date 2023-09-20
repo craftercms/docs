@@ -24,37 +24,33 @@ Crafter Engine can be configured at the project/site level or at the instance le
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Project-level/Site-level Configuration Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The main configuration files for a project/site can be edited within Crafter Studio or via Git. These files are:
+Crafter Engine provides a flexible configuration system that allows site administrators to change
+the behavior of the project without the need to modify any code. Some properties are used by Crafter
+Engine itself, but developers can also add any custom property they need for their code.
+
+The main configuration files for a project/site can be edited within Crafter Studio's Project Tools > Configuration UI or via Git. These files are:
 
 .. list-table:: Engine Project Configuration Files
     :header-rows: 1
 
     * - Configuration File
       - Description
-      - More Information
     * - Engine Project Configuration (``config/engine/site-config.xml``)
       - Contains project properties used by Crafter Engine
-      - - :ref:`engine-project-configuration`
-        - :ref:`engine-headers-authentication`
-        - :ref:`Configure MongoDB URI <engine-mongodb-configuration>`
-        - :ref:`engine-crafter-profile-configuration`
     * - Engine Project Application Context (``config/engine/application-context.xml``)
-      - Contains bean definitions for the site context associated with the webapp
-      - - :ref:`engine-project-spring-configuration`
-        - :ref:`Configure a GMongo client <engine-mongodb-configuration>`
+      - Contains bean definitions for the site context associated with the Webapp
     * - URL Rewrite Configuration (XML Style) (``config/engine/urlrewrite.xml``)
       - Contains URL rewrite rules
-      - - :ref:`engine-url-rewrite-configuration`
     * - Proxy Config (``config/engine/proxy-config.xml``)
-      - Configures the proxy servers for preview
-      - - :ref:`proxy-configuration`
-        - :ref:`using-the-proxy-configuration`
+      - Configures the proxy servers for the Preview server (Crafter Engine in Preview Mode)
 
-These project configuration files are located under ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine`` where ``CRAFTER_HOME`` is the install directory of your CrafterCMS and ``SITENAME`` is the name of the site being configured.
+.. note:: All configuration files can be overridden by environment. Learn more about multi-environment support in :ref:`engine-multi-environment-support`.
 
-These files can be accessed by navigating from the Studio Sidebar to |projectTools| ➜ ``Configuration``, then selecting the desired Engine configuration option from the dropdown.
+The configuration file ``site-config.xml`` has some additional considerations. This file can be defined in:
+    - ``/config/engine/env/{envName}/site-config.xml``: This is the environment override, and is loaded first if present.
+    - ``/config/engine/site-config.xml``: This is the main configuration file for the project/site. This file is loaded if the environment override is not present.
 
-|hr|
+.. note:: All properties will be available for developers in the Freemarker templates and Groovy scripts using the ``siteConfig`` variable. The ``siteConfig`` variable is an instance of the `XMLConfiguration <https://commons.apache.org/proper/commons-configuration/apidocs/org/apache/commons/configuration2/XMLConfiguration.html>`_ class.
 
 .. _engine-instance-configuration-files:
 
@@ -68,28 +64,60 @@ The main files for configuring Crafter Engine at the instance level are:
 
     * - Configuration File
       - Description
-      - More Information
     * - ``server-config.properties``
-      - Contains server configurable parameters such as urls, paths, etc.
-      - - :ref:`engine-config`
-        - :ref:`configure-multi-tenancy-in-engine`
-        - :ref:`engine-saml2-configuration`
-        - :ref:`engine-turn-off-show-error`
+      - Contains server configurable parameters such as URLs, paths, etc.
     * - ``services-context.xml``
       - Contains the bean definition for services layer
-      - - :ref:`Example configuration in services-context.xml <configure-multi-tenancy-in-engine>`
     * - ``rendering-context.xml``
       - Contains the bean definition for rendering
-      - - :ref:`Example configuration in rendering-context.xml <configure-multi-tenancy-in-engine>`
     * - ``logging.xml``
       - Contains loggers, appenders, etc.
-      - - :ref:`Setting log levels <permanently-set-logging-levels>`
 
 These configuration files for Crafter Engine is located under  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension``, where ``CRAFTER_HOME`` is the install directory of your CrafterCMS authoring or delivery environment.
 
 The files can be accessed by opening the files using your favorite editor. Any changes made to any of the files listed above will require a restart of CrafterCMS.
 
 |hr|
+
+.. TODO
+          - - :ref:`engine-project-configuration`
+            - :ref:`engine-headers-authentication`
+            - :ref:`Configure MongoDB URI <engine-mongodb-configuration>`
+            - :ref:`engine-crafter-profile-configuration`
+
+          - - :ref:`engine-project-spring-configuration`
+            - :ref:`Configure a GMongo client <engine-mongodb-configuration>`
+          - - :ref:`engine-url-rewrite-configuration`
+
+          - - :ref:`proxy-configuration`
+            - :ref:`using-the-proxy-configuration`
+
+    .. instance level
+
+        - - :ref:`engine-config`
+        - :ref:`configure-multi-tenancy-in-engine`
+        - :ref:`engine-saml2-configuration`
+        - :ref:`engine-turn-off-show-error`
+          - - :ref:`Example configuration in services-context.xml <configure-multi-tenancy-in-engine>`
+          - - :ref:`Example configuration in rendering-context.xml <configure-multi-tenancy-in-engine>`
+          - - :ref:`Setting log levels <permanently-set-logging-levels>`
+
+..  TODO Configure the Root Folder Path
+
+    The root folder path, as shown below, needs to be configured to include a substitution variable ``{siteName}`` in the :ref:`server-config.properties <engine-configuration-files>` file:
+
+    .. code-block:: properties
+      :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+      crafter.engine.site.default.rootFolder.path=file:/opt/crafter/data/site-content/{siteName}/content
+
+    |
+
+    This variable will be resolved by Crafter Engine for each request. To resolve this value, simply configure
+    simple multi-tenancy, with an Apache HTTP server, NGINX, or CDN proxying Crafter Engine.
+    These project configuration files are located under ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine`` where ``CRAFTER_HOME`` is the install directory of your CrafterCMS and ``SITENAME`` is the name of the site being configured.
+
+    These files can be accessed by navigating from the Studio Sidebar to |projectTools| ➜ ``Configuration``, then selecting the desired Engine configuration option from the dropdown.
 
 -------------------------------
 Engine Configuration Properties
@@ -686,49 +714,6 @@ There are a couple of things you can do to get around the exception being thrown
 
 |hr|
 
-.. _engine-project-configuration:
-
-----------------------------
-Engine Project Configuration
-----------------------------
-
-Crafter Engine provides a flexible configuration system that allows site administrators to change
-the behavior of the project without the need to modify any code. Some properties are used by Crafter
-Engine itself, but developers can also add any custom property they need for their code. All
-properties will be available for developers in the Freemarker templates and Groovy scripts using the
-``siteConfig`` variable.
-
-**XML Configuration Files**
-
- - ``/config/engine/site-config.xml``
-   Main XML configuration for the project, this file will always be loaded by Crafter Engine. This file can
-   be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the
-   Studio sidebar to ``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project
-   Configuration`` option from the list.
-
-	 .. image:: /_static/images/site-admin/engine-project-config.webp
-			 :alt: Engine Project Configuration
-
-     |
-
-
- - ``/config/engine/{crafterEnv}-site-config.xml``
-   Environment specific XML configuration, these files will be loaded only when the value of the
-   ``crafter.engine.environment`` property matches the `crafterEnv` placeholder in the file name.
- - ``$TOMCAT/shared/classes/crafter/engine/extension/sites/{siteName}/site-config.xml``
-   External XML configuration, this file will be always loaded by Crafter Engine when present and
-   will allow to change configurations without having to modify the files in the project repository.
-
-.. NOTE::
-   Properties will be overridden according to the order the files are loaded which is the same as
-   the list above: main site-config.xml, environment site-config.xml, external site-config.xml
-   If the same property is present in all files the value from the external file will be used.
-
-.. NOTE::
-   Apache Commons Configuration (https://commons.apache.org/proper/commons-configuration/) is used
-   to read all configuration files. The ``siteConfig`` variable is an instance of the
-   `XMLConfiguration <https://commons.apache.org/proper/commons-configuration/apidocs/org/apache/commons/configuration2/XMLConfiguration.html>`_
-   class.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Configuration Properties
@@ -952,4 +937,486 @@ also have access to Engine's global properties (like ``crafter.engine.preview``)
 .. note::
     Crafter Engine will not be able to load your Project Context if your context file contains invalid XML,
     incorrect configuration or if your beans do not properly handle their own errors on initialization.
+
+.. _engine-multi-environment-support:
+
+--------------------------------
+Engine Multi-Environment Support
+--------------------------------
+The following engine configuration files can be setup for different environments:
+
+* ``site-config.xml``
+* ``application-context.xml``
+* ``urlrewrite.xml``
+
+To setup an environment for engine configuration files, do the following:
+
+#. Create a folder under ``data/repos/sites/${site}/sandbox/config/engine`` called ``env``
+#. Inside the folder, create a directory called ``myenv`` (or whatever you want to call the environment)
+#. Copy the configuration file you want to override in the new environment you are setting up, inside your ``myenv`` folder
+#. Remember to commit the files copied so Studio will pick it up.
+#. In the ``crafter-setenv.sh`` file in ``TOMCAT/bin`` set the
+   following property to desired environment:
+
+      .. code-block:: bash
+         :caption: *bin/crafter-setenv.sh*
+
+         # -------------------- Configuration variables --------------------
+         export CRAFTER_ENVIRONMENT=${CRAFTER_ENVIRONMENT:=myenv}
+
+      |
+
+#. Restart Crafter
+
+^^^^^^^^
+Examples
+^^^^^^^^
+
+"""""""""""""""""""""""""""""""""""""
+Creating a Custom Environment Example
+"""""""""""""""""""""""""""""""""""""
+Let's take a look at an example of creating a new environment, called ``mycustomenv`` with the ``urlrewrite.xml``
+file overridden in the new environment for a project created using the Website Editorial blueprint.  This example
+is very similar to the example shown above for Studio except for the location of the custom configuration file:
+
+#. We'll create a folder called ``env`` under ``data/repos/sites/my-editorial/sandbox/config/engine``
+
+      .. code-block:: text
+         :linenos:
+         :emphasize-lines: 8
+
+         data/
+           repos/
+             sites/
+               my-editorial/
+                 sandbox/
+                   config/
+                     engine/
+                       env/
+
+      |
+
+#. Inside the ``env`` folder, create a directory called ``mycustomenv``
+#. We will now create the configuration file for the ``urlrewrite.xml`` that we want to override in the new environment we are setting up, inside our ``mycustomenv`` folder:
+
+      .. code-block:: text
+         :emphasize-lines: 3
+
+             env/
+               mycustomenv/
+                 urlrewrite.xml
+
+     |
+
+   We will redirect the page to ``/articles/2021/12/Top Books For Young Women`` when the page ``/articles/2020/12/Top Books For Young Women`` is previewed. Copy the following inside the ``urlrewrite.xml`` file.
+
+     .. code-block:: xml
+        :linenos:
+        :caption: *Urlrewrite.xml file for environment mycustomenv*
+
+        <?xml version="1.0" encoding="utf-8"?>
+        <urlrewrite>
+          <rule>
+            <from>/articles/2020/12/(.*)$</from>
+            <to type="redirect">/articles/2021/12/$1</to>
+          </rule>
+        </urlrewrite>
+
+     |
+
+   For our example, the folder ``articles/2020/12`` was copied to ``articles/2021`` with the page under ``articles/2021/12``, modified to display the title as a dupe. This was done so when we click on the page under ``articles/2020/12``, we can easily tell that it's being redirected to the page under ``articles/2021/12``. Of course, you can also just look at the url of the page previewed to verify that it was redirected to the right page.
+
+   .. image:: /_static/images/site-admin/env-copy-page-for-urlrewrite.webp
+       :align: center
+       :width: 35%
+       :alt: Folder with page copied from 2020 to 2021
+
+   |
+
+   Here's the original page:
+
+   .. image:: /_static/images/site-admin/env-original-page.webp
+      :align: center
+      :alt: Original page before being redirected
+
+   |
+
+   Here's the page we want to be redirected to when previewing the page above:
+
+   .. image:: /_static/images/site-admin/env-redirect-page.webp
+      :align: center
+      :alt: Page we want to be redirected to
+
+   |
+
+#. Remember to commit the files copied so Studio will pick it up.
+
+      .. code-block:: bash
+
+         ➜  sandbox git:(master) ✗ git add .
+         ➜  sandbox git:(master) ✗ git commit -m "Add urlrewrite.xml file for mycustomenv"
+
+      |
+
+#. Open the ``crafter-setenv.sh`` file in ``TOMCAT/bin`` and set the value of ``CRAFTER_ENVIRONMENT`` to the
+   environment we setup above (*myenv*) to make it the active environment:
+
+      .. code-block:: bash
+         :caption: *bin/crafter-setenv.sh*
+
+         # -------------------- Configuration variables --------------------
+         export CRAFTER_ENVIRONMENT=${CRAFTER_ENVIRONMENT:=mycustomenv}
+
+      |
+
+#. Restart Crafter. To verify our newly setup environment, open the ``Sidebar`` and click on |projectTools|, then select ``Configuration``. Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations drop-down box and when you select the *Engine URL Rewrite Configuration (XML Style)*, it should display the file we created in one of the previous step:
+
+   .. image:: /_static/images/site-admin/env-custom-configurations.webp
+      :align: center
+      :alt: Active Environment Displayed in Project Tools Configuration
+
+   |
+
+   Let's verify that our *urlrewrite.xml* is in effect. From the *Sidebar*, click on *Home* -> *Entertainment* -> *Top Books For Young Women*  or, navigate to */articles/2020/12/* and click on *Top Books For Young Women*.
+
+   .. image:: /_static/images/site-admin/env-preview-page.webp
+      :align: center
+      :alt: Preview the page mentioned in the urlrewrite.xml that will be redirected
+
+   |
+
+   The preview page should take you to */articles/2021/12/Top Books For Young Women*
+
+"""""""""""""""""""""""""""""""""""""""""""
+Environment Specific Configurations Example
+"""""""""""""""""""""""""""""""""""""""""""
+Environments are useful for managing values such as paths or database connections without the need to
+change any code directly in the servers.
+
+In this example, we show how to manage a database connection that will change depending on the server
+where the project is deployed. We will have three environments ``dev``, ``auth`` and ``delivery``
+
+#. First create the environments by following the example above for creating the environments.
+   We'll then have the following folders called ``dev``, ``auth`` and ``delivery`` under ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/env``
+
+#. Next, include the appropriate connection string for each environment in the ``site-config.xml`` file:
+
+   .. code-block:: xml
+      :caption: *Local Development Configuration: /config/engine/env/dev/site-config.xml*
+      :linenos:
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <site>
+        <db>
+          <uri>mongodb://localhost:27017/mydb?maxPoolSize=1&amp;minPoolSize=0&amp;maxIdleTimeMS=10000</uri>
+        </db>
+      </site>
+
+
+   .. code-block:: xml
+       :caption: *Authoring Configuration: /config/engine/env/auth/site-config.xml*
+       :linenos:
+
+       <?xml version="1.0" encoding="UTF-8"?>
+       <site>
+         <db>
+           <uri>mongodb://localhost:27020/mydb?maxPoolSize=5&amp;minPoolSize=2&amp;maxIdleTimeMS=10000</uri>
+         </db>
+       </site>
+
+
+   .. code-block:: xml
+      :caption: *Delivery Configuration: /config/engine/env/delivery/site-config.xml*
+      :linenos:
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <site>
+        <db>
+          <uri>mongodb://delivery-db-server:27020/delivery-db?maxPoolSize=10&amp;minPoolSize=5&amp;maxIdleTimeMS=1000</uri>
+        </db>
+      </site>
+
+   Remember to commit the files copied so Studio will pick it up.
+
+#. Finally, notice when using this approach the code is completely independent of the environment so we only need one
+   bean that will always connect to the right database:
+
+   .. code-block:: xml
+      :caption: *Default Application Context: /config/engine/application-context.xml (shared by all environments)*
+      :linenos:
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <beans xmlns="http://www.springframework.org/schema/beans"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" parent="crafter.properties"/>
+
+        <bean id="mongoUri" class="com.mongodb.MongoClientURI">
+           <constructor-arg value="${db.uri}"/>
+        </bean>
+
+        <bean id="mongoClient" class="com.gmongo.GMongoClient">
+          <constructor-arg ref="mongoUri"/>
+        </bean>
+
+      </beans>
+
+
+|hr|
+
+
+.. _saml2-multi-environment-support:
+
+------------------------------------------------
+SAML2 Multi-Environment Support |enterpriseOnly|
+------------------------------------------------
+
+When configuring SAML2 in an environment-specific project configuration file (*site-config.xml*), since the
+SAML2 configuration folder sits outside the environment folder, you can point to environment-specific SAML2
+files in the SAML2 folder for the following path/file configuration of SAML2:
+
++------------------------------------+-------------------------------------------+-------------------------------------+
+|| Property                          || Description                              || Default Value                      |
++====================================+===========================================+=====================================+
+|``keystore.path``                   |The path of the keystore file in the repo  |``/config/engine/saml2/keystore.jks``|
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``identityProviderDescriptor``      |The path of the identity provider metadata |``/config/engine/saml2/idp.xml``     |
+|                                    |XML descriptor in the repo                 |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``serviceProviderDescriptor``       |The path of the service provider metadata  |``/config/engine/saml2/sp.xml``      |
+|                                    |XML descriptor in the repo                 |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+
+Use the format ``/config/engine/saml2/saml2-path-file-config-{myCustomEnv}.***`` for naming your SAML2 environment
+specific configuration files where ``{myCustomEnv}`` is the name of your environment.
+
+^^^^^^^
+Example
+^^^^^^^
+
+Say we're setting up SAML2 files for an environment named ``dev``. Using the format mentioned above, our environment
+specific SAML2 files will be the following:
+
+- ``/config/engine/saml2/keystore-dev.jks``
+- ``/config/engine/saml2/idp-dev.xml``
+- ``/config/engine/saml2/sp-dev.xml``
+
+Below is the SAML2 configuration using the above files in the project configuration file:
+
+.. code-block:: xml
+   :caption: *Example SAML2 configuration for a custom environment*
+   :emphasize-lines: 5,15,17
+
+   <saml2>
+     ...
+     <keystore>
+       <defaultCredential>abc-crafter-saml</defaultCredential>
+       <path>/config/engine/saml2/keystore-dev.jks</path>
+       <password encrypted="true">${enc:value}</password>
+       <credentials>
+         <credential>
+           <name>abc-crafter-saml</name>
+           <password encrypted="true">${enc:value}</password>
+         </credential>
+       </credentials>
+     </keystore>
+     <identityProviderName>http://www.okta.com/abc</identityProviderName>
+     <identityProviderDescriptor>/config/engine/saml2/idp-dev.xml</identityProviderDescriptor>
+     <serviceProviderName>https://intranet.abc.org/saml/SSO</serviceProviderName>
+     <serviceProviderDescription>/config/engine/saml2/sp-dev.xml</serviceProviderDescription>
+   </saml2>
+
+
+See :ref:`engine-saml2-configuration` for more information on configuring SAML2.
+
+.. _engine-multi-target-configurations:
+
+---------------------------
+Engine Multi-target Support
+---------------------------
+There are some cases where the Engine configuration files need to have different values per publishing target. Say for a production environment where you have **staging** to test out your project and **live** , the project to be used by end users, you may need different SAML authentication mechanics or different URL rewrites.
+
+The :ref:`engine-multi-environment-support` section detailed how to setup Engine configuration files per environment. CrafterCMS
+supports overriding Engine configuration files, not just per environment, but also per publishing target.
+It supports a base configuration per environment with the ability to override per publishing target.
+
+The following engine configuration files can be setup for different publishing targets:
+
+* site-config.xml
+* application-context.xml
+* urlrewrite.xml
+
+Here are the available publishing targets for the configuration files listed above:
+
+* preview
+* staging
+* live
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Overriding Engine Configuration Files per Publishing Target
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To override a configuration file in any of the publishing targets
+
+#. Add the new configuration file/s for overriding to **Configurations** under |projectTools| -> **Configuration**
+
+   .. image:: /_static/images/site-admin/configuration.webp
+      :alt: Multi-target Configuration - Open Configurations
+      :width: 45 %
+      :align: center
+
+   |
+
+   The overriding configuration file should be named **configuration-to-be-overridden.publishing-target.xml**. Depending on the publishing target you wish the configuration file to override, the files should look like one of the following:
+
+   - *configuration-to-be-overridden.preview.xml*
+   - *configuration-to-be-overridden.staging.xml*
+   - *configuration-to-be-overridden.live.xml*
+
+   |
+
+   Say, to add a ``urlrewrite.xml`` file override for **staging**, add the following in the **Configurations**
+
+     .. code-block:: xml
+        :caption: *Configurations* - *SITENAME/config/studio/administration/config-list.xml*
+        :emphasize-lines: 3
+
+        <file>
+          <module>engine</module>
+          <path>urlrewrite.staging.xml</path>
+          <title>Engine URL Rewrite (XML Style) Staging</title>
+          <description>Engine URL Rewrite (XML Style) Staging</description>
+          <samplePath>sample-urlrewrite.xml</samplePath>
+        </file>
+
+     |
+
+   For more information on **Configurations** config file, see :ref:`project-config-configuration`
+
+#. Fill in your desired additions/modifications to the override configuration file. Refresh your browser. The configuration file you added from above should now be available from |projectTools| -> **Configuration**. Open the new configuration file and make the necessary additions/modifications for the override file then save your changes.
+
+   .. image:: /_static/images/site-admin/new-configuration-added.webp
+      :alt: Multi-target Configuration - New configuration files added to dropdown list
+      :width: 55 %
+      :align: center
+
+   |
+
+#. If the configuration file to be overridden is not for preview, publish the configuration file to the intended publishing target, **staging** or **live**
+
+"""""""
+Example
+"""""""
+
+Let's take a look at an example of overriding the Project Configuration used by Engine ``site-config.xml`` for the **staging** and **live** publishing targets so that each target has a different SAML authentication mechanics (different identity provider in ``staging`` and ``live``). In our example, we will use a project created using the Website Editorial blueprint named **mysite**
+
+#. Add the new configuration file/s for overriding to **Configurations** under |projectTools| -> **Configuration**. We will be overriding the ``site-config.xml`` file in the **staging** and **live** publishing targets, so we will add to the configuration a ``site-config.staging.xml`` and ``site-config.live.xml`` files.
+
+   .. code-block:: xml
+      :caption: *Configurations* - *SITENAME/sandbox/config/studio/administration/config-list.xml*
+      :linenos:
+      :emphasize-lines: 3,10
+
+      <file>
+        <module>engine</module>
+        <path>site-config.staging.xml</path>
+        <title>Engine Project Configuration Staging</title>
+        <description>Project Configuration used by Engine for the Staging publishing target</description>
+        <samplePath>sample-engine-site-config.xml</samplePath>
+      </file>
+      <file>
+        <module>engine</module>
+        <path>site-config.live.xml</path>
+        <title>Engine Project Configuration Live</title>
+        <description>Project Configuration used by Engine for the Live publishing target</description>
+        <samplePath>sample-engine-site-config.xml</samplePath>
+      </file>
+
+   |
+
+#. The configurations we added above will now be available from |projectTools| -> **Configuration**.
+
+   .. image:: /_static/images/site-admin/project-config-override-added.webp
+      :alt: Multi-target Configuration - Project Tools override configuration files now listed in "Project Tools" -> "Configuration"
+      :width: 55 %
+      :align: center
+
+   |
+
+   Enable SAML2 in the configuration with identity provider *My IDP1* for the ``site-config.staging.xml`` and use identity provider *My IDP2* for the ``site-config.live.xml``.
+
+   .. code-block:: xml
+      :linenos:
+      :caption: *SITENAME/sandbox/config/engine/site-config.staging.xml*
+
+      <site>
+        <version>4.0.1</version>
+
+        <security>
+          <saml2>
+            <enable>true</enable>
+            <attributes>
+              <mappings>
+                <mapping>
+                  <name>DisplayName</name>
+                  <attribute>fullName</attribute>
+                </mapping>
+              </mappings>
+            </attributes>
+            <role>
+               <mappings>
+                  <mapping>
+                     <name>editor</name>
+                     <role>ROLE_EDITOR</role>
+                  </mapping>
+               </mappings>
+            </role>
+            <keystore>
+               <defaultCredential>my-site</defaultCredential>
+               <password>superSecretPassword</password>
+               <credentials>
+                  <credential>
+                     <name>my-site</name>
+                     <password>anotherSecretPassword</password>
+                  </credential>
+               </credentials>
+            </keystore>
+            <identityProviderName>My IDP1</identityProviderName>
+            <serviceProviderName>Crafter Engine</serviceProviderName>
+         </saml2>
+        </security>
+
+      </site>
+
+   |
+
+   For more information on SAML2 configuration, see :ref:`engine-saml2-configuration`
+
+#. Publish ``site-config.live.xml`` to live and ``site-config.staging.xml`` to staging.
+
+   To publish the override configuration files setup above, open the **Dashboard** via the Navigation Menu on the top right or via the Sidebar.  Scroll to the **Unpublished Work** dashlet.
+
+   .. image:: /_static/images/site-admin/view-override-config-on-dashboard.webp
+      :alt: Multi-target Configuration - New configuration files listed in the "Unpublished Work" dashlet in the Dashboard
+      :width: 85 %
+      :align: center
+
+   |
+
+   To publish the ``site-config.live.xml`` configuration file to publishing target ``live``, put a check mark next to the file in the dashlet, then click on ``Publish`` from the context nav. Remember to set the ``Publishing Target`` to **live** in the ``Publish`` dialog
+
+   .. image:: /_static/images/site-admin/publish-override-file.webp
+      :alt: Multi-target Configuration - Set "Publishing Target" to "live" in dialog for site-config.live.xml
+      :width: 55 %
+      :align: center
+
+   |
+
+   To publish the ``site-config.staging.xml`` file to publishing target ``staging`` put a check mark next to the file in the dashlet, then click on ``Publish`` from the context nav. Remember to set the ``Publishing Target`` to **staging** in the ``Publish`` dialog.
+
+   The Engine ``site-config.live.xml`` configuration will now be loaded when viewing your project in ``live`` and the Engine ``site-config.staging.xml`` configuration will now be loaded when viewing your project in ``staging`` instead of the default Engine ``site-config.xml`` files
+
+
+
+
 
