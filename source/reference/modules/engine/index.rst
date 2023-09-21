@@ -53,11 +53,13 @@ Engine provides content delivery services to power any type of Web or mobile app
    |
 
      .. note::
+         Crafter Engine identifies which project to render by the mechanisms (in this order of precedence):
+            - Headers (``X-Crafter-Site={site}``)
+            - QSA (Query String Parameters: ``crafterSite={site}``)
+            - Cookie (``crafterSite={site}``)
 
-        .. include:: /includes/project-identification-precedence.rst
-
-
-
+         Additionally, if the cookie is not aligned with other parameters, the cookie will be reset to what precedes it.
+         The above is only true when Crafter Engine is not in Preview mode.
 
 |hr|
 

@@ -75,49 +75,9 @@ The main files for configuring Crafter Engine at the instance level are:
 
 These configuration files for Crafter Engine is located under  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension``, where ``CRAFTER_HOME`` is the install directory of your CrafterCMS authoring or delivery environment.
 
-The files can be accessed by opening the files using your favorite editor. Any changes made to any of the files listed above will require a restart of CrafterCMS.
+The files can be accessed by opening the files using a text editor. Any changes made to any of the files listed above will require a restart of Crafter Engine.
 
 |hr|
-
-.. TODO
-          - - :ref:`engine-project-configuration`
-            - :ref:`engine-headers-authentication`
-            - :ref:`Configure MongoDB URI <engine-mongodb-configuration>`
-            - :ref:`engine-crafter-profile-configuration`
-
-          - - :ref:`engine-project-spring-configuration`
-            - :ref:`Configure a GMongo client <engine-mongodb-configuration>`
-          - - :ref:`engine-url-rewrite-configuration`
-
-          - - :ref:`proxy-configuration`
-            - :ref:`using-the-proxy-configuration`
-
-    .. instance level
-
-        - - :ref:`engine-config`
-        - :ref:`configure-multi-tenancy-in-engine`
-        - :ref:`engine-saml2-configuration`
-        - :ref:`engine-turn-off-show-error`
-          - - :ref:`Example configuration in services-context.xml <configure-multi-tenancy-in-engine>`
-          - - :ref:`Example configuration in rendering-context.xml <configure-multi-tenancy-in-engine>`
-          - - :ref:`Setting log levels <permanently-set-logging-levels>`
-
-..  TODO Configure the Root Folder Path
-
-    The root folder path, as shown below, needs to be configured to include a substitution variable ``{siteName}`` in the :ref:`server-config.properties <engine-configuration-files>` file:
-
-    .. code-block:: properties
-      :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-
-      crafter.engine.site.default.rootFolder.path=file:/opt/crafter/data/site-content/{siteName}/content
-
-    |
-
-    This variable will be resolved by Crafter Engine for each request. To resolve this value, simply configure
-    simple multi-tenancy, with an Apache HTTP server, NGINX, or CDN proxying Crafter Engine.
-    These project configuration files are located under ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine`` where ``CRAFTER_HOME`` is the install directory of your CrafterCMS and ``SITENAME`` is the name of the site being configured.
-
-    These files can be accessed by navigating from the Studio Sidebar to |projectTools| ➜ ``Configuration``, then selecting the desired Engine configuration option from the dropdown.
 
 -------------------------------
 Engine Configuration Properties
@@ -125,13 +85,13 @@ Engine Configuration Properties
 In this section we will highlight some of the more commonly used properties in the configuration of Crafter Engine. For most properties, please see the  ``server-config.properties`` file, and for additional configuration files and properties, see :ref:`engine-configuration-files`.
 
 .. TODO
-.. list-table:: Configuration Properties
+.. list-table:: Common Configuration Properties
     :header-rows: 1
 
     * - Property
       - Purpose
 
-    * - :ref:`engine-root-Folder`
+    * - :ref:`engine-root-folder`
       - Allows you to set the content root folder
     * - :ref:`engine-turn-off-show-error`
       - Allows you to turn off showing errors in line with content
@@ -151,6 +111,20 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure static methods in Freemarker templates
     * - :ref:`engine-spring-expression-language`
       - Allows you to configure SpEL expressions for custom app contexts
+.. TODO    * - - :ref:`engine-project-configuration`
+      - Allows you to configure the project
+.. TODO * - :ref:`engine-headers-authentication`
+      - ??
+.. TODO * - :ref:`engine-mongodb-configuration`
+      - Allows you to configure MongoDB
+.. TODO * - :ref:`engine-crafter-profile-configuration`
+        - Allows you to configure the Crafter Profile
+.. TODO - :ref:`engine-project-spring-configuration`
+.. TODO - :ref:`engine-url-rewrite-configuration`
+.. TODO - :ref:`proxy-configuration`
+.. TODO - :ref:`using-the-proxy-configuration`
+.. TODO - :ref:`engine-saml2-configuration`
+.. TODO - :ref:`Setting log levels <permanently-set-logging-levels>`
 
 |
 
@@ -159,13 +133,18 @@ In this section we will highlight some of the more commonly used properties in t
 ^^^^^^^^^^^^^^^^^^
 Engine Root Folder
 ^^^^^^^^^^^^^^^^^^
-The following allows you to set the content root folder.
+Crafter Engine requires a root folder path to be configured if the defaults are not used.
 
-.. code-block:: properties
-    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+The default root folder path has the pattern: ``crafter.engine.site.default.rootFolder.path=file:${CRAFTER_DATA_DIR}/repos/sites/{siteName}/`` This relies on the ``CRAFTER_DATA_DIR`` environment variable being set. Crafter Engine will then resolve the ``{siteName}`` variable to the name of the site being requested.
 
-    crafter.engine.site.default.rootFolder.path=file:${CRAFTER_DATA_DIR}/repos/sites/{siteName}/sandbox/
+To change the root folder path, you can either set the ``CRAFTER_DATA_DIR`` environment variable or change the default root folder path in the ``server-config.properties`` file (see more about that file in :ref:`server-config.properties <engine-configuration-files>`. The variable to modify is:
 
+    .. code-block:: properties
+      :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+      crafter.engine.site.default.rootFolder.path=file:${CRAFTER_DATA_DIR}/repos/sites/{siteName}/
+
+    |
 
 .. _engine-turn-off-show-error:
 
@@ -736,6 +715,8 @@ This example file contains the properties used by Crafter Engine (click on the t
 
 |
 |
+
+.. TODO Review these properties for v4.1
 
 **Crafter Engine Properties**
  * **indexFileName:** The name of a page's index file (default is ``index.xml``).
