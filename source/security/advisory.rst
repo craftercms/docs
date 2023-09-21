@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.1
 
 .. index:: CrafterCMS Security Advisories, Advisories
