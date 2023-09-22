@@ -222,7 +222,7 @@ rst_epilog = """
 .. |ex| unicode:: U+2718
 
 .. |projectTools| image:: /_static/images/configuration-project-tools-icon.webp
-                   :width: 14%
+                   :width: 10%
 
 .. |mainMenu| image:: /_static/images/main-menu-button.webp
                    :width: 3%

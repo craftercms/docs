@@ -1005,7 +1005,8 @@ This will create a new page under ``/articles/{year}/{month}`` and open a form f
 
 |hr|
 
-.. _editing-a-page:
+
+.. _editing-page:
 
 ^^^^^^^^^^^^^^
 Editing a Page

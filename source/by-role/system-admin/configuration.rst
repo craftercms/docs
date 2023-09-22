@@ -270,11 +270,3 @@ Crafter Profile provides a user identity augmentation capability. It allows the 
 Social
 -------
 Crafter Social provides a user generated content management system. It allows the project/site developers to handle all actions related to user-generated content (UGC), including the creation, updating and moderation of content. Learn more about Crafter Social configuration and administration in :ref:`Social Configuration and Administration <crafter-social-admin>`.
-
-|hr|
-
-.. TODO
-
-..  engine/configure-engine-multi-tenancy
-    engine/engine-configuration-overrides
-    engine/turning-off-show-error

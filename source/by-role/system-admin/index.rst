@@ -15,7 +15,7 @@ they need to install and maintain CrafterCMS.
    :maxdepth: 2
 
    installation
-   configuration/index
+   configuration
    security/index
    maintenance/index
    upgrade/index

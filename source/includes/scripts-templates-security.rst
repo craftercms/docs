@@ -16,5 +16,5 @@
    There are some cases though where a site requires access to one or more of
    the blacklisted expressions.
 
-   To override the default script sandbox configuration, follow the guide :ref:`script-sandbox-configuration`
+   To override the default script sandbox configuration, follow the guide :ref:`groovy-sandbox-configuration`
 

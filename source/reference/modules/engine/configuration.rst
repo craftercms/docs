@@ -84,19 +84,17 @@ Engine Configuration Properties
 -------------------------------
 In this section we will highlight some of the more commonly used properties in the configuration of Crafter Engine. For most properties, please see the  ``server-config.properties`` file, and for additional configuration files and properties, see :ref:`engine-configuration-files`.
 
-.. TODO
 .. list-table:: Common Configuration Properties
     :header-rows: 1
 
     * - Property
       - Purpose
-
     * - :ref:`engine-root-folder`
       - Allows you to set the content root folder
     * - :ref:`engine-turn-off-show-error`
       - Allows you to turn off showing errors in line with content
-    * - Groovy Sandbox Configuration
-      -
+    * - :ref:`groovy-sandbox-configuration`
+      - Allows you to configure the Groovy sandbox to tweak the Groovy security layer
     * - :ref:`request-filtering-configuration`
       - Allows you to configure request filtering
     * - :ref:`engine-forwarded-headers`
@@ -111,22 +109,278 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure static methods in Freemarker templates
     * - :ref:`engine-spring-expression-language`
       - Allows you to configure SpEL expressions for custom app contexts
+    * - :ref:`engine-url-rewrite-configuration`
+      - Allows you to configure URL rewriting
+    * - :ref:`proxy-configuration`
+      - Allows you to configure the proxy for the Preview server (Crafter Engine in Preview Mode)
+
 .. TODO    * - - :ref:`engine-project-configuration`
-      - Allows you to configure the project
 .. TODO * - :ref:`engine-headers-authentication`
-      - ??
 .. TODO * - :ref:`engine-mongodb-configuration`
-      - Allows you to configure MongoDB
 .. TODO * - :ref:`engine-crafter-profile-configuration`
-        - Allows you to configure the Crafter Profile
 .. TODO - :ref:`engine-project-spring-configuration`
-.. TODO - :ref:`engine-url-rewrite-configuration`
-.. TODO - :ref:`proxy-configuration`
 .. TODO - :ref:`using-the-proxy-configuration`
 .. TODO - :ref:`engine-saml2-configuration`
 .. TODO - :ref:`Setting log levels <permanently-set-logging-levels>`
 
 |
+
+|hr|
+
+.. _proxy-configuration:
+
+^^^^^^^^^^^^^^^^^^^
+Proxy Configuration
+^^^^^^^^^^^^^^^^^^^
+CrafterCMS supports a proxy system to proxy GraphQL, Engine, NodeJS or other application delivery systems. Whenever Crafter Engine receives a request, it is matched against the patterns of each server and the first match would then get the request sent to the server with the matching pattern. In some systems, multiple servers are used for search, Studio, etc. Using the proxy helps simplify the system.
+
+One of the benefits of using the proxy in CrafterCMS is that it can connect to any remote server as the preview server, which allows for easier authoring of projects built with other programming languages and technology, React, Angular, or Vue for example.
+
+The proxy configuration file contains configuration for the preview proxy servers.
+To modify the proxy configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Proxy Config** from the dropdown list.
+
+.. image:: /_static/images/site-admin/config-open-proxy-config.webp
+    :alt: Configurations - Open Proxy Configuration
+    :width: 45 %
+    :align: center
+
+Here's a sample Proxy Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "proxy-config.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-proxy-config.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/asset-processing/proxy-config.xml*
+    :language: xml
+    :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+   .. note::
+      Deleting the config file (*proxy-config.xml*) from the repo completely disables the proxy feature.
+
+""""""""""""""""""""
+Proxy Example: React
+""""""""""""""""""""
+For example, you would like to work on a React application within Studio. What is normally included inside Studio is the build output of the React application, so that a user making edits to the React code would need to build the React code then copy it into Studio in order to preview the changes. This becomes cumbersome when developing, as many edits are normally done before reaching the final version of the React app. Using the proxy, the user can preview the React app in Studio and is able to work on both the React app and CrafterCMS.
+
+Let's take a look at an example of setting up the proxy for a React application.
+
+We'll look at the Video Center Blueprint, a React application available from the public marketplace, that runs on ``localhost:3000``, then setup the Studio proxy so we can preview the React application inside Studio. Finally, we'll make some changes in the React application and view the changes made inside Studio.
+
+Let's begin:
+
+#. Setup the React application.
+
+   * Clone the video center blueprint by running ``git clone https://github.com/craftercms/video-center-blueprint.git``
+
+       .. code-block:: sh
+
+          ➜ git clone https://github.com/craftercms/video-center-blueprint.git
+          Cloning into 'video-center-blueprint'...
+          remote: Enumerating objects: 6433, done.
+          remote: Total 6433 (delta 0), reused 0 (delta 0), pack-reused 6433
+          Receiving objects: 100% (6433/6433), 77.12 MiB | 4.92 MiB/s, done.
+          Resolving deltas: 100% (4041/4041), done.
+
+   * Run the React application
+
+     Inside the video center blueprint folder that we just cloned above, navigate to ``video-center-blueprint/sources/app``.
+     We need ``yarn`` installed in your system. Running ``yarn`` with no command will run ``yarn install``. In the example below, yarn is already installed in the system
+
+       .. code-block:: sh
+
+          ➜  app git:(master) yarn
+          yarn install v1.22.4
+          [1/4] 🔍  Resolving packages...
+          success Already up-to-date.
+          ✨  Done in 0.68s.
+
+     Build the React application by running ``yarn start``
+
+       .. code-block:: sh
+
+          ➜  app git:(master) yarn start
+          yarn run v1.22.4
+          $react-scripts start
+
+          Compiled successfully!
+
+          You can now view video-center-blueprint in the browser.
+
+          Local:            http://localhost:3000/
+          On Your Network:  http://192.168.1.135:3000/
+
+          Note that the development build is not optimized.
+          To create a production build, use yarn build.
+
+     The command above will open a browser window where we can view the app
+
+     .. image:: /_static/images/site-admin/vcbp-preview.webp
+        :alt: Video Center Blueprint preview on "localhost:3000"
+        :width: 70 %
+        :align: center
+
+     |
+
+   * Edit the base url in your React app to the server we are using for development, which in our case, is the Studio server, on ``localhost:8080``, and the websocket port for hot module reloading (Crafter does not proxy websocket so you will need to point to the origin server of the websocket), then save the changes and restart the React server.
+
+     To edit the base url, navigate to ``video-center-blueprint/sources/app`` then open the ``.env.development`` file using your favorite editor and set the following variables: ``REACT_APP_BASE_URL`` and ``WDS_SOCKET_PORT``
+
+       .. code-block:: text
+          :emphasize-lines: 6,12
+          :caption: *video-center-blueprint/sources/app/.env.development*
+
+          # A blank REACT_APP_SITE_NAME variable will make the app
+          # try to find the crafterSite cookie which, provided you're
+          # running both your local crafter and node dev web server for
+          # the app are the same, it should be set for you when you created
+          # the project. Manually set the here otherwise.
+          REACT_APP_BASE_URL=http://localhost:8080
+
+          # If you're using the CrafterCMS's Preview Proxy to view the dev mode app inside Preview,
+          # configuring the port makes live reload work inside the CrafterCMS Preview frame.
+          # If you're using any other port to run your webpack dev server, you should adjust this to
+          # that port too.
+          WDS_SOCKET_PORT=3000
+
+     For Windows users on Docker, add ``DANGEROUSLY_DISABLE_HOST_CHECK=true`` to the ``.env.development`` file. |br|
+     Setting the environment variable ``DANGEROUSLY_DISABLE_HOST_CHECK`` to ``true`` disables the host check, which allows us to pretend that the the host header of the request and the listening address of the host are running on the same host and port which is important since browsers block cross-origin requests. If not set, the user will see an ``Invalid Host header`` message in Studio. Remember that **disabling the host check is insecure and should only be used in a development environment**.
+
+     Remember to restart the React server for the settings to take effect.
+
+       .. note:: If you're using the create-react-app, please note that ``react-scripts`` versions earlier than 3.4.0 does not support custom sockjs pathname for hot reloading the server. Make sure that your ``react-scripts`` version used is 3.4.0 or above for the live reload work inside CrafterCMS to work.
+
+#. Setup Studio
+
+   * Create a project using the video center blueprint from the Public Marketplace.
+
+     From the **Main Menu**, click on **Project**, then click on the **Create Project** button. This will open the **Create Site** dialog. Look for **Video Center**, then click on the **Use** button, fill in the required information then click on the **Review** button, then finally the **Create Site** button. This **Video Center** blueprint we selected from the Marketplace is the same react application
+
+     .. image:: /_static/images/site-admin/vcbp-marketplace.webp
+        :alt: Select Video Center blueprint from the Public Marketplace
+        :width: 70 %
+        :align: center
+
+     |
+
+
+   * Setup the proxy for the video center React application we started above
+
+     Open the **Sidebar**, click on |projectTools|, then click on **Configuration**. Select **Proxy Config** from the dropdown menu.
+
+     .. image:: /_static/images/site-admin/config-open-proxy-config.webp
+        :alt: Configurations - Open Proxy Configuration
+        :width: 55 %
+        :align: center
+
+     |
+
+     Scroll down to the ``preview`` server and edit the ``url`` to point to the url used for the React application (``localhost:3000``) we setup in the beginning. Save your changes.
+
+       .. code-block:: xml
+          :caption: *CRAFTER_HOME/data/repos/sites/sandbox/SITENAME/sandbox/config/engine/proxy-config.xml*
+          :emphasize-lines: 3
+
+          <server>
+            <id>preview</id>
+            <url>http://localhost:3000</url>
+            <patterns>
+              <pattern>.*</pattern>
+            </patterns>
+          </server>
+
+     For users running Studio on Docker, use ``http://host.docker.internal:3000`` for the ``url`` of the React application. Docker containers can access local services running on the host by connecting to ``host.docker.internal``. See https://docs.docker.com/docker-for-windows/networking/#use-cases-and-workarounds for more information on connecting from a container to a service on the host.
+
+     At this point, the preview we are seeing in Studio should be the one from our React application.
+
+   * Modify the React application then verify that we can preview the changes made inside Studio.
+
+     For this part, we'll change the text ``Featured Channels`` in the home page to ``My Featured Channels``. Using your favorite editor, in your React app, navigate to ``video-center-blueprint/sources/app/src/containers/Home`` and open the ``Home.js`` file. Scroll down to the line with ``key: 'featured-channels'`` and edit the ``value``:
+
+       .. code-block:: js
+          :emphasize-lines: 3
+
+          {
+            key: 'featured-channels',
+            value: 'My Featured Channels',
+            type: 'channel-card-alt',
+            ...
+
+     Save your changes. Notice that in the React app preview (localhost:3000), the page is reloaded with our changes now visible. Now let's take a look at Studio. Notice that Studio preview has reloaded and the changes we made in the React app is now visible.
+
+     .. image:: /_static/images/site-admin/vcbp-react-app-edited.webp
+        :alt: Changes made in the React app now visible in the Studio preview
+        :width: 70 %
+        :align: center
+
+     |
+
+|hr|
+
+.. _engine-url-rewrite-configuration:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Engine URL Rewrite Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+URL rewriting turns hard to remember, long and complicated URLs into easier to remember URLs.
+
+CrafterCMS comes with the Tuckey URLRewrite filter, a Java Web Filter with functionality like Apache's mod_rewrite,
+that lets you setup rewrite rules for your site.
+
+To add a URL rewrite rule, in Studio, open the **Sidebar** then click on |projectTools|. Click on **Configuration**
+then select **Engine URL Rewrite Configuration (XML Style)**.
+
+.. image:: /_static/images/site-admin/config-urlrewrite-select.webp
+    :alt: Configurations - Open URL Rewrite Configuration
+    :width: 45 %
+    :align: center
+
+|
+
+""""""
+Sample
+""""""
+Here's a sample urlrewrite.xml file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "urlrewrite.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-urlrewrite.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/PROJECTNAME/sandbox/config/engine/urlrewrite.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+
+After making your changes and saving the configuration, remember to publish the configuration file just saved
+(``urlrewrite.xml`` file).  To publish the configuration file, from the **Sidebar**, click on **Dashboard**.
+In the **Unpublished Work** dashlet, check the box next to the ``urlrewrite.xml`` file, and click **Publish**
+from the context nav to publish.
+
+.. image:: /_static/images/site-admin/publish-urlrewrite.webp
+    :alt: Configurations - Publish URL Rewrite Config File from Dashboard
+    :width: 85 %
+    :align: center
+
+|
+
+For more information on the UrlRewriteFilter, see http://tuckey.org/urlrewrite/
+
+|hr|
 
 .. _engine-root-folder:
 
@@ -499,12 +753,12 @@ required to add an extra parameter ``initClass=false`` in the annotations to pre
 
 |hr|
 
-.. _script-sandbox-configuration:
+.. _groovy-sandbox-configuration:
 
 ----------------------------
-Script Sandbox Configuration
+Groovy Sandbox Configuration
 ----------------------------
-When a script is executed all code is validated against a blacklist of insecure expressions to prevent code that could
+When a Groovy script is executed all code is validated against a blacklist of insecure expressions to prevent code that could
 compromise the system. When you try to execute a script that contains insecure expressions you will see an error
 similar to this:
 
@@ -519,6 +773,25 @@ is required, it is possible to override the blacklist configuration. Configurati
 
 .. warning:: When you allow a script to make an insecure call you should make sure it can only be executed with known
              arguments and **never** with unverified user input.
+
+|
+
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Groovy Sandbox Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^
+The following allows you to configure the Groovy sandbox.
+The Groovy sandbox is enabled by default and can be disabled by changing the property ``crafter.engine.groovy.sandbox.enable`` to ``false``.
+
+.. code-block:: properties
+   :linenos:
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # Indicates if the sandbox should be enabled for all sites
+   crafter.engine.groovy.sandbox.enable=true
+   # Indicates if the blacklist should be enabled for all sites (this will have no effect if the sandbox is disabled)
+   crafter.engine.groovy.sandbox.blacklist.enable=true
+   # The location of the default blacklist to use for all sites (this will have no effect if the sandbox is disabled)
+   crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/groovy/blacklist
 
 |
 
@@ -550,30 +823,6 @@ To use a custom blacklist follow these steps:
 
 Now you can execute the same script without any issues.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Groovy Sandbox Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following allows you to configure the Groovy sandbox.
-The Groovy sandbox is enabled by default.
-
-.. code-block:: properties
-   :linenos:
-   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-
-   # Indicates if the sandbox should be enabled for all sites
-   crafter.engine.groovy.sandbox.enable=true
-   # Indicates if the blacklist should be enabled for all sites (this will have no effect if the sandbox is disabled)
-   crafter.engine.groovy.sandbox.blacklist.enable=true
-   # The location of the default blacklist to use for all sites (this will have no effect if the sandbox is disabled)
-   crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/groovy/blacklist
-
-For more information on configuring the Groovy sandbox, see :ref:`here <script-sandbox-configuration>`
-
-|
-
-|hr|
-
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Disabling the Sandbox Blacklist
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -588,16 +837,6 @@ restrictions. To disable the blacklist for all projects/sites update the server 
   # Indicates if the blacklist should be enabled for all sites (this will have no effect if the sandbox is disabled)
   crafter.engine.groovy.sandbox.blacklist.enable=false
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Disabling the Groovy Sandbox
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-It is possible to completely disable the Groovy sandbox for all scripts. To disable the sandbox for all sites update the server configuration file :ref:`server-config.properties <engine-configuration-files>`:
-
-.. code-block:: none
-  :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-
-  # Indicates if the sandbox is enabled for all sites
-  crafter.engine.groovy.sandbox.enable=false
 
 ^^^^^^^^^^^^^^^
 Important Notes
@@ -694,9 +933,9 @@ There are a couple of things you can do to get around the exception being thrown
 |hr|
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 Configuration Properties
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 This example file contains the properties used by Crafter Engine (click on the triangle on the left to expand/collapse):
 
@@ -1397,7 +1636,571 @@ Let's take a look at an example of overriding the Project Configuration used by 
 
    The Engine ``site-config.live.xml`` configuration will now be loaded when viewing your project in ``live`` and the Engine ``site-config.staging.xml`` configuration will now be loaded when viewing your project in ``staging`` instead of the default Engine ``site-config.xml`` files
 
+.. _setup-project-for-delivery:
 
+---------------------------------
+Setup Engine to Deliver a Project
+---------------------------------
+^^^^^^^^^^^^^^^^^^^^^
+Server-based Delivery
+^^^^^^^^^^^^^^^^^^^^^
+In this section, we will be working in the delivery environment of CrafterCMS and describing how to setup your project for a delivery environment.
 
+"""""""""""""""""""""""""""""
+Setup Crafter Deployer Target
+"""""""""""""""""""""""""""""
+CrafterCMS out of the box has a script to help you create your deployer target for the delivery environment.
 
+In the ``bin`` folder in your CrafterCMS delivery environment, we will use the script ``init-site.sh`` to help us create the deployer target.
 
+From your command line, navigate to your ``{Crafter-CMS-delivery-environment-directory}/bin/`` , and execute the init-site script. The following output of ``init-site.sh -h``
+explains how to use the script:
+
+  .. code-block:: bash
+    :force:
+
+    usage: init-site [options] [site] [repo-path]
+     -a,--notification-addresses <addresses>   A comma-separated list of email
+                                               addresses that should receive
+                                               deployment notifications
+     -b,--branch <branch>                      The name of the branch to clone
+                                               (live by default)
+     -f,--passphrase <passphrase>              The passphrase of the private
+                                               key (when the key is passphrase
+                                               protected)
+     -h,--help                                 Show usage information
+     -k,--private-key <path>                   The path to the private key, when
+                                               using private-key authentication
+                                               through SSH to the remote Git repo
+     -p,--password <password>                  The password for the remote Git
+                                               repo, when using basic
+                                               authentication
+     -u,--username <username>                  The username for the remote Git
+                                               repo, when using basic
+                                               authentication
+     --addresses <>                            A comma-separated list of email
+                                               addresses that should receive deployment notifications
+
+    EXAMPLES:
+     Init a site from the default repo path (../../crafter-authoring/data/repos/sites/{sitename}/published)
+         init-site mysite
+     Init a site from a specific local repo path
+         init-site mysite /opt/crafter/authoring/data/repos/sites/mysite/published
+     Init a site from a specific local repo path, cloning a specific branch of the repo
+         init-site -b master mysite /opt/crafter/authoring/data/repos/sites/mysite/published
+     Init a site that is in a remote HTTPS repo with username/password authentication
+         init-site -u jdoe -p jdoe1234 mysite https://github.com/jdoe/mysite.git
+     Init a site that is in a remote SSH repo with public/private key authentication (specific private key path
+     with no passphrase)
+         init-site -k ~/.ssh/jdoe_key mysite ssh://myserver/opt/crater/sites/mysite
+     Init a site that is in a remote SSH repo with public/private key authentication (specific private key path
+     with passphrase)
+         init-site -k ~/.ssh/jdoe_key -f jdoe123 mysite ssh://myserver/opt/crater/sites/mysite
+
+.. include:: /includes/ssh-private-key.rst
+
+We recommend using Secure Shell (SSH) with your project's published repo Git URL and for authentication, to use either username/password authentication or public/private key
+authentication.
+
+The SSH Git URL format is: ``ssh://[user@]host.xz[:port]/path/to/repo/`` where sections between **[]** are optional.
+
+Example #1: ``ssh://server1.example.com/path/to/repo``
+
+Example #2: ``ssh://jdoe@server2.example.com:63022/path/to/repo``
+
+   .. note::
+      .. include:: /includes/setup-ssh-keys.rst
+
+If you are just working on another directory on disk for your delivery, you can just use the filesystem. When your repository is local, make sure to use the absolute path.
+Here is an example project's published repo Git url when using a local repository:
+
+  .. code-block:: bash
+
+      /opt/crafter/authoring/data/repos/sites/my-project/published
+
+.. note::
+  * When using ``ssh``, you might see in the logs ``com.jcraft.jsch.JSchException: UnknownHostKey`` errors. These errors are common in Ubuntu, and are caused by known host keys being stored in non-RSA format. Please follow the instructions in :ref:`crafter-studio-debugging-deployer-issues` under ``SSH Unknown Host`` to resolve them.
+
+  * ``Git`` needs to be installed in authoring when using SSH to connect the delivery to the authoring.
+
+    If you see the following error in the delivery Deployer: `Caused by: java.io.IOException: bash: git-upload-pack: command not found` you'll need to add the location of git (usually **/usr/bin**) to your non-login shell startup file (e.g. **~/.bashrc**).
+
+    To get the location of Git, run the following command: ``which git-upload-pack``
+  * You can limit SSH access by using Git Shell, see https://git-scm.com/docs/git-shell for more information.
+
+"""""""""""""""""""""""""""""
+Viewing your Site for Testing
+"""""""""""""""""""""""""""""
+To test viewing your project, open a browser and type in the URL of your project.
+
+If you have multiple projects setup, to view a certain project, in your browser, enter the following:
+
+.. code-block:: sh
+
+    {Server URL}?crafterSite={siteName}
+
+Here we have an example of a delivery setup in another directory on disk (local), where there are two projects, ``my-awesome-editorial`` and ``hello-world``
+
+.. image:: /_static/images/system-admin/project-list.webp
+    :width: 100 %
+    :align: center
+    :alt: Setup Project for Delivery - Project List
+
+To set ``crafterSite`` to the ``hello-world`` project, in your browser, type in
+
+.. code-block:: sh
+
+    http://localhost:9080?crafterSite=helloworld
+
+.. image:: /_static/images/system-admin/project-hello.webp
+    :width: 100 %
+    :align: center
+    :alt: Setup Project for Delivery - Hello World Project
+
+To set the site to the ``myawesomesite``, in your browser, type in
+
+.. code-block:: sh
+
+    http://localhost:9080?crafterSite=myawesomesite
+
+.. image:: /_static/images/system-admin/project-awesome.webp
+    :width: 100 %
+    :align: center
+    :alt: Setup Site for Delivery - My Awesome Site
+
+.. _setup-serverless-delivery:
+
+^^^^^^^^^^^^^^^^^^^
+Serverless Delivery
+^^^^^^^^^^^^^^^^^^^
+CrafterCMS can be configured to serve sites directly from AWS services, following this guide you will:
+
+- Create a AWS Elasticsearch domain (optional)
+- Configure a Crafter Studio in an authoring environment to call the Crafter Deployer to create an AWS CloudFormation
+  with a CloudFront and S3 bucket for each site
+- Configure a Crafter Engine in a delivery environment to read files from the S3 bucket and query to AWS Elasticsearch (optional)
+
+"""""""""""""
+Prerequisites
+"""""""""""""
+- An AWS account
+- A CrafterCMS authoring environment
+- A CrafterCMS delivery environment
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Step 1: Create an Elasticsearch Domain for Delivery (optional)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Since serverless delivery requires a single Elasticsearch endpoint readable by all Engine instances, we recommend you
+create an AWS Elasticsearch domain for delivery. If you don't want to use an AWS Elasticsearch domain then you should
+create and maintain your own Elasticsearch cluster.
+
+   .. important:: Authoring can also use an Elasticsearch domain, but be aware that in a clustered authoring environment
+                  each authoring instance requires a separate Elasticsearch instance. If you try to use the same ES domain
+                  then you will have multiple preview deployers writing to the same index.
+
+To create an AWS Elasticsearch domain please do the following:
+
+#. In the top navigation bar of your AWS console, click the ``Services`` dropdown menu, and search for
+   ``Elasticsearch Service``.
+#. Click on ``Create a new domain``.
+#. Select ``Deployment Type`` and on the Elasticsearch version, pick ``7.2``.
+
+   .. image:: /_static/images/system-admin/serverless/es-deployment-type.webp
+      :alt: Serverless Site - Elasticsearch Deployment Type
+      :align: center
+
+   |
+
+#. On the next screen, enter the domain name. Leave the defaults on the rest of the settings or change as needed per
+   your environment requirements, then click on ``Next``.
+#. On ``Network Configuration``, we recommend you pick the VPC where your delivery nodes reside. If they're not running
+   on an Amazon VPC, then pick ``Public Access``.
+
+   .. image:: /_static/images/system-admin/serverless/es-network-access.webp
+      :alt: Serverless Site - Elasticsearch Network Access
+      :align: center
+
+   |
+
+#. Select the ``Access Policy`` that fits your Crafter environment, and click on ``Next`` (if on the same VPC as
+   delivery, we recommend ``Do not require signing request with IAM credential``).
+
+   .. image:: /_static/images/system-admin/serverless/es-access-policy.webp
+      :alt: Serverless Site - Elasticsearch Access Policy
+      :align: center
+
+   |
+
+#. Review the settings and click on ``Confirm``.
+#. Wait for a few minutes until the domain is ready. Copy the ``Endpoint``. You'll need this URL later to configure
+   the Deployer and Delivery Engine which will need access to the Elasticsearch.
+
+   .. image:: /_static/images/system-admin/serverless/es-endpoint.webp
+      :alt: Serverless Site - Elasticsearch Endpoint
+      :align: center
+
+   |
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+Step 2: Configure the Delivery for Serverless Mode
+""""""""""""""""""""""""""""""""""""""""""""""""""
+#. Edit the services override file to enable the Serverless S3 mode
+   (``DELIVERY_INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/engine/extension/services-context.xml``):
+
+   .. code-block:: xml
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <beans xmlns="http://www.springframework.org/schema/beans"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <import resource="classpath*:crafter/engine/mode/multi-tenant/simple/services-context.xml" />
+        <!-- S3 Serverless Mode -->
+        <import resource="classpath*:crafter/engine/mode/serverless/s3/services-context.xml" />
+
+      </beans>
+
+   |
+
+#. Edit the properties override file to point Engine to consume the site content from S3
+   (``DELIVERY_INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``). The
+   properties you need to update are the following:
+
+   - ``crafter.engine.site.default.rootFolder.path``
+   - ``crafter.engine.s3.region``
+   - ``crafter.engine.s3.accessKey``
+   - ``crafter.engine.s3.secretKey``
+
+   An example of how the :ref:`server-config.properties <engine-configuration-files>` would look with configuration to read from an S3 bucket per site
+   (which is the most common use case), is the following (values in ``X`` are not displayed since they're sensitive):
+
+   .. code-block:: properties
+      :caption: *DELIVERY_INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+      :force:
+
+      # Content root folder when using S3 store. Format is s3://<BUCKET_NAME>/<SITES_ROOT>/{siteName}
+      crafter.engine.site.default.rootFolder.path=s3://serverless-test-site-{siteName}/{siteName}
+      ...
+
+      # S3 Serverless properties
+      # S3 region
+      crafter.engine.s3.region=us-east-1
+      # AWS access key
+      crafter.engine.s3.accessKey=XXXXXXXXXX
+      # AWS secret key
+      crafter.engine.s3.secretKey=XXXXXXXXXXXXXXXXXXXX
+
+   |
+
+   As you can see, the bucket name portion of the root folder S3 URL contains a prefix and then the site name. This
+   prefix is mentioned also as a "namespace" later on in the Studio serverless configuration.
+
+   .. important:: You can also provide the AWS region, access key and secret key without having to edit the config file
+                  properties. Please see
+                  `Set up AWS Credentials and Region for Development <https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html>`_.
+
+#. We recommend that the AWS credentials configured belong to a user with just the following permission policy (all
+   strings like ``$VAR`` are placeholders and need to be replaced):
+
+   .. code-block:: json
+      :caption: aws-serverless-engine-policy.json
+      :linenos:
+
+      {
+          "Version": "2012-10-17",
+          "Statement": [
+              {
+                  "Effect": "Allow",
+                  "Action": "s3:ListAllMyBuckets",
+                  "Resource": "*"
+              },
+              {
+                  "Effect": "Allow",
+                  "Action": [
+                      "s3:ListBucket",
+                      "s3:GetBucketLocation",
+                      "s3:GetObject"
+                  ],
+                  "Resource": "arn:aws:s3:::$BUCKET_NAME_PREFIX-*"
+              }
+          ]
+      }
+
+   |
+
+#. Edit the ``ES_URL`` in ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh`` to point to the Elasticsearch endpoint you
+   created in the previous step:
+
+   .. code-block:: bash
+
+      export ES_URL=https://vpc-serverless-test-jpwyav2k43bb4xebdrzldjncbq.us-east-1.es.amazonaws.com
+
+   |
+
+#. Make sure that the you have an application load balancer (ALB) fronting the Delivery Engine instances and that it's
+   accessible by AWS CloudFront.
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+Step 3: Configure Authoring for Serverless Deployment
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+Instead of having one Crafter Deployer per node in delivery, for serverless you just need a single Deployer uploading
+files to S3. The authoring preview deployer can also be used for serverless deployment, when there's only one
+authoring node. When there's multiple authoring nodes (a cluster), then you'll need to have a separate deployer pulling
+from a load balanced SSH/HTTPS URL fronting the Studio Git repos.
+
+In both cases you still need to configure Studio to call the Deployer to create the serverless targets on site creation.
+You can find this configuration under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``. The properties are well documented in the file so they won't be explained here, but there are still some important things to
+notice:
+
+- You need to add the URL of the Elasticsearch domain created in a previous step under
+  ``studio.serverless.delivery.deployer.target.template.params.elasticsearch_url``:
+
+  .. code-block:: yaml
+
+    studio.serverless.delivery.deployer.target.template.params:
+      # The delivery Elasticsearch endpoint (optional is authoring is using the same one, specified in the ES_URL env variable)
+      elastic_search_url: https://vpc-serverless-test-jpwyav2k43bb4xebdrzldjncbq.us-east-1.es.amazonaws.com
+
+  |
+
+- When using the ``aws-cloudformed-s3`` target template (the default one), the Deployer creates first an AWS
+  CloudFormation stack with an S3 bucket where the site content will be uploaded and a CloudFront that will serve
+  ``/static-assets`` directly and will redirect any other requests to the Delivery Engine LB (which you specify in
+  ``studio.serverless.delivery.deployer.target.template.params.aws.cloudformation.deliveryLBDomainName``).
+- The ``aws.cloudformation.namespace`` is basically the prefix of the S3 bucket mentioned in the previous step. This
+  prefix will be part of the name of most of the AWS resources created by the serverless deployer.
+- You need to specify proper AWS credentials for creating the CloudFormation stack and uploading files to S3, which can
+  be done in the following ways:
+
+  - As environment variables or under the default AWS credentials path, like explained in
+    `Set up AWS Credentials and Region for Development <https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html>`_.
+  - In the ``aws.default_access_key`` and ``aws.default_secret_key`` properties under
+    ``studio.serverless.delivery.deployer.target.template.params``:
+
+    .. code-block:: yaml
+
+       studio.serverless.delivery.deployer.target.template.params:
+         aws:
+           # AWS access key (optional if specified through default AWS chain)
+           default_access_key: XXXXXXXXXX
+           # AWS secret key (optional if specified through default AWS chain)
+           default_secret_key: XXXXXXXXXXXXXXXXXXXX
+
+    |
+
+  - In ``aws.cloudformation.access_key`` and ``aws.cloudformation.secret_key`` properties under
+    ``studio.serverless.delivery.deployer.target.template.params``, when specific CloudFormation credentials are needed:
+
+    .. code-block:: yaml
+
+       studio.serverless.delivery.deployer.target.template.params:
+         aws:
+           ...
+           cloudformation:
+             # AWS access key (optional if aws.accessKey is specified)
+             access_key: XXXXXXXXXX
+             # AWS secret key (optional if aws.secretKey is specified)
+             secret_key: XXXXXXXXXXXXXXXXXXXX
+
+    |
+
+- We recommend that the AWS credentials configured belong to a user with just the following permission policy (all
+  strings like ``$VAR`` are placeholders and need to be replaced):
+
+  .. code-block:: json
+     :caption: aws-serverless-deployer-policy.json
+     :linenos:
+
+     {
+         "Version": "2012-10-17",
+         "Statement": [
+             {
+                 "Effect": "Allow",
+                 "Action": [
+                     "cloudformation:CreateStack",
+                     "cloudformation:DescribeStacks",
+                     "cloudformation:DeleteStack"
+                 ],
+                 "Resource": "arn:aws:cloudformation:$REGION:$ACCOUNT_ID:stack/$CLOUDFORMATION_NAMESPACE-*/*"
+             },
+             {
+                 "Effect": "Allow",
+                 "Action": [
+                     "cloudfront:CreateDistribution",
+                     "cloudfront:GetDistribution",
+                     "cloudfront:GetDistributionConfig",
+                     "cloudfront:UpdateDistribution",
+                     "cloudfront:DeleteDistribution",
+                     "cloudfront:CreateInvalidation",
+                     "cloudfront:TagResource",
+                     "cloudfront:UntagResource"
+                 ],
+                 "Resource": "arn:aws:cloudfront::$ACCOUNT_ID:distribution/*"
+             },
+             {
+                 "Effect": "Allow",
+                 "Action": [
+                     "cloudfront:CreateCloudFrontOriginAccessIdentity",
+                     "cloudfront:GetCloudFrontOriginAccessIdentityConfig",
+                     "cloudfront:GetCloudFrontOriginAccessIdentity",
+                     "cloudfront:DeleteCloudFrontOriginAccessIdentity"
+                 ],
+                 "Resource": "*"
+             },
+             {
+                 "Effect": "Allow",
+                 "Action": [
+                     "s3:CreateBucket",
+                     "s3:ListBucket",
+                     "s3:DeleteBucket",
+                     "s3:GetBucketLocation",
+                     "s3:GetBucketPolicy",
+                     "s3:PutBucketPolicy",
+                     "s3:DeleteBucketPolicy",
+                     "s3:PutBucketCORS",
+                     "s3:GetObject",
+                     "s3:PutObject",
+                     "s3:DeleteObject"
+                 ],
+                 "Resource": "arn:aws:s3:::$CLOUDFORMATION_NAMESPACE-*"
+             }
+         ]
+     }
+
+  |
+
+- By default, the CloudFront created by Deployer will have a ``*.cloudfront.net`` domain name. To have CloudFront use
+  additional domain name(s) please specify the AWS ARN of the domain SSL certificate (``cloudfrontCertificateArn``) and
+  the alternate domain name(s) (``alternateCloudFrontDomainNames``):
+
+  .. code-block:: yaml
+
+     studio.serverless.delivery.deployer.target.template.params:
+       aws:
+         cloudformation:
+           ...
+           # The SSL certificate ARN the CloudFront CDN should use (optional when target template is aws-cloudformed-s3)
+           cloudfrontCertificateArn: arn:aws:acm:...
+           # The alternate domains names (besides *.cloudfront.net) for the CloudFront CDN (optional when target template is aws-cloudformed-s3)
+           alternateCloudFrontDomainNames: myawesomesite.com,www.myawesomesite.com
+
+  |
+
+An example of serverless deployment configuration where there's a single authoring instance and no specific domain
+name requirements is the following:
+
+.. code-block:: yaml
+
+   ##########################################################
+   ##                 Serverless Delivery                  ##
+   ##########################################################
+   # Indicates if serverless delivery is enabled
+   studio.serverless.delivery.enabled: true
+   # The URL for the serverless delivery deployer create URL
+   studio.serverless.delivery.deployer.target.createUrl: ${studio.preview.createTargetUrl}
+   # The URL for the serverless delivery deployer delete URL
+   studio.serverless.delivery.deployer.target.deleteUrl: ${studio.preview.deleteTargetUrl}
+   # The template name for serverless deployer targets
+   studio.serverless.delivery.deployer.target.template: aws-cloudformed-s3
+   # Replace existing target configuration if one exists?
+   studio.serverless.delivery.deployer.target.replace: false
+   # The URL the deployer will use to clone/pull the site's published repo. When the deployer is in a separate node
+   # (because of clustering), this URL should be an SSH/HTTP URL to the load balancer in front of the Studios
+   studio.serverless.delivery.deployer.target.remoteRepoUrl: ${env:CRAFTER_DATA_DIR}/repos/sites/{siteName}/published
+   # The deployer's local path where it will store the clone of the published site. This property is not needed if
+   # the deployer is not the preview deployer, so you can leave an empty string ('') instead
+   studio.serverless.delivery.deployer.target.localRepoPath: ${env:CRAFTER_DATA_DIR}/repos/aws/{siteName}
+   # Parameters for the target template. Please check the deployer template documentation for the possible parameters.
+   # The following parameters will be sent automatically, and you don't need to specify them: env, site_name, replace,
+   # disable_deploy_cron, local_repo_path, repo_url, use_crafter_search
+   studio.serverless.delivery.deployer.target.template.params:
+      # The delivery search endpoint (optional if authoring is using the same one, specified in the SEARCH_URL env variable)
+      search_url: https://vpc-serverless-test-jpwyav2k43bb4xebdrzldjncbq.us-east-1.es.amazonaws.com
+      aws:
+        # AWS access key (optional if specified through default AWS chain)
+        default_access_key: XXXXXXXXXX
+        # AWS secret key (optional if specified through default AWS chain)
+        default_secret_key: XXXXXXXXXXXXXXXXXXXX
+        cloudformation:
+          # Namespace to use for CloudFormation resources (required when target template is aws-cloudformed-s3)
+          namespace: serverless-test
+          # The domain name of the serverless delivery LB (required when target template is aws-cloudformed-s3)
+          deliveryLBDomainName: serverless-test-lb-1780491458.us-east-1.elb.amazonaws.com
+
+|
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+Step 4: Create the Site in the Authoring Environment
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+#. Login to the Crafter Studio in the authoring environment from your browser.
+#. Click the ``Create Site`` button
+#. Choose the ``Editorial`` blueprint, enter the ``Site Id`` (e.g. ``editorial``), and then review and create.
+#. Go to your AWS console in your browser and on the ``Services`` dropdown search for CloudFormation. You should then
+   see  the CloudFormation for the site you just created with the status ``CREATE_IN_PROGRESS``. After several minutes,
+   the status should change to ``CREATE_COMPLETE``, which tells the Crafter Deployer that it is able to start
+   uploading files to S3.
+
+   .. image:: /_static/images/system-admin/serverless/cloudformation.webp
+      :alt: Serverless Site - CloudFormation
+      :align: center
+
+   |
+
+#. Wait at least 2 minutes for the Crafter Deployer to finish uploading the files and for the delivery Crafter Engine
+   to warm up the new site in cache.
+
+   .. code-block:: none
+      :caption: deployer.log
+      :linenos:
+
+      2019-12-20 20:48:58.780  INFO 18846 --- [deployment-3] llCloudFormationStackUsableLifecycleHook : CloudFormation stack 'serverless-test-site-editorial' is usable (status 'CREATE_COMPLETE')
+      2019-12-20 20:48:58.781  INFO 18846 --- [deployment-3] org.craftercms.deployer.impl.TargetImpl  : Creating deployment pipeline for target 'editorial-serverless-delivery'
+      2019-12-20 20:48:58.854  INFO 18846 --- [deployment-3] org.craftercms.deployer.impl.TargetImpl  : Checking if deployments need to be scheduled for target 'editorial-serverless-delivery'
+      2019-12-20 20:48:58.855  INFO 18846 --- [deployment-3] org.craftercms.deployer.impl.TargetImpl  : Deployments for target 'editorial-serverless-delivery' scheduled with cron 0 * * * * *
+      2019-12-20 20:49:00.001  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : ============================================================
+      2019-12-20 20:49:00.001  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : Deployment for editorial-serverless-delivery started
+      2019-12-20 20:49:00.001  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : ============================================================
+      ...
+      ...
+      ...
+      2019-12-20 20:49:15.882  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : ============================================================
+      2019-12-20 20:49:15.882  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : Deployment for editorial-serverless-delivery finished in 15.878 secs
+      2019-12-20 20:49:15.882  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : ============================================================
+
+   |
+
+   .. code-block:: none
+      :caption: engine.log
+      :linenos:
+
+      [INFO] 2019-12-20T20:50:00,061 [pool-3-thread-10] [] [context.SiteContextManager] | ==================================================
+      [INFO] 2019-12-20T20:50:00,061 [pool-3-thread-10] [] [context.SiteContextManager] | <Creating site context: editorial>
+      [INFO] 2019-12-20T20:50:00,061 [pool-3-thread-10] [] [context.SiteContextManager] | ==================================================
+      ...
+      ...
+      ...
+      [INFO] 2019-12-20T20:50:04,393 [pool-3-thread-10] [] [context.SiteContextManager] | ==================================================
+      [INFO] 2019-12-20T20:50:04,393 [pool-3-thread-10] [] [context.SiteContextManager] | </Creating site context: editorial>
+      [INFO] 2019-12-20T20:50:04,393 [pool-3-thread-10] [] [context.SiteContextManager] | ==================================================
+
+   |
+
+""""""""""""""""""""""""""""""
+Step 5: Test the Delivery Site
+""""""""""""""""""""""""""""""
+Open a browser and go to ``https://DOMAIN_OF_YOUR_CLOUDFRONT``. You should be able to see your Editorial site!
+
+.. image:: /_static/images/system-admin/serverless/editorial-screenshot.webp
+   :alt: Serverless Site - Editorial Screenshot
+   :align: center
+
+.. note::
+
+   The following error appears in the deployer logs (*CRAFTER_HOME/logs/deployer/crafter-deployer.out*) when a site hasn't been published:
+
+      .. code-block:: text
+
+         2020-07-07 15:33:00.004 ERROR 22576 --- [deployment-9] l.processors.AbstractDeploymentProcessor : Processor 'gitDiffProcessor' for target 'ed-serverless-delivery' failed
+         org.craftercms.deployer.api.exceptions.DeployerException: Failed to open Git repository at /home/ubuntu/craftercms/crafter-authoring/data/repos/sites/ed/published;
+
+   Once the site has been published, the error above will go away.
