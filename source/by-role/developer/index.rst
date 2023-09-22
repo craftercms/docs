@@ -82,6 +82,7 @@ Regardless of type of project, a developer needs to be familiar with the followi
     common/working-with-sass
     ../../reference/multi-environment-support
     common/custom-error-pages
+    common/adding-a-new-language
 
 For templated projects, there are more topics to cover:
 
