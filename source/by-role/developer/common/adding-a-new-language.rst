@@ -8,14 +8,7 @@
 =====================
 Adding a New Language
 =====================
-Crafter Studio has been translated into a number of languages.  Here's a list of currently supported languages along with the language codes used in Studio:
-
-* ``en`` - English
-* ``sp`` - Spanish
-* ``de`` - German
-* ``ko`` - Korean
-
-To reach more users, additional languages may need to be added in Crafter Studio.
+Crafter Studio has been translated into a number of languages. To reach more users, additional languages may need to be added in Crafter Studio.
 
 **Here are the steps to add a new language in Crafter Studio:**
 
