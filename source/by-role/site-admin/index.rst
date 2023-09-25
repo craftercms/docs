@@ -351,7 +351,7 @@ Content that is targeted to users is known in CrafterCMS as targeted content.
 Language-Based Localized Content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The most common form of targeted content is language-based localization, which is enabled just by specifying
-some configuration in the :ref:`Engine's Project Config <engine-project-configuration>`.
+some configuration in :ref:`Engine's Configuration <engine-config>`.
 
 The Engine project configuration file can be accessed by clicking on |projectTools| from the *Sidebar*,
 then click on **Configuration** and finally selecting **Engine Project Configuration** from the list:
