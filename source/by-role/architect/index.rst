@@ -130,6 +130,17 @@ On-Prem or IaaS/Cloud Providers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. Fix to indicate you can run Kuber or traditional
 
+Serverless deployment is supported via Docker, Kubernetes, and S3 or S3-compatible storage tier.
+This allows for very fast scaling up/down and a true planet-scale deployment. Here's a typical
+serverless deployment:
+
+.. image:: /_static/images/architecture/serverless-deployment-architecture.webp
+   :width: 80%
+   :alt: CrafterCMS Serverless Deployment
+   :align: center
+
+|
+
 If you're not quite ready for serverless deployment, CrafterCMS deploys quite nicely in a traditional
 server/scale-group architecture. Here is a typical deployment at a high level:
 
@@ -137,6 +148,7 @@ server/scale-group architecture. Here is a typical deployment at a high level:
    :width: 100%
    :alt: CrafterCMS Typical Real-life Deployment
    :align: center
+
 
 |hr|
 
