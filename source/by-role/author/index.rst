@@ -52,7 +52,7 @@ As mentioned earlier, Crafter Studio provides authors the tools for creating/man
 In this section we'll take a look at various screens in Crafter Studio an author may encounter.
 
 ^^^^^^^^^^
-Logging in
+Logging In
 ^^^^^^^^^^
 To log in to Crafter Studio:
     * Enter the following in the URL of your browser:  *http://SERVERNAMEHERE:PORT/studio*
@@ -353,7 +353,7 @@ prior to publishing changes.
 
 |
 
-.. _experience-builder-panel-screens:
+.. _experience-builder-panel:
 
 """"""""""""""""""""""""
 Experience Builder Panel
@@ -386,7 +386,6 @@ Experience Builder Panel
 """"""""""""""""""""""""""
 Common Navigation Elements
 """"""""""""""""""""""""""
-
 .. _toolbar:
 
 ~~~~~~~
@@ -419,7 +418,7 @@ The basic elements of the Contextual Navigation bar are:
 
 |
 
-.. _project-sidebar:
+.. _sidebar:
 
 ~~~~~~~
 Sidebar
@@ -594,7 +593,7 @@ width on your browser
 
 |hr|
 
-.. _author-xb:
+.. _author-experience-builder-xb:
 
 ------------------------------
 Author Experience Builder (XB)
@@ -805,7 +804,7 @@ Studio. Enabling ``Edit mode`` or ``Move mode``  turns on the ``Experience build
 side of the screen.
 
 """""""""
-Edit mode
+Edit Mode
 """""""""
 .. image:: /_static/images/content-author/xb-edit-mode.webp
     :alt: Getting Started - XB Edit Mode
@@ -837,7 +836,7 @@ highlight the section in a green box
     :align: center
 
 """""""""
-Move mode
+Move Mode
 """""""""
 .. image:: /_static/images/content-author/xb-move-mode.webp
     :alt: Getting Started - XB Move mode
@@ -904,9 +903,7 @@ into that area.
 
 |hr|
 
-.. _content_authors_pages:
-
-.. TODO: Continue refactor here
+.. _working-with-pages:
 
 ------------------
 Working with Pages
@@ -985,6 +982,8 @@ An error form will appear when you try to *Save and Close* without filling out a
    :width: 50 %
    :align: center
    :alt: Content Author - Page Save Error
+
+.. _via-quick-create:
 
 """"""""""""""""
 Via Quick Create
@@ -1336,7 +1335,6 @@ can configure what components are available in this panel.
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Drag and Drop Components
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
 * Placing new components
 
   The user may create new components by dragging components from the experience builder panel
@@ -1421,7 +1419,6 @@ tools may also be added to the RTE, depending on your needs. Please see the deve
 ^^^^^^^^^^^^^^
 Copying a Page
 ^^^^^^^^^^^^^^
-
 To copy a page, in the Sidebar panel, click on the **Pages** folder. Navigate to the level and location
 within the project navigation tree where you want to copy content, then click on the three dots next to
 the page and select **Copy**
@@ -1452,14 +1449,11 @@ copied, a copy of the uploaded items are created.
 To learn more about these dependencies and see examples, see :ref:`item-specific-dependencies` or
 :ref:`copy-dependencies-configuration`.
 
-.. raw:: html
-
-   <hr/>
+|hr|
 
 ^^^^^^^^^^^^^^^
 Deleting a Page
 ^^^^^^^^^^^^^^^
-
 Users with permission to delete content can delete a page from a project. To delete a page, in the Sidebar panel,
 click on the **Pages** folder. Navigate to the level and location within the project navigation tree where you
 want to delete content, then click on the three dots next to the page and select **Delete**
@@ -1496,7 +1490,6 @@ item deletion.
 """"""""""""""""
 Disabling a Page
 """"""""""""""""
-
 A page content type can be modeled to disable a page in content delivery via the reserved variable ``disabled``.
 This variable indicates an object is “hidden” in live and cannot be retrieved via services like search or the
 site item service.
@@ -1578,13 +1571,11 @@ we'll view the ``Health`` category page and verify that the article ``10 Tips to
 
 |hr|
 
-.. _content_authors_assets:
+.. _working-with-assets:
 
 -------------------
 Working with Assets
 -------------------
-
-
 Assets are binary files, typically images, videos, etc. which can be uploaded directly by Authors from
 the project navigation tree to CrafterCMS.
 
@@ -1599,7 +1590,7 @@ the folder named **static-assets**. This will show you a list of folders contain
 such as images, fonts, etc.
 
 """""""""""""""""
-Creating a folder
+Creating a Folder
 """""""""""""""""
 If the file you are uploading does not belong in any of the existing folders, you can just create another
 folder to upload your file to by doing the following:
@@ -1623,7 +1614,7 @@ Enter a name for the new folder then click on the **Create** button.
 |
 
 """""""""""""
-Adding a file
+Adding a File
 """""""""""""
 To add a file, from the folder **static-assets**, navigate to the folder you want to add the files to,
 then click on the three dots next to the folder and select **Upload**
@@ -1655,9 +1646,8 @@ Click on the ``X`` to close the  upload dialog or click on "Add more" if you wan
 |
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Adding a file from one of the upload controls
+Adding a File from One of the Upload Controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 A file may also be added via one of the upload controls and data source in a content form, such as
 the ``Image`` control together with the ``Image uploaded from desktop`` data source.
 
@@ -1692,7 +1682,6 @@ Once the file is uploaded, the dialog will close and the asset will now be in th
 ^^^^^^^^^^^^^^^
 Removing Assets
 ^^^^^^^^^^^^^^^
-
 To delete an asset, navigate to the asset you want to delete in the project navigation tree. Click on the
 three dots next to the asset, then select **Delete**
 
@@ -1749,7 +1738,7 @@ Notice that for assets, you can only revert to the version selected.
 
 |hr|
 
-.. _content_authors_search:
+.. _searching:
 
 ---------
 Searching
@@ -1830,18 +1819,16 @@ Here's the search results in list view:
 
 |hr|
 
-.. _content_authors_workflows:
+.. _workflows:
 
 ---------
 Workflows
 ---------
-
 This section describes the simple default workflow available from CrafterCMS.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Workflow and Scheduled Deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Workflow is the act of moving content through its lifecycle. A simple workflow option that includes
 submission, review/reject and approve and publish immediate / publish on a schedule options are
 provided by default. Workflow options are available to specific content, such as pages or static assets,
@@ -1981,7 +1968,6 @@ The **Submitted** icon also appears next to the content submitted for publish in
 """"""""""""""""""
 Publishing Content
 """"""""""""""""""
-
 After a request for publish has been sent, the next step in the workflow is for an approver (a user with
 publishing rights) to approve or reject the request for publishing. Notification emails are sent out when
 an item has been approved for publish or rejected.
@@ -2094,8 +2080,7 @@ Clicking on **Publish** will change the schedule of all items to be pushed live 
 
 ~~~~~~~~~~~~~~~~~~~~~~
 Reject Publish Request
-~~~~~~~~~~~~~~~~~~~~~~
-
+~~~~~~~~~~~~~~~~~~~~~~s
 To reject a request for publish, open the item for preview, then in the toolbar ``Options``, select **Reject**.
 Another way to access the **Reject** option is by opening the dashboard and placing a check mark next to the
 item to be rejected, **Reject** should now be available in the context nav.
@@ -2142,12 +2127,11 @@ notification email of rejection:
 
 |
 
-.. _content_authors_targeting:
+.. _audience-targeting:
 
 ------------------
 Audience Targeting
 ------------------
-
 This section describes how authors can use audience targeting in creating/previewing experiences.
 
 Targeting allows an author to see what the project would look like if it were being browsed by a
@@ -2157,7 +2141,6 @@ the configured attributes on the project.
 ^^^^^^^^^^^^^
 Tagging Pages
 ^^^^^^^^^^^^^
-
 When creating a page in a project created using the Website Editorial blueprint, content can be targeted
 to the page visitor's segment. This is done by tagging which segment the page is targeted for.
 
@@ -2179,12 +2162,11 @@ segments are Anonymous, Guy and Gal, and the page is currently tagged for the se
                       :width: 3%
                       :alt: Targeting Icon
 
-.. _content_authors_site_views_diff_segments:
+.. _viewing-the-project-with-different-segments:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Viewing the project with different segments
+Viewing the Project with Different Segments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 The authoring environment can be configured with any number of predefined attributes for targeting. A set
 of attributes is like a profile, in fact it behaves exactly the same way but instead of setting up and
 signing in as specific users to test different scenarios authors can simply switch back and forth between
