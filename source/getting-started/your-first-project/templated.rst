@@ -84,7 +84,7 @@ To edit content you see on the page, click on the pencil icon on the top right t
 
 |
 
-To edit metadata in the page, click on the three dots next to the page url at the toolbar at the top, then select **Edit**. This will open a form (see below) where you can edit the page content. To see other ways of editing page content, see :ref:`editing-page`.
+To edit metadata in the page, click on the three dots next to the page url at the toolbar at the top, then select **Edit**. This will open a form (see below) where you can edit the page content. To see other ways of editing page content, see :ref:`editing-a-page`.
 
 .. image:: /_static/images/first-project/first-project-editing-content.webp
    :width: 65 %

@@ -200,7 +200,7 @@ UI
 Sidebar
 """""""
 The Sidebar is the panel on the left side of Studio that contains path navigator trees and various tools.
-See :ref:`here <project-sidebar>` for a description and :ref:`here<sidebar-widget>` for more
+See :ref:`here <sidebar>` for a description and :ref:`here<sidebar-widget>` for more
 information on configuring the sidebar.
 
 """""""""""
