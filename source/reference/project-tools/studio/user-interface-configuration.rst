@@ -490,7 +490,7 @@ Here's how the above configuration looks like in the Experience Builder Panel in
 
 |
 
-See :ref:`targeting` for more information on configuring the targeting system of Crafter Studio to help provide Crafter Engine with fake user properties that help drive the targeting system, such as configuring targeting based on roles, etc. and :ref:`content_authors_targeting` for more information on how content authors use the audience targeting system configured.
+See :ref:`targeting` for more information on configuring the targeting system of Crafter Studio to help provide Crafter Engine with fake user properties that help drive the targeting system, such as configuring targeting based on roles, etc. and :ref:`audience-targeting` for more information on how content authors use the audience targeting system configured.
 
 |hr|
 
