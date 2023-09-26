@@ -122,5 +122,3 @@ Then, you should see your log entries in the log file every time you view a page
 
        [INFO] 2019-06-19T11:26:57,991 [http-nio-8080-exec-7] [examplecom] [impl.GroovyScript] [/scripts/filters/MyFilter.groovy] | Handling the request
        [INFO] 2019-06-19T11:26:58,012 [http-nio-8080-exec-7] [examplecom] [impl.GroovyScript] [/scripts/filters/MyFilter.groovy] | Control returned to filter/controller
-
-

@@ -2251,7 +2251,7 @@ Here, the segment **Gal** is selected. Again, notice the articles available on t
 As mentioned above, you can setup/configure as many attributes as needed to target your content
 and for more information. Please see the sections on targeting, :ref:`targeting` in the
 developers section of the documentation and :ref:`targeting-configuration`  and
-:ref:`targeting-guide` in the site administrators section of the documentation
+:ref:`targeting` in the site administrators section of the documentation
 for more information.
 
 

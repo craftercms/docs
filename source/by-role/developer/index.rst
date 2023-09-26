@@ -24,6 +24,46 @@ for your application to retrieve said content), and how to access content items 
 
 CrafterCMS supports both headless and templated projects (templated projects are the traditional web sites with a view layer).
 
+----------------
+General Concepts
+----------------
+Regardless of type of project, a developer needs to be familiar with the following core concepts.
+
+.. TODO Turn the list below into a table indicating the topic (with link) and why you'd want to learn about it (a description)
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    common/content-modeling/content-modeling
+    common/content-modeling/information-architecture
+    common/content-modeling/content-inheritance
+    common/content-access
+    common/static-content-access
+    common/experience-builder
+    common/security
+    common/search
+    common/scheduled-jobs
+    common/content-type-controllers
+    common/targeting
+    common/servlet-filters
+    common/working-with-dates-groovy
+    ../../reference/redirects
+    common/working-with-sass
+    ../../reference/multi-environment-support
+    common/custom-error-pages
+    common/adding-a-new-language
+    common/localization
+
+For templated projects, there are more topics to cover:
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    templated/templating
+    templated/working-with-dates-freemarker
+
 .. _developer-headless:
 
 --------
@@ -57,41 +97,6 @@ Templated Examples
 - `Editorial Blueprint <https://github.com/craftercms/studio/tree/develop/src/main/webapp/repo-bootstrap/global/blueprints/1000_website_editorial>`_
 - `commerceTools Blueprint <https://github.com/craftercms/commercetools-blueprint>`_
 - `Wordify Blueprint <https://github.com/craftercms/wordify-blueprint>`_
-
-----------------
-General Concepts
-----------------
-Regardless of type of project, a developer needs to be familiar with the following core concepts.
-
-.. toctree::
-    :maxdepth: 1
-    :titlesonly:
-
-    common/content-modeling/content-modeling
-    common/content-modeling/information-architecture
-    common/content-modeling/content-inheritance
-    common/content-access
-    common/static-content-access
-    common/experience-builder
-    common/security
-    common/search
-    common/targeting
-    common/servlet-filters
-    common/working-with-dates-groovy
-    ../../reference/redirects
-    common/working-with-sass
-    ../../reference/multi-environment-support
-    common/custom-error-pages
-    common/adding-a-new-language
-
-For templated projects, there are more topics to cover:
-
-.. toctree::
-    :maxdepth: 1
-    :titlesonly:
-
-    templated/templating
-    templated/working-with-dates-freemarker
 
 ----------
 Composable

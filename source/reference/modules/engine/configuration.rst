@@ -123,8 +123,6 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure logging levels
 
 .. TODO * - - :ref:`engine-project-configuration`
-.. TODO * - :ref:`engine-headers-authentication`
-.. TODO - :ref:`engine-saml2-configuration`
 
 |
 
@@ -310,302 +308,6 @@ Delivery Specific Configurations
 """"""""""""""""""""""""""""""""
 If you need to manage different values for the configuration files depending on the environment
 you can find more detailed information in the :ref:`engine-multi-environment-support` section.
-
-|
-
-|hr|
-
-.. _engine-crafter-profile-configuration:
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Engine Crafter Profile Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. note:: This guide includes Crafter Profile specific configuration only, for a general guide see
-          :ref:`engine-project-security-guide`
-
-Crafter Engine needs access tokens to use Crafter Profile's API. Each project must have it's own access token. Follow the
-next steps to create one:
-
-#. Login to Crafter Profile Admin Console as a ``PROFILE_SUPERADMIN`` (by default the admin user has this role). *See* :ref:`here <crafter-profile-admin-console>` *for more information on the Crafter Profile Admin Console UI.*
-#. Click on **New Access Token** in the navigation. Enter your project's name on **Application**, leave the **Master** checkbox
-    unselected, pick a proper Expiration Date (10 years from the current date is ok) and on **Tenant Permissions** add
-    your tenant's name to the input (*Remember that your tenant's name has to have the same name as your project. See the note below*) and click on **Add**. By default the admin console auto-selects the 3 actions
-    mentioned before. If you're using the same access token as another environment (e.g. you want to use the same
-    access token in dev and prod), copy the same access token ID from the other environment, and enter the same field
-    values for Application, Master and Expiration Date. Finally, click on **Accept**.
-
-       .. note::
-          Authentication by default is done against a tenant with the same name as your project. See :ref:`profile-admin-tenants` for more information on creating a tenant.
-
-    .. image:: /_static/images/new_access_token.webp
-
-    |
-
-#. Now that you have created the access token, you need to "tell" Engine to use it in your project. In Admin Console,
-    click on **List Access Tokens** in the navigation menu and copy the ID of the token you just created. Then, depending
-    on the mode Engine is running, add one of the following configurations (preview is ignored because normally
-    predefined Personas are used, so there's no need to access the Crafter Profile app).
-
-    *   **Multi-tenant:** You need to add the access token ID to the Config > Engine Project Configuration in Studio, and deploy the file
-        to Engine:
-
-        .. code-block:: xml
-          :linenos:
-
-          <profile>
-              <api>
-                  <accessTokenId>6604d59a-fe1b-4cb3-a76f-bdb1eb61e8c2</accessTokenId>
-              </api>
-          </profile>
-
-    *   **Single tenant:** In the Tomcat where Engine is installed, go to shared/classes/crafter/engine/extension and
-        add the access token ID as the following property:
-
-        .. code-block:: properties
-          :linenos:
-
-          crafter.profile.rest.client.accessToken.id=6604d59a-fe1b-4cb3-a76f-bdb1eb61e8c2
-
-""""""""""""""""""
-Add Authentication
-""""""""""""""""""
-~~~~~~~~~~~~~~~~
-Add Registration
-~~~~~~~~~~~~~~~~
-Normally, to add registration or sign up you just need to:
-
-#. Create a page with an HTML form that captures the user information for registration:
-
-    .. code-block:: html
-      :linenos:
-
-      <form action="/registration" method="post">
-          Email: <input type="text" name="email"></input><br/>
-          First Name: <input type="text" name="firstname"></input><br/>
-          Last Name: <input type="text" name="lastname"></input><br/>
-          Password: <input type="password" name="password"></input><br/>
-          <button type="submit">Submit</button>
-      </form>
-
-#. Create a controller script that receives the information and creates the respective profile. Assuming the
-    controller should be under /registration, you need to create a script under Scripts > controllers >
-    registration.post.groovy, with code similar to the following:
-
-    .. code-block:: groovy
-      :linenos:
-
-      import utils.MailHelper
-
-      import org.craftercms.engine.exception.HttpStatusCodeException
-      import org.craftercms.profile.api.Profile
-      import org.craftercms.security.utils.SecurityUtils
-
-      def sendVerificationEmail(mailHelper, profile) {
-          def token = profileService.createVerificationToken(profile.id.toString())
-          def verificationUrl = urlTransformationService.transform("toFullUrl", "/verifyacct?token=${token.id}")
-          def model = [:]
-              model.profile = profile
-              model.verificationUrl = verificationUrl
-
-          mailHelper.sendEmail("noreply@example.com", profile.email, "Verify Account", "/templates/mail/verify-account.ftl", model)
-      }
-
-      def email = params.email
-      def firstName = params.firstname
-      def lastName = params.lastname
-      def password = params.password
-
-      if (!email) {
-          throw new HttpStatusCodeException(400, "Bad request: missing email")
-      } else if (!firstName) {
-          throw new HttpStatusCodeException(400, "Bad request: missing first name")
-      } else if (!lastName) {
-          throw new HttpStatusCodeException(400, "Bad request: missing last name")
-      } else if (!password) {
-          throw new HttpStatusCodeException(400, "Bad request: missing password")
-      }
-
-      def profile = profileService.getProfileByUsername(siteContext.siteName, email)
-      if (profile == null) {
-          def attributes = [:]
-              attributes.firstName = firstName
-              attributes.lastName = lastName
-
-          profile = profileService.createProfile(siteContext.siteName, email, password, email, false, null, attributes, null)
-
-          sendVerificationEmail(new MailHelper(siteContext.freeMarkerConfig.configuration), profile)
-
-          return "redirect:/"
-      } else {
-          throw new HttpStatusCodeException(400, "User '${email}' already exists")
-      }
-
-#. Create also a MailHelper.groovy file under Classes > groovy > utils, with the following code:
-
-    .. code-block:: groovy
-      :linenos:
-
-      package utils
-
-      import java.util.Properties
-
-      import org.craftercms.commons.mail.impl.EmailFactoryImpl
-      import org.craftercms.engine.exception.HttpStatusCodeException
-      import org.springframework.mail.javamail.JavaMailSenderImpl
-
-      class MailHelper {
-
-          def emailFactory
-
-          def MailHelper(freeMarkerConfig) {
-              def javaMailProperties = new Properties()
-                  javaMailProperties["mail.smtp.auth"] = "false"
-          		javaMailProperties["mail.smtp.starttls.enable"] = "false"
-
-              def mailSender = new JavaMailSenderImpl()
-                  mailSender.host = "localhost"
-                  mailSender.port = 25
-                  mailSender.protocol = "smtp"
-                  mailSender.defaultEncoding = "UTF-8"
-                  mailSender.javaMailProperties = javaMailProperties
-
-              emailFactory = new EmailFactoryImpl()
-              emailFactory.mailSender = mailSender
-              emailFactory.freeMarkerConfig = freeMarkerConfig
-          }
-
-          def sendEmail(from, to, subject, templateName, templateModel) {
-              emailFactory.getEmail(from, (String[])[ to ], null, null, subject, templateName, templateModel, true).send()
-          }
-
-      }
-
-#. Create the Freemarker template that will be used to send the verification emails to the users, under Templates >
-    mail > verify-account.ftl:
-
-    .. code-block:: html
-      :linenos:
-
-      <p>Hi ${profile.attributes.firstName}!</p>
-
-      <p>
-          Thanks for joining MySite.com. To verify your new account, click or copy the link below in your browser:<br/>
-          <a href="${verificationUrl}">${verificationUrl}</a>
-      </p>
-
-      <p>
-          Thanks,<br/>
-          The MySite.com Team
-      </p>
-
-#. Finally, add the controller that will perform the profile verification when the user clicks on the link included
-    in the email and is redirected. If we used the code above, the script should be put in Scripts > controllers >
-    verifyacct.get.groovy:
-
-    .. code-block:: groovy
-      :linenos:
-
-      import org.craftercms.engine.exception.HttpStatusCodeException
-
-      def token = params.token
-      if (token) {
-          profileService.verifyProfile(token)
-
-          return "/templates/web/account-verified.ftl"
-      } else {
-          throw new HttpStatusCodeException(400, "Bad request: token param is missing")
-      }
-
-~~~~~~~~~~~~~~~~~~
-Add Single Sign-On
-~~~~~~~~~~~~~~~~~~
-Configure SSO headers with at least a CRAFTER_secure_key, CRAFTER_username, CRAFTER_email and CRAFTER_groups (which must be a comma separated list of string) in the header, then check in Crafter Profile Admin Console to make sure
-that the Single sign-on enabled checkbox is selected in the tenant page.
-
-.. image:: /_static/images/sso_enabled.webp
-
-All headers with the ``CRAFTER_`` prefix will be mapped, without the prefix, to the attributes you defined in the
-Crafter Profile tenant, when a new user needs to be created. So the configuration above will cause the Security
-Provider to create a user with firstName, lastName and displayName attributes.
-
-   .. note::
-      For CrafterCMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` instead of ``CRAFTER_`` and can't be changed via project configuration.
-
-~~~~~~~~~~~~~~~~~~
-Add Facebook Login
-~~~~~~~~~~~~~~~~~~
-#. Be sure there's a connections attribute of Complex type defined for the project's Crafter Profile Tenant. This
-    attribute is needed to store the Facebook connection info. To add this attribute to the Tenant, go to Crafter
-    Profile Admin Console, select the Tenant and then add the attribute.
-
-    .. image:: /_static/images/connections_attribute.webp
-
-#. Add the Facebook appSecret and appKey to your project's config (in Studio, Config > Engine Project Configuration), like this:
-
-    .. code-block:: xml
-      :linenos:
-
-      <socialConnections>
-          <facebookConnectionFactory>
-              <appId>YOUR_APP_ID</appId>
-              <appSecret>YOUR_APP_SECRET</appSecret>
-          </facebookConnectionFactory>
-      </socialConnections>
-
-#. Add a JS method that is triggered when the user clicks on the "Login with Facebook" button, that displays the FB
-    login popup when the user clicks on "Connect with Facebook":
-
-    .. code-block:: javascript
-      :linenos:
-
-      $("#connect").click(function() {
-          try {
-              var top = (screen.height / 2) - (300/ 2);
-              var left = (screen.width / 2) - (500 / 2);
-              var fbDialog = window.open('/connect/facebook_dialog', 'fbDialog', 'width=500, height=300, top=' + top + ', left=' + left);
-              var interval = setInterval(function() {
-                  if (fbDialog == null || fbDialog.closed) {
-                      clearInterval(interval);
-
-                      location.reload();
-                  }
-              }, 1000);
-          } catch(e) {}
-      }
-
-#. Add a controller script under Scripts > controllers > connect > facebook_dialog.get.groovy, that will redirect to
-    the actual Facebook login when the popup appears. The whole FB login process can be done with the help of the
-    ``providerLoginSupport``, provided automatically to all scripts. The ``start(tenant, providerId, request,
-    additionalParams, connectSupport)`` method is used to create the proper Facebook redirect URL. Also, by creating
-    a custom ``ConnectSupport`` with a callbackUrl you can tell Facebook the URL to redirect to after the user has
-    logged in.
-
-    .. code-block:: groovy
-      :linenos:
-
-      import org.springframework.social.connect.web.ConnectSupport
-      import org.springframework.util.LinkedMultiValueMap
-
-      def connectSupport = new ConnectSupport()
-          connectSupport.callbackUrl = urlTransformationService.transform("toFullUrl", "/connect/facebook")
-
-      def additionalParams = new LinkedMultiValueMap<String, String>()
-          additionalParams.add("scope", "email,public_profile")
-          additionalParams.add("display", "popup")
-
-      return "redirect:" + providerLoginSupport.start(siteContext.siteName, "facebook", request, additionalParams, connectSupport)
-
-#. Under Scripts > controllers > connect > facebook.get.groovy, add the script to complete the Facebook connection.
-    By calling ``providerLoginSupport.complete(tenant, providerId, request)``, the login process will automatically
-    be completed for you, and a new user will be created if there wasn't a previous one with the Facebook provided
-    username or email.
-
-    .. code-block:: groovy
-      :linenos:
-
-      providerLoginSupport.complete(siteContext.siteName, "facebook", request)
-
-      return "/templates/web/fb-login-done.ftl"
 
 |
 
@@ -1096,6 +798,10 @@ Access to static methods in Freemarker templates is disabled by default.
 ^^^^^
 Cache
 ^^^^^
+Crafter Engine sports a built-in cache engine with an LRU (least recently used) cache eviction policy. The cache is used to store an active set to help render content from memory whenever possible.
+
+.. note:: When running in Preview Mode (inside Studio for preview purposes), Crafter Engine's cache is disabled to help authors see their changes immediately.
+
 """""""""
 Max Items
 """""""""
@@ -1106,20 +812,10 @@ The following allows you to configure the maximum number of objects in Engine's 
    # The max number of items that each site cache can have
    crafter.engine.site.default.cache.maxAllowedItems=250000
 
-"""""""""""""""""""
-URL Transformations
-"""""""""""""""""""
-The following allows you to configure whether the URL transformation performed by the view resolver will be cached:
-
-.. code-block:: properties
-
-   # Flag that indicates if the URL transformations performed by the view resolver should be cached
-   crafter.engine.page.view.resolver.url.transformation.cache=false
-
-"""""""""""""""""
-Preloaded Folders
-"""""""""""""""""
-The following allows you to configure folders to be preloaded in the cache:
+"""""""""""""
+Cache Warming
+"""""""""""""
+The following allows you to configure items to be warmed up (preloaded) in the cache:
 
 .. code-block:: properties
     :emphasize-lines: 7,10,13
@@ -1133,7 +829,7 @@ The following allows you to configure folders to be preloaded in the cache:
     crafter.engine.site.cache.warmUp.enabled=false
     # The descriptor folders that need to be preloaded in cache, separated by comma. Specify the preload depth with
     # :{depth} after the path. If no depth is specified, the folders will be fully preloaded.
-    crafter.engine.site.cache.warmUp.descriptor.folders=/site:4
+    crafter.engine.site.cache.warmUp.descriptor.folders=/site:3
     # The content folders that need to be preloaded in cache, separated by comma. Specify the preload depth with
     # :{depth} after the path. If no depth is specified, the folders will be fully preloaded.
     crafter.engine.site.cache.warmUp.content.folders=/scripts,/templates
@@ -1146,6 +842,16 @@ where:
   - The content folders are mostly static, non-processed content, e.g. scripts, templates, static-assets
 
 For all projects, the cache is preloaded using the above configuration. CrafterCMS warms up the cache on every publish and startup. Note also that what's cache warmed will be warmed on every publish and startup and will live as long as nothing kicks it out of the cache due to least recently used (LRU) cache.
+
+"""""""""""""""""""""""""
+URL Transformations Cache
+"""""""""""""""""""""""""
+The following allows you to configure whether the URL transformation performed by the view resolver will be cached:
+
+.. code-block:: properties
+
+   # Flag that indicates if the URL transformations performed by the view resolver should be cached
+   crafter.engine.page.view.resolver.url.transformation.cache=false
 
 .. _s3-object-caching:
 
@@ -1442,96 +1148,29 @@ This example file contains the properties used by Crafter Engine (click on the t
 |
 
 .. TODO Review these properties for v4.1
+     * **defaultLocale:** The default locale for the project. Used with content targeting through localization.
+     * **navigation.additionalFields:**  List of additional fields to include for dynamic navigation items (Example: *<additionalFields>myTitle_s,myAuthor_s,...</additionalFields>*)
+     * **spa:** Used for Single Page Application (SPA) Properties (React JS, Angular, Vue.js, etc.). Contains ``<enabled>`` element which enables/disables SPA mode (default is false) and ``<viewName>`` element, the view name for the SPA (Single Page Application. Current view names can be a page URL (like ``/``) or a template name (like ``/template/web/app.ftl``). Default is ``/``)
+     * **cors.enable**:``true`` if CORS headers should be added to REST API responses when not in preview mode. Defaults to false. |br|.
+       The elements ``<accessControlMaxAge>``, ``<accessControlAllowOrigin>``, ``<accessControlAllowMethods>``,
+       ``<accessControlAllowHeaders>`` and ``<accessControlAllowCredentials>`` have the values that will be
+       copied to each response. [TODO expand this into a section]
 
-**Crafter Engine Properties**
- * **indexFileName:** The name of a page's index file (default is ``index.xml``).
- * **defaultLocale:** The default locale for the project. Used with content targeting through localization.
- * **navigation.additionalFields:**  List of additional fields to include for dynamic navigation items (Example: *<additionalFields>myTitle_s,myAuthor_s,...</additionalFields>*)
- * **spa:** Used for Single Page Application (SPA) Properties (React JS, Angular, Vue.js, etc.). Contains ``<enabled>`` element which enables/disables SPA mode (default is false) and ``<viewName>`` element, the view name for the SPA (Single Page Application. Current view names can be a page URL (like ``/``) or a template name (like ``/template/web/app.ftl``). Default is ``/``)
- * **compatibility.disableFullModelTypeConversion:** Disables full content model type conversion for backwards compatibility mode (false by default)
+       ``<accessControlAllowOrigin>`` values are split using ``,``. Remember that
+       commas inside patterns need to be escaped with a ``\``,
+       like this: ``<accessControlAllowOrigin>http://localhost:[8000\,3000],http://*.other.domain</accessControlAllowOrigin>``
 
-   Up to and including version 2:
-   Crafter Engine, in the FreeMarker host only, converts model elements based on a suffix type hint, but only for the first level in
-   the model, and not for _dt. For example, for contentModel.myvalue_i Integer is returned, but for contentModel.repeater.myvalue_i
-   and contentModel.date_dt a String is returned. In the Groovy host no type of conversion was performed.
+       ``<accessControlAllowMethods>`` and ``<accessControlAllowHeaders>`` values are split using ``,``. Remember to escape the commas ``,`` separating
+       the values like this: ``<accessControlAllowHeaders>X-Custom-Header\, Content-Type</accessControlAllowHeaders>`` or
+       ``<accessControlAllowMethods>GET\, OPTIONS</accessControlAllowMethods>``
 
-   In version 3 onwards:
-   Crafter Engine converts elements with any suffix type hints (including _dt) at at any level in the content
-   model and for both Freemarker and Groovy hosts.
- * **filters:** Used to define the filter mappings. Each ``<filter>`` element must contain a ``<script>`` element that specifies the complete
-   path to the filter script, and a ``<mapping>`` element. In the ``<mapping>`` element, the ``<include>`` element contains the Ant
-   patterns (separated by comma) that request URLs should match for the filter to be executed, while the ``<exclude>`` element contains
-   the patterns that requests shouldn't match.
- * **cors.enable**:``true`` if CORS headers should be added to REST API responses when not in preview mode. Defaults to false. |br|.
-   The elements ``<accessControlMaxAge>``, ``<accessControlAllowOrigin>``, ``<accessControlAllowMethods>``,
-   ``<accessControlAllowHeaders>`` and ``<accessControlAllowCredentials>`` have the values that will be
-   copied to each response.
+       .. note::
+          When engine is in preview mode, it is a proxy and therefore will not add CORS headers to REST API responses even if CORS is enabled.
 
-   ``<accessControlAllowOrigin>`` values are split using ``,``. Remember that
-   commas inside patterns need to be escaped with a ``\``,
-   like this: ``<accessControlAllowOrigin>http://localhost:[8000\,3000],http://*.other.domain</accessControlAllowOrigin>``
 
-   ``<accessControlAllowMethods>`` and ``<accessControlAllowHeaders>`` values are split using ``,``. Remember to escape the commas ``,`` separating
-   the values like this: ``<accessControlAllowHeaders>X-Custom-Header\, Content-Type</accessControlAllowHeaders>`` or
-   ``<accessControlAllowMethods>GET\, OPTIONS</accessControlAllowMethods>``
 
-   .. note::
-      When engine is in preview mode, it is a proxy and therefore will not add CORS headers to REST API responses even if CORS is enabled.
-
- * **targeting.enabled**:``true`` if content targeting should be enabled. Defaults to false.
- * **targeting.rootFolders:** The root folders that should be handled for content targeting.
- * **targeting.excludePatterns:** Regex patterns that are used to exclude certain paths from content targeting.
- * **targeting.availableTargetIds:** The valid target IDs for content targeting (see :ref:`targeting-guide`).
- * **targeting.fallbackTargetId:** The target ID that should be used as last resort when resolving targeted content.
-   (see :ref:`targeting-guide`).
- * **targeting.mergeFolders:** ``true`` if the content of folders that have the same "family" of target IDs should be merged.
-   (see :ref:`targeting-guide`).
- * **targeting.redirectToTargetedUrl:** ``true`` if the request should be redirected when the targeted URL is different from the current URL.
-   (see :ref:`targeting-guide`).
- * **profile.api.accessToken:** The access token to use for the Profile REST calls. This parameter should be always specified on
-   multi-tenant configurations.
- * **security.saml.token:** The expected value for the secure key request header
- * **security.saml.groups:** Contains any number of ``<group>`` elements. Each ``<group>`` element contains a ``<name>`` element (The name of the group from the request header) and a ``<role>`` element (The value to use for the role in the profile).
- * **security.saml.attributes:** Contains any number of ``<attribute>`` elements. Each ``<attribute>`` element contains a ``<name>`` element (The name of the request header for the attribute) and a ``<field>`` element (The name of the field to use in the profile).
- * **security.login.formUrl:** The URL of the login form page. The default is /login.
- * **security.login.defaultSuccessUrl:** The URL to redirect to if the login was successful and the user couldn't be redirected to the
-   previous page. The default is /.
- * **security.login.alwaysUseDefaultSuccessUrl:** ``true`` if after successful login always redirect to the default success URL. The default is
-   false.
- * **security.login.failureUrl:** The URL to redirect to if the login fails. The default is /login?login_error=true.
- * **security.logout.successUrl:** The URL to redirect after a successful logout. The default is /.
- * **security.accessDenied.errorPageUrl:** The URL of the page to show when access has been denied to a user to a certain resource. The
-   default is /access-denied.
- * **security.urlRestrictions:** Contains any number of restriction elements. Each restriction is formed by an Ant-style path pattern (``<url>``)
-   and a Spring EL expression (``<expression>``) executed against the current profile. If a request matches the URL, and the expression
-   evaluates to false, access is denied. For more information, check
-   :javadoc_base_url:`UrlAccessRestrictionCheckingProcessor.java <profile/org/craftercms/security/processors/impl/UrlAccessRestrictionCheckingProcessor.html>`
-   and :javadoc_base_url:`AccessRestrictionExpressionRoot.java <profile/org/craftercms/security/utils/spring/el/AccessRestrictionExpressionRoot.html>`
-
-     .. note::
-       For the ``<url>`` Ant-style path pattern, ``<url>/*</url>`` indicates just one level of the URL and ``<url>/**</url>`` indicates all urls. For more information on Ant-style path pattern matching, see https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/util/AntPathMatcher.html
-
- * **socialConnections.facebookConnectionFactory.appId:** The Facebook app ID required for establishing connections with Facebook.
- * **socialConnections.facebookConnectionFactory.appSecret:** The Facebook app secret required for establishing connections with Facebook.
- * **jobs.jobFolder:** Specifies a folder which will be looked up for scripts to be scheduled using a certain cron expression. The folder
-   path should be specified with ``<path>``, and should be absolute to the project root. The cron expressions is specified in
-   ``<cronExpression>``.
- * **jobs.job:** Specifies a single script job to be scheduled. The job path should be specified in ``<path>``, and the cron expression
-   in ``<cronExpression>``.
- * **cache.warmUp.descriptorFolders:** The descriptor folders (paths that contain XML that needs to be parsed, loaded and merged e.g. for inheritance. Most of the time this would be folders under ``/site``) that need to be pre-loaded in cache, separated by comma, when not in preview mode. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully preloaded. Example: *<descriptorFolders>/site:3</descriptorFolders>*
- * **cache.warmUp.contentFolders:** The content folders (mostly static, non-processed content, e.g. scripts, templates, static-assets) that need to be pre-loaded in cache, separated by comma, when not in preview mode. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully pre-loaded. Example: *<contentFolders>/scripts,/templates</contentFolders>*
-
-   .. note::
-      Cache and ActiveCache do not function the same way as specified above when engine is in preview because the preview server does not cache to ensure the latest updates are seen immediately.
-
- * **headerMappings.mapping.urlPattern** Ant path pattern to match for adding headers to response
- * **headerMappings.mapping.headers** The headers that will be added to responses. Each ``<header>`` element must contain a ``<name>``
-   element that specifies the name of the header e.g. ``Cache-Control``, and a ``<value>`` element containing directives, etc. (separated by an escaped comma)
-   e.g. ``max-age=60\, s-maxage=300``.
-
-.. note::
-    Crafter Engine will not be able to load your Project Context if your configuration contains invalid XML
-    or incorrect configuration.
+.. TODO: Add a CORS section
+.. TODO: Add a section to show how to include your own properties
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Setting HTTP Response Headers
@@ -2223,25 +1862,26 @@ Prerequisites
 - A CrafterCMS delivery environment
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Step 1: Create an Elasticsearch Domain for Delivery (optional)
+Step 1: Create an Open Search Domain for Delivery (optional)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Since serverless delivery requires a single Elasticsearch endpoint readable by all Engine instances, we recommend you
-create an AWS Elasticsearch domain for delivery. If you don't want to use an AWS Elasticsearch domain then you should
+Since serverless delivery requires a single Open Search endpoint readable by all Engine instances, we recommend you
+create an AWS Open Search domain for delivery. If you don't want to use an AWS Open Search domain then you should
 create and maintain your own Elasticsearch cluster.
 
-   .. important:: Authoring can also use an Elasticsearch domain, but be aware that in a clustered authoring environment
-                  each authoring instance requires a separate Elasticsearch instance. If you try to use the same ES domain
+   .. important:: Authoring can also use an Open Search domain, but be aware that in a clustered authoring environment
+                  each authoring instance requires a separate Open Search instance. If you try to use the same Open Search domain
                   then you will have multiple preview deployers writing to the same index.
 
-To create an AWS Elasticsearch domain please do the following:
+To create an AWS Open Search domain please do the following:
 
 #. In the top navigation bar of your AWS console, click the ``Services`` dropdown menu, and search for
-   ``Elasticsearch Service``.
+   ``Open Search Service``.
 #. Click on ``Create a new domain``.
-#. Select ``Deployment Type`` and on the Elasticsearch version, pick ``7.2``.
+#. Select ``Deployment Type`` and on the Open Search version, pick the closest to ``v2.8.0``.
 
+.. TODO Fix the image
    .. image:: /_static/images/system-admin/serverless/es-deployment-type.webp
-      :alt: Serverless Site - Elasticsearch Deployment Type
+      :alt: Serverless Site - Open Search Deployment Type
       :align: center
 
    |
@@ -2251,8 +1891,9 @@ To create an AWS Elasticsearch domain please do the following:
 #. On ``Network Configuration``, we recommend you pick the VPC where your delivery nodes reside. If they're not running
    on an Amazon VPC, then pick ``Public Access``.
 
+.. TODO Fix the image
    .. image:: /_static/images/system-admin/serverless/es-network-access.webp
-      :alt: Serverless Site - Elasticsearch Network Access
+      :alt: Serverless Site - Open Search Network Access
       :align: center
 
    |
@@ -2261,7 +1902,7 @@ To create an AWS Elasticsearch domain please do the following:
    delivery, we recommend ``Do not require signing request with IAM credential``).
 
    .. image:: /_static/images/system-admin/serverless/es-access-policy.webp
-      :alt: Serverless Site - Elasticsearch Access Policy
+      :alt: Serverless Site - Open Search Access Policy
       :align: center
 
    |
@@ -2270,8 +1911,9 @@ To create an AWS Elasticsearch domain please do the following:
 #. Wait for a few minutes until the domain is ready. Copy the ``Endpoint``. You'll need this URL later to configure
    the Deployer and Delivery Engine which will need access to the Elasticsearch.
 
+.. TODO Fix the image
    .. image:: /_static/images/system-admin/serverless/es-endpoint.webp
-      :alt: Serverless Site - Elasticsearch Endpoint
+      :alt: Serverless Site - Open Search Endpoint
       :align: center
 
    |

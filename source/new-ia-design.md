@@ -31,6 +31,7 @@ Include
 Developer
 =========
 - Custom Error Pages
+- Move Groovy development guide from reference to the developer section where it makes sense
 
 Site Admin
 ==========
