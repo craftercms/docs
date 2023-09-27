@@ -62,7 +62,7 @@ Regardless of type of project, a developer needs to be familiar with the followi
       - Provides you information on creating and configuring a filter
     * - :ref:`working-with-dates-in-groovy`
       - Provides you information on performing date operations in Groovy
-    * - :ref:`page-redirect`
+    * - :ref:`engine-url-rewrite-configuration`
       - Provides you information on performing redirects (send users from one URL to another URL)
     * - :ref:`working-with-sass`
       - Provides you information on working with Sass in CrafterCMS
@@ -93,9 +93,7 @@ Regardless of type of project, a developer needs to be familiar with the followi
     common/targeting
     common/servlet-filters
     common/working-with-dates-groovy
-    ../../reference/redirects
     common/working-with-sass
-    ../../reference/multi-environment-support
     common/custom-error-pages
     common/adding-a-new-language
     common/localization

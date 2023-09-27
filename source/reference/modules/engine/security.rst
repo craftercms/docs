@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.2
 
 .. index:: Engine Security
@@ -29,7 +29,6 @@ Engine SAML2 Configuration |enterpriseOnly|
    :ref:`engine-project-security-guide`
 
 |
-|
 
 Crafter Engine can be configured to support SAML2 SSO out of the box without using any additional plugin.
 
@@ -47,9 +46,9 @@ Requirements
     * **keyout**: The value used for this option wil be used in the ``crafter.security.saml.rp.privateKey.location`` property
     * **out**: The value used for this option will be used in the ``crafter.security.saml.rp.certificate.location`` property
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Update the Project Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
+Update the Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^
 To configure Engine SAML2, in your Delivery installation, we need to enable SAML security then we'll setup the required SAML configuration properties.
 
 To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter.engine.samlSecurity``:
@@ -131,9 +130,7 @@ Next we'll setup SAML configuration properties. Go to ``CRAFTER_HOME/bin/apache-
    # SAML Web SSO profile options: force user to re-authenticate
    crafter.security.saml.webSSOProfileOptions.forceAuthn=false
 
-|
-
-where
+*where:*
 
 - ``crafter.security.saml.attributes.mappings``: List of mappings to apply for attributes, every attribute sent
   by the IDP will be compared against this list and will be available as described in Access User Attributes.
@@ -173,11 +170,65 @@ secured page and then automatically return to your project in Crafter Engine.
   ``Content-Security-Policy`` header. You can find more information
   `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy>`_.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Multi-Environment Support
-^^^^^^^^^^^^^^^^^^^^^^^^^
-It's often the case that lower environments will require their own authentication configuration. Crafter Engine supports that by allowing you to configure multiple SAML2 configurations, and then specify which configuration to use for each environment. See the article :ref:`saml2-multi-environment-support` for more information.
+.. TODO The following section can be put back in if we go back to supporting different SAML2 per project
+    .. _saml2-multi-environment-support:
 
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    SAML2 Multi-Environment Support |enterpriseOnly|
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    When configuring SAML2 in an environment-specific project configuration file (``/config/engine/site-config.xml``), since the
+    SAML2 configuration folder sits outside the environment folder, you can point to environment-specific SAML2
+    files in the SAML2 folder for the following path/file configuration of SAML2:
+
+    +------------------------------------+-------------------------------------------+-------------------------------------+
+    || Property                          || Description                              || Default Value                      |
+    +====================================+===========================================+=====================================+
+    |``keystore.path``                   |The path of the keystore file in the repo  |``/config/engine/saml2/keystore.jks``|
+    +------------------------------------+-------------------------------------------+-------------------------------------+
+    |``identityProviderDescriptor``      |The path of the identity provider metadata |``/config/engine/saml2/idp.xml``     |
+    |                                    |XML descriptor in the repo                 |                                     |
+    +------------------------------------+-------------------------------------------+-------------------------------------+
+    |``serviceProviderDescriptor``       |The path of the service provider metadata  |``/config/engine/saml2/sp.xml``      |
+    |                                    |XML descriptor in the repo                 |                                     |
+    +------------------------------------+-------------------------------------------+-------------------------------------+
+
+    Use the format ``/config/engine/saml2/saml2-path-file-config-{myCustomEnv}.***`` for naming your SAML2 environment
+    specific configuration files where ``{myCustomEnv}`` is the name of your environment.
+
+    """""""
+    Example
+    """""""
+    Say we're setting up SAML2 files for an environment named ``dev``. Using the format mentioned above, our environment
+    specific SAML2 files will be the following:
+
+    - ``/config/engine/saml2/keystore-dev.jks``
+    - ``/config/engine/saml2/idp-dev.xml``
+    - ``/config/engine/saml2/sp-dev.xml``
+
+    Below is the SAML2 configuration using the above files in the project configuration file:
+
+    .. code-block:: xml
+       :caption: *Example SAML2 configuration for a custom environment*
+       :emphasize-lines: 5,15,17
+
+       <saml2>
+         ...
+         <keystore>
+           <defaultCredential>abc-crafter-saml</defaultCredential>
+           <path>/config/engine/saml2/keystore-dev.jks</path>
+           <password encrypted="true">${enc:value}</password>
+           <credentials>
+             <credential>
+               <name>abc-crafter-saml</name>
+               <password encrypted="true">${enc:value}</password>
+             </credential>
+           </credentials>
+         </keystore>
+         <identityProviderName>http://www.okta.com/abc</identityProviderName>
+         <identityProviderDescriptor>/config/engine/saml2/idp-dev.xml</identityProviderDescriptor>
+         <serviceProviderName>https://intranet.abc.org/saml/SSO</serviceProviderName>
+         <serviceProviderDescription>/config/engine/saml2/sp-dev.xml</serviceProviderDescription>
+       </saml2>
 
 .. _engine-headers-authentication:
 
@@ -237,11 +288,11 @@ See :ref:`engine-project-security-guide-restrict-urls` for more information on e
 
 From the above configuration, here are the headers that Engine expects to be provided:
 
-- CRAFTER_secure_key (required)
-- CRAFTER_username (required)
-- CRAFTER_email (required)
-- CRAFTER_groups
-- CRAFTER_*
+- ``CRAFTER_secure_key`` (required)
+- ``CRAFTER_username`` (required)
+- ``CRAFTER_email`` (required)
+- ``CRAFTER_groups``
+- ``CRAFTER_*``
 
 It is also possible to change the prefix and names for the headers:
 
@@ -297,7 +348,6 @@ The default value of the token is ``my_secure_token``. Remember to replace the d
 ^^^^^^^^^^^^^^^^^^^^^^
 Optional Role Mappings
 ^^^^^^^^^^^^^^^^^^^^^^
-
 To add optional role mappings, add the following inside the ``<headers>`` tag:
 
    .. code-block:: xml
@@ -318,7 +368,7 @@ To add optional role mappings, add the following inside the ``<headers>`` tag:
       </security>
 
 
-where:
+*where:*
 
 * **name**: The name of the group in the header. The ``APP_`` prefix shown above is just an example and could be
   anything.
@@ -328,7 +378,6 @@ where:
 ^^^^^^^^^^^^^^^^^^^
 Optional Attributes
 ^^^^^^^^^^^^^^^^^^^
-
 To add optional attributes, add the following inside the ``<headers>`` tag:
 
    .. code-block:: xml
@@ -351,7 +400,7 @@ To add optional attributes, add the following inside the ``<headers>`` tag:
       </security>
 
 
-where:
+*where:*
 
 * **name**: The name of the attribute in the header, with the prefix removed. (if your prefix is ``CRAFTER_`` then the
   header value would be ``CRAFTER_APP_ATTRIBUTE_NAME``, and you should enter ``APP_ATTRIBUTE_NAME`` in this tag.)
@@ -363,16 +412,13 @@ To get the value of the attribute passed in the header, use the following ``auth
 -------
 Example
 -------
-
 Let's take a look at an example of setting up Engine headers authentication using a project created using the Website
 Editorial blueprint named ``My Editorial``. We will also change the default value for the token header. We'll then take a
 look at an example of setting up Engine headers authentication with optional role mappings and attribute.
 
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Simple Example Setting Up Engine Headers Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Open the Engine ``site-config.xml`` file in Studio, by navigating from the ``Sidebar`` to
 ``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project Configuration`` option from the list.
 
@@ -417,9 +463,9 @@ Now, try viewing the Home page without the header attributes required, by enteri
 
 This time, try viewing the Home page with the following header attributes and values:
 
-- CRAFTER_secure_key : my_updated_token
-- CRAFTER_username : jsmith
-- CRAFTER_email : jsmith@example.com
+- ``CRAFTER_secure_key``: my_updated_token
+- ``CRAFTER_username``: jsmith
+- ``CRAFTER_email``: jsmith@example.com
 
 You should now see the Home page displayed
 
@@ -435,7 +481,6 @@ See :ref:`engine-config` for more information on how to access the ``site-config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Example Setting Up Engine Headers Authentication with Optional Role Mappings and Attributes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 We'll now take a look at another example where we setup optional role mappings and attributes.
 
 We'll setup the ``admin`` and the ``user`` roles and add the attribute ``APP_FULL_NAME``. We'll try to restrict
@@ -492,9 +537,9 @@ For the ``expression`` in the URL restriction, remember to escape the comma as s
 
 When we send the following headers:
 
-- CRAFTER_secure_key : my_updated_token
-- CRAFTER_username : jsmith
-- CRAFTER_email : jsmith@example.com
+- ``CRAFTER_secure_key``: my_updated_token
+- ``CRAFTER_username``: jsmith
+- ``CRAFTER_email``: jsmith@example.com
 
 Notice that when we try to view an article, since the user does not have either ``admin`` or ``user`` role, the page
 is not available and will display the following message: ``The user doesn't have enough rights to access the page.``
@@ -511,10 +556,10 @@ is shown the message below:
 
 Let's now try sending the headers again, but this time with the role ``APP_USER`` for our user
 
-- CRAFTER_secure_key : my_updated_token
-- CRAFTER_username : jsmith
-- CRAFTER_email : jsmith@example.com
-- CRAFTER_groups: APP_USER
+- ``CRAFTER_secure_key``: my_updated_token
+- ``CRAFTER_username``: jsmith
+- ``CRAFTER_email``: jsmith@example.com
+- ``CRAFTER_groups``: APP_USER
 
 Notice that this time, we are able to preview the article correctly
 
@@ -555,11 +600,11 @@ The ``authToken.principal.attributes.name`` contains the value passed for ``APP_
 
 Let's now try sending the headers again, but this time with the attribute ``APP_FULL_NAME``
 
-- CRAFTER_secure_key : my_updated_token
-- CRAFTER_username : jsmith
-- CRAFTER_email : jsmith@example.com
-- CRAFTER_groups: APP_USER
-- CRAFTER_APP_FULL_NAME: John Smith
+- ``CRAFTER_secure_key``: my_updated_token
+- ``CRAFTER_username``: jsmith
+- ``CRAFTER_email``: jsmith@example.com
+- ``CRAFTER_groups``: APP_USER
+- ``CRAFTER_APP_FULL_NAME``: John Smith
 
 Note that when sending the attribute ``APP_FULL_NAME`` in the header, the header prefix must be added as shown above.
 
@@ -663,7 +708,6 @@ Here are the steps:
 -----------------------------
 Engine Project Security Guide
 -----------------------------
-
 The following guide will help you configure Crafter Engine to:
 
 #. Add authentication for your project.
@@ -682,11 +726,9 @@ Crafter Engine is able to integrate with multiple authentication providers:
 ^^^^^^^^^^^^^^^^^^
 Add Authentication
 ^^^^^^^^^^^^^^^^^^
-
 """""""""
 Add Login
 """""""""
-
 To add a login page:
 
 #. In Crafter Studio, create a Home > Login page.
@@ -711,7 +753,6 @@ To add a login page:
 """"""""""
 Add Logout
 """"""""""
-
 To add logout, just add a link in the global header that points to /crafter-security-logout:
 
 .. code-block:: html
@@ -722,13 +763,11 @@ To add logout, just add a link in the global header that points to /crafter-secu
 ^^^^^^^^^^^^^^^^^
 Add Authorization
 ^^^^^^^^^^^^^^^^^
-
 Adding authorization allows restricted access to certain pages and URLs of your project depending on what is setup.
 
 """"""""""""""
 Restrict Pages
 """"""""""""""
-
 You can restrict pages based on whether a user is authenticated or has a certain role. To do this, you need to follow
 the next steps to create in the page content type a Repeating Group with a text Input for the roles:
 
@@ -781,7 +820,6 @@ by Crafter Engine is described below:
 """""""""""""
 Restrict URLs
 """""""""""""
-
 Sometimes it is not enough to restrict a single page. Sometimes you need to restrict an entire project subtree, or
 restrict several static assets. For this, CrafterCMS provides configuration parameters that allow you to restrict
 access based on URL patterns. You just need to add configuration similar to the following in Config > Engine Project Configuration:
@@ -820,7 +858,6 @@ be used:
 ^^^^^^^^^^^^^^^^^^^^^^
 Access User Attributes
 ^^^^^^^^^^^^^^^^^^^^^^
-
 Once the authentication and authorization configurations are completed you can use the ``authToken`` object in
 templates and scripts to access the current user attributes. The class of the object will change depending of the
 authentication provider used, but you can always obtain an instance of |CustomUser| using the ``principal`` property.

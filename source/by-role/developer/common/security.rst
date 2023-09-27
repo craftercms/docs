@@ -108,10 +108,11 @@ Crafter Engine's SAML2 implementation is configured at the instance level. This 
 
 Follow the article :ref:`engine-saml2-configuration` to configure SAML2 authentication for Crafter Engine.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Multi-Environment Authentication Support
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-It's often the case that lower environments will require their own authentication configuration. Crafter Engine supports that by allowing you to configure multiple SAML2 configurations, and then specify which configuration to use for each environment. See the article :ref:`saml2-multi-environment-support` for more information.
+.. TODO The following section can be put back in if we go back to supporting different SAML2 per project
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Multi-Environment Authentication Support
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    It's often the case that lower environments will require their own authentication configuration. Crafter Engine supports that by allowing you to configure multiple SAML2 configurations, and then specify which configuration to use for each environment. See the article :ref:`saml2-multi-environment-support` for more information.
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Engine HTTP Headers-Based Authentication |enterpriseOnly|

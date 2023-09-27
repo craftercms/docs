@@ -397,38 +397,7 @@ In this section, we discuss managing your project, security, etc. in a delivery 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 URL Rewrites and Vanity URLs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-URL rewriting turns hard to remember, long and complicated URLs into easier to remember, user-friendly and search
-engine friendly URLs. Simple URL rewrite rules per project can be done through Crafter Engine.
-
-CrafterCMS comes with the Tuckey URLRewrite filter, a Java Web Filter with functionality like Apache's mod_rewrite,
-that lets you setup rewrite rules for your project.
-
-To add a URL rewrite rule, in Studio, open the **Sidebar** then click on |projectTools|. Click on **Configuration** then select **Engine URL Rewrite Configuration (XML Style)**.
-
-Here's an example URL rewrite rule for a project created using the Website Editorial blueprint where requests to
-/articles/2020/12/top-books-for-young-women will be redirected to /articles/2021/1/men-styles-for-winter
-
-.. code-block:: xml
-
-   <?xml version="1.0" encoding="utf-8"?>
-   <urlrewrite>
-     <rule>
-       <from>/articles/2020/12/top-books-for-young-women</from>
-       <to type="redirect">/articles/2021/1/men-styles-for-winter</to>
-     </rule>
-   </urlrewrite>
-
-
-After saving the configuration, remember to publish the configuration file just saved (``urlrewrite.xml`` file). To publish the configuration file, from the **Sidebar**, click on **Dashboard**. In the **My Recent Activity** dashlet, check the box next to the ``urlrewrite.xml`` file, and click **Publish** from the context nav to publish.
-
-.. image:: /_static/images/site-admin/publish-urlrewrite.webp
-    :alt: Configurations - Publish URL Rewrite Config File from Dashboard
-    :width: 85 %
-    :align: center
-
-|
-
-For more information on the UrlRewriteFilter, see http://tuckey.org/urlrewrite/
+URL rewriting is important to any Web application. Learn how to configure URL rewriting in :ref:`engine-url-rewrite-configuration`.
 
 ^^^^^^^^
 Security
