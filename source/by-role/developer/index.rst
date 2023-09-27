@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.0
+:last-updated: 4.1.2
 
 .. _developer:
 
@@ -31,9 +31,54 @@ Regardless of type of project, a developer needs to be familiar with the followi
 
 .. TODO Turn the list below into a table indicating the topic (with link) and why you'd want to learn about it (a description)
 
+.. list-table:: Developer General Concepts
+    :header-rows: 1
+
+    * - Topic
+      - Description
+    * - :ref:`content-modeling`
+      - Provides you information on giving structure and organization to your content
+    * - :ref:`information-architecture`
+      - Shows you the CrafterCMS repository structure
+    * - :ref:`content-inheritance`
+      - Allows you to augment or override existing content using inheritance
+    * - :ref:`content-retrieval-apis`
+      - Provides you information on how to access your content via APIs
+    * - :ref:`static-content-access`
+      - Provides you information on how to access static contents such as images, CSS files, etc.
+    * - :ref:`experience-builder`
+      - Provides information on the UI layer on top of your applications that enables authors with in-context editing (ICE)
+    * - :ref:`project-security`
+      - Provides you information on security features that can be used to secure your project/site
+    * - :ref:`content-search`
+      - Provides you information on how to perform content queries
+    * - :ref:`scheduled-jobs`
+      - Provides you information on scheduling jobs
+    * - :ref:`content-type-controllers`
+      - Provides you information on content type controllers
+    * - :ref:`targeting`
+      - Provides you information on rendering content adapted to different things
+    * - :ref:`servlet-filters`
+      - Provides you information on creating and configuring a filter
+    * - :ref:`working-with-dates-in-groovy`
+      - Provides you information on performing date operations in Groovy
+    * - :ref:`page-redirect`
+      - Provides you information on performing redirects (send users from one URL to another URL)
+    * - :ref:`working-with-sass`
+      - Provides you information on working with Sass in CrafterCMS
+    * - :ref:`multi-environment-support`
+      - Provides you information on multi-environment support
+    * - :ref:`custom-error-pages`
+      - Provides you information on creating custom error pages
+    * - :ref:`adding-a-new-language`
+      - Provides you information on adding a new language to Studio
+    * - :ref:`localization`
+      - Provides you information on localizing content
+
 .. toctree::
     :maxdepth: 1
     :titlesonly:
+    :hidden:
 
     common/content-modeling/content-modeling
     common/content-modeling/information-architecture

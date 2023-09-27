@@ -2080,7 +2080,7 @@ Clicking on **Publish** will change the schedule of all items to be pushed live 
 
 ~~~~~~~~~~~~~~~~~~~~~~
 Reject Publish Request
-~~~~~~~~~~~~~~~~~~~~~~s
+~~~~~~~~~~~~~~~~~~~~~~
 To reject a request for publish, open the item for preview, then in the toolbar ``Options``, select **Reject**.
 Another way to access the **Reject** option is by opening the dashboard and placing a check mark next to the
 item to be rejected, **Reject** should now be available in the context nav.

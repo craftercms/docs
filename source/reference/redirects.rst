@@ -7,19 +7,16 @@
 =========
 Redirects
 =========
-
 A redirect sends users from one URL to another URL. CrafterCMS provides a couple of ways to setup redirects.
 
 ----------------------------
 URL Rewrites and Vanity URLs
 ----------------------------
-
 CrafterCMS supports URL rewriting and vanity URLs. It uses a Java Web Filter which allows you to rewrite URLs, like Apache's mod_rewrite, for setting up rewrite rules. For more details on how to use the filter in CrafterCMS for setting up rewrite rules, please see: :ref:`engine-url-rewrite-configuration`
 
 ---------------------------------
 URL Redirect Using a Content Item
 ---------------------------------
-
 Another way to perform redirects is by using a ``/page/redirect`` content type containing a field named ``redirect-url`` which Crafter Engine picks up, then acts on. Let's take a look at an example where we want the URL **localhost:8080/fashion** to redirect to the category landing page for style **localhost:8080/style**
 
 This may be easier for some content authors that just want to create a redirect item quickly without access to the rewrite rules.
@@ -34,7 +31,6 @@ Simply install the plugin https://craftercms.com/marketplace/redirect-file-plugi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Create the Page for Redirecting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Open the **Sidebar**. Right click on ``Home`` and select ``New Content``. Select the content type ``Redirect``. Fill in **Page URL** with ``fashion``, **Internal Name** with ``fashion``, **Nav Label** with ``Fashion`` and **Redirect URL** with ``/style`` since we want the page to redirect to the category landing page for style, then click on **Save and Close**
 
 .. image:: /_static/images/developer/redirect/page-redirect-fashion.webp
