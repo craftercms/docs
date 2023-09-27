@@ -101,6 +101,12 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure forwarded headers
     * - :ref:`engine-policy-headers`
       - Allows you to configure policy headers
+    * - :ref:`engine-cors`
+      - Allows you to configure CORS headers
+    * - :ref:`engine-single-page-application`
+      - Allows you to configure SPA
+    * - :ref:`engine-navigation`
+      - Allows you to configure additional fields for dynamic navigation items
     * - :ref:`engine-search-timeouts`
       - Allows you to configure the search client connection timeout, socket timeout and number of threads
     * - :ref:`engine-content-length-headers`
@@ -123,6 +129,102 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure logging levels
 
 .. TODO * - - :ref:`engine-project-configuration`
+
+|
+
+|hr|
+
+.. _engine-project-locale:
+
+^^^^^^^^^^^^^^
+Project Locale
+^^^^^^^^^^^^^^
+The following section allows you to configure a default locale for your project.  If no default locale is specified,
+the system locale will become the default locale
+
+.. code-block:: xml
+    :caption: *config/engine/site-config.xml*
+
+    (General Properties)
+    <defaultLocale />  (Default locale for the site)
+
+|
+
+|hr|
+
+.. _engine-navigation:
+
+^^^^^^^^^^
+Navigation
+^^^^^^^^^^
+The following section allows you to configure additional fields for dynamic navigation items
+
+.. code-block:: xml
+    :caption: *config/engine/site-config.xml*
+
+    (Navigation Properties)
+    <navigation>
+        <additionalFields /> (List of additional fields to include for dynamic navigation items)
+    </navigation>
+
+|
+
+|hr|
+
+.. _engine-single-page-application:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Single Page Application (SPA)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following section allows you to configure Single Page Application (SPA) mode and view name.
+
+
+.. code-block:: xml
+    :caption: *config/engine/site-config.xml*
+
+    (Single Page Application Properties (React JS, Angular, Vue.js, etc.))
+    <spa>
+        <enabled /> (Enable/disable SPA mode, default is false)
+        <viewName /> (The view name for the SPA (Single Page Application). Current view names can be a page URL (like /) or a template name (like /template/web/app.ftl). Default is /)
+    </spa>
+
+|
+
+|hr|
+
+.. _engine-cors:
+
+^^^^
+CORS
+^^^^
+The following section allows you to configure CORS headers in REST API responses when not in preview mode.
+
+.. code-block:: xml
+    :caption: *config/engine/site-config.xml*
+
+    (CORS Properties)
+    <cors>
+        <enable>true</enable> (Enable/disable CORS headers, default is false)
+        (Values for each of the headers that will be added to responses)
+        <accessControlMaxAge>3600</accessControlMaxAge>
+        <accessControlAllowOrigin>*</accessControlAllowOrigin>
+        <accessControlAllowMethods>GET\, OPTIONS</accessControlAllowMethods>
+        <accessControlAllowHeaders>Content-Type</accessControlAllowHeaders>
+        <accessControlAllowCredentials>true</accessControlAllowCredentials>
+    </cors>
+
+where:
+
+- ``<accessControlAllowOrigin>`` values are split using ``,``. Remember that
+  commas inside patterns need to be escaped with a ``\``,
+  like this: ``<accessControlAllowOrigin>http://localhost:[8000\,3000],http://*.other.domain</accessControlAllowOrigin>``
+
+- ``<accessControlAllowMethods>`` and ``<accessControlAllowHeaders>`` values are split using ``,``. Remember to escape the commas ``,`` separating
+  the values like this: ``<accessControlAllowHeaders>X-Custom-Header\, Content-Type</accessControlAllowHeaders>`` or
+  ``<accessControlAllowMethods>GET\, OPTIONS</accessControlAllowMethods>``
+
+.. note::
+    When engine is in preview mode, it is a proxy and therefore will not add CORS headers to REST API responses even if CORS is enabled.
 
 |
 
@@ -1147,29 +1249,6 @@ This example file contains the properties used by Crafter Engine (click on the t
 |
 |
 
-.. TODO Review these properties for v4.1
-     * **defaultLocale:** The default locale for the project. Used with content targeting through localization.
-     * **navigation.additionalFields:**  List of additional fields to include for dynamic navigation items (Example: *<additionalFields>myTitle_s,myAuthor_s,...</additionalFields>*)
-     * **spa:** Used for Single Page Application (SPA) Properties (React JS, Angular, Vue.js, etc.). Contains ``<enabled>`` element which enables/disables SPA mode (default is false) and ``<viewName>`` element, the view name for the SPA (Single Page Application. Current view names can be a page URL (like ``/``) or a template name (like ``/template/web/app.ftl``). Default is ``/``)
-     * **cors.enable**:``true`` if CORS headers should be added to REST API responses when not in preview mode. Defaults to false. |br|.
-       The elements ``<accessControlMaxAge>``, ``<accessControlAllowOrigin>``, ``<accessControlAllowMethods>``,
-       ``<accessControlAllowHeaders>`` and ``<accessControlAllowCredentials>`` have the values that will be
-       copied to each response. [TODO expand this into a section]
-
-       ``<accessControlAllowOrigin>`` values are split using ``,``. Remember that
-       commas inside patterns need to be escaped with a ``\``,
-       like this: ``<accessControlAllowOrigin>http://localhost:[8000\,3000],http://*.other.domain</accessControlAllowOrigin>``
-
-       ``<accessControlAllowMethods>`` and ``<accessControlAllowHeaders>`` values are split using ``,``. Remember to escape the commas ``,`` separating
-       the values like this: ``<accessControlAllowHeaders>X-Custom-Header\, Content-Type</accessControlAllowHeaders>`` or
-       ``<accessControlAllowMethods>GET\, OPTIONS</accessControlAllowMethods>``
-
-       .. note::
-          When engine is in preview mode, it is a proxy and therefore will not add CORS headers to REST API responses even if CORS is enabled.
-
-
-
-.. TODO: Add a CORS section
 .. TODO: Add a section to show how to include your own properties
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

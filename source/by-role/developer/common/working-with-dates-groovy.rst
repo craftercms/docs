@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.3
+:last-updated: 4.1.2
 
 
 .. _working-with-dates-in-groovy:
@@ -7,8 +7,6 @@
 ===========================================
 Working with Dates and Time Zones in Groovy
 ===========================================
-
-
 There are times when we need to do some date operations or parse dates or format dates to a desired format. Groovy has extensions that allows us to work with dates more easily. We'll use a project created using the "Website_editorial" blueprint, and add a script that will run when we preview an article page.
 
 First, let's set the time zone in Crafter Engine. From the **Sidebar**, click on |projectTools|, then click on **Configuration**. Select **Engine Project Configuration** from the dropdown list, then enter the following into the configuration:
@@ -65,14 +63,13 @@ Which will output this:
 
     Tue, December 27, 2021, 09:00 PM (PST)
 
-For more information on format patterns, see https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+For more information on format patterns, see https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/SimpleDateFormat.html
 
-For more information on time zone offset, see https://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html
+For more information on time zone offset, see https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TimeZone.html
 
 -------------
 Parsing Dates
 -------------
-
 To convert a date string into a date object (so you can perform date arithmetic, get year, month, date values separately), do the following:
 
 .. code-block:: groovy
@@ -90,7 +87,6 @@ Which will output this for ``nowDate``:
 --------------------------
 Date Arithmetic Operations
 --------------------------
-
 We'll use the same example above to perform arithmetic operations on the date object. There are two ways to perform the arithmetic operations on the date objects, using the ``plus`` and ``minus`` methods, and using the ``+`` and ``-`` operators.
 
 Say, we want to find the date object 10 days after the date in our example above. We will use the ``plus`` method and the ``+`` operator to increment the date by 10 days:
