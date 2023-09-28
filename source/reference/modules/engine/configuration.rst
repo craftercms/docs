@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.2
 
 .. index:: Engine Configuration
@@ -705,8 +705,6 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure logging levels
     * - :ref:`engine-project-spring-configuration`
       - Allows you to configure Spring application context
-    * - :ref:`engine-project-locale`
-      - Allows you to configure a default locale for your project
     * - :ref:`engine-mongodb-configuration`
       - Allows you to configure Crafter Engine access to MongoDB
     * - :ref:`engine-crafter-profile-configuration`
@@ -1795,25 +1793,6 @@ Delivery Specific Configurations
 """"""""""""""""""""""""""""""""
 If you need to manage different values for the configuration files depending on the environment
 you can find more detailed information in the :ref:`engine-multi-environment-support` section.
-
-|
-
-|hr|
-
-
-.. _engine-project-locale:
-
-^^^^^^^^^^^^^^
-Project Locale
-^^^^^^^^^^^^^^
-The following section allows you to configure a default locale for your project.  If no default locale is specified,
-the system locale will become the default locale
-
-.. code-block:: xml
-    :caption: *config/engine/site-config.xml*
-
-    (General Properties)
-    <defaultLocale />  (Default locale for the site)
 
 |
 

@@ -103,3 +103,19 @@ To enable this, add the following bean to your project's ``application-context.x
     <bean id="crafter.targetedUrlStrategy"
       class="org.craftercms.engine.targeting.impl.TargetedUrlByFileStrategy"
       parent="crafter.targetedUrlStrategyBase"/>
+
+|hr|
+
+^^^^^^^^^^^^^^
+Project Locale
+^^^^^^^^^^^^^^
+The following section allows you to configure a default locale for your project.  If no default locale is specified,
+the system locale will become the default locale
+
+.. code-block:: xml
+    :caption: *config/engine/site-config.xml*
+
+    (General Properties)
+    <defaultLocale />  (Default locale for the site)
+
+|
