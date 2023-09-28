@@ -33,14 +33,14 @@ Code Flow
 
   * Automated
 
-    * CI: Travis-CI
-    * Code quality gate: Codacy
+    * Continuous Integration
+    * Code quality gate
     * Security scans
 
       * Critical and High issues will be addressed
       * Medium and below issues will be addressed if we deem it a viable attack vector
 
-    * Penetration testing using OWASP ZAP and Burp Suite during every release
+    * Penetration testing for OWASP Top 10 every release
 
       * Critical and High issues will be addressed
       * Medium and below issues will be addressed if we deem it a viable attack vector
@@ -68,7 +68,7 @@ Crafter Cloud
 -------------
 
 * Crafter Cloud is based on the scanned AWS AMI
-* Penetration testing using OWASP ZAP and Burp Suite during every release
+* Penetration testing every release
 
   * Critical and High issues will be addressed
   * Medium and below issues will be addressed if we deem it a viable attack vector
