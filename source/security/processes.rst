@@ -55,8 +55,8 @@ Code Flow
 Release
 -------
 
-* Full security and depdency scan and update
-* Release commit GPG signing, 2FA to Sonatype (Maven)
+* Full security and dependency scan and update
+* Release commit GPG signing with 2FA to Maven Central
 * MD5 and SHA512 checksums on all artifacts
 * All 3rd party software is downloaded from the original authority and checksums validated
 * CrafterCMS is fully regression tested using automated testing
