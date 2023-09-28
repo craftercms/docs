@@ -35,7 +35,7 @@ Code Flow
 
     * CI: Travis-CI
     * Code quality gate: Codacy
-    * Security audit: Snyk, SonyType, and Trivy
+    * Security scans
 
       * Critical and High issues will be addressed
       * Medium and below issues will be addressed if we deem it a viable attack vector
@@ -55,7 +55,7 @@ Code Flow
 Release
 -------
 
-* Full audit and update based on Snyk, Trivy, and SonaType reports
+* Full security and depdency scan and update
 * Release commit GPG signing, 2FA to Sonatype (Maven)
 * MD5 and SHA512 checksums on all artifacts
 * All 3rd party software is downloaded from the original authority and checksums validated
