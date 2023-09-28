@@ -118,7 +118,7 @@ If you have multiple projects setup, to view a certain project, in your browser,
 Here we have an example of a delivery setup in another directory on disk (local), where there are two projects, ``my-awesome-editorial`` and ``hello-world``
 
 .. image:: /_static/images/system-admin/project-list.webp
-    :width: 100 %
+    :width: 80 %
     :align: center
     :alt: Setup Project for Delivery - Project List
 
@@ -129,7 +129,7 @@ To set ``crafterSite`` to the ``hello-world`` project, in your browser, type in
     http://localhost:9080?crafterSite=helloworld
 
 .. image:: /_static/images/system-admin/project-hello.webp
-    :width: 100 %
+    :width: 80 %
     :align: center
     :alt: Setup Project for Delivery - Hello World Project
 
@@ -140,7 +140,7 @@ To set the site to the ``myawesomesite``, in your browser, type in
     http://localhost:9080?crafterSite=myawesomesite
 
 .. image:: /_static/images/system-admin/project-awesome.webp
-    :width: 100 %
+    :width: 80 %
     :align: center
     :alt: Setup Site for Delivery - My Awesome Site
 
@@ -151,10 +151,10 @@ Serverless Delivery
 ^^^^^^^^^^^^^^^^^^^
 CrafterCMS can be configured to serve sites directly from AWS services, following this guide you will:
 
-- Create a AWS Elasticsearch domain (optional)
+- Create a AWS OpenSearch domain (optional)
 - Configure a Crafter Studio in an authoring environment to call the Crafter Deployer to create an AWS CloudFormation
   with a CloudFront and S3 bucket for each site
-- Configure a Crafter Engine in a delivery environment to read files from the S3 bucket and query to AWS Elasticsearch (optional)
+- Configure a Crafter Engine in a delivery environment to read files from the S3 bucket and query to AWS OpenSearch (optional)
 
 """""""""""""
 Prerequisites
@@ -163,60 +163,59 @@ Prerequisites
 - A CrafterCMS authoring environment
 - A CrafterCMS delivery environment
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Step 1: Create an Open Search Domain for Delivery (optional)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Since serverless delivery requires a single Open Search endpoint readable by all Engine instances, we recommend you
-create an AWS Open Search domain for delivery. If you don't want to use an AWS Open Search domain then you should
-create and maintain your own Elasticsearch cluster.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Step 1: Create an OpenSearch Domain for Delivery (optional)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Since serverless delivery requires a single OpenSearch endpoint readable by all Engine instances, we recommend you
+create an AWS OpenSearch domain for delivery. If you don't want to use an AWS OpenSearch domain then you should
+create and maintain your own OpenSearch cluster.
 
-   .. important:: Authoring can also use an Open Search domain, but be aware that in a clustered authoring environment
-                  each authoring instance requires a separate Open Search instance. If you try to use the same Open Search domain
+   .. important:: Authoring can also use an OpenSearch domain, but be aware that in a clustered authoring environment
+                  each authoring instance requires a separate OpenSearch instance. If you try to use the same OpenSearch domain
                   then you will have multiple preview deployers writing to the same index.
 
-To create an AWS Open Search domain please do the following:
+To create an AWS OpenSearch domain please do the following:
 
-#. In the top navigation bar of your AWS console, click the ``Services`` dropdown menu, and search for
-   ``Open Search Service``.
-#. Click on ``Create a new domain``.
-#. Select ``Deployment Type`` and on the Open Search version, pick the closest to ``v2.8.0``.
+#. In the top navigation bar of your AWS console, click the ``Analytics`` dropdown menu, and search for
+   ``Amazon OpenSearch Service``.
+#. Click on ``Create domain``.
+#. Select ``Deployment Type`` and on the OpenSearch version, pick the closest to ``v2.8.0``.
 
-.. TODO Fix the image
-.. image:: /_static/images/system-admin/serverless/es-deployment-type.webp
-:alt: Serverless Site - Open Search Deployment Type
-:align: center
+   .. TODO Fix the image, hide for now
+      .. image:: /_static/images/system-admin/serverless/es-deployment-type.webp
+          :alt: Serverless Site - OpenSearch Deployment Type
+          :align: center
 
-   |
+      |
 
 #. On the next screen, enter the domain name. Leave the defaults on the rest of the settings or change as needed per
    your environment requirements, then click on ``Next``.
 #. On ``Network Configuration``, we recommend you pick the VPC where your delivery nodes reside. If they're not running
    on an Amazon VPC, then pick ``Public Access``.
 
-.. TODO Fix the image
-.. image:: /_static/images/system-admin/serverless/es-network-access.webp
-:alt: Serverless Site - Open Search Network Access
-:align: center
+   .. TODO Fix the image, hide for now
+      .. image:: /_static/images/system-admin/serverless/es-network-access.webp
+          :alt: Serverless Site - OpenSearch Network Access
+          :align: center
 
-   |
+      |
 
 #. Select the ``Access Policy`` that fits your Crafter environment, and click on ``Next`` (if on the same VPC as
    delivery, we recommend ``Do not require signing request with IAM credential``).
 
    .. image:: /_static/images/system-admin/serverless/es-access-policy.webp
-      :alt: Serverless Site - Open Search Access Policy
+      :alt: Serverless Site - OpenSearch Access Policy
       :align: center
 
    |
 
 #. Review the settings and click on ``Confirm``.
 #. Wait for a few minutes until the domain is ready. Copy the ``Endpoint``. You'll need this URL later to configure
-   the Deployer and Delivery Engine which will need access to the Elasticsearch.
+   the Deployer and Delivery Engine which will need access to the OpenSearch.
 
-.. TODO Fix the image
-.. image:: /_static/images/system-admin/serverless/es-endpoint.webp
-:alt: Serverless Site - Open Search Endpoint
-:align: center
+   .. image:: /_static/images/system-admin/serverless/es-endpoint.webp
+       :alt: Serverless Site - OpenSearch Endpoint
+       :align: center
 
    |
 
@@ -307,12 +306,12 @@ Step 2: Configure the Delivery for Serverless Mode
 
    |
 
-#. Edit the ``ES_URL`` in ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh`` to point to the Elasticsearch endpoint you
+#. Edit the ``SEARCH_URL`` in ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh`` to point to the OpenSearch endpoint you
    created in the previous step:
 
    .. code-block:: bash
 
-      export ES_URL=https://vpc-serverless-test-jpwyav2k43bb4xebdrzldjncbq.us-east-1.es.amazonaws.com
+      export SEARCH_URL=https://vpc-serverless-test-jpwyav2k43bb4xebdrzldjncbq.us-east-1.es.amazonaws.com
 
    |
 
@@ -331,14 +330,14 @@ In both cases you still need to configure Studio to call the Deployer to create 
 You can find this configuration under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``. The properties are well documented in the file so they won't be explained here, but there are still some important things to
 notice:
 
-- You need to add the URL of the Elasticsearch domain created in a previous step under
-  ``studio.serverless.delivery.deployer.target.template.params.elasticsearch_url``:
+- You need to add the URL of the OpenSearch domain created in a previous step under
+  ``studio.serverless.delivery.deployer.target.template.params.search_url``:
 
   .. code-block:: yaml
 
     studio.serverless.delivery.deployer.target.template.params:
-      # The delivery Elasticsearch endpoint (optional is authoring is using the same one, specified in the ES_URL env variable)
-      elastic_search_url: https://vpc-serverless-test-jpwyav2k43bb4xebdrzldjncbq.us-east-1.es.amazonaws.com
+      # The delivery search endpoint (optional is authoring is using the same one, specified in the SEARCH_URL env variable)
+      search_url: https://vpc-serverless-test-jpwyav2k43bb4xebdrzldjncbq.us-east-1.es.amazonaws.com
 
   |
 
@@ -572,6 +571,9 @@ Open a browser and go to ``https://DOMAIN_OF_YOUR_CLOUDFRONT``. You should be ab
 .. image:: /_static/images/system-admin/serverless/editorial-screenshot.webp
    :alt: Serverless Site - Editorial Screenshot
    :align: center
+   :width: 80%
+
+|
 
 .. note::
 
@@ -583,6 +585,10 @@ Open a browser and go to ``https://DOMAIN_OF_YOUR_CLOUDFRONT``. You should be ab
          org.craftercms.deployer.api.exceptions.DeployerException: Failed to open Git repository at /home/ubuntu/craftercms/crafter-authoring/data/repos/sites/ed/published;
 
    Once the site has been published, the error above will go away.
+
+|
+
+|hr|
 
 .. _engine-configuration-files:
 
@@ -665,6 +671,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to set the content root folder
     * - :ref:`engine-turn-off-show-error`
       - Allows you to turn off showing errors in line with content
+    * - :ref:`engine-http-response-headers`
+      - Allows you to add headers to responses, such as caching policies
     * - :ref:`groovy-sandbox-configuration`
       - Allows you to configure the Groovy sandbox to tweak the Groovy security layer
     * - :ref:`engine-url-rewrite-configuration`
@@ -675,6 +683,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure CORS headers
     * - :ref:`proxy-configuration`
       - Allows you to configure the proxy for the Preview server (Crafter Engine in Preview Mode)
+    * - :ref:`engine-cache`
+      - Allows you to configure various cache related items such as items to be preloaded in cache, etc.
     * - :ref:`request-filtering-configuration`
       - Allows you to configure request filtering
     * - :ref:`engine-forwarded-headers`
@@ -695,6 +705,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure logging levels
     * - :ref:`engine-project-spring-configuration`
       - Allows you to configure Spring application context
+    * - :ref:`engine-project-locale`
+      - Allows you to configure a default locale for your project
     * - :ref:`engine-mongodb-configuration`
       - Allows you to configure Crafter Engine access to MongoDB
     * - :ref:`engine-crafter-profile-configuration`
@@ -707,40 +719,348 @@ In this section we will highlight some of the more commonly used properties in t
 
 |hr|
 
-.. _engine-project-locale:
+.. _engine-root-folder:
 
-^^^^^^^^^^^^^^
-Project Locale
-^^^^^^^^^^^^^^
-The following section allows you to configure a default locale for your project.  If no default locale is specified,
-the system locale will become the default locale
+^^^^^^^^^^^^^^^^^^
+Engine Root Folder
+^^^^^^^^^^^^^^^^^^
+Crafter Engine requires a root folder path to be configured if the defaults are not used.
 
-.. code-block:: xml
-    :caption: *config/engine/site-config.xml*
+The default root folder path has the pattern: ``crafter.engine.site.default.rootFolder.path=file:${CRAFTER_DATA_DIR}/repos/sites/{siteName}/`` This relies on the ``CRAFTER_DATA_DIR`` environment variable being set. Crafter Engine will then resolve the ``{siteName}`` variable to the name of the site being requested.
 
-    (General Properties)
-    <defaultLocale />  (Default locale for the site)
+To change the root folder path, you can either set the ``CRAFTER_DATA_DIR`` environment variable or change the default root folder path in the ``server-config.properties`` file (see more about that file in :ref:`server-config.properties <engine-configuration-files>`. The variable to modify is:
+
+    .. code-block:: properties
+      :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+      crafter.engine.site.default.rootFolder.path=file:${CRAFTER_DATA_DIR}/repos/sites/{siteName}/
+
+    |
+
+|hr|
+
+.. _engine-turn-off-show-error:
+
+^^^^^^^^^^^^^^^^^^^
+Turn Off Show Error
+^^^^^^^^^^^^^^^^^^^
+Templates in CrafterCMS will display the errors in line with content as they encounter them to help the template developer during the coding process. On production environments, you do not want the errors to show up because it will highlight site issues and expose information that may be a security concern. To turn off showing errors in line with content, do the following:
+
+#. Place the following property and value in the ``server-config.properties`` file
+
+   .. code-block:: properties
+       :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+	   crafter.engine.template.error.displayInView=false
+
+#. Restart the Crafter Engine application or the Tomcat service.
+
+#. Test by deploying an FTL file with an error in it.
+   Note that the error will not show up but is printed out in the server's log file.
 
 |
 
 |hr|
 
-.. _engine-navigation:
+.. _engine-http-response-headers:
 
-^^^^^^^^^^
-Navigation
-^^^^^^^^^^
-The following section allows you to configure additional fields for dynamic navigation items
+^^^^^^^^^^^^^^^^^^^^^
+HTTP Response Headers
+^^^^^^^^^^^^^^^^^^^^^
+CrafterCMS supports adding headers to responses when there are matched configuration patterns in
+the Engine Project Configuration file |br|
+
+To setup HTTP response headers, do the following:
+- Configure the Ant path pattern to match for adding headers to response in **headerMappings.mapping.urlPattern**
+- Configure the ``<header>`` element and the `<value>`` element ` with your desired values under **headerMappings.mapping.headers**.
 
 .. code-block:: xml
-    :caption: *config/engine/site-config.xml*
+    :emphasize-lines: 3, 6-7
 
-    (Navigation Properties)
-    <navigation>
-        <additionalFields /> (List of additional fields to include for dynamic navigation items)
-    </navigation>
+    <headerMappings>
+      <mapping>
+        <urlPattern>/**/*.pdf</urlPattern>
+        <headers>
+          <header>
+            <name>X-Crafter-Document</name>
+            <value>true</value>
+          </header>
+        </headers>
+      </mapping>
+    </headerMappings>
+
+"""""""""""""""""""""
+Setting Cache Headers
+"""""""""""""""""""""
+Cache headers allows specifying caching policies such as how an item is cached, maximum age before expiring, etc.
+These headers are extremely useful for indicating cache TTLs to CDNs and browsers on certain requests.
+
+To setup cache headers, do the following:
+
+- Configure the Ant path pattern to match for adding headers to response in **headerMappings.mapping.urlPattern**
+- Configure the ``<header>`` element with the value ``Cache-Control`` and the element ``<value>`` with your desired Cache-Control
+  directive under **headerMappings.mapping.headers**.
+
+  See `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control>`__ for a list of available directives
+  to use with ``Cache-Control``.
+
+Your configuration should look something like below:
+
+.. code-block:: xml
+    :emphasize-lines: 3, 6-7
+
+    <headerMappings>
+      <mapping>
+        <urlPattern>/articles/**</urlPattern>
+        <headers>
+          <header>
+            <name>Cache-Control</name>
+            <value>max-age=60\, s-maxage=300</value>
+          </header>
+        <headers>
+      </mapping>
+    </headerMappings>
+
+
+Please note that the ``Cache-Control`` header inserted to responses by default is set to ``No-Cache``.
 
 |
+
+|hr|
+
+.. _groovy-sandbox-configuration:
+
+----------------------------
+Groovy Sandbox Configuration
+----------------------------
+When a Groovy script is executed all code is validated against a blacklist of insecure expressions to prevent code that could
+compromise the system. When you try to execute a script that contains insecure expressions you will see an error
+similar to this:
+
+.. code-block:: none
+
+  UnsupportedOperationException: Insecure call staticMethod java.lang.Runtime getRuntime ...
+
+|
+
+It is recommended to keep the default configuration if possible. However, if access to one or more of the blacklisted expressions
+is required, it is possible to override the blacklist configuration. Configuration is global and affects all scripts on the server.
+
+.. warning:: When you allow a script to make an insecure call you should make sure it can only be executed with known
+             arguments and **never** with unverified user input.
+
+|
+
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Groovy Sandbox Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^
+The following allows you to configure the Groovy sandbox.
+The Groovy sandbox is enabled by default and can be disabled by changing the property ``crafter.engine.groovy.sandbox.enable`` to ``false``.
+
+.. code-block:: properties
+   :linenos:
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # Indicates if the sandbox should be enabled for all sites
+   crafter.engine.groovy.sandbox.enable=true
+   # Indicates if the blacklist should be enabled for all sites (this will have no effect if the sandbox is disabled)
+   crafter.engine.groovy.sandbox.blacklist.enable=true
+   # The location of the default blacklist to use for all sites (this will have no effect if the sandbox is disabled)
+   crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/groovy/blacklist
+
+|
+
+^^^^^^^^^^^^^^^^^^^^^^^^
+Using a Custom Blacklist
+^^^^^^^^^^^^^^^^^^^^^^^^
+Crafter Engine includes a default blacklist that you can find
+`here <https://github.com/craftercms/engine/blob/develop/src/main/resources/crafter/engine/groovy/blacklist>`_. Make sure you review the branch/tag you're using.
+
+To use a custom blacklist follow these steps:
+
+#. Copy the default blacklist file to your classpath, for example:
+
+    ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/groovy/blacklist``
+
+#. Remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
+#. Update the :ref:`server-config.properties <engine-configuration-files>` configuration file to load the custom blacklist:
+
+    .. code-block:: none
+      :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
+
+      # The location of the blacklist to use for all sites (this will have no effect if the sandbox is disabled)
+      crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/extension/groovy/blacklist
+
+    .. note::
+      In CrafterCMS v3.1.14 and prior, the name of the property is ``crafter.engine.groovy.sandbox.blacklist``
+
+#. Restart CrafterCMS
+
+Now you can execute the same script without any issues.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Disabling the Sandbox Blacklist
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+It is possible to disable the blacklist to allow the execution of most expressions, in
+case you need to use a considerable number of the expression included in the blacklist while keeping some basic
+restrictions. To disable the blacklist for all projects/sites update the server configuration file
+:ref:`server-config.properties <engine-configuration-files>`:
+
+.. code-block:: none
+  :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+  # Indicates if the blacklist should be enabled for all sites (this will have no effect if the sandbox is disabled)
+  crafter.engine.groovy.sandbox.blacklist.enable=false
+
+
+^^^^^^^^^^^^^^^
+Important Notes
+^^^^^^^^^^^^^^^
+There are some limitations that should be noted when working with the Groovy Sandbox.
+
+One limitation is that an exception is thrown during execution when a Groovy class has a property and a getter method for the property. Here's an example code that throws an exception during execution:
+   .. code-block::
+
+      class Test {
+        private String message
+
+        public String getMessage() {
+           return this.message
+        }
+      }
+
+      def t = new Test()
+      t.message = "this is a test"
+
+      return t.getMessage()
+
+   |
+
+Here's the error thrown in the logs by the code above:
+
+.. code-block:: text
+
+   Caused by: java.lang.StackOverflowError
+	at groovy.lang.GroovyClassLoader.loadClass(GroovyClassLoader.java:693)
+	at groovy.lang.GroovyClassLoader$InnerLoader.loadClass(GroovyClassLoader.java:450)
+	at groovy.lang.GroovyClassLoader.loadClass(GroovyClassLoader.java:812)
+	at groovy.lang.GroovyClassLoader.loadClass(GroovyClassLoader.java:800)
+	at sun.reflect.GeneratedMethodAccessor340.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:98)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.getProperty(MetaClassImpl.java:1845)
+	at groovy.lang.MetaClassImpl.getProperty(MetaClassImpl.java:3773)
+	at Test.getProperty(test.get.groovy)
+	at org.codehaus.groovy.runtime.InvokerHelper.getProperty(InvokerHelper.java:190)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.getProperty(ScriptBytecodeAdapter.java:469)
+	at org.kohsuke.groovy.sandbox.impl.Checker$7.call(Checker.java:392)
+	at org.kohsuke.groovy.sandbox.GroovyInterceptor.onGetProperty(GroovyInterceptor.java:68)
+	at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onGetProperty(SandboxInterceptor.java:297)
+	at org.kohsuke.groovy.sandbox.impl.Checker$7.call(Checker.java:390)
+	at org.kohsuke.groovy.sandbox.impl.Checker.checkedGetProperty(Checker.java:394)
+	at org.kohsuke.groovy.sandbox.impl.Checker$checkedGetProperty$1.callStatic(Unknown Source)
+	at Test.getMessage(test.get.groovy:5)
+
+|
+
+**Workarounds**
+
+There are a couple of things you can do to get around the exception being thrown:
+
+* Do not use getter methods and instead access the property directly |br|
+  Using the example above, we'll access the property directly:
+
+     .. code-block::
+
+        class Test {
+          private String message
+        }
+
+        def t = new Test()
+        t.message = "this is a test"
+
+        return t.message
+
+     |
+
+* Use a different name for the property and the getter method |br|
+  Again, using the example above, we'll use a different name from the property for the getter method:
+
+     .. code-block::
+
+        class Test {
+          private String theMessage
+
+          public String getMessage() {
+             return this.theMessage
+          }
+        }
+
+        def t = new Test()
+        t.theMessage = "this is a test"
+
+        return t.getMessage()
+
+     |
+
+|hr|
+
+.. _engine-url-rewrite-configuration:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Engine URL Rewrite Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+URL rewriting turns hard to remember, long and complicated URLs into easier to remember URLs.
+
+CrafterCMS comes with the Tuckey URLRewrite filter, a Java Web Filter with functionality like Apache's mod_rewrite,
+that lets you setup rewrite rules for your site.
+
+To add a URL rewrite rule, in Studio, open the **Sidebar** then click on |projectTools|. Click on **Configuration**
+then select **Engine URL Rewrite Configuration (XML Style)**.
+
+.. image:: /_static/images/site-admin/config-urlrewrite-select.webp
+    :alt: Configurations - Open URL Rewrite Configuration
+    :width: 45 %
+    :align: center
+
+|
+
+""""""
+Sample
+""""""
+Here's a sample urlrewrite.xml file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "urlrewrite.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-urlrewrite.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/PROJECTNAME/sandbox/config/engine/urlrewrite.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+
+After making your changes and saving the configuration, remember to publish the configuration file just saved
+(``urlrewrite.xml`` file).  To publish the configuration file, from the **Sidebar**, click on **Dashboard**.
+In the **Unpublished Work** dashlet, check the box next to the ``urlrewrite.xml`` file, and click **Publish**
+from the context nav to publish.
+
+.. image:: /_static/images/site-admin/publish-urlrewrite.webp
+    :alt: Configurations - Publish URL Rewrite Config File from Dashboard
+    :width: 85 %
+    :align: center
+
+|
+
+For more information on the UrlRewriteFilter, see http://tuckey.org/urlrewrite/
 
 |hr|
 
@@ -798,191 +1118,6 @@ where:
 
 .. note::
     When engine is in preview mode, it is a proxy and therefore will not add CORS headers to REST API responses even if CORS is enabled.
-
-|
-
-|hr|
-
-.. _engine-project-spring-configuration:
-
-^^^^^^^^^^^^^^^^^^^^
-Spring Configuration
-^^^^^^^^^^^^^^^^^^^^
-Each project can have it's own Spring application context. Just as with site-config.xml, beans
-can be overwritten using the following locations:
-
-Spring Configuration Files
- - ``/config/engine/application-context.xml`` (This file can be accessed easily from any project created
-   through the out-of-the-box blueprints, by navigating from the Studio sidebar to ``Project Tools``
-   > ``Configuration``, and finally picking up the ``Engine Project Application Context`` option from the dropdown).
-
-	 .. image:: /_static/images/site-admin/engine-project-application-context.webp
-			 :alt: Engine Project Application Context
-
- - ``/config/engine/env/{envName}/application-context.xml``
-
-The application context inherits from Engine's own service-context.xml, and any class in Engine's
-classpath can be used, including Groovy classes declared under ``/scripts/classes/*``.
-
-As an example, assuming you have defined a Groovy class under ``/scripts/classes/mypackage/MyClass.groovy``,
-you can define a bean like this:
-
-.. code-block:: xml
-  :caption: application-context.xml
-  :linenos:
-
-	<?xml version="1.0" encoding="UTF-8"?>
-	<beans xmlns="http://www.springframework.org/schema/beans"
-	       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" parent="crafter.properties"/>
-
-    <bean id="greeting" class="mypackage.MyClass">
-      <property name="myproperty" value="${myvalue}"/>
-    </bean>
-
-  </beans>
-
-A ``org.springframework.context.support.PropertySourcesPlaceholderConfigurer`` (like above) can be
-specified in the context so that the properties of ``site-config.xml`` can be used as placeholders,
-like ``${myvalue}``. By making the placeholder configurer inherit from crafter.properties, you'll
-also have access to Engine's global properties (like ``crafter.engine.preview``).
-
-.. note::
-    Crafter Engine will not be able to load your Project Context if your context file contains invalid XML,
-    incorrect configuration or if your beans do not properly handle their own errors on initialization.
-
-|
-
-|hr|
-
-.. _engine-mongodb-configuration:
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Configure Engine to use MongoDB
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-There are times when you may need access to MongoDB. This section details how you can access MongoDB by configuring Engine.
-
-Here are the steps for configuring Engine to use mongoDB:
-
-"""""""""""""""""""""""""
-Configure the MongoDB URI
-"""""""""""""""""""""""""
-To define the connection between MongoDB and Engine, add the URI in the config file `/config/engine/site-config.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio sidebar to Project Tools > Configuration, and finally picking up the **Engine Project Configuration** option from the dropdown).
-
-.. code-block:: xml
-
-    <site>
-      <db>
-          <uri>mongodb://{host}:{port}/{database}?readPreference=primary&amp;maxPoolSize=50&amp;minPoolSize=5&amp;maxIdleTimeMS=1000&amp;waitQueueMultiple=200&amp;waitQueueTimeoutMS=100&amp;w=1&amp;journal=true</uri>
-      </db>
-    </site>
-
-where:
-   * {host} - required, server address to connect to
-   * {port} - optional, with a default value of :27020 in CrafterCMS Authoring
-   * {database} - optional, name of the database to authenticate if the connection string includes authentication credentials.
-
-For more details on the Connection String URI format, see https://docs.mongodb.com/manual/reference/connection-string/
-
-""""""""""""""""""""""
-Create a GMongo Client
-""""""""""""""""""""""
-To access Mongo from Groovy, we'll use a GMongo client. We'll need to add some beans in `/config/engine/application-context.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio sidebar to Project Tools > Configuration, and finally picking up the **Engine Site Application Context** option from the dropdown).
-
-.. code-block:: xml
-    :linenos:
-
-    <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-       <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" parent="crafter.properties"/>
-
-       <bean id="mongoUri" class="com.mongodb.MongoClientURI">
-         <constructor-arg value="${db.uri}"/>
-       </bean>
-
-       <bean id="mongoClient" class="com.gmongo.GMongoClient">
-         <constructor-arg ref="mongoUri"/>
-       </bean>
-
-    </beans>
-
-"""""""""""""""""""""""""""""""""""
-Use the Client From a Groovy Script
-"""""""""""""""""""""""""""""""""""
-We can now use the client from a Groovy script. Here's a simple script that runs a query:
-
-.. code-block:: groovy
-    :linenos:
-
-    def mongo = applicationContext.mongoClient
-    def db = mongo.getDB("{database}")
-    def result = null
-    def record = db.{collection}.findOne(_id: "{some id}")
-    if (record) {
-        result = record.name
-    }
-    return result
-
-where:
-    * {database} - the name of an existing database
-    * {collection} - collection name
-    * {some id} - id you're searching for depending on your database
-
-"""""""""""""""""""""""""""""""""
-Publish Configuration to Delivery
-"""""""""""""""""""""""""""""""""
-Until this point all changes have been made from Crafter Studio so they will only affect immediately
-the authoring environment, for a delivery environment you will need to publish the changed files.
-
-This can be done from the Studio project dashboard with the following steps:
-
-1. Go to Studio's project dashboard via the Navigation Menu on the top right or via the Sidebar
-
-   .. image:: /_static/images/content-author/project-dashboard-sidebar.webp
-       :width: 65 %
-       :align: center
-       :alt: Studio - Project Dashboard from Sidebar
-
-2. Locate the ``Unpublished Work`` dashlet
-
-   .. image:: /_static/images/site-admin/mongo/my-recent-activity.webp
-      :alt: Studio Project Dashboard - My Recent Activity
-      :width: 70 %
-      :align: center
-
-3. Select all configuration files updated in the previous sections
-
-   .. image:: /_static/images/site-admin/mongo/my-recent-activity-config.webp
-      :alt: Studio Project Dashboard - My Recent Activity
-      :width: 70 %
-      :align: center
-
-4. Click ``Publish`` from the contextual menu
-
-   .. image:: /_static/images/site-admin/mongo/approve-and-publish-context-menu.webp
-      :alt: Studio Project Dashboard - Contextual Menu
-      :width: 70 %
-      :align: center
-
-5. Click ``Publish`` to close the publish dialog
-
-   .. image:: /_static/images/site-admin/mongo/publish-dialog.webp
-      :alt: Studio Project Dashboard - Publish Dialog
-      :width: 70 %
-      :align: center
-
-Once the files are deployed to the delivery node and the project context is reloaded the new
-Configuration will take effect.
-
-""""""""""""""""""""""""""""""""
-Delivery Specific Configurations
-""""""""""""""""""""""""""""""""
-If you need to manage different values for the configuration files depending on the environment
-you can find more detailed information in the :ref:`engine-multi-environment-support` section.
 
 |
 
@@ -1188,286 +1323,6 @@ Let's begin:
 
 |hr|
 
-.. _engine-url-rewrite-configuration:
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Engine URL Rewrite Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-URL rewriting turns hard to remember, long and complicated URLs into easier to remember URLs.
-
-CrafterCMS comes with the Tuckey URLRewrite filter, a Java Web Filter with functionality like Apache's mod_rewrite,
-that lets you setup rewrite rules for your site.
-
-To add a URL rewrite rule, in Studio, open the **Sidebar** then click on |projectTools|. Click on **Configuration**
-then select **Engine URL Rewrite Configuration (XML Style)**.
-
-.. image:: /_static/images/site-admin/config-urlrewrite-select.webp
-    :alt: Configurations - Open URL Rewrite Configuration
-    :width: 45 %
-    :align: center
-
-|
-
-""""""
-Sample
-""""""
-Here's a sample urlrewrite.xml file (click on the triangle on the left to expand/collapse):
-
-.. raw:: html
-
-   <details>
-   <summary><a>Sample "urlrewrite.xml"</a></summary>
-
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-urlrewrite.xml
-   :caption: *CRAFTER_HOME/data/repos/sites/PROJECTNAME/sandbox/config/engine/urlrewrite.xml*
-   :language: xml
-   :linenos:
-
-.. raw:: html
-
-   </details>
-
-|
-
-After making your changes and saving the configuration, remember to publish the configuration file just saved
-(``urlrewrite.xml`` file).  To publish the configuration file, from the **Sidebar**, click on **Dashboard**.
-In the **Unpublished Work** dashlet, check the box next to the ``urlrewrite.xml`` file, and click **Publish**
-from the context nav to publish.
-
-.. image:: /_static/images/site-admin/publish-urlrewrite.webp
-    :alt: Configurations - Publish URL Rewrite Config File from Dashboard
-    :width: 85 %
-    :align: center
-
-|
-
-For more information on the UrlRewriteFilter, see http://tuckey.org/urlrewrite/
-
-|hr|
-
-.. _engine-root-folder:
-
-^^^^^^^^^^^^^^^^^^
-Engine Root Folder
-^^^^^^^^^^^^^^^^^^
-Crafter Engine requires a root folder path to be configured if the defaults are not used.
-
-The default root folder path has the pattern: ``crafter.engine.site.default.rootFolder.path=file:${CRAFTER_DATA_DIR}/repos/sites/{siteName}/`` This relies on the ``CRAFTER_DATA_DIR`` environment variable being set. Crafter Engine will then resolve the ``{siteName}`` variable to the name of the site being requested.
-
-To change the root folder path, you can either set the ``CRAFTER_DATA_DIR`` environment variable or change the default root folder path in the ``server-config.properties`` file (see more about that file in :ref:`server-config.properties <engine-configuration-files>`. The variable to modify is:
-
-    .. code-block:: properties
-      :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-
-      crafter.engine.site.default.rootFolder.path=file:${CRAFTER_DATA_DIR}/repos/sites/{siteName}/
-
-    |
-
-.. _engine-turn-off-show-error:
-
-^^^^^^^^^^^^^^^^^^^
-Turn Off Show Error
-^^^^^^^^^^^^^^^^^^^
-Templates in CrafterCMS will display the errors in line with content as they encounter them to help the template developer during the coding process. On production environments, you do not want the errors to show up because it will highlight site issues and expose information that may be a security concern. To turn off showing errors in line with content, do the following:
-
-#. Place the following property and value in the ``server-config.properties`` file
-
-   .. code-block:: properties
-       :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-
-	   crafter.engine.template.error.displayInView=false
-
-#. Restart the Crafter Engine application or the Tomcat service.
-
-#. Test by deploying an FTL file with an error in it.
-   Note that the error will not show up but is printed out in the server's log file.
-
-|
-
-|hr|
-
-.. _request-filtering-configuration:
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Request Filtering Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. version_tag::
-    :label: Since
-    :version: 4.1.0
-
-The following allows you to setup a filter to deny access to any request matching the value/s defined in the property.
-
-.. code-block:: properties
-    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-
-    crafter.security.forbidden.urls=/templates/**
-
-|
-
-|hr|
-
-.. _engine-forwarded-headers:
-
-^^^^^^^^^^^^^^^^^
-Forwarded Headers
-^^^^^^^^^^^^^^^^^
-The following section allows you to configure forwarded headers to resolve the actual hostname and protocol when it is behind a load balancer or reverse proxy. Forwarded headers are disabled by default.
-
-.. code-block:: properties
-   :linenos:
-   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-
-   # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
-   # address. Enable when Engine is behind a reverse proxy or load balancer that sends these
-   crafter.engine.forwarded.headers.enabled=false
-
-|
-
-|hr|
-
-.. _engine-search-timeouts:
-
-^^^^^^^^^^^^^^^
-Search Timeouts
-^^^^^^^^^^^^^^^
-The following allows you to configure the search client connection timeout, socket timeout and number of threads.
-
-.. code-block:: properties
-    :linenos:
-
-    # The connection timeout in milliseconds, if set to -1 the default will be used
-    crafter.engine.search.timeout.connect=-1
-    # The socket timeout in milliseconds, if set to -1 the default will be used
-    crafter.engine.search.timeout.socket=-1
-    # The number of threads to use, if set to -1 the default will be used
-    crafter.engine.search.threads=-1
-
-|
-
-|hr|
-
-.. _engine-content-length-headers:
-
-^^^^^^^^^^^^^^^^^^^^^^
-Content-Length Headers
-^^^^^^^^^^^^^^^^^^^^^^
-The following allows you to configure the content-length header sent for responses.
-The content-length header is sent for all responses by default.
-
-.. code-block:: properties
-   :linenos:
-   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-
-   # Indicates if the 'etag' header should be added
-   crafter.engine.header.etag.enable=false
-   # Indicates the urls that will have the 'etag' header (comma separated ant matchers)
-   crafter.engine.header.etag.include.urls=/**
-
-|
-
-|hr|
-
-.. _engine-policy-headers:
-
-^^^^^^^^^^^^^^
-Policy Headers
-^^^^^^^^^^^^^^
-.. version_tag::
-    :label: Since
-    :version: 4.1.2
-
-""""""""""""""
-Referer Policy
-""""""""""""""
-The following allows you to configure what information is made available in the Referer header in a request.
-This can be set to a different value as needed.
-
-.. code-block:: properties
-    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-    :linenos:
-
-    # The value of the Referer-Policy header that should be set in all requests. Supported
-    # values are: no-referrer, no-referrer-when-downgrade, same-origin, origin, strict-origin,
-    # origin-when-cross-origin, strict-origin-when-cross-origin, unsafe-url
-    crafter.security.headers.referrerPolicy.value=no-referrer
-
-"""""""""""""""""""""""
-Content Security Policy
-"""""""""""""""""""""""
-The following allows you to configure which resources can be loaded (e.g. JavaScript, CSS, Images, etc.)
-and the URLs that they can be loaded from. This should be tuned to the specific requirements of each project.
-
-.. code-block:: properties
-    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-    :linenos:
-
-    # The value of the Content-Security-Policy header that should be set in all requests.
-    crafter.security.headers.contentSecurityPolicy.value=default-src 'self' 'unsafe-inline'
-    # Set to true to enable the Content-Security-Policy-Report-Only header (this will report in the user agent console instead of actually blocking the requests)
-    crafter.security.headers.contentSecurityPolicy.reportOnly=true
-
-To block offending requests, set ``crafter.security.headers.contentSecurityPolicy.reportOnly`` to ``false``.
-This property is set to ``true`` by default.
-
-"""""""""""""""""""""""""""""""""
-X-Permitted-Cross-Domain-Policies
-"""""""""""""""""""""""""""""""""
-The following allows you to configure what other domains you want to allow access to your domain.
-The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow any embedding) by default.
-
-.. code-block:: properties
-    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-    :linenos:
-
-    # The value of the X-PERMITTED-CROSS-DOMAIN-POLICIES header that should be set in all requests
-    crafter.security.headers.permittedCrossDomainPolicies.value=none
-
-|
-
-|hr|
-
-.. _engine-spring-expression-language:
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-Spring Expression Language
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following allows you to configure SpEL expressions for custom app contexts.
-SpEL expressions support is disabled by default.
-
-.. code-block:: properties
-   :linenos:
-   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-
-   # Indicates if the custom site application contexts should support SpEL expressions
-   crafter.engine.context.expressions.enable=false
-   # Indicates if the whole servlet & spring context should be available for templates & scripts
-   crafter.engine.disableVariableRestrictions=false
-   # Patterns for beans that should always be accessible from the site application context
-   crafter.engine.defaultPublicBeans=crafter\\.(targetIdManager|targetedUrlStrategy)
-
-|
-
-|hr|
-
-.. _engine-static-methods-in-freemarker-templates:
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Static Methods in Freemarker Templates
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following allows you to configure access to static methods in Freemarker templates.
-Access to static methods in Freemarker templates is disabled by default.
-
-.. code-block:: properties
-   :linenos:
-   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-
-   # Indicates if access for static methods should be allowed in Freemarker templates
-   crafter.engine.freemarker.statics.enable=false
-
-|
-
-|hr|
-
 .. _engine-cache:
 
 ^^^^^
@@ -1559,184 +1414,411 @@ The following allows you to configure a white list of paths for caching in memor
 
 |hr|
 
-.. _groovy-sandbox-configuration:
+.. _request-filtering-configuration:
 
-----------------------------
-Groovy Sandbox Configuration
-----------------------------
-When a Groovy script is executed all code is validated against a blacklist of insecure expressions to prevent code that could
-compromise the system. When you try to execute a script that contains insecure expressions you will see an error
-similar to this:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Request Filtering Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.1.0
 
-.. code-block:: none
+The following allows you to setup a filter to deny access to any request matching the value/s defined in the property.
 
-  UnsupportedOperationException: Insecure call staticMethod java.lang.Runtime getRuntime ...
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
-|
-
-It is recommended to keep the default configuration if possible. However, if access to one or more of the blacklisted expressions
-is required, it is possible to override the blacklist configuration. Configuration is global and affects all scripts on the server.
-
-.. warning:: When you allow a script to make an insecure call you should make sure it can only be executed with known
-             arguments and **never** with unverified user input.
+    crafter.security.forbidden.urls=/templates/**
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Groovy Sandbox Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^
-The following allows you to configure the Groovy sandbox.
-The Groovy sandbox is enabled by default and can be disabled by changing the property ``crafter.engine.groovy.sandbox.enable`` to ``false``.
+|hr|
+
+.. _engine-forwarded-headers:
+
+^^^^^^^^^^^^^^^^^
+Forwarded Headers
+^^^^^^^^^^^^^^^^^
+The following section allows you to configure forwarded headers to resolve the actual hostname and protocol when it is behind a load balancer or reverse proxy. Forwarded headers are disabled by default.
 
 .. code-block:: properties
    :linenos:
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
-   # Indicates if the sandbox should be enabled for all sites
-   crafter.engine.groovy.sandbox.enable=true
-   # Indicates if the blacklist should be enabled for all sites (this will have no effect if the sandbox is disabled)
-   crafter.engine.groovy.sandbox.blacklist.enable=true
-   # The location of the default blacklist to use for all sites (this will have no effect if the sandbox is disabled)
-   crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/groovy/blacklist
+   # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
+   # address. Enable when Engine is behind a reverse proxy or load balancer that sends these
+   crafter.engine.forwarded.headers.enabled=false
 
 |
-
-^^^^^^^^^^^^^^^^^^^^^^^^
-Using a Custom Blacklist
-^^^^^^^^^^^^^^^^^^^^^^^^
-Crafter Engine includes a default blacklist that you can find
-`here <https://github.com/craftercms/engine/blob/develop/src/main/resources/crafter/engine/groovy/blacklist>`_. Make sure you review the branch/tag you're using.
-
-To use a custom blacklist follow these steps:
-
-#. Copy the default blacklist file to your classpath, for example:
-
-    ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/groovy/blacklist``
-
-#. Remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
-#. Update the :ref:`server-config.properties <engine-configuration-files>` configuration file to load the custom blacklist:
-
-    .. code-block:: none
-      :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
-
-      # The location of the blacklist to use for all sites (this will have no effect if the sandbox is disabled)
-      crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/extension/groovy/blacklist
-
-    .. note::
-      In CrafterCMS v3.1.14 and prior, the name of the property is ``crafter.engine.groovy.sandbox.blacklist``
-
-#. Restart CrafterCMS
-
-Now you can execute the same script without any issues.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Disabling the Sandbox Blacklist
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-It is possible to disable the blacklist to allow the execution of most expressions, in
-case you need to use a considerable number of the expression included in the blacklist while keeping some basic
-restrictions. To disable the blacklist for all projects/sites update the server configuration file
-:ref:`server-config.properties <engine-configuration-files>`:
-
-.. code-block:: none
-  :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-
-  # Indicates if the blacklist should be enabled for all sites (this will have no effect if the sandbox is disabled)
-  crafter.engine.groovy.sandbox.blacklist.enable=false
-
-
-^^^^^^^^^^^^^^^
-Important Notes
-^^^^^^^^^^^^^^^
-There are some limitations that should be noted when working with the Groovy Sandbox.
-
-One limitation is that an exception is thrown during execution when a Groovy class has a property and a getter method for the property. Here's an example code that throws an exception during execution:
-   .. code-block::
-
-      class Test {
-        private String message
-
-        public String getMessage() {
-           return this.message
-        }
-      }
-
-      def t = new Test()
-      t.message = "this is a test"
-
-      return t.getMessage()
-
-   |
-
-Here's the error thrown in the logs by the code above:
-
-.. code-block:: text
-
-   Caused by: java.lang.StackOverflowError
-	at groovy.lang.GroovyClassLoader.loadClass(GroovyClassLoader.java:693)
-	at groovy.lang.GroovyClassLoader$InnerLoader.loadClass(GroovyClassLoader.java:450)
-	at groovy.lang.GroovyClassLoader.loadClass(GroovyClassLoader.java:812)
-	at groovy.lang.GroovyClassLoader.loadClass(GroovyClassLoader.java:800)
-	at sun.reflect.GeneratedMethodAccessor340.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:98)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
-	at groovy.lang.MetaClassImpl.getProperty(MetaClassImpl.java:1845)
-	at groovy.lang.MetaClassImpl.getProperty(MetaClassImpl.java:3773)
-	at Test.getProperty(test.get.groovy)
-	at org.codehaus.groovy.runtime.InvokerHelper.getProperty(InvokerHelper.java:190)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.getProperty(ScriptBytecodeAdapter.java:469)
-	at org.kohsuke.groovy.sandbox.impl.Checker$7.call(Checker.java:392)
-	at org.kohsuke.groovy.sandbox.GroovyInterceptor.onGetProperty(GroovyInterceptor.java:68)
-	at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onGetProperty(SandboxInterceptor.java:297)
-	at org.kohsuke.groovy.sandbox.impl.Checker$7.call(Checker.java:390)
-	at org.kohsuke.groovy.sandbox.impl.Checker.checkedGetProperty(Checker.java:394)
-	at org.kohsuke.groovy.sandbox.impl.Checker$checkedGetProperty$1.callStatic(Unknown Source)
-	at Test.getMessage(test.get.groovy:5)
-
-|
-
-**Workarounds**
-
-There are a couple of things you can do to get around the exception being thrown:
-
-* Do not use getter methods and instead access the property directly |br|
-  Using the example above, we'll access the property directly:
-
-     .. code-block::
-
-        class Test {
-          private String message
-        }
-
-        def t = new Test()
-        t.message = "this is a test"
-
-        return t.message
-
-     |
-
-* Use a different name for the property and the getter method |br|
-  Again, using the example above, we'll use a different name from the property for the getter method:
-
-     .. code-block::
-
-        class Test {
-          private String theMessage
-
-          public String getMessage() {
-             return this.theMessage
-          }
-        }
-
-        def t = new Test()
-        t.theMessage = "this is a test"
-
-        return t.getMessage()
-
-     |
 
 |hr|
+
+.. _engine-policy-headers:
+
+^^^^^^^^^^^^^^
+Policy Headers
+^^^^^^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.1.2
+
+""""""""""""""
+Referer Policy
+""""""""""""""
+The following allows you to configure what information is made available in the Referer header in a request.
+This can be set to a different value as needed.
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+    :linenos:
+
+    # The value of the Referer-Policy header that should be set in all requests. Supported
+    # values are: no-referrer, no-referrer-when-downgrade, same-origin, origin, strict-origin,
+    # origin-when-cross-origin, strict-origin-when-cross-origin, unsafe-url
+    crafter.security.headers.referrerPolicy.value=no-referrer
+
+"""""""""""""""""""""""
+Content Security Policy
+"""""""""""""""""""""""
+The following allows you to configure which resources can be loaded (e.g. JavaScript, CSS, Images, etc.)
+and the URLs that they can be loaded from. This should be tuned to the specific requirements of each project.
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+    :linenos:
+
+    # The value of the Content-Security-Policy header that should be set in all requests.
+    crafter.security.headers.contentSecurityPolicy.value=default-src 'self' 'unsafe-inline'
+    # Set to true to enable the Content-Security-Policy-Report-Only header (this will report in the user agent console instead of actually blocking the requests)
+    crafter.security.headers.contentSecurityPolicy.reportOnly=true
+
+To block offending requests, set ``crafter.security.headers.contentSecurityPolicy.reportOnly`` to ``false``.
+This property is set to ``true`` by default.
+
+"""""""""""""""""""""""""""""""""
+X-Permitted-Cross-Domain-Policies
+"""""""""""""""""""""""""""""""""
+The following allows you to configure what other domains you want to allow access to your domain.
+The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow any embedding) by default.
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+    :linenos:
+
+    # The value of the X-PERMITTED-CROSS-DOMAIN-POLICIES header that should be set in all requests
+    crafter.security.headers.permittedCrossDomainPolicies.value=none
+
+|
+
+|hr|
+
+.. _engine-navigation:
+
+^^^^^^^^^^
+Navigation
+^^^^^^^^^^
+The following section allows you to configure additional fields for dynamic navigation items
+
+.. code-block:: xml
+    :caption: *config/engine/site-config.xml*
+
+    (Navigation Properties)
+    <navigation>
+        <additionalFields /> (List of additional fields to include for dynamic navigation items)
+    </navigation>
+
+|
+
+|hr|
+
+.. _engine-search-timeouts:
+
+^^^^^^^^^^^^^^^
+Search Timeouts
+^^^^^^^^^^^^^^^
+The following allows you to configure the search client connection timeout, socket timeout and number of threads.
+
+.. code-block:: properties
+    :linenos:
+
+    # The connection timeout in milliseconds, if set to -1 the default will be used
+    crafter.engine.search.timeout.connect=-1
+    # The socket timeout in milliseconds, if set to -1 the default will be used
+    crafter.engine.search.timeout.socket=-1
+    # The number of threads to use, if set to -1 the default will be used
+    crafter.engine.search.threads=-1
+
+|
+
+|hr|
+
+.. _engine-content-length-headers:
+
+^^^^^^^^^^^^^^^^^^^^^^
+Content-Length Headers
+^^^^^^^^^^^^^^^^^^^^^^
+The following allows you to configure the content-length header sent for responses.
+The content-length header is sent for all responses by default.
+
+.. code-block:: properties
+   :linenos:
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # Indicates if the 'etag' header should be added
+   crafter.engine.header.etag.enable=false
+   # Indicates the urls that will have the 'etag' header (comma separated ant matchers)
+   crafter.engine.header.etag.include.urls=/**
+
+|
+
+|hr|
+
+.. _engine-static-methods-in-freemarker-templates:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Static Methods in Freemarker Templates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following allows you to configure access to static methods in Freemarker templates.
+Access to static methods in Freemarker templates is disabled by default.
+
+.. code-block:: properties
+   :linenos:
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # Indicates if access for static methods should be allowed in Freemarker templates
+   crafter.engine.freemarker.statics.enable=false
+
+|
+
+|hr|
+
+.. _engine-spring-expression-language:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Spring Expression Language
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following allows you to configure SpEL expressions for custom app contexts.
+SpEL expressions support is disabled by default.
+
+.. code-block:: properties
+   :linenos:
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # Indicates if the custom site application contexts should support SpEL expressions
+   crafter.engine.context.expressions.enable=false
+   # Indicates if the whole servlet & spring context should be available for templates & scripts
+   crafter.engine.disableVariableRestrictions=false
+   # Patterns for beans that should always be accessible from the site application context
+   crafter.engine.defaultPublicBeans=crafter\\.(targetIdManager|targetedUrlStrategy)
+
+|
+
+|hr|
+
+.. _engine-project-spring-configuration:
+
+^^^^^^^^^^^^^^^^^^^^
+Spring Configuration
+^^^^^^^^^^^^^^^^^^^^
+Each project can have it's own Spring application context. Just as with site-config.xml, beans
+can be overwritten using the following locations:
+
+Spring Configuration Files
+ - ``/config/engine/application-context.xml`` (This file can be accessed easily from any project created
+   through the out-of-the-box blueprints, by navigating from the Studio sidebar to ``Project Tools``
+   > ``Configuration``, and finally picking up the ``Engine Project Application Context`` option from the dropdown).
+
+	 .. image:: /_static/images/site-admin/engine-project-application-context.webp
+			 :alt: Engine Project Application Context
+
+ - ``/config/engine/env/{envName}/application-context.xml``
+
+The application context inherits from Engine's own service-context.xml, and any class in Engine's
+classpath can be used, including Groovy classes declared under ``/scripts/classes/*``.
+
+As an example, assuming you have defined a Groovy class under ``/scripts/classes/mypackage/MyClass.groovy``,
+you can define a bean like this:
+
+.. code-block:: xml
+  :caption: application-context.xml
+  :linenos:
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<beans xmlns="http://www.springframework.org/schema/beans"
+	       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" parent="crafter.properties"/>
+
+    <bean id="greeting" class="mypackage.MyClass">
+      <property name="myproperty" value="${myvalue}"/>
+    </bean>
+
+  </beans>
+
+A ``org.springframework.context.support.PropertySourcesPlaceholderConfigurer`` (like above) can be
+specified in the context so that the properties of ``site-config.xml`` can be used as placeholders,
+like ``${myvalue}``. By making the placeholder configurer inherit from crafter.properties, you'll
+also have access to Engine's global properties (like ``crafter.engine.preview``).
+
+.. note::
+    Crafter Engine will not be able to load your Project Context if your context file contains invalid XML,
+    incorrect configuration or if your beans do not properly handle their own errors on initialization.
+
+|
+
+|hr|
+
+.. _engine-mongodb-configuration:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configure Engine to use MongoDB
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+There are times when you may need access to MongoDB. This section details how you can access MongoDB by configuring Engine.
+
+Here are the steps for configuring Engine to use mongoDB:
+
+"""""""""""""""""""""""""
+Configure the MongoDB URI
+"""""""""""""""""""""""""
+To define the connection between MongoDB and Engine, add the URI in the config file `/config/engine/site-config.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio sidebar to Project Tools > Configuration, and finally picking up the **Engine Project Configuration** option from the dropdown).
+
+.. code-block:: xml
+
+    <site>
+      <db>
+          <uri>mongodb://{host}:{port}/{database}?readPreference=primary&amp;maxPoolSize=50&amp;minPoolSize=5&amp;maxIdleTimeMS=1000&amp;waitQueueMultiple=200&amp;waitQueueTimeoutMS=100&amp;w=1&amp;journal=true</uri>
+      </db>
+    </site>
+
+where:
+   * {host} - required, server address to connect to
+   * {port} - optional, with a default value of :27020 in CrafterCMS Authoring
+   * {database} - optional, name of the database to authenticate if the connection string includes authentication credentials.
+
+For more details on the Connection String URI format, see https://docs.mongodb.com/manual/reference/connection-string/
+
+""""""""""""""""""""""
+Create a GMongo Client
+""""""""""""""""""""""
+To access Mongo from Groovy, we'll use a GMongo client. We'll need to add some beans in `/config/engine/application-context.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio sidebar to Project Tools > Configuration, and finally picking up the **Engine Site Application Context** option from the dropdown).
+
+.. code-block:: xml
+    :linenos:
+
+    <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" parent="crafter.properties"/>
+
+       <bean id="mongoUri" class="com.mongodb.MongoClientURI">
+         <constructor-arg value="${db.uri}"/>
+       </bean>
+
+       <bean id="mongoClient" class="com.gmongo.GMongoClient">
+         <constructor-arg ref="mongoUri"/>
+       </bean>
+
+    </beans>
+
+"""""""""""""""""""""""""""""""""""
+Use the Client From a Groovy Script
+"""""""""""""""""""""""""""""""""""
+We can now use the client from a Groovy script. Here's a simple script that runs a query:
+
+.. code-block:: groovy
+    :linenos:
+
+    def mongo = applicationContext.mongoClient
+    def db = mongo.getDB("{database}")
+    def result = null
+    def record = db.{collection}.findOne(_id: "{some id}")
+    if (record) {
+        result = record.name
+    }
+    return result
+
+where:
+    * {database} - the name of an existing database
+    * {collection} - collection name
+    * {some id} - id you're searching for depending on your database
+
+"""""""""""""""""""""""""""""""""
+Publish Configuration to Delivery
+"""""""""""""""""""""""""""""""""
+Until this point all changes have been made from Crafter Studio so they will only affect immediately
+the authoring environment, for a delivery environment you will need to publish the changed files.
+
+This can be done from the Studio project dashboard with the following steps:
+
+1. Go to Studio's project dashboard via the Navigation Menu on the top right or via the Sidebar
+
+   .. image:: /_static/images/content-author/project-dashboard-sidebar.webp
+       :width: 65 %
+       :align: center
+       :alt: Studio - Project Dashboard from Sidebar
+
+2. Locate the ``Unpublished Work`` dashlet
+
+   .. image:: /_static/images/site-admin/mongo/my-recent-activity.webp
+      :alt: Studio Project Dashboard - My Recent Activity
+      :width: 70 %
+      :align: center
+
+3. Select all configuration files updated in the previous sections
+
+   .. image:: /_static/images/site-admin/mongo/my-recent-activity-config.webp
+      :alt: Studio Project Dashboard - My Recent Activity
+      :width: 70 %
+      :align: center
+
+4. Click ``Publish`` from the contextual menu
+
+   .. image:: /_static/images/site-admin/mongo/approve-and-publish-context-menu.webp
+      :alt: Studio Project Dashboard - Contextual Menu
+      :width: 70 %
+      :align: center
+
+5. Click ``Publish`` to close the publish dialog
+
+   .. image:: /_static/images/site-admin/mongo/publish-dialog.webp
+      :alt: Studio Project Dashboard - Publish Dialog
+      :width: 70 %
+      :align: center
+
+Once the files are deployed to the delivery node and the project context is reloaded the new
+Configuration will take effect.
+
+""""""""""""""""""""""""""""""""
+Delivery Specific Configurations
+""""""""""""""""""""""""""""""""
+If you need to manage different values for the configuration files depending on the environment
+you can find more detailed information in the :ref:`engine-multi-environment-support` section.
+
+|
+
+|hr|
+
+
+.. _engine-project-locale:
+
+^^^^^^^^^^^^^^
+Project Locale
+^^^^^^^^^^^^^^
+The following section allows you to configure a default locale for your project.  If no default locale is specified,
+the system locale will become the default locale
+
+.. code-block:: xml
+    :caption: *config/engine/site-config.xml*
+
+    (General Properties)
+    <defaultLocale />  (Default locale for the site)
+
+|
+
+|hr|
+
 
 .. TODO: Add a section to show how to include your own properties
     .. _adding-custom-properties:
@@ -1747,66 +1829,6 @@ There are a couple of things you can do to get around the exception being thrown
     """""""
     Example
     """""""
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Setting HTTP Response Headers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-CrafterCMS supports adding headers to responses when there are matched configuration patterns in
-the Engine Project Configuration file |br|
-
-To setup HTTP response headers, do the following:
-- Configure the Ant path pattern to match for adding headers to response in **headerMappings.mapping.urlPattern**
-- Configure the ``<header>`` element and the `<value>`` element ` with your desired values under **headerMappings.mapping.headers**.
-
-.. code-block:: xml
-    :emphasize-lines: 3, 6-7
-
-    <headerMappings>
-      <mapping>
-        <urlPattern>/**/*.pdf</urlPattern>
-        <headers>
-          <header>
-            <name>X-Crafter-Document</name>
-            <value>true</value>
-          </header>
-        </headers>
-      </mapping>
-    </headerMappings>
-
-"""""""""""""""""""""
-Setting Cache Headers
-"""""""""""""""""""""
-Cache headers allows specifying caching policies such as how an item is cached, maximum age before expiring, etc.
-These headers are extremely useful for indicating cache TTLs to CDNs and browsers on certain requests.
-
-To setup cache headers, do the following:
-
-- Configure the Ant path pattern to match for adding headers to response in **headerMappings.mapping.urlPattern**
-- Configure the ``<header>`` element with the value ``Cache-Control`` and the element ``<value>`` with your desired Cache-Control
-  directive under **headerMappings.mapping.headers**.
-
-  See `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control>`__ for a list of available directives
-  to use with ``Cache-Control``.
-
-Your configuration should look something like below:
-
-.. code-block:: xml
-    :emphasize-lines: 3, 6-7
-
-    <headerMappings>
-      <mapping>
-        <urlPattern>/articles/**</urlPattern>
-        <headers>
-          <header>
-            <name>Cache-Control</name>
-            <value>max-age=60\, s-maxage=300</value>
-          </header>
-        <headers>
-      </mapping>
-    </headerMappings>
-
-
-Please note that the ``Cache-Control`` header inserted to responses by default is set to ``No-Cache``.
 
 .. _engine-multi-environment-support:
 

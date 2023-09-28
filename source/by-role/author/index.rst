@@ -983,7 +983,7 @@ An error form will appear when you try to *Save and Close* without filling out a
    :align: center
    :alt: Content Author - Page Save Error
 
-.. _via-quick-create:
+.. _add-via-quick-create:
 
 """"""""""""""""
 Via Quick Create
