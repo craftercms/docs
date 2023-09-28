@@ -58,10 +58,11 @@ Release
 * Full security and dependency scan and update
 * Release commit GPG signing with 2FA to Maven Central
 * MD5 and SHA512 checksums on all artifacts
-* All 3rd party software is downloaded from the original authority and checksums validated
-* CrafterCMS is fully regression tested using automated testing
+* All 3rd party software is downloaded from the original authority, and checksums validated
+* CrafterCMS is fully regression-tested using automated testing
 * Artifacts are hosted on AWS S3
 * AWS AMI is scanned by AWS Inspector,  https://aws.amazon.com/inspector/
+* Binaries are produced on dedicated servers
 
 -------------
 Crafter Cloud
