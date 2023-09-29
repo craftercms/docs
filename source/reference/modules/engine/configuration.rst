@@ -787,6 +787,8 @@ To setup HTTP response headers, do the following:
       </mapping>
     </headerMappings>
 
+.. _engine-cache-headers:
+
 """""""""""""""""""""
 Setting Cache Headers
 """""""""""""""""""""

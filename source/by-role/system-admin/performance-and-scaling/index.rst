@@ -19,7 +19,7 @@ Global distribution of delivery nodes is then a matter of deploying Crafter Engi
 
 Finally, a Content Delivery Network (CDN) can be used to front the delivery tier. CDNs mostly help with static content delivery, and mitigation of DDOS attacks.
 
-.. TODO Add a link to cache headers in Engine in the Engine > Configuration article
+.. TODO Add a link to cache headers in Engine in the Engine > Configuration article :ref:`engine-cache-headers`
 
 """"""""""""""""""""""""
 Basic Performance Tuning
@@ -40,3 +40,4 @@ The authoring tier must be tuned carefully to get the most out of the infrastruc
 Clustering |enterpriseOnly|
 """""""""""""""""""""""""""
 If the authoring environment goes down, content management cannot happen. While that's not going to stop the end-users from using the delivery tier and consuming content, it will stop the content authors from creating and managing content. Therefore, it's often critical to cluster the authoring tier for high-availability. The article, :ref:`clustering`, elaborates on how to cluster Crafter Studio and achieve high-availability in the authoring tier.
+
