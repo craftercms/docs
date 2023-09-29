@@ -54,7 +54,6 @@ Performance Tuning
 ^^^^^^^^^^^^^^^^^^^^^
 Server/Hardware Level
 ^^^^^^^^^^^^^^^^^^^^^
-
 """"""""""""""""""""
 Disk/Storage Devices
 """"""""""""""""""""
@@ -63,7 +62,6 @@ Crafter Engine’s job is to provide content delivery services. A high volume of
 ~~~~~~~~~~~~~~~~~~~~~~~
 Testing Raw Performance
 ~~~~~~~~~~~~~~~~~~~~~~~
-
 * Non-concurrent quick test or the raw device performance can be achieved with ``sudo hdparm -tT /dev/{device}``
 
 	* Example
@@ -170,7 +168,6 @@ One optimization to raise effective IOPS of a system without buying very expensi
 ^^^^^^^^
 OS Level
 ^^^^^^^^
-
 """"""""""""
 Linux Ulimit
 """"""""""""
@@ -224,12 +221,12 @@ Here are some things we recommend **NOT TO DO** when setting up/configuring your
 """"""""""""""""""""""""""
 Slow network based storage
 """"""""""""""""""""""""""
-Simple network storage such as NAS connected over copper network to compute is known to produce slow performance due to latency across many small operations.
+Simple network storage such as NAS connected over copper network to compute is known to produce slow performance due to latency across many small operations. Use of NAS storage is not recommended.
 
 """""""""""""""""""""""""""""""""
 Use of NFS as a mounting protocol
 """""""""""""""""""""""""""""""""
-NFS is a particularly slow and unreliable network storage protocol, especially when mounts are configured with default settings.
+NFS is a particularly slow and unreliable network storage protocol, especially when mounts are configured with default settings. Use of NFS or similar protocols is not recommended.
 
 """""""""""""""""""""""""""""""""
 Putting all data on the same disk
@@ -244,5 +241,4 @@ Installations are pre-configured with settings that assume an average/smaller si
 --------------------------------
 Securing your CrafterCMS Install
 --------------------------------
-
-CrafterCMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`change-the-defaults`
+To have a secure installation, remember to follow the security best practices detailed in the article :ref:`system-admin-security`.

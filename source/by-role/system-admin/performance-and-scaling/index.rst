@@ -19,7 +19,7 @@ Global distribution of delivery nodes is then a matter of deploying Crafter Engi
 
 Finally, a Content Delivery Network (CDN) can be used to front the delivery tier. CDNs mostly help with static content delivery, and mitigation of DDOS attacks.
 
-.. TODO Add a link to cache headers in Engine in the Engine > Configuration article :ref:`engine-cache-headers`
+.. note:: Crafter Engine's cache headers can help provide the right caching behavior for CDNs. See :ref:`engine-cache-headers` for more.
 
 """"""""""""""""""""""""
 Basic Performance Tuning
