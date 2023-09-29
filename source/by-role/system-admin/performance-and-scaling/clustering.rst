@@ -3,7 +3,7 @@
 
 .. index:: Studio Clustering, Clustering
 
-.. _clustering:
+.. _studio-clustering:
 
 ==================================
 Studio Clustering |enterpriseOnly|
@@ -49,13 +49,13 @@ Requirements
 ------------
 Before we begin configuring Studio for clustering, the following must be setup:
 
-* A DNS server directing traffic to the primary node, and can failover to the replica node if the primary is not healthy
+* A load balancer or DNS server directing traffic to the primary node, and can failover to the replica node if the primary is not healthy
 
 |hr|
 
------------------------------
-Configuring Studio Clustering
------------------------------
+-------------
+Configuration
+-------------
 First, we'll take a look at an example of :ref:`how to setup a two node cluster with Studio <setup-a-two-node-cluster-with-studio>`
 step by step, then, we'll take a look at an example of :ref:`setting up Studio clustering using a Kubernetes deployment <setup-studio-clustering-with-kubernetes-deployment>`
 
@@ -330,204 +330,17 @@ the nodes already running will timeout while trying to synchronize for bootstrap
 timeout in the ``bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml`` file,
 under the property ``studio.db.cluster.nodes.startup.wait.timeout``).
 
-There are a few ways to check that the cluster is running.
-
-- via logs
-- via the status
-- via the Global Transaction ID
-
-~~~~~~~~
-Via Logs
-~~~~~~~~
-To check that the cluster is up, you can inspect the ``$CRAFTER_HOME/logs/tomcat/catalina.out`` of the nodes for
-the following entries:
-
-- Primary starting up (one of the nodes):
-
-  .. code-block:: none
-
-    [INFO] 2022-01-28T18:07:54,009 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Synchronizing startup of node 192.168.56.1 with DB cluster 'studio_db_cluster'
-    28-Jan-2022 18:07:54.016 INFO [main] com.hazelcast.internal.partition.impl.PartitionStateManager.null [192.168.56.1]:5701 [dev] [4.2.4] Initializing cluster partition table arrangement...
-    [INFO] 2022-01-28T18:07:54,178 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Waiting for initial report of all 2 DB cluster members...
-
-    ...
-
-    [INFO] 2022-01-28T18:08:24,237 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Waiting for initial report of all 2 DB cluster members...
-    [INFO] 2022-01-28T18:08:54,241 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | All 2 DB cluster members have started up
-    [ERROR] 2022-01-28T18:08:54,242 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] |
-
-    DbPrimaryReplicaClusterMember {address='192.168.56.1', port='33306', name='192.168.56.1', status='null', timestamp=1643389674007, primary=false, file='null', position=0, replica=false, ioRunning='null', sqlRunning='null', secondsBehindMaster=9223372036854775807}
-
-
-    [INFO] 2022-01-28T18:08:54,251 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Local DB cluster node will start primary.
-    [INFO] 2022-01-28T18:08:54,252 [main] [mariadb4j.DB] | Starting up the database...
-
-  |
-
-- Rest of the nodes:
-
-  .. code-block:: none
-
-    [INFO] 2022-01-28T18:08:28,078 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Synchronizing startup of node 192.168.56.114 with DB cluster 'studio_db_cluster'
-    [INFO] 2022-01-28T18:08:28,153 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Waiting for initial report of all 2 DB cluster members...
-    [INFO] 2022-01-28T18:08:58,167 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | All 2 DB cluster members have started up
-    [ERROR] 2022-01-28T18:08:58,169 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] |
-
-    DbPrimaryReplicaClusterMember {address='192.168.56.114', port='33306', name='192.168.56.114', status='null', timestamp=1643389708075, primary=false, file='null', position=0, replica=false, ioRunning='null', sqlRunning='null', secondsBehindMaster=9223372036854775807}
-
-
-    [INFO] 2022-01-28T18:08:58,183 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Waiting for primary to start...
-    [INFO] 2022-01-28T18:09:28,195 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | primary started
-    [INFO] 2022-01-28T18:09:28,202 [main] [mariadb4j.DB] | Starting up the database...
-
-  |
-
-~~~~~~~~~~~~~~
-Via the Status
-~~~~~~~~~~~~~~
-You can also check that the cluster is working by logging into MariaDB with the ``mysql`` client from the
-primary or the replica and checking the status:
-
-#. From the command line in the server, go to ``$CRAFTER_HOME/bin/dbms/bin`` and run the ``mysql`` program
-
-   .. code-block:: bash
-
-      ./mysql -S /tmp/MariaDB4j.33306.sock
-
-   |
-
-#. Inside the MySQL client, run the following:
-
-   *Primary*: ``SHOW MASTER STATUS\G``
-
-   .. code-block:: none
-
-      MariaDB [crafter]> SHOW MASTER STATUS\G
-      *************************** 1. row ***************************
-                  File: crafter_cluster-bin.000001
-              Position: 2812853
-          Binlog_Do_DB:
-      Binlog_Ignore_DB:
-      1 row in set (0.000 sec)
-
-   |
-
-
-   *Replica*: ``SHOW SLAVE STATUS\G``
-
-   .. code-block:: none
-
-      MariaDB [crafter]> SHOW SLAVE STATUS\G                                                                                                                                                                                                                                                                                                      [42/1943]
-      *************************** 1. row ***************************
-                Slave_IO_State: Waiting for master to send event
-                   Master_Host: 172.31.70.118
-                   Master_User: crafter_replication
-                   Master_Port: 33306
-                 Connect_Retry: 60
-               Master_Log_File: crafter_cluster-bin.000001
-           Read_Master_Log_Pos: 2776943
-                Relay_Log_File: crafter_cluster-relay-bin.000004
-                 Relay_Log_Pos: 656828
-         Relay_Master_Log_File: crafter_cluster-bin.000001
-              Slave_IO_Running: Yes
-             Slave_SQL_Running: Yes
-             .....
-             ........
-
-   |
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Via the Global Transaction ID
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On a primary server, all database updates are written into the binary log as binlog events. A replica server
-connects to the primary and reads the binlog events, then applies the events locally to replicate
-the changes in the primary. For each event group (transaction) in the binlog, a unique id is attached
-to it, called the ``Global Transaction ID`` or ``GTID``.
-
-To check our cluster, we can check the ``gtid_current_pos`` system variable in the primary and
-the ``gtid_slave_pos`` system variable in the replica.
-
-The ``gtid_current_pos`` system variable contains the GTID of the last transaction applied to the database
-for each replication domain. The value is read-only, but it is updated whenever a transaction is written
-to the binary log and/or replicated by a replica thread, and that transaction's GTID is considered newer
-than the current GTID for that domain.
-
-The ``gtid_slave_pos`` system variable contains the GTID of the last transaction applied to the database by the server's replica threads for each replication domain. This system variable's value is automatically updated whenever a replica thread applies an event group.
-
-To learn more about the global transaction ID, see https://mariadb.com/kb/en/gtid/
-
-To check the ``gtid_current_pos`` and ``gtid_slave_pos`` system variables, log into MariaDB with the
-``mysql`` client from the primary or the replica:
-
-#. From the command line in the server, go to ``$CRAFTER_HOME/bin/dbms/bin`` and run the ``mysql`` program
-
-   .. code-block:: bash
-
-      ./mysql -S /tmp/MariaDB4j.33306.sock
-
-   |
-
-#. Inside the MySQL client, run the following:
-
-   *Primary*: ``SELECT @@GLOBAL.gtid_current_pos;``
-
-   .. code-block:: none
-
-      MariaDB [(none)]> SELECT @@GLOBAL.gtid_current_pos;
-      +---------------------------+
-      | @@GLOBAL.gtid_current_pos |
-      +---------------------------+
-      | 0-167772164-2132          |
-      +---------------------------+
-      1 row in set (0.000 sec)
-
-   *Replica*: ``SELECT @@GLOBAL.gtid_slave_pos;``
-
-   .. code-block:: none
-
-      MariaDB [(none)]> SELECT @@GLOBAL.gtid_slave_pos;
-      +-------------------------+
-      | @@GLOBAL.gtid_slave_pos |
-      +-------------------------+
-      | 0-167772164-2145        |
-      +-------------------------+
-      1 row in set (0.000 sec)
-
-
 For information on errors you may encounter in your cluster, see :ref:`authoring-cluster-troubleshooting`.
 
 |
 
 |hr|
 
-.. _cluster-multi-region-considerations:
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Multi-Region Considerations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-For clusters with nodes in multi-regions utilizing S3 buckets, AWS provides solutions for handling multi-region
-deployments of S3 buckets.
-
-AWS supports access points for managing access to a shared bucket on S3.
-For more information on Amazon S3 Access Points, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html
-
-For clusters with S3 buckets located in multiple AWS regions, Amazon S3 Multi-Region Access Points provide a global
-endpoint that applications can use to fulfill requests from.
-For more information on Multi-Region Access Points in Amazon S3, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPoints.html
-
-AWS S3 also supports bucket replication (S3 replication) irrespective of the region they belong to, which provides data
-protection against disasters, minimizing latency, etc. For more information on S3 bucket replication for use with
-multi-region access points, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointBucketReplication.html
-
-Here's some more information on S3 replication: https://aws.amazon.com/about-aws/whats-new/2020/12/amazon-s3-replication-adds-support-two-way-replication/
-
-|hr|
-
 .. _configuring-the-deployer-for-studio-clustering:
 
-----------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Configuring the Deployer for Studio Clustering
-----------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. version_tag::
     :label: Since
     :version: 4.1.1
@@ -585,6 +398,44 @@ The deployment processor configured above runs whenever the ``clusterMode`` retu
 
 |hr|
 
+--------
+Failover
+--------
+Studio clustering is based on Primary/Replica clustering mechanics. Failure scenarios:
+
+- Replica node(s) failure: In case of one or more replicas failing, the cluster will continue to work normally. New replicas can join and catch up.
+- Primary node failure: In case of the primary node failing, the load balancer or DNS must either automatically or manually redirect or repoint traffic to the next healthy node.
+
+    - The replicas will automatically perform an election and appoint a new primary. The new primary's health check will report that it's ready to receive traffic, the load balancer or DNS can then redirect or repoint traffic to the new primary.
+    - As a new node or the old failed primary rejoin the cluster, they'll assume a replica role and catch up with the new primary.
+
+Crafter Studio provides a health check endpoint at ``/studio/api/2/monitoring/status?token={your management token}``. You can use this endpoint to check the health of any node in the cluster. This can be used to facilitate automatic failover.
+
+|hr|
+
+.. _cluster-multi-region-considerations:
+
+---------------------------
+Multi-Region Considerations
+---------------------------
+For clusters with nodes in multi-regions utilizing S3 buckets, AWS provides solutions for handling multi-region
+deployments of S3 buckets.
+
+AWS supports access points for managing access to a shared bucket on S3.
+For more information on Amazon S3 Access Points, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html
+
+For clusters with S3 buckets located in multiple AWS regions, Amazon S3 Multi-Region Access Points provide a global
+endpoint that applications can use to fulfill requests from.
+For more information on Multi-Region Access Points in Amazon S3, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPoints.html
+
+AWS S3 also supports bucket replication (S3 replication) irrespective of the region they belong to, which provides data
+protection against disasters, minimizing latency, etc. For more information on S3 bucket replication for use with
+multi-region access points, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointBucketReplication.html
+
+Here's some more information on S3 replication: https://aws.amazon.com/about-aws/whats-new/2020/12/amazon-s3-replication-adds-support-two-way-replication/
+
+|hr|
+
 ------------------
 Backup and Restore
 ------------------
@@ -605,6 +456,174 @@ There are a couple of ways to backup and restore your cluster:
 ---------------
 Troubleshooting
 ---------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Check if the Cluster is Running
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+There are a few ways to check that the cluster is running.
+
+- via logs
+- via the status
+- via the Global Transaction ID
+
+""""""""
+Via Logs
+""""""""
+To check that the cluster is up, you can inspect the ``$CRAFTER_HOME/logs/tomcat/catalina.out`` of the nodes for
+the following entries:
+
+- Primary starting up (one of the nodes):
+
+  .. code-block:: none
+
+    [INFO] 2022-01-28T18:07:54,009 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Synchronizing startup of node 192.168.56.1 with DB cluster 'studio_db_cluster'
+    28-Jan-2022 18:07:54.016 INFO [main] com.hazelcast.internal.partition.impl.PartitionStateManager.null [192.168.56.1]:5701 [dev] [4.2.4] Initializing cluster partition table arrangement...
+    [INFO] 2022-01-28T18:07:54,178 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Waiting for initial report of all 2 DB cluster members...
+
+    ...
+
+    [INFO] 2022-01-28T18:08:24,237 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Waiting for initial report of all 2 DB cluster members...
+    [INFO] 2022-01-28T18:08:54,241 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | All 2 DB cluster members have started up
+    [ERROR] 2022-01-28T18:08:54,242 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] |
+
+    DbPrimaryReplicaClusterMember {address='192.168.56.1', port='33306', name='192.168.56.1', status='null', timestamp=1643389674007, primary=false, file='null', position=0, replica=false, ioRunning='null', sqlRunning='null', secondsBehindMaster=9223372036854775807}
+
+
+    [INFO] 2022-01-28T18:08:54,251 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Local DB cluster node will start primary.
+    [INFO] 2022-01-28T18:08:54,252 [main] [mariadb4j.DB] | Starting up the database...
+
+  |
+
+- Rest of the nodes:
+
+  .. code-block:: none
+
+    [INFO] 2022-01-28T18:08:28,078 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Synchronizing startup of node 192.168.56.114 with DB cluster 'studio_db_cluster'
+    [INFO] 2022-01-28T18:08:28,153 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Waiting for initial report of all 2 DB cluster members...
+    [INFO] 2022-01-28T18:08:58,167 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | All 2 DB cluster members have started up
+    [ERROR] 2022-01-28T18:08:58,169 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] |
+
+    DbPrimaryReplicaClusterMember {address='192.168.56.114', port='33306', name='192.168.56.114', status='null', timestamp=1643389708075, primary=false, file='null', position=0, replica=false, ioRunning='null', sqlRunning='null', secondsBehindMaster=9223372036854775807}
+
+
+    [INFO] 2022-01-28T18:08:58,183 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Waiting for primary to start...
+    [INFO] 2022-01-28T18:09:28,195 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | primary started
+    [INFO] 2022-01-28T18:09:28,202 [main] [mariadb4j.DB] | Starting up the database...
+
+  |
+
+""""""""""""""
+Via the Status
+""""""""""""""
+You can also check that the cluster is working by logging into MariaDB with the ``mysql`` client from the
+primary or the replica and checking the status:
+
+#. From the command line in the server, go to ``$CRAFTER_HOME/bin/dbms/bin`` and run the ``mysql`` program
+
+   .. code-block:: bash
+
+      ./mysql -S /tmp/MariaDB4j.33306.sock
+
+   |
+
+#. Inside the MySQL client, run the following:
+
+   *Primary*: ``SHOW MASTER STATUS\G``
+
+   .. code-block:: none
+
+      MariaDB [crafter]> SHOW MASTER STATUS\G
+      *************************** 1. row ***************************
+                  File: crafter_cluster-bin.000001
+              Position: 2812853
+          Binlog_Do_DB:
+      Binlog_Ignore_DB:
+      1 row in set (0.000 sec)
+
+   |
+
+
+   *Replica*: ``SHOW SLAVE STATUS\G``
+
+   .. code-block:: none
+
+      MariaDB [crafter]> SHOW SLAVE STATUS\G                                                                                                                                                                                                                                                                                                      [42/1943]
+      *************************** 1. row ***************************
+                Slave_IO_State: Waiting for master to send event
+                   Master_Host: 172.31.70.118
+                   Master_User: crafter_replication
+                   Master_Port: 33306
+                 Connect_Retry: 60
+               Master_Log_File: crafter_cluster-bin.000001
+           Read_Master_Log_Pos: 2776943
+                Relay_Log_File: crafter_cluster-relay-bin.000004
+                 Relay_Log_Pos: 656828
+         Relay_Master_Log_File: crafter_cluster-bin.000001
+              Slave_IO_Running: Yes
+             Slave_SQL_Running: Yes
+             .....
+             ........
+
+   |
+
+"""""""""""""""""""""""""""""
+Via the Global Transaction ID
+"""""""""""""""""""""""""""""
+On a primary server, all database updates are written into the binary log as binlog events. A replica server
+connects to the primary and reads the binlog events, then applies the events locally to replicate
+the changes in the primary. For each event group (transaction) in the binlog, a unique id is attached
+to it, called the ``Global Transaction ID`` or ``GTID``.
+
+To check our cluster, we can check the ``gtid_current_pos`` system variable in the primary and
+the ``gtid_slave_pos`` system variable in the replica.
+
+The ``gtid_current_pos`` system variable contains the GTID of the last transaction applied to the database
+for each replication domain. The value is read-only, but it is updated whenever a transaction is written
+to the binary log and/or replicated by a replica thread, and that transaction's GTID is considered newer
+than the current GTID for that domain.
+
+The ``gtid_slave_pos`` system variable contains the GTID of the last transaction applied to the database by the server's replica threads for each replication domain. This system variable's value is automatically updated whenever a replica thread applies an event group.
+
+To learn more about the global transaction ID, see https://mariadb.com/kb/en/gtid/
+
+To check the ``gtid_current_pos`` and ``gtid_slave_pos`` system variables, log into MariaDB with the
+``mysql`` client from the primary or the replica:
+
+#. From the command line in the server, go to ``$CRAFTER_HOME/bin/dbms/bin`` and run the ``mysql`` program
+
+   .. code-block:: bash
+
+      ./mysql -S /tmp/MariaDB4j.33306.sock
+
+   |
+
+#. Inside the MySQL client, run the following:
+
+   *Primary*: ``SELECT @@GLOBAL.gtid_current_pos;``
+
+   .. code-block:: none
+
+      MariaDB [(none)]> SELECT @@GLOBAL.gtid_current_pos;
+      +---------------------------+
+      | @@GLOBAL.gtid_current_pos |
+      +---------------------------+
+      | 0-167772164-2132          |
+      +---------------------------+
+      1 row in set (0.000 sec)
+
+   *Replica*: ``SELECT @@GLOBAL.gtid_slave_pos;``
+
+   .. code-block:: none
+
+      MariaDB [(none)]> SELECT @@GLOBAL.gtid_slave_pos;
+      +-------------------------+
+      | @@GLOBAL.gtid_slave_pos |
+      +-------------------------+
+      | 0-167772164-2145        |
+      +-------------------------+
+      1 row in set (0.000 sec)
+
+|hr|
+
 ^^^^^^^^^^^^^^^^^^^
 Git/DB Sync Failure
 ^^^^^^^^^^^^^^^^^^^
@@ -778,9 +797,9 @@ After reviewing the logs (tomcat logs and git log), there are a few ways to go a
 
 .. _changing-the-cluster-git-url:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Syncing the Cluster Git URL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Changing the Cluster Git URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 When the cluster Git URL for syncing members is changed after a cluster has been setup and started, the nodes on the disk may contain the old URL format when starting up. The following error appears in the log when switching the URL from SSH to HTTPS:
 
    .. code-block:: text

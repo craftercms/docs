@@ -61,6 +61,13 @@ Learn about administering Crafter Studio in the :ref:`Crafter Studio Administrat
 
 |hr|
 
+----------
+Clustering
+----------
+Learn about clustering Crafter Studio in the :ref:`Crafter Studio Clustering Guide <studio-clustering>`.
+
+|hr|
+
 --------
 REST API
 --------

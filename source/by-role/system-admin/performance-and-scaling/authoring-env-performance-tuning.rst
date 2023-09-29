@@ -169,7 +169,6 @@ One optimization to raise effective IOPS of a system without buying very expensi
 ^^^^^^^^
 OS Level
 ^^^^^^^^
-
 """"""""""""
 Linux Ulimit
 """"""""""""

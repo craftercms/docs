@@ -305,7 +305,7 @@ is based on replicas following the primary with a fronting load-balancer that di
 while the primary node is healthy. Fail-over is automatic with the replica becoming a primary and switching its
 health status so the load-balancer directs traffic to it instead of the defunct primary.
 
-More information on clustering :ref:`here <clustering>`
+Learn about clustering Crafter Studio in the :ref:`Crafter Studio Clustering Guide <studio-clustering>`.
 
 |hr|
 

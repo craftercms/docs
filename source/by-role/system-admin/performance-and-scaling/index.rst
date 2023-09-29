@@ -39,5 +39,5 @@ The authoring tier must be tuned carefully to get the most out of the infrastruc
 """""""""""""""""""""""""""
 Clustering |enterpriseOnly|
 """""""""""""""""""""""""""
-If the authoring environment goes down, content management cannot happen. While that's not going to stop the end-users from using the delivery tier and consuming content, it will stop the content authors from creating and managing content. Therefore, it's often critical to cluster the authoring tier for high-availability. The article, :ref:`clustering`, elaborates on how to cluster Crafter Studio and achieve high-availability in the authoring tier.
+If the authoring environment goes down, content management cannot happen. While that's not going to stop the end-users from using the delivery tier and consuming content, it will stop the content authors from creating and managing content. Therefore, it's often critical to cluster the authoring tier for high-availability. The article, :ref:`studio-clustering`, elaborates on how to cluster Crafter Studio and achieve high-availability in the authoring tier.
 

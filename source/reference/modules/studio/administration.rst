@@ -94,7 +94,7 @@ A group consists of a collection of users. ``Groups`` lets the administrator man
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Cluster |enterpriseOnly|
 ^^^^^^^^^^^^^^^^^^^^^^^^
-``Cluster`` lets the administrator manage Studio clusters. See :ref:`clustering` for more information on how to setup clustering and available actions from ``Cluster`` from the Main Menu
+``Cluster`` lets the administrator manage Studio clusters. See :ref:`studio-clustering` for more information on how to setup clustering and available actions from ``Cluster`` from the Main Menu
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-cluster.webp
     :alt: System Administrator - Navigation Menu Cluster
