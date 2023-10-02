@@ -832,7 +832,7 @@ To recreate a remote:
 
    The cluster remote names are available from ``Cluster`` in the Studio global menu.
 
-   .. image:: /_static/images/system-admin/clustering-remote-name.webp
+   .. image:: /_static/images/system-admin/cluster-upgraded.webp
       :alt: Studio Clustering Screen - Remote names of nodes listed in Studio Main Menu - Cluster
       :width: 100%
       :align: center
