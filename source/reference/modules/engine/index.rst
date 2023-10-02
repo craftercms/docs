@@ -17,8 +17,7 @@ Crafter Engine
 .. contents::
     :local:
     :depth: 1
-
-.. TODO update the image to show the whole arch and highlight Engine
+    :backlinks: none
 
 Engine provides content delivery services to power any type of Web or mobile application. It consumes content published from Studio via the Deployer and provides developers with APIs to consume the content (content, search, GraphQL, etc.).
 

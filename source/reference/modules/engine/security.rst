@@ -409,16 +409,16 @@ To add optional attributes, add the following inside the ``<headers>`` tag:
 To get the value of the attribute passed in the header, use the following ``authToken.principal.attributes.name``,
  where ``name`` is the name of the attribute in the authentication object.
 
--------
+^^^^^^^
 Example
--------
+^^^^^^^
 Let's take a look at an example of setting up Engine headers authentication using a project created using the Website
 Editorial blueprint named ``My Editorial``. We will also change the default value for the token header. We'll then take a
 look at an example of setting up Engine headers authentication with optional role mappings and attribute.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Simple Example Setting Up Engine Headers Authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Open the Engine ``site-config.xml`` file in Studio, by navigating from the ``Sidebar`` to
 ``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project Configuration`` option from the list.
 
@@ -478,9 +478,9 @@ You should now see the Home page displayed
 
 See :ref:`engine-config` for more information on how to access the ``site-config.xml`` file.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Example Setting Up Engine Headers Authentication with Optional Role Mappings and Attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 We'll now take a look at another example where we setup optional role mappings and attributes.
 
 We'll setup the ``admin`` and the ``user`` roles and add the attribute ``APP_FULL_NAME``. We'll try to restrict
@@ -816,7 +816,6 @@ by Crafter Engine is described below:
 
 .. _engine-project-security-guide-restrict-urls:
 
-
 """""""""""""
 Restrict URLs
 """""""""""""
@@ -851,7 +850,11 @@ be used:
 .. note::
    For the ``<url>`` Ant-style path pattern, ``<url>/*</url>`` indicates just one level of the URL and ``<url>/**</url>`` indicates all urls. For more information on Ant-style path pattern matching, see https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/util/AntPathMatcher.html
 
-  For the *hasAnyRole* expression, remember to escape the comma ``,`` separating the roles inside the expression as shown above.
+   For the ``hasAnyRole`` expression, remember to escape the comma ``,`` separating the roles inside the expression as shown above.
+
+   For more information, check
+   :javadoc_base_url:`UrlAccessRestrictionCheckingProcessor.java <profile/org/craftercms/security/processors/impl/UrlAccessRestrictionCheckingProcessor.html>`
+   and :javadoc_base_url:`AccessRestrictionExpressionRoot.java <profile/org/craftercms/security/utils/spring/el/AccessRestrictionExpressionRoot.html>`
 
 .. _engine-security-access-attributes:
 
@@ -901,9 +904,9 @@ In templates and scripts you can replace all uses of ``profile`` with ``authToke
 
 .. _engine-crafter-profile-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------
 Engine Crafter Profile Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------
 .. note:: This guide includes Crafter Profile specific configuration only, for a general guide see
           :ref:`engine-project-security-guide`
 
@@ -912,20 +915,20 @@ next steps to create one:
 
 #. Login to Crafter Profile Admin Console as a ``PROFILE_SUPERADMIN`` (by default the admin user has this role). *See* :ref:`here <crafter-profile-admin-console>` *for more information on the Crafter Profile Admin Console UI.*
 #. Click on **New Access Token** in the navigation. Enter your project's name on **Application**, leave the **Master** checkbox
-    unselected, pick a proper Expiration Date (10 years from the current date is ok) and on **Tenant Permissions** add
-    your tenant's name to the input (*Remember that your tenant's name has to have the same name as your project. See the note below*) and click on **Add**. By default the admin console auto-selects the 3 actions
-    mentioned before. If you're using the same access token as another environment (e.g. you want to use the same
-    access token in dev and prod), copy the same access token ID from the other environment, and enter the same field
-    values for Application, Master and Expiration Date. Finally, click on **Accept**.
+   unselected, pick a proper Expiration Date (10 years from the current date is ok) and on **Tenant Permissions** add
+   your tenant's name to the input (*Remember that your tenant's name has to have the same name as your project. See the note below*) and click on **Add**. By default the admin console auto-selects the 3 actions
+   mentioned before. If you're using the same access token as another environment (e.g. you want to use the same
+   access token in dev and prod), copy the same access token ID from the other environment, and enter the same field
+   values for Application, Master and Expiration Date. Finally, click on **Accept**.
 
-       .. note::
-          Authentication by default is done against a tenant with the same name as your project. See :ref:`profile-admin-tenants` for more information on creating a tenant.
+   .. note::
+       Authentication by default is done against a tenant with the same name as your project. See :ref:`profile-admin-tenants` for more information on creating a tenant.
 
-    .. image:: /_static/images/new_access_token.webp
-        :alt: Engine Crafter Profile Configuration - New Access Token
-        :width: 65%
+   .. image:: /_static/images/new_access_token.webp
+       :alt: Engine Crafter Profile Configuration - New Access Token
+       :width: 65%
 
-    |
+   |
 
 #. Now that you have created the access token, you need to "tell" Engine to use it in your project. In Admin Console,
     click on **List Access Tokens** in the navigation menu and copy the ID of the token you just created. Then, depending
@@ -1183,27 +1186,102 @@ next steps to create one:
 
           return "/templates/web/fb-login-done.ftl"
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Accessing Crafter Profile REST API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following property allows you to configure the access token required to call Profile REST APIs:
+
+* ``profile.api.accessToken``: The access token to use for the Profile REST calls.
+
+|
+
+|hr|
 
 .. TODO review this and remember SAML is per instance
-    * **profile.api.accessToken:** The access token to use for the Profile REST calls. This parameter should be always specified on
-    multi-tenant configurations.
     * **security.saml.token:** The expected value for the secure key request header
     * **security.saml.groups:** Contains any number of ``<group>`` elements. Each ``<group>`` element contains a ``<name>`` element (The name of the group from the request header) and a ``<role>`` element (The value to use for the role in the profile).
     * **security.saml.attributes:** Contains any number of ``<attribute>`` elements. Each ``<attribute>`` element contains a ``<name>`` element (The name of the request header for the attribute) and a ``<field>`` element (The name of the field to use in the profile).
-    * **security.login.formUrl:** The URL of the login form page. The default is /login.
-    * **security.login.defaultSuccessUrl:** The URL to redirect to if the login was successful and the user couldn't be redirected to the
-    previous page. The default is /.
-    * **security.login.alwaysUseDefaultSuccessUrl:** ``true`` if after successful login always redirect to the default success URL. The default is
-    false.
-    * **security.login.failureUrl:** The URL to redirect to if the login fails. The default is /login?login_error=true.
-    * **security.logout.successUrl:** The URL to redirect after a successful logout. The default is /.
-    * **security.accessDenied.errorPageUrl:** The URL of the page to show when access has been denied to a user to a certain resource. The
-    default is /access-denied.
-    * **security.urlRestrictions:** Contains any number of restriction elements. Each restriction is formed by an Ant-style path pattern (``<url>``)
-    and a Spring EL expression (``<expression>``) executed against the current profile. If a request matches the URL, and the expression
-    evaluates to false, access is denied. For more information, check
-    :javadoc_base_url:`UrlAccessRestrictionCheckingProcessor.java <profile/org/craftercms/security/processors/impl/UrlAccessRestrictionCheckingProcessor.html>`
-    and :javadoc_base_url:`AccessRestrictionExpressionRoot.java <profile/org/craftercms/security/utils/spring/el/AccessRestrictionExpressionRoot.html>`
 
-         .. note::
-..           For the ``<url>`` Ant-style path pattern, ``<url>/*</url>`` indicates just one level of the URL and ``<url>/**</url>`` indicates all urls. For more information on Ant-style path pattern matching, see https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/util/AntPathMatcher.html
+----
+URLs
+----
+^^^^^
+Login
+^^^^^
+The following properties allows you to configure various Login URLs:
+
+* The ``security.login.formUrl`` property allows you to configure the URL of the login form page. The default is ``/login``.
+* The ``security.login.defaultSuccessUrl`` property allows you to configure the URL to redirect to if the login was
+  successful and the user couldn't be redirected to the previous page. The default is ``/``.
+* The ``security.login.alwaysUseDefaultSuccessUrl`` property allows you to configure whether to always redirect to the
+  default success URL. The default is ``false``.
+* The ``security.login.failureUrl`` property allows you to configure the URL to redirect to if the login fails.
+  The default is ``/login?login_error=true``.
+
+.. code-block:: xml
+    :caption: */config/engine/site-config.xml*
+
+    <security>
+      <login>
+        <formUrl /> (The URL of the login form page)
+        <defaultSuccessUrl /> (The URL to redirect to if the login was successful and the user could not be redirected to the previous page)
+        <alwaysUseDefaultSuccessUrl /> (Sets whether to always redirect to the default success URL after a successful login)
+        <failureUrl /> (The URL to redirect to if the login fails)
+      </login>
+    </security>
+
+
+^^^^^^
+Logout
+^^^^^^
+The ``security.logout.successUrl`` property allows you to configure the URL to redirect to after a successful logout.
+The default is ``/``.
+
+.. code-block:: xml
+    :caption: */config/engine/site-config.xml*
+
+    <security>
+      <logout>
+        <successUrl /> (The URL to redirect after a successful logout)
+      </logout>
+    </security>
+
+^^^^^^^^^^^^^
+Access Denied
+^^^^^^^^^^^^^
+The ``security.accessDenied.errorPageUrl`` property allows you to configure the URL of the page to show when
+access has been denied to a user to a certain resource. The default is ``/access-denied``.
+
+.. code-block:: xml
+    :caption: */config/engine/site-config.xml*
+
+    <security>
+      <accessDenied>
+        <errorPageUrl /> (The URL of the page to show when access has been denied to a user to a certain resource)
+      </accessDenied>
+    </security>
+
+^^^^^^^^^^^^^^^^
+URL Restrictions
+^^^^^^^^^^^^^^^^
+The **security.urlRestrictions:** property allows you to configure URL restrictions. It contains any number of
+restriction elements. Each restriction is formed by an Ant-style path pattern (``<url>``) and a Spring EL
+expression (``<expression>``) executed against the current profile. If a request matches the URL, and the
+expression evaluates to false, access is denied. For more information, check
+:javadoc_base_url:`UrlAccessRestrictionCheckingProcessor.java <profile/org/craftercms/security/processors/impl/UrlAccessRestrictionCheckingProcessor.html>`
+and :javadoc_base_url:`AccessRestrictionExpressionRoot.java <profile/org/craftercms/security/utils/spring/el/AccessRestrictionExpressionRoot.html>`
+
+.. note::
+    For the ``<url>`` Ant-style path pattern, ``<url>/*</url>`` indicates just one level of the URL and ``<url>/**</url>`` indicates all urls. For more information on Ant-style path pattern matching, see https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/util/AntPathMatcher.html
+
+.. code-block:: xml
+    :caption: */config/engine/site-config.xml*
+
+    <security>
+      <urlRestrictions> (Contains any number of restriction elements)
+        <restriction> (Restriction element, access is denied if a request matches the URL, and the expression evaluates to false)
+          <url /> (URL pattern)
+          <expression /> (Spring EL expression)
+        </restriction>
+      </urlRestrictions>
+    </security>
