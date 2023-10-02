@@ -691,6 +691,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure forwarded headers
     * - :ref:`engine-policy-headers`
       - Allows you to configure policy headers
+    * - :ref:`engine-custom-healthcheck`
+      - Allows you to configure a custom health check script
     * - :ref:`engine-navigation`
       - Allows you to configure additional fields for dynamic navigation items
     * - :ref:`engine-search-timeouts`
@@ -830,9 +832,9 @@ Please note that the ``Cache-Control`` header inserted to responses by default i
 
 .. _groovy-sandbox-configuration:
 
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Groovy Sandbox Configuration
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 When a Groovy script is executed all code is validated against a blacklist of insecure expressions to prevent code that could
 compromise the system. When you try to execute a script that contains insecure expressions you will see an error
 similar to this:
@@ -851,9 +853,9 @@ is required, it is possible to override the blacklist configuration. Configurati
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""
 Groovy Sandbox Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""
 The following allows you to configure the Groovy sandbox.
 The Groovy sandbox is enabled by default and can be disabled by changing the property ``crafter.engine.groovy.sandbox.enable`` to ``false``.
 
@@ -870,9 +872,9 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 Using a Custom Blacklist
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 Crafter Engine includes a default blacklist that you can find
 `here <https://github.com/craftercms/engine/blob/develop/src/main/resources/crafter/engine/groovy/blacklist>`_. Make sure you review the branch/tag you're using.
 
@@ -898,9 +900,9 @@ To use a custom blacklist follow these steps:
 
 Now you can execute the same script without any issues.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 Disabling the Sandbox Blacklist
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 It is possible to disable the blacklist to allow the execution of most expressions, in
 case you need to use a considerable number of the expression included in the blacklist while keeping some basic
 restrictions. To disable the blacklist for all projects/sites update the server configuration file
@@ -913,9 +915,9 @@ restrictions. To disable the blacklist for all projects/sites update the server 
   crafter.engine.groovy.sandbox.blacklist.enable=false
 
 
-^^^^^^^^^^^^^^^
+"""""""""""""""
 Important Notes
-^^^^^^^^^^^^^^^
+"""""""""""""""
 There are some limitations that should be noted when working with the Groovy Sandbox.
 
 One limitation is that an exception is thrown during execution when a Groovy class has a property and a getter method for the property. Here's an example code that throws an exception during execution:
@@ -1507,6 +1509,26 @@ The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow an
 
     # The value of the X-PERMITTED-CROSS-DOMAIN-POLICIES header that should be set in all requests
     crafter.security.headers.permittedCrossDomainPolicies.value=none
+
+|
+
+|hr|
+
+.. _engine-custom-healthcheck:
+
+^^^^^^^^^^^^^^^^^^^
+Custom Health Check
+^^^^^^^^^^^^^^^^^^^
+Each project can be configured to provide a custom health check script.  By default, Engine will look for a file
+``/scripts/health-check.groovy`` containing your custom script for a health check in your project that will run
+when `status <../../../_static/api/engine.html#tag/monitoring/operation/status>`_ is checked for the project. The
+location of your health check custom script, is configured in your project's ``site-config.xml`` file as seen below:
+
+.. code-block::
+    :caption: *config/engine/site-config.xml*
+
+    # The path of the Groovy script for site health check
+    crafter.engine.site.default.health-check.script.path=/scripts/health-check.groovy
 
 |
 
