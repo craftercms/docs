@@ -691,6 +691,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure forwarded headers
     * - :ref:`engine-policy-headers`
       - Allows you to configure policy headers
+    * - :ref:`engine-custom-healthcheck`
+      - Allows you to configure a custom health check script
     * - :ref:`engine-navigation`
       - Allows you to configure additional fields for dynamic navigation items
     * - :ref:`engine-search-timeouts`
@@ -1507,6 +1509,26 @@ The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow an
 
     # The value of the X-PERMITTED-CROSS-DOMAIN-POLICIES header that should be set in all requests
     crafter.security.headers.permittedCrossDomainPolicies.value=none
+
+|
+
+|hr|
+
+.. _engine-custom-healthcheck:
+
+^^^^^^^^^^^^^^^^^^^
+Custom Health Check
+^^^^^^^^^^^^^^^^^^^
+Each project can be configured to provide a custom health check script.  By default, Engine will look for a file
+``/scripts/health-check.groovy`` containing your custom script for a health check in your project that will run
+when status is checked for the project. The location of your health check custom script, is configured in your
+project's ``site-config.xml`` file.
+
+.. code-block::
+    :caption: *config/engine/site-config.xml*
+
+    # The path of the Groovy script for site health check
+    crafter.engine.site.default.health-check.script.path=/scripts/health-check.groovy
 
 |
 
