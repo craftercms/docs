@@ -1,8 +1,7 @@
 :is-up-to-date: True
-:since-version: 4.0.0
+:since-version: 4.1.1
 
-
-.. index:: Get Support
+.. index:: Support
 
 .. _support:
 
@@ -11,9 +10,41 @@ Support
 =======
 
 -----------------
+What's Supported?
+-----------------
+.. list-table::
+    :header-rows: 1
+
+    * - Release
+      - Released
+      - Open Source Support
+      - Commercial Support
+      - Latest
+
+    * - 4.1
+      - June 17, 2023
+      - Active
+      - Active
+      - 4.1.1 (August 5, 2023)
+    * - 4.0
+      - May 12, 2022
+      - Ended on June 17, 2023
+      - Ends on January 31, 2025
+      - 4.0.7 (July 17, 2023)
+    * - 3.1
+      - May 1, 2019
+      - Ended on May 12, 2022
+      - Ends on June 30, 2024
+      - 3.1.31 (September 19, 2023)
+    * - 3.0
+      - August 1, 2017
+      - Ended on May 1, 2019
+      - Ended on April 30, 2021
+      - 3.0.27 (June 12, 2020)
+
+-----------------
 Community Support
 -----------------
-
 The source code in CrafterCMS is licensed under the GPLv3 and is publicly available at GitHub `here <https://github.com/craftercms>`_ .
 If you have any questions, please look in the following:
 
@@ -25,7 +56,6 @@ For additional resources, please visit the `CrafterCMS developer community <http
 ------------------
 Enterprise Support
 ------------------
-
 For production and other services support including:
 
     * 24x7x365 support with SLAs
