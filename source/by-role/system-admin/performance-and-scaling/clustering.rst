@@ -439,7 +439,7 @@ Here's some more information on S3 replication: https://aws.amazon.com/about-aws
 ------------------
 Backup and Restore
 ------------------
-CrafterCMS comes with a script to backup and restore your environment, as described :ref:`here <backup-and-recovery>`
+CrafterCMS comes with a script to backup and restore your environment, as described :ref:`here <backup-and-restore>`
 
 There are a couple of ways to backup and restore your cluster:
 

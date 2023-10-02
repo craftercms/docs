@@ -69,7 +69,7 @@ Before starting your upgrade:
 
 #. **Backup CrafterCMS** just in case something goes wrong with the upgrade.
 
-   When upgrading CrafterCMS installed on a server, the upgrade scripts performs an automated backup of CrafterCMS, but it's recommended not to rely on the automated backup, just in case. See :ref:`backup-and-recovery` for details on how to perform the backup of CrafterCMS
+   When upgrading CrafterCMS installed on a server, the upgrade scripts performs an automated backup of CrafterCMS, but it's recommended not to rely on the automated backup, just in case. See :ref:`backup-and-restore` for details on how to perform the backup of CrafterCMS
 
 #. **Manually shut down CrafterCMS**   For CrafterCMS installed on a server, the upgrade scripts shuts down CrafterCMS as one of the first steps, but it's also recommended not to rely on the automated shutting down just in case.
 

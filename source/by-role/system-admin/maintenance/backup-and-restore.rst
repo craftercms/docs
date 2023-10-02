@@ -1,11 +1,11 @@
 :is-up-to-date: False
 :last-updated: 4.1.1
 
-.. _backup-and-recovery:
+.. _backup-and-restore:
 
-===================
-Backup and Recovery
-===================
+==================
+Backup and Restore
+==================
 
 CrafterCMS out of the box comes with a script to backup and restore your environment. The script provided will backup your environment including indexes, repos, mongodb, etc. You can then use your favorite backup tools for backing up the script-generated CrafterCMS environment backup file.
 
@@ -74,9 +74,9 @@ If no filename has been specified, the backup file will be named either ``crafte
 
 |hr|
 
---------
-Recovery
---------
+-------
+Restore
+-------
 
 To restore your backup, make sure that CrafterCMS is not running. To restore your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
 
