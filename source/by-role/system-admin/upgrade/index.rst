@@ -1,14 +1,13 @@
 :is-up-to-date: True
 :last-updated: 4.1.1
 
-.. index:: Upgrading CrafterCMS; Upgrading
+.. index:: Upgrading CrafterCMS, Upgrading
 
 .. _upgrading-craftercms:
 
 ====================
 Upgrading CrafterCMS
 ====================
-
 This section details the steps required to upgrade your CrafterCMS install.
 
 .. WARNING::
