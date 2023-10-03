@@ -352,7 +352,7 @@ If the repository is changed manually using Git commands instead of updating fil
 Studio it is possible that a deployment may found a conflict, for example if a specific commit is
 deleted from the repository. In most cases Crafter Deployer should be able to detect those conflicts
 and solve them automatically, however if a deployment does not finish successfully you can follow
-the steps described in :ref:`crafter-studio-debugging-deployer-issues`
+the steps described in :ref:`debugging-deployer-issues`
 
 .. warning::
   Changing or deleting a processed commit file could cause unchanged files to be indexed again and

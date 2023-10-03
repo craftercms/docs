@@ -95,7 +95,7 @@ Here is an example project's published repo Git url when using a local repositor
       /opt/crafter/authoring/data/repos/sites/my-project/published
 
 .. note::
-  * When using ``ssh``, you might see in the logs ``com.jcraft.jsch.JSchException: UnknownHostKey`` errors. These errors are common in Ubuntu, and are caused by known host keys being stored in non-RSA format. Please follow the instructions in :ref:`crafter-studio-debugging-deployer-issues` under ``SSH Unknown Host`` to resolve them.
+  * When using ``ssh``, you might see in the logs ``com.jcraft.jsch.JSchException: UnknownHostKey`` errors. These errors are common in Ubuntu, and are caused by known host keys being stored in non-RSA format. Please follow the instructions in :ref:`debugging-deployer-issues` under ``SSH Unknown Host`` to resolve them.
 
   * ``Git`` needs to be installed in authoring when using SSH to connect the delivery to the authoring.
 
