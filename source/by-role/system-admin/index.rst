@@ -20,7 +20,8 @@ they need to install and maintain CrafterCMS.
     performance-and-scaling/index
     maintenance/index
     upgrade/index
+    disaster-recovery
+
 
 ..  TODO: Add these sections when they are ready
     deployment-architecture
-    disaster-recovery
