@@ -581,6 +581,30 @@ Here's a list of available Form Engine Controls:
 
 .. include:: /includes/form-controls/list-form-controls.rst
 
+.. toctree::
+    :hidden:
+
+    form-controls/form-section
+    form-controls/form-repeating-group
+    form-controls/form-input
+    form-controls/form-text-area
+    form-controls/form-rte
+    form-controls/form-dropdown
+    form-controls/form-date-time
+    form-controls/form-time
+    form-controls/form-checkbox
+    form-controls/form-grouped-checkboxes
+    form-controls/form-item-selector
+    form-controls/form-image
+    form-controls/form-video
+    form-controls/form-transcoded-video
+    form-controls/form-label
+    form-controls/form-page-order
+    form-controls/form-filename
+    form-controls/form-auto-filename
+    form-controls/form-internal-name
+    form-controls/form-locale-selector
+
 .. _form-control-variable-names:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -845,6 +869,35 @@ A search dialog will open displaying in a grid view, items the user can search t
 Form Engine Data Sources (please use the scrollbar to see more data sources)
 
 .. include:: /includes/form-sources/list-form-sources.rst
+
+.. toctree::
+    :hidden:
+
+    form-sources/form-source-components
+    form-sources/form-source-shared-content
+    form-sources/form-source-embedded-content
+    form-sources/form-source-image-desktop
+    form-sources/form-source-image-repo
+    form-sources/form-source-file-desktop
+    form-sources/form-source-file-browse
+    form-sources/form-source-webdav-file-repo
+    form-sources/form-source-webdav-image-repo
+    form-sources/form-source-webdav-video-repo
+    form-sources/form-source-webdav-file-upload
+    form-sources/form-source-webdav-image-upload
+    form-sources/form-source-webdav-video-upload
+    form-sources/form-source-s3-file-repo
+    form-sources/form-source-s3-image-repo
+    form-sources/form-source-s3-video-repo
+    form-sources/form-source-s3-file-upload
+    form-sources/form-source-s3-image-upload
+    form-sources/form-source-s3-video-upload
+    form-sources/form-source-mediaconvert-transcode
+    form-sources/form-source-video-desktop
+    form-sources/form-source-video-repo
+    form-sources/form-source-kvp
+    form-sources/form-source-simple-taxonomy
+
 
 .. _macros-for-data-sources:
 
