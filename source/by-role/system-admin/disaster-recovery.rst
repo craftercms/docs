@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 :last-updated: 4.1.1
 
 .. index:: Disaster Recovery, DR
@@ -23,6 +23,8 @@ Adding two more nodes in a different geography (e.g. a different region in AWS) 
 
 To summarize, it's possible to hit CrafterCMS delivery to be near 100% availability by spreading delivery nodes across geographies. As an added bonus, content will render much closer to the end-user which will improve the user experience.
 
+.. TODO Add a DR for those without multi-region via spawning new nodes with deployer pushing/pulling content and reindex.
+
 ------------
 Authoring DR
 ------------
@@ -31,3 +33,5 @@ CrafterCMS Authoring is a stateful application. It uses a database to store meta
 Clustering the authoring environment is detailed in the article :ref:`studio-clustering`.
 
 The most effective approach to clustering the authoring environment is to cluster Studio across two data centers in the same geography (two availability zones in the same region in AWS for example).
+
+.. TODO write up the DR portion. Snapshotting and restore in another region.

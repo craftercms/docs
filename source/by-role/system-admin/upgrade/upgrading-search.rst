@@ -6,7 +6,6 @@
 ================
 Upgrading Search
 ================
-
 Starting version 4.1.0, CrafterCMS now uses OpenSearch.
 This section describes how to upgrade search for CrafterCMS installed on a server.
 

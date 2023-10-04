@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :last-updated: 4.1.1
 
-.. index:: Upgrading Studio Cluster; Upgrading; Cluster
+.. index:: Upgrading Studio Cluster, Cluster Upgrade
 
 .. _upgrading-studio-cluster:
 

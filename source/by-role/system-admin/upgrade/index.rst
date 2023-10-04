@@ -36,6 +36,11 @@ Here are the instructions for upgrading CrafterCMS based on how it was installed
 
 |hr|
 
+--------------
+Search Upgrade
+--------------
+Starting version 4.1.0, CrafterCMS now uses OpenSearch instead of Elasticsearch. The reasons for this change are legal rather than technical given the new licensing of Elasticsearch. Please follow the article :ref:`upgrading-search` to learn all about upgrading your search from Elasticsearch to OpenSearch.
+
 ------------------------------
 Troubleshooting Upgrade Issues
 ------------------------------

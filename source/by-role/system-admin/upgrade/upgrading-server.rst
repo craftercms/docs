@@ -1,7 +1,7 @@
-:is-up-to-date: False
-:last-updated: 4.1.2
+:is-up-to-date: True
+:last-updated: 4.1.1
 
-.. index:: Upgrading CrafterCMS, Upgrading
+.. index:: Upgrade CrafterCMS, Upgrade
 
 .. _upgrading-craftercms-on-a-server:
 

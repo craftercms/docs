@@ -1,20 +1,18 @@
-:is-up-to-date: False
-:last-updated: 4.1.2
+:is-up-to-date: True
+:last-updated: 4.1.1
 
-.. index:: Upgrading CrafterCMS; Upgrading; Docker; Kubernetes
+.. index:: Upgrade CrafterCMS, Upgrade Docker, Upgrade Kubernetes
 
 .. _upgrading-dockers:
 
 ====================================
 Upgrading CrafterCMS on Docker/Kuber
 ====================================
-
 This section details how to upgrade your CrafterCMS installations in Kubernetes or Docker Compose.
 
 ------------------------
 Upgrading Docker Compose
 ------------------------
-
 These upgrade instructions are for both ``authoring`` and ``delivery`` compose projects:
 
 #. Run ``docker-compose down`` to fully stop the environment.
@@ -25,10 +23,10 @@ These upgrade instructions are for both ``authoring`` and ``delivery`` compose p
    If you have overwritten any of them in a volume, we recommend you do the following:
 
    #. Compare the original configuration files and the files you have overwritten, so you know what are the 
-      changes you have made (for example, if you're currently in 3.1.4, then run a diff between the original 3.1.4
+      changes you have made (for example, if you're currently in 4.1.0, then run a diff between the original 4.1.0
       configuration files and your overwritten versions).
    #. Copy your changes to the new version of the configuration file (for example, if the new version you're 
-      upgrading to is 3.1.5, then copy your configuration overrides to the 3.1.5 version of the file).
+      upgrading to is 4.1.1, then copy your configuration overrides to the 4.1.1 version of the file).
    #. Replace the file in the volume with the new configuration file with your changes.
 
 #. Check the :ref:`release-notes` for any other additional tasks you need to perform.
@@ -38,7 +36,6 @@ These upgrade instructions are for both ``authoring`` and ``delivery`` compose p
 --------------------------------
 Upgrading Kubernetes Deployments
 --------------------------------
-
 These upgrade instructions are for both Authoring and Delivery deployments:
 
 #. Update the CrafterCMS image versions in your deployment files.
@@ -47,11 +44,11 @@ These upgrade instructions are for both Authoring and Delivery deployments:
 #. Check the configuration file changes between the previous version and the new version.
    If you have overwritten any of them in a ``ConfigMap`` or ``Secret``, we recommend you do the following:
 
-   #. Compare the original configuration files and the files you have overwritten, so you know what are the 
-      changes you have made (for example, if you're currently in 3.1.4, then run a diff between the original 3.1.4
+   #. Compare the original configuration files and the files you have overwritten, so you know what are the
+      changes you have made (for example, if you're currently in 4.1.0, then run a diff between the original 4.1.0
       configuration files and your overwritten versions).
-   #. Copy your changes to the new version of the configuration file (for example, if the new version you're 
-      upgrading to is 3.1.5, then copy your configuration overrides to the 3.1.5 version of the file).
+   #. Copy your changes to the new version of the configuration file (for example, if the new version you're
+      upgrading to is 4.1.1, then copy your configuration overrides to the 4.1.1 version of the file).
    #. Replace the file in the ``ConfigMap`` or ``Secret`` with the new configuration file with your changes.
 
 #. Check the :ref:`release-notes` for any other additional tasks you need to perform.
@@ -59,8 +56,9 @@ These upgrade instructions are for both Authoring and Delivery deployments:
    changes detected. 
 #. Monitor the Kubernetes logs for any upgrade errors.
 
-=================================================
+-------------------------------------------------
 Configuration changes between CrafterCMS versions
-=================================================
+-------------------------------------------------
+None at this time.
 
 .. Leave file in place for future configuration changes between CrafterCMS versions starting 4.0.0
