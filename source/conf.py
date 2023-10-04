@@ -79,7 +79,7 @@ language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['includes/*.rst', 'new-ia/includes']
+exclude_patterns = ['includes/*.rst']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
@@ -217,6 +217,10 @@ edit_on_github_branch = 'master'
 edit_on_github_base_folder = 'source'
 
 # Place substitution available in all files here
+rst_prolog= """
+.. include:: /includes/s5defs.rst
+"""
+
 rst_epilog = """
 .. |checkmark| unicode:: U+2713
 .. |ex| unicode:: U+2718
@@ -225,7 +229,7 @@ rst_epilog = """
                    :width: 10%
 
 .. |mainMenu| image:: /_static/images/main-menu-button.webp
-                   :width: 3%
+                   :width: 2%
 
 .. |enterpriseOnly| image:: /_static/images/ee-only-badge.svg
                       :alt: Enterprise only feature
