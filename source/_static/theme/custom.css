@@ -210,3 +210,115 @@
 .wy-table-responsive table td, .wy-table-responsive table th {
     white-space: inherit;
 }
+
+/* Colors
+ For example, :red:`text in red` in rST. */
+
+.black {
+    color: black;
+}
+
+.gray {
+    color: gray;
+}
+
+.grey {
+    color: gray;
+}
+
+.silver {
+    color: silver;
+}
+
+.white {
+    color: white;
+}
+
+.maroon {
+    color: maroon;
+}
+
+.red {
+    color: red;
+}
+
+.magenta {
+    color: magenta;
+}
+
+.fuchsia {
+    color: fuchsia;
+}
+
+.pink {
+    color: pink;
+}
+
+.orange {
+    color: orange;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.lime {
+    color: lime;
+}
+
+.green {
+    color: green;
+}
+
+.olive {
+    color: olive;
+}
+
+.teal {
+    color: teal;
+}
+
+.cyan {
+    color: cyan;
+}
+
+.aqua {
+    color: aqua;
+}
+
+.blue {
+    color: blue;
+}
+
+.navy {
+    color: navy;
+}
+
+.purple {
+    color: purple;
+}
+
+.darksalmon {
+    color: darksalmon;
+}
+
+.small {
+    font-size: small;
+}
+
+.big {
+    font-size: large;
+}
+
+.tiny {
+    font-size: xx-small;
+}
+
+.huge {
+    font-size: xx-large;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
