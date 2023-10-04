@@ -662,7 +662,7 @@ Access Tokens
     :label: Since
     :version: 4.0.0
 
-The following section of Studio's configuration overrides allows you to configure settings for the Studio access tokens. Access tokens can then be used to invoke `Crafter Studio's REST APIs <../../../../../_static/api/studio.html>`_, or used in :ref:`Crafter CLI <cli-access-to-crafter-studio>` to perform operations on Studio.
+The following section of Studio's configuration overrides allows you to configure settings for the Studio access tokens. Access tokens can then be used to invoke `Crafter Studio's REST APIs <../../../_static/api/studio.html>`_, or used in :ref:`Crafter CLI <cli-access-to-crafter-studio>` to perform operations on Studio.
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
