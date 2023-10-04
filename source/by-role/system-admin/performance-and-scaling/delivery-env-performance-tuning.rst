@@ -39,25 +39,17 @@ Horizontal scaling can be very effective in scaling out delivery of content.
 
 .. include:: /includes/server-performance-tuning.rst
 
+|hr|
+
 -------------------------
 Engine Performance Tuning
 -------------------------
+.. include:: /includes/application-performance-tuning.rst
 
-.. TODO Please populate the following sections with the appropriate information
-.. JVM Level
-.. ---------
-.. [Path to setenv and how to set the -Xms/Xmx]
-
-
-.. TODO Please populate the following sections with the appropriate information
-.. Tomcat Application Server Level
-.. -------------------------------
-.. ^^^^^^^^^^^^^^^^^^^^^^
-.. Connector Thread Count
-.. ^^^^^^^^^^^^^^^^^^^^^^
-.. Update the Tomcat Connector thread count to correlate to the number of CPU cores available on the server. This will ensure that the server is able to handle the maximum number of concurrent requests.
-.. [add an example of Tomcat Connector configuration and set it to 600 threads]
+|hr|
 
 .. include:: /includes/deployer-performance-tuning.rst
+
+|hr|
 
 .. include:: /includes/performance-anti-patterns.rst

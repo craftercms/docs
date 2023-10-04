@@ -8,6 +8,13 @@
 ===========
 Maintenance
 ===========
+.. toctree::
+    :maxdepth: 2
+
+    backup-and-restore
+    ../../common/logging
+    troubleshooting
+
 This section covers the basic maintenance tasks for your CrafterCMS installation.
 
 .. list-table::
@@ -23,9 +30,3 @@ This section covers the basic maintenance tasks for your CrafterCMS installation
     * - :ref:`Troubleshooting <troubleshooting>`
       - Learn how to troubleshoot your CrafterCMS installation.
 
-.. toctree::
-    :hidden:
-
-    backup-and-restore
-    ../../common/logging
-    troubleshooting
