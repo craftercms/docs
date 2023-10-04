@@ -218,7 +218,7 @@ edit_on_github_base_folder = 'source'
 
 # Place substitution available in all files here
 rst_prolog= """
-.. include:: /includes/s5defs.rst
+.. include:: /includes/formatting.rst
 """
 
 rst_epilog = """

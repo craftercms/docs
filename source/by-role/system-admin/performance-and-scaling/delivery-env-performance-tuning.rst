@@ -44,6 +44,19 @@ Horizontal scaling can be very effective in scaling out delivery of content.
 -------------------------
 Engine Performance Tuning
 -------------------------
+^^^^^^^^^
+JVM Level
+^^^^^^^^^
+To configure the heap size, etc for the JVM, open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and update the environment
+variable ``CATALINA_OPTS`` to desired value like below:
+
+.. code-block:: bash
+    :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+
+    export CATALINA_OPTS=${CATALINA_OPTS:="-server -Xss1024K -Xms1G -Xmx2G -Dlog4j2.formatMsgNoLookups=true"}
+
+|
+
 .. include:: /includes/application-performance-tuning.rst
 
 |hr|

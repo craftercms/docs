@@ -1,8 +1,3 @@
-.. Definitions of interpreted text roles (classes) for S5/HTML data.
-.. This data file has been placed in the public domain.
-
-.. Colours
-   =======
 
 .. role:: black
 .. role:: gray
@@ -26,9 +21,6 @@
 .. role:: navy
 .. role:: purple
 .. role:: darksalmon
-
-.. Text Sizes
-   ==========
 
 .. role:: huge
 .. role:: big
