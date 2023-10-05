@@ -376,7 +376,7 @@ Or in the target yaml configuration:
 
 |
 
-Remember that the `clusterMode <../../../../_static/api/studio.html#tag/cluster/operation/getClusterMode>`__ API needs the ``studioManagementToken`` configured in the target like below:
+Remember that the `clusterMode <../../../_static/api/studio.html#tag/cluster/operation/getClusterMode>`__ API needs the ``studioManagementToken`` configured in the target like below:
 
 .. code-block:: yaml
     :caption: *Sample STUDIO configuration in the base-target.yaml*
