@@ -1835,7 +1835,7 @@ provided by default. Workflow options are available to specific content, such as
 etc. The available workflow options for users depends on the Role the users are assigned with. As the
 content goes through the workflow options, notification emails are sent out to corresponding users based
 on the workflow option. To setup the email addresses, please see the section **Site Administrators**,
-:ref:`configure-notifications` and  :ref:`user-group-management`. Below is a diagram showing
+:ref:`notifications-configuration` and  :ref:`user-group-management`. Below is a diagram showing
 the default workflow steps.
 
 .. image:: /_static/images/page/page-workflow-diagram.webp
@@ -2013,7 +2013,7 @@ sent to the approver, which should give you the **Publish** option too in the to
 Below is a sample notification email sent to the approver when user *author* sent a request to publish
 content. To modify/setup your notification emails, please contact your site administrator. To see more
 details on how to configure your notification emails, see the section for Site Administrators in
-:ref:`configure-notifications`
+:ref:`notifications-configuration`
 
 .. image:: /_static/images/page/page-workflows-notification-email-reviewer.webp
      :width: 40 %

@@ -33,7 +33,7 @@ Learn about configuring Crafter Studio in the :ref:`Crafter Studio Configuration
 .. toctree::
    :hidden:
 
-   configuration
+   configuration/index
 
 |hr|
 

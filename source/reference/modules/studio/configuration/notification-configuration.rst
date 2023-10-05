@@ -1,11 +1,9 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.0
-
-:orphan:
 
 .. index:: Configure Simple Workflow Notifications and Dialog Messages
 
-.. _configure-notifications:
+.. _notifications-configuration:
 
 ===========================================================
 Configure Simple Workflow Notifications and Dialog Messages

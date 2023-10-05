@@ -10,7 +10,7 @@ Studio Configuration
 ====================
 .. contents::
     :local:
-    :depth: 2
+    :depth: 1
 
 Crafter Studio is primarily configured via a single configuration file, ``studio-config.yaml``, and 2 override files that can be used to override the settings in the core configuration file.
 
@@ -51,10 +51,16 @@ In this section we will highlight some of the more commonly used properties in t
       - Configure the SMTP server to be used by Crafter Studio when sending emails
     * - :ref:`CORS <studio-cors>`
       - Configure CORS
+    * - :ref:`Blob Stores <blob-stores>`
+      - Configure internally managed static asset stores to handle very large files
+    * - :ref:`Project Policy <project-policy-configuration>`
+      - Configure constraints for content being added to the project
     * - :ref:`Editable Mime Types <editable-mime-types>`
       - Configure the MIME-types that are editable directly in Crafter Studio
     * - :ref:`Project/Site Configuration <studio-project-config>`
       - Configure your project/site configuration
+    * - :ref:`RTE Configuration <rte-configuration>`
+      - Configure the default RTE
     * - :ref:`Preview Deployer Configuration <studio-preview-deployer-config>`
       - Configure your deployer URLs
     * - :ref:`Preview Search Configuration <studio-preview-search-config>`
@@ -73,6 +79,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Configure serverless delivery
     * - :ref:`Validations Regex <studio-validations-regex>`
       - Configure the regex used for validating various inputs
+    * - :ref:`Workflow Notification Configuration <notifications-configuration>`
+      - Configure the workflow notifications
     * - :ref:`Commit Message <studio-commit-message>`
       - Configure the commit messages used by Crafter Studio
     * - :ref:`Publishing Blacklist <publishing-blacklist>`
@@ -162,6 +170,23 @@ patterns need to be escaped with a ``\`` like:
 
 |hr|
 
+^^^^^^^^^^^
+Blob Stores
+^^^^^^^^^^^
+Configure internally managed static asset stores to handle very large files using the Blob Stores configuration. To learn more, read the article :ref:`blob-stores`.
+
+|hr|
+
+^^^^^^^^^^^^^^
+Project Policy
+^^^^^^^^^^^^^^
+The project policy configuration file allows the administrator to configure conditions for content being added to the project
+(via uploads), such as filename constraints, minimum/maximum size of files, permitted content types or file types (MIME-types), etc.
+
+Learn more about project policy in the article :ref:`project-policy-configuration`.
+
+|hr|
+
 .. _editable-mime-types:
 
 ^^^^^^^^^^^^^^^^^^^
@@ -231,6 +256,14 @@ The following section of Studio's configuration overrides allows you to setup yo
 |
 
 |hr|
+
+.. _studio-rte-config:
+
+^^^^^^^^^^^^^^^^^
+RTE Configuration
+^^^^^^^^^^^^^^^^^
+RTEs are more effective/productive for authors when they are configured properly for the specific type of content the author is managing. A properly and effectively configured RTE has the right styles, menu options and so on.
+Learn more about configuring Studio's default RTE in the article :ref:`rte-configuration`.
 
 .. _studio-preview-deployer-config:
 
@@ -484,6 +517,16 @@ The following section of Studio's configuration overrides allows you to setup se
     #       alternateCloudFrontDomainNames:
 
 |
+
+|hr|
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Workflow Notifications Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Crafter Studio provides a simple workflow option that includes submission, review/reject and approve and
+publish immediate / publish on a schedule options.
+
+Learn more about Crafter Studio's workflow in the article :ref:`notifications-configuration`.
 
 |hr|
 

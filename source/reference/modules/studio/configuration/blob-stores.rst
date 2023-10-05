@@ -1,21 +1,17 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.3
 
-:orphan:
-
-.. index:: Blob Stores, Blob Store, Blob
+.. index:: Blob Stores, Internally Managed Large Files
 
 .. _blob-stores:
 
 ===========
 Blob Stores
 ===========
-
 -------------
 Configuration
 -------------
-
-The Blob Stores configuration file allows you to configure 0 or more stores for assets with the corresponding information required by the store being used.
+Blob Stores allow you to host internally managed static asset stores to handle very large files. The Blob Stores configuration file allows you to configure stores for assets with the corresponding information required by the store being used.
 To modify the Blob Stores configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Blob Stores** from the list.
 
 .. image:: /_static/images/site-admin/config-open-blob-stores.webp
@@ -27,7 +23,6 @@ To modify the Blob Stores configuration, click on |projectTools| from the bottom
 ^^^^^^
 Sample
 ^^^^^^
-
 Here's a sample Blob Stores Configuration file (click on the triangle on the left to expand/collapse):
 
 .. raw:: html
@@ -44,7 +39,6 @@ Here's a sample Blob Stores Configuration file (click on the triangle on the lef
 
    </details>
 
-|
 |
 
 Remember to encrypt your credentials. For more information on how to manage/encode your secrets such as AWS credentials,
@@ -74,7 +68,6 @@ Remember to restart your CrafterCMS install for the changes you made to take eff
 ^^^^^^^^^^^^^^^^^^^^^^^
 Using AWS Service Roles
 ^^^^^^^^^^^^^^^^^^^^^^^
-
 CrafterCMS supports AWS access without using access/secret keys, by setting AWS service roles on your machine
 
 Simply follow the instructions here for attaching an IAM role to your instance:
@@ -87,7 +80,6 @@ Remember to remove the ``<credentials />`` section in your blob stores configura
 --------------------------------------
 Publishing Assets from the Blob Stores
 --------------------------------------
-
 CrafterCMS supports managing assets in external storage through workflow and publishing mechanics.
 This allows uploading assets to an external storage for preview, that can then be published to either a live or a staging (depending on if staging is setup for your Crafter install) external storage, thus making the external assets available to delivery only after the assets have been published to the live external storage.
 
@@ -124,7 +116,6 @@ After setting up the ``Blob Stores`` configuration, you may now use the external
 ^^^^^^^
 Example
 ^^^^^^^
-
 Let's take a look at an example of setting up an external storage for preview, staging and live and then uploading and finally publishing assets to the external storage we setup. In the example, we will use AWS S3 as the external storage and the Website Editorial blueprint in Crafter Studio to create our project.
 
 **Prerequisites:**
@@ -147,7 +138,6 @@ Let's begin:
 """"""""""""""""""""""""""""
 1. Enable Staging (optional)
 """"""""""""""""""""""""""""
-
 This step is optional but for our example, we wanted to be able to publish to staging, so in this step, we will first enable staging. In your Studio, click on |projectTools| -> *Configuration* -> *Project Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
 
   .. code-block:: xml
@@ -166,7 +156,6 @@ For more information on staging, see :ref:`staging-env`
 """""""""""""""""""
 2. Setup Blob Store
 """""""""""""""""""
-
 In your Studio, click on |projectTools| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 buckets for the preview, staging and live.
 
    .. code-block:: xml
@@ -223,7 +212,6 @@ To see more information on the Blob Stores configuration, see :ref:`above <blob-
 """""""""""""""
 3. Upload files
 """""""""""""""
-
 There are various ways to upload files in Crafter Studio. Here's a few ways we can upload to the external storage:
 
 #. Upload through a picker with corresponding data source setup in a content type
@@ -287,7 +275,6 @@ Let's take a closer look:
 """""""""""""""""""""""""""""""
 5. Publish the files to staging
 """""""""""""""""""""""""""""""
-
 The next step in our example is to publish the files to ``staging``. To publish a file to ``staging``, navigate to the file in the ``Sidebar`` then right click on the file, and select ``Publish`` or open the ``Dashboard`` and select the file/s you want to publish to ``staging`` in the ``Unpublished Work`` widget and click on ``Publish`` from the context nav.
 
 The ``Publish`` dialog will come up. Remember to select ``staging`` for the ``Publishing Target``
@@ -311,7 +298,6 @@ When the file/s are published to ``staging``, the files get published to the ``s
 """"""""""""""""""""""""""""""""
 6. Publish the files to delivery
 """"""""""""""""""""""""""""""""
-
 Finally, we'll publish the file/s to ``live``. To publish a file to ``live``, navigate to the file in the ``Sidebar`` then right click on the file, and select ``Publish`` or open the ``Dashboard`` and select the file/s you want to publish to ``live`` in the ``Unpublished Work`` widget and click on ``Approve & Publish`` from the context nav.
 
 The ``Publish`` dialog will come up. Remember to select ``live`` for the ``Publishing Target``
@@ -335,7 +321,6 @@ When the file/s are published to ``live``, the file/s get published to the ``my-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Setting up Staging for Existing Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 When adding the ``staging`` publishing target to an established project that uses external storage, Studio does not clone the assets in external storage for ``live`` into ``staging``. Performing a bulk publish to ``staging`` also does not work at this time. This is because Studio does not publish to ``staging``, assets in a LIVE, UNEDITED state.
 
 To sync the external storage for ``staging`` with ``live``, you must copy the assets in the ``live`` external storage to the ``staging`` external storage.

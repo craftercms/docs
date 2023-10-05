@@ -1,9 +1,7 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.2
 
-:orphan:
-
-.. index:: Project Policy Configuration
+.. index:: Project Policy
 
 .. _project-policy-configuration:
 
@@ -14,10 +12,10 @@ Project Policy Configuration
    :label: Since
    :version: 4.0.0
 
-The project policy configuration file allows the user to configure conditions for content being added to the project
-(via uploads), such as minimum/maximum size of files, etc.
+The project policy configuration file allows the administrator to configure constraints for content being added to the project
+(via uploads), such as filename constraints, minimum/maximum size of files, permitted content types or file types (MIME-types), etc.
 
-*Note that the project policy does not apply to content created via the UI.*
+*Note that the project policy does not apply to content created directly on disk via the Git or APIs.*
 
 CrafterCMS supports the following project policies:
 
@@ -63,13 +61,11 @@ Here's a sample Project Policy Configuration file (click on the triangle on the 
 ********
 Examples
 ********
-
 Let's take a look at some example project policy configurations.
 
 ----------
 Mime Types
 ----------
-
 The example configuration below (as seen in the default project policy configuration) disallows svg image
 file uploads:
 
@@ -100,7 +96,6 @@ file uploads:
 ----------------
 File Size Limits
 ----------------
-
 Limiting file size of uploads is supported. Simply add ``<minimum-file-size/>`` and/or <maximum-file-size/>
 under ``<permitted>`` where the minimum and maximum file sizes are in bytes
 

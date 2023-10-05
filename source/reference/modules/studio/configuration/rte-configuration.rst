@@ -1,10 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.3
-
-:orphan:
-
-.. document does not appear in any toctree, and is only accessible via searching.
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
 .. index:: Rich Text Editor (RTE) Configuration;
 

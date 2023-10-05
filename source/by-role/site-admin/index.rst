@@ -105,7 +105,7 @@ Here are the settings that can be configured through Crafter Studio:
         - :ref:`content-monitoring`
     * - Notification Configuration (``config/studio/workflow/notification-config.xml``)
       - Defines a list of UI messages to use in notifications
-      - - :ref:`configure-notifications`
+      - - :ref:`notifications-configuration`
     * - Permissions Mapping (``config/studio/permission-mappings-config.xml``)
       - Defines user access permissions to the project
       - - :ref:`Permission Mappings Configuration <permission-mappings>`
@@ -366,7 +366,7 @@ See :ref:`here <publishing-and-status>` for more information
 Notifications
 ^^^^^^^^^^^^^
 To configure HTML notifications that can be sent at each point in the workflow, see
-:ref:`here <configure-notifications>`
+:ref:`here <notifications-configuration>`
 
 |hr|
 
