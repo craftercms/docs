@@ -345,7 +345,7 @@ Configuring the Deployer for Studio Clustering
     :label: Since
     :version: 4.1.1
 
-The deployer is cluster aware and is able to run deployment processors based on the value set in the deployment processor property ``runInClusterMode`` (described :ref:`here <crafter-deployer-administration>`) and the value returned by the Studio `clusterMode <../../../../_static/api/studio.html#tag/cluster/operation/getClusterMode>`__ API.
+The deployer is cluster aware and is able to run deployment processors based on the value set in the deployment processor property ``runInClusterMode`` (described :ref:`here <crafter-deployer-administration>`) and the value returned by the Studio `clusterMode <../../../_static/api/studio.html#tag/cluster/operation/getClusterMode>`__ API.
 
 The ``runInClusterMode`` property can be configured for any processor in the deployer target context xml, e.g:
 
