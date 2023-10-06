@@ -29,17 +29,17 @@ The configuration loading order is as follows:
 * ``studio-config-override.yaml`` from the shared folder is loaded next (if it exists)
 * ``studio-config-override.yaml`` from the global configuration folder is loaded last (if it exists)
 
-If the same property is present in more than one file, the value from the last configuration file will be used.
+If the same property is present in multiple files, the value from the last configuration file will be used.
 
-You'll note that the first override file from the ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` folder resides on the local file system. This makes it easy for system admins, but it will not replicate across a cluster. The second override file from the ``CRAFTER_HOME/data/repos/global/configuration`` folder is a repository item and will replicate across a cluster. Furthermore, the second override file can be managed from Studio without the need to access the file system. See :ref:`nav-menu-global-config` for more information on how to access the global configuration file from Studio.
+You'll note that the first override file from the ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` folder resides on the local file system. This makes it easy for system admins but will not replicate across a cluster. The second override file from the ``CRAFTER_HOME/data/repos/global/configuration`` folder is a repository item and will replicate across a cluster. Furthermore, the second override file can be managed from Studio without the need to access the file system. See :ref:`nav-menu-global-config` for more information on how to access the global configuration file from Studio.
 
 .. note:: Changing the configuration files requires a restart of Crafter Studio for the changes to take effect.
-.. note:: Environment variables can be used to override any property defined as ``${env:ENVIRONMENT_VARIABLE}`` in the configuration files. This allows you to inject these properties into a vanilla installation without having to modify any actual files, which is especially useful when using Docker or Kubernetes.
+.. note:: Environment variables can be used to override any property defined as ``${env:ENVIRONMENT_VARIABLE}`` in the configuration files. This allows you to inject these properties into a vanilla installation without modifying any actual files, which is especially useful when using Docker or Kubernetes.
 
 -------------------------------
 Studio Configuration Properties
 -------------------------------
-In this section we will highlight some of the more commonly used properties in the configuration of Crafter Studio. For a complete list of all the properties, see the ``studio-config.yaml`` file.
+In this section, we will highlight some of the more commonly used properties in the configuration of Crafter Studio. For a complete list of all the properties, see the ``studio-config.yaml`` file.
 
 .. list-table:: Configuration Properties
     :header-rows: 1
@@ -103,7 +103,7 @@ In this section we will highlight some of the more commonly used properties in t
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 SMTP Configuration (Email)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-This section allows the user to setup a mail client by configuring the SMTP server to be used for sending emails from Crafter Studio, such as when authors request to publish content, or when a request to publish has been approved.
+This section allows the user to set up a mail client by configuring the SMTP server to send emails from Crafter Studio, such as when authors request to publish content or when a request to publish has been approved.
 
 .. code-block:: yaml
     :linenos:
@@ -140,7 +140,7 @@ This section allows the user to setup a mail client by configuring the SMTP serv
 ^^^^
 CORS
 ^^^^
-The following section of Studio's configuration overrides allows you to setup CORS
+The following section of Studio's configuration overrides allows you to set CORS
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -166,7 +166,7 @@ The following section of Studio's configuration overrides allows you to setup CO
     # Value for the Access-Control-Max-Age header
     # studio.cors.maxage: -1
 
-The CORS origins accepts regex patterns. Values are split using ``,``. Remember that commas inside
+The CORS origins accept regex patterns. Values are split using ``,``. Remember that commas inside
 patterns need to be escaped with a ``\`` like:
 ``studio.cors.origins: 'http://localhost:[8000\,3000],http://*.other.domain'``
 
@@ -184,7 +184,7 @@ Configure internally managed static asset stores to handle very large files usin
 ^^^^^^^^^^^^^^
 Project Policy
 ^^^^^^^^^^^^^^
-The project policy configuration file allows the administrator to configure conditions for content being added to the project
+The project policy configuration file allows the administrator to configure conditions for adding content to the project.
 (via uploads), such as filename constraints, minimum/maximum size of files, permitted content types or file types (MIME-types), etc.
 
 Learn more about project policy in the article :ref:`project-policy-configuration`.
@@ -222,7 +222,7 @@ These can be updated as needed by overriding the property in one of the override
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Project/Site Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following section of Studio's configuration overrides allows you to setup your project configuration.
+The following section of Studio's configuration overrides allows you to set up your project configuration.
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -309,7 +309,7 @@ The following section of Studio's configuration overrides allows you to setup yo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Preview Search Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following section of Studio's configuration overrides allows you to setup urls for search in preview
+The following section of Studio's configuration overrides allows you to set URLs for search in preview.
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -364,7 +364,7 @@ The following section of Studio's configuration overrides allows you to setup th
 ^^^^^^^^^^^^^^
 Cache Settings
 ^^^^^^^^^^^^^^
-Here's the cache control settings for templates and assets:
+Here are the cache control settings for templates and assets:
 
 .. code-block:: yaml
 
@@ -396,7 +396,7 @@ The following section of Studio's configuration overrides allows you to configur
     ##             Forwarded Headers                ##
     ##################################################
     # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
-    # address. Enable when Studio is behind a reverse proxy or load balancer that sends these
+    # address. Enable when Studio is behind a reverse proxy or load balancer that sends these.
     studio.forwarded.headers.enabled: false
 
 |
@@ -457,7 +457,7 @@ crafterSite Cookie Domain
     :label: Since
     :version: 4.0.1
 
-The following section of Studio's configuration overrides allows you to set the ``crafterSite`` cookie at the base domain instead of a subdomain, to allow visibility of the ``crafterSite`` cookie across subdomains.
+The following section of Studio's configuration overrides allows you to set the ``crafterSite`` cookie at the base domain instead of a subdomain to allow visibility of the ``crafterSite`` cookie across subdomains.
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -475,7 +475,7 @@ The following section of Studio's configuration overrides allows you to set the 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Serverless Delivery Targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following section of Studio's configuration overrides allows you to setup serverless delivery
+The following section of Studio's configuration overrides allows you to set up serverless delivery.
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -534,8 +534,8 @@ The following section of Studio's configuration overrides allows you to setup se
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Workflow Notifications Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Crafter Studio provides a simple workflow option that includes submission, review/reject and approve and
-publish immediate / publish on a schedule options.
+Crafter Studio provides a simple workflow option that includes submission, review, approve or reject, and
+publish immediately or publish on a schedule.
 
 Learn more about Crafter Studio's workflow in the article :ref:`notifications-configuration`.
 
@@ -550,7 +550,7 @@ Validations Regex
     :label: Since
     :version: 4.0.3
 
-CrafterCMS validates API requests related with users and groups through regex restrictions to avoid malicious payloads.
+CrafterCMS validates API requests related to users and groups through regex restrictions to avoid malicious payloads.
 
 The following section of Studio's configuration overrides allows you to configure the regex used for validating user names and group names to suit your needs.
 
@@ -630,9 +630,9 @@ using one of the override files.
 ^^^^^^^^^^^^^^^^^^^^
 Publishing Blacklist
 ^^^^^^^^^^^^^^^^^^^^
-CrafterCMS allows creating a publishing blacklist to prevent certain unwanted items from being published.
+CrafterCMS allows the creation of a publishing blacklist to prevent certain unwanted items from being published.
 
-A comma separated list of regexes is used to configure items that should not be published.
+A comma-separated list of regexes is used to configure items that should not be published.
 
 To configure the publishing blacklist, using your favorite editor open ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml`` or open the Global Studio Configuration Override file **studio-config-override.yaml** located under ``CRAFTER_HOME/data/repos/global/configuration`` that can be accessed from Studio from the ``Main Menu`` under ``Global Config``.
 
@@ -719,7 +719,7 @@ The Content Type Editor Config configuration file defines what tools are availab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Dependency Resolver Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Crafter Studio extracts and tracks dependencies between content items to assist authors with publishing, workflow and core content operations like copy and delete. Learn more about configuring the dependency resolver in the article :ref:`dependency-resolver-config`.
+Crafter Studio extracts and tracks dependencies between content items to assist authors with publishing, workflow, and core content operations like copy and delete. Learn more about configuring the dependency resolver in the article :ref:`dependency-resolver-config`.
 
 |hr|
 
@@ -728,7 +728,7 @@ Crafter Studio extracts and tracks dependencies between content items to assist 
 --------------------------------
 Studio Multi-environment Support
 --------------------------------
-To setup a Studio environment, do the following:
+To set up a Studio environment, do the following:
 
 #. Create a folder under ``CRAFTER_HOME/data/repos/sites/${site}/sandbox/config/studio`` called ``env``
 #. Inside the folder, create a directory called ``myenv`` (or whatever you want to call the environment)
@@ -864,7 +864,7 @@ Description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Global Role Mappings Config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The global role mappings config contains the role mappings for groups created in CrafterCMS that needs global permissions. For more information on groups, see :ref:`groups-management`
+The global role mappings config contains the role mappings for groups created in CrafterCMS that need global permissions. For more information on groups, see :ref:`groups-management`
 
 To access the global role mappings config file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/`` then open the file ``global-role-mappings-config.xml``. Remember to restart Crafter so your changes to the file will take effect.
 
@@ -908,7 +908,7 @@ The Global Menu Config configuration file defines what modules are available for
 To see the default modules available from the ``Navigation Menu``, see :ref:`navigating-main-menu`
 
 Here is the default Global Menu Config configuration file (click on the triangle on the left to expand/collapse).
-To access the file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/`` then
+To access the file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/``and then
 open the file ``global-menu-config.xml``. Remember to restart Crafter so your changes to the file will take effect.
 
 .. raw:: html
