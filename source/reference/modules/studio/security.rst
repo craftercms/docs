@@ -15,7 +15,6 @@ Studio Security
 --------------
 Authentication
 --------------
-
 Users are authenticated by Studio through the internal database by default. CrafterCMS can be configured so that users are authenticated using an external authentication protocol such as Lightweight Directory Access Protocol (LDAP), Security Assertion Markup Language (SAML), or integrate with any Single-Sign-On (SSO) solution that can provide headers to Studio to indicate successful authentication.
 
 Here's a list of security providers supported by CrafterCMS for accessing the repository:
@@ -375,6 +374,8 @@ To enable **Sign out** for users signed in using header-based authentication, ch
 
 |
 
+|hr|
+
 .. _crafter-studio-configure-ldap:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -455,10 +456,150 @@ To assign a role to a group, please follow the guide :ref:`project-role-mappings
 
 For an example of setting up LDAP, see :ref:`setting-up-simple-ldap-server`
 
+|hr|
+
+-------------
+Authorization
+-------------
+.. _project-role-mappings:
+
+^^^^^^^^^^^^^
+Role Mappings
+^^^^^^^^^^^^^
+Users only sees the items that they have been granted access to based on the permissions granted to the Role they have been assigned to. The role mappings configuration file defines the mapping between the group that the user belongs to and the studio authoring role. To modify the role mappings, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Role Mappings** from the list.
+
+.. image:: /_static/images/site-admin/config-open-role-mappings.webp
+    :alt: Configurations - Open Role Mappings
+    :width: 55 %
+    :align: center
+
+""""""
+Sample
+""""""
+Here's a sample Role Mappings Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample role mappings configuration</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-role-mappings-config.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/role-mappings-config.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+
+"""""""""""
+Description
+"""""""""""
+    ``/role-mappings/groups/group@name``
+        Name of the user group
+
+    ``/role-mappings/groups/role``
+        Name of authoring role that group will map to
+
+"""""""""""""""""""""
+Default Project Roles
+"""""""""""""""""""""
+CrafterCMS comes with predefined roles out of the box for projects.
+Here's a list of predefined roles for projects:
+
+* **admin**: Users with the ``admin`` role have access to project configuration files, creating/editing layouts, templates, taxonomies, content types, scripts, etc. in addition to creating and editing content, as well as the ability to approve and reject workflow
+
+* **developer**: Users with the ``developer`` role have access to project configuration files, creating/editing layouts, templates, taxonomies, content types, scripts, etc. in addition to creating and editing content, as well as the ability to approve and reject workflow
+
+* **reviewer**: Users with the ``reviewer`` role have the ability to approve and reject workflow. They also have access to a number of actions in the dashboard which are not available to content contributors (users with role ``author``) including ``Pending Approval`` and ``Scheduled Publish``. They do not have access to edit content.
+
+* **publisher**: Users with the ``publisher`` role have the ability to approve and reject workflow. They also have access to a number of actions in the dashboard which are not available to content contributors (users with role ``author``) including ``Pending Approval`` and ``Scheduled Publish``. In addition, they also have access to create, edit and submit content like the ``author`` role.
+
+* **author**: Users with the role ``author`` have access to create, edit and submit content
+
+See :ref:`permission-mappings` for more information on all items accessible for each role in a project.
+
+|hr|
+
+.. _permission-mappings:
+
+^^^^^^^^^^^^^^^^^^^
+Permission Mappings
+^^^^^^^^^^^^^^^^^^^
+The permission mappings configuration file allows you to assign permissions to folders and objects in a project/site giving specific Roles rights to the object. The permission mappings config file contains the permissions mappings for the roles defined in the role mappings config file. When applying permissions to Roles, rights are granted by adding permissions inside the tag ``<allowed-permissions>``. Absence of permissions means the permission is denied. Rules have a regex expression that govern the scope of the permissions assigned. A list of available permissions that can be granted to Roles is available after the sample configuration file.
+
+Permissions are defined per:
+    project/site > role > rule
+
+For example, to grant the role component_author the ability to read/write
+components and read-only to everything else:
+
+.. code-block:: xml
+      :linenos:
+
+      <role name="component_author">
+        <rule regex="/site/website/.*">
+          <allowed-permissions>
+            <permission>content_read</permission>
+          </allowed-permissions>
+        </rule>
+        <rule regex="/site/components/.*">
+          <allowed-permissions>
+            <permission>content_read</permission>
+            <permission>content_write</permission>
+            <permission>content_create</permission>
+            <permission>folder_create</permission>
+          </allowed-permissions>
+        </rule>
+        <rule regex="/static-assets/.*">
+          <allowed-permissions>
+            <permission>content_read</permission>
+          </allowed-permissions>
+        </rule>
+      </role>
+
+|
+
+To modify/view the permission mappings for your project/site in Studio, click on |projectTools| at the bottom of the *Sidebar*, then click on **Configurations** and select **Permissions Mapping** from the list.
+
+.. image:: /_static/images/site-admin/config-open-permission-mappings.webp
+    :alt: Configurations - Open Permission Mappings
+    :width: 45 %
+    :align: center
+
+""""""
+Sample
+""""""
+Here's a sample Permission Mappings Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "permission-mappings-config.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-permission-mappings-config.xml
+       :language: xml
+       :linenos:
+
+
+.. raw:: html
+
+   </details>
+
+|
+
+"""""""""""
+Description
+"""""""""""
+.. include:: /includes/available-permissions.rst
+
+|hr|
+
 ----------------------------
 Other Security Configuration
 ----------------------------
-
 .. _studio-password-config:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -581,42 +722,125 @@ Here's a sample password generated for the admin as listed in the tomcat log:
 
 You can now login as the user **admin** using the randomly generated password listed in the tomcat log.
 
+|hr|
 
-^^^^^^^^
-Timeouts
-^^^^^^^^
-.. code-block:: yaml
-    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
-    :linenos:
+.. _studio-timeout:
 
-    ##################################################
-    ##                   Security                   ##
-    ##################################################
-    # Time in minutes after which active users will be required to login again
-    # studio.security.sessionTimeout: 480
-    # Time in minutes after which inactive users will be required to login again
-    # studio.security.inactivityTimeout: 30
-    #
-    # Salt for encrypting
-    studio.security.cipher.salt: ${env:CRAFTER_SYSTEM_ENCRYPTION_SALT}
-    # Key for encrypting
-    studio.security.cipher.key: ${env:CRAFTER_SYSTEM_ENCRYPTION_KEY}
+^^^^^^^^^^^^^^^
+Studio Timeouts
+^^^^^^^^^^^^^^^
+.. _changing-session-timeout:
 
-    # The key used for encryption of configuration properties
-    studio.security.encryption.key: ${env:CRAFTER_ENCRYPTION_KEY}
-    # The salt used for encryption of configuration properties
-    studio.security.encryption.salt: ${env:CRAFTER_ENCRYPTION_SALT}
+""""""""""""""""""""""""""""
+Changing the Session Timeout
+""""""""""""""""""""""""""""
+CrafterCMS has configurable timeouts for session lifetime and session inactivity.
 
-    # The path of the folder used for the SSH configuration
-    studio.security.ssh.config: ${env:CRAFTER_SSH_CONFIG}
+Session lifetime timeout is the amount of time a session is valid before requiring the user to re-authenticate.
 
-    # Defines name used for environment specific configuration. It is used for environment overrides in studio. Default value is default.
-    studio.configuration.environment.active: ${env:CRAFTER_ENVIRONMENT}
+Session inactivity timeout is the amount of time of user inactivity before requiring the user to re-authenticate.
+
+In some cases, some operations in CrafterCMS may last longer than the user session inactivity timeout settings.
+For this scenario, the session inactivity timeout will need to be modified to allow the operation to finish
+without the session timing out. Also, you may want to change the timeouts from the default settings.
+
+Here's a summary of the session timeouts available in CrafterCMS:
+
+.. list-table::
+   :widths: 1 1 8
+   :header-rows: 1
+
+   * - Timeout Name
+     - Default Value |br|
+       *(in minutes)*
+     - Description
+   * - ``sessionTimeout``
+     - 480
+     - **Studio session lifetime timeout** |br|
+       *Location:* |br|
+       *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml* |br| |br|
+       The amount of time a session is valid counting from when a user is logged in. |br|
+       After this amount of time,a session timeout will be forced in the application layer even if the user is active.
+   * - ``inactivityTimeout``
+     - 30
+     - **Studio session inactivity timeout** |br|
+       *Location:* |br|
+       *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml* |br| |br|
+       The amount of time of user inactivity, tracked by Studio, before requiring the user to re-authenticate. |br|
+       Remember to set the ``inactivityTimeout`` value less than the ``session-timeout`` value in the ``web.xml`` file. |br|
+       The session inactivity time tracked by Studio is different from the session inactivity time tracked by Tomcat. |br|
+       This is because there are some API calls that are not tracked as active by Studio.
+   * - ``session-timeout``
+     - 30
+     - **Tomcat session timeout** |br|
+       *Location:* |br|
+       *CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/web.xml* |br| |br|
+       The amount of time of user inactivity, tracked by Tomcat, before requiring the user to re-authenticate. |br|
+       This value must be greater than or equal to ``inactivityTimeout`` since that timeout can and does kick in |br|
+       before this one.
+
+"""""""""""""""""""""""""""""""
+Change Session Lifetime Timeout
+"""""""""""""""""""""""""""""""
+To change the session lifetime timeout, in your
+``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``,
+change the value for ``studio.security.sessionTimeout`` to desired amount of time the session is valid
+in minutes for users.
+
+.. code-block:: properties
+
+   # Time in minutes after which active users will be required to login again
+   # studio.security.sessionTimeout: 480
+
+|
+
+Make sure to stop and **restart Studio** after making your changes.
+
+"""""""""""""""""""""""""""""""""
+Change Session Inactivity Timeout
+"""""""""""""""""""""""""""""""""
+There are two timeouts you can configure for the session inactivity timeout as described in the above table.
+
+- ``session-timeout`` in the Tomcat ``web.xml`` file
+  This is the default Tomcat timeout for handling idle connections (inactive)
+- ``inactivityTimeout`` in the Studio override configuration file
+  This is the Studio session inactivity timeout
+
+To change the session inactivity timeout, follow the instructions below:
+
+#. In your ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``,
+   change the value for ``studio.security.inactivityTimeout`` to set the amount of time in minutes the amount of
+   time a user can be inactive before the user's session times out.
+
+   .. code-block:: properties
+
+      # Time in minutes after which inactive users will be required to login again
+      # studio.security.inactivityTimeout: 30
+
+   |
+
+#. In your ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/web.xml`` file, change the value in
+   between the ``session-timeout`` tags to desired amount of time the session will exist in minutes:
+
+   .. code-block:: xml
+
+      <session-config>
+        <session-timeout>30</session-timeout>
+        <tracking-mode>COOKIE</tracking-mode>
+	  </session-config>
+
+   |
+
+
+Remember to keep the Studio session inactivity timeout ``inactivityTimeout`` from the ``studio-config-override.yaml`` file less than the Tomcat ``session-timeout`` from the ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/web.xml`` file.
+
+Make sure to stop and **restart Studio after making your changes**.
+
+You can also change the Studio session timeouts from the |mainMenu| **Main Menu** in Studio under ``Global Config``
 
 |
 
 |hr|
-
 
 ^^^^^^^^^^^^^^^^^^^^
 Cipher Configuration

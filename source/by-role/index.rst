@@ -6,31 +6,11 @@
 =====================
 Documentation by Role
 =====================
-
 Browse the CrafterCMS documentation by your role or interest.
-
-.. .. toctree::
-   :maxdepth: 2
-   :titlesonly:
-   :hidden:
-
-..  architect/index
-   developer/index
-   author/index
-   site-admin/index
-   system-admin/index
 
 -----------------
 For the Architect
 -----------------
-
-.. .. image:: /_static/images/by-role/architect.webp
-    :alt: By Role - Architect
-    :width: 20 %
-    :target: architect/index.html
-
-.. ..todo: need to check if image/links work with below when docs is published... Using the target option of the image directive opens the link in a new tab/window...
-
 .. |architectByRole| raw:: html
 
     <a href="architect/index.html"><img alt="By Role - Architect" src="../_static/images/by-role/architect.webp" style="width: 20%; border-radius: 50%; object-fit: cover;" /></a>
@@ -65,7 +45,6 @@ For the Developer
 ----------------------
 For the Content Author
 ----------------------
-
 .. |authorByRole| raw:: html
 
     <a href="author/index.html"><img alt="By Role - Architect" src="../_static/images/by-role/author.webp" style="width: 20%; border-radius: 50%; object-fit: cover;" /></a>
@@ -82,10 +61,9 @@ For the Content Author
 -----------------------------
 For the Project Administrator
 -----------------------------
-
 .. |projectAdminByRole| raw:: html
 
-    <a href="site-admin/index.html"><img alt="By Role - Architect" src="../_static/images/by-role/site_admin.webp" style="width: 20%; border-radius: 50%; object-fit: cover;" /></a>
+    <a href="project-admin/index.html"><img alt="By Role - Architect" src="../_static/images/by-role/site_admin.webp" style="width: 20%; border-radius: 50%; object-fit: cover;" /></a>
 
 |projectAdminByRole| For the project administrator learning how to create and manage projects/sites in CrafterCMS, please start :ref:`here<project-admin>`.
 
@@ -94,12 +72,11 @@ For the Project Administrator
    :titlesonly:
    :hidden:
 
-   site-admin/index
+   project-admin/index
 
 ----------------------------
 For the System Administrator
 ----------------------------
-
 .. |systemAdministrator| raw:: html
 
     <a href="system-admin/index.html"><img alt="By Role - Architect" src="../_static/images/by-role/system_admin.webp" style="width: 20%; border-radius: 50%; object-fit: cover;" /></a>

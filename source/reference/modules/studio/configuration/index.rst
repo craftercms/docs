@@ -31,10 +31,10 @@ The configuration loading order is as follows:
 
 If the same property is present in more than one file, the value from the last configuration file will be used.
 
-You'll note that the first override file from the ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` folder resides on the local file system. This makes it easy for system admins, but it will not replicate across a cluster. The second override file from the ``CRAFTER_HOME/data/repos/global/configuration`` folder is a repository item and will replicate across a cluster. Furthermore, the second override file can be managed from Studio without need to the operating system's file system. See :ref:`nav-menu-global-config` for more information on how to access the global configuration file from Studio.
+You'll note that the first override file from the ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` folder resides on the local file system. This makes it easy for system admins, but it will not replicate across a cluster. The second override file from the ``CRAFTER_HOME/data/repos/global/configuration`` folder is a repository item and will replicate across a cluster. Furthermore, the second override file can be managed from Studio without the need to access the file system. See :ref:`nav-menu-global-config` for more information on how to access the global configuration file from Studio.
 
 .. note:: Changing the configuration files requires a restart of Crafter Studio for the changes to take effect.
-.. note:: Environment variables can be used to override any property defined as ``${env:ENVIRONMENT_VARIABLE}`` in the configuration files.This allows you to inject these properties into a vanilla installation without having to modify any actual files, which is especially useful when using Docker or Kubernetes.
+.. note:: Environment variables can be used to override any property defined as ``${env:ENVIRONMENT_VARIABLE}`` in the configuration files. This allows you to inject these properties into a vanilla installation without having to modify any actual files, which is especially useful when using Docker or Kubernetes.
 
 -------------------------------
 Studio Configuration Properties
@@ -59,6 +59,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Configure the MIME-types that are editable directly in Crafter Studio
     * - :ref:`Project/Site Configuration <studio-project-config>`
       - Configure your project/site configuration
+    * - :ref:`UI Configuration <user-interface-configuration>`
+      - Configure the Studio UI
     * - :ref:`RTE Configuration <rte-configuration>`
       - Configure the default RTE
     * - :ref:`Preview Deployer Configuration <studio-preview-deployer-config>`
@@ -85,8 +87,10 @@ In this section we will highlight some of the more commonly used properties in t
       - Configure the commit messages used by Crafter Studio
     * - :ref:`Publishing Blacklist <publishing-blacklist>`
       - Configure the publishing blacklist
-    * - :ref:`Studio Timeouts <studio-timeout>`
-      - Configure Studio timeouts
+    * - :ref:`Content Type Editor Configuration <content-type-editor-config>`
+      - Configure the content types
+    * - :ref:`Dependency Resolver Configuration <dependency-resolver-config>`
+      - Configure the dependency resolver
 
 .. TODO Add more configuration properties
 
@@ -254,6 +258,13 @@ The following section of Studio's configuration overrides allows you to setup yo
       /api/1/site/cache/statistics
 
 |
+
+|hr|
+
+^^^^^^^^^^^^^^^^
+UI Configuration
+^^^^^^^^^^^^^^^^
+Crafter Studio's UI is highly configurable and allows you to customize the look and feel of the UI per project to suit your needs. Learn more about Studio UI configuration in the article :ref:`user-interface-configuration`.
 
 |hr|
 
@@ -693,121 +704,22 @@ Let's take a look at the tomcat log, notice that it was logged that the file we 
 
 |hr|
 
-.. _studio-timeout:
 
-^^^^^^^^
-Timeouts
-^^^^^^^^
-.. _changing-session-timeout:
+.. _content-type-editor-configuration:
 
-""""""""""""""""""""""""""""
-Changing the Session Timeout
-""""""""""""""""""""""""""""
-CrafterCMS has configurable timeouts for session lifetime and session inactivity.
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Content Type Editor Config
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+The Content Type Editor Config configuration file defines what tools are available in the Content Type Editor. Learn more about Content Type Editor configuration in the article :ref:`content-type-editor-config`.
 
-Session lifetime timeout is the amount of time a session is valid before requiring the user to re-authenticate.
+|hr|
 
-Session inactivity timeout is the amount of time of user inactivity before requiring the user to re-authenticate.
+.. _dependency-resolver-configuration:
 
-In some cases, some operations in CrafterCMS may last longer than the user session inactivity timeout settings.
-For this scenario, the session inactivity timeout will need to be modified to allow the operation to finish
-without the session timing out. Also, you may want to change the timeouts from the default settings.
-
-Here's a summary of the session timeouts available in CrafterCMS:
-
-.. list-table::
-   :widths: 1 1 8
-   :header-rows: 1
-
-   * - Timeout Name
-     - Default Value |br|
-       *(in minutes)*
-     - Description
-   * - ``sessionTimeout``
-     - 480
-     - **Studio session lifetime timeout** |br|
-       *Location:* |br|
-       *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml* |br| |br|
-       The amount of time a session is valid counting from when a user is logged in. |br|
-       After this amount of time,a session timeout will be forced in the application layer even if the user is active.
-   * - ``inactivityTimeout``
-     - 30
-     - **Studio session inactivity timeout** |br|
-       *Location:* |br|
-       *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml* |br| |br|
-       The amount of time of user inactivity, tracked by Studio, before requiring the user to re-authenticate. |br|
-       Remember to set the ``inactivityTimeout`` value less than the ``session-timeout`` value in the ``web.xml`` file. |br|
-       The session inactivity time tracked by Studio is different from the session inactivity time tracked by Tomcat. |br|
-       This is because there are some API calls that are not tracked as active by Studio.
-   * - ``session-timeout``
-     - 30
-     - **Tomcat session timeout** |br|
-       *Location:* |br|
-       *CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/web.xml* |br| |br|
-       The amount of time of user inactivity, tracked by Tomcat, before requiring the user to re-authenticate. |br|
-       This value must be greater than or equal to ``inactivityTimeout`` since that timeout can and does kick in |br|
-       before this one.
-
-"""""""""""""""""""""""""""""""
-Change Session Lifetime Timeout
-"""""""""""""""""""""""""""""""
-To change the session lifetime timeout, in your
-``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``,
-change the value for ``studio.security.sessionTimeout`` to desired amount of time the session is valid
-in minutes for users.
-
-.. code-block:: properties
-
-   # Time in minutes after which active users will be required to login again
-   # studio.security.sessionTimeout: 480
-
-|
-
-Make sure to stop and **restart Studio** after making your changes.
-
-"""""""""""""""""""""""""""""""""
-Change Session Inactivity Timeout
-"""""""""""""""""""""""""""""""""
-There are two timeouts you can configure for the session inactivity timeout as described in the above table.
-
-- ``session-timeout`` in the Tomcat ``web.xml`` file
-  This is the default Tomcat timeout for handling idle connections (inactive)
-- ``inactivityTimeout`` in the Studio override configuration file
-  This is the Studio session inactivity timeout
-
-To change the session inactivity timeout, follow the instructions below:
-
-#. In your ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``,
-   change the value for ``studio.security.inactivityTimeout`` to set the amount of time in minutes the amount of
-   time a user can be inactive before the user's session times out.
-
-   .. code-block:: properties
-
-      # Time in minutes after which inactive users will be required to login again
-      # studio.security.inactivityTimeout: 30
-
-   |
-
-#. In your ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/web.xml`` file, change the value in
-   between the ``session-timeout`` tags to desired amount of time the session will exist in minutes:
-
-   .. code-block:: xml
-
-      <session-config>
-        <session-timeout>30</session-timeout>
-        <tracking-mode>COOKIE</tracking-mode>
-	  </session-config>
-
-   |
-
-
-Remember to keep the Studio session inactivity timeout ``inactivityTimeout`` from the ``studio-config-override.yaml`` file less than the Tomcat ``session-timeout`` from the ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/web.xml`` file.
-
-Make sure to stop and **restart Studio after making your changes**.
-
-You can also change the Studio session timeouts from the |mainMenu| **Main Menu** in Studio under ``Global Config``
-
-|
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Dependency Resolver Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Crafter Studio extracts and tracks dependencies between content items to assist authors with publishing, workflow and core content operations like copy and delete. Learn more about configuring the dependency resolver in the article :ref:`dependency-resolver-config`.
 
 |hr|
 
