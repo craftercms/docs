@@ -3,6 +3,8 @@
 
 .. index:: Studio Configuration, Studio Configuration Override
 
+.. Grammar Checked 2023-10-06
+
 .. _studio-config:
 
 ====================
@@ -16,7 +18,7 @@ Crafter Studio is primarily configured via a single configuration file, ``studio
 
 The core configuration file for Crafter Studio ``studio-config.yaml`` is located under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio`` and contains pre-configured settings.
 
-.. warning:: Do not change the ``studio-config.yaml`` file directly, simply override the settings you want to change in one of the override files.
+.. warning:: Do not change the ``studio-config.yaml`` file directly; override the settings you want to change in one of the override files.
 
 The override files are:
 
