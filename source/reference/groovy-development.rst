@@ -85,7 +85,7 @@ Developers will still be able to return custom ``404`` responses from rest scrip
     response.setStatus(404)
     return 'This is the custom message'
 
-If desired, they could even conditionally send the default response page as well by using sendError instead:
+If desired, they could even conditionally send the default response page as well by using ``sendError`` instead:
 
 .. code-block:: groovy
 
