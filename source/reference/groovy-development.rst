@@ -74,6 +74,23 @@ date is set as the attribute. Assume that the REST script exists under Scripts >
 
     return ["date": date]
 
+~~~~~~~~~~~~~~~~
+Script Not Found
+~~~~~~~~~~~~~~~~
+Rest scripts will return the ``404`` page when a script is not found.
+Developers will still be able to return custom ``404`` responses from rest scripts. e.g.:
+
+.. code-block:: groovy
+
+    response.setStatus(404)
+    return 'This is the custom message'
+
+If desired, they could even conditionally send the default response page as well by using ``sendError`` instead:
+
+.. code-block:: groovy
+
+    response.sendError(404)
+
 """"""""""""""""""
 Controller Scripts
 """"""""""""""""""
