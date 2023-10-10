@@ -117,7 +117,7 @@ Here are the settings that can be configured through Crafter Studio:
       - - :ref:`Content Type Editor Configuration <content-type-editor-config>`
     * - Configurations (``config/studio/administration/config-list.xml``)
       - Configure this list of configuration files
-      - - :ref:`Configuring the Configuration List <project-config-configuration>`
+      - - :ref:`Configuring the Project Tools Configuration List <project-tools-configuration>`
     * - Dependency Resolver Configuration (``config/studio/dependency/resolver-config.xml``)
       - Configures the dependency resolver
       - - :ref:`dependency-resolver-config`
@@ -133,7 +133,7 @@ Here are the settings that can be configured through Crafter Studio:
     * - Asset Processing Configuration (``config/studio/asset-processing/asset-processing-config.xml``)
       - Configures the project's asset processing
       - - :ref:`How to configure asset processing <asset-processing>`
-        - :ref:`asset-processing-config`
+        - :ref:`asset-processing-configuration`
     * - Blob Stores (``config/studio/blob-stores-config.xml``)
       - Configures the project's blob stores
       - - :ref:`Managing assets in external storage via blob stores <blob-stores>`

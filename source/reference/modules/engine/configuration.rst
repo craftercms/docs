@@ -2121,7 +2121,7 @@ To override a configuration file in any of the publishing targets
 
      |
 
-   For more information on **Configurations** config file, see :ref:`project-config-configuration`
+   For more information on **Configurations** config file, see :ref:`project-tools-configuration`
 
 #. Fill in your desired additions/modifications to the override configuration file. Refresh your browser. The configuration file you added from above should now be available from |projectTools| -> **Configuration**. Open the new configuration file and make the necessary additions/modifications for the override file then save your changes.
 

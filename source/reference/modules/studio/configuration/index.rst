@@ -93,6 +93,16 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure the content types
     * - :ref:`Dependency Resolver Configuration <dependency-resolver-config>`
       - Configure the dependency resolver
+    * - :ref:`Project Tools Configuration <project-tools-configuration>`
+        - Configure the project tools
+    * - :ref:`Asset Processing Configuration <asset-processing-configuration>`
+        - Configure asset processing
+    * - :ref:`AWS Profiles Configuration <aws-profile-configuration>`
+        - Configure AWS integration
+    * - :ref:`Box Profiles Configuration <box-profile-configuration>`
+        - Configure Box integration
+    * - :ref:`WebDAV Profiles Configuration <webdav-profile-configuration>`
+        - Configure WebDAV integration
 
 .. TODO Add more configuration properties
 
@@ -224,42 +234,7 @@ These can be updated as needed by overriding the property in one of the override
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Project/Site Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following section of Studio's configuration overrides allows you to set up your project configuration.
-
-.. code-block:: yaml
-    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
-    :linenos:
-
-    ############################################################
-    ##                   Site Configuration                   ##
-    ############################################################
-    # Destroy site context url for preview engine
-    studio.configuration.site.preview.destroy.context.url: ${env:ENGINE_URL}/api/1/site/context/destroy.json?crafterSite={siteName}&token=${studio.configuration.management.previewAuthorizationToken}
-    # Default preview URL
-    studio.configuration.site.defaultPreviewUrl: ^https?://localhost:8080/?
-    # Default authoring URL
-    studio.configuration.site.defaultAuthoringUrl: ^https?://localhost:8080/studio/?
-    # Default GraphQL server URL
-    studio.configuration.site.defaultGraphqlServerUrl: ^https?://localhost:8080/?
-    # Studio management authorization token.
-    studio.configuration.management.authorizationToken: ${env:STUDIO_MANAGEMENT_TOKEN}
-    # Preview engine management authorization token.
-    studio.configuration.management.previewAuthorizationToken: ${env:ENGINE_MANAGEMENT_TOKEN}
-    # Protected URLs with preview engine management authorization token.
-    # Coma separated list of preview engine urls
-    studio.configuration.management.previewProtectedUrls: >-
-      /api/1/monitoring/log.json,
-      /api/1/monitoring/memory.json,
-      /api/1/monitoring/status.json,
-      /api/1/monitoring/version.json,
-      /api/1/site/context/id,
-      /api/1/site/context/destroy,
-      /api/1/site/context/rebuild,
-      /api/1/site/context/graphql/rebuild,
-      /api/1/site/cache/clear,
-      /api/1/site/cache/statistics
-
-|
+Crafter Studio allows to configure many aspects of a project/site. Learn more about project/site configuration in the article :ref:`project-configuration`.
 
 |hr|
 
@@ -722,6 +697,51 @@ The Content Type Editor Config configuration file defines what tools are availab
 Dependency Resolver Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Crafter Studio extracts and tracks dependencies between content items to assist authors with publishing, workflow, and core content operations like copy and delete. Learn more about configuring the dependency resolver in the article :ref:`dependency-resolver-config`.
+
+|hr|
+
+.. _project-tools-config:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Project Tools Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Studio's Project Tools can be configured to list/de-list configuration files. Learn more about this in the article :ref:`project-tools-configuration`.
+
+|hr|
+
+.. _asset-processing-config:
+
+==============================
+Asset Processing Configuration
+==============================
+Asset processing allows you to define transformations for static assets (currently only images), through a series of processor pipelines that are executed when the assets are uploaded to Studio. Learn more about asset processing configuration in the article :ref:`asset-processing-configuration`.
+
+|hr|
+
+.. _aws-profile-config:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+AWS Profiles Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+CrafterCMS has many integrations with AWS. Learn how to configure AWS Profiles in the article :ref:`aws-profiles-configuration`.
+
+|hr|
+
+.. _box-profile-config:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Box Profiles Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+CrafterCMS integrates with Box. Learn how to configure Box Profiles in the article :ref:`box-profiles-configuration`.
+
+|hr|
+
+.. _webdav-profiles-config:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+WebDAV Profiles Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CrafterCMS integrates with WebDAV. Learn how to configure WebDAV Profiles in the article :ref:`webdav-profiles-configuration`.
 
 |hr|
 

@@ -1,21 +1,18 @@
-:is-up-to-date: False
-:last-updated: 4.0.0
+:is-up-to-date: True
+:last-updated: 4.1.1
 
-:orphan:
-
-.. index:: Configurations
+.. index:: Project Tools Configuration
 
 .. highlight:: xml
 
-.. _project-config-configuration:
+.. _project-tools-configuration:
 
-==============
-Configurations
-==============
+===========================
+Project Tools Configuration
+===========================
+The ``Configurations`` configuration file allows you to specify which items can be accessed from the list in **Project Tools** -> **Configuration**.
 
-The Configurations configuration file allows you to specify which items can be accessed from the list in **Project Tools** -> **Configuration**.
-
-To find this configuration xml through studio follow the next instructions:
+To find this configuration XML through studio follow the next instructions:
 
 #. Click on |projectTools| located in the Sidebar.
 #. Choose **Configuration** from the menu.
@@ -31,8 +28,7 @@ To find this configuration xml through studio follow the next instructions:
 ------
 Sample
 ------
-
-Here's a sample config-list.xml file (click on the triangle on the left to expand/collapse):
+Here's a sample ``config-list.xml`` file (click on the triangle on the left to expand/collapse):
 
 .. raw:: html
 
@@ -80,7 +76,6 @@ List of available configuration tags
 -----------
 Sample File
 -----------
-
 You can click on the **View Sample** button to see a configuration file example.
 
 .. image:: /_static/images/site-admin/basic-configuration-sample.webp

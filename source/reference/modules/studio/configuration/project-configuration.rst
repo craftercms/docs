@@ -1,16 +1,13 @@
-:is-up-to-date: False
-:last-updated: 4.0.0
+:is-up-to-date: True
+:last-updated: 4.1.1
 
-:orphan:
-
-.. index:: Project Configuration
+.. index:: Project Configuration, Site Configuration
 
 .. _project-configuration:
 
-#####################
+=====================
 Project Configuration
-#####################
-
+=====================
 The project configuration file contains the primary configuration for Crafter Studio's behavior. Each project has
 its own project configuration file that controls its behavior independently of other projects.
 
@@ -24,10 +21,9 @@ and select **Project Configuration** from the list.
 
 |
 
-******
+------
 Sample
-******
-
+------
 Here's a sample Project Configuration file (click on the triangle on the left to expand/collapse):
 
 .. raw:: html
@@ -45,12 +41,10 @@ Here's a sample Project Configuration file (click on the triangle on the left to
    </details>
 
 |
-|
 
-****************
+----------------
 Enabling Staging
-****************
-
+----------------
 The ``staging`` publishing target is an intermediate publishing target where the project can be fully exercised.
 To enable the ``staging`` publishing target, set the following to ``true``:
 
@@ -64,10 +58,9 @@ To enable the ``staging`` publishing target, set the following to ``true``:
 
 See :ref:`staging-env` for more information on how to setup the ``staging`` publishing target
 
-***********************
+-----------------------
 Escaping Content Fields
-***********************
-
+-----------------------
 To add/remove escaped content fields, modify the following:
 
 .. code-block:: xml
@@ -85,10 +78,9 @@ To add/remove escaped content fields, modify the following:
 
 For more information on escaping content fields, see the notes under :ref:`Variable Names and Search Indexing <variable-names-search-indexing>`
 
-*******************
+-------------------
 Publishing Comments
-*******************
-
+-------------------
 To make comments mandatory for different publishing methods, simply set to ``true`` any applicable methods the
 site administrators want to require comments when publishing.
 
@@ -112,9 +104,9 @@ See :ref:`publishing-and-status` for more information on the different publishin
 
 .. _project-config-require-peer-review:
 
-************************************
+------------------------------------
 Requiring Peer Review for Publishing
-************************************
+------------------------------------
 .. version_tag::
    :label: Since
    :version: 4.0.0
@@ -135,11 +127,11 @@ publish permission. To enable the publisher review workflow option, set ``requir
      </publisher>
    </workflow>
 
+.. TODO: Is this the best place for content monitoring or project admin? It's now in both to some extent with project admin having the full article and this links to it.
 
-******************
+------------------
 Content Monitoring
-******************
-
+------------------
 Content monitoring allows you to configure watches and notifications on your project. To add content monitors, add the following:
 
 .. code-block:: xml
@@ -166,10 +158,9 @@ See :ref:`content-monitoring` for more information on configuring content monito
 
 .. _project-config-protected-folders:
 
-*****************
+-----------------
 Protected Folders
-*****************
-
+-----------------
 The protected folders settings allows you to configure paths that can't be deleted, renamed or moved in addition to
 the following paths that are protected by default:
 

@@ -1,5 +1,5 @@
-:is-up-to-date: False
-:last-updated: 4.0.0
+:is-up-to-date: True
+:last-updated: 4.1.1
 
 :orphan:
 
@@ -10,7 +10,6 @@
 ==========================
 AWS Profiles Configuration
 ==========================
-
 The AWS Profiles configuration file allows you to configure 0 or more AWS profiles with the information required by AWS services.
 To modify the AWS Profiles configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **AWS Profiles** from the dropdown list.
 
@@ -22,7 +21,6 @@ To modify the AWS Profiles configuration, click on |projectTools| from the botto
 ------
 Sample
 ------
-
 Here's a sample AWS Profiles Configuration file (click on the triangle on the left to expand/collapse):
 
 .. raw:: html

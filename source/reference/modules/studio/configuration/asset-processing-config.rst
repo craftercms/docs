@@ -1,16 +1,13 @@
-:is-up-to-date: False
-:last-updated: 4.0.0
-
-:orphan:
+:is-up-to-date: True
+:last-updated: 4.1.1
 
 .. index:: Asset Processing
 
-.. _asset-processing-config:
+.. _asset-processing-configuration:
 
 ==============================
 Asset Processing Configuration
 ==============================
-
 Asset processing allows you to define transformations for static assets (currently only images), through a series of processor pipelines that are executed when the assets are uploaded to Studio.
 
 To modify the Asset Processing configuration, click on |projectTools| from the bottom of the Sidebar, then click on **Configuration** and select **Asset Processing** from the dropdown list.
@@ -23,7 +20,6 @@ To modify the Asset Processing configuration, click on |projectTools| from the b
 ------
 Sample
 ------
-
 Here's a sample Asset Processing Configuration file (click on the triangle on the left to expand/collapse):
 
 .. raw:: html

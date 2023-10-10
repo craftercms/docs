@@ -1,7 +1,5 @@
-:is-up-to-date: False
-:last-updated: 4.1.2
-
-:orphan:
+:is-up-to-date: True
+:last-updated: 4.1.1
 
 .. index:: User Interface Configuration
 
@@ -134,7 +132,6 @@ and select **User Interface Configuration** from the list.
 ------
 Sample
 ------
-
 Here's a sample User Interface Configuration file (click on the triangle on the left to expand/collapse):
 
 .. raw:: html
@@ -161,7 +158,6 @@ Here's a sample User Interface Configuration file (click on the triangle on the 
 ------------------
 Widget Permissions
 ------------------
-
 Limiting who can access a widget via roles is through ``permittedRoles`` in the user interface configuration.
 Simply add the following to the widget you want available only to users with the permitted role(s)
 
@@ -224,7 +220,6 @@ Here's the sidebar when a user with role ``author`` is logged in. Notice that ``
 ----------------
 Sidebar Excludes
 ----------------
-
 To hide items (exclude) in the Sidebar such as path navigators and path navigator trees, use
 
 .. code-block:: xml
@@ -290,7 +285,6 @@ Here's the Sidebar with the folder ``2021/3`` hidden:
 -----------------------------
 Sidebar Widget Icon/Container
 -----------------------------
-
 Colors, background colors, borders (css properties) etc can be added to widgets in the Sidebar when expanding/collapsing a widget via the ``icon`` and ``container`` properties.
 
 Let's take a look at an example of putting a red border when ``Taxonomy`` is expanded and for ``Templates``, a red font color when expanded and a blue font color when collapsed
@@ -416,7 +410,6 @@ the changes you've made in action.
 ------------------
 Audience Targeting
 ------------------
-
 Audience Targeting allows an author to see what the project would look like if it were being browsed
 by a user with a given set of attributes.
 
@@ -499,7 +492,6 @@ See :ref:`targeting` for more information on configuring the targeting system of
 -----------------
 RTE Configuration
 -----------------
-
 There are two ways of editing content in Studio: (1) form-based editing and (2) In-context editing (ICE). Form-based editing is done by clicking on ``Options`` (three dots next to the preview address bar at the top of the page, or the three dots next to the page in the Sidebar), then selecting ``Edit``. In-context editing is done by enabling the ``Edit mode`` by clicking on the pencil at the top right of the page (which turns green when enabled), then clicking on the section of the page you want to edit.
 
 To configure the RTE, add/edit the widget ``craftercms.components.TinyMCE``:
@@ -559,7 +551,6 @@ To learn more about configuring the RTE, see :ref:`here <rte-configuration>`
 ---------------------------
 Project Tools Configuration
 ---------------------------
-
 The Project Config tools configuration section defines what modules are available for administration use when
 clicking on |projectTools| from the Sidebar.
 
@@ -595,7 +586,6 @@ clicking on |projectTools| from the Sidebar.
 ^^^^^^^^^^^^^^^^^^^^^^^
 List of available tools
 ^^^^^^^^^^^^^^^^^^^^^^^
-
 Here's a list of available tools defined in the Website_Editorial blueprint.
 
 ==================== =====================================================================

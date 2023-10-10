@@ -1,5 +1,5 @@
-:is-up-to-date: False
-:last-updated: 4.0.0
+:is-up-to-date: True
+:last-updated: 4.1.1
 
 :orphan:
 
@@ -10,8 +10,7 @@
 ==========================
 Box Profiles Configuration
 ==========================
-
-The Box Profiles configuration file allows you to configure 0 or more Box profiles with the information
+The Box Profiles configuration file allows you to configure Box profiles with the information
 required by Box services.
 To modify the Box Profiles configuration, click on |projectTools| from the bottom of the *Sidebar*,
 then click on **Configuration** and select **Box Profiles** from the list.
@@ -24,7 +23,6 @@ then click on **Configuration** and select **Box Profiles** from the list.
 ------
 Sample
 ------
-
 Here's a sample Box Profiles Configuration file (click on the triangle on the left to expand/collapse):
 
 .. raw:: html
@@ -47,7 +45,6 @@ Here's a sample Box Profiles Configuration file (click on the triangle on the le
 -----------------
 Box Configuration
 -----------------
-
 To obtain the clientId, clientSecret, enterpriseId, publicKeyId, privateKey and privateKeyPassword
 you need to use a Box Developer Account to create a new App and configure it to use OAuth 2.0 with
 JWT.
