@@ -63,6 +63,17 @@ APIs
 
 .. include:: /includes/content-retrieval-apis.rst
 
+.. toctree::
+    :hidden:
+
+    ../../reference/api/templating-api
+    ../../reference/api/javascript-sdk
+    ../../reference/api/graphql
+    ../../by-role/developer/common/search
+    ../../reference/api/rest-content-retrieval-api
+    ../../reference/api/groovy-api
+    ../../reference/api/java-api
+
 For non-content related APIs, such as user/group management, monitoring, indexing and more, please consult the module API directly.
 
 ^^^^^^^^
@@ -107,7 +118,6 @@ Complimentary Projects
 ----------------------
 
 .. list-table:: Complimentary Projects and Resources
-    :header-rows: 1
 
     *   - Docker Compose
         - `Docker Compose on GitHub <https://github.com/craftercms/docker-compose>`_
