@@ -94,15 +94,15 @@ In this section, we will highlight some of the more commonly used properties in 
     * - :ref:`Dependency Resolver Configuration <dependency-resolver-config>`
       - Configure the dependency resolver
     * - :ref:`Project Tools Configuration <project-tools-configuration>`
-        - Configure the project tools
+      - Configure the project tools
     * - :ref:`Asset Processing Configuration <asset-processing-configuration>`
-        - Configure asset processing
+      - Configure asset processing
     * - :ref:`AWS Profiles Configuration <aws-profile-configuration>`
-        - Configure AWS integration
+      - Configure AWS integration
     * - :ref:`Box Profiles Configuration <box-profile-configuration>`
-        - Configure Box integration
-    * - :ref:`WebDAV Profiles Configuration <webdav-profile-configuration>`
-        - Configure WebDAV integration
+      - Configure Box integration
+    * - :ref:`WebDAV Profiles Configuration <webdav-profiles-configuration>`
+      - Configure WebDAV integration
 
 .. TODO Add more configuration properties
 
@@ -191,6 +191,12 @@ Blob Stores
 ^^^^^^^^^^^
 Configure internally managed static asset stores to handle very large files using the Blob Stores configuration. To learn more, read the article :ref:`blob-stores`.
 
+.. toctree::
+    :hidden:
+
+    blob-stores
+
+
 |hr|
 
 ^^^^^^^^^^^^^^
@@ -200,6 +206,12 @@ The project policy configuration file allows the administrator to configure cond
 (via uploads), such as filename constraints, minimum/maximum size of files, permitted content types or file types (MIME-types), etc.
 
 Learn more about project policy in the article :ref:`project-policy-configuration`.
+
+.. toctree::
+    :hidden:
+
+    project-policy-configuration
+
 
 |hr|
 
@@ -236,12 +248,24 @@ Project/Site Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Crafter Studio allows to configure many aspects of a project/site. Learn more about project/site configuration in the article :ref:`project-configuration`.
 
+.. toctree::
+    :hidden:
+
+    project-configuration
+
+
 |hr|
 
 ^^^^^^^^^^^^^^^^
 UI Configuration
 ^^^^^^^^^^^^^^^^
 Crafter Studio's UI is highly configurable and allows you to customize the look and feel of the UI per project to suit your needs. Learn more about Studio UI configuration in the article :ref:`user-interface-configuration`.
+
+.. toctree::
+    :hidden:
+
+    user-interface-configuration
+
 
 |hr|
 
@@ -252,6 +276,13 @@ RTE Configuration
 ^^^^^^^^^^^^^^^^^
 RTEs are more effective/productive for authors when they are configured properly for the specific type of content the author is managing. A properly and effectively configured RTE has the right styles, menu options and so on.
 Learn more about configuring Studio's default RTE in the article :ref:`rte-configuration`.
+
+.. toctree::
+    :hidden:
+
+    rte-configuration
+
+|hr|
 
 .. _studio-preview-deployer-config:
 
@@ -516,6 +547,12 @@ publish immediately or publish on a schedule.
 
 Learn more about Crafter Studio's workflow in the article :ref:`notifications-configuration`.
 
+.. toctree::
+    :hidden:
+
+    notification-configuration
+
+
 |hr|
 
 .. _studio-validations-regex:
@@ -689,6 +726,12 @@ Content Type Editor Config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Content Type Editor Config configuration file defines what tools are available in the Content Type Editor. Learn more about Content Type Editor configuration in the article :ref:`content-type-editor-config`.
 
+.. toctree::
+    :hidden:
+
+    content-type-editor-config
+
+
 |hr|
 
 .. _dependency-resolver-configuration:
@@ -697,6 +740,12 @@ The Content Type Editor Config configuration file defines what tools are availab
 Dependency Resolver Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Crafter Studio extracts and tracks dependencies between content items to assist authors with publishing, workflow, and core content operations like copy and delete. Learn more about configuring the dependency resolver in the article :ref:`dependency-resolver-config`.
+
+.. toctree::
+    :hidden:
+
+    dependency-resolver
+
 
 |hr|
 
@@ -707,14 +756,26 @@ Project Tools Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Studio's Project Tools can be configured to list/de-list configuration files. Learn more about this in the article :ref:`project-tools-configuration`.
 
+.. toctree::
+    :hidden:
+
+    configurations
+
+
 |hr|
 
 .. _asset-processing-config:
 
-==============================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Asset Processing Configuration
-==============================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Asset processing allows you to define transformations for static assets (currently only images), through a series of processor pipelines that are executed when the assets are uploaded to Studio. Learn more about asset processing configuration in the article :ref:`asset-processing-configuration`.
+
+.. toctree::
+    :hidden:
+
+    asset-processing-config
+
 
 |hr|
 
@@ -723,7 +784,13 @@ Asset processing allows you to define transformations for static assets (current
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 AWS Profiles Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-CrafterCMS has many integrations with AWS. Learn how to configure AWS Profiles in the article :ref:`aws-profiles-configuration`.
+CrafterCMS has many integrations with AWS. Learn how to configure AWS Profiles in the article :ref:`aws-profile-configuration`.
+
+.. toctree::
+    :hidden:
+
+    aws-profiles-configuration
+
 
 |hr|
 
@@ -732,7 +799,13 @@ CrafterCMS has many integrations with AWS. Learn how to configure AWS Profiles i
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Box Profiles Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-CrafterCMS integrates with Box. Learn how to configure Box Profiles in the article :ref:`box-profiles-configuration`.
+CrafterCMS integrates with Box. Learn how to configure Box Profiles in the article :ref:`box-profile-configuration`.
+
+.. toctree::
+    :hidden:
+
+    box-profiles-configuration
+
 
 |hr|
 
@@ -742,6 +815,11 @@ CrafterCMS integrates with Box. Learn how to configure Box Profiles in the artic
 WebDAV Profiles Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 CrafterCMS integrates with WebDAV. Learn how to configure WebDAV Profiles in the article :ref:`webdav-profiles-configuration`.
+
+.. toctree::
+    :hidden:
+
+    webdav-profiles-configuration
 
 |hr|
 
@@ -906,6 +984,8 @@ Here's the default global role mappings configuration (click on the triangle on 
 .. raw:: html
 
    </details>
+
+|
 
 """""""""""""""""""
 Default Global Role
