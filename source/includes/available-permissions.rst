@@ -16,6 +16,7 @@ content_delete             User is permitted to delete content
 content_read               User is permitted to read content
 content_search             User is permitted to search for content
 content_write              User is permitted to edit content
+duplicate_site             User is permitted to duplicate a project
 folder_create              User is permitted to create new folder
 create_cluster             User is permitted to create cluster
 create_groups              User is permitted to create new groups
