@@ -1,28 +1,22 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
-:orphan:
 
 .. highlight:: groovy
    :linenothreshold: 5
 
 .. index:: Groovy, Groovy API, Custom Services, Services, Controllers, Unit Testing
 
-.. _groovy-development:
+.. _groovy-api:
 
-==================
-Groovy Development
-==================
+==========
+Groovy API
+==========
 .. contents::
     :local:
     :depth: 2
 
 CrafterCMS supports server-side development with Groovy. By using Groovy, you can create RESTful services, MVC controllers, code that runs before a page or component is rendered, servlet filters, scheduled jobs, and entire backend applications.
 
-.. _groovy-api:
-
-----------
-Groovy API
-----------
 CrafterCMS provides a number of useful global variables that can be used in all the different types of scripts available:
 
 .. include:: /includes/global-groovy-variables.rst
@@ -37,17 +31,15 @@ All scripts are executed in a sandbox to prevent insecure code from running, to 
 
 To create unit tests for your groovy code, see :ref:`unit-testing-groovy-code`
 
-^^^^^^^^^^^^^^^^
+----------------
 Types of Scripts
-^^^^^^^^^^^^^^^^
-
+----------------
 There are different types of scripts you can create, depending on the subfolder under Scripts where they're placed. The following are
 the ones currently supported:
 
-""""""""""""
+^^^^^^^^^^^^
 REST Scripts
-""""""""""""
-
+^^^^^^^^^^^^
 REST scripts function just like RESTful services. They just need to return the object to serialize
 back to the caller. REST scripts must be placed in any folder under Scripts > rest.
 
@@ -74,9 +66,9 @@ date is set as the attribute. Assume that the REST script exists under Scripts >
 
     return ["date": date]
 
-~~~~~~~~~~~~~~~~
+""""""""""""""""
 Script Not Found
-~~~~~~~~~~~~~~~~
+""""""""""""""""
 Rest scripts will return the ``404`` page when a script is not found.
 Developers will still be able to return custom ``404`` responses from rest scripts. e.g.:
 
@@ -91,11 +83,12 @@ If desired, they could even conditionally send the default response page as well
 
     response.sendError(404)
 
-""""""""""""""""""
+^^^^^^^^^^^^^^^^^^
 Controller Scripts
-""""""""""""""""""
+^^^^^^^^^^^^^^^^^^
 Controller scripts are very similar to REST scripts. They have the same variables available, but instead of returning an object,
 they return a string with the view to render. Most of the time, this is just the template path, like in the following snippet:
+
 ::
 
     return "/templates/web/registration.ftl"
@@ -106,6 +99,7 @@ a script at Scripts > controllers > myfolder > mycontroller.get.groovy will resp
 
 The following is a very simple example script that will do the sum of 2 parameters, put the result in the ``templateModel`` and return
 the path of the FTL template that will render the result:
+
 ::
 
     templateModel.result = Integer.parseInt(params.num1) + Integer.parseInt(params.num2)
@@ -148,6 +142,7 @@ a website. A sitemap is an XML with references to most of the site's pages, and 
 
 Search engines look for the sitemap just after the domain, so a sitemap URL would look like www.domain.com/sitemap. The sitemap
 controller then must be placed in Scripts > controllers > sitemap.groovy. The code would be similar to this:
+
 ::
 
     import groovy.xml.MarkupBuilder

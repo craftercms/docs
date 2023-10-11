@@ -21,7 +21,10 @@ Modules
 -------
 CrafterCMS comprises a set of modules that work together.
 
-.. TODO: Insert an image detailing the modules and how data flows
+.. image:: /_static/images/architecture/modules-overview.webp
+    :width: 75%
+    :alt: CrafterCMS Decoupled Overview
+    :align: center
 
 The modules are
 
@@ -113,7 +116,7 @@ Complimentary Projects
     *   - Kubernetes
         - `Kubernetes Deployments on GitHub <https://github.com/craftercms/kubernetes-deployments>`_
     *   - DevContentOps Toolkit (Crafter CLI)
-        - :ref:`DevContentOps Toolkit (CrafterCMS CLI) <devcontentops-toolkit>`
+        - :ref:`DevContentOps Toolkit (CrafterCMS CLI) <crafter-cli>`
     *   - Extensions: Plugins
         - `CrafterCMS Sponsored Plugins on GitHub <https://github.com/orgs/craftercms/repositories?q=plugin&type=all&language=&sort=>`_
     *   - Extensions: Blueprints

@@ -1,10 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.0
-
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
 .. index:: Project Tools Git
 
@@ -13,7 +8,6 @@
 ===
 Git
 ===
-
 The **Git** under |projectTools| allows the user to perform Git operations such as viewing remote repositories linked to the project and options to pull and push to the listed remote repositories. It also allows the user to add a remote repository to the project.
 
 Below, we have a site **mysweetdotcom** with a link to a remote repository in GitHub:
@@ -47,7 +41,6 @@ To add a remote repository for your site, click on the **New Remote** button. A 
 --------------------
 Pull from Repository
 --------------------
-
 To get updates from the remote repositories, click on the down arrow next to the remote repository you would like to pull changes from
 
 .. image:: /_static/images/site-admin/project-tools-pull-from-remote.webp
@@ -186,7 +179,6 @@ When committing your changes, you will then be asked to supply a message for the
 ------------------
 Push to Repository
 ------------------
-
 To push your changes in Studio to a remote repository, click on the up arrow next to the remote repository you would like to push changes to
 
 .. image:: /_static/images/site-admin/project-tools-push-to-remote.webp

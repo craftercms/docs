@@ -1,18 +1,16 @@
-:is-up-to-date: False
-:last-updated: 4.0.0
-:orphan:
+:is-up-to-date: True
+:last-updated: 4.1.1
 
-.. index:: DevContentOps Toolkit, CrafterCMS Command Line Interface, crafter-cli
+.. index:: Crafter CLI, CLI
 
-.. _devcontentops-toolkit:
+.. _crafter-cli:
 
-===================================
-DevContentOps Toolkit (Crafter CLI)
-===================================
+===========
+Crafter CLI
+===========
+CrafterCMS provides Crafter CLI (Command Line Interface), a DevContentOps Toolkit, to support :ref:`DevContentOps <devcontentops>` processes in CrafterCMS. The CLI allows you to authenticate with CrafterCMS and exercise its APIs via a Unix, Mac, or Windows command line interface.
 
-CrafterCMS provides a DevContentOps Toolkit to support :ref:`DevContentOps <devcontentops>` processes in CrafterCMS. The DevContentOps Toolkit contains the CrafterCMS Command Line Interface (CLI), that allows you to authenticate with CrafterCMS and exercise its APIs via a Unix or Windows command line interface.
-
-To run the command line tool (CrafterCMS Command line Interface (CLI) for DevContentOps processes), in your terminal program, navigate to the ``bin`` folder  ``CRAFTER_HOME/bin/cli/bin/``. There you will find two versions of the tool:
+Run the CLI in your terminal program, navigate to the ``bin`` folder  ``CRAFTER_HOME/bin/cli/bin/``. There you will find two versions of the tool:
 
 * **crafter-cli:** - for users on a Linux/macOS operating system
 * **crafter-cli.bat** - for users on a Windows operating system
@@ -102,7 +100,4 @@ To view more information about each command, just enter ``./crafter-cli <command
 
    |
 
-Crafter CrafterCMS Command line Interface (CLI) for DevContentOps processes source code is managed in GitHub: https://github.com/craftercms/cli
-
-
-
+Crafter CLI for DevContentOps processes source code is managed in GitHub: https://github.com/craftercms/cli

@@ -752,10 +752,4 @@ Plugins are extensions that can be installed into a project to add functionality
 -------------
 Project Tools
 -------------
-|projectTools| contains project administration tools such as Configurations, Plugin Management, Encryption Tool, etc.
-The following contains more information on administration tools
-
-.. toctree::
-   :maxdepth: 3
-
-   /reference/project-tools/index
+|projectTools| contains project administration tools such as Configurations, Plugin Management, Encryption Tool, etc. Learn more about project tools in the article :ref:`project-tools`.

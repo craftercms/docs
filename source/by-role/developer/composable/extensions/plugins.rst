@@ -837,7 +837,7 @@ At the low level, Crafter Studio APIs provide an endpoint that gets a file for a
 :base_url:`getPluginFile <_static/api/studio.html#tag/plugin/operation/getPluginFile>`). This API takes care of setting all the right headers
 for whatever kind of asset you're retrieving (JavaScript, CSS, image, etc). There are also higher level
 mechanisms for developers to load and use plugins like the :ref:`Plugin host <plugin-host>`
-or through the :ref:`Crafter CLI <devcontentops-toolkit>`.
+or through the :ref:`Crafter CLI <crafter-cli>`.
 
 If you need to *manually* load assets from your plugin (e.g. set the ``src`` of a ``<script />``,
 set the ``href`` of a ``<link />``, set the ``src`` of an ``<img />``, etc.), you should use the following URL

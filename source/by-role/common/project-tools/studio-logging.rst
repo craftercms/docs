@@ -1,15 +1,13 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.3
 
-
-.. index::  Studio Logging, Viewing Logs Through Crafter Studio
+.. index::  Studio Logging, Logging
 
 .. _studio-logging:
 
 ===================================
 Viewing Logs Through Crafter Studio
 ===================================
-
 Various log files are created when running CrafterCMS. This section details the logs available for viewing through Crafter Studio.
 
 ----------

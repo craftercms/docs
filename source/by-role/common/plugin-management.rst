@@ -1,10 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.3
-
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
 .. index:: Plugin Management
 
@@ -13,7 +8,6 @@
 =================
 Plugin Management
 =================
-
 Project plugins extend Crafter Studio (authoring) and Crafter Engine and the site/web application (delivery). It adds new features/functionality without adding code to CrafterCMS.
 
 This section details how to manage plugins from the |projectTools| Plugin Management module.
@@ -21,7 +15,6 @@ This section details how to manage plugins from the |projectTools| Plugin Manage
 ----------
 Installing
 ----------
-
 Once a project plugin is published to the Crafter Marketplace it can be installed using the Crafter Studio user interface
 or the REST API:
 
@@ -40,7 +33,6 @@ As mentioned above, there are two ways to install plugins from the Crafter Marke
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Install a plugin using the Studio ``Plugin Management`` Project Tool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 #. Login to Crafter Studio
 #. Open the left sidebar by clicking on the Crafter logo with the hamburger icon next to it at the top left of your screen
 
@@ -123,7 +115,6 @@ For more information on the API, see :base_url:`installPlugin <_static/api/studi
 --------------------------
 Managing Installed Plugins
 --------------------------
-
 ^^^^^^^^^^^^^^^^^^^^^^
 View Installed Plugins
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -139,7 +130,6 @@ To view the installed plugins in your project, click on the ``Navigation Menu`` 
 ^^^^^^^^^^^^^^^^^
 Uninstall Plugins
 ^^^^^^^^^^^^^^^^^
-
 To uninstall plugins in your project, open the ``Plugin Management`` dialog. Click on the trash can icon next to the plugin you want to uninstall. A dialog will open to confirm the plugin to be uninstalled and a list of where the plugin is being used if applicable
 
 .. figure:: /_static/images/developer/plugins/project-plugins/plugin-uninstall-no-deps.webp
