@@ -66,6 +66,11 @@ Clustering
 ----------
 Learn about clustering Crafter Studio in the :ref:`Crafter Studio Clustering Guide <studio-clustering>`.
 
+.. toctree::
+   :hidden:
+
+   /by-role/system-admin/performance-and-scaling/clustering
+
 |hr|
 
 --------

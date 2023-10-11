@@ -43,7 +43,7 @@ The configuration files for the Navigation Menu is located in ``CRAFTER_HOME/dat
 * :ref:`global-permission-mappings-config.xml <global-permission-mappings-config>` lets you configure the permissions to a role globally for the entire application
 * :ref:`global-role-mappings-config.xml <global-role-mappings-config>` lets you configure the mapping between the group and the role
 
-The tools available in the Navigation Menu is configured similar to how the Project Tools Sidebar is configured :ref:`here <project-tools-configuration>` using the :ref:`global menu config <global-menu-config>` configuration file mentioned above.
+The tools available in the Navigation Menu is configured similar to how the Project Tools Sidebar is configured :ref:`here <project-tools-ui-configuration>` using the :ref:`global menu config <global-menu-config>` configuration file mentioned above.
 
 .. _main-menu-tool-projects:
 

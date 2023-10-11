@@ -546,7 +546,7 @@ To learn more about configuring the RTE, see :ref:`here <rte-configuration>`
 
 |hr|
 
-.. _project-tools-configuration:
+.. _project-tools-ui-configuration:
 
 ---------------------------
 Project Tools Configuration
