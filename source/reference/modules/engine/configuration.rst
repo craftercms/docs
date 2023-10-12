@@ -1262,7 +1262,7 @@ Let's begin:
 
    * Create a project using the video center blueprint from the Public Marketplace.
 
-     From the **Main Menu**, click on **Project**, then click on the **Create Project** button. This will open the **Create Site** dialog. Look for **Video Center**, then click on the **Use** button, fill in the required information then click on the **Review** button, then finally the **Create Site** button. This **Video Center** blueprint we selected from the Marketplace is the same react application
+     From the **Main Menu**, click on **Project**, then click on the **Create Project** button. This will open the **Create Project** dialog. Look for **Video Center**, then click on the **Use** button, fill in the required information then click on the **Review** button, then finally the **Create Project** button. This **Video Center** blueprint we selected from the Marketplace is the same react application
 
      .. image:: /_static/images/site-admin/vcbp-marketplace.webp
         :alt: Select Video Center blueprint from the Public Marketplace
