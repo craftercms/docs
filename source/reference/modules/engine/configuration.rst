@@ -2250,11 +2250,11 @@ Let's take a look at an example of overriding the Project Configuration used by 
 
 .. TODO Review and clean up below
 
-.. _access-to-services:
+.. _configure-custom-services:
 
----------------------------
-Configuring Custom Services
----------------------------
+-------------------------
+Configure Custom Services
+-------------------------
 When developing templates or scripts only a small list of services are available to use. You can expose other
 services with the following steps.
 

@@ -8,15 +8,18 @@
 
 .. _groovy-api:
 
-==========
-Groovy API
-==========
+==================
+Groovy Development
+==================
 .. contents::
     :local:
     :depth: 2
 
 CrafterCMS supports server-side development with Groovy. By using Groovy, you can create RESTful services, MVC controllers, code that runs before a page or component is rendered, servlet filters, scheduled jobs, and entire backend applications.
 
+----------
+Groovy API
+----------
 CrafterCMS provides a number of useful global variables that can be used in all the different types of scripts available:
 
 .. include:: /includes/global-groovy-variables.rst
@@ -427,4 +430,4 @@ Let's take a look at the result of our unit test which can be found here: *CRAFT
 --------
 See Also
 --------
-- :ref:`access-to-services`
+- :ref:`configure-custom-services`

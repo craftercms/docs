@@ -48,6 +48,8 @@ Regardless of type of project, a developer needs to be familiar with the followi
       - Provides you information on how to access static contents such as images, CSS files, etc.
     * - :ref:`experience-builder`
       - Provides information on the UI layer on top of your applications that enables authors with in-context editing (ICE)
+    * - :ref:`Server-side Development with Groovy <groovy-api>`
+      - Provides you information on how to use Groovy to develop server-side services and applications
     * - :ref:`project-security`
       - Provides you information on security features that can be used to secure your project/site
     * - :ref:`content-search`
