@@ -1,8 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.1.2
 
-.. index:: Modules; Crafter Profile, Profile
-
 .. _crafter-profile:
 
 ===============

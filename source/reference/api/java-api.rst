@@ -1,7 +1,7 @@
 :is-up-to-date: False
 :last-updated: 4.1.0
 
-.. index:: Java API, Groovy API
+.. index:: Java API
 
 .. _java-api:
 

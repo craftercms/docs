@@ -1,5 +1,5 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-profile-api-profile-by_username:
 

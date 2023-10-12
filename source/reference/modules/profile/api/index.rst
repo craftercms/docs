@@ -1,14 +1,11 @@
-:is-up-to-date: False
-
-
-.. index:: API; Crafter Profile
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-profile-api:
 
 ===================
 Crafter Profile API
 ===================
-
 The context for this API is ``/crafter-profile/``, please prefix the API URLs with this context.
 
 .. NOTE::
@@ -19,7 +16,6 @@ The context for this API is ``/crafter-profile/``, please prefix the API URLs wi
 -----------------------
 Access Token Management
 -----------------------
-
 .. toctree::
   :maxdepth: 1
   :titlesonly:
@@ -32,7 +28,6 @@ Access Token Management
 -----------------
 Tenant Management
 -----------------
-
 .. toctree::
   :maxdepth: 1
   :titlesonly:
@@ -53,7 +48,6 @@ Tenant Management
 ------------------
 Profile Management
 ------------------
-
 .. toctree::
   :maxdepth: 1
   :titlesonly:
@@ -93,7 +87,6 @@ Profile Management
 --------------
 Authentication
 --------------
-
 .. toctree::
   :maxdepth: 1
   :titlesonly:
@@ -110,7 +103,6 @@ Authentication
 ----------
 Monitoring
 ----------
-
 .. toctree::
   :maxdepth: 1
 
