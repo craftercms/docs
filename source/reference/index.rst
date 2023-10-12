@@ -14,8 +14,6 @@ This section is a reference to the modules, APIs, complementary projects, and ot
     :local:
     :depth: 1
 
-.. TODO List out the reference material here
-
 -------
 Modules
 -------

@@ -1,29 +1,22 @@
-:is-up-to-date: False
-
-
-.. Section outline
-   9.1 Source Code
-   9.2 Acknowledgements
+:is-up-to-date: True
+:last-updated: 4.1.1
 
 .. _contribute:
 
 ==========
 Contribute
 ==========
-
 CrafterCMS welcomes your contributions! All of our code is open source and is hosted on GitHub at https://github.com/craftercms.
 CrafterCMS is written in Java and React.
 
 ----------
 Extensions
 ----------
-
-The best way to contribute to CrafterCMS is to create new extensions (plugins and blueprints) as explained in the :ref:`extensions`  section, and get those listed on our `marketplace<https://craftercms.com/marketplace>`.
+The best way to contribute to CrafterCMS is to create new extensions (plugins and blueprints) as explained in the :ref:`extensions`  section, and get those listed on our `marketplace <https://craftercms.com/marketplace>`_.
 
 -------------
 Documentation
 -------------
-
 Documentation help is greatly appreciated.
 We use Sphinx-doc to build our documentation using the following high-level template:
 
@@ -37,15 +30,13 @@ We use Sphinx-doc to build our documentation using the following high-level temp
 -----------
 Source Code
 -----------
-
-To contribute code, start by reading our `contribution policy<https://github.com/craftercms/craftercms/blob/master/CONTRIBUTING.md>`. Links to the source code for each project can be found here:
+To contribute code, start by reading our `contribution policy <https://github.com/craftercms/craftercms/blob/develop/CONTRIBUTING.md>`_. Links to the source code for each project can be found here:
 
 https://github.com/craftercms
 
 ----------------
 Acknowledgements
 ----------------
-
 CrafterCMS is made possible by the following open source software:
 
 .. toctree::

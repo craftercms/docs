@@ -1,13 +1,13 @@
 :is-up-to-date: True
 :last-updated: 4.1.2
 
-.. index:: Documentation Standard
+.. index:: Documentation Standards
 
-.. _documentation-standard:
+.. _documentation-standards:
 
-======================
-Documentation Standard
-======================
+=======================
+Documentation Standards
+=======================
 .. contents::
     :local:
 
@@ -41,7 +41,6 @@ Style
 ^^^^^
 Links
 ^^^^^
-
 External URL with Tag: `URL <http://example.com>`_
 
 .. code-block:: rst
@@ -63,7 +62,6 @@ Sphinx-doc reference: :ref:`content-view-templates`
 ^^^^^^^
 Anchors
 ^^^^^^^
-
 .. code-block:: rst
 
    .. _documentation-templates:
@@ -71,7 +69,6 @@ Anchors
 """""""""""""""""""""""""""""""""""""""""""""""""""
 Titles, Sections, sub-sections, and sub-subsections
 """""""""""""""""""""""""""""""""""""""""""""""""""
-
 ``=`` with overline, for parts
 
 ``-`` with overline, for chapters
@@ -132,7 +129,6 @@ Images and Figures
 ~~~~~
 Image
 ~~~~~
-
 We recommend uploaded images be no wider than 1280px.
 
 .. code-block:: rst
@@ -145,7 +141,6 @@ We recommend uploaded images be no wider than 1280px.
 ~~~~~~
 Figure
 ~~~~~~
-
 .. code-block:: rst
 
 	.. figure:: /_static/images/create-content-type-3.webp
