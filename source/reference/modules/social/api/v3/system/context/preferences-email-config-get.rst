@@ -1,12 +1,11 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-social-api-context-preferences-email-config-get:
 
 =======================
 Get Email Configuration
 =======================
-
 Returns an email configuration for a given Social Context.
 
 --------------------

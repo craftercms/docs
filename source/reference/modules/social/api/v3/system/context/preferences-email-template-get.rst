@@ -1,18 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-social-api-context-preferences-email-template-get:
 
 ==================
 Get Email Template
 ==================
-
 Returns an email template for a given Social Context.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
@@ -26,7 +24,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +---------------------+-------------+---------------+--------------------------------------------+
 || Name               || Type       || Required     || Description                               |
 +=====================+=============+===============+============================================+
@@ -47,11 +44,9 @@ Parameters
 -------
 Example
 -------
-
 ^^^^^^^
 Request
 ^^^^^^^
-
 .. code-block:: none
 
   GET .../api/3/system/context/preferences/email?type=WEEKLY&context=f5b143c2-f1c0-4a10-b56e-f485f00d3fe9
@@ -59,7 +54,6 @@ Request
 ^^^^^^^^
 Response
 ^^^^^^^^
-
 ``Status 200 OK``
 
 .. code-block:: json
@@ -72,7 +66,6 @@ Response
 ---------
 Responses
 ---------
-
 +---------+--------------------------------+-----------------------------------------------------+
 || Status || Location                      || Response Body                                      |
 +=========+================================+=====================================================+

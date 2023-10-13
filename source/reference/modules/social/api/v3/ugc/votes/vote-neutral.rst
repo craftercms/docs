@@ -1,18 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-social-api-ugc-votes-neutral:
 
 ============
 Remove Votes
 ============
-
 Clears both up and down votes in the given comment for the currently logged user.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
@@ -26,7 +24,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +-------------+----------+---------------+--------------------------------------------+
 || Name       || Type    || Required     || Description                               |
 +=============+==========+===============+============================================+
@@ -38,11 +35,9 @@ Parameters
 -------
 Example
 -------
-
 ^^^^^^^
 Request
 ^^^^^^^
-
 .. code-block:: none
 
   PUT .../api/3/comments/59678d3f300426156e21df50/votes/neutral
@@ -54,7 +49,6 @@ Request
 ^^^^^^^^
 Response
 ^^^^^^^^
-
 ``Status 200 OK``
 
 .. code-block:: json
@@ -82,7 +76,6 @@ Response
 ---------
 Responses
 ---------
-
 +---------+--------------------------------+-----------------------------------------------------+
 || Status || Location                      || Response Body                                      |
 +=========+================================+=====================================================+

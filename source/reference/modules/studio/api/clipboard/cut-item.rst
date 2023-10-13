@@ -1,13 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-clipboard-cut-item:
 
-========
-Cut Item
-========
+=====================
+Cut Item (deprecated)
+=====================
 
 Cut item to clipboard.
+
+.. important::
+    This API is deprecated and provided only as a reference.
 
 --------------------
 Resource Information
