@@ -2,8 +2,6 @@
 :last-updated: 4.1.2
 :orphan:
 
-.. index:: Modules; Crafter Studio
-
 .. _crafter-studio:
 
 ==============

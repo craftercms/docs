@@ -126,8 +126,8 @@ Let's begin:
    **JWT Authentication**
 
    .. version_tag::
-:label: Since
-:version: 4.0.0
+    :label: Since
+    :version: 4.0.0
 
    JWT is a widely adopted standard for secure authentication and is the preferred way.
    HTTP Basic is simple but not as secure as JWT and for that reason it is disabled by default. However, it can be very
