@@ -1,12 +1,11 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-aws-mediaconvert:
 
 =========================
 MediaConvert (deprecated)
 =========================
-
 Transcode and/or compress media files using AWS Elemental MediaConvert.
 
 .. NOTE::

@@ -1,18 +1,19 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-activity-post-activity:
 
-=============
-Post Activity
-=============
-
+==========================
+Post Activity (deprecated)
+==========================
 Post activity for a site (manually add activity).
+
+.. important::
+    This API is deprecated and provided only as a reference.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
@@ -28,7 +29,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +-------------------+-------------+---------------+----------------------------------------------+
 || Name             || Type       || Required     || Description                                 |
 +===================+=============+===============+==============================================+
@@ -49,7 +49,6 @@ Example
 ^^^^^^^
 Request
 ^^^^^^^
-
 .. code-block:: none
 
     POST .../api/1/services/api/1/activity/post-activity.json?site_id=mysite&user=jane.doe&path=/site/website/index.xml&activity=UPDATE&contentTypeClass=pages``
@@ -57,7 +56,6 @@ Request
 ^^^^^^^^
 Response
 ^^^^^^^^
-
 ``Status 200 OK``
 
 .. code-block:: none
@@ -68,7 +66,6 @@ Response
 ---------
 Responses
 ---------
-
 +---------+-------------------------------------------+---------------------------------------------------+
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+

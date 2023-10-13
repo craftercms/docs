@@ -1,13 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-clipboard-get-items:
 
-=========
-Get Items
-=========
+======================
+Get Items (deprecated)
+======================
 
 Get items from clipboard.
+
+.. important::
+    This API is deprecated and provided only as a reference.
 
 --------------------
 Resource Information

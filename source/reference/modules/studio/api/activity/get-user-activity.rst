@@ -1,13 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-activity-get-user-activities:
 
-=================
-Get User Activity
-=================
+==============================
+Get User Activity (deprecated)
+==============================
 
 Get user activity for a site (My recent activity dashboard).
+
+.. important::
+    This API is deprecated and provided only as a reference. Please see :base_url:`getDashboardActivities <_static/api/studio.html#tag/dashboard/operation/getDashboardActivities>` for the current version.
 
 --------------------
 Resource Information
