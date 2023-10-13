@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.3
 
 :orphan:
@@ -10,7 +10,6 @@
 ==================================
 Anatomy of a CrafterCMS Repository
 ==================================
-
 .. TODO introduce the main concepts, show the structure, show extension points, show example
 
 Repository Structure::

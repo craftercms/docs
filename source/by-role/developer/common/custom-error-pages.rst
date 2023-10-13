@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.0
 
 .. _custom-error-pages:
@@ -6,7 +6,6 @@
 ==================
 Custom Error Pages
 ==================
-
 .. TODO: Elaborate this article with more detail, and explain additional error pages like 403, etc. and explain default behavior and templates.
 
 When Crafter Engine detects an error trying to fulfill a request it will also look for a custom
@@ -32,9 +31,9 @@ the rest of the site.
 Once the file is saved it will be used automatically in preview, for a delivery node you need to publish
 the new file so that it takes effect in the live site.
 
+-------
 Example
-^^^^^^^
-
+-------
 Adding a Custom Error Page for the ``404 Not Found`` code:
 
 .. figure:: /_static/images/error-page-default.webp

@@ -5,9 +5,9 @@
 
 .. _scheduled-jobs:
 
-""""""""""""""
+==============
 Scheduled Jobs
-""""""""""""""
+==============
 Scripts can also be scheduled as jobs in Crafter Engine. These scripts only have the common global variables and the logger variable.
 They don't need to return any result. Engine allows 3 different ways to configure script jobs:
 

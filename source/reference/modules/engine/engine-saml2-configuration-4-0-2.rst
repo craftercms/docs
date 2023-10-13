@@ -3,8 +3,6 @@
 
 :orphan:
 
-.. index:: Engine SAML2 Configuration CrafterCMS version 4.0.2 and earlier
-
 .. _engine-saml2-configuration-up-to-4-0-2:
 
 =============================================================================

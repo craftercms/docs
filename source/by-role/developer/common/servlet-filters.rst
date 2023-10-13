@@ -8,7 +8,6 @@
 ===============
 Servlet Filters
 ===============
-
 In this section, we’ll learn the specific mechanics of creating and configuring a filter in CrafterCMS.
 
 A filter in CrafterCMS is a Groovy-based controller that allows you to intercept inbound requests for content and API responses and dynamically apply rules, modify the request or transform the response. A CrafterCMS Filter has the same interface and mechanics as a Java J2EE Servlet Filter.
@@ -33,7 +32,6 @@ The key here is that you can put code before and after **doFilter**. That code c
 -------------------------------------
 Step 2: Install the Filter in the CMS
 -------------------------------------
-
 Open the **Sidebar** and navigate to a folder called **scripts**
 
 .. image:: /_static/images/developer/working-with-filters/sidebar-scripts-folder.webp
@@ -74,7 +72,6 @@ At this point, you should see your filter in the Sidebar and we’re ready to co
 ---------------------------------------
 Step 3: Configure the Filter to Execute
 ---------------------------------------
-
 Now we need to tell the filter which resources to execute for by configuring the order of execution, the URL resource patterns it should execute on and the request method types that it should apply to. To do this we modify the Crafter Engine /Config/site.xml.
 
 From the **Sidebar**, click on |projectTools|. Click on **Configuration**. Select **Engine Project Configuration** from the dropdown.
@@ -107,7 +104,6 @@ Once the Engine config is updated we have to tell Crafter Engine to reload it. T
 ------------
 Step 4: Test
 ------------
-
 Since our simple example prints messages into the log, you will need to “watch” your log files. The log is located at ``INSTALL_DIRECTORY/logs/tomcat/catalina.out``.
 
 In the console, watch the logs by printing it out as it is appended:
@@ -120,5 +116,5 @@ Then, you should see your log entries in the log file every time you view a page
 
     .. code-block:: xml
 
-       [INFO] 2019-06-19T11:26:57,991 [http-nio-8080-exec-7] [examplecom] [impl.GroovyScript] [/scripts/filters/MyFilter.groovy] | Handling the request
-       [INFO] 2019-06-19T11:26:58,012 [http-nio-8080-exec-7] [examplecom] [impl.GroovyScript] [/scripts/filters/MyFilter.groovy] | Control returned to filter/controller
+       [INFO] 2023-06-19T11:26:57,991 [http-nio-8080-exec-7] [examplecom] [impl.GroovyScript] [/scripts/filters/MyFilter.groovy] | Handling the request
+       [INFO] 2023-06-19T11:26:58,012 [http-nio-8080-exec-7] [examplecom] [impl.GroovyScript] [/scripts/filters/MyFilter.groovy] | Control returned to filter/controller

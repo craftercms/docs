@@ -53,7 +53,6 @@ built CSS file to git:
 -------
 Example
 -------
-
 Let's take a look at an example of a project that uses Sass. We will be using a project created using the **Wordify
 Blueprint** named **myproject** from the Marketplace. For this example, we'll change the color of the social links
 on the top bar from white to yellow.

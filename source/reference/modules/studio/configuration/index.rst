@@ -1,8 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.1.2
 
-.. index:: Studio Configuration, Studio Configuration Override
-
 .. Grammar Checked 2023-10-06
 
 .. _studio-config:

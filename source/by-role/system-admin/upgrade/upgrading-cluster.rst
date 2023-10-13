@@ -8,7 +8,6 @@
 =========================================
 Upgrading Studio Cluster |enterpriseOnly|
 =========================================
-
 This section details how to upgrade your Studio cluster.
 Please read through the upgrade instructions :ref:`here <upgrading-craftercms-on-a-server>` first as
 some of the steps are the same for upgrading your cluster.

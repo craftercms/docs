@@ -1,8 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
 
-.. index:: Blob Stores, Internally Managed Large Files
-
 .. _blob-stores:
 
 ===========

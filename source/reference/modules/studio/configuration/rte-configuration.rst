@@ -1,8 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
 
-.. index:: Rich Text Editor (RTE) Configuration;
-
 .. _rte-configuration:
 
 ==============================

@@ -1,13 +1,11 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.3
-
 
 .. _staging-env:
 
 ========================================
 Configuring Publishing to Staging Target
 ========================================
-
 CrafterCMS supports an intermediate publishing target, named ``staging``, where the project can be fully exercised with regards to system and integration points. This staging publishing target allows testing of your project. Once validated in staging, items can be pushed live. This ``staging`` publishing target precedes ``live``.
 
 When staging is setup, the **Request Publish** and **Approve for Publish** dialogs gives the user the option to select to which publishing target to publish to:
@@ -32,7 +30,6 @@ Notice the pages published to staging and live with the same time in the above i
 ------------------------------
 Setting Up Staging per Project
 ------------------------------
-
 Staging is setup per project and by default is not enabled. To enable staging for your project, click on |projectTools| from the **Sidebar**, then click on **Configuration** and select **Project Configuration** from the list.
 
 Under the **<published-repository>** tags, set **<enable-staging-environment>** to ``true``.
@@ -59,7 +56,6 @@ To view your project with respect to the staging preview, we need to set it up f
 -------------------------
 Syncing Staging with Live
 -------------------------
-
 There are times when you need to sync the staging publishing target with the live publishing target. When adding the ``staging`` publishing target to an established project, the live repository is not cloned to the staging repository until an item has been published after setting up staging. There may be some other scenarios, when you might need to sync the staging publishing target with the live publishing target.
 
 To sync the staging target with the live target, simply call the ``reset-staging`` API. See :ref:`crafter-studio-api-publish-reset-staging` for more details on the API

@@ -3,9 +3,13 @@
 
 .. _crafter-studio-api-aws-s3-upload:
 
-=========
-Transcode
-=========
+======================
+Transcode (deprecated)
+======================
+
+.. NOTE::
+    This API is deprecated.
+    AWS has moved to MediaConvert instead of Elastic Transcoder. Please see Studio API v2 for the new MediaConvert API.
 
 Transcode a video file using the AWS Elastic Transcoder.
 

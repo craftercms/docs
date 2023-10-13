@@ -1,8 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
-.. index:: Content Type Editor Config
-
 .. _content-type-editor-config:
 
 ==========================

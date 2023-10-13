@@ -3,10 +3,9 @@
 
 .. _crafter-studio-api-content-crop-image:
 
-==========
-Crop Image
-==========
-
+=======================
+Crop Image (deprecated)
+=======================
 Crop image.
 
 --------------------

@@ -185,7 +185,7 @@ The ``Token Management Tool`` allows the user to manage access tokens used to ma
     :align: center
     :width: 100%
 
-For more information on how to use the Token Management tool, see :ref:`cli-access-to-crafter-studio`.
+For an example of how to use the generated token, see :ref:`crafter-cli`.
 
 ^^^^^^^
 Account

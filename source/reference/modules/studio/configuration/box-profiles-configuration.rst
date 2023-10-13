@@ -3,8 +3,6 @@
 
 :orphan:
 
-.. index:: Box Profiles Configuration
-
 .. _box-profile-configuration:
 
 ==========================

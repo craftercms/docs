@@ -1,7 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.2
-
-.. index:: Performance Tuning; Authoring
 
 .. _authoring-env-performance-tuning:
 

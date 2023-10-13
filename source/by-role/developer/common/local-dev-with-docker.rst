@@ -9,7 +9,6 @@
 =============================
 Local Development with Docker
 =============================
-
 While local development is best done with a CrafterCMS bundle (:ref:`install-craftercms-via-binary-bundles`), sometimes Docker is the path of least resistance. To persist across Docker container restarts, you'll need to have the Authoring project/site repositories in your docker container available in the host filesystem, specially if you want to update the files from your IDE. To support access to your projects via a local IDE, we need to mount the Authoring project repositories directory to a host directory.
 
    .. note::

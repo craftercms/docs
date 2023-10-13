@@ -1,16 +1,13 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.0
 
 :orphan:
-
-.. index:: Dependency Resolver Configuration, Dependency Resolver, Dependency
 
 .. _dependency-resolver-config:
 
 =================================
 Dependency Resolver Configuration
 =================================
-
 Crafter Studio extracts and tracks dependencies between content items to assist authors with publishing, workflow and core content operations like copy and delete. This file configures what file paths Crafter considers a dependency and how they should be extracted.
 
 To modify the Dependency Resolver configuration, click on |projectTools| from the bottom of the Sidebar, then click on **Configuration** and select **Dependency Resolver** from the dropdown list.
@@ -23,7 +20,6 @@ To modify the Dependency Resolver configuration, click on |projectTools| from th
 ------
 Sample
 ------
-
 Here's a sample Dependency Resolver Configuration file (click on the triangle on the left to expand/collapse):
 
 .. raw:: html
