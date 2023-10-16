@@ -139,7 +139,6 @@ Server
    server/get-available-languages
    server/get-loggers
    server/get-ui-resource-override
-   server/set-logger-state
 
 ^^^^^^^^
 Workflow

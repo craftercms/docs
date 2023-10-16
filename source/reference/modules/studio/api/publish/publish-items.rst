@@ -3,9 +3,9 @@
 
 .. _crafter-studio-api-publish-publish-items:
 
-=============
+==========================
 Publish Items (deprecated)
-=============
+==========================
 
 Publish a list of items. This will automatically calculate dependencies, drop items and dependencies from any existing
 workflows and add them to a new publish package.
