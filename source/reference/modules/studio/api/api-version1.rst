@@ -1,19 +1,14 @@
 :is-up-to-date: False
 :last-updated: 4.0.3
 
-
-
 .. _api-version1:
-
 
 ----------------------------
 Crafter Studio API Version 1
 ----------------------------
-
 ^^^^^^^^^^^^^^^
 Site Management
 ^^^^^^^^^^^^^^^
-
 .. toctree::
    :maxdepth: 1
 
@@ -36,7 +31,6 @@ Site Management
 ^^^^^^^^^^^^^^^
 Repo Management
 ^^^^^^^^^^^^^^^
-
 .. toctree::
    :maxdepth: 1
 
@@ -48,7 +42,6 @@ Repo Management
 ^^^^^
 Audit
 ^^^^^
-
 .. note::
   Audit operations are only available in the new API, for more information, please visit :base_url:`here <_static/api/studio.html>`
 
@@ -56,7 +49,6 @@ Audit
 ^^^^^^^^
 Security
 ^^^^^^^^
-
 .. toctree::
    :maxdepth: 1
 
@@ -67,7 +59,6 @@ Security
 ^^^^^^^^^^
 Monitoring
 ^^^^^^^^^^
-
 .. note::
   Monitoring operations are only available in the new API, for more information, please visit
   :base_url:`here <_static/api/studio.html>`
@@ -75,7 +66,6 @@ Monitoring
 ^^^^^^^
 Publish
 ^^^^^^^
-
 .. toctree::
    :maxdepth: 1
 
@@ -85,28 +75,6 @@ Publish
    publish/stop
    publish/publish-items
    publish/reset-staging
-
-^^^^^^^^
-Activity
-^^^^^^^^
-
-.. toctree::
-   :maxdepth: 1
-
-   activity/get-user-activity
-   activity/post-activity
-
-^^^^^^^^^
-Clipboard
-^^^^^^^^^
-
-.. toctree::
-   :maxdepth: 1
-
-   clipboard/copy-item
-   clipboard/cut-item
-   clipboard/get-items
-   clipboard/paste-item
 
 ^^^^^^^^^^
 Dependency
@@ -160,8 +128,6 @@ Content / Asset
    content/get-pages
    content/reorder-items
    content/revert-content
-   content/search
-   content/unlock-content
    content/write-content
 
 ^^^^^^
@@ -196,8 +162,6 @@ AWS
    :maxdepth: 1
 
    aws/elastictranscoder/post-transcode
-   aws/mediaconvert/post-upload
-   aws/s3/post-upload
 
 .. note::
     Some of the AWS operations listed above are now deprecated. These operations are now available in the new API, for more information, please visit :base_url:`here <_static/api/studio.html>`

@@ -1,13 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-dependency-get-dependencies:
 
-================
-Get dependencies
-================
+=============================
+Get dependencies (deprecated)
+=============================
 
 Get dependencies
+
+.. NOTE::
+    This API is deprecated.
 
 --------------------
 Resource Information

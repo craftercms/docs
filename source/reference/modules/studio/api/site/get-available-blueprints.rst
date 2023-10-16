@@ -1,13 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-site-get-available-blueprints:
 
-========================
-Get Available Blueprints
-========================
+=====================================
+Get Available Blueprints (deprecated)
+=====================================
 
 Get available site blueprints to create new site.
+
+.. NOTE::
+    This API is deprecated.
 
 --------------------
 Resource Information
