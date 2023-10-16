@@ -1,15 +1,16 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.3
-
-
 
 .. _crafter-studio-api-security-get-user-permissions:
 
-====================
-Get User Permissions
-====================
+=================================
+Get User Permissions (deprecated)
+=================================
 
 Get user permissions for site and space (path).
+
+.. NOTE::
+    This API is deprecated.
 
 --------------------
 Resource Information

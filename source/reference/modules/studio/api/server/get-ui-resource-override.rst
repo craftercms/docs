@@ -1,13 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-server-get-ui-resource-override:
 
-========================
-Get UI Resource Override
-========================
+=====================================
+Get UI Resource Override (deprecated)
+=====================================
 
 Get UI resource override.
+
+.. NOTE::
+    This API is deprecated.
 
 --------------------
 Resource Information
