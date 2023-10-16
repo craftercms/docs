@@ -1,15 +1,16 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.3
-
-
 
 .. _crafter-studio-api-server-get-loggers:
 
-===========
-Get Loggers
-===========
+========================
+Get Loggers (deprecated)
+========================
 
 Get available languages.
+
+.. NOTE::
+    This API is deprecated.
 
 --------------------
 Resource Information

@@ -1,13 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-security-get-user-roles:
 
-==============
-Get User Roles
-==============
+===========================
+Get User Roles (deprecated)
+===========================
 
 Get user roles for site.
+
+.. NOTE::
+    This API is deprecated.
 
 --------------------
 Resource Information
