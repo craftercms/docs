@@ -12,20 +12,16 @@ Site Management
 .. toctree::
    :maxdepth: 1
 
-   site/clear-configuration-cache
    site/create-site
    site/delete-site
    site/exists
-   site/get-available-blueprints
    site/get-canned-message
-   site/get-configuration
    site/get-site
    site/get-sites-per-user
    site/monitor-content
-   site/write-configuration
 
 .. note::
-   Some of the site management operations listed above are now deprecated. These operations are now available in the new API, for more information, please visit :base_url:`here <_static/api/studio.html>`
+   Some site management operations are now deprecated. These operations are now available in the new API, for more information, please visit :base_url:`here <_static/api/studio.html>`
 
 
 ^^^^^^^^^^^^^^^
@@ -45,17 +41,6 @@ Audit
 .. note::
   Audit operations are only available in the new API, for more information, please visit :base_url:`here <_static/api/studio.html>`
 
-
-^^^^^^^^
-Security
-^^^^^^^^
-.. toctree::
-   :maxdepth: 1
-
-   security/get-user-permissions
-   security/get-user-roles
-
-
 ^^^^^^^^^^
 Monitoring
 ^^^^^^^^^^
@@ -70,10 +55,8 @@ Publish
    :maxdepth: 1
 
    publish/commits
-   publish/status
    publish/start
    publish/stop
-   publish/publish-items
    publish/reset-staging
 
 ^^^^^^^^^^
@@ -83,7 +66,6 @@ Dependency
    :maxdepth: 1
 
    dependency/get-dependant
-   dependency/get-dependencies
    dependency/get-simple-dependencies
    dependency/calculate-dependencies
 
@@ -94,7 +76,6 @@ Deployment
    :maxdepth: 1
 
    deployment/bulk-golive
-   deployment/get-scheduled-items
 
 ^^^^^^^
 Preview
@@ -137,22 +118,6 @@ Server
    :maxdepth: 1
 
    server/get-available-languages
-   server/get-loggers
-   server/get-ui-resource-override
-
-^^^^^^^^
-Workflow
-^^^^^^^^
-.. toctree::
-   :maxdepth: 1
-
-   workflow/create-jobs
-   workflow/get-go-live-items
-   workflow/get-workflow-affected-paths
-   workflow/go-delete
-   workflow/go-live
-   workflow/reject
-   workflow/submit-to-go-live
 
 ^^^
 AWS
@@ -163,4 +128,4 @@ AWS
    aws/elastictranscoder/post-transcode
 
 .. note::
-    Some of the AWS operations listed above are now deprecated. These operations are now available in the new API, for more information, please visit :base_url:`here <_static/api/studio.html>`
+    Some of the AWS operations are now deprecated. These operations are now available in the new API, for more information, please visit :base_url:`here <_static/api/studio.html>`

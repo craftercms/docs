@@ -6,13 +6,11 @@
 ======================
 Calculate Dependencies
 ======================
-
 Calculate and return dependencies for one or more items.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/studio-api-url-prefix.rst
 
 +-----------------------+-------------------------------------------------------------------------+
@@ -28,7 +26,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
@@ -40,7 +37,6 @@ Parameters
 -------
 Example
 -------
-
 .. code-block:: none
 
 	POST .../api/1/services/api/1/dependency/calculate-dependencies.json?site_id=mysite
@@ -62,7 +58,6 @@ Example
 --------
 Response
 --------
-
 .. code-block:: json
     :linenos:
 
@@ -98,7 +93,6 @@ Response
 ---------
 Responses
 ---------
-
 +---------+---------------------------------------------------+
 || Status || Response Body                                    |
 +=========+===================================================+

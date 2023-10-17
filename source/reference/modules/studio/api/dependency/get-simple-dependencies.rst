@@ -6,13 +6,11 @@
 =======================
 Get Simple Dependencies
 =======================
-
 Get simple dependencies
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------+--------------------------------------------------------------------------+
@@ -28,7 +26,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
@@ -40,7 +37,6 @@ Parameters
 -------
 Example
 -------
-
 .. code-block:: none
 
 	POST ../api/1/services/api/1/dependency/get-simple-dependencies.json?site_id=mysite&path=/site/website/index.xml
@@ -49,7 +45,6 @@ Example
 --------
 Response
 --------
-
 .. code-block:: json
     :linenos:
 

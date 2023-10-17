@@ -6,13 +6,11 @@
 ==============
 Sync from Repo
 ==============
-
 Synchronize Crafter Studio's database and object state with the underlying repository. This needs to be done if the underlying repository was updated directly, bypassing Studio's APIs/UI.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
@@ -28,7 +26,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
@@ -41,7 +38,6 @@ Example
 ^^^^^^^
 Request
 ^^^^^^^
-
 ``POST .../api/1/services/api/1/repo/sync-from-repo.json``
 
 .. code-block:: json
@@ -53,13 +49,11 @@ Request
 ^^^^^^^^
 Response
 ^^^^^^^^
-
 ``Status 200 OK``
 
 ---------
 Responses
 ---------
-
 +---------+-------------------------------------------+---------------------------------------------------+
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+
