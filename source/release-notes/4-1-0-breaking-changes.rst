@@ -1,10 +1,6 @@
+:orphan:
 :is-up-to-date: True
 :last-updated: 4.1.0
-
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
 .. _breaking-changes-4-1-0:
 

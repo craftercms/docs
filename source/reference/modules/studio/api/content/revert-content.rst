@@ -6,13 +6,11 @@
 ===================
 Revert Content Item
 ===================
-
 Revert content item to a specific version.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
@@ -28,7 +26,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
@@ -42,11 +39,9 @@ Parameters
 -------
 Example
 -------
-
 ^^^^^^^
 Request
 ^^^^^^^
-
 .. code-block:: none
 
     GET .../api/1/services/api/1/content/revert-content.json?site_id=mysite&path=/site/website/style/index.xml&version=818e0f68bfccda9a9a1a788341b87ca3ba5ad3c6
@@ -54,7 +49,6 @@ Request
 ^^^^^^^^
 Response
 ^^^^^^^^
-
 ``Status 200 OK``
 
 .. code-block:: json
@@ -65,7 +59,6 @@ Response
 ---------
 Responses
 ---------
-
 +---------+-------------------------------------------+---------------------------------------------------+
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+

@@ -6,13 +6,11 @@
 ===============
 Monitor Content
 ===============
-
 Get all sites' content monitors
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
@@ -29,7 +27,6 @@ Resource Information
 -------
 Example
 -------
-
 .. code-block:: none
 
 	GET .../api/1/services/api/1/site/monitor-content.json
@@ -61,7 +58,6 @@ Example
 --------
 Response
 --------
-
 +---------+------------------------------------------+---------------------------------------------------+
 || Status || Location                                || Response Body                                    |
 +=========+==========================================+===================================================+
