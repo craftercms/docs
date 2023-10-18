@@ -25,18 +25,16 @@ To run CrafterCMS, the following are required:
     - Java 17
     - 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
     - Git 2.20.1 and later
-    - Docker if running on Mac or Windows
+    - Docker (if running in Docker)
 
 Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic experiences. MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide external (non-author) user management and social features.
 
 ^^^^^^^^^^^^^^^^^^^
 Supported Platforms
 ^^^^^^^^^^^^^^^^^^^
-
 """""""""""""""""""""""""""""""""""""""""""""
 Operating System/Environment (All components)
 """""""""""""""""""""""""""""""""""""""""""""
-
 The following Operating Systems and environments are supported (64Bit only for all OSs)
 
     - Docker
@@ -47,7 +45,6 @@ The following Operating Systems and environments are supported (64Bit only for a
 """""""""""""""""""""
 JVMs (All components)
 """""""""""""""""""""
-
 The following JVMs are supported:
 
     - OpenJDK 17
@@ -56,7 +53,6 @@ The following JVMs are supported:
 ~~~~~~~~~~~~~~~~~~~
 Verify Java Version
 ~~~~~~~~~~~~~~~~~~~
-
 Ensure that you are running Java 17. To check,
 run the following command at the command prompt and make sure that the version displayed is Java 17:
 
@@ -77,7 +73,6 @@ The command above should output something like this:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Verify JAVA_HOME environment variable is set correctly
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Make sure that you have a JAVA_HOME environment variable that points to the root of the JDK install directory.
 To check the value set for JAVA_HOME, enter the following command at the command prompt:
 
@@ -90,7 +85,6 @@ To check the value set for JAVA_HOME, enter the following command at the command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 How to set the JAVA_HOME environment variable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 **To set JAVA_HOME**
 
 - Korn and bash shells:
@@ -129,7 +123,6 @@ How to set the JAVA_HOME environment variable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Browsers (Crafter Studio & Crafter Social/Profile Admin Consoles)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 The following browsers are supported:
 
     - Chrome and Chromium-based Browsers
@@ -143,7 +136,6 @@ Prerequisites
 """""""""""""""""
 OS X Prerequisite
 """""""""""""""""
-
 For OS X users, the latest ``openssl`` formula needs to be installed via homebrew:
 
 .. code-block:: sh
@@ -155,7 +147,6 @@ For OS X users, the latest ``openssl`` formula needs to be installed via homebre
 """"""""""""""""""
 Linux Prerequisite
 """"""""""""""""""
-
 #. The library ``libaio`` is required by the Authoring install. Please note that some Linux distributions does not install the library ``libaio`` by default and so, may need to be installed. You may get the following error when starting up Studio:
 
    **error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory**
@@ -185,7 +176,6 @@ Linux Prerequisite
 """"""""""""""""""""
 Windows Prerequisite
 """"""""""""""""""""
-
 For Windows users, WSL 2 needs to be installed. All CrafterCMS scripts/commands to be executed and items that needs to be downloaded and installed needs to be in WSL 2.
 
 Follow the instructions `here <https://docs.microsoft.com/en-us/windows/wsl/install>`__ to install WSL 2.
@@ -220,7 +210,6 @@ You can sign up for `Crafter Cloud <https://craftercms.com/products/crafter-clou
 ^^^^^^
 Docker
 ^^^^^^
-
 """"""""""""""""""""""""""""""""""""
 Quick Start for Evaluation in Docker
 """"""""""""""""""""""""""""""""""""
