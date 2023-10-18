@@ -48,10 +48,10 @@ CrafterCMS is used by three main constituencies:
 
     getting-started/index
     by-role/index
+    reference/index
     security/index
     roadmap
     support
-    reference/index
     release-notes/index
     contribute/index
     faq
