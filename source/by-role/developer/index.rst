@@ -48,6 +48,8 @@ Regardless of type of project, a developer needs to be familiar with the followi
       - Provides you information on how to access static contents such as images, CSS files, etc.
     * - :ref:`experience-builder`
       - Provides information on the UI layer on top of your applications that enables authors with in-context editing (ICE)
+    * - :ref:`Server-side Development with Groovy <groovy-api>`
+      - Provides you information on how to use Groovy to develop server-side services and applications
     * - :ref:`project-security`
       - Provides you information on security features that can be used to secure your project/site
     * - :ref:`content-search`
@@ -148,6 +150,12 @@ CrafterCMS is a composable CMS and provides a modular and flexible approach to b
 
 The article, :ref:`composable`, provides more details on the composable nature of CrafterCMS and how to take advantage of it.
 
+.. toctree::
+    :hidden:
+
+    composable/index
+
+
 -------------
 DevContentOps
 -------------
@@ -156,10 +164,21 @@ project across multiple environments. These tools and processes are fully descri
 
 Studio is a great tool for content authors and for quick changes, but for development, you'll want to use your IDE. Learn how to use your IDE with Studio in the :ref:`working-in-your-ide` article.
 
+.. toctree::
+    :hidden:
+
+    devcontentops
+    common/working-in-your-ide
+
 -------
 Upgrade
 -------
 Upgrading CrafterCMS from a developer's perspective is covered in :ref:`developers-upgrade`.
+
+.. toctree::
+    :hidden:
+
+    upgrade/index
 
 
 ----------------
@@ -167,6 +186,11 @@ Managing Secrets
 ----------------
 Credentials may be required in some cases when accessing content. For more information on how to manage/encode your secrets such as
 AWS credentials, please see :ref:`managing-secrets`
+
+.. toctree::
+    :hidden:
+
+    ../system-admin/security/index
 
 -------
 Logging
@@ -176,6 +200,11 @@ is happening and address it as needed. Overriding the logging levels allows you 
 details depending on your needs.
 
 Please review the :ref:`logging` article for more information.
+
+.. toctree::
+    :hidden:
+
+    ../common/logging
 
 |
 

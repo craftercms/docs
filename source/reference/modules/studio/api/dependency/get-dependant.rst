@@ -1,18 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-dependency-get-dependant:
 
 ===================
 Get Dependant Items
 ===================
-
 Get dependant content items.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
@@ -28,7 +26,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
@@ -40,11 +37,9 @@ Parameters
 -------
 Example
 -------
-
 ^^^^^^^
 Request
 ^^^^^^^
-
 .. code-block:: none
 
     POST .../api/1/services/api/1/dependency/get-dependant.json?site_id=mysite&path=/templates/web/pages/home.ftl
@@ -52,7 +47,6 @@ Request
 ^^^^^^^^
 Response
 ^^^^^^^^
-
 ``Status 200 OK``
 
 .. code-block:: json
@@ -159,7 +153,6 @@ Response
 ---------
 Responses
 ---------
-
 +---------+-------------------------------------------+---------------------------------------------------+
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+

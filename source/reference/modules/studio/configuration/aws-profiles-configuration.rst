@@ -3,8 +3,6 @@
 
 :orphan:
 
-.. index:: AWS Profiles Configuration
-
 .. _aws-profile-configuration:
 
 ==========================

@@ -1,12 +1,11 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-content-crop-image:
 
-==========
-Crop Image
-==========
-
+=======================
+Crop Image (deprecated)
+=======================
 Crop image.
 
 --------------------

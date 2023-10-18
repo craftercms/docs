@@ -1,17 +1,13 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.3
 
-
 :orphan:
-
-.. index:: Engine SAML2 Configuration CrafterCMS version 4.0.2 and earlier
 
 .. _engine-saml2-configuration-up-to-4-0-2:
 
 =============================================================================
 Engine SAML2 Configuration for CrafterCMS v4.0.2 and Earlier |enterpriseOnly|
 =============================================================================
-
 .. warning::
 
       *This document only applies to* **CrafterCMS version 4.0.2 and earlier** |br|
@@ -28,7 +24,6 @@ Crafter Engine can be configured to support SAML2 SSO out of the box without usi
 ------------
 Requirements
 ------------
-
 #. A SAML2 compatible Identity Provider properly configured, this configuration will not be covered here
 #. A Java KeyStore file containing all needed keys & certificates, this can be generated with the Java Keytool or any 
     other compatible tool. For example:
@@ -159,7 +154,6 @@ SAML2 authentication can be enabled by updating the project configuration to inc
 ^^^^^^^^^^^^^^^^^^
 Properties Details
 ^^^^^^^^^^^^^^^^^^
-
 .. |refToEngineSecurityAccessAttributes| replace:: :ref:`engine-security-access-attributes`
 
 +------------------------------------+-------------------------------------------+-------------------------------------+

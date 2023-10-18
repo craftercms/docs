@@ -1,5 +1,5 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: API; Crafter Social
 
@@ -8,7 +8,6 @@
 ==================
 Crafter Social API
 ==================
-
 The context for this API is ``/crafter-social/``, please prefix the API URLs with this context.
 
 .. NOTE::
@@ -61,7 +60,6 @@ The context for this API is ``/crafter-social/``, please prefix the API URLs wit
 ----------------
 Security Actions
 ----------------
-
 .. toctree::
   :maxdepth: 1
   :titlesonly:
@@ -72,7 +70,6 @@ Security Actions
 ---------------
 Social Contexts
 ---------------
-
 .. toctree::
   :maxdepth: 1
   :titlesonly:
@@ -92,7 +89,6 @@ Social Contexts
 -------------
 Profile Cache
 -------------
-
 .. toctree::
   :maxdepth: 1
   :titlesonly:
@@ -102,7 +98,6 @@ Profile Cache
 ----------------------
 User Generated Content
 ----------------------
-
 ^^^^^^^^
 Comments
 ^^^^^^^^
@@ -130,7 +125,6 @@ Comments
 ^^^^^^^^^^^
 Attachments
 ^^^^^^^^^^^
-
 .. toctree::
   :maxdepth: 1
   :titlesonly:
@@ -144,7 +138,6 @@ Attachments
 ^^^^^
 Votes
 ^^^^^
-
 .. toctree::
   :maxdepth: 1
   :titlesonly:
@@ -156,7 +149,6 @@ Votes
 ^^^^^^^
 Threads
 ^^^^^^^
-
 .. toctree::
   :maxdepth: 1
   :titlesonly:
@@ -170,7 +162,6 @@ Threads
 ----------
 Monitoring
 ----------
-
 .. toctree::
   :maxdepth: 1
 

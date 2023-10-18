@@ -1,29 +1,117 @@
-:is-up-to-date: False
-:last-updated: 4.0.0
+:is-up-to-date: True
+:last-updated: 4.1.1
 
-:orphan:
+.. index:: Crafter CLI, CLI
 
-.. index:: CLI Access to Crafter Studio
+.. _crafter-cli:
 
-.. _cli-access-to-crafter-studio:
+===========
+Crafter CLI
+===========
+CrafterCMS provides Crafter CLI (Command Line Interface), a DevContentOps Toolkit, to support :ref:`DevContentOps <devcontentops>` processes in CrafterCMS. The CLI allows you to authenticate with CrafterCMS and exercise its APIs via a Unix, Mac, or Windows command line interface.
 
-====================================
-Commandline Access to Crafter Studio
-====================================
+Run the CLI in your terminal program, navigate to the ``bin`` folder  ``CRAFTER_HOME/bin/cli/bin/``. There you will find two versions of the tool:
 
-.. TODO Will CrafterCLI make this article obsolete or at least it references that?
-   If we were to keep this, should we call it Automating Crafter Studio or CLI Access to Studio?
+* **crafter-cli:** - for users on a Linux/macOS operating system
+* **crafter-cli.bat** - for users on a Windows operating system
 
-.. TODO Use CrafterCLI [insert link], otherwise
-    See below if you want to do it manually
+.. _crafter-cli-add-environment:
 
+When using the **crafter-cli**, we first need to setup the connection to CrafterCMS before we can use the other available commands. To setup the connection, run the ``add-environment`` command,  provide a name, the url for a CrafterCMS authoring server and the authentication information.
+
+For the example below, we'll use ``local`` for the name, ``http://localhost:8080`` for the url, and your access token for the authentication. See :ref:`here <access-tokens>` for the steps on how to create a token. Leave the token blank, you will be prompted for the token after issuing the ``add-environment`` command:
+
+   .. code-block:: bash
+
+      ➜  ./crafter-cli add-environment -e local -u http://localhost:8080 --token
+      Enter value for --token (The access token for authentication):
+      Environment added
+
+   |
+
+After setting up the connection to CrafterCMS, you may now create sites or sync a remote repository from the command line, etc:
+
+Here's an example  of creating a site:
+
+   .. code-block:: bash
+
+      ➜  ./crafter-cli create-site -e local -s myeditorial --blueprint org.craftercms.blueprint.editorial
+      OK
+
+   |
+
+Here's an example of adding a remote to a site:
+
+   .. code-block:: bash
+
+      ➜  ./crafter-cli add-remote -e local -s editorial -n origin -u http://github.com/john.doe/editorial.git
+      Created
+
+   |
+
+Here's an example of syncing to a remote repository:
+
+   .. code-block:: bash
+
+       ➜  ./crafter-cli sync-to -e local -s editorial -n origin -b site-updates
+       OK
+
+   |
+
+
+To view the available commands, type in ``./crafter-cli -h``
+
+   .. code-block:: bash
+
+      ➜  ./crafter-cli -help
+      Usage: crafter-cli [-hV] [COMMAND]
+        -h, --help      Show this help message and exit.
+        -V, --version   Print version information and exit.
+      Commands:
+        help             Displays help information about the specified command
+        add-environment  Adds the configuration to connect to CrafterCMS
+        add-remote       Adds a remote repository to a site
+        create-site      Creates a site from a blueprint or a remote repository
+        list-remotes     List the remote repositories of a site
+        sync-from        Sync the content of a site from a remote repository
+        sync-to          Sync the content of a site to a remote repository
+        list-sites       List the sites that the current user can access
+        copy-plugin      Copies a plugin from a Studio local folder into a site
+
+   |
+
+.. _crafter-cli-command-help:
+
+To view more information about each command, just enter ``./crafter-cli <command>``, for example:
+
+   .. code-block:: bash
+
+      ➜  ./crafter-cli add-environment
+      Usage: crafter-cli add-environment --password [--config=path] -e=<environment>
+                                      [-p=<profile>] -u=<url> --username=<username>
+      Adds the configuration to connect to CrafterCMS
+            --config=path         The folder to store configurations
+        -e, --environment=<environment>
+                                  The name of the environment
+        -p, --profile=<profile>   The name of the profile
+            --password            The password for authentication
+        -u, --url=<url>           The URL of the server
+            --username=<username> The username for authentication
+
+   |
+
+Crafter CLI for DevContentOps processes source code is managed in GitHub: https://github.com/craftercms/cli
+
+----------
+Using cURL
+----------
 In this section, we'll show the basics of interacting with Crafter Studio APIs by performing the following:
 
 #. Authentication
 #. Get a list of projects under management
 #. Write content to a project
 
-We’ll use CURL, a ubiquitous Linux command tool as our client.
+We’ll use cURL, a ubiquitous Linux command tool as our client.
 
 You can find the full Crafter Studio API for CrafterCMS :ref:`here<crafter-studio-api>`
 
@@ -38,8 +126,8 @@ Let's begin:
    **JWT Authentication**
 
    .. version_tag::
-      :label: Since
-      :version: 4.0.0
+    :label: Since
+    :version: 4.0.0
 
    JWT is a widely adopted standard for secure authentication and is the preferred way.
    HTTP Basic is simple but not as secure as JWT and for that reason it is disabled by default. However, it can be very
@@ -116,7 +204,7 @@ Let's begin:
 
    5. Include the access token with all requests
 
-      Most HTTP clients provide built-in support for access token athentication, in the case of curl you will need
+      Most HTTP clients provide built-in support for access token athentication, in the case of cURL you will need
       to use the header option ``--header`` or ``-H``
 
       ``curl -H 'Authentication: Bearer <access token>' ...``
@@ -146,7 +234,7 @@ Let's begin:
 
    2. Include the credentials with all requests
 
-      Most HTTP clients provide an easy way to use HTTP Basic, in the case of curl you can use the user options
+      Most HTTP clients provide an easy way to use HTTP Basic, in the case of cURL you can use the user options
       ``--user`` or ``-u``
 
       ``curl -u <username>:<password> ...``
@@ -162,7 +250,7 @@ Let's begin:
 
    |
 
-   After issuing the CURL command you will get a response that contains sites your user has access to:
+   After issuing the cURL command you will get a response that contains sites your user has access to:
 
    .. code-block:: json
 

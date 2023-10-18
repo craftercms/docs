@@ -1,8 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.1.1
 
-.. index:: Project Configuration, Site Configuration
-
 .. _project-configuration:
 
 =====================

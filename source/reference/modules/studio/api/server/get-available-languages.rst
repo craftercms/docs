@@ -1,18 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-server-get-available-languages:
 
 =======================
 Get Available Languages
 =======================
-
 Get available languages.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/studio-api-url-prefix.rst
 
 +--------------------------+----------------------------------------------------------------------+
@@ -29,7 +27,6 @@ Resource Information
 -------
 Example
 -------
-
 .. code-block:: none
 
 	GET .../api/1/services/api/1/server/get-available-languages.json
@@ -55,7 +52,6 @@ Example
 --------
 Response
 --------
-
 +---------+-------------------------------------------+---------------------------------------------------+
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+

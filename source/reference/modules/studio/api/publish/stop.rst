@@ -1,18 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-publish-stop:
 
 ==============
 Stop Publisher
 ==============
-
 Stop Crafter Studio's publishing for a site.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
@@ -29,7 +27,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
@@ -39,7 +36,6 @@ Parameters
 -------
 Example
 -------
-
 ^^^^^^^
 Request
 ^^^^^^^
@@ -55,7 +51,6 @@ Request
 ^^^^^^^^
 Response
 ^^^^^^^^
-
 ``Status 200 OK``
 
 .. code-block:: json
@@ -67,7 +62,6 @@ Response
 ---------
 Responses
 ---------
-
 +---------+---------------------------------------------------+
 || Status || Response Body                                    |
 +=========+===================================================+

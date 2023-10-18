@@ -1,18 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-content-get-item-orders:
 
 ===============
 Get Item Orders
 ===============
-
 Get item orders.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
@@ -28,7 +26,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
@@ -40,11 +37,9 @@ Parameters
 -------
 Example
 -------
-
 ^^^^^^^
 Request
 ^^^^^^^
-
 .. code-block:: none
 
     GET .../api/1/services/api/1/content/get-item-orders.json?site_id=mysite&path=/site/website/style/index.xml&edit=true
@@ -52,7 +47,6 @@ Request
 ^^^^^^^^
 Response
 ^^^^^^^^
-
 ``Status 200 OK``
 
 .. code-block:: json
@@ -96,7 +90,6 @@ Response
 ---------
 Responses
 ---------
-
 +---------+-------------------------------------------+---------------------------------------------------+
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+

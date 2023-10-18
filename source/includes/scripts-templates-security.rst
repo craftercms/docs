@@ -9,7 +9,7 @@
    CrafterCMS only allows a small list of services available to use when developing templates or scripts.
    There are some sites that may require services not included by default.
 
-   To expose other services, follow the guide :ref:`access-to-services`
+   To expose other services, follow the guide :ref:`configure-custom-services`
 
    Scripts are executed in a sandbox that has a blacklist of insecure expressions
    to prevent code that could compromise the system.

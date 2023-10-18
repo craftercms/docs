@@ -8,7 +8,6 @@
 ================================
 Upgrading CrafterCMS on a Server
 ================================
-
 This section details how to upgrade CrafterCMS installed on a server.
 
 CrafterCMS provides a couple of scripts for upgrading your installation.
@@ -62,7 +61,6 @@ For config files that are different in the new release, the script gives you the
 ----------------
 Before Upgrading
 ----------------
-
 Before starting your upgrade:
 
 #. **Review the** :ref:`release notes <release-notes>` **for the version you are upgrading to**. It contains specific information on the changes that have been made and how it may affect you when upgrading to that specific version.
@@ -81,7 +79,6 @@ Before starting your upgrade:
 ---------------------------------------------------------------
 Upgrade by running the upgrade script from a new binary archive
 ---------------------------------------------------------------
-
 Download the CrafterCMS version you'd like to upgrade to, and extract the files.
 
 To upgrade your CrafterCMS, we will use the ``upgrade-target`` script. The upgrade script  is located in ``{Crafter-CMS-install-directory}/bin/upgrade`` of your newly downloaded binary archive. Here's the description for the script we are going to use:
@@ -101,7 +98,6 @@ where:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Steps for upgrading using the upgrade script from a new binary archive
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Here are the steps for upgrading your CrafterCMS install version from a new binary archive:
 
 #. Download the CrafterCMS binary archive version you'd like to upgrade to
@@ -128,7 +124,6 @@ Here's an example of running the ``post-upgrade.sh`` script:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Example upgrading using the upgrade script from a new binary archive
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Let's take a look at an example of upgrading a CrafterCMS version 4.1.0 install (located in ``/Users/myuser/crafter-4.1.0``) to version 4.1.1 using the upgrade script from 4.1.1
 
 After downloading and extracting CrafterCMS version 4.0.0 to ``/Users/myuser/crafter-4.1.1``, we are now ready to start upgrading by running the ``upgrade-target`` script from the 4.1.1 binary archive.
@@ -243,7 +238,6 @@ If Crafter is not started, you may :ref:`start CrafterCMS <start-crafter-after-u
 ---------------------------------------------------------------
 Upgrade by running the upgrade script from your current install
 ---------------------------------------------------------------
-
 CrafterCMS version 3.1.x, excluding version 3.1.0,  contain the upgrade scripts required to upgrade your install. Here's the description for the script we are going to use:
 
     .. code-block:: bash
@@ -315,7 +309,6 @@ Here's an example to perform an upgrade of your current install using the path w
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Example running the upgrade script from your current install
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Let's take a look at an example of upgrading a CrafterCMS version 4.1.0 install (located in ``/Users/myuser/crafter``) to version 4.1.1 using the upgrade script in 4.1.0
 
 We'll perform an upgrade of 4.1.0 (current install) to 4.1.1
@@ -462,7 +455,6 @@ If CrafterCMS is not started, you may :ref:`start CrafterCMS <start-crafter-afte
 ----------------
 Start CrafterCMS
 ----------------
-
 After performing the upgrade steps listed above (either by running the upgrade script from a new binary archive or, by running the upgrade script from your current install) you may now start CrafterCMS by running the ``startup.sh`` script.
 
    .. code-block:: bash

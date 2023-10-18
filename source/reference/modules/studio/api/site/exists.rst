@@ -1,18 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-site-exists:
 
 ======
 Exists
 ======
-
 Check if Crafter Studio site exists.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
@@ -28,7 +26,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
@@ -38,7 +35,6 @@ Parameters
 -------
 Example
 -------
-
 .. code-block:: none
 
 	GET .../api/1/services/api/1/site/exists.json?site_id=mysite
@@ -52,7 +48,6 @@ Example
 --------
 Response
 --------
-
 +---------+------------------------------------------+---------------------------------------------------+
 || Status || Location                                || Response Body                                    |
 +=========+==========================================+===================================================+

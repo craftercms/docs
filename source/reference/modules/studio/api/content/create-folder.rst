@@ -1,18 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-content-create-folder:
 
 =============
 Create Folder
 =============
-
 Create Folder.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
@@ -28,7 +26,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
@@ -42,11 +39,9 @@ Parameters
 -------
 Example
 -------
-
 ^^^^^^^
 Request
 ^^^^^^^
-
 .. code-block:: none
 
     POST .../api/1/services/api/1/content/create-folder.json?site_id=mysite&path=/site/website&name=newFolder
@@ -54,18 +49,15 @@ Request
 ^^^^^^^^
 Response
 ^^^^^^^^
-
 ``Status 200 OK``
 
 .. code-block:: json
 
     true
 
-
 ---------
 Responses
 ---------
-
 +---------+-------------------------------------------+---------------------------------------------------+
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+

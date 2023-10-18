@@ -1,8 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.1.1
 
-.. index:: User Interface Configuration
-
 .. _user-interface-configuration:
 
 ============================
@@ -546,7 +544,7 @@ To learn more about configuring the RTE, see :ref:`here <rte-configuration>`
 
 |hr|
 
-.. _project-tools-configuration:
+.. _project-tools-ui-configuration:
 
 ---------------------------
 Project Tools Configuration

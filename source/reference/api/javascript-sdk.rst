@@ -1,7 +1,5 @@
-:is-up-to-date: False
-:last-updated: 4.0.3
-
-
+:is-up-to-date: True
+:last-updated: 4.1.1
 
 .. index:: JavaScript SDK
 
@@ -10,9 +8,6 @@
 ==============
 JavaScript SDK
 ==============
-
-.. TODO discuss this with RA to make sure it's up to date
-
 CrafterCMS has a JavaScript SDK that enable easy interaction with several
 CrafterCMS modules/utilities for creating websites and applications.
 

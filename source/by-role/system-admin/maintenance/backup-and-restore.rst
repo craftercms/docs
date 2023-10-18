@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.1
 
 .. _backup-and-restore:
@@ -11,11 +11,10 @@ CrafterCMS out of the box comes with a script to backup and restore your environ
 
 .. TODO add a note that Delivery can be easily reconstituted
 
--------------
-Studio Backup
--------------
-
-To backup CrafterCMS, you only need to backup Crafter Studio.
+------
+Backup
+------
+To backup CrafterCMS, you only need to backup the Authoring environment (Crafter Studio). The Delivery tier (Crafter Engine) can easily be reconstituted by instantiating new nodes that sync themselves. Alternatively, they can be backed up and restored as well.
 
 ^^^^^^^^^^^^^^^^^^^^
 Non-clustered Studio
@@ -39,9 +38,8 @@ is necessary. In this case, you will need to shutdown the cluster first to perfo
 |hr|
 
 -------------------------
-Running the backup script
+Running the Backup Script
 -------------------------
-
 To backup your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
 
     .. code-block:: bash
@@ -77,7 +75,6 @@ If no filename has been specified, the backup file will be named either ``crafte
 -------
 Restore
 -------
-
 To restore your backup, make sure that CrafterCMS is not running. To restore your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
 
     .. code-block:: bash

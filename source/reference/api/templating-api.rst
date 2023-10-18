@@ -1,12 +1,11 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-update: 4.1.0
 
 .. _templating-api:
 
 ===========================
 FreeMarker (Templating) API
 ===========================
-
 Each page and component content type in CrafterCMS generally has it's own view. Crafter Engine, which is in charge
 of rendering this views, uses Freemarker as the template engine to generate the HTML returned to the client.
 Documentation for Freemarker can be found at http://freemarker.org.
@@ -28,7 +27,6 @@ Crafter Engine also populates templates with other useful variables, described b
 --------------------
 Rendering Components
 --------------------
-
 Crafter Engine provides the ``renderComponent`` macro that can be used to render components in any template:
 
 .. code-block:: html
@@ -67,7 +65,6 @@ Parameters:
 --------------------
 Rendering Navigation
 --------------------
-
 Crafter Engine provides the option of rendering automatically the navigation for you, just by using the macro
 ``navigation``
 
@@ -78,7 +75,6 @@ See :ref:`navigation` for more information on the macro
 ---------------------
 Rendering Breadcrumbs
 ---------------------
-
 Crafter also offers a ``renderBreadcrumb`` macro to easily generate a dynamic list with all the
 parent pages of a specific url.
 
@@ -199,7 +195,6 @@ See :ref:`breadcrumb` for more information on the macro
 ---------------------------
 Running Scripts/Controllers
 ---------------------------
-
 Crafter Engine allows executing scripts/controllers from inside Freemarker templates by using the tag ``@controller``. It requires a single parameter, ``path``, which is the path of the script/controller in the site:
 
 .. code-block:: html
@@ -213,8 +208,7 @@ Crafter Engine allows executing scripts/controllers from inside Freemarker templ
 ------------------------
 Keeping Templates Simple
 ------------------------
-
-You can access all Crafter Engine services directly from the Freemarker templates as described in 
+You can access all Crafter Engine services directly from the Freemarker templates as described in
 the previous sections, however it is a good practice to keep logic and complex operations outside
 of the templates to simplify debugging and maintenance. An easy way to extract logic from the
 templates is using Groovy's closures:

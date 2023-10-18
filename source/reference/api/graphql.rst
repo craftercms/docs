@@ -1,13 +1,11 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.0
-:orphan:
 
 .. _graphql:
 
 =======
 GraphQL
 =======
-
 CrafterCMS provides built-in support for GraphQL to query content in any site without writing
 additional code. Below you'll find more information on working with GraphQL and how to
 customize the built-in GraphQL schema
@@ -15,7 +13,6 @@ customize the built-in GraphQL schema
 --------------------
 Working with GraphQL
 --------------------
-
 CrafterCMS provides built-in support for GraphQL to query content in any project without writing additional code.
 A GraphQL schema is generated independently for each project based on the content-type configuration that has been
 created using Crafter Studio, and the schema is automatically updated after any change is detected.
@@ -46,7 +43,6 @@ handle the schema reload using third party tools.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Using GraphiQL in Crafter Studio
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 GraphiQL is a simple GraphQL client that you can use in Crafter Studio to run GraphQL queries and explore the schema
 documentation for a site without the need of any other tool. To access GraphiQL follow these steps:
 
@@ -83,7 +79,6 @@ against the schema in real time.
 ^^^^^^^^^^^^^^^^
 GraphQL Examples
 ^^^^^^^^^^^^^^^^
-
 Here you can find some examples on how to query content using GraphQL. The following examples use the built-in
 ``Website Editorial`` blueprint but the same concepts apply to any CrafterCMS site.
 
@@ -417,7 +412,6 @@ For more detailed information about GraphQL you can read the `official documenta
 ---------------------
 Custom GraphQL Schema
 ---------------------
-
 CrafterCMS provides a simple way to customize the built-in GraphQL schema. This feature can be used for integrating
 external services or transforming values to match special requirements. Once the schema has been customized it is
 possible to create apps or sites that interact only using GraphQL for getting both authored content & external services.
@@ -447,7 +441,6 @@ for the request scope). Additionally there is a global variable specific for thi
 ^^^^^^^
 Example
 ^^^^^^^
-
 The following example shows how to customize the schema to integrate a service written in Groovy.
 
 .. note::

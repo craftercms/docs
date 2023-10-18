@@ -1,8 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.1.2
 
-.. index:: Adding a New Language, Language Support
-
 .. _adding-a-new-language:
 
 =====================

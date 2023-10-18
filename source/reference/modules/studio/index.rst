@@ -2,8 +2,6 @@
 :last-updated: 4.1.2
 :orphan:
 
-.. index:: Modules; Crafter Studio
-
 .. _crafter-studio:
 
 ==============
@@ -65,6 +63,11 @@ Learn about administering Crafter Studio in the :ref:`Crafter Studio Administrat
 Clustering
 ----------
 Learn about clustering Crafter Studio in the :ref:`Crafter Studio Clustering Guide <studio-clustering>`.
+
+.. toctree::
+   :hidden:
+
+   /by-role/system-admin/performance-and-scaling/clustering
 
 |hr|
 

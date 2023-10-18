@@ -1,18 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-studio-api-content-reorder-items:
 
 =====================
 Reorder Content Items
 =====================
-
 Reorder content items.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
@@ -28,7 +26,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
@@ -44,11 +41,9 @@ Parameters
 -------
 Example
 -------
-
 ^^^^^^^
 Request
 ^^^^^^^
-
 .. code-block:: none
 
     GET .../api/1/services/api/1/content/reorder-items.json?site_id=mysitet&path=/site/website/health/index.xml&before=/site/website/entertainment/index.xml&after=/site/website/technology/index.xml
@@ -56,7 +51,6 @@ Request
 ^^^^^^^^
 Response
 ^^^^^^^^
-
 ``Status 200 OK``
 
 .. code-block:: json
@@ -69,7 +63,6 @@ Response
 ---------
 Responses
 ---------
-
 +---------+-------------------------------------------+---------------------------------------------------+
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+

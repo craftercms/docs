@@ -108,7 +108,6 @@ allow you to use builder objects to develop complex logic for building the queri
 -----------------------------
 Implementing a Faceted Search
 -----------------------------
-
 It is possible to use aggregations to provide a faceted search to allow users to refine the search
 results based on one or more fields.
 
@@ -145,7 +144,6 @@ To build the faceted search we must:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Sending Aggregations in the Search Request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Aggregations are added in the request using the ``aggs`` key, each aggregation must have a unique name
 as key and the configuration depending on the type.
 
@@ -175,7 +173,6 @@ the field ``categories.item.value_smv`` that have at least 1 article assigned.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Processing Aggregations in the Search Response
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Search will return the aggregations in the response under the ``aggregations`` field, the contents of each
 aggregation will be different depending on the type.
 
@@ -216,7 +213,6 @@ This is how users can quickly reduce the number of result and find more useful d
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Displaying Facets in the Search Result Pages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 This step will change depending on the technology being used to display all information, it can be done in Freemarker
 or a SPA using Angular, React or Vue. As an example we will use Handlebars templates that will be rendered using
 jQuery.
@@ -286,7 +282,6 @@ The final step is to trigger a new search when the user selects one of the value
 -----------------
 Multi-index Query
 -----------------
-
 CrafterCMS supports querying more than one search index in a single query.
 
 To search your site and other indexes, simply send a search query with a comma separated list of indexes/aliases (pointer to an index). It will then search your site and the other indexes
@@ -340,7 +335,6 @@ For more information on ``indices_boost``, see index boosting in this article `<
 ---------------------------------
 Implementing a Type-ahead Service
 ---------------------------------
-
 In this section, we will be looking at how to use a query to provide suggestions as the user types.
 
 .. image:: /_static/images/search/search-typeahead-box.webp
@@ -354,13 +348,11 @@ In this section, we will be looking at how to use a query to provide suggestions
 ^^^^^^^^^^^^^^^^^
 Build the Service
 ^^^^^^^^^^^^^^^^^
-
 Create a REST service that returns suggestions based on the content in your site.
 
 """"""""""""
 Requirements
 """"""""""""
-
 - The service will take the user's current search term and find similar content.
 - The service will return the results as a list of strings
 
@@ -444,13 +436,11 @@ REST endpoint from a browser and get a result similar to this:
 ^^^^^^^^^^^^
 Build the UI
 ^^^^^^^^^^^^
-
 The front end experience is built with HTML, JavaScript and specifically AJAX.
 
 """"""""""""
 Requirements
 """"""""""""
-
   - When the user types a value send a request to the server to get instant results
   - Display the results and show suggestions about what the user might be looking for
   - *Do not* fire a query for every keystroke. This can lead to more load than necessary, instead,

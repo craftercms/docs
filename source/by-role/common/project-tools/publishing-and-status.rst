@@ -1,19 +1,14 @@
-:is-up-to-date: False
-:last-updated: 4.0.3
+:is-up-to-date: True
+:last-updated: 4.1.1
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Publishing and Status, Bulk Publish, Publish by Commit Id
+.. index:: Publishing Status, Bulk Publish, Publish by Commit Id
 
 .. _publishing-and-status:
 
-=====================
-Publishing and Status
-=====================
-The **Publishing Dashboard** under |projectTools| allows the user to view the publishing status,
+=================
+Publishing Status
+=================
+The **Publishing** tool under |projectTools| allows the user to view the publishing status,
 publish multiple items from a specified path, publish commits from sandbox repository by commit id or tag and
 view the publishing queue.
 
@@ -56,7 +51,7 @@ After clicking on the ``unlock`` button, the user will be prompted to confirm th
 |hr|
 
 -----------------
-Publish on demand
+Publish on Demand
 -----------------
 The **Publish on Demand** section allows the user to publish changes made in Studio via the UI and
 to publish commits from sandbox repository by commit id.
@@ -164,7 +159,6 @@ simply select ``Publish everything`` and then choose the publishing target, then
 ----------------
 Publishing Queue
 ----------------
-
 The **Publishing Queue** tab allows the user to see the items(publishing packages) that are in the queue for publishing.
 
 .. image:: /_static/images/site-admin/project-tools-publish-queue.webp

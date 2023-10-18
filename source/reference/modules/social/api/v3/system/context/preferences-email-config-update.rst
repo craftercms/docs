@@ -1,18 +1,16 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-social-api-context-preferences-email-config-update:
 
 ==========================
 Update Email Configuration
 ==========================
-
 Updates the email configuration for a given Social Context.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
@@ -26,7 +24,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +---------------------+-------------+---------------+--------------------------------------------+
 || Name               || Type       || Required     || Description                               |
 +=====================+=============+===============+============================================+
@@ -60,7 +57,6 @@ Parameters
 -------
 Example
 -------
-
 ^^^^^^^
 Request
 ^^^^^^^
@@ -87,7 +83,6 @@ Request
 ^^^^^^^^
 Response
 ^^^^^^^^
-
 ``Status 200 OK``
 
 .. code-block:: json
@@ -110,7 +105,6 @@ Response
 ---------
 Responses
 ---------
-
 +---------+--------------------------------+-----------------------------------------------------+
 || Status || Location                      || Response Body                                      |
 +=========+================================+=====================================================+

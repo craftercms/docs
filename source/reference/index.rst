@@ -14,14 +14,15 @@ This section is a reference to the modules, APIs, complementary projects, and ot
     :local:
     :depth: 1
 
-.. TODO List out the reference material here
-
 -------
 Modules
 -------
 CrafterCMS comprises a set of modules that work together.
 
-.. TODO: Insert an image detailing the modules and how data flows
+.. image:: /_static/images/architecture/modules-overview.webp
+    :width: 75%
+    :alt: CrafterCMS Decoupled Overview
+    :align: center
 
 The modules are
 
@@ -59,6 +60,17 @@ APIs
 .. _api-reference:
 
 .. include:: /includes/content-retrieval-apis.rst
+
+.. toctree::
+    :hidden:
+
+    ../../reference/api/templating-api
+    ../../reference/api/javascript-sdk
+    ../../reference/api/graphql
+    ../../by-role/developer/common/search
+    ../../reference/api/rest-content-retrieval-api
+    ../../reference/api/groovy-api
+    ../../reference/api/java-api
 
 For non-content related APIs, such as user/group management, monitoring, indexing and more, please consult the module API directly.
 
@@ -104,7 +116,6 @@ Complimentary Projects
 ----------------------
 
 .. list-table:: Complimentary Projects and Resources
-    :header-rows: 1
 
     *   - Docker Compose
         - `Docker Compose on GitHub <https://github.com/craftercms/docker-compose>`_
@@ -113,7 +124,7 @@ Complimentary Projects
     *   - Kubernetes
         - `Kubernetes Deployments on GitHub <https://github.com/craftercms/kubernetes-deployments>`_
     *   - DevContentOps Toolkit (Crafter CLI)
-        - :ref:`DevContentOps Toolkit (CrafterCMS CLI) <devcontentops-toolkit>`
+        - :ref:`DevContentOps Toolkit (CrafterCMS CLI) <crafter-cli>`
     *   - Extensions: Plugins
         - `CrafterCMS Sponsored Plugins on GitHub <https://github.com/orgs/craftercms/repositories?q=plugin&type=all&language=&sort=>`_
     *   - Extensions: Blueprints

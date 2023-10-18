@@ -24,7 +24,6 @@ These files are typically stored in `/static-assets` in the Studio project's Git
 --------------------------------
 Internally Managed Static Assets
 --------------------------------
-
 Static assets can be internal to the project (site) and managed by Studio. While Git is wonderful for managing and tracking textual content, it's not ideal for binary files. That's why CrafterCMS provides a blob store for managing binary files.
 
 .. _blob-stores-asset-access:
@@ -32,7 +31,6 @@ Static assets can be internal to the project (site) and managed by Studio. While
 ^^^^^^^^^^^^^^^^
 Blob Store Files
 ^^^^^^^^^^^^^^^^
-
 The blob store is a Git-like repository for binary files. It's managed by Studio and is part of the project's Git repository. The blob store is a great way to manage binary files that are part of the project's workflow and publishing processes.
 
 The blob store is normally configured for all ``static-assets`` files, except for developer managed assets like ``/static-assets/app`` which are best kept in Git.
@@ -42,7 +40,6 @@ Learn more about configuring the blob store for your project by reading :ref:`bl
 --------------------------------
 Externally Managed Static Assets
 --------------------------------
-
 Some static assets have their lifecycle in a different system, but are required to be surfaced/used by the CrafterCMS project/site. CrafterCMS provides a way to reference these assets in your content and templates.
 
 ^^^^^^^^^^^^^^^^
@@ -55,7 +52,6 @@ AWS provide a number of useful services that ultimately produce content or store
 """""""""""""""
 S3 Asset Access
 """""""""""""""
-
 For very large externally managed artifacts, AWS S3 is a great option.
 
 .. note::
@@ -73,14 +69,12 @@ The following guide is an example to illustrate how to:
 ~~~~~~~~~~~~~
 Prerequisites
 ~~~~~~~~~~~~~
-
 * Create an AWS S3 bucket to upload the assets.
 * Create a site based on the Editorial blueprint.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Step 1: Add the S3 configuration in Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Go to |projectTools| > ``Configurations`` and in the dropdown select ``AWS Profiles``. If you click on
 ``View Sample``, you'll see the available configuration profiles. In particular, the configuration for an S3
 profile is the following:
@@ -136,7 +130,6 @@ Please see :ref:`managing-secrets` for more information on how to manage/encode 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Step 2: Add the controls and data source for uploading files to your S3 bucket to the content type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 For our example, we'll add an ``Attachment`` field, which is of type ``node-selector`` that is bound to an AWS file upload
 data source, to the ``Page - Article`` content type. To do this:
 
@@ -188,7 +181,6 @@ data source, to the ``Page - Article`` content type. To do this:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Step 3: Add some attachments and test the changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 If all the previous steps have been done correctly, you should be able to add any number of attachments and they
 should appear underneath the last content sections when the page is rendered. For example, after adding a couple of
 PDF catalogs in the *Men Styles For Winter* article:
@@ -210,7 +202,6 @@ The bottom of the page looks like this when you preview your page:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Step 4: Publish the changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 The next step is to publish the changes. Remember to publish not just the page where we added the S3 assets,
 but also the ``article.ftl`` and the ``aws.xml`` files too.
 
@@ -223,7 +214,6 @@ but also the ``article.ftl`` and the ``aws.xml`` files too.
 ^^^^^^^^^^^^^^^^
 Box Asset Access
 ^^^^^^^^^^^^^^^^
-
 Box is a good option when you need to store media and documents that are quite large. The following guide explains how to:
 
 * Configure Studio to use Box.
@@ -233,14 +223,12 @@ Box is a good option when you need to store media and documents that are quite l
 """""""""""""
 Prerequisites
 """""""""""""
-
 * Create a Box profile to upload the assets.
 * Create a project based on the Editorial blueprint.
 
 """""""""""""""""""""""""""""""""""""""""""
 Step 1: Add the Box configuration in Studio
 """""""""""""""""""""""""""""""""""""""""""
-
 Go to |projectTools| > ``Configuration`` and in the dropdown select Box Profiles. If you click on View Sample, you’ll see the available configuration profiles. In particular, the configuration for a Box profile is the following:
 
 .. code-block:: xml
@@ -299,7 +287,6 @@ Please see :ref:`managing-secrets` for more information on how to manage/encode 
 """"""""""""""""""""""""""""""""""""""""""
 Step 2: Enable the Box File Upload Control
 """"""""""""""""""""""""""""""""""""""""""
-
 In |projectTools| > Configuration > Project Config Tools, in the <controls> section, enable the Box File Upload by adding the following lines:
 
 .. code-block:: xml
@@ -318,7 +305,6 @@ In |projectTools| > Configuration > Project Config Tools, in the <controls> sect
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Step 3: Add the Box File Upload Control to the content type
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 For our example, we'll add an ``Attachments`` field, which is of type ``box-file-upload``, to the ``Article``
 content type. To do this:
 
@@ -333,7 +319,6 @@ content type. To do this:
 """"""""""""""""""""""""""""""""""""""""""""""
 Step 4: Add Freemarker code to render the URLs
 """"""""""""""""""""""""""""""""""""""""""""""
-
 We need to add the Freemarker code that will render the URLs. In the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lines after the ``<#list contentModel.sections.item as item>...</#list>`` lines:
 
 .. code-block:: html
@@ -351,7 +336,6 @@ We need to add the Freemarker code that will render the URLs. In the ``Templates
 """""""""""""""""""""""""""""""""""""""""""""""""
 Step 5: Add some attachments and test the changes
 """""""""""""""""""""""""""""""""""""""""""""""""
-
 If all the previous steps have been done correctly, you should be able to add any number of attachments and they
 should appear underneath the last content sections when the page is rendered. To upload files to Box, click on the ``+`` button in the Box widget and select ``Upload``, then drag or browse for the files you want to upload. Click on the ``Upload`` button after selecting the files you want to upload. After the upload finishes, click on the ``Close`` button on the left side of the Box widget and you'll be able to see the files you just uploaded to Box. You'd then put a check mark next to the files that you want to add as attachment for the page, then click on the ``Choose`` button.
 
@@ -374,7 +358,6 @@ The bottom of the page looks like this when you preview your page:
 """""""""""""""""""""""""""
 Step 6: Publish the changes
 """""""""""""""""""""""""""
-
 The next step is to publish the changes. Remember to publish not just the page where we added the Box assets,
 but also the ``article.ftl`` and the ``box.xml`` files too.
 
@@ -387,17 +370,13 @@ but also the ``article.ftl`` and the ``box.xml`` files too.
 ^^^^^^^^^^^^^^^^^^^
 WebDAV Asset Access
 ^^^^^^^^^^^^^^^^^^^
+External assets can also be hosted on a WebDAV server. CrafterCMS provides a way to reference these assets in your content and templates. Learn how to configure WebDAV profiles in Studio by reading :ref:`webdav-profiles-configuration`.
 
 .. TODO explain webdav
-
-TODO: explain how to access assets via webdav
-
-:ref:`webdav-profiles-configuration`
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Referencing Externally Managed Assets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 The ``Site Administrators`` section
 contains information on how to configure CrafterCMS to access services used for storing assets remotely
 here: :ref:`studio-config`.
@@ -412,7 +391,6 @@ via the URL pattern ``/remote-assets/STORE-TYPE/PROFILE-ID/PATH-TO-ASSET``, wher
 """""""""""""""""""""""""""""""""""
 Disabling ``/remote-assets`` Access
 """""""""""""""""""""""""""""""""""
-
 Sometimes you may want to disable access to remote repositories. To do this, in your authoring or delivery
 install, open the file ``rendering-context.xml`` under ``apache-tomcat/shared/classes/crafter/engine/extension/``
 and edit the file to define a set of ``crafter.urlMappings`` without the remote-asset controller, like this:
@@ -435,7 +413,6 @@ and edit the file to define a set of ``crafter.urlMappings`` without the remote-
 """"""""""""""""""""""""""""""""""""""""""""""""
 By-passing /remote-assets in Delivery for WebDAV
 """"""""""""""""""""""""""""""""""""""""""""""""
-
 To avoid proxying the WebDav ``/remote-assets`` in Delivery, the Delivery Deployer target should be configured
 to have a find and replace processor that changes the ``/remote-assets`` URL to an actual Apache static asset
 delivery URL.
@@ -453,7 +430,6 @@ delivery URL.
 ----------------
 Asset Processing
 ----------------
-
 Most projects contains images that are viewed in different display sizes (desktops/laptops, mobile phones,
 tablets, of which comes in different sizes, etc.), or videos at different bit-rates, resolutions, and size. CrafterCMS supports image and video renditioning as detailed below.
 
@@ -524,7 +500,6 @@ The pipelines can be configured by going to the Sidebar in Studio, then from the
 """"""""""""""""""""""""""""
 Image Transformation Example
 """"""""""""""""""""""""""""
-
 The following example specifies 2 different asset processing pipelines: the first one converts any image put
 under ``/static-assets/images/upload/`` into another one that's compressed and suitable to be displayed in a desktop
 browser, while the second one converts the same image for display on mobile devices:
@@ -589,7 +564,6 @@ would be discarded.
 ^^^^^^^^^^^^^^^^^
 Video Transcoding
 ^^^^^^^^^^^^^^^^^
-
 Crafter Studio allows users to upload and transcode videos using AWS MediaConvert using a data source in the content type. The following guide explains how to:
 
 * Configure Studio to use AWS MediaConvert and S3 for uploading and transcoding video.
@@ -599,7 +573,6 @@ Crafter Studio allows users to upload and transcode videos using AWS MediaConver
 """""""""""""
 Prerequisites
 """""""""""""
-
 * Create an AWS S3 bucket for uploading the transcoded videos.
 * Create an AWS Elemental MediaConvert Job template
 
@@ -612,7 +585,6 @@ Prerequisites
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Step 1: Add the S3 and MediaConvert configuration in Studio
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 Go to |projectTools| > ``Configuration`` and in the dropdown select ``AWS Profiles``. If you click on
 ``View Sample``, you'll see the available configuration profiles.
 

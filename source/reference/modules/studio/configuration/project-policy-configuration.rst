@@ -1,8 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.2
 
-.. index:: Project Policy
-
 .. _project-policy-configuration:
 
 ############################

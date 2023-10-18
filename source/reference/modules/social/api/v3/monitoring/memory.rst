@@ -1,4 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 
 .. _crafter-social-api-monitoring-memory:
@@ -6,13 +7,11 @@
 ================
 Get Memory Stats
 ================
-
 Returns the Crafter Social JVM memory details.
 
 --------------------
 Resource Information
 --------------------
-
 .. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
@@ -26,7 +25,6 @@ Resource Information
 ----------
 Parameters
 ----------
-
 +-------------------------+-------------+---------------+--------------------------------------+
 || Name                   || Type       || Required     || Description                         |
 +=========================+=============+===============+======================================+
@@ -36,17 +34,14 @@ Parameters
 -------
 Example
 -------
-
 ^^^^^^^
 Request
 ^^^^^^^
-
 ``GET .../api/3/monitoring/memory.json?token=defaultManagementToken``
 
 ^^^^^^^^
 Response
 ^^^^^^^^
-
 ``Status 200 OK``
 
 .. code-block:: json
@@ -65,7 +60,6 @@ Response
 ---------
 Responses
 ---------
-
 +---------+------------------+--------------------------------------------------------------------+
 || Status || Location        || Response Body                                                     |
 +=========+==================+====================================================================+

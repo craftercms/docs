@@ -1,7 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.1.2
 
-
 .. _working-with-dates-in-groovy:
 
 ===========================================
@@ -82,7 +81,6 @@ Which will output this for ``nowDate``:
 .. code-block:: text
 
     Thu Oct 26 23:45:23 PDT 2022
-
 
 --------------------------
 Date Arithmetic Operations
