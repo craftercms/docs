@@ -32,7 +32,7 @@ After logging in, you'll see the Projects screen (Below). Click on **Create Proj
 
 |
 
-In the **Create Project** screen, the user is presented with the available blueprints or the option to use a remote Git repository instead of selecting a blueprint from the list. To see all available blueprints, scroll through the dialog to see the default blueprints available out of the box from Crafter Studio including the option to use a remote Git repository to create a new project, and ``Public Marketplace`` blueprints which contains blueprints submitted to the `Crafter Marketplace GitHub App <https://github.com/marketplace/crafter-marketplace>`__
+In the **Create Project** screen, the user is presented with the available blueprints or the option to use a remote Git repository instead of selecting a blueprint from the list. To see all available blueprints, scroll through the dialog to see the default blueprints available out of the box from Crafter Studio including the option to use a remote Git repository to create a new project, and blueprints from the `Crafter Marketplace <https://craftercms.com/marketplace>`__.
 
 We're going to be using the "Website Editorial Blueprint". Blueprints offer you a starting point for your website. New blueprints can be created and installed into the system. Click on **Use** for the "Website Editorial Blueprint".
 
@@ -52,14 +52,20 @@ Give the project a friendly name for the **Project Name** and a description. Cli
 
 |
 
-The next step is to review your entries and finally create your new project. Click on the **Create Project** button and wait for the system to create your project based on the blueprint.  A spinner will then appear while it's creating the following: configuration, project content, and permissions based on the template provided by the blueprint.
+The next step is to review your entries and finally create your new project. Click on the **Create Project** button and wait for the system to create your project based on the blueprint.
 
 .. image:: /_static/images/first-project/create-project-review-create.webp
-   :width: 50 %
+   :width: 65 %
+   :align: center
    :alt: Your First Website - Create Project: Review and Create
 
+|
+
+A spinner will then appear while it's creating the following: configuration, project content, and permissions based on the template provided by the blueprint.
+
 .. image:: /_static/images/first-project/creating-spinner.webp
-   :width: 48 %
+   :width: 65 %
+   :align: center
    :alt: Your First Website - Creating a Project Spinner Dialog
 
 |
@@ -108,15 +114,20 @@ open a form for your new article under ``/articles/{year}/{month}``, where ``{ye
 
 |
 
-Another way to start creating your new article is to navigate to the level and location within the project navigation tree in the Sidebar where we want to create the new page. In this case, we are adding an article under **articles** -> **2023** -> **6**. Click on the three dots next to the folder, then select **New Content**. We'll then select the page template we want. Since we are adding a new article to the project, we will be selecting the template **Article**
-
+Another way to start creating your new article is to navigate to the level and location within the project navigation tree in the Sidebar where we want to create the new page. In this case, we are adding an article under **articles** -> **2023** -> **6**. Click on the three dots next to the folder, then select **New Content**.
 
 .. image:: /_static/images/first-project/first-project-new-content.webp
-   :width: 48 %
+   :width: 65 %
+   :align: center
    :alt: Your First Website - New Content
 
+|
+
+We'll then select the page template we want. Since we are adding a new article to the project, we will be selecting the template **Article**
+
 .. image:: /_static/images/first-project/first-project-select-page-template.webp
-   :width: 48 %
+   :width: 65 %
+   :align: center
    :alt: Your First Website - Select Page Template
 
 |
@@ -186,21 +197,31 @@ items in the left rail, toggle the ``Edit Mode`` switch on the top right of your
 the page when you hover your mouse on them.
 
 Let's update the address listed under ``Contact Us``, and to do this, mouse over on the address
-section then click on it.  A cursor will appear and you may now edit the address. To edit the
-other items in the ``Contact Us`` section, simply do the same as you did for the address.  Mouse
-over on the item, then click on it and start editing. The image on the right displays the edited
-``Contact Us`` section.
+section then click on it.
 
 .. image:: /_static/images/first-project/first-project-edit-contact-address.webp
-   :width: 20 %
+   :width: 25 %
+   :align: center
    :alt: Your First Website - Edit the Contact Address in the Left Rail
+
+|
+
+A cursor will appear and you may now edit the address. To edit the
+other items in the ``Contact Us`` section, simply do the same as you did for the address.  Mouse
+over on the item, then click on it and start editing.
 
 .. image:: /_static/images/first-project/first-project-edit-contact-paragraph.webp
    :width: 45 %
+   :align: center
    :alt: Your First Website - Edit the Contact Paragraph in the Left Rail
 
+|
+
+The image below displays the edited ``Contact Us`` section.
+
 .. image:: /_static/images/first-project/first-project-edited-contact.webp
-   :width: 18 %
+   :width: 25 %
+   :align: center
    :alt: Your First Website - Contact Us section Edited
 
 |
@@ -283,32 +304,41 @@ the bottom right of the screen when dragging around a component.
 |
 
 In ``Edit mode``, another way to remove a feature, is by clicking on the feature,
-then selecting the trash can icon (see image below on the left).
+then selecting the trash can icon .
+
+.. image:: /_static/images/first-project/first-project-remove-feature2.webp
+   :width: 35 %
+   :align: center
+   :alt: Your First Website - Delete Feature via XB
+
+|
 
 Yet another way to remove a feature from ``Edit mode``, is to edit the features section via
 the content form, then select a feature from the list and click on the trash can icon on the right
 (see image below on the right).
 
-.. image:: /_static/images/first-project/first-project-remove-feature2.webp
-   :width: 35 %
-   :alt: Your First Website - Delete Feature via XB
-
 .. image:: /_static/images/first-project/first-project-remove-feature.webp
    :width: 55 %
+   :align: center
    :alt: Your First Website - Remove Feature
 
 |
 
 
 To edit a feature via the content form from XB, simply mouse over the area of the feature you want to edit,
-then click on it and start editing
 
 .. image:: /_static/images/first-project/first-project-xb-edit2-feature.webp
    :width: 65 %
+   :align: center
    :alt: Your First Website - Edit Feature via XB
+
+|
+
+then click on it and start editing
 
 .. image:: /_static/images/first-project/first-project-xb-edit-feature.webp
    :width: 25 %
+   :align: center
    :alt: Your First Website - Edit Feature via XB
 
 |
