@@ -37,6 +37,8 @@ Here are the list of tools available when using an out of the box blueprint. The
     :align: center
     :width: 20%
 
+|
+
 The configuration files for the Navigation Menu is located in ``CRAFTER_HOME/data/repos/global/configuration/`` where:
 
 * :ref:`global-menu-config.xml <global-menu-config>` lets you setup the list of tools available from the Navigation Menu sidebar
@@ -50,12 +52,14 @@ The tools available in the Navigation Menu is configured similar to how the Proj
 ^^^^^^^^
 Projects
 ^^^^^^^^
-``Projects`` contains a list of all the projects the logged in user has access to. The section :ref:`author-screens` in ``Content Authors`` contains descriptions on some of the actions that can be performed from the Projects screen.  This also allows users with the system admin role to create new projects either from a :ref:`blueprint <your-first-editorial-project>` or a :ref:`remote repository <create-project-with-link-to-remote-repo>`.
+``Projects`` contains a list of all the projects the logged in user has access to. The section :ref:`author-screens` in ``Content Authors`` contains descriptions on some of the actions that can be performed from the Projects screen.  This also allows users with the system admin role to create new projects either from a :ref:`blueprint <your-first-editorial-project>`, a :ref:`remote repository <create-project-with-link-to-remote-repo>` or an :ref:`existing project <duplicate-project>`.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-sites.webp
     :alt: System Administrator - Navigation Menu Projects
     :align: center
     :width: 85%
+
+|
 
 .. _main-menu-tool-users:
 
@@ -101,6 +105,8 @@ Cluster |enterpriseOnly|
     :align: center
     :width: 85%
 
+|
+
 .. _main-menu-tool-audit:
 
 ^^^^^
@@ -112,6 +118,8 @@ Audit logs displays the date, time, user and action performed to content in all 
     :alt: System Administrator - Navigation Menu Audit
     :align: center
     :width: 85%
+
+|
 
 See :ref:`nav-menu-audit` for more details on the audit logs
 
@@ -127,6 +135,8 @@ There are 6 log levels defined in CrafterCMS. These levels determine what messag
     :align: center
     :width: 85%
 
+|
+
 For more information on logging levels, see :ref:`override-logging-levels`
 
 .. _main-menu-tool-log-console:
@@ -140,6 +150,8 @@ The ``Log Console`` allows the user to view messages depending on what log level
     :alt: System Administrator - Navigation Menu Log Console
     :align: center
     :width: 75%
+
+|
 
 :ref:`override-logging-levels` contains more information on how to track Java packages with the corresponding log levels desired.
 
@@ -157,6 +169,8 @@ The ``Global Config`` allows the user to edit the system settings for Studio wit
     :align: center
     :width: 100%
 
+|
+
 When making changes here, not all changes can/will take effect without a restart, so expect to have to **restart Studio** for most changes to take effect
 
 For more information on what you can configure from the ``Global Config``, see :ref:`nav-menu-global-config`
@@ -173,6 +187,8 @@ The ``Encryption Tool`` allows the user to encrypt sensitive data such as access
     :align: center
     :width: 100%
 
+|
+
 For more information on how to use the encryption tool, see :ref:`studio-encryption-tool`.
 
 ^^^^^^^^^^^^^^^^
@@ -184,6 +200,8 @@ The ``Token Management Tool`` allows the user to manage access tokens used to ma
     :alt: System Administrator - Navigation Menu Token Management Tool
     :align: center
     :width: 100%
+
+|
 
 For an example of how to use the generated token, see :ref:`crafter-cli`.
 
@@ -197,7 +215,11 @@ The ``Account Tool`` allows the user to change the user's personal Crafter Studi
     :align: center
     :width: 100%
 
+|
+
 For more information on how to use the Account tool, see :ref:`account-management`.
+
+|hr|
 
 .. _nav-menu-global-config:
 
@@ -216,8 +238,11 @@ To access the Global Config, click on the ``Navigation Menu`` icon at the top ri
     :align: center
     :width: 100%
 
+|
+
 To find out more on what you can configure from the Global Config, see :ref:`studio-config`.
 
+|hr|
 
 .. _nav-menu-audit:
 
@@ -233,6 +258,8 @@ To view the audit logs, from the top right of your browser, click on the ``Navig
     :align: center
     :width: 85%
 
+|
+
 You can filter the logs displayed based on the following:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -243,37 +270,47 @@ Audit Logs Project Filter
 .. image:: /_static/images/system-admin/main-menu/audit-site-filter.webp
     :alt: System Administrator - Main Menu Audit Project Filter
     :align: center
-    :width: 85%
+    :width: 65%
+
+|
 
 ^^^^^^^^^^^^^^^^^^^^^^
 Audit Logs User Filter
 ^^^^^^^^^^^^^^^^^^^^^^
-``User`` filters the log by user name. Clicking on ``User`` gives you a list of all the users in Studio and the option to see logs for all users.
+``Username`` filters the log by username. Clicking on ``Username`` gives you a list of all the users in Studio and the option to see logs for all users.
 
 .. image:: /_static/images/system-admin/main-menu/audit-user-filter.webp
     :alt: System Administrator - Main Menu Audit User Filter
     :align: center
-    :width: 85%
+    :width: 65%
+
+|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Audit Logs Operations Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-``Operations`` filters the log by operations. Clicking on ``Operations`` gives you a list of all operations logged.
+``Operation`` filters the log by operations. Clicking on ``Operation`` gives you a list of all operations logged.
 
 .. image:: /_static/images/system-admin/main-menu/audit-operations-filter.webp
     :alt: System Administrator - Main Menu Audit Operations Filter
     :align: center
-    :width: 85%
+    :width: 65%
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Audit Logs Options Filter
-^^^^^^^^^^^^^^^^^^^^^^^^^
-``Options`` filters the log based on date range, cluster node id, origins (Git or API) or path.
+|
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Audit Logs Timestamp Filter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``Timestamp`` filters the log based on date range
 
 .. image:: /_static/images/system-admin/main-menu/audit-options-filter.webp
-    :alt: System Administrator - Main Menu Audit Options Filter
+    :alt: System Administrator - Main Menu Audit Timestamp Filter
     :align: center
-    :width: 85%
+    :width: 65%
+
+|
+
+|hr|
 
 .. _user-group-management:
 
@@ -305,12 +342,18 @@ To find the Users Management console follow the next instructions:
    .. image:: /_static/images/users/users-manage-access.webp
        :alt: Users - Manage Access
        :align: center
+       :width: 65%
+
+   |
 
 2. Here's the screen that will appear after clicking on **Users**
 
    .. image:: /_static/images/system-admin/main-menu/main-menu-users.webp
        :alt: Users Dialog
        :align: center
+       :width: 65%
+
+   |
 
 """""""
 Actions
@@ -325,7 +368,9 @@ To see a list of all existing users, make sure that there are no search terms en
 .. image:: /_static/images/users/users-list-all.webp
     :alt: Users - List All
     :align: center
-    :width: 75%
+    :width: 65%
+
+|
 
 '''''''''''''''
 Searching Users
@@ -337,6 +382,9 @@ In the following example we typed "jane", we obtained only one related user: "Ja
 .. image:: /_static/images/users/users-search.webp
     :alt: Users - Search
     :align: center
+    :width: 65%
+
+|
 
 .. _creating-a-user:
 
@@ -348,6 +396,9 @@ To create a new user, please click on the "Create User" button at the top of the
 .. image:: /_static/images/users/users-add-new.webp
     :alt: Users - Add New
     :align: center
+    :width: 65%
+
+|
 
 A modal dialog will be displayed, please fill out all the fields and finally click on the "**Submit**" button.
 If you do not want to create a new user, please click on the "**Cancel**" button.
@@ -355,13 +406,17 @@ If you do not want to create a new user, please click on the "**Cancel**" button
 .. image:: /_static/images/users/users-add.webp
     :alt: Users - Add
     :align: center
+    :width: 65%
+
+|
 
 A notification will appear on the screen for a few seconds on successful creation of a new user
-<image below needs to be updated>
 
 .. image:: /_static/images/users/users-create-notification.webp
     :alt: Users - Created Notification
     :align: center
+
+|
 
 .. _editing-a-user:
 
@@ -374,12 +429,16 @@ To view/edit a specific user, please click on the row of the name you want to ed
     :alt: Users - Click on Name to View Details
     :align: center
 
+|
+
 A modal dialog will be displayed with the user information. To finish viewing, click on the "**X**" (close icon) button.
 
 .. image:: /_static/images/users/users-view.webp
     :alt: Users - View User Info
     :align: center
-    :width: 75%
+    :width: 65%
+
+|
 
 Once the dialog is displayed, to edit a specific user, simply click on the field that you want to change.
 In the above dialog the **Externally Managed** label is displayed which indicates that the user is externally
@@ -396,7 +455,9 @@ on the "Cancel" button.
 .. image:: /_static/images/users/users-edit.webp
     :alt: Users - Edit
     :align: center
-    :width: 75%
+    :width: 65%
+
+|
 
 '''''''''''''''''''''''''''''''''''''
 Resetting an Existing User's Password
@@ -406,7 +467,10 @@ the following example.
 
 .. image:: /_static/images/users/users-reset-btn.webp
     :alt: Users - Reset Password Icon
+    :width: 65%
     :align: center
+
+|
 
 A modal dialog will be displayed, where the admin can reset the users password. Click on ``Save`` to reset the password.
 
@@ -414,6 +478,8 @@ A modal dialog will be displayed, where the admin can reset the users password. 
     :alt: Users - Reset Password
     :align: center
     :width: 55%
+
+|
 
 '''''''''''''''''''''''''
 Removing an Existing User
@@ -424,7 +490,9 @@ the following example.
 .. image:: /_static/images/users/users-remove-btn.webp
     :alt: Users - Remove Icon
     :align: center
-    :width: 80%
+    :width: 65%
+
+|
 
 A confirmation pop up will be displayed, please click on "**Yes**" to remove the user and click on "**No**" if you do not want to remove it.
 
@@ -433,11 +501,15 @@ A confirmation pop up will be displayed, please click on "**Yes**" to remove the
     :align: center
     :width: 50%
 
+|
+
 A notification will appear on the screen for a few seconds on successful deletion of a user
 
 .. image:: /_static/images/users/users-delete-notification.webp
     :alt: Users - Deleted Notification
     :align: center
+
+|
 
 .. important::
    When a user is deleted, the deleted user cannot be re-created. Instead of deleting a user,
@@ -448,8 +520,10 @@ A notification will appear on the screen for a few seconds on successful deletio
 
    .. image:: /_static/images/users/user-disabled-notification.webp
       :alt: Users - Deleted Notification
-      :width: 30%
+      :width: 25%
       :align: center
+
+   |
 
 .. _groups-management:
 
@@ -491,6 +565,8 @@ To find this section through studio follow the next instructions:
     :alt: Groups Management
     :align: center
 
+|
+
 """"""""""""""""
 Searching Groups
 """"""""""""""""
@@ -502,6 +578,8 @@ that match your search term.
     :width: 60%
     :alt: Groups Management Search
     :align: center
+
+|
 
 .. _create-a-new-group:
 
@@ -515,6 +593,8 @@ To create a new group, you just need to click on the "**Create Group**" button,
     :alt: Main Menu - Groups New
     :align: center
 
+|
+
 then, a modal dialog will show up with the required fields for the group creation.
 Enter a display name and a short description for the new group.
 After filling the form, click on **Save**, and the new group will show in the groups table.
@@ -524,12 +604,16 @@ After filling the form, click on **Save**, and the new group will show in the gr
     :alt: Main Menu - Groups Create Dialog
     :align: center
 
+|
+
 A notification of successful group creation will pop up for a few seconds after clicking on the **Create** button.
 
 .. image:: /_static/images/groups/groups-created-notification.webp
    :width: 40%
    :alt: Main Menu - Groups Created Notification
    :align: center
+
+|
 
 """"""""""""""""
 Removing a Group
@@ -542,6 +626,8 @@ Click on the trash can icon on the top right of the group dialog.
    :alt: Main Menu - Groups Remove Icon
    :align: center
 
+|
+
 A confirmation popup will appear asking you if you want to delete the group, as seen above.
 Click on **Yes** to remove the group.
 
@@ -551,6 +637,8 @@ On successful removal of the group, a notification will appear for a few seconds
    :width: 40%
    :alt: Main Menu - Groups Removed Notification
    :align: center
+
+|
 
 """""""""""""""""""""""""
 Editing an Existing Group
@@ -563,6 +651,8 @@ changes. You can also add/remove users from the group. Finally, you'll see a lis
     :width: 60%
     :alt: Main Menu - Groups Edit
     :align: center
+
+|
 
 .. _adding-users-to-a-group:
 
@@ -578,6 +668,8 @@ email of the user you want to add to the group.
     :alt: Main Menu - Groups Add User Search
     :align: center
 
+|
+
 Notice that it will give you a list of matching users, select the user you want to add by clicking on the
 checkbox next to it, and if you want to add some more users to the group, just type in the names, and put
 a checkmark next to them, then click on the **>** (greater than icon) button.
@@ -587,12 +679,16 @@ a checkmark next to them, then click on the **>** (greater than icon) button.
     :alt: Main Menu - Groups Add Members
     :align: center
 
+|
+
 It will then give you a notification that the user(s) has been successfully added to the group.
 
 .. image:: /_static/images/groups/groups-users-added-notification.webp
     :width: 40%
     :alt: Main Menu - Groups Members Added Notification
     :align: center
+
+|
 
 """""""""""""""""""""""""""
 Removing Users from a Group
@@ -609,12 +705,16 @@ the **<** (less than icon) button.
     :alt: Main Menu - Groups Remove Members
     :align: center
 
+|
+
 It will then give you a notification that the user(s) has been successfully deleted from the group.
 
 .. image:: /_static/images/groups/groups-remove-user-confirm.webp
-    :width: 40%
+    :width: 25%
     :alt: Main Menu - Groups Members Removed Notification
     :align: center
+
+|
 
 .. _roles-and-permissions:
 
@@ -692,8 +792,10 @@ Below are the information used to create a new group:
 
 .. image:: /_static/images/site-admin/new-group.webp
      :alt: Group - Create a New Group
-     :width: 100%
+     :width: 65%
      :align: center
+
+|
 
 For more information on adding a new group to a project, please see :ref:`create-a-new-group`
 
@@ -812,13 +914,19 @@ Every user logged in to CrafterCMS can change their own password.
 
    .. image:: /_static/images/users/your-passwd-open.webp
        :alt: Users - Open Dialog with User Name
+       :width: 65%
        :align: center
+
+   |
 
 #. In the **Change Password** section of the dialog, enter your current password in the **Current Password** field.
 
    .. image:: /_static/images/users/your-passwd-change.webp
        :alt: Users - User Settings Dialog to Change Password
+       :width: 65%
        :align: center
+
+   |
 
 #. Next, enter the new password into the **New Password** field.
 #. Re-enter the new password into the **Confirm Password** field.
@@ -826,8 +934,10 @@ Every user logged in to CrafterCMS can change their own password.
 
    .. image:: /_static/images/users/change-passwd-notification.webp
        :alt: Users - Password Change Notification
-       :width: 50%
+       :width: 30%
        :align: center
+
+   |
 
 After changing your password, you will be logged out of the system and will have to log back in using the new password you set before continuing your work in Studio.
 
@@ -848,6 +958,8 @@ For more information on editing a user, see :ref:`editing-a-user`
 Setting a User's Initial Password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The Crafter admin must set an initial password when creating a new user. To create a new user, please see :ref:`creating-a-user`
+
+|hr|
 
 .. _create-project-with-link-to-remote-repo:
 
@@ -891,7 +1003,7 @@ To create a project based on a blueprint then add a remote bare git repository, 
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-1.webp
     :alt: Create Site Dialog in Crafter Studio, select a blueprint
-    :width: 70 %
+    :width: 65 %
     :align: center
 
 |
@@ -900,7 +1012,7 @@ The next step is to fill in the **Project ID** and **Project Name**, then click 
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-2.webp
     :alt: Create Site Dialog in Crafter Studio, fill in Site ID
-    :width: 70 %
+    :width: 65 %
     :align: center
 
 |
@@ -910,7 +1022,7 @@ This will open up a dialog where we can fill in all the information for our remo
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-3.webp
     :alt: Create Repository dialog to fill in information of remote repository being added to the project
-    :width: 70 %
+    :width: 65 %
     :align: center
 
 |
@@ -919,8 +1031,10 @@ Your project should now have a remote repository listed in the **Remotes** scree
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-4.webp
     :alt: Remotes screen displaying newly added remote repository to project
-    :width: 70 %
+    :width: 65 %
     :align: center
+
+|
 
 Remember that the remote repository needs to be a bare git repository, since we are pushing our newly created project to the remote repository. To push our newly create project to the remote repository, click on the ``Push`` button (button with the up arrow) next to the remote repository
 
@@ -929,11 +1043,11 @@ Create project based on a remote Git repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Creating a project based on a remote Git repository is basically exporting a project from one Studio and importing it into another one.
 
-To create a project based on remote Git repository, after clicking on **Create Project**, Click on **Remote Git Repository** in the **Private Blueprints** tab create project screen
+To create a project based on remote Git repository, after clicking on **Create Project**, Click on **Remote Git Repository** in the create project screen
 
-.. figure:: /_static/images/developer/dev-cloud-platforms/create-project-based-on-remote-1.webp
+.. figure:: /_static/images/first-project/create-project-choose-bp.webp
     :alt: Developer How Tos - Setting up to work locally against the upstream
-    :width: 70 %
+    :width: 65 %
     :align: center
 
 |
@@ -949,7 +1063,7 @@ or alternatively for ssh:
 
 .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-1.webp
    :alt: Developer How Tos - Setting up to work locally against the upstream
-   :width: 70 %
+   :width: 65 %
    :align: center
 
 |
@@ -959,7 +1073,7 @@ Click on the **Review** button, then finally, the **Create Site** button.
 
 .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-2.webp
    :alt: Developer How Tos - Setting up to work locally against the upstream review entries
-   :width: 50 %
+   :width: 65 %
    :align: center
 
 |
@@ -975,6 +1089,8 @@ After a short while, your project will be imported.
       :width: 20 %
       :align: center
 
+   |
+
 #. In the **Publishing** screen, scroll down to ``Publish on Demand`` then click on the **Publish Entire Project**
    button to publish the whole project.
 
@@ -983,4 +1099,35 @@ After a short while, your project will be imported.
       :width: 65 %
       :align: center
 
+   |
 
+|hr|
+
+.. _duplicate-project:
+
+---------------------
+Duplicating a Project
+---------------------
+Crafter Studio supports creating a new project by duplicating an existing project.
+To duplicate a project, from ``Projects``, click on the ``Create Project`` button.
+
+.. image:: /_static/images/first-project/create-project-choose-bp.webp
+   :width: 65 %
+   :align: center
+   :alt: Studio Administration - Create Project
+
+|
+
+Next, click on ``Duplicate Project``. It will then prompt you to select the project to be duplicated by clicking
+on the dropdown arrow in the ``Project`` field.  Give it a good ``Project Name`` and ``Project ID``, then click on the
+``Review`` button
+
+.. image:: /_static/images/system-admin/duplicate-project-screen.webp
+   :width: 65 %
+   :align: center
+   :alt: Studio Administration - Duplicate Project Screen
+
+|
+
+When duplicating a project that uses S3 buckets (blob stores), the S3 buckets may be copied over to the new project and the
+configuration updated if separate S3 buckets from the source project are required.
