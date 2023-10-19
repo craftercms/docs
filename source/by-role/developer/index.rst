@@ -185,7 +185,7 @@ Upgrading CrafterCMS from a developer's perspective is covered in :ref:`develope
 Managing Secrets
 ----------------
 Credentials may be required in some cases when accessing content. For more information on how to manage/encode your secrets such as
-AWS credentials, please see :ref:`managing-secrets`
+AWS credentials, please see :ref:`managing-secrets`.
 
 .. toctree::
     :hidden:

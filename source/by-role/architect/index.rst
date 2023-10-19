@@ -185,7 +185,7 @@ considerations that CrafterCMS supports. Considerations include:
 
 * In-context and in-place editing of headless content (Headless+)
 * Workflow of authored content from the first edit, through staging, and finally to a live state
-* DevContentOps and the flow of code, content, and team cadence
+* :ref:`DevContentOps` and the flow of code, content, and team cadence
 
 |hr|
 
@@ -201,7 +201,7 @@ to render HTML directly from CrafterCMS.
 CrafterCMS allows developers to model the content as general reusable items, and fold those into pages. Pages aggregate
 content from components as needed and are associated with a FreeMarker template that can render the final page.
 The choice of HTML tools and frameworks doesn't matter to CrafterCMS. Developers can use whatever front-end technology
-they want. For development React, Vue, Angular, Flutter, or similar SPA, please see ref:`here <architect-headless>`
+they want. For development React, Vue, Angular, Flutter, or similar SPA, please see section :ref:`architect-headless`.
 
 The use of templated sites as opposed to Headless sites doesn't detract from CrafterCMS' full support of building
 custom APIs. CrafterCMS allows developers to quickly drop a Groovy file that becomes a server-side API
@@ -213,9 +213,7 @@ augment with in-context and in-place editing for content authors.
 
 Features like workflow, review and approval processes, staging, and final go-live are of course all built-in.
 
-Finally, given that CrafterCMS is Git-based, full DevContentOps support is native and fully supports templated sites.
-
-See :ref:`here <devcontentops>` for more information on DevContentOps
+Finally, given that CrafterCMS is Git-based, full DevContentOps support is native and fully supports templated sites. Learn more in the article :ref:`devcontentops`.
 
 |hr|
 
@@ -235,7 +233,7 @@ Content Inheritance
 Having content authors enter the same meta-data/content for every content item where it doesn't change is both
 laborious and wasteful. It's best for common meta-data for a section or the whole application to be entered once
 and inherited by all child items. This is content inheritance, and the implementation in CrafterCMS is very
-powerful supporting many inheritance mechanisms. More on this :ref:`here <content-inheritance>`
+powerful supporting many inheritance mechanisms. More on this in the article :ref:`content-inheritance`.
 
 ^^^^^^^^
 Security
@@ -250,10 +248,9 @@ Authentication
 """"""""""""""
 CrafterCMS supports authentication integration with:
 
-* SAML2 providers (see :ref:`here <engine-saml2-configuration>` and :ref:`here <crafter-studio-configure-studio-saml>`)
-* :ref:`LDAP <crafter-studio-configure-ldap>` , AD, ADFS
-* Header-based providers (most SSO vendors) (see :ref:`here <crafter-studio-configure-header-based-auth>` and :ref:`here <engine-headers-authentication>`)
-* OAuth 2.0 (coming soon)
+* SAML2 providers (see :ref:`engine-saml2-configuration` and :ref:`crafter-studio-configure-studio-saml`)
+* :ref:`Studio LDAP Authentication <crafter-studio-configure-ldap>` , AD, ADFS
+* Header-based providers (most SSO vendors) (see :ref:`Engine Headers Based Authentication <engine-headers-authentication>` and :ref:`Studio Headers Based Authentication <crafter-studio-configure-header-based-auth>`)
 
 """""""""""""
 Authorization
@@ -267,7 +264,7 @@ In-Context Editing
 CrafterCMS provides an SDK that lets developers focused on a headless use-case add the tools content authors expect,
 like visual in-context and in-place editing of Web content regardless of the development platform and tools.
 
-More information on Experience Builder :ref:`here <experience-builder>` and on the SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__
+More information on Experience Builder in the :ref:`experience-builder` article and on the SDK at https://www.npmjs.com/package/@craftercms/experience-builder.
 
 ------------
 Availability
@@ -355,7 +352,7 @@ across geographies where you have end users. Delivery nodes can pull content fro
 nodes and are typically deployed in geographies where your end users are.
 
 .. image:: /_static/images/architecture/global-delivery.webp
-    :width: 100%
+    :width: 65%
     :alt: CrafterCMS Geo Distributed Deployment
     :align: center
 
