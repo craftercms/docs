@@ -1,45 +1,35 @@
 :is-up-to-date: True
 :last-update: 4.0.0
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Form Controls; Time Control
-
 .. _form-time:
 
 ============
 Time Control
 ============
-
 -------
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-time-example.webp
-    :width: 65%
+.. figure:: /_static/images/form-controls/form-control-time-example.webp
+    :width: 60%
     :alt: Form Control Time Example 1
-    :align: center
+    :align: left
 
 |
 
-.. image:: /_static/images/form-controls/form-control-time-example2.webp
-    :width: 65%
+.. figure:: /_static/images/form-controls/form-control-time-example2.webp
+    :width: 60%
     :alt: Form Control Time Example 2
-    :align: center
-
-
+    :align: left
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-time-properties.webp
-    :width: 35%
+    :width: 30%
     :alt: Form Control Time Properties
-    :align: center
+    :align: left
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 

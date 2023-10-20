@@ -1,13 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Form Controls; Date/Time Control
-
 .. _form-date-time:
 
 =================
@@ -18,19 +11,22 @@ Date/Time Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-date-time-example.webp
-    :width: 50%
+.. figure:: /_static/images/form-controls/form-control-date-time-example.webp
+    :width: 75%
     :alt: Form Control Date-Time Example
-    :align: center
+    :align: left
+
+|
+|
+|
 
 -------------
 Configuration
 -------------
-
 .. image:: /_static/images/form-controls/form-control-date-time-properties.webp
-    :width: 50%
+    :width: 30%
     :alt: Form Control Date-Time Properties
-    :align: center
+    :align: left
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
