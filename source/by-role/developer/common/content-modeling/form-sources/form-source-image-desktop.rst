@@ -1,23 +1,16 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Data Sources; Image Uploaded from Desktop
-
 .. _form-source-image-desktop:
 
 =======================================
 Image Uploaded from Desktop Data Source
 =======================================
+Data source to upload images from desktop.
 
-.. image:: /_static/images/form-sources/form-source-image-desktop.webp
+.. figure:: /_static/images/form-sources/form-source-image-desktop.webp
     :width: 30%
     :alt: Source Control Image From Desktop
-    :align: center
 
 |
 
@@ -26,16 +19,12 @@ Configuration
 -------------
 
 .. image:: /_static/images/form-sources/form-source-image-desktop-conf.webp
-    :width: 50%
+    :width: 40%
     :alt: Form Control Input 1
-    :align: center
-
-|
+    :align: left
 
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
-+------------------------+------------------------------------------------------------------------------+
-|| Description/Purpose   || Data source to upload images from desktop.                                  |
 +------------------------+------------------------------------------------------------------------------+
 || Properties            || - Repository Path: Path where to store the new image uploaded from desktop. |
 +------------------------+------------------------------------------------------------------------------+

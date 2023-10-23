@@ -1,23 +1,16 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Data Sources; Video Upload then Transcode Video from S3 Repository using MediaConvert
-
 .. _form-source-mediaconvert-transcode:
 
 ==================================================================
 Video Upload then Transcode from S3 using MediaConvert Data Source
 ==================================================================
+Data source to upload videos to AWS MediaConvert repository.
 
-.. image:: /_static/images/form-sources/form-source-s3-transcode.webp
+.. figure:: /_static/images/form-sources/form-source-s3-transcode.webp
     :width: 30%
     :alt: Source Control Video Transcoding from S3 Repository
-    :align: center
 
 |
 
@@ -26,16 +19,12 @@ Configuration
 -------------
 
 .. image:: /_static/images/form-sources/form-source-s3-transcode-conf.webp
-    :width: 50%
+    :width: 40%
     :alt: Source Control Video Transcoding from S3 Repository Properties
-    :align: center
-
-|
+    :align: left
 
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
-+------------------------+-----------------------------------------------------------------------------+
-|| Description/Purpose   || Data source to upload videos to AWS MediaConvert repository                |
 +------------------------+-----------------------------------------------------------------------------+
 || Properties            || - Input Profile ID: AWS profile id (MediaConvert) to be used for uploading |
 ||                       ||                     and triggering the transcode job, setup in aws.xml     |

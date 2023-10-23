@@ -107,6 +107,11 @@ Audit logs displays the date, time, user and action performed to content in the 
 
 See :ref:`studio-logging` for some more information on viewing logs.
 
+.. toctree::
+    :hidden:
+
+    studio-logging
+
 ^^^^^^^^^^^^^^^
 Workflow States
 ^^^^^^^^^^^^^^^
@@ -120,6 +125,11 @@ Workflow States allows the user to manually set the workflow state of every file
 |
 
 For more details on manually setting workflow states, see :ref:`setting-workflow-states`
+
+.. toctree::
+    :hidden:
+
+    setting-workflow-states
 
 ^^^^^^^^^^^
 Log Console
@@ -149,6 +159,11 @@ The **Publishing** module under **Project Tools** allows the user to view the pu
 
 For more information on Publishing, see :ref:`publishing-and-status`
 
+.. toctree::
+    :hidden:
+
+    publishing-and-status
+
 ^^^
 Git
 ^^^
@@ -162,6 +177,11 @@ The **Git** under **Project Tools** allows the user to perform Git operations su
 |
 
 For more information on Git under |projectTools|, see :ref:`project-tools-git`
+
+.. toctree::
+    :hidden:
+
+    project-tools-git
 
 ^^^^^^^
 GraphQL
@@ -189,3 +209,8 @@ The Project Tools **Plugin Management** allows the user to install and to view c
    :width: 70%
 
 For more information on managing project plugins, see :ref:`plugin-management`
+
+.. toctree::
+    :hidden:
+
+    ../plugin-management

@@ -1,41 +1,29 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Data Sources; WebDAV Repository File Upload
-
 .. _form-source-webdav-file-upload:
 
 ==============================
 WebDAV File Upload Data Source
 ==============================
+Data source to upload files to WebDav repository.
 
-.. image:: /_static/images/form-sources/form-source-webdav-file-upload-repo.webp
+.. figure:: /_static/images/form-sources/form-source-webdav-file-upload-repo.webp
     :width: 30%
     :alt: Source Control File Upload WebDAV
-    :align: center
 
 |
 
 -------------
 Configuration
 -------------
-
 .. image:: /_static/images/form-sources/form-source-webdav-conf.webp
-    :width: 50%
+    :width: 40%
     :alt: Source Control File Upload WebDAV
-    :align: center
-
-|
+    :align: left
 
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
-+------------------------+-----------------------------------------------------------------------------+
-|| Description/Purpose   || Data source to upload files to WebDav repository                           |
 +------------------------+-----------------------------------------------------------------------------+
 || Properties            || - Repository Path: WebDAV repository path where to store the new           |
 ||                       ||                    uploaded file                                           |

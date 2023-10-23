@@ -1,32 +1,24 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Form Controls; Auto Filename
-
 .. _form-auto-filename:
 
 =====================
 Auto Filename Control
 =====================
+Simple text auto filename.
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-autofilename-properties.webp
-    :width: 50%
+    :width: 30%
     :alt: Form Control Autofilename Properties
-    :align: center
+    :align: left
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
-+------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Simple text auto filename.                                           |
 +------------------------+-----------------------------------------------------------------------+
 || Properties            || None                                                                 |
 +------------------------+-----------------------------------------------------------------------+

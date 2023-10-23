@@ -1,54 +1,57 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Form Controls; Numeric Input
-
 .. _form-numeric-input:
 
 =====================
 Numeric Input Control
 =====================
+Simple numeric input control.
 
 -------
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-numeric-input-example.webp
+.. figure:: /_static/images/form-controls/form-control-numeric-input-example.webp
         :width: 60%
         :alt: Form Control Numeric Input Example
-        :align: center
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-numeric-input.webp
-        :width: 45%
+        :width: 35%
         :alt: Form Control Numeric Input Properties
-        :align: center
+        :align: left
+
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
-+------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Simple numeric input control.                                        |
-+------------------------+-----------------------------------------------------------------------+
-||                       || * Display Size: How much of the input to show on the author input    |
-||                       ||   form.                                                              |
-|| Properties            || * Maximum: Maximum number of numeric characters to accept as input   |
-||                       || * Minimum: Minimum number of numeric characters to accept as input   |
-||                       || * Read Only: Make field read-only (can't be changed by the author).  |
-||                       || * Tokenize for Indexing: Make the object searchable by this field.   |
-+------------------------+-----------------------------------------------------------------------+
-|| Constraints           || * Required: Make field required to fill out.                         |
-||                       || * Match Pattern: Field must match a regex to be accepted.            |
-+------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || * None.                                                              |
-+------------------------+-----------------------------------------------------------------------+
 
-.. .. todo:: link the above to the Pencil Tool and other subjects to help with cross navigation
-.. .. seealso:: Links to Pencil Tool, other relevant topics
+.. list-table::
+   :widths: 1 2
+   :width: 70%
+
+   * -
+     -
+   * - Display Size
+     - How much of the input to show on the author input form
+   * - Maximum
+     - Maximum number of numeric characters to accept as input
+   * - Minimum
+     - Minimum number of numeric characters to accept as input
+   * - Read Only
+     - Make field read-only (can't be changed by the author)
+   * - Tokenize for Indexing
+     - Make the object searchable by this field
+   * - Required
+     - Make field required to fill out
+   * - Match Pattern
+     - Field must match a regex to be accepted
+   * -
+     -
+   * - Related Data Sources
+     - None
+   * - Related Topics
+     - :ref:`experience-builder`

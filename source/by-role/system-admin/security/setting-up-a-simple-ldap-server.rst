@@ -1,9 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
-
 :orphan:
-
-.. index:: Setting up a simple LDAP server for development/testing using Apache Directory Studio, Setting up a simple LDAP server
 
 .. _setting-up-simple-ldap-server:
 

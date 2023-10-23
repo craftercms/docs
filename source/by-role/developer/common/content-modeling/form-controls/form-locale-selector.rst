@@ -1,36 +1,29 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Form Controls; Locale Selector
-
 .. _form-locale-selector:
 
 =======================
 Locale Selector Control
 =======================
+Indicates locale used for content.
 
 -------
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-locale-selector-example.webp
+.. figure:: /_static/images/form-controls/form-control-locale-selector-example.webp
       :width: 60%
       :alt: Form Control - Locale Selector Control Example
-      :align: center
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-locale-selector-properties.webp
-    :width: 50%
+    :width: 30%
     :alt: Form Control Locale Selector Properties
-    :align: center
+    :align: left
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 

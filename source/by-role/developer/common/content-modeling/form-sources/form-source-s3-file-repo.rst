@@ -1,41 +1,28 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Data Sources; File from S3 Repository
-
 .. _form-source-s3-file-repo:
 
 =========================
 S3 Repository Data Source
 =========================
+Data source to select files from S3 repository.
 
-.. image:: /_static/images/form-sources/form-source-s3-file-repo.webp
+.. figure:: /_static/images/form-sources/form-source-s3-file-repo.webp
     :width: 30%
     :alt: Source Control S3 Repository
-    :align: center
-
-|
 
 -------------
 Configuration
 -------------
-
 .. image:: /_static/images/form-sources/form-source-webdav-conf.webp
-    :width: 50%
+    :width: 40%
     :alt: Source Control S3 Repository Configuration
-    :align: center
+    :align: left
 
-|
 
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
-+------------------------+--------------------------------------------------------------------------+
-|| Description/Purpose   || Data source to select files from S3 repository.                         |
 +------------------------+--------------------------------------------------------------------------+
 || Properties            || - Repository Path: Path where to browse the S3 repository.              |
 ||                       || - Profile ID: S3 profile id to be used setup in aws.xml                 |

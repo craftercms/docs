@@ -71,6 +71,8 @@ Learn about clustering Crafter Studio in the :ref:`Crafter Studio Clustering Gui
 
 |hr|
 
+.. _crafter-studio-api:
+
 --------
 REST API
 --------

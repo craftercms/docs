@@ -376,6 +376,13 @@ Staging
 An intermediate publishing target, named ``staging``, is supported by CrafterCMS which allows testing of your project.
 See :ref:`here <staging-env>` for more information on how to setup a staging target for your project.
 
+.. toctree::
+    :hidden:
+
+    ../common/staging
+
+|
+
 |hr|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -384,6 +391,11 @@ Multi-environment Support
 It is often required to have different configurations for different environments. For example, you may want to have developers access different integration services, keys, and configuration than QA, UAT or Prod environments.
 
 CrafterCMS supports environment specific configuration that helps with this, read more about it in the article :ref:`multi-environment-support`.
+
+.. toctree::
+    :hidden:
+
+    ../common/multi-environment-support
 
 |
 
@@ -753,3 +765,8 @@ Plugins are extensions that can be installed into a project to add functionality
 Project Tools
 -------------
 |projectTools| contains project administration tools such as Configurations, Plugin Management, Encryption Tool, etc. Learn more about project tools in the article :ref:`project-tools`.
+
+.. toctree::
+    :hidden:
+
+    ../common/project-tools/index
