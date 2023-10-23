@@ -1,6 +1,5 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
-
 :orphan:
 
 .. _engine-saml2-configuration-up-to-4-0-2:

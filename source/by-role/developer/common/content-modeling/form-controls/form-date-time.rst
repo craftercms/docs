@@ -6,19 +6,15 @@
 =================
 Date/Time Control
 =================
+Date and Time field with a picker.
 
 -------
 Example
 -------
 
 .. figure:: /_static/images/form-controls/form-control-date-time-example.webp
-    :width: 75%
+    :width: 55%
     :alt: Form Control Date-Time Example
-    :align: left
-
-|
-|
-|
 
 -------------
 Configuration
@@ -30,8 +26,6 @@ Configuration
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
-+------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Date and Time field with a picker.                                   |
 +------------------------+-----------------------------------------------------------------------+
 || Properties            || * Show Date: Display date                                            |
 ||                       || * Show Time: Display time                                            |

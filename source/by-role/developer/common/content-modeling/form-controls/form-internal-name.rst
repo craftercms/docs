@@ -1,32 +1,24 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Form Controls; Internal Name
-
 .. _form-internal-name:
 
 =====================
 Internal Name Control
 =====================
+Simple text internal name
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-internal-name-properties.webp
-    :width: 50%
+    :width: 30%
     :alt: Form Control Internal Name Properties
-    :align: center
+    :align: left
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
-+------------------------+------------------------------------------------------------------------+
-|| Description/Purpose   || Simple text internal name                                             |
 +------------------------+------------------------------------------------------------------------+
 || Properties            || * Display Size: How much of the input to show on the author input form|
 ||                       || * Max Length: Maximum number of characters to accept as input.        |

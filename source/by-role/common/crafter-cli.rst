@@ -1,5 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.1.1
+:orphan:
 
 .. index:: Crafter CLI, CLI
 
@@ -254,7 +255,71 @@ Let's begin:
 
    .. code-block:: json
 
-      {"sites":[{"id":9,"siteId":"ar","name":"ar","description":"","status":null,"liveUrl":null,"lastCommitId":"951004363449cc83209f307b1e9f110dab37fed7","publishingEnabled":1,"publishingStatusMessage":"idle|Idle","lastVerifiedGitlogCommitId":null},{"id":5,"siteId":"diiot","name":"diiot","description":"","status":null,"liveUrl":null,"lastCommitId":"92d543eaa164b1ebfbdd6ce538ae028d4d6421b7","publishingEnabled":0,"publishingStatusMessage":"idle|Idle","lastVerifiedGitlogCommitId":"92d543eaa164b1ebfbdd6ce538ae028d4d6421b7"},{"id":10,"siteId":"editorialcom","name":"editorialcom","description":"","status":null,"liveUrl":null,"lastCommitId":"503d922f226e8ab821073e23ef5a229f907212a0","publishingEnabled":1,"publishingStatusMessage":"","lastVerifiedGitlogCommitId":"503d922f226e8ab821073e23ef5a229f907212a0"},{"id":3,"siteId":"flow","name":"flow","description":"","status":null,"liveUrl":null,"lastCommitId":"21923775c3a1fc778a364d47884b9ee2bb4928a5","publishingEnabled":1,"publishingStatusMessage":"idle|Idle","lastVerifiedGitlogCommitId":"21923775c3a1fc778a364d47884b9ee2bb4928a5"},{"id":8,"siteId":"vr","name":"vr","description":"","status":null,"liveUrl":null,"lastCommitId":"c67fd9dd25d1aa59ff13e3fda2a4387be50dfc69","publishingEnabled":1,"publishingStatusMessage":"idle|Idle","lastVerifiedGitlogCommitId":null}],"total":6}
+      {
+        "sites": [
+          {
+            "id": 9,
+            "siteId": "ar",
+            "name": "ar",
+            "description": "",
+            "status": null,
+            "liveUrl": null,
+            "lastCommitId": "951004363449cc83209f307b1e9f110dab37fed7",
+            "publishingEnabled": 1,
+            "publishingStatusMessage": "idle|Idle",
+            "lastVerifiedGitlogCommitId": null
+          },
+          {
+            "id": 5,
+            "siteId": "diiot",
+            "name": "diiot",
+            "description": "",
+            "status": null,
+            "liveUrl": null,
+            "lastCommitId": "92d543eaa164b1ebfbdd6ce538ae028d4d6421b7",
+            "publishingEnabled": 0,
+            "publishingStatusMessage": "idle|Idle",
+            "lastVerifiedGitlogCommitId": "92d543eaa164b1ebfbdd6ce538ae028d4d6421b7"
+          },
+          {
+            "id": 10,
+            "siteId": "editorialcom",
+            "name": "editorialcom",
+            "description": "",
+            "status": null,
+            "liveUrl": null,
+            "lastCommitId": "503d922f226e8ab821073e23ef5a229f907212a0",
+            "publishingEnabled": 1,
+            "publishingStatusMessage": "",
+            "lastVerifiedGitlogCommitId": "503d922f226e8ab821073e23ef5a229f907212a0"
+          },
+          {
+            "id": 3,
+            "siteId": "flow",
+            "name": "flow",
+            "description": "",
+            "status": null,
+            "liveUrl": null,
+            "lastCommitId": "21923775c3a1fc778a364d47884b9ee2bb4928a5",
+            "publishingEnabled": 1,
+            "publishingStatusMessage": "idle|Idle",
+            "lastVerifiedGitlogCommitId": "21923775c3a1fc778a364d47884b9ee2bb4928a5"
+          },
+          {
+            "id": 8,
+            "siteId": "vr",
+            "name": "vr",
+            "description": "",
+            "status": null,
+            "liveUrl": null,
+            "lastCommitId": "c67fd9dd25d1aa59ff13e3fda2a4387be50dfc69",
+            "publishingEnabled": 1,
+            "publishingStatusMessage": "idle|Idle",
+            "lastVerifiedGitlogCommitId": null
+          }
+        ],
+        "total": 6
+     }
 
    |
 

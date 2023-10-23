@@ -1,1 +1,0 @@
-.. include:: /includes/content-retrieval-apis.rst

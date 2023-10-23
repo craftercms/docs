@@ -1,41 +1,32 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Form Controls; Item Selector
-
 .. _form-item-selector:
 
 =====================
 Item Selector Control
 =====================
+Item Selector control.
 
 -------
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-item-selector-example.webp
+.. figure:: /_static/images/form-controls/form-control-item-selector-example.webp
     :width: 50%
     :alt: Form Control Item Selector Example
-    :align: center
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-item-selector.webp
-    :width: 50%
+    :width: 30%
     :alt: Form Control Item Selector Properties
-    :align: center
+    :align: left
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
-+------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Item Selector control.                                               |
 +------------------------+-----------------------------------------------------------------------+
 || Properties            || * Min Size: Minimum amount of items selected.                        |
 ||                       || * Max Size: Maximum amount of items selected.                        |

@@ -1,6 +1,5 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
-
 :orphan:
 
 .. index:: Studio SAML, Studio SAML version 4.0.2 and earlier

@@ -1,43 +1,40 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Form Controls; Repeating Group
-
 .. _form-repeating-group:
 
 =======================
 Repeating Group Control
 =======================
+Repeating groups are used when the form has one or several controls that repeat to capture the same data as records. For example: a list of images in a carousel, or a list of widgets on a page
 
 -------
 Example
 -------
-.. image:: /_static/images/form-controls/form-control-repeating-group-example.webp
-    :width: 80%
+.. figure:: /_static/images/form-controls/form-control-repeating-group-example.webp
+    :width: 65%
     :alt: Form Control Repeating Group Example
-    :align: center
+
 
 -------------
 Configuration
 -------------
 .. image:: /_static/images/form-controls/form-control-repeating-group.webp
-    :width: 50%
+    :width: 30%
     :alt: Form Control Repeating Group
-    :align: center
+    :align: left
 
-.. include:: /includes/form-controls/form-control-field-basics.rst
+.. list-table::
 
-
-+------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Repeating groups are used when the form has one or several controls  |
-||                       || that repeat to capture the same data as records. For example: a      |
-||                       || list of images in a carousel, or a list of widgets on a page.        |
-+------------------------+-----------------------------------------------------------------------+
-|| Properties            || * Minimum Occurrences: Minimum number of repeating controls          |
-||                       || * Maximum Occurrences: Maximum number of repeating controls          |
-+------------------------+-----------------------------------------------------------------------+
+   * - Title
+     - Control title to show the author on the input form
+   * - Name / Variable Name
+     - Name of variable to store the final result in. This is used by the View layer or the Controllers to gain access to the data during runtime
+   * - ICE Group
+     - In-Context Edit Group: During ICE editing in Preview mode, this control will be part of this group for editing which means when the author click on the Pencil Tool, they will get all the controls in the same group associated with the specific Pencil Tool
+   * - Description
+     - Form Control description.
+   * - Minimum Occurrences
+     - Minimum number of repeating controls
+   * - Maximum Occurrences
+     - Maximum number of repeating controls

@@ -1,23 +1,16 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Data Sources; Static Key Value Pairs
-
 .. _form-source-kvp:
 
 ==================================
 Static Key Value Pairs Data Source
 ==================================
+Data source where key/value pairs can be added for its use on a control.
 
-.. image:: /_static/images/form-sources/form-source-kvp.webp
-    :width: 30%
+.. figure:: /_static/images/form-sources/form-source-kvp.webp
+    :width: 20%
     :alt: Source Control Static Key Value Pairs
-    :align: center
 
 |
 
@@ -26,16 +19,13 @@ Configuration
 -------------
 
 .. image:: /_static/images/form-sources/form-source-kvp-conf.webp
-    :width: 50%
+    :width: 40%
     :alt: Form Static Key Value Pairs
-    :align: center
+    :align: left
 
-|
 
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
-+------------------------+---------------------------------------------------------------------------+
-|| Description/Purpose   || Data source where key/value paris can be added for its use on a control. |
 +------------------------+---------------------------------------------------------------------------+
 || Properties            || - Data Type: Key Value pairs type (String, Integer, Float, Date, HTML).  |
 ||                       || - Options: Key Value pairs to be added on the datasource.                |
@@ -54,7 +44,7 @@ datasource configuration. That will display a dialog with the necessary features
     :alt: Form Static Key Value Pairs Options
     :align: center
 
-- Fill the Key and Value fields.
-- Clicking on "Add another" adds a new key value pair.
-- Clicking on the "X" removes the pair.
-- "Save" or "Cancel" to finish editing the pairs.
+- Fill the ``Key`` and ``Value`` fields.
+- Clicking on ``Add another`` adds a new key value pair.
+- Clicking on the ``Delete`` button removes the pair.
+- ``Save & Close`` or ``Cancel`` to finish editing the pairs.

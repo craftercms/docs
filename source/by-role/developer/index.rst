@@ -96,6 +96,7 @@ Regardless of type of project, a developer needs to be familiar with the followi
     common/servlet-filters
     common/working-with-dates-groovy
     common/working-with-sass
+    ../common/multi-environment-support
     common/custom-error-pages
     common/adding-a-new-language
     common/localization

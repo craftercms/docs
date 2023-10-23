@@ -1,39 +1,30 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-.. index:: Form Controls; Transcoded Video
-
 .. _form-transcoded-video:
 
 ========================
 Transcoded Video Control
 ========================
+Transcoded Video selector for Video Transcoding Data Source.
 
 -------
 Example
 -------
-.. image:: /_static/images/form-controls/form-control-transcoded-video-example.webp
-    :width: 80%
+.. figure:: /_static/images/form-controls/form-control-transcoded-video-example.webp
+    :width: 60%
     :alt: Form Control Transcoded Video Example
-    :align: center
 
 -------------
 Configuration
 -------------
 .. image:: /_static/images/form-controls/form-control-transcoded-video.webp
-    :width: 50%
+    :width: 30%
     :alt: Form Control Transcoded Video
-    :align: center
+    :align: left
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
-+------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Transcoded Video selector from Video Transcoding Data Source.        |
 +------------------------+-----------------------------------------------------------------------+
 || Properties            || * Data Source: Source that will populate the transcoded video picker.|
 ||                       || * Read Only: Make field read-only (can't be changed by the author).  |

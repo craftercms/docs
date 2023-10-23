@@ -6,6 +6,8 @@
 ============
 Time Control
 ============
+Date and Time field with a picker.
+
 -------
 Example
 -------
@@ -33,8 +35,6 @@ Configuration
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
-+------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Date and Time field with a picker.                                   |
 +------------------------+-----------------------------------------------------------------------+
 || Properties            || * Show Clear Value: Display link to clear value                      |
 ||                       || * Set Now Link: Display link to set time to now                      |

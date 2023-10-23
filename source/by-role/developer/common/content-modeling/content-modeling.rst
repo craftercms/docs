@@ -587,6 +587,7 @@ Here's a list of available Form Engine Controls:
     form-controls/form-section
     form-controls/form-repeating-group
     form-controls/form-input
+    form-controls/form-numeric-input
     form-controls/form-text-area
     form-controls/form-rte
     form-controls/form-dropdown
