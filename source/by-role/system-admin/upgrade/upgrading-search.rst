@@ -163,10 +163,18 @@ Search Methods/Groovy Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 You might encounter the following error in your project, which indicates your search methods in your groovy code needs to be updated for OpenSearch:
 
-.. code-block:: bash
+.. code-block:: text
     :caption: *Error message in logs indicating groovy code needs to be updated*
 
-    Caused by: org.craftercms.engine.exception.ScriptException: No signature of method: org.craftercms.engine.search.SiteAwareOpenSearchClient.search() is applicable for argument types: (org.opensearch.action.search.SearchRequest) values: [SearchRequest{searchType=QUERY_THEN_FETCH, indices=[], indicesOptions=IndicesOptions[ignore_unavailable=false, allow_no_indices=true, expand_wildcards_open=true, expand_wildcards_closed=false, expand_wildcards_hidden=false, allow_aliases_to_multiple_indices=true, forbid_closed_indices=true, ignore_aliases=false, ignore_throttled=true], routing='null', preference='null', requestCache=null, scroll=null, maxConcurrentShardRequests=0, batchedReduceSize=512, preFilterShardSize=null, allowPartialSearchResults=null, localClusterAlias=null, getOrCreateAbsoluteStartMillis=-1, ccsMinimizeRoundtrips=true, source={"from":0,"size":6,"query":{"query_string":{"query":"content-type:\"/page/blogpost\" AND ( (NOT(_exists_:unlisted_b)) OR unlisted_b:false) ","fields":[],"type":"best_fields","default_operator":"or","max_determinized_states":10000,"enable_position_increments":true,"fuzziness":"AUTO","fuzzy_prefix_length":0,"fuzzy_max_expansions":50,"phrase_slop":0,"escape":false,"auto_generate_synonyms_phrase_query":true,"fuzzy_transpositions":true,"boost":1.0}},"sort":[{"publishedDate_dt":{"order":"desc"}}]}, cancelAfterTimeInterval=null, pipeline=null}]
+    Caused by: org.craftercms.engine.exception.ScriptException: No signature of method: org.craftercms.engine.search.SiteAwareOpenSearchClient.search() is applicable for
+        argument types: (org.opensearch.action.search.SearchRequest) values: [SearchRequest{searchType=QUERY_THEN_FETCH, indices=[],
+        indicesOptions=IndicesOptions[ignore_unavailable=false, allow_no_indices=true, expand_wildcards_open=true, expand_wildcards_closed=false, expand_wildcards_hidden=false,
+        allow_aliases_to_multiple_indices=true, forbid_closed_indices=true, ignore_aliases=false, ignore_throttled=true], routing='null', preference='null', requestCache=null,
+        scroll=null, maxConcurrentShardRequests=0, batchedReduceSize=512, preFilterShardSize=null, allowPartialSearchResults=null, localClusterAlias=null,
+        getOrCreateAbsoluteStartMillis=-1, ccsMinimizeRoundtrips=true, source={"from":0,"size":6,"query":{"query_string":{"query":"content-type:\"/page/blogpost\" AND ( (NOT
+        (_exists_:unlisted_b)) OR unlisted_b:false) ","fields":[],"type":"best_fields","default_operator":"or","max_determinized_states":10000,"enable_position_increments":true,
+        "fuzziness":"AUTO","fuzzy_prefix_length":0,"fuzzy_max_expansions":50,"phrase_slop":0,"escape":false,"auto_generate_synonyms_phrase_query":true,"fuzzy_transpositions":true,
+        "boost":1.0}},"sort":[{"publishedDate_dt":{"order":"desc"}}]}, cancelAfterTimeInterval=null, pipeline=null}]
     Possible solutions: search(org.opensearch.client.opensearch.core.SearchRequest, java.lang.Class, java.util.Map), each(groovy.lang.Closure), macro(groovy.lang.Closure)
 
 

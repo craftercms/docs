@@ -226,11 +226,11 @@ For the dashboard shown above, here are the dashlets listed:
         * Shows all items recently modified by the current user
         * Viewable by all users
 
-   * Unpublished Work
+    * Unpublished Work
         * Shows all unpublished items modified by the current user
         * Viewable by all users
 
-   * Expiring
+    * Expiring
         * Shows all items that are expired or about to expire
         * Viewable by all users
 

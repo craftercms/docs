@@ -96,11 +96,13 @@ Crafter must update content, metadata about the content, search indexes and more
 
 Not all storage devices are created equal. The fast the read/write speeds and the more concurrency and lower latency the device supports, the better the performance will be. As a general rule of thumb, use the highest IOPS devices for the most demanding storage concerns, by order of importance:
 
-|    {CRAFTER_HOME}/data/repos (high-concurrency, important)
-|    {CRAFTER_HOME}/data/db (high-concurrency, important)
-|    {CRAFTER_HOME}/data/indexes
-|    {CRAFTER_HOME}/data/logs
-|    {CRAFTER_HOME}/data/mongodb (if in use)
+    .. code-block:: text
+
+        {CRAFTER_HOME}/data/repos (high-concurrency, important)
+        {CRAFTER_HOME}/data/db (high-concurrency, important)
+        {CRAFTER_HOME}/data/indexes
+        {CRAFTER_HOME}/data/logs
+        {CRAFTER_HOME}/data/mongodb (if in use)
 
 |
 
@@ -113,15 +115,17 @@ NFS or similar protocols will increase latency and cause performance issues.
 
 One optimization to raise effective IOPS of a system without buying very expensive storage devices is to distribute the load across many devices. CrafterCMS performs multiple reads/writes to disk from various concerns such as the database, the repository, logs, etc. with very different I/O patterns. For optimal performance, the server should have different storage systems (disks) mounted for different concerns, for example:
 
-|    /dev/{dev0} -> /
-|    /dev/{dev1} -> /opt/crafter/data/db
-|    /dev/{dev2} -> /opt/crafter/data/repos
-|    /dev/{dev3} -> /opt/crafter/data/indexes
-|    /dev/{dev4} -> /opt/crafter/logs
-|    /dev/{dev5} -> /opt/crafter/data/mongodb
-|    /dev/{dev6} -> /var
-|    /dev/{dev7} -> /home
-|    /dev/{dev8} -> /usr
+    .. code-block:: text
+
+        /dev/{dev0} -> /
+        /dev/{dev1} -> /opt/crafter/data/db
+        /dev/{dev2} -> /opt/crafter/data/repos
+        /dev/{dev3} -> /opt/crafter/data/indexes
+        /dev/{dev4} -> /opt/crafter/logs
+        /dev/{dev5} -> /opt/crafter/data/mongodb
+        /dev/{dev6} -> /var
+        /dev/{dev7} -> /home
+        /dev/{dev8} -> /usr
 
 |
 

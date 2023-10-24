@@ -333,22 +333,22 @@ Let's take a look at an example of re-enabling TLSv1 and TLSv1.1.
 
 Look for the ``java.security`` file in ``JDK_INSTALL_HOME/conf/security``, and go to the property ``jdk.tls.disabledAlgorithms``:
 
-   .. code-block:: properties
-      :caption: *Example of jdk.tls.disabledAlgorithms property with TLSv1 and TLSV1.1 disabled*
+.. code-block:: properties
+    :caption: *Example of jdk.tls.disabledAlgorithms property with TLSv1 and TLSV1.1 disabled*
 
-      jdk.tls.disabledAlgorithms=SSLv3, TLSv1, TLSv1.1, RC4, DES, MD5withRSA, \
-        DH keySize < 1024, EC keySize < 224, 3DES_EDE_CBC, anon, NULL, \
-        include jdk.disabled.namedCurves
+    jdk.tls.disabledAlgorithms=SSLv3, TLSv1, TLSv1.1, RC4, DES, MD5withRSA, \
+    DH keySize < 1024, EC keySize < 224, 3DES_EDE_CBC, anon, NULL, \
+    include jdk.disabled.namedCurves
 
-   |
+|
 
 To re-enable the versions, remove ``TLSv1`` and ``TLSv1.1`` from the property ``jdk.tls.disabledAlgorithms``
 
-   .. code-block:: properties
-      :caption: *Example of re-enabling TLSv1 and TLSV1.1*
+.. code-block:: properties
+    :caption: *Example of re-enabling TLSv1 and TLSV1.1*
 
-      jdk.tls.disabledAlgorithms=SSLv3, RC4, DES, MD5withRSA, \
-        DH keySize < 1024, EC keySize < 224, 3DES_EDE_CBC, anon, NULL, \
-        include jdk.disabled.namedCurves
+    jdk.tls.disabledAlgorithms=SSLv3, RC4, DES, MD5withRSA, \
+    DH keySize < 1024, EC keySize < 224, 3DES_EDE_CBC, anon, NULL, \
+    include jdk.disabled.namedCurves
 
 
