@@ -149,7 +149,7 @@ The ``Log Console`` allows the user to view messages depending on what log level
 .. image:: /_static/images/system-admin/main-menu/main-menu-log-console.webp
     :alt: System Administrator - Navigation Menu Log Console
     :align: center
-    :width: 75%
+    :width: 85%
 
 |
 
@@ -684,7 +684,7 @@ a checkmark next to them, then click on the **>** (greater than icon) button.
 It will then give you a notification that the user(s) has been successfully added to the group.
 
 .. image:: /_static/images/groups/groups-users-added-notification.webp
-    :width: 40%
+    :width: 30%
     :alt: Main Menu - Groups Members Added Notification
     :align: center
 
@@ -710,7 +710,7 @@ the **<** (less than icon) button.
 It will then give you a notification that the user(s) has been successfully deleted from the group.
 
 .. image:: /_static/images/groups/groups-remove-user-confirm.webp
-    :width: 25%
+    :width: 30%
     :alt: Main Menu - Groups Members Removed Notification
     :align: center
 
@@ -923,7 +923,7 @@ Every user logged in to CrafterCMS can change their own password.
 
    .. image:: /_static/images/users/your-passwd-change.webp
        :alt: Users - User Settings Dialog to Change Password
-       :width: 65%
+       :width: 50%
        :align: center
 
    |

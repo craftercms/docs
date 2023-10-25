@@ -20,11 +20,9 @@ Modules
 CrafterCMS comprises a set of modules that work together.
 
 .. image:: /_static/images/architecture/modules-overview.webp
-    :width: 75%
+    :width: 65%
     :alt: CrafterCMS Decoupled Overview
     :align: center
-
-The modules are
 
 .. list-table:: CrafterCMS Modules
     :header-rows: 1

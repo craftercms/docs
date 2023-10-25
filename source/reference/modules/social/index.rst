@@ -8,7 +8,6 @@
 ==============
 Crafter Social
 ==============
-
 .. figure:: /_static/images/architecture/crafter-social.webp
     :alt: Crafter Social
     :width: 75%
@@ -401,7 +400,7 @@ Once the WAR file has been deployed, you can access the application in the follo
 
 .. figure:: /_static/images/social-admin/login.webp
   :align: center
-  :width: 50%
+  :width: 25%
   :alt: Crafter Social Admin Console Login
 
   Crafter Social Admin Console login dialog.
@@ -619,7 +618,7 @@ custom properties will be ignored.
 
 .. figure:: /_static/images/social-admin/preferences-tenant-new.webp
   :align: center
-  :width: 75%
+  :width: 55%
   :alt: Crafter Social new tenant preferences
 
 """""""""""""""""""

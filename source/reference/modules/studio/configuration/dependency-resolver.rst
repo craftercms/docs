@@ -14,7 +14,7 @@ To modify the Dependency Resolver configuration, click on |projectTools| from th
 
 .. image:: /_static/images/site-admin/config-open-dependency-config.webp
     :alt: Configurations - Open Dependency Resolver Configuration
-    :width: 65 %
+    :width: 45%
     :align: center
 
 ------

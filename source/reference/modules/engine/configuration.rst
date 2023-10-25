@@ -82,8 +82,8 @@ Example #1: ``ssh://server1.example.com/path/to/repo``
 
 Example #2: ``ssh://jdoe@server2.example.com:63022/path/to/repo``
 
-   .. note::
-      .. include:: /includes/setup-ssh-keys.rst
+.. note::
+  .. include:: /includes/setup-ssh-keys.rst
 
 If you are just working on another directory on disk for your delivery, you can just use the filesystem. When your repository is local, make sure to use the absolute path.
 Here is an example project's published repo Git url when using a local repository:
@@ -1276,7 +1276,7 @@ Let's begin:
 
      .. image:: /_static/images/site-admin/config-open-proxy-config.webp
         :alt: Configurations - Open Proxy Configuration
-        :width: 55 %
+        :width: 45%
         :align: center
 
      |
@@ -1804,7 +1804,7 @@ This can be done from the Studio project dashboard with the following steps:
 
    .. image:: /_static/images/site-admin/mongo/publish-dialog.webp
       :alt: Studio Project Dashboard - Publish Dialog
-      :width: 70 %
+      :width: 60%
       :align: center
 
 Once the files are deployed to the delivery node and the project context is reloaded the new
@@ -1921,7 +1921,7 @@ is very similar to the example shown above for Studio except for the location of
 
    .. image:: /_static/images/site-admin/env-copy-page-for-urlrewrite.webp
        :align: center
-       :width: 35%
+       :width: 25%
        :alt: Folder with page copied from 2020 to 2021
 
    |

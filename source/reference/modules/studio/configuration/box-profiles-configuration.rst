@@ -15,7 +15,7 @@ then click on **Configuration** and select **Box Profiles** from the list.
 
 .. image:: /_static/images/site-admin/config-open-box-config.webp
     :alt: Configurations - Open Box Profiles Configuration
-    :width: 55 %
+    :width: 45%
     :align: center
 
 ------

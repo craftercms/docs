@@ -14,7 +14,7 @@ and select **Project Configuration** from the list.
 
 .. image:: /_static/images/site-admin/config-open-project-config.webp
     :alt: Configurations - Open Project Configuration
-    :width: 65 %
+    :width: 45%
     :align: center
 
 |

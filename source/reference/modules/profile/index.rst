@@ -327,7 +327,7 @@ you can access the application in the following URL:
 
 .. figure:: /_static/images/profile-admin/login.webp
   :align: center
-  :width: 50%
+  :width: 25%
   :alt: Crafter Profile Admin Console Login
 
   Crafter Profile Admin Console login dialog.
@@ -509,6 +509,7 @@ process is completed.
 
 .. figure:: /_static/images/profile-admin/verification-mail.webp
   :align: center
+  :width: 60%
   :alt: Crafter Profile admin verification mail
 
   Example verification mail using ``http://www.example.com`` as the `verificationUrl`
@@ -604,6 +605,7 @@ left sidebar.
 
 .. figure:: /_static/images/profile-admin/profiles-list.webp
   :align: center
+  :width: 80%
   :alt: Crafter Profile admin profiles list
 
 Once the page is loaded you can select the desired tenant by using the dropdown below
@@ -621,6 +623,7 @@ To create a new profile you can click the ``New Profile`` link in the left sideb
 
 .. figure:: /_static/images/profile-admin/profiles-new.webp
   :align: center
+  :width: 80%
   :alt: Crafter Profile admin new profiles
 
 ''''''
@@ -663,6 +666,7 @@ From the list page you can click the ID of a profile to open the update page:
 
 .. figure:: /_static/images/profile-admin/profiles-update.webp
   :align: center
+  :width: 80%
   :alt: Crafter Profile admin update profiles
 
 When updating an existing profile the username and tenant are not editable.

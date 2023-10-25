@@ -18,7 +18,7 @@ To find this configuration XML through studio follow the next instructions:
 
 .. image:: /_static/images/site-admin/configuration.webp
     :alt: Configurations - Open Configurations
-    :width: 55 %
+    :width: 45%
     :align: center
 
 |

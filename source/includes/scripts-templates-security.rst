@@ -1,5 +1,5 @@
 
-.. note::
+.. important::
 
    **Scripts and Templates Security**
 

@@ -14,7 +14,7 @@ To modify the Blob Stores configuration, click on |projectTools| from the bottom
 
 .. image:: /_static/images/site-admin/config-open-blob-stores.webp
     :alt: Configurations - Open Blob Stores Configuration
-    :width: 65 %
+    :width: 45%
     :align: center
 
 

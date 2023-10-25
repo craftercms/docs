@@ -144,7 +144,7 @@ In the configuration above, when a user tries to authenticate, the user's creden
 
 .. image:: /_static/images/system-admin/auth-chain-example.webp
     :alt: Static Assets - Example Authentication Chain Process
-    :width: 80 %
+    :width: 55%
     :align: center
 
 .. _crafter-studio-configure-studio-saml:
@@ -451,7 +451,7 @@ Make sure that at least one of the **groupName** attribute of the LDAP user exis
 
     .. image:: /_static/images/system-admin/ldap-user-group-no-role-assigned.webp
         :alt: System Admin LDAP Config - LDAP user group attribute not assigned to a role
-        :width: 35 %
+        :width: 25%
         :align: center
 
 |
@@ -474,7 +474,7 @@ Users only sees the items that they have been granted access to based on the per
 
 .. image:: /_static/images/site-admin/config-open-role-mappings.webp
     :alt: Configurations - Open Role Mappings
-    :width: 55 %
+    :width: 40%
     :align: center
 
 """"""
@@ -570,7 +570,7 @@ To modify/view the permission mappings for your project/site in Studio, click on
 
 .. image:: /_static/images/site-admin/config-open-permission-mappings.webp
     :alt: Configurations - Open Permission Mappings
-    :width: 45 %
+    :width: 40%
     :align: center
 
 """"""
@@ -624,7 +624,7 @@ The password strength configured here are displayed to the user when resetting a
 .. image:: /_static/images/system-admin/password-requirements.webp
    :alt: System Administrator - Password Requirements Display
    :align: center
-   :width: 65%
+   :width: 55%
 
 |
 
@@ -659,7 +659,7 @@ reached, the score will be displayed in green.
 .. image:: /_static/images/system-admin/password-reqts-80-score.webp
     :alt: System Administrator - Password Requirements Display Score 80
     :align: center
-    :width: 55%
+    :width: 35%
 
 |
 

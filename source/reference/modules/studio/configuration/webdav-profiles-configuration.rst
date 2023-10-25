@@ -11,7 +11,7 @@ To modify the WebDAV Profiles configuration, click on |projectTools| from the bo
 
 .. image:: /_static/images/site-admin/config-open-webdav-config.webp
     :alt: Configurations - Open WebDAV Profiles Configuration
-    :width: 35 %
+    :width: 45%
     :align: center
 
 ------
