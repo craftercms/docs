@@ -38,12 +38,17 @@ The tools available in the Main Menu is configured similar to how the Project To
 --------
 Projects
 --------
-``Projects`` contains a list of all the projects the logged in user has access to. The section :ref:`content-authors-navigating-studio` in ``Content Authors`` contains descriptions on some of the actions that can be performed from the Projects screen.
+``Projects`` contains a list of all the projects the logged in user has access to. The section :ref:`content-authors-navigating-studio` in ``Content Authors`` contains descriptions on some of the actions that can be performed from the Projects screen.  This also allows users with the system admin role to create new projects either from a :ref:`blueprint <your_first_project>`, a :ref:`remote repository <create-project-with-link-to-remote-repo>` or an :ref:`existing project <duplicate-project>`.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-sites.webp
     :alt: System Administrator - Navigation Menu Projects
     :align: center
     :width: 85%
+
+.. toctree::
+    :hidden:
+
+    ../../studio/duplicate-project
 
 .. _main-menu-tool-users:
 
