@@ -602,3 +602,27 @@ Plugin Management    Allows the user to install and to view currently installed,
 ==================== =====================================================================
 
 See :ref:`navigating-project-tools` for more information on the available tools in ``Project Tools``.
+
+|hr|
+
+.. _preview-edit-mode-defaults:
+
+--------------------------
+Preview Edit Mode Defaults
+--------------------------
+.. version_tag::
+    :label: Since
+    :version: 4.1.2
+
+To configure defaults for Preview edit mode, set the following attributes of the
+``craftercms.components.Preview`` widget:
+
+.. code-block:: xml
+    :linenos:
+
+    <widget
+            id="craftercms.components.Preview"
+            initialEditModeOn="true"
+            initialHighlightMode="all"
+            xbDetectionTimeoutMs="5000"
+    />

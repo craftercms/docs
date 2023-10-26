@@ -69,6 +69,8 @@ date is set as the attribute. Assume that the REST script exists under Scripts >
 
     return ["date": date]
 
+.. _groovy-rest-script-not-found:
+
 """"""""""""""""
 Script Not Found
 """"""""""""""""
