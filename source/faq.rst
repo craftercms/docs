@@ -35,7 +35,7 @@ These components add powerful capabilities to support your digital experiences b
 ----------------------------------------------
 Do I need to connect CrafterCMS to a database?
 ----------------------------------------------
-No. It is not mandatory for CrafterCMS to connect to any external databases. Crafter Studio embeds and manages its own database. Crafter Social and Crafter Profile leverage MongoDB. These are optional components.
+No. Crafter Studio embeds and manages its own database. Crafter Social and Crafter Profile leverage MongoDB. These are optional components.
 
 -----------------------------------
 Can CrafterCMS be used as a portal?

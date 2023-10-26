@@ -424,7 +424,7 @@ Let's take a look at the result of our unit test which can be found here: *CRAFT
 
 .. image:: /_static/images/developer/unit-test/unit-test-build-result.webp
    :alt: Unit Testing Groovy - Unit test  build report
-   :width: 75 %
+   :width: 60 %
    :align: center
 
 |
