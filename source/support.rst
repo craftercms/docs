@@ -25,7 +25,7 @@ What's Supported?
       - June 17, 2023
       - :green:`Active`
       - :green:`Active`
-      - 4.1.1 (August 5, 2023)
+      - 4.1.2 (TBD)
     * - 4.0
       - May 12, 2022
       - :maroon:`Ended on June 17, 2023`

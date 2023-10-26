@@ -21,6 +21,7 @@ At a high-level, we're pursuing the objectives listed below in order:
 * Content Modeling Tool: Modernize the content modeling tools
 * Form Engine: Rewrite the form engine
 * Add Recycle Bin to the authoring system
+* Generative AI
 
 ------------------
 Recently Completed
