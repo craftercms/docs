@@ -22,80 +22,57 @@ New Features
 ^^^^^^^
 Updates
 ^^^^^^^
-* Engine now automatically reloads the context when it detects classes and config are changed |br|
-  See `here <https://github.com/craftercms/craftercms/issues/6223>`__ for more information
+* `Engine now automatically reloads the context when it detects classes and config are changed <https://github.com/craftercms/craftercms/issues/6223>`__
 
-* Fixed issue with ``getItem`` call marshalled to JSON when content elements have either an attribute that is not required, a default text set or an actual text value blank|br|
-  See `here <https://github.com/craftercms/craftercms/issues/6186>`__ for more information
+* `Fixed issue with ``getItem`` call marshaled to JSON when content elements have either an attribute that is not required, a default text set, or an actual text value blank <https://github.com/craftercms/craftercms/issues/6186>`__
 
-* Added a SkipAll processor that allows skipping the item processing pipeline |br|
-  See `here <https://github.com/craftercms/craftercms/issues/6184>`__ for more information
+* `Added a SkipAll processor that allows skipping the item processing pipeline <https://github.com/craftercms/craftercms/issues/6184>`__
 
-* Fixed issue with targeting configuration of date-time control |br|
-  See `here <https://github.com/craftercms/craftercms/issues/6182>`__ for more information
+* `Fixed issue with targeting configuration of date-time control <https://github.com/craftercms/craftercms/issues/6182>`__
 
-* Fixed issue with dependency calculation when bulk publishing  |br|
-  See `here <https://github.com/craftercms/craftercms/issues/6181>`__ for more information
+* `Fixed issue with dependency calculation when bulk publishing <https://github.com/craftercms/craftercms/issues/6181>`__
 
-* Fixed issue with shared component path not updated when parent is renamed  |br|
-  See `here <https://github.com/craftercms/craftercms/issues/6150>`__ for more information
+* `Fixed issue with the shared component path not updated when the parent is renamed <https://github.com/craftercms/craftercms/issues/6150>`__
 
-* Fixed issue when reverting a document with an internal name change  |br|
-  See `here <https://github.com/craftercms/craftercms/issues/6149>`__ for more information
+* `Fixed issue when reverting a document with an internal name change <https://github.com/craftercms/craftercms/issues/6149>`__
 
-* Fixed issue with Deployer throwing NPE on startup  |br|
-  See `here <https://github.com/craftercms/craftercms/issues/6208>`__ for more information
+* `Fixed issue with Deployer throwing NPE on startup <https://github.com/craftercms/craftercms/issues/6208>`__
 
-* Added support for configuring Preview edit mode defaults  |br|
-  See `here <https://github.com/craftercms/craftercms/issues/6203>`__ for more information
+* `Added support for configuring Preview edit mode defaults <https://github.com/craftercms/craftercms/issues/6203>`__
 
   For more information on setting Preview edit mode defaults, see :ref:`preview-edit-mode-defaults`
 
-* Fixed issue with Studio search failing when searching with special characters  |br|
-  See `here <https://github.com/craftercms/craftercms/issues/6176>`__ for more information
+* `Fixed issue with Studio search failing when searching with special characters <https://github.com/craftercms/craftercms/issues/6176>`__
 
 * Improved UI Experience  |br|
 
-  - Updated Sidebar maximum width |br|
-    See `here <https://github.com/craftercms/craftercms/issues/6175>`__ for more information
-  - Updated ``Text Area`` settings |br|
-    See `here <https://github.com/craftercms/craftercms/issues/6173>`__ for more information
-  - Improved ``Publishing by commit ID`` dialog |br|
-    See `here <https://github.com/craftercms/craftercms/issues/6170>`__ for more information
-  - Updated Node selector UI |br|
-    See `here <https://github.com/craftercms/craftercms/issues/6161>`__ for more information
-  - Fixed issue with uploading files from RTE insert link option |br|
-    See `here <https://github.com/craftercms/craftercms/issues/6159>`__ for more information
-  - Fixed issue with SVG images when using the ``img-repository-upload`` data source with
-    the search option enabled |br|
-    See `here <https://github.com/craftercms/craftercms/issues/6136>`__ for more information
-  - Fixed issue with XB printing error messages in the browser console when file based
-    items are not |br|
-    See `here <https://github.com/craftercms/craftercms/issues/6102>`__ for more information
-  - Added a sort option to the sidebar path navigator component |br|
-    See `here <https://github.com/craftercms/craftercms/issues/5830>`__ for more information
-  - The magnifying glass in a given nav tree is now always 'active' |br|
-    See `here <https://github.com/craftercms/craftercms/issues/6179>`__ for more information
-  - Fixed issue with the Datetime field's timezone ({control-name}_dt_tz) field |br|
-    See `here <https://github.com/craftercms/craftercms/issues/6111>`__ for more information
+  - `Updated Sidebar maximum width <https://github.com/craftercms/craftercms/issues/6175>`__
+  - `Updated ``Text Area`` settings <https://github.com/craftercms/craftercms/issues/6173>`__
+  - `Improved ``Publishing by commit ID`` dialog <https://github.com/craftercms/craftercms/issues/6170>`__
+  - `Updated Node selector UI <https://github.com/craftercms/craftercms/issues/6161>`__
+  - `Fixed issue with uploading files from RTE insert link option <https://github.com/craftercms/craftercms/issues/6159>`__
+  - `Fixed issue with SVG images when using the ``img-repository-upload`` data source with
+    the search option enabled <https://github.com/craftercms/craftercms/issues/6136>`__
+  - `Fixed issue with XB printing error messages in the browser console when file-based
+    items are not <https://github.com/craftercms/craftercms/issues/6102>`__
+  - `Added a sort option to the sidebar path navigator component <https://github.com/craftercms/craftercms/issues/5830>`__
+  - `The magnifying glass in a given nav tree is now always 'active' <https://github.com/craftercms/craftercms/issues/6179>`__
+  - `Fixed issue with the Datetime field's timezone ({control-name}_dt_tz) field <https://github.com/craftercms/craftercms/issues/6111>`__
   - Improved project listings screen and project creation experience
 
-* Crafter Engine controllers now returns 40x on requests which cannot be resolved  |br|
-  See `here <https://github.com/craftercms/craftercms/issues/4005>`__ for more information
+* `Crafter Engine controllers now returns ``HTTP 40x`` on requests which cannot be resolved <https://github.com/craftercms/craftercms/issues/4005>`__
 
-* Fixed issue with content history when cutting and pasting content |br|
-  See `here <https://github.com/craftercms/craftercms/issues/6153>`__ for more information
+* `Fixed issue with content history when cutting and pasting content <https://github.com/craftercms/craftercms/issues/6153>`__
 
-* Fixed issue with Graphql build failure when using a custom content type |br|
+* Fixed issue with GraphQL build failure when using a custom content type
 
-* Improved API response in not found response use case |br|
-  See :ref:`here <groovy-rest-script-not-found>` for more information on not found response
+* Improved API response in not found response use case, see :ref:`groovy-rest-script-not-found`
 
-* Updated ``docker-entryproint.sh`` to start without root |br|
+* Updated ``docker-entryproint.sh`` to start without root
 
-* Added support for ``Authenticated`` as an ``authorizedRole`` value for Search |br|
+* Added support for ``Authenticated`` as an ``authorizedRole`` value for Search
 
-* Temporary files created for SQL by Studio is now cleaned up |br|
+* Temporary files created for SQL by Studio are now cleaned up
 
 * Improved Engine status API |br|
   The Engine Status API returns the project health check.  Projects can now be configured to use
@@ -107,12 +84,10 @@ Updates
 
 * Noteworthy dependency updates:
 
-  - MariaDb4J to version 2.6.0.6 and MariaDB to 10.4.31.2
-  - JGit to version 6.7.0
+  - MariaDb4J to version ``2.6.0.8`` and MariaDB to ``10.4.31.2``
+  - JGit to version ``6.7.0.202309050840-r``
 
-Lot's of other small enhancements and bug fixes :)
-
-For a full list of tickets, please visit: `GitHub 4.1.2 <https://github.com/craftercms/craftercms/issues?q=is%3Aissue+project%3Acraftercms%2F3+is%3Aclosed>`_
+For a complete list of community tickets, please visit: `GitHub 4.1.2 <https://github.com/craftercms/craftercms/issues?q=is%3Aissue+project%3Acraftercms%2F3+is%3Aclosed>`_
 
 For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
 
