@@ -1,0 +1,102 @@
+.. index:: CrafterCMS 4.1.2 Release Notes
+
+----------------
+CrafterCMS 4.1.2
+----------------
+
+Released *October 29, 2023*
+
+This release includes fixes for issues with the release version 4.1.1
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+* Added support for duplicating a project |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6199>`__ for more information
+
+  To learn more about duplicating a project, see the article :ref:`duplicate-project`
+
+* Added ``Search`` option when inserting links in the RTE |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6156>`__ for more information
+
+^^^^^^^
+Updates
+^^^^^^^
+* `Engine now automatically reloads the context when it detects classes and config are changed <https://github.com/craftercms/craftercms/issues/6223>`__
+
+* `Fixed issue with ``getItem`` call marshaled to JSON when content elements have either an attribute that is not required, a default text set, or an actual text value blank <https://github.com/craftercms/craftercms/issues/6186>`__
+
+* `Added a SkipAll processor that allows skipping the item processing pipeline <https://github.com/craftercms/craftercms/issues/6184>`__
+
+* `Fixed issue with targeting configuration of date-time control <https://github.com/craftercms/craftercms/issues/6182>`__
+
+* `Fixed issue with dependency calculation when bulk publishing <https://github.com/craftercms/craftercms/issues/6181>`__
+
+* `Fixed issue with the shared component path not updated when the parent is renamed <https://github.com/craftercms/craftercms/issues/6150>`__
+
+* `Fixed issue when reverting a document with an internal name change <https://github.com/craftercms/craftercms/issues/6149>`__
+
+* `Fixed issue with Deployer throwing NPE on startup <https://github.com/craftercms/craftercms/issues/6208>`__
+
+* `Added support for configuring Preview edit mode defaults <https://github.com/craftercms/craftercms/issues/6203>`__
+
+  For more information on setting Preview edit mode defaults, see :ref:`preview-edit-mode-defaults`
+
+* `Fixed issue with Studio search failing when searching with special characters <https://github.com/craftercms/craftercms/issues/6176>`__
+
+* Improved UI Experience  |br|
+
+  - `Updated Sidebar maximum width <https://github.com/craftercms/craftercms/issues/6175>`__
+  - `Updated ``Text Area`` settings <https://github.com/craftercms/craftercms/issues/6173>`__
+  - `Improved ``Publishing by commit ID`` dialog <https://github.com/craftercms/craftercms/issues/6170>`__
+  - `Updated Node selector UI <https://github.com/craftercms/craftercms/issues/6161>`__
+  - `Fixed issue with uploading files from RTE insert link option <https://github.com/craftercms/craftercms/issues/6159>`__
+  - `Fixed issue with SVG images when using the ``img-repository-upload`` data source with
+    the search option enabled <https://github.com/craftercms/craftercms/issues/6136>`__
+  - `Fixed issue with XB printing error messages in the browser console when file-based
+    items are not <https://github.com/craftercms/craftercms/issues/6102>`__
+  - `Added a sort option to the sidebar path navigator component <https://github.com/craftercms/craftercms/issues/5830>`__
+  - `The magnifying glass in a given nav tree is now always 'active' <https://github.com/craftercms/craftercms/issues/6179>`__
+  - `Fixed issue with the Datetime field's timezone ({control-name}_dt_tz) field <https://github.com/craftercms/craftercms/issues/6111>`__
+  - Improved project listings screen and project creation experience
+
+* `Crafter Engine controllers now returns ``HTTP 40x`` on requests which cannot be resolved <https://github.com/craftercms/craftercms/issues/4005>`__
+
+* `Fixed issue with content history when cutting and pasting content <https://github.com/craftercms/craftercms/issues/6153>`__
+
+* Fixed issue with GraphQL build failure when using a custom content type
+
+* Improved API response in not found response use case, see :ref:`groovy-rest-script-not-found`
+
+* Updated ``docker-entryproint.sh`` to start without root
+
+* Added support for ``Authenticated`` as an ``authorizedRole`` value for Search
+
+* Temporary files created for SQL by Studio are now cleaned up
+
+* Improved Engine status API |br|
+  The Engine Status API returns the project health check.  Projects can now be configured to use
+  custom health check scripts that are run when the status API is called.  To learn more on how to
+  configure a custom health check script for your project, see :ref:`engine-custom-healthcheck`
+
+* Added support for receiving authentication headers as JWT token |br|
+  For more information on receiving headers in JWT format, see :ref:`crafter-studio-configure-header-based-auth`
+
+* Noteworthy dependency updates:
+
+  - MariaDb4J to version ``2.6.0.8`` and MariaDB to ``10.4.31.2``
+  - JGit to version ``6.7.0.202309050840-r``
+
+For a complete list of community tickets, please visit: `GitHub 4.1.2 <https://github.com/craftercms/craftercms/issues?q=is%3Aissue+project%3Acraftercms%2F3+is%3Aclosed>`_
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-1-0>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.1.0 (applies to 4.1.2),
+    please see :ref:`upgrading-craftercms`
+
+|hr|
