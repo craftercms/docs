@@ -9,7 +9,7 @@ File from WebDAV Repository Data Source
 Data source to select files from WebDAV repository.
 
 .. figure:: /_static/images/form-sources/form-source-webdav-file-repo.webp
-    :width: 30%
+    :width: 20%
     :alt: Source Control WebDAV Repository
 
 |

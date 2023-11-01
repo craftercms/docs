@@ -9,7 +9,7 @@ Video Upload then Transcode from S3 using MediaConvert Data Source
 Data source to upload videos to AWS MediaConvert repository.
 
 .. figure:: /_static/images/form-sources/form-source-s3-transcode.webp
-    :width: 30%
+    :width: 25%
     :alt: Source Control Video Transcoding from S3 Repository
 
 |

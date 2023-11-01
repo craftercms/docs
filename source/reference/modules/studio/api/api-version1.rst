@@ -41,6 +41,15 @@ Audit
 .. note::
   Audit operations are only available in the new API, for more information, please visit :base_url:`here <_static/api/studio.html>`
 
+^^^^^^^^
+Security
+^^^^^^^^
+.. toctree::
+   :maxdepth: 1
+
+   security/get-user-permissions
+
+
 ^^^^^^^^^^
 Monitoring
 ^^^^^^^^^^
@@ -95,7 +104,6 @@ Content / Asset
    content/change-content-type
    content/content-exists
    content/create-folder
-   content/crop-image
    content/rename-folder
    content/get-content
    content/get-content-at-path
@@ -119,13 +127,3 @@ Server
 
    server/get-available-languages
 
-^^^
-AWS
-^^^
-.. toctree::
-   :maxdepth: 1
-
-   aws/elastictranscoder/post-transcode
-
-.. note::
-    Some of the AWS operations are now deprecated. These operations are now available in the new API, for more information, please visit :base_url:`here <_static/api/studio.html>`

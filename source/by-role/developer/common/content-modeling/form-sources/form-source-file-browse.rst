@@ -9,7 +9,7 @@ File Browse Data Source
 Data source to select files from repository.
 
 .. figure:: /_static/images/form-sources/form-source-file-browse.webp
-    :width: 30%
+    :width: 20%
     :alt: Source Control File Browse
 
 |

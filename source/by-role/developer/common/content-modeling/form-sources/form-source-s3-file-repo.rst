@@ -9,7 +9,7 @@ S3 Repository Data Source
 Data source to select files from S3 repository.
 
 .. figure:: /_static/images/form-sources/form-source-s3-file-repo.webp
-    :width: 30%
+    :width: 20%
     :alt: Source Control S3 Repository
 
 -------------

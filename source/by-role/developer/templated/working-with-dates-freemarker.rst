@@ -40,7 +40,7 @@ Which will display the following::
 
     Top Books For Young Women
     by Jane Doe
-    Dec 28, 2016
+    Dec 28, 2020
 
 To display the date and time:
 
@@ -54,7 +54,7 @@ Which will output this:
 
 .. code-block:: text
 
-    2016-12-28T05:00:00.000Z
+    2020-12-28T05:00:00.000Z
 
 
 To display the date and time with some formatting:
@@ -68,7 +68,7 @@ Which will output this:
 
 .. code-block:: text
 
-    Wednesday, December 28, 2016, 05:00 AM (UTC)
+    Wednesday, December 28, 2020, 05:00 AM (UTC)
 
 
 As you can see from the last two examples, the date and time the article was created is in UTC. If we want to display it in the time zone specified in the `Engine Project Configuration` file, do the following:
@@ -82,7 +82,7 @@ Which will output this:
 
 .. code-block:: text
 
-     2016-12-27T21:00:00-08:00
+     2020-12-27T21:00:00-08:00
 
 
 ----------------------------------------------------
@@ -101,7 +101,7 @@ Which will display:
 
 .. code-block:: text
 
-    2016-12-27T21:00:00.000-08
+    2020-12-27T21:00:00.000-08
 
 
 If we want all date and time displays to follow a certain format, we can use the ``datetime_format`` setting.
@@ -116,7 +116,7 @@ Which will display the same time as the previous example, but in the format spec
 
 .. code-block:: text
 
-    Tuesday, December 27, 2016, 09:00 PM (PST)
+    Tuesday, December 27, 2020, 09:00 PM (PST)
 
 
 

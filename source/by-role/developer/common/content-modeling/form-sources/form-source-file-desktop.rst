@@ -9,7 +9,7 @@ File Uploaded from Desktop Data Source
  Data source to upload files from desktop.
 
 .. figure:: /_static/images/form-sources/form-source-file-desktop.webp
-    :width: 30%
+    :width: 20%
     :alt: Source Control File From Desktop
 
 |

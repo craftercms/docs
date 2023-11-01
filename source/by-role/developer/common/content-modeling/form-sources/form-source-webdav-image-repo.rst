@@ -9,7 +9,7 @@ Image from WebDAV Repository Data Source
 Data source to select images from repository.
 
 .. figure:: /_static/images/form-sources/form-source-webdav-image-repo.webp
-    :width: 30%
+    :width: 20%
     :alt: Source Control Image From WebDAV Repository
 
 |

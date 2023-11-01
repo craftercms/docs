@@ -120,8 +120,10 @@ In this section, we will be using the most basic aggregation ``terms`` to provid
 category of blog articles.
 
 .. image:: /_static/images/developer/search/faceted-search.webp
-    :width: 90 %
+    :width: 65 %
     :align: center
+
+|
 
 First we must define the fields that will be used for the aggregation, in this case the page model for ``Article`` has
 a ``categories`` field that uses a datasource to get values from a taxonomy in the site. For this case the name of the
@@ -131,9 +133,13 @@ field in the index is ``categories.item.value_smv``.
     :width: 75 %
     :align: center
 
+|
+
 .. image:: /_static/images/developer/search/datasource.webp
     :width: 75 %
     :align: center
+
+|
 
 To build the faceted search we must:
 

@@ -568,10 +568,10 @@ Form Controls
 
 Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. CrafterCMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`building-plugins-controls`.
 
-.. figure:: /_static/images/content-model/form-engine-controls.webp
-    :width: 40%
+.. image:: /_static/images/content-model/form-engine-controls.webp
+    :width: 30%
+    :align: center
     :alt: Form Engine Controls
-   	:align: center
 
 |
 

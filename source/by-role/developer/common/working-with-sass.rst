@@ -62,6 +62,8 @@ on the top bar from white to yellow.
     :width: 65 %
     :align: center
 
+|
+
 Let's begin by looking at the ``package.json`` file in your project:
 
 .. code-block:: json

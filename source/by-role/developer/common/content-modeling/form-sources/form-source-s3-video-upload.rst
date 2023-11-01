@@ -9,7 +9,7 @@ S3 Video Upload Data Source
 Data source to upload videos to WebDav repository.
 
 .. figure:: /_static/images/form-sources/form-source-s3-video-upload-repo.webp
-    :width: 30%
+    :width: 25%
     :alt: Source Control File Upload S3
 
 |

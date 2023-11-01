@@ -9,7 +9,7 @@ Video Uploaded from Desktop Data Source
 Data source to upload videos from desktop.
 
 .. figure:: /_static/images/form-sources/form-source-video-desktop.webp
-    :width: 30%
+    :width: 25%
     :alt: Source Control Video From Desktop
 
 |

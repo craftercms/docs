@@ -44,6 +44,8 @@ datasource configuration. That will display a dialog with the necessary features
     :alt: Form Static Key Value Pairs Options
     :align: center
 
+|
+
 - Fill the ``Key`` and ``Value`` fields.
 - Clicking on ``Add another`` adds a new key value pair.
 - Clicking on the ``Delete`` button removes the pair.

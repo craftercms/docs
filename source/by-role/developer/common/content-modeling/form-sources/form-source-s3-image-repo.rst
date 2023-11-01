@@ -9,7 +9,7 @@ Image from S3 Repository Data Source
 Data source to select images from repository.
 
 .. figure:: /_static/images/form-sources/form-source-s3-image-repo.webp
-    :width: 30%
+    :width: 25%
     :alt: Source Control Image From S3 Repository
 
 -------------
