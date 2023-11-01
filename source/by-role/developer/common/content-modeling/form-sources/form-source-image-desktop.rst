@@ -9,7 +9,7 @@ Image Uploaded from Desktop Data Source
 Data source to upload images from desktop.
 
 .. figure:: /_static/images/form-sources/form-source-image-desktop.webp
-    :width: 30%
+    :width: 20%
     :alt: Source Control Image From Desktop
 
 |

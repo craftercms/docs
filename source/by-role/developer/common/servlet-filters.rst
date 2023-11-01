@@ -1,8 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
-.. index:: Servlet Filters
-
 .. _servlet-filters:
 
 ===============
@@ -35,51 +33,61 @@ Step 2: Install the Filter in the CMS
 Open the **Sidebar** and navigate to a folder called **scripts**
 
 .. image:: /_static/images/developer/working-with-filters/sidebar-scripts-folder.webp
-   :width: 45 %
+   :width: 20 %
    :align: center
    :alt: Working with Filters - "scripts" Folder
 
+|
 
-Right-click on the **scripts** folder and click **Create Folder**. Enter “filters” as the folder name. Right-click on the new filters folder and click **Create Controller**.
+Right-click on the ``scripts`` folder and click ``Create Folder``. Enter ``filters`` as the folder name. Right-click on the new filters folder and click ``New Controller``.
 
 .. image:: /_static/images/developer/working-with-filters/sidebar-create-filter.webp
    :width: 45 %
    :align: center
    :alt: Working with Filters - Create Filter
 
-Enter “MyFilter” as the name and click **Create**
+|
+
+Enter ``MyFilter`` as the name and click ``Create``
 
 .. image:: /_static/images/developer/working-with-filters/create-controller-filter.webp
-   :width: 100 %
+   :width: 80 %
    :align: center
    :alt: Working with Filters - Create Controller
 
-Add the code from **Step 1** above and click “Update.”
+|
+
+Add the code from **Step 1** above and click ``Save & Close``.
 
 .. image:: /_static/images/developer/working-with-filters/add-filter-script.webp
-   :width: 100 %
+   :width: 80 %
    :align: center
    :alt: Working with Filters - Add filter script
+
+|
 
 At this point, you should see your filter in the Sidebar and we’re ready to configure it to run when a user requests a resource.
 
 .. image:: /_static/images/developer/working-with-filters/sidebar-filter-created.webp
-   :width: 45 %
+   :width: 23 %
    :align: center
    :alt: Working with Filters - Sidebar with the filter created
 
+|
 
 ---------------------------------------
 Step 3: Configure the Filter to Execute
 ---------------------------------------
 Now we need to tell the filter which resources to execute for by configuring the order of execution, the URL resource patterns it should execute on and the request method types that it should apply to. To do this we modify the Crafter Engine /Config/site.xml.
 
-From the **Sidebar**, click on |projectTools|. Click on **Configuration**. Select **Engine Project Configuration** from the dropdown.
+From the **Sidebar**, click on |projectTools|. Click on ``Configuration``. Select ``Engine Project Configuration`` from the list.
 
 .. image:: /_static/images/developer/working-with-filters/select-engine-site-config.webp
    :width: 75 %
    :align: center
    :alt: Working with Filters - Open Engine Project Configuration
+
+|
 
 Add the following filters tags to your site.xml. This will run your filter on every kind of request for all URLs.
 

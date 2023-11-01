@@ -24,6 +24,8 @@ Users will see **live** or **staging** underneath items indicating which publish
     :align: center
     :alt: System Administrator - Dashboard
 
+|
+
 Notice the pages published to staging and live with the same time in the above image. When staging is setup, all items will go through staging before going to live. So, if a user approves an item to be published directly to live, it will be published to staging first, then onto live.
 
 

@@ -261,7 +261,6 @@ For the dashboard shown above, here are the dashlets listed:
 
             Below is a list of all the other item types available:
 
-             - |workflowCss|
              - |workflowFolder|
              - |workflowLevelDescriptor|
              - |workflowTemplateScript|
@@ -470,7 +469,7 @@ width on your browser
 .. workflow icons ======================================================================================================
 
 .. |workflowLocked| image:: /_static/images/content-author/workflow-icon-locked.webp
-             :width: 12%
+             :width: 11%
              :alt: Workflow Icons - Locked for Edit
 
 .. |workflowProcessing| image:: /_static/images/content-author/workflow-icon-system-processing.webp
@@ -478,35 +477,35 @@ width on your browser
              :alt: Workflow Icons - System Processing
 
 .. |workflowEdited| image:: /_static/images/content-author/workflow-icon-modified.webp
-             :width: 13%
+             :width: 12%
              :alt: Workflow Icons - Modified
 
 .. |workflowDisabled| image:: /_static/images/content-author/workflow-icon-disabled.webp
-             :width: 12%
+             :width: 11%
              :alt: Workflow Icons - Disabled
 
 .. |workflowNeverPub| image:: /_static/images/content-author/workflow-icon-new.webp
-             :width: 10%
+             :width: 9%
              :alt: Workflow Icons - New
 
 .. |workflowDeleted| image:: /_static/images/content-author/workflow-icon-deleted.webp
-             :width: 12%
+             :width: 11%
              :alt: Workflow Icons - Deleted
 
 .. |workflowScheduledForLive| image:: /_static/images/content-author/workflow-icon-scheduled-for-live.webp
-             :width: 21%
+             :width: 19%
              :alt: Workflow Icons - Scheduled for live
 
 .. |workflowScheduledForStaging| image:: /_static/images/content-author/workflow-icon-scheduled-for-staging.webp
-             :width: 23%
+             :width: 22%
              :alt: Workflow Icons - Scheduled for staging
 
 .. |workflowSubmittedForLive| image:: /_static/images/content-author/workflow-icon-submitted-for-live.webp
-             :width: 21%
+             :width: 19%
              :alt: Workflow Icons - Submitted for live
 
 .. |workflowSubmittedForStaging| image:: /_static/images/content-author/workflow-icon-submitted-for-staging.webp
-             :width: 23%
+             :width: 21%
              :alt: Workflow Icons - Submitted for staging
 
 .. |workflowPublishing| image:: /_static/images/content-author/workflow-icon-publishing.webp
@@ -515,80 +514,80 @@ width on your browser
 
 .. Start of Item Types icons=============================================================
 
-.. |workflowComponent| image:: /_static/images/content-author/workflow-icon-component.webp
-             :width: 18%
-             :alt: Item Types Icons - Component
-
 .. |workflowPage| image:: /_static/images/content-author/workflow-icon-page.webp
-             :width: 11%
+             :width: 8%
              :alt: Item Types Icons - Page
 
+.. |workflowComponent| image:: /_static/images/content-author/workflow-icon-component.webp
+             :width: 13%
+             :alt: Item Types Icons - Component
+
+.. |workflowTaxonomy| image:: /_static/images/content-author/workflow-icon-taxonomy.webp
+             :width: 13%
+             :alt: Item Types Icons - Taxonomy
+
+.. |workflowCss| image:: /_static/images/content-author/workflow-icon-css.webp
+             :width: 8%
+             :alt: Workflow Icons - CSS
+
 .. |workflowFolder| image:: /_static/images/content-author/workflow-icon-folder.webp
-             :width: 12%
+             :width: 9%
              :alt: Item Types Icons - Folder
 
 .. |workflowLevelDescriptor| image:: /_static/images/content-author/workflow-icon-level-descriptor.webp
-             :width: 22%
+             :width: 17%
              :alt: Item Types Icons - levelDescriptor
 
 .. |workflowTemplateScript| image:: /_static/images/content-author/workflow-icon-template-script.webp
-             :width: 27%
+             :width: 20%
              :alt: Item Types Icons - Template/Script
 
 .. |workflowGroovy| image:: /_static/images/content-author/workflow-icon-groovy.webp
-             :width: 21%
+             :width: 15%
              :alt: Item Types Icons - Groovy
 
-.. |workflowTaxonomy| image:: /_static/images/content-author/workflow-icon-taxonomy.webp
-             :width: 17%
-             :alt: Item Types Icons - Taxonomy
-
 .. |workflowImage| image:: /_static/images/content-author/workflow-icon-image.webp
-             :width: 13%
+             :width: 10%
              :alt: Item Types Icons - Image
 
 .. |workflowJavaScript| image:: /_static/images/content-author/workflow-icon-js.webp
-             :width: 16%
+             :width: 12%
              :alt: Item Types Icons - JavaScript
 
 .. |workflowJson| image:: /_static/images/content-author/workflow-icon-json.webp
-             :width: 13%
+             :width: 10%
              :alt: Item Types Icons - Json
 
 .. |workflowHTML| image:: /_static/images/content-author/workflow-icon-html.webp
-             :width: 13%
+             :width: 10%
              :alt: Item Types Icons - Html
 
 .. |workflowPlainText| image:: /_static/images/content-author/workflow-icon-plain-text.webp
-             :width: 16%
+             :width: 12%
              :alt: Item Types Icons - Plain Text
 
 .. |workflowXML| image:: /_static/images/content-author/workflow-icon-xml.webp
-             :width: 13%
+             :width: 10%
              :alt: Item Types Icons - Xml
 
 .. |workflowIcon| image:: /_static/images/content-author/workflow-icon-icon.webp
-             :width: 13%
+             :width: 9%
              :alt: Item Types Icons - Icon
 
 .. |workflowFont| image:: /_static/images/content-author/workflow-icon-font.webp
-             :width: 11%
+             :width: 9%
              :alt: Workflow Icons - Font
-
-.. |workflowCss| image:: /_static/images/content-author/workflow-icon-css.webp
-             :width: 10%
-             :alt: Workflow Icons - CSS
 
 .. end of workflow icons ===============================================================================================
 
 .. Start of Publishing Status/Target  icons ============================================================================
 
 .. |publishStaging| image:: /_static/images/content-author/publish-target-icon-staged.webp
-             :width: 11%
+             :width: 10%
              :alt: Publishing Status/Target Icons - Staged
 
 .. |publishLive| image:: /_static/images/content-author/publish-target-icon-live.webp
-             :width: 10%
+             :width: 9%
              :alt: Item Types Icons - Live
 
 |hr|
@@ -654,24 +653,23 @@ on to the screen to configured drop targets. A new component with default values
 ready for editing when a new component is dropped on the screen.
 
 .. image:: /_static/images/content-author/preview-page-components-list.webp
-    :width: 20 %
+    :width: 15 %
     :alt: Navigating Studio - Experience Builder Panel Page Components
 
 .. image:: /_static/images/content-author/preview-page-components-space.webp
     :width: 5 %
 
 .. image:: /_static/images/content-author/preview-page-components.webp
-    :width: 20 %
+    :width: 15 %
     :alt: Navigating Studio - Experience Builder Panel Page Components
 
 .. image:: /_static/images/content-author/preview-page-components-space.webp
     :width: 5 %
 
 .. image:: /_static/images/content-author/preview-page-components-instances.webp
-    :width: 20 %
+    :width: 15 %
     :alt: Navigating Studio - Experience Builder Panel Page Components Instances
 
-|
 
 You may drag around a component from one position to a different position by enabling the ``Move mode``
 (by clicking the ``Move mode`` icon at the top right, or by using the keyboard shortcut).
@@ -857,6 +855,8 @@ your item.
     :width: 65 %
     :align: center
 
+|
+
 """"""""""""""""""""""""""""""""""
 Using the Experience Builder Panel
 """"""""""""""""""""""""""""""""""
@@ -878,6 +878,8 @@ highlighted in a green box. This is the area where we want to change the image
     :width: 85 %
     :align: center
 
+|
+
 Let's now change the image for author ``John Doe``. In the XB panel, click on ``Search``. We can
 scroll through the items listed there to look for a new image for ``John Doe``, or, we can also type
 ``image`` in the search box to narrow down items we're scrolling through to just images in the project.
@@ -890,6 +892,8 @@ page. The ``Bio`` section should now have a new image.
     :width: 85 %
     :align: center
 
+|
+
 Another way to browse for images to replace the Bio picture is by browsing items under ``Assets`` in
 the XB panel. Scroll through the items, then when you find a suitable image, simply drag it on to the
 page to the image section you want to replace. Notice that as you're dragging an image from the XB panel,
@@ -900,6 +904,8 @@ into that area.
     :alt: Getting Started - Assets list in XB
     :width: 85 %
     :align: center
+
+|
 
 |hr|
 
@@ -954,6 +960,8 @@ will update with the new status.
    :align: center
    :alt: Content Author - Add New Page Open Template
 
+|
+
 An action bar is available at the bottom of the screen that cannot be scrolled away. This bar allows
 users to Save as Draft, Save & Minimize, Save & Preview, Save & Close or Cancel.
 
@@ -982,6 +990,8 @@ An error form will appear when you try to *Save and Close* without filling out a
    :width: 50 %
    :align: center
    :alt: Content Author - Page Save Error
+
+|
 
 .. _add-via-quick-create:
 

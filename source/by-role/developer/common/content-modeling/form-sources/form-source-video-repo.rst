@@ -9,7 +9,7 @@ Video from Repository Data Source
 Data source to select videos from repository.
 
 .. figure:: /_static/images/form-sources/form-source-video-repo.webp
-    :width: 50%
+    :width: 25%
     :alt: Source Control Video From Repository
 
 |

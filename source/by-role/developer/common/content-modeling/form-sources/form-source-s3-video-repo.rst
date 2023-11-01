@@ -9,7 +9,7 @@ Video from S3 Repository Data Source
 Data source to select videos from repository.
 
 .. figure:: /_static/images/form-sources/form-source-s3-video-repo.webp
-    :width: 30%
+    :width: 20%
     :alt: Source Control Video From S3 Repository
 
 -------------

@@ -9,7 +9,7 @@ WebDAV File Upload Data Source
 Data source to upload files to WebDav repository.
 
 .. figure:: /_static/images/form-sources/form-source-webdav-file-upload-repo.webp
-    :width: 30%
+    :width: 25%
     :alt: Source Control File Upload WebDAV
 
 |

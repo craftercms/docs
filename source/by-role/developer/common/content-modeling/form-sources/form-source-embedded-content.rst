@@ -9,7 +9,7 @@ Embedded Content Data Source
 Data source to create inline components.
 
 .. figure:: /_static/images/form-sources/form-source-embedded-content.webp
-    :width: 30%
+    :width: 20%
     :alt: Form Source Embedded Content
 
 |

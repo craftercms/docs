@@ -13,7 +13,7 @@ Example
 -------
 
 .. figure:: /_static/images/form-controls/form-control-checkbox-example.webp
-    :width: 15%
+    :width: 12%
     :alt: Form Control Checkbox Example
 
 -------------

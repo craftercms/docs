@@ -9,7 +9,7 @@ S3 Image Upload Data Source
 Data source to upload images to S3 repository.
 
 .. figure:: /_static/images/form-sources/form-source-s3-image-upload-repo.webp
-    :width: 30%
+    :width: 25%
     :alt: Source Control File Upload S3
 
 -------------
