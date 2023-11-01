@@ -130,7 +130,7 @@ then click on "Projects" on the top left of the *Global* section
 Account Management
 ^^^^^^^^^^^^^^^^^^
 Account Management is where you go to change your personal Crafter Studio settings like language or
-to change your password.
+to change your password or to clear your Studio UI preferences from the browser cache.
 
 To get to Account Management:
 
@@ -144,12 +144,20 @@ To get to Account Management:
 
 |
 
+Here's the ``Account`` screen:
+
 .. image:: /_static/images/content-author/settings-account-management.webp
-    :width: 75 %
+    :width: 85 %
     :align: center
     :alt: Navigating Studio - Account Settings Screen
 
 |
+
+From the screen above,
+
+- You can change the language of Crafter Studio.
+- You can also change your password. For more information, see :ref:`Changing Your Password <user-passwords>`.
+- You can clear your stored Crafter Studio UI user preferences and reset them to defaults per project or all the projects
 
 .. _project-dashboard:
 

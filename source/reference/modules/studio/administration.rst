@@ -208,7 +208,7 @@ For an example of how to use the generated token, see :ref:`crafter-cli`.
 ^^^^^^^
 Account
 ^^^^^^^
-The ``Account Tool`` allows the user to change the user's personal Crafter Studio settings like language or to change the user's password.
+The ``Account Tool`` allows the user to change the user's personal Crafter Studio settings like language or to change the user's password or to clear your Studio UI preferences from the browser cache.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-account.webp
     :alt: System Administrator - Navigation Menu Account Tool
