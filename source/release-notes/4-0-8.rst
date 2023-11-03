@@ -1,0 +1,54 @@
+.. index:: CrafterCMS 4.0.8 Release Notes
+
+----------------
+CrafterCMS 4.0.8
+----------------
+
+*Released TBD*
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+* `Added support for duplicating a project <https://github.com/craftercms/craftercms/issues/6199>`__
+  To learn more about duplicating a project, see the article :ref:`duplicate-project`
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* `Engine now automatically reloads the context when it detects classes and config are changed <https://github.com/craftercms/craftercms/issues/6223>`__
+
+* `Fixed issue with dependency calculation when bulk publishing <https://github.com/craftercms/craftercms/issues/6181>`__
+
+* `Fixed issue with the shared component path not updated when the parent is renamed <https://github.com/craftercms/craftercms/issues/6150>`__
+
+* Upgraded dependencies
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+.. important::
+
+    Please see :ref:`Breaking changes in 4.0.3 <breaking-changes-4-0-3>` for breaking changes and other
+    things to consider before upgrading
+
+    Please see :ref:`Breaking changes in 4.0.0 <breaking-changes-4-0-0>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.0.0 (applies to 4.0.8),
+    please see :ref:`upgrading-craftercms`
+
+    When using private key SSH authentication in the ``init-site.sh`` script, the private key path must be set explicitly. |br|
+    Please see :ref:`setup-project-for-delivery` for more information on using the ``-k`` option of ``init-site.sh`` to
+    set the private key path
+
+    For Linux installs, the Studio upgrade requires the library ``libaio`` which is not installed
+    by default in some Linux distributions.  Please see the section on **Linux Prerequisites**
+    in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+|
+|
+
+.. raw:: html
+
+   <hr>
+
