@@ -54,3 +54,8 @@ For more details you can follow the `official documentation <https://developer.b
   Jurisdiction Policy Files. For newer versions you only need to enable the unlimited strength setting.
 
 For more information on how to manage/encode your secrets such as your Box credentials, please see :ref:`managing-secrets`
+
+-------
+Example
+-------
+For an example of configuring Studio to use Box, see :ref:`box-asset-access`
