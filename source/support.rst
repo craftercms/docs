@@ -1,5 +1,4 @@
 :is-up-to-date: True
-:since-version: 4.1.1
 
 .. index:: Support
 
