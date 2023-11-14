@@ -54,7 +54,7 @@ simple queries that don't require too much configuration.
   , Map)
 
   def itemsFound = searchResponse.hits().total().value()
-  def items = searchResponse.hits().hits()
+  def items = searchResponse.hits().hits()*.source()
 
   return items
 
@@ -96,7 +96,7 @@ allow you to use builder objects to develop complex logic for building the queri
   def searchResponse = searchClient.search(builder.build(), Map)
 
   def itemsFound = searchResponse.hits().total().value()
-  def items = searchResponse.hits().hits()
+  def items = searchResponse.hits().hits()*.source()
 
   return items
 
