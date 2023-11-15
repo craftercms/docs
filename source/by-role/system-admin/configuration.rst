@@ -269,24 +269,47 @@ Below are the directives used for setting up a reverse proxy with NGINX:
     :caption: *NGINX Delivery Configuration*
 
     server {
-        listen example.com:80;
-        server_name  example.com;
+        listen 80;
+        server_name example.com;
 
         # Remember to change {path_to_craftercms_home} to CrafterCMS installation home
         # Remember to change {myproject} to your actual project name
 
+        # Path to your CrafterCMS project
+        root /{path_to_craftercms_home}/data/repos/sites/{myproject};
+
         location / {
-            # Path to your CrafterCMS project
-            root /{path_to_craftercms_home}/data/repos/sites/{myproject};
+            rewrite ^/(.*)$ /$1?crafterSite={myproject} break;
 
-            # Assign CrafterCMS project for this vhost
-            rewrite (.*) $1?crafterSite={myproject}
+            # Block outside access to management services
+            rewrite ^/api/1/cache / break;
+            rewrite ^/api/1/site/mappings / break;
+            rewrite ^/api/1/site/cache / break;
+            rewrite ^/api/1/site/context/destroy / break;
+            rewrite ^/api/1/site/context/rebuild / break;
 
-            # Proxy to Crafter Engine
-            proxy_set_header X-Forwarded-Host $host:$server_port;
-            proxy_set_header X-Forwarded-Server $host;
+            # Take all inbound URLs and lower case them before proxying to Crafter Engine
+            # Crafter Studio enforces lower-case URLs.
+            # Using the rewrite rule below, the URL the user sees can be mixed-case,
+            # however, what's sent to CrafterCMS is always lower-case.
+            if ($request_uri !~ ^/static-assets/.*$ ) {
+                if ($request_uri !~ ^/api/.*$ ) {
+                    rewrite ^/(.*)$ /${lc:$1} break;
+                }
+            }
+
+            proxy_pass http://localhost:9080/;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_pass http://localhost:9080;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_preserve_host on;
+        }
+
+        location /static-assets/ {
+            # Serve static assets directly from NGINX
+            # Adjust the path as needed based on your setup
+            alias /{path_to_craftercms_home}/data/repos/sites/{myproject}/static-assets/;
         }
 
         # Configure the log files
