@@ -231,6 +231,69 @@ specified in your config should be proxied to ``http://localhost:8080/`` for you
 ``http://localhost:9080/`` for your delivery install. The ``ProxyPassReverse`` distinguishes your configuration
 as a reverse proxy setup.
 
+Below are the directives used for setting up a reverse proxy with NGINX:
+
+.. _configure-reverse-proxy-for-authoring-nginx:
+
+.. code-block:: nginx
+    :caption: *NGINX Authoring Configuration*
+
+    server {
+        listen 80;
+        server_name authoring.example.com;
+
+        # Proxy Authoring and Preview (Crafter Studio and Engine Preview)
+        location ~ ^/(studio/events)$ {
+            proxy_pass http://localhost:8080;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+        }
+
+        location / {
+            proxy_pass http://localhost:8080;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+
+        # Configure the log files
+        error_log ${NGINX_LOG_DIR}/crafter-studio-error.log;
+        access_log ${NGINX_LOG_DIR}/crafter-studio-access.log combined;
+    }
+
+.. _configure-reverse-proxy-for-delivery-nginx:
+
+.. code-block:: nginx
+    :caption: *NGINX Delivery Configuration*
+
+    server {
+        listen example.com:80;
+        server_name  example.com;
+
+        # Remember to change {path_to_craftercms_home} to CrafterCMS installation home
+        # Remember to change {myproject} to your actual project name
+
+        location / {
+            # Path to your CrafterCMS project
+            root /{path_to_craftercms_home}/data/repos/sites/{myproject};
+
+            # Assign CrafterCMS project for this vhost
+            rewrite (.*) $1?crafterSite={myproject}
+
+            # Proxy to Crafter Engine
+            proxy_set_header X-Forwarded-Host $host:$server_port;
+            proxy_set_header X-Forwarded-Server $host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://localhost:9080;
+        }
+
+        # Configure the log files
+        error_log ${NGINX_LOG_DIR}/crafter-engine-error.log;
+        access_log ${NGINX_LOG_DIR}/crafter-engine-access.log combined;
+    }
+
 Depending on your setup, the following CrafterCMS properties may need to be setup:
 
 - ``crafter.engine.forwarded.headers.enabled`` property under :ref:`engine-forwarded-headers` in the ``server-config.properties`` file
