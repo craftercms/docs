@@ -278,6 +278,12 @@ Below are the directives used for setting up a reverse proxy with NGINX:
         # Path to your CrafterCMS project
         root /{path_to_craftercms_home}/data/repos/sites/{myproject};
 
+        location /static-assets/ {
+            # Serve static assets directly from NGINX
+            # Adjust the path as needed based on your setup
+            alias /{path_to_craftercms_home}/data/repos/sites/{myproject}/static-assets/;
+        }
+
         location / {
             rewrite ^/(.*)$ /$1?crafterSite={myproject} break;
 
@@ -303,13 +309,6 @@ Below are the directives used for setting up a reverse proxy with NGINX:
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_preserve_host on;
-        }
-
-        location /static-assets/ {
-            # Serve static assets directly from NGINX
-            # Adjust the path as needed based on your setup
-            alias /{path_to_craftercms_home}/data/repos/sites/{myproject}/static-assets/;
         }
 
         # Configure the log files
