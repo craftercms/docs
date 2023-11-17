@@ -614,7 +614,7 @@ https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinit
 Remember to have the following ports open:
 
   - ``8080`` for http
-  - ``33306`` for the DB
+  - ``3306`` for the DB
   - ``5701`` for hazelcast
 
 ~~~~~~~~~~~~~~~~~~~~~~~~
