@@ -611,6 +611,12 @@ in different availability zones, so one Pod runs per availability zone.
 If you're using bigger nodes that are capable of running multiple Pods, make sure that the Authoring Pods are spread evenly through availability zones by specifying Pod Affinity/Anti-Affinity (you will need to modify the example configuration):
 https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity
 
+Remember to have the following ports open:
+
+  - ``8080`` for http
+  - ``33306`` for the DB
+  - ``5701`` for hazelcast
+
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Setup Kubernetes Secrets
 ~~~~~~~~~~~~~~~~~~~~~~~~

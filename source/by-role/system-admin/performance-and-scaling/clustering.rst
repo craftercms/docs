@@ -56,8 +56,8 @@ Before we begin configuring Studio for clustering, the following must be setup:
 -------------
 Configuration
 -------------
-First, we'll take a look at an example of :ref:`how to setup a two node cluster with Studio <setup-a-two-node-cluster-with-studio>`
-step by step, then, we'll take a look at an example of :ref:`setting up Studio clustering using a Kubernetes deployment <setup-studio-clustering-with-kubernetes-deployment>`
+We'll take a look at an example of :ref:`how to setup a two node cluster with Studio <setup-a-two-node-cluster-with-studio>`
+step by step here. Afterwards, you can then take a look at an example of :ref:`setting up Studio clustering using a Kubernetes deployment <setup-studio-clustering-with-kubernetes-deployment>`
 
 .. _setup-a-two-node-cluster-with-studio:
 
@@ -74,7 +74,12 @@ To setup a two node cluster with Studio we'll need to do the following:
 """"""""""""
 Requirements
 """"""""""""
-* At least 2 servers running Linux (Remember that Studio's cluster runs only in Linux)
+* At least 2 servers running Linux (Remember that Studio's cluster runs only in Linux) with the following ports open:
+
+  - ``8080`` for http
+  - ``33306`` for the DB
+  - ``5701`` for hazelcast
+
 * Enterprise version of CrafterCMS
 * Studio's clustering requires the ``libssl1.0.0`` (or ``libssl1.0.2``) shared library.
   Some Linux distros does not come with the library pre-installed and may need to be installed.
