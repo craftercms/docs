@@ -648,8 +648,7 @@ Audit Log
     :label: Since
     :version: 4.1.3
 
-CrafterCMS allows disabling the job for populating the audit log.  When disabled, the audit table will not be
-registering operations synced from git (not performed through Crafter Studio).
+CrafterCMS allows disabling the job for populating the audit log from external git changes. When disabled, the audit table will not log external operations synced from git. Crafter Studio updates and changes are always audited. Disabling this job improves performance for large git pull operations.
 
 To disable populating the audit log, set the ``studio.clockJob.task.auditLogProcessing.disableAudit`` property to ``true``.
 
