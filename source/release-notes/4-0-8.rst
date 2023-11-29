@@ -15,6 +15,10 @@ New Features
 ^^^^^^^
 Updates
 ^^^^^^^
+* `Added ability to disable the Audit History job <https://github.com/craftercms/craftercms/issues/6294>`__
+  To learn more about disabling the audit history job, see the article :ref:`studio-audit-log`
+
+* `Fixed issue with Lock Owner field not being cleared <https://github.com/craftercms/craftercms/issues/6296>`__
 
 * `Engine now automatically reloads the context when it detects classes and config are changed <https://github.com/craftercms/craftercms/issues/6223>`__
 
