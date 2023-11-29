@@ -18,7 +18,6 @@ To override any of the pre-configured settings, in your Authoring installation, 
 --------------------------------
 Content Repository Configuration
 --------------------------------
-
 The following section of Studio's configuration overrides allows you to do the following:
 
 * ``studio.repo.basePath`` allows you to set your repository base
@@ -42,10 +41,11 @@ The following section of Studio's configuration overrides allows you to do the f
    # Git repository branch for the `staging` publishing target, default "staging"
    # studio.repo.published.staging: staging
 
+|
+
 ---------------------
 Project Configuration
 ---------------------
-
 The following section of Studio's configuration overrides allows you to setup your project configuration
 
 .. code-block:: yaml
@@ -81,10 +81,11 @@ The following section of Studio's configuration overrides allows you to setup yo
      /api/1/site/cache/clear,
      /api/1/site/cache/statistics
 
+|
+
 ------------------------------
 Preview Deployer Configuration
 ------------------------------
-
 The following section of Studio's configuration overrides allows you to setup your deployer urls
 
 .. code-block:: yaml
@@ -104,12 +105,11 @@ The following section of Studio's configuration overrides allows you to setup yo
    # URL to the preview repository (aka Sandbox) where authors save work-in-progress
    studio.preview.repoUrl: ${env:CRAFTER_DATA_DIR}/repos/sites/{siteName}/sandbox
 
-
+|
 
 ----------------------------
 Preview Search Configuration
 ----------------------------
-
 The following section of Studio's configuration overrides allows you to setup urls for search in preview
 
 .. code-block:: yaml
@@ -123,10 +123,11 @@ The following section of Studio's configuration overrides allows you to setup ur
    studio.preview.search.createUrl: ${env:SEARCH_URL}/api/2/admin/index/create
    studio.preview.search.deleteUrl: ${env:SEARCH_URL}/api/2/admin/index/delete/{siteName}
 
+|
+
 ----------------------
 Database Configuration
 ----------------------
-
 The following section of Studio's configuration overrides allows you to setup the database url, port number, connection string to initialize the database and path
 
 .. code-block:: yaml
@@ -153,10 +154,11 @@ The following section of Studio's configuration overrides allows you to setup th
    # Socket path for the embedded database
    studio.db.socket: /tmp/MariaDB4j.${env:MARIADB_PORT}.sock
 
+|
+
 ----------------------
 Security Configuration
 ----------------------
-
 The following section of Studio's configuration overrides allows you to randomize the admin password on a fresh install (for more information, see: :ref:`randomize-admin-password`), configure encryption and configure authentication method to be used (for more information, see: :ref:`configuring-studio-security`), configure password requirements validation (for more information see: :ref:`crafter-studio-configure-password-requirements`).
 
 .. code-block:: yaml
@@ -206,11 +208,11 @@ The following section of Studio's configuration overrides allows you to randomiz
    # Defines name used for environment specific configuration. It is used for environment overrides in studio. Default value is default.
    studio.configuration.environment.active: ${env:CRAFTER_ENVIRONMENT}
 
+|
 
 ------------------
 Mail Configuration
 ------------------
-
 The following section of Studio's configuration overrides allows you to setup the SMTP server to be used by CrafterCMS when sending emails
 
 .. code-block:: yaml
@@ -240,13 +242,13 @@ The following section of Studio's configuration overrides allows you to setup th
    # Enable/disable (value true/false) debug mode for email service. Enabling debug mode allows tracking/debugging communication between email service and SMTP server.
    # studio.mail.debug: false
 
+|
 
 .. _studio-config-override-cors:
 
 ----
 CORS
 ----
-
 The following section of Studio's configuration overrides allows you to setup CORS
 
 .. code-block:: yaml
@@ -273,6 +275,8 @@ The following section of Studio's configuration overrides allows you to setup CO
    # Value for the Access-Control-Max-Age header
    # studio.cors.maxage: -1
 
+|
+
 The CORS origins accepts regex patterns.  Values are split using ``,``.  Remember that commas inside
 patterns need to be escaped with a ``\`` like:
 ``studio.cors.origins: 'http://localhost:[8000\,3000],http://*.other.domain'``
@@ -280,7 +284,6 @@ patterns need to be escaped with a ``\`` like:
 ------
 Search
 ------
-
 The following section of Studio's configuration overrides allows you to setup the url for search
 
 .. code-block:: yaml
@@ -305,10 +308,11 @@ The following section of Studio's configuration overrides allows you to setup th
    # Indicates if keep alive should be enabled for sockets used by the search client, defaults to false
    studio.search.keepAlive: false
 
+|
+
 -------------------
 Serverless Delivery
 -------------------
-
 The following section of Studio's configuration overrides allows you to setup serverless delivery
 
 .. code-block:: yaml
@@ -361,12 +365,13 @@ The following section of Studio's configuration overrides allows you to setup se
    #       # The alternate domains names (besides *.cloudfront.net) for the CloudFront CDN (optional when target template is aws-cloudformed-s3)
    #       alternateCloudFrontDomainNames:
 
+|
+
 .. _studio-config-forwarded-headers:
 
 -----------------
 Forwarded Headers
 -----------------
-
 The following section of Studio's configuration overrides allows you to configure forwarded headers to resolve the actual hostname and protocol when it is behind a load balancer or reverse proxy.
 
 .. code-block:: yaml
@@ -380,10 +385,11 @@ The following section of Studio's configuration overrides allows you to configur
        # address. Enable when Studio is behind a reverse proxy or load balancer that sends these
        studio.forwarded.headers.enabled: false
 
+|
+
 -------------
 Access Tokens
 -------------
-
 .. version_tag::
    :label: Since
    :version: 4.0.0
@@ -418,6 +424,8 @@ The following section of Studio's configuration overrides allows you to configur
    # Indicates if the refresh token cookie should be secure (should be true for production environments behind HTTPS)
    studio.security.token.cookie.secure: ${env:STUDIO_REFRESH_TOKEN_SECURE}
 
+|
+
 .. _crafterSite-cookie-domain:
 
 -------------------------
@@ -435,6 +443,8 @@ The following section of Studio's configuration overrides allows you to set the 
 
    # Use base domain instead of subdomain for the crafterSite cookie
    studio.cookie.useBaseDomain: false
+
+|
 
 -----------------
 Validations Regex
@@ -471,3 +481,28 @@ The following section of Studio's configuration overrides allows you to configur
    # studio.validation.regex.CONTENT_PATH_READ: "^/?([\\w\\p{IsLatin}@$%^&{}\\[\\]()+\\-=,.:~'`]+(\\s*[\\w\\p{IsLatin}/@$%^&{}\\[\\]()+\\-=,.:~'`])*(/?))*$"
    # studio.validation.regex.CONTENT_FILE_NAME_WRITE: "^((crafter\\-level\\-descriptor\\.level)|([a-z0-9_\\-])+)\\.xml$"
    # studio.validation.regex.CONFIGURATION_PATH: "^([a-z0-9\\-_/]+([.]*[a-z0-9\\-_])+)*(\\.[\\w]+)?/?$"
+
+|
+
+.. _studio-audit-log:
+
+---------
+Audit Log
+---------
+.. version_tag::
+    :label: Since
+    :version: 4.0.8
+
+CrafterCMS allows disabling the job for populating the audit log.  When disabled, the audit table will not be
+registering operations synced from git (not performed through Crafter Studio).
+
+To disable populating the audit log, set the ``studio.clockJob.task.auditLogProcessing.disableAudit`` property to ``true``.
+
+.. code-block:: yaml
+    :caption: *studio-config-override.yaml*
+
+    # Disable the db audit log population
+    studio.clockJob.task.auditLogProcessing.disableAudit: false
+
+|
+
