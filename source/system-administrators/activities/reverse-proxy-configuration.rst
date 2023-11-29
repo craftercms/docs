@@ -13,7 +13,7 @@ Reverse Proxy Configuration
    :label: Since
    :version: 4.0.3
 
-In this section, we discuss how to configure a reverse proxy using Apache 2 HTTPd vhost configuration
+In this section, we show an example on how to configure a reverse proxy using NGINX and Apache 2 HTTPd vhost configuration
 for authoring and delivery.
 
 Below are the directives used for setting up a reverse proxy with Apache:
@@ -93,6 +93,80 @@ The ``ProxyPass`` and ``ProxyPassReverse`` directives in the above example speci
 specified in your config should be proxied to ``http://localhost:8080/`` for your authoring install and
 ``http://localhost:9080/`` for your delivery install.  The ``ProxyPassReverse`` distinguishes your configuration
 as a reverse proxy setup.
+
+Below are the directives used for setting up a reverse proxy with NGINX:
+
+.. _configure-reverse-proxy-for-authoring-nginx:
+
+.. code-block:: nginx
+    :caption: *NGINX Authoring Configuration*
+
+    server {
+        listen 80;
+        server_name authoring.example.com;
+        # Proxy Authoring and Preview (Crafter Studio and Engine Preview)
+        location ~ ^/(studio/events)$ {
+            proxy_pass http://localhost:8080;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+        }
+        location / {
+            proxy_pass http://localhost:8080;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+        # Configure the log files
+        error_log ${NGINX_LOG_DIR}/crafter-studio-error.log;
+        access_log ${NGINX_LOG_DIR}/crafter-studio-access.log combined;
+    }
+
+.. _configure-reverse-proxy-for-delivery-nginx:
+
+.. code-block:: nginx
+    :caption: *NGINX Delivery Configuration*
+
+    server {
+        listen 80;
+        server_name example.com;
+        # Remember to change {path_to_craftercms_home} to CrafterCMS installation home
+        # Remember to change {myproject} to your actual project name
+        # Path to your CrafterCMS project
+        root /{path_to_craftercms_home}/data/repos/sites/{myproject};
+        location /static-assets/ {
+            # Serve static assets directly from NGINX
+            # Adjust the path as needed based on your setup
+            alias /{path_to_craftercms_home}/data/repos/sites/{myproject}/static-assets/;
+        }
+        location / {
+            rewrite ^/(.*)$ /$1?crafterSite={myproject} break;
+            # Block outside access to management services
+            rewrite ^/api/1/cache / break;
+            rewrite ^/api/1/site/mappings / break;
+            rewrite ^/api/1/site/cache / break;
+            rewrite ^/api/1/site/context/destroy / break;
+            rewrite ^/api/1/site/context/rebuild / break;
+            # Take all inbound URLs and lower case them before proxying to Crafter Engine
+            # Crafter Studio enforces lower-case URLs.
+            # Using the rewrite rule below, the URL the user sees can be mixed-case,
+            # however, what's sent to CrafterCMS is always lower-case.
+            if ($request_uri !~ ^/static-assets/.*$ ) {
+                if ($request_uri !~ ^/api/.*$ ) {
+                    rewrite ^/(.*)$ /${lc:$1} break;
+                }
+            }
+            proxy_pass http://localhost:9080/;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+        # Configure the log files
+        error_log ${NGINX_LOG_DIR}/crafter-engine-error.log;
+        access_log ${NGINX_LOG_DIR}/crafter-engine-access.log combined;
+    }
 
 Depending on your setup, the following CrafterCMS properties may need to be setup:
 
