@@ -78,10 +78,6 @@ REST API
 --------
 To view the Crafter Studio REST APIs:
 
-^^^^^^^^^^^^^
-API Version 2
-^^^^^^^^^^^^^
-
 .. open_iframe_modal_button::
    :label: Open here
    :url: ../../../_static/api/studio.html
@@ -91,17 +87,6 @@ API Version 2
 
     or <a href="../../../_static/api/studio.html" target="_blank">in a new tab</a>
 
-|
-|
-
-^^^^^^^^^^^^^
-API Version 1
-^^^^^^^^^^^^^
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   api/api-version1.rst
 
 |hr|
 

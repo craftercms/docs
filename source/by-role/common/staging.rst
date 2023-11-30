@@ -60,5 +60,5 @@ Syncing Staging with Live
 -------------------------
 There are times when you need to sync the staging publishing target with the live publishing target. When adding the ``staging`` publishing target to an established project, the live repository is not cloned to the staging repository until an item has been published after setting up staging. There may be some other scenarios, when you might need to sync the staging publishing target with the live publishing target.
 
-To sync the staging target with the live target, simply call the ``reset-staging`` API. See :ref:`crafter-studio-api-publish-reset-staging` for more details on the API
+To sync the staging target with the live target, simply call the ``reset-staging`` API. See `publishResetStaging <../../_static/api/studio.html#tag/publishing/operation/publishResetStaging>`__ for more details on the API
 
