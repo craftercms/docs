@@ -242,12 +242,12 @@ Let's begin:
 
 #. **Get a list of projects under management**
 
-   We'll get a list of sites the user is authorized to work with
-   :ref:`crafter-studio-api-site-get-per-user`
+   We'll get a list of sites the user is authorized to work with using the API
+   `getCurrentUserSites <../../_static/api/studio.html#tag/users/operation/getCurrentUserSites>`__
 
    .. code-block:: bash
 
-      curl <authentication option> -X GET http://localhost:8080/studio/api/1/services/api/1/site/get-per-user.json?username=admin
+      curl <authentication option> -X GET http://localhost:8080/studio/api/2/users/admin/sites
 
    |
 
@@ -256,70 +256,32 @@ Let's begin:
    .. code-block:: json
 
       {
-        "sites": [
-          {
-            "id": 9,
-            "siteId": "ar",
-            "name": "ar",
-            "description": "",
-            "status": null,
-            "liveUrl": null,
-            "lastCommitId": "951004363449cc83209f307b1e9f110dab37fed7",
-            "publishingEnabled": 1,
-            "publishingStatusMessage": "idle|Idle",
-            "lastVerifiedGitlogCommitId": null
-          },
-          {
-            "id": 5,
-            "siteId": "diiot",
-            "name": "diiot",
-            "description": "",
-            "status": null,
-            "liveUrl": null,
-            "lastCommitId": "92d543eaa164b1ebfbdd6ce538ae028d4d6421b7",
-            "publishingEnabled": 0,
-            "publishingStatusMessage": "idle|Idle",
-            "lastVerifiedGitlogCommitId": "92d543eaa164b1ebfbdd6ce538ae028d4d6421b7"
-          },
-          {
-            "id": 10,
-            "siteId": "editorialcom",
-            "name": "editorialcom",
-            "description": "",
-            "status": null,
-            "liveUrl": null,
-            "lastCommitId": "503d922f226e8ab821073e23ef5a229f907212a0",
-            "publishingEnabled": 1,
-            "publishingStatusMessage": "",
-            "lastVerifiedGitlogCommitId": "503d922f226e8ab821073e23ef5a229f907212a0"
-          },
-          {
-            "id": 3,
-            "siteId": "flow",
-            "name": "flow",
-            "description": "",
-            "status": null,
-            "liveUrl": null,
-            "lastCommitId": "21923775c3a1fc778a364d47884b9ee2bb4928a5",
-            "publishingEnabled": 1,
-            "publishingStatusMessage": "idle|Idle",
-            "lastVerifiedGitlogCommitId": "21923775c3a1fc778a364d47884b9ee2bb4928a5"
-          },
-          {
-            "id": 8,
-            "siteId": "vr",
-            "name": "vr",
-            "description": "",
-            "status": null,
-            "liveUrl": null,
-            "lastCommitId": "c67fd9dd25d1aa59ff13e3fda2a4387be50dfc69",
-            "publishingEnabled": 1,
-            "publishingStatusMessage": "idle|Idle",
-            "lastVerifiedGitlogCommitId": null
-          }
-        ],
-        "total": 6
-     }
+        "response": {
+          "code": 0,
+          "message": "OK",
+          "remedialAction": "",
+          "documentationUrl": ""
+      },
+      "total": 2,
+      "offset": 0,
+      "limit": 10,
+      "sites": [
+        {
+          "siteId": "hello",
+          "uuid": "e7153d93-3879-41d5-8e91-408a1bd79d74",
+          "name": "hello",
+          "desc": null,
+          "state": "READY"
+        },
+        {
+          "siteId": "my-editorial",
+          "uuid": "a82278d6-535c-4e0c-9013-95284e10a993",
+          "name": "My Editorial",
+          "desc": null,
+          "state": "READY"
+        }
+        ]
+      }
 
    |
 
@@ -327,8 +289,8 @@ Let's begin:
 
 #. **Write content to a project**
 
-   We'll now write content to the Editorial com Project
-   :ref:`crafter-studio-api-content-write-content`
+   We'll now write content to the Editorial com Project using the API
+   `writeContent <../../_static/api/studio.html#tag/content/operation/writeContent>`__
 
    .. code-block:: bash
 
