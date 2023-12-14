@@ -16,27 +16,27 @@ A component is often referred to as Packaged Business Capability or PBC for shor
 
 .. _extensions:
 
-----------------
-Extensions (PBC)
-----------------
+:header2:`Extensions (PBC)`
 
 CrafterCMS extensions are Packaged Business Capabilities (PBC) which extend the CMS and provide the users additional functionality. It allows developers
 to create new experiences both for authors and end-users.
 
 There are two main types of CrafterCMS Extensions:
 
-^^^^^^^^^^
-Blueprints
-^^^^^^^^^^
+:header3:`Blueprints`
 
 Blueprints provide an initial set of styles, pages, behaviors, content types and more.
 It can be used directly from CrafterCMS when creating a new project.
 
 For more information on blueprints, see the :ref:`blueprints` article.
 
-^^^^^^^
-Plugins
-^^^^^^^
+.. toctree::
+    :hidden:
+
+    extensions/blueprints
+
+
+:header3:`Plugins`
 
 Plugins allow users to either replace, extend or even create stand alone experiences to serve a particular
 use case or set of use cases. It allows developers to create extensions to both authoring and delivery and
@@ -52,9 +52,14 @@ portions of the UI or by creating complete applications that run in their own.
 
 For more information on plugins, see the :ref:`plugins` article.
 
--------------------
-Crafter Marketplace
--------------------
+.. toctree::
+    :hidden:
+
+    extensions/plugins
+
+|hr|
+
+:header2:`Crafter Marketplace`
 
 Developers may submit their extensions to the :ref:`Crafter Marketplace <marketplace>`, which provides a
 home for the Crafter community to contribute, find, and use extensions.
@@ -69,6 +74,8 @@ displayed for the user to choose from like below:
    :width: 60%
    :align: center
 
+|
+
 As mentioned above, plugins published in the Crafter Marketplace can be installed on projects in CrafterCMS
 via the :ref:`Plugin Management <plugin-management>` tool:
 
@@ -76,3 +83,10 @@ via the :ref:`Plugin Management <plugin-management>` tool:
    :alt: Marketplace Plugins
    :width: 60%
    :align: center
+
+|
+
+.. toctree::
+    :hidden:
+
+    extensions/craftercms-marketplace

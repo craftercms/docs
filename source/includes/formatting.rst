@@ -28,3 +28,10 @@
 .. role:: tiny
 
 .. role:: strike
+
+.. role:: header1
+.. role:: header2
+.. role:: header3
+.. role:: header4
+.. role:: header5
+.. role:: header6

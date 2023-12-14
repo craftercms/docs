@@ -8,9 +8,9 @@ Documentation by Role
 =====================
 Browse the CrafterCMS documentation by your role or interest.
 
------------------
-For the Architect
------------------
+
+:header2:`For the Architect`
+
 .. |architectByRole| raw:: html
 
     <a href="architect/index.html"><img alt="By Role - Architect" src="../_static/images/by-role/architect.webp" style="width: 20%; border-radius: 50%; object-fit: cover;" /></a>
@@ -25,9 +25,8 @@ For the Architect
 
    architect/index
 
------------------
-For the Developer
------------------
+
+:header2:`For the Developer`
 
 .. |developerByRole| raw:: html
 
@@ -42,9 +41,9 @@ For the Developer
 
    developer/index
 
-----------------------
-For the Content Author
-----------------------
+
+:header2:`For the Content Author`
+
 .. |authorByRole| raw:: html
 
     <a href="author/index.html"><img alt="By Role - Architect" src="../_static/images/by-role/author.webp" style="width: 20%; border-radius: 50%; object-fit: cover;" /></a>
@@ -58,9 +57,9 @@ For the Content Author
 
    author/index
 
------------------------------
-For the Project Administrator
------------------------------
+
+:header2:`For the Project Administrator`
+
 .. |projectAdminByRole| raw:: html
 
     <a href="project-admin/index.html"><img alt="By Role - Architect" src="../_static/images/by-role/site_admin.webp" style="width: 20%; border-radius: 50%; object-fit: cover;" /></a>
@@ -74,9 +73,9 @@ For the Project Administrator
 
    project-admin/index
 
-----------------------------
-For the System Administrator
-----------------------------
+
+:header2:`For the System Administrator`
+
 .. |systemAdministrator| raw:: html
 
     <a href="system-admin/index.html"><img alt="By Role - Architect" src="../_static/images/by-role/system_admin.webp" style="width: 20%; border-radius: 50%; object-fit: cover;" /></a>
