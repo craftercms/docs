@@ -322,3 +322,38 @@
     text-decoration: line-through;
 }
 
+.header1 {
+    font-size: 2em;
+    font-weight: bolder;
+    font-family: FontAwesome;
+}
+
+.header2 {
+    font-size: 1.5em;
+    font-weight: bolder;
+    font-family: FontAwesome;
+}
+
+.header3 {
+    font-size: 1.17em;
+    font-weight: bolder;
+    font-family: FontAwesome;
+}
+
+.header4 {
+     font-size: 1em;
+     font-weight: bolder;
+     font-family: FontAwesome;
+ }
+
+.header5 {
+     font-size: 0.83em;
+     font-weight: bolder;
+     font-family: FontAwesome;
+ }
+
+.header6 {
+    font-size: 0.67em;
+    font-weight: bolder;
+    font-family: FontAwesome;
+}

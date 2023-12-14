@@ -12,7 +12,7 @@ CrafterCMS is written in Java and React.
 ----------
 Extensions
 ----------
-The best way to contribute to CrafterCMS is to create new extensions (plugins and blueprints) as explained in the :ref:`extensions`  section, and get those listed on our `marketplace <https://craftercms.com/marketplace>`_.
+The best way to contribute to CrafterCMS is to create new extensions (plugins and blueprints) as explained in the :ref:`Extensions (PBC) <extensions>`  section, and get those listed on our `marketplace <https://craftercms.com/marketplace>`_.
 
 -------------
 Documentation
