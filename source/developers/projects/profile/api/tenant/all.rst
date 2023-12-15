@@ -32,8 +32,6 @@ Parameters
 || accessTokenId         || String     || |checkmark|  || The access token ID of the application |
 ||                       ||            ||              || making the call                        |
 +------------------------+-------------+---------------+-----------------------------------------+
-|| name                  || String     || |checkmark|  || The tenant's name                      |
-+------------------------+-------------+---------------+-----------------------------------------+
 
 -------
 Example
