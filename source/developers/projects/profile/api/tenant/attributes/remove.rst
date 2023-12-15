@@ -35,7 +35,7 @@ Parameters
 || name          || String || |checkmark|  || The tenant's name                                   |
 +----------------+---------+---------------+------------------------------------------------------+
 || attributeName || String || |checkmark|  || The name of the attributes whose definitions should |
-||               ||        ||              || be removed (the parmeter can be repeated)           |
+||               ||        ||              || be removed (the parameter can be repeated)          |
 +----------------+---------+---------------+------------------------------------------------------+
 
 -------
