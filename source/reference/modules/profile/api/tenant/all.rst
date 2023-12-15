@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.1.3
 
 .. _crafter-profile-api-tenant-all:
 
@@ -32,8 +32,6 @@ Parameters
 +========================+=============+===============+=========================================+
 || accessTokenId         || String     || |checkmark|  || The access token ID of the application |
 ||                       ||            ||              || making the call                        |
-+------------------------+-------------+---------------+-----------------------------------------+
-|| name                  || String     || |checkmark|  || The tenant's name                      |
 +------------------------+-------------+---------------+-----------------------------------------+
 
 -------
