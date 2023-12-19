@@ -142,6 +142,26 @@ To set the site to the ``myawesomesite``, in your browser, type in
     :align: center
     :alt: Setup Site for Delivery - My Awesome Site
 
+|
+
+Aside from the ``crafterSite`` parameter, a header can be sent to specify the site name, called
+``X-Crafter-Site`` for changing the current site. This is very useful when Crafter Engine is used
+together with CDNs that can send headers, like AWS CloudFront
+
+.. WARNING::
+   Using this configuration you need to be sure that the first request specifies the site name by
+   including the ``crafterSite`` parameter (or the ``X-Crafter-Site`` header) so that the site value
+   is set in the cookie for the next requests.
+
+.. note::
+     Crafter Engine identifies which project to render by the mechanisms (in this order of precedence):
+        - Headers (``X-Crafter-Site={site}``)
+        - QSA (Query String Parameters: ``crafterSite={site}``)
+        - Cookie (``crafterSite={site}``)
+
+     Additionally, if the cookie is not aligned with other parameters, the cookie will be reset to what precedes it.
+     The above is only true when Crafter Engine is not in Preview mode.
+
 .. _setup-serverless-delivery:
 
 ^^^^^^^^^^^^^^^^^^^

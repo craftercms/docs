@@ -18,13 +18,6 @@ Crafter Engine
 
 Engine provides content delivery services to power any type of Web or mobile application. It consumes content published from Studio via the Deployer and provides developers with APIs to consume the content (content, search, GraphQL, etc.).
 
-.. TODO One instance of Crafter Engine can handle multiple sites (multi-tenancy).
-
-   Assume we have two websites in Crafter Studio that are to be deployed on a single Crafter Engine
-   instance: site1 and site2. To enable multi-tenancy capabilities you need to add the right
-   configuration using the Spring context files.
-
-
 .. include:: /includes/content-retrieval-apis.rst
 
 .. include:: /includes/scripts-templates-security.rst
