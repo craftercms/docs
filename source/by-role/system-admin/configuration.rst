@@ -321,6 +321,8 @@ Depending on your setup, the following CrafterCMS properties may need to be setu
 - ``crafter.engine.forwarded.headers.enabled`` property under :ref:`engine-forwarded-headers` in the ``server-config.properties`` file
 - ``studio-config-forwarded-headers`` property under :ref:`studio-forwarded-headers` in the ``studio-config-override.yaml`` file
 
+Note, that when configuring the delivery environment, it is possible to specify a header called ``X-Crafter-Site`` set to the value of ``{myproject}`` instead of using a URL rewrite as shown in the examples above.
+
 |hr|
 
 ------
