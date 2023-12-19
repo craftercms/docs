@@ -107,7 +107,13 @@ Viewing your Site for Testing
 """""""""""""""""""""""""""""
 To test viewing your project, open a browser and type in the URL of your project.
 
-If you have multiple projects setup, to view a certain project, in your browser, enter the following:
+If you have multiple projects setup, to view a certain project, you have two choices.  First, you can set a request header to specify the project name:
+
+.. code-block:: sh
+
+    X-Crafter-Site: {siteName}
+
+or, alternately, you can set a query parameter onto the URL, as follows:
 
 .. code-block:: sh
 
