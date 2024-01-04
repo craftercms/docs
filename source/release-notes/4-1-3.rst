@@ -1,0 +1,52 @@
+.. index:: CrafterCMS 4.1.3 Release Notes
+
+----------------
+CrafterCMS 4.1.3
+----------------
+
+Released *TBD*
+
+This release includes fixes for issues with the release version 4.1.2
+
+^^^^^^^
+Updates
+^^^^^^^
+* `Added ability to disable the Audit History job <https://github.com/craftercms/craftercms/issues/6294>`__ |br|
+  To learn more about disabling the audit history job, see the article :ref:`studio-audit-log`
+
+* `Fixed issue with \Browse for Existing\ button not showing children pages of a page <https://github.com/craftercms/craftercms/issues/6322>`__
+
+* `Improved get_configuration API performance <https://github.com/craftercms/craftercms/issues/6306>`__
+
+* `Fixed issue with Lock Owner field not being cleared <https://github.com/craftercms/craftercms/issues/6296>`__
+
+* `Fixed issue with single field form for an embedded component opening the full form <https://github.com/craftercms/craftercms/issues/6293>`__
+
+* `Fixed issue with Textarea input type ignoring rows and columns configuration <https://github.com/craftercms/craftercms/issues/6259>`__
+
+* Fixed issue with Content-Type (text/html) incorrectly stated in response
+
+* `MongoDB in CrafterCMS Social and Profile has been updated <https://github.com/craftercms/craftercms/issues/6308>`__ |br|
+  To upgrade MongoDB in your installation, see :ref:`upgrading-mongodb`
+
+* Noteworthy dependency updates:
+
+  - Spring Boot to version ``2.7.18``
+  - Spring Framework to version ``5.3.31``
+  - Spring Security to version ``5.8.8``
+  - Tika to version ``2.9.1``
+
+
+For a complete list of community tickets, please visit: `GitHub 4.1.3 <https://github.com/craftercms/craftercms/issues?q=is%3Aissue+project%3Acraftercms%2F9+is%3Aclosed>`_
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-1-0>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.1.0 (applies to 4.1.3),
+    please see :ref:`upgrading-craftercms`
+
+|hr|
