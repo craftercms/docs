@@ -6,8 +6,10 @@
 =================
 Upgrading MongoDB
 =================
-Crafter Profile and Social version 4.1.3 have updated MongoDB in the install.
-This section describes how to upgrade MongoDB in your Crafter Profile and Social installed on a server.
+Crafter Profile and Social version 4.1.3 and later uses MongoDB v6 in the install.
+When upgrading your 3.1.x install of Crafter Profile and Social to 4.1.3 and later, MongoDB will need to be manually upgraded.
+
+This section describes how to upgrade MongoDB in your Crafter Profile and Social version 3.1.x installed on a server.
 
 Please read through the upgrade instructions :ref:`here <upgrading-craftercms-on-a-server>` first.
 The steps for upgrading MongoDB in your Crafter Profile and Social install follows almost exactly
