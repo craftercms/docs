@@ -44,6 +44,20 @@ Starting version 4.1.0, CrafterCMS now uses OpenSearch instead of Elasticsearch.
 
     upgrading-search
 
+|hr|
+
+---------------
+MongoDB Upgrade
+---------------
+Crafter Profile and Social version 4.1.3 has updated MongoDB. Please follow the article :ref:`upgrading-mongodb` to learn all about upgrading MongoDB in your Crafter Profile and Social install.
+
+.. toctree::
+    :hidden:
+
+    upgrading-mongodb
+
+|hr|
+
 ------------------------------
 Troubleshooting Upgrade Issues
 ------------------------------
