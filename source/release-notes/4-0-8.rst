@@ -9,13 +9,15 @@ CrafterCMS 4.0.8
 ^^^^^^^^^^^^
 New Features
 ^^^^^^^^^^^^
-* `Added support for duplicating a project <https://github.com/craftercms/craftercms/issues/6199>`__
+* `Added support for duplicating a project <https://github.com/craftercms/craftercms/issues/6199>`__ |br|
   To learn more about duplicating a project, see the article :ref:`duplicate-project`
 
 ^^^^^^^
 Updates
 ^^^^^^^
-* `Added ability to disable the Audit History job <https://github.com/craftercms/craftercms/issues/6294>`__
+* `Improved get_configuration API performance <https://github.com/craftercms/craftercms/issues/6306>`__
+
+* `Added ability to disable the Audit History job <https://github.com/craftercms/craftercms/issues/6294>`__ |br|
   To learn more about disabling the audit history job, see the article :ref:`studio-audit-log`
 
 * `Fixed issue with Lock Owner field not being cleared <https://github.com/craftercms/craftercms/issues/6296>`__
@@ -25,6 +27,11 @@ Updates
 * `Fixed issue with dependency calculation when bulk publishing <https://github.com/craftercms/craftercms/issues/6181>`__
 
 * `Fixed issue with the shared component path not updated when the parent is renamed <https://github.com/craftercms/craftercms/issues/6150>`__
+
+* `MongoDB in CrafterCMS Social and Profile has been updated <https://github.com/craftercms/craftercms/issues/6308>`__ |br|
+  To upgrade MongoDB in your installation, see :ref:`upgrading-mongodb`
+
+* Fixed issue with S3 requests when deleting huge hierarchy of files
 
 * Upgraded dependencies
 
