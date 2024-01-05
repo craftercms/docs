@@ -7,7 +7,7 @@ How Authors Work in CrafterCMS
 .. raw:: html
 
     <video controls width="1024" style="max-width: 100%;margin: 0 auto;display: block;">
-        <source src="../../_static/video/how-crafter-works.mp4" type="video/mp4">
+        <source src="../_static/video/how-crafter-works.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
