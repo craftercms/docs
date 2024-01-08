@@ -32,3 +32,14 @@ Here are the instructions for upgrading CrafterCMS based on how it was installed
 
    upgrading-crafter.rst
    docker/index.rst
+
+---------------
+MongoDB Upgrade
+---------------
+Crafter Profile and Social version 4.0.8 uses MongoDB v6.
+Please follow the article :ref:`upgrading-mongodb` to learn all about upgrading MongoDB in your Crafter Profile and Social version 3.1.x install.
+
+.. toctree::
+    :hidden:
+
+    upgrading-mongodb
