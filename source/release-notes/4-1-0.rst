@@ -66,7 +66,8 @@ Updates
 
 * Noteworthy dependency updates:
 
-  - MongoDB to version 4.9.1 (optional)
+  - MongoDB to version 6.0.5 (optional) |br|
+    MongoDB in CrafterCMS Social and Profile has been updated. To upgrade MongoDB in your installation, see :ref:`upgrading-mongodb`.
   - Box SDK to version 4.1.1 (optional)
 
 Lot's of other small enhancements and bug fixes :)
