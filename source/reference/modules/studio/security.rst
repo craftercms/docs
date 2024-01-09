@@ -43,11 +43,11 @@ The following authentication providers can be configured in a chain:
 
 .. note:: SAML2 authentication cannot be configured in a chain. SAML2 authentication is a standalone authentication provider.
 
-When an authentication chain is configured, when a user logs in, Studio will try to authenticate the user using the first security provider in the chain as defined in the ``studio-config-override.yaml`` file. If authentication fails, it will then move on to the next authentication provider in the list and try to authenticate the user again. It will continue moving on to the next security provider in the chain until the user is authenticated or the authentication fails.
+When an authentication chain is configured when a user logs in, Studio will try to authenticate the user using the first security provider in the chain as defined in the ``studio-config-override.yaml`` file. If authentication fails, it will then move on to the next authentication provider in the list and try to authenticate the user again. It will continue moving on to the next security provider in the chain until the user is authenticated or the authentication fails.
 
-To setup the authentication chain, open the file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``. Another way to access the ``studio-config-override.yaml`` file is by clicking on the |mainMenu| **Navigation Menu** from the context nav in Studio, then clicking on ``Global Config``.
+To set up the authentication chain, open the file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``. Another way to access the ``studio-config-override.yaml`` file is by clicking on the |mainMenu| **Navigation Menu** from the context nav in Studio, then clicking on ``Global Config``.
 
-Below is a sample configuration for the authentication chain. There are four authentication providers in the example below: (1) Headers Authentication (2) LDAP1 (3) LDAP2 (4) Internal database
+Below is a sample configuration for the authentication chain. There are four authentication providers in the example below: (1) Headers Authentication, (2) LDAP1, (3) LDAP2 (4) Internal Database.
 
 .. code-block:: yaml
     :linenos:
@@ -156,7 +156,7 @@ Studio SAML2 Configuration |enterpriseOnly|
     :label: Since
     :version: 4.0.3
 
-Crafter Studio can be configured to support SAML2 SSO out of the box without using any additional plugin.
+Crafter Studio can be configured to support SAML2 SSO out of the box without using any additional plugins.
 
 .. important::
    *This document only applies to* **CrafterCMS version 4.0.3 and later** |br|
@@ -165,7 +165,7 @@ Crafter Studio can be configured to support SAML2 SSO out of the box without usi
 """"""""""""
 Requirements
 """"""""""""
-#. A SAML2 compatible Identity Provider (IdP) properly configured, this configuration will not be covered here
+#. A SAML2-compatible Identity Provider (IdP) properly configured; this configuration will not be covered here
 #. A private key and certificate. This can be generated like so:
 
     ``openssl req -newkey rsa:2048 -nodes -keyout rp-private.key -x509 -days 365 -out rp-certificate.crt``
@@ -183,7 +183,7 @@ Configure
 """""""""
 To configure Studio SAML2, in your Authoring installation, we need to enable SAML security then we'll setup the required SAML configuration properties.
 
-To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter.studio.samlSecurity``:
+To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file, and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter.studio.samlSecurity``:
 
 .. code-block:: sh
    :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
@@ -196,7 +196,7 @@ To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.s
 
 |
 
-Next we'll setup SAML configuration properties. Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add/uncomment the following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your system):
+Next, we'll set up SAML configuration properties. Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add/uncomment the following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -304,7 +304,7 @@ Restart your Authoring installation after configuring the above.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Configure Header-Based Authentication |enterpriseOnly|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Crafter Studio is able to integrate with any authentication system that sends custom HTTP headers containing information that will be used to authenticate the user in Studio. This section details how to setup Studio for header-based authentication.
+Crafter Studio can integrate with any authentication system that sends custom HTTP headers containing information that will be used to authenticate the user in Studio. This section details how to set up Studio for header-based authentication.
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 Configure Studio for Header-Based Authentication
@@ -347,26 +347,16 @@ Configuring Studio for header-based authentication is very simple: in your Autho
         # after logout (https://STUDIO_SERVER:STUDIO_PORT/studio)
         # logoutUrl: /YOUR_DOMAIN/logout?ReturnTo={baseUrl}
 
-The attribute ``secure_key`` is placed by the authentication agent in the header. Note that this ``secure_key`` is
-**required** and authentication using the credentials in the headers will only proceed with a valid ``secure_key``.
+The attribute ``enabled`` enables/disables headers authentication; make sure this is set to **true** for header-based authentication |br|
 
-From the above configuration, here are the attributes that Studio expects from the headers to be provided:
+The ``secure_key`` attribute is a secret shared between the authentication agent and Studio via this header. Note that this ``secure_key`` is
+**required** and header-based authentication will not proceed unless the ``secure_key`` sent to Studio matches this configuration.
 
-- username
-- firstname
-- lastname
-- email
-- groups
+Upon matching the ``secure_key`` header, Studio will then look for the principal. This can come in one of two formats:
+1. A set of loose headers indicate the principal's attributes: ``username``, ``firstname``, ``lastname``, ``email``, and ``groups``; or
+2. A JWT-wrapped principal's attributes as specified by ``x-crafter-oidc-data``
 
-The optional attribute ``x-crafter-oidc-data`` supports headers coming in JSON web tokens (JWT) format (generated by a 3rd party).
-
-Use either the ``x-crafter-oidc-data`` or the ``username``, ``firstname``, ``lastname``, ``email`` and ``groups`` attributes
-for the credentials required by Crafter Studio. Note that if ``x-crafter-oidc-data`` (the token) is available and contains
-the credentials (username, email, security_key, etc...), the detailed credentials parsed from the token claims will be used
-for the authentication flow.
-
-The attribute ``enabled`` enables/disables headers authentication, make sure this is set to **true** for header-based authentication |br|
-
+Depending on your authentication agent, configure Studio to look for either the loose attributes or JWT.
 
 ~~~~~~~~~~~~~~~~~~
 Configuring Logout
@@ -478,7 +468,7 @@ Authorization
 ^^^^^^^^^^^^^
 Role Mappings
 ^^^^^^^^^^^^^
-Users only sees the items that they have been granted access to based on the permissions granted to the Role they have been assigned to. The role mappings configuration file defines the mapping between the group that the user belongs to and the studio authoring role. To modify the role mappings, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Role Mappings** from the list.
+Users only see the items that they have been granted access to based on the permissions granted to the Role they have been assigned to. The role mappings configuration file defines the mapping between the group that the user belongs to and the studio authoring role. To modify the role mappings, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Role Mappings** from the list.
 
 .. image:: /_static/images/site-admin/config-open-role-mappings.webp
     :alt: Configurations - Open Role Mappings
@@ -513,7 +503,7 @@ Description
         Name of the user group
 
     ``/role-mappings/groups/role``
-        Name of authoring role that group will map to
+        Name of authoring role that the group will map to
 
 """""""""""""""""""""
 Default Project Roles
@@ -525,9 +515,9 @@ Here's a list of predefined roles for projects:
 
 * **developer**: Users with the ``developer`` role have access to project configuration files, creating/editing layouts, templates, taxonomies, content types, scripts, etc. in addition to creating and editing content, as well as the ability to approve and reject workflow
 
-* **reviewer**: Users with the ``reviewer`` role have the ability to approve and reject workflow. They also have access to a number of actions in the dashboard which are not available to content contributors (users with role ``author``) including ``Pending Approval`` and ``Scheduled Publish``. They do not have access to edit content.
+* **reviewer**: Users with the ``reviewer`` role have the ability to approve and reject workflow. They also have access to a number of actions in the dashboard that are not available to content contributors (users with the role ``author``), including ``Pending Approval`` and ``Scheduled Publish``. They do not have access to edit content.
 
-* **publisher**: Users with the ``publisher`` role have the ability to approve and reject workflow. They also have access to a number of actions in the dashboard which are not available to content contributors (users with role ``author``) including ``Pending Approval`` and ``Scheduled Publish``. In addition, they also have access to create, edit and submit content like the ``author`` role.
+* **publisher**: Users with the ``publisher`` role have the ability to approve and reject workflow. They also have access to a number of actions in the dashboard that are not available to content contributors (users with the role ``author``), including ``Pending Approval`` and ``Scheduled Publish``. In addition, they also have access to create, edit, and submit content like the ``author`` role.
 
 * **author**: Users with the role ``author`` have access to create, edit and submit content
 
@@ -540,7 +530,7 @@ See :ref:`permission-mappings` for more information on all items accessible for 
 ^^^^^^^^^^^^^^^^^^^
 Permission Mappings
 ^^^^^^^^^^^^^^^^^^^
-The permission mappings configuration file allows you to assign permissions to folders and objects in a project/site giving specific Roles rights to the object. The permission mappings config file contains the permissions mappings for the roles defined in the role mappings config file. When applying permissions to Roles, rights are granted by adding permissions inside the tag ``<allowed-permissions>``. Absence of permissions means the permission is denied. Rules have a regex expression that govern the scope of the permissions assigned. A list of available permissions that can be granted to Roles is available after the sample configuration file.
+The permission mappings configuration file allows you to assign permissions to folders and objects in a project/site giving specific Roles rights to the object. The permission mappings config file contains the permissions mappings for the roles defined in the role mappings config file. When applying permissions to Roles, rights are granted by adding permissions inside the tag ``<allowed-permissions>``. The absence of permissions means the permission is denied. Rules have a regex expression that governs the scope of the permissions assigned. A list of available permissions that can be granted to Roles is available after the sample configuration file.
 
 Permissions are defined per:
     project/site > role > rule
@@ -627,7 +617,7 @@ Crafter Studio uses `zxcvbn <https://github.com/dropbox/zxcvbn>`__ for password 
 
 |
 
-The password strength configured here are displayed to the user when resetting a password or creating a user.
+The password strength configured here is displayed to the user when resetting a password or creating a user.
 
 .. image:: /_static/images/system-admin/password-requirements.webp
    :alt: System Administrator - Password Requirements Display
@@ -728,11 +718,11 @@ To enable the random admin password generation, just set ``studio.db.initializer
 
 After saving the ``studio-config-override.yaml`` file, start CrafterCMS. You'll then need to look at the authoring tomcat log, and search for the following string to get the random password generated for user **admin**: `*** Admin Account Password:`
 
-Here's a sample password generated for the admin as listed in the tomcat log:
+Here's a sample password generated for the admin as listed in the Tomcat log:
 
     ``INFO: *** Admin Account Password: "WXOIK$O$yGixio2h" ***``
 
-You can now login as the user **admin** using the randomly generated password listed in the tomcat log.
+You can now log in as the user **admin** using the randomly generated password listed in the Tomcat log.
 
 |hr|
 
