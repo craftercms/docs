@@ -14,6 +14,8 @@ Updates
 * `Added ability to disable the Audit History job <https://github.com/craftercms/craftercms/issues/6294>`__ |br|
   To learn more about disabling the audit history job, see the article :ref:`studio-audit-log`
 
+* `Fixed issue with saving a profile without all attributes in Crafter Profile <https://github.com/craftercms/craftercms/issues/6374>`__
+
 * `Fixed issue with \Browse for Existing\ button not showing children pages of a page <https://github.com/craftercms/craftercms/issues/6322>`__
 
 * `Improved get_configuration API performance <https://github.com/craftercms/craftercms/issues/6306>`__
@@ -25,9 +27,6 @@ Updates
 * `Fixed issue with Textarea input type ignoring rows and columns configuration <https://github.com/craftercms/craftercms/issues/6259>`__
 
 * Fixed issue with Content-Type (text/html) incorrectly stated in response
-
-* `MongoDB in CrafterCMS Social and Profile has been updated <https://github.com/craftercms/craftercms/issues/6308>`__ |br|
-  To upgrade MongoDB in your installation, see :ref:`upgrading-mongodb`
 
 * Noteworthy dependency updates:
 
