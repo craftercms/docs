@@ -23,7 +23,7 @@ Configuring Studio for headers based authentication is very simple: in your Auth
       # Authentication provider type
       # - provider: HEADERS
         # Authentication via headers enabled
-        # enabled: false
+        # enabled: true
         # Authentication header for secure key
         # secureKeyHeader: secure_key
         # Authentication headers secure key that is expected to match secure key value from headers
@@ -48,8 +48,11 @@ Configuring Studio for headers based authentication is very simple: in your Auth
         # after logout (https://STUDIO_SERVER:STUDIO_PORT/studio)
         # logoutUrl: /YOUR_DOMAIN/logout?ReturnTo={baseUrl}
 
+The attribute ``secure_key`` is placed by the authentication agent in the header. Note that this ``secure_key`` is
+**required** and authentication using the credentials in the headers will only proceed with a valid ``secure_key``.
 
-From the above configuration, here are the attributes that Studio expects from the headers to be provided:
+From the above configuration, here are the attributes that Studio expects from the headers to be provided and are
+used for the authentication flow:
 
 - username
 - firstname
@@ -57,7 +60,6 @@ From the above configuration, here are the attributes that Studio expects from t
 - email
 - groups
 
-The attribute ``secure_key`` is placed by the authentication agent in the header.
 The attribute ``enabled`` enables/disables headers authentication, make sure this is set to **true** for headers authentication
 
 Configuring Logout
