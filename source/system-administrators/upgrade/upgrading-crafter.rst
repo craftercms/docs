@@ -2,7 +2,7 @@
 
 .. index:: Upgrading CrafterCMS, Upgrading
 
-.. _upgrading-craftercms:
+.. _upgrading-craftercms-on-a-server:
 
 ====================
 Upgrading CrafterCMS
