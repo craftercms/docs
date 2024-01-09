@@ -5,8 +5,8 @@
 =================
 Upgrading MongoDB
 =================
-Crafter Profile and Social version 4.0.8 and later uses MongoDB v6 in the install.
-When upgrading your 3.1.x install of Crafter Profile and Social to 4.0.8 and later, MongoDB will need to be manually upgraded.
+Crafter Profile and Social version 4.0.0 and later uses MongoDB v4.0.28 in the install.
+When upgrading your 3.1.x install of Crafter Profile and Social to 4.0.0 and later, MongoDB will need to be manually upgraded.
 
 This section describes how to upgrade MongoDB in your Crafter Profile and Social version 3.1.x installed on a server.
 
@@ -18,9 +18,9 @@ the same steps as listed in that document.
     Remember to **manually shut down and backup CrafterCMS** before beginning your upgrades!
 
 -------------------------------------------
-Upgrading 3.1.x -> 4.0.8 (from MongoDB 3.x)
+Upgrading 3.1.x -> 4.0.x (from MongoDB 3.x)
 -------------------------------------------
-#. Download CrafterCMS version 4.0.8, and extract the files.
+#. Download CrafterCMS version 4.0.x, and extract the files.
 
 #. Upgrade using the ``upgrade-target.sh`` script from your newly extracted files. First, we'll need to set ``MONGODB_HOME`` so that the backup script will run with the ``mongod`` version ``3.4.4`` in the old installation before running the ``upgrade-target.sh``:
 
@@ -36,19 +36,15 @@ Upgrading 3.1.x -> 4.0.8 (from MongoDB 3.x)
        ========================================================================
        !!! Please read the release notes and make any necessary manual changes, then run the post upgrade script:
 
-#. Manually upgrade MongoDB from version ``3.4.4`` to version ``6.0.12``.
+#. Manually upgrade MongoDB from version ``3.4.4`` to version ``4.0.280``.
    We need to upgrade from each release version and run the ``setFeatureCompatibilityVersion`` command against the admin database.
 
-   Please see https://www.mongodb.com/docs/manual/release-notes/6.0-upgrade-standalone/ for more information on upgrading MongoDB.
+   Please see https://www.mongodb.com/docs/manual/release-notes/4.0-upgrade-standalone/ for more information on upgrading MongoDB.
 
    Download and extract the following MongoDB versions available from https://www.mongodb.com/try/download/community:
 
    - 3.6.23 (http://downloads.mongodb.org/linux/mongodb-linux-x86_64-3.6.0.tgz)
    - 4.0.28 (http://downloads.mongodb.org/linux/mongodb-linux-x86_64-4.0.28.tgz)
-   - 4.2.25 (https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1804-4.2.25.tgz)
-   - 4.4.26 (https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-4.4.26.tgz)
-   - 5.0.23 (https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.23.tgz)
-   - 6.0.12 (https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2204-6.0.12.tgz)
 
    Run ``mongod`` from each release version ``/extracted/location/of/mongodb-version-to-be-upgraded-to/bin/mongod`` starting from the oldest one:
 
@@ -86,8 +82,7 @@ Upgrading 3.1.x -> 4.0.8 (from MongoDB 3.x)
        >
 
    Repeat the steps above for all the other versions of MongoDB downloaded in ascending order of version, e.g.
-   run ``mongod`` version ``4.0.28``, then set the feature compatibility version to ``4.0``.  Next run
-   ``mongod`` version ``4.2.25``, then set the feature compatibility version to ``4.2``, and so on and so forth
+   run ``mongod`` version ``4.0.28``, then set the feature compatibility version to ``4.0``.
 
 #. Before starting CrafterCMS, you'll need to configure the installation root directory to use Java version 17.  Remember to read the release notes or any relevant upgrade articles and make any necessary manual changes before running the `post-upgrade.sh`` script as described next
 
