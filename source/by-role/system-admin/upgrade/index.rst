@@ -55,8 +55,8 @@ Upgrading MongoDB
 .. note::
     The following section only applies to Crafter Profile and Social installs.
 
-Crafter Profile and Social version 4.1.3 and later uses MongoDB v6 in the install.
-When upgrading your 3.1.x install of Crafter Profile and Social to 4.1.3 and later, MongoDB will need to be manually upgraded.
+Crafter Profile and Social version 4.1.0 and later uses MongoDB v6 in the install.
+When upgrading your 3.1.x install of Crafter Profile and Social to 4.1.0 and later, MongoDB will need to be manually upgraded.
 
 This section describes how to upgrade MongoDB in your Crafter Profile and Social version 3.1.x installed on a server.
 
@@ -68,9 +68,9 @@ the same steps as listed in that document.
     Remember to **manually shut down and backup CrafterCMS** before beginning your upgrades!
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Upgrading 3.1.x -> 4.1.3 (from MongoDB 3.x)
+Upgrading 3.1.x -> 4.1.x (from MongoDB 3.x)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Download CrafterCMS version 4.1.3, and extract the files.
+#. Download CrafterCMS version 4.1.x, and extract the files.
 #. Run the ``upgrade-search.sh`` script from your newly extracted files.
 
    .. code-block:: bash
