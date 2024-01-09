@@ -353,8 +353,9 @@ The ``secure_key`` attribute is a secret shared between the authentication agent
 **required** and header-based authentication will not proceed unless the ``secure_key`` sent to Studio matches this configuration.
 
 Upon matching the ``secure_key`` header, Studio will then look for the principal. This can come in one of two formats:
-1. A set of loose headers indicate the principal's attributes: ``username``, ``firstname``, ``lastname``, ``email``, and ``groups``; or
-2. A JWT-wrapped principal's attributes as specified by ``x-crafter-oidc-data``
+
+#. A set of loose headers indicate the principal's attributes: ``username``, ``firstname``, ``lastname``, ``email``, and ``groups``; or
+#. A JWT-wrapped principal's attributes as specified by ``x-crafter-oidc-data``
 
 Depending on your authentication agent, configure Studio to look for either the loose attributes or JWT.
 
