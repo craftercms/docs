@@ -12,7 +12,7 @@ Studio SAML2 Configuration |enterpriseOnly|
    :label: Since
    :version: 4.0.3
 
-Crafter Studio can be configured to support SAML2 SSO out of the box without using any additional plugin.
+Crafter Studio can be configured to support SAML2 SSO out of the box without using any additional plugins.
 
 .. important::
    *This document only applies to* **CrafterCMS version 4.0.3 and later** |br|
@@ -21,7 +21,7 @@ Crafter Studio can be configured to support SAML2 SSO out of the box without usi
 ------------
 Requirements
 ------------
-#.  A SAML2 compatible Identity Provider (IdP) properly configured, this configuration will not be covered here
+#.  A SAML2-compatible Identity Provider (IdP) properly configured; this configuration will not be covered here
 #.  A private key and certificate.  This can be generated like so:
 
     ``openssl req -newkey rsa:2048 -nodes -keyout rp-private.key -x509 -days 365 -out rp-certificate.crt``
@@ -41,7 +41,7 @@ Configure
 
 To configure Studio SAML2, in your Authoring installation, we need to enable SAML security then we'll setup the required SAML configuration properties.
 
-To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter.studio.samlSecurity``:
+To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file, and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter.studio.samlSecurity``:
 
 .. code-block:: sh
    :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
@@ -54,7 +54,7 @@ To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.s
 
 |
 
-Next we'll setup SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add/uncomment the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+Next, we'll set up SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add/uncomment the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*

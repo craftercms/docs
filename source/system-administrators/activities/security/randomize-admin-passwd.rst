@@ -26,8 +26,8 @@ To enable the random admin password generation, just set ``studio.db.initializer
 
 After saving the ``studio-config-override.yaml`` file, start CrafterCMS.  You'll then need to look at the authoring tomcat log, and search for the following string to get the random password generated for user **admin**: `*** Admin Account Password:`
 
-Here's a sample password generated for the admin as listed in the tomcat log:
+Here's a sample password generated for the admin as listed in the Tomcat log:
 
     ``INFO: *** Admin Account Password: "WXOIK$O$yGixio2h" ***``
 
-You can now login as the user **admin** using the randomly generated password listed in the tomcat log.
+You can now log in as the user **admin** using the randomly generated password listed in the Tomcat log.
