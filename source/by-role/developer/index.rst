@@ -29,8 +29,6 @@ General Concepts
 ----------------
 Regardless of type of project, a developer needs to be familiar with the following core concepts.
 
-.. TODO Turn the list below into a table indicating the topic (with link) and why you'd want to learn about it (a description)
-
 .. list-table:: Developer General Concepts
     :header-rows: 1
 
