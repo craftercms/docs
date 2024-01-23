@@ -1214,6 +1214,7 @@ Let's begin:
      We need ``yarn`` installed in your system. Running ``yarn`` with no command will run ``yarn install``. In the example below, yarn is already installed in the system
 
        .. code-block:: sh
+          :emphasize-lines: 1
 
           ➜  app git:(master) yarn
           yarn install v1.22.4
@@ -1224,20 +1225,15 @@ Let's begin:
      Build the React application by running ``yarn start``
 
        .. code-block:: sh
+          :emphasize-lines: 1
 
           ➜  app git:(master) yarn start
-          yarn run v1.22.4
-          $react-scripts start
+            VITE v4.5.0  ready in 242 ms
 
-          Compiled successfully!
+            ➜  Local:   http://localhost:3000/
+            ➜  Network: http://192.168.1.8:3000/
 
-          You can now view video-center-blueprint in the browser.
-
-          Local:            http://localhost:3000/
-          On Your Network:  http://192.168.1.135:3000/
-
-          Note that the development build is not optimized.
-          To create a production build, use yarn build.
+            ➜  press h to show help
 
      The command above will open a browser window where we can view the app
 
@@ -1247,34 +1243,6 @@ Let's begin:
         :align: center
 
      |
-
-   * Edit the base url in your React app to the server we are using for development, which in our case, is the Studio server, on ``localhost:8080``, and the websocket port for hot module reloading (Crafter does not proxy websocket so you will need to point to the origin server of the websocket), then save the changes and restart the React server.
-
-     To edit the base url, navigate to ``video-center-blueprint/sources/app`` then open the ``.env.development`` file using your favorite editor and set the following variables: ``REACT_APP_BASE_URL`` and ``WDS_SOCKET_PORT``
-
-       .. code-block:: text
-          :emphasize-lines: 6,12
-          :caption: *video-center-blueprint/sources/app/.env.development*
-
-          # A blank REACT_APP_SITE_NAME variable will make the app
-          # try to find the crafterSite cookie which, provided you're
-          # running both your local crafter and node dev web server for
-          # the app are the same, it should be set for you when you created
-          # the project. Manually set the here otherwise.
-          REACT_APP_BASE_URL=http://localhost:8080
-
-          # If you're using the CrafterCMS's Preview Proxy to view the dev mode app inside Preview,
-          # configuring the port makes live reload work inside the CrafterCMS Preview frame.
-          # If you're using any other port to run your webpack dev server, you should adjust this to
-          # that port too.
-          WDS_SOCKET_PORT=3000
-
-     For Windows users on Docker, add ``DANGEROUSLY_DISABLE_HOST_CHECK=true`` to the ``.env.development`` file. |br|
-     Setting the environment variable ``DANGEROUSLY_DISABLE_HOST_CHECK`` to ``true`` disables the host check, which allows us to pretend that the the host header of the request and the listening address of the host are running on the same host and port which is important since browsers block cross-origin requests. If not set, the user will see an ``Invalid Host header`` message in Studio. Remember that **disabling the host check is insecure and should only be used in a development environment**.
-
-     Remember to restart the React server for the settings to take effect.
-
-       .. note:: If you're using the create-react-app, please note that ``react-scripts`` versions earlier than 3.4.0 does not support custom sockjs pathname for hot reloading the server. Make sure that your ``react-scripts`` version used is 3.4.0 or above for the live reload work inside CrafterCMS to work.
 
 #. Setup Studio
 
@@ -1301,19 +1269,45 @@ Let's begin:
 
      |
 
-     Scroll down to the ``preview`` server and edit the ``url`` to point to the url used for the React application (``localhost:3000``) we setup in the beginning. Save your changes.
+     Copy and paste the configuration below.  Scroll down to the ``preview`` server and notice that ``url`` points to the url used for the React application (``localhost:3000``) we setup in the beginning. Save your changes.
 
        .. code-block:: xml
           :caption: *CRAFTER_HOME/data/repos/sites/sandbox/SITENAME/sandbox/config/engine/proxy-config.xml*
-          :emphasize-lines: 3
+          :emphasize-lines: 27
 
-          <server>
-            <id>preview</id>
-            <url>http://localhost:3000</url>
-            <patterns>
-              <pattern>.*</pattern>
-            </patterns>
-          </server>
+          <proxy-config>
+            <version>4.0.1</version>
+            <servers>
+              <server>
+                <id>static-assets</id>
+                <url />
+                <patterns>
+                  <pattern>/static-assets/.*</pattern>
+                </patterns>
+              </server>
+              <server>
+                <id>graphql</id>
+                <url />
+                <patterns>
+                  <pattern>/api/1/site/graphql.*</pattern>
+                </patterns>
+              </server>
+              <server>
+                <id>engine</id>
+                <url />
+                <patterns>
+                  <pattern>/api/.*</pattern>
+                </patterns>
+              </server>
+              <server>
+                <id>preview</id>
+                <url>http://localhost:3000</url>
+                <patterns>
+                  <pattern>.*</pattern>
+                </patterns>
+              </server>
+            </servers>
+          </proxy-config>
 
      For users running Studio on Docker, use ``http://host.docker.internal:3000`` for the ``url`` of the React application. Docker containers can access local services running on the host by connecting to ``host.docker.internal``. See https://docs.docker.com/docker-for-windows/networking/#use-cases-and-workarounds for more information on connecting from a container to a service on the host.
 
@@ -1321,7 +1315,7 @@ Let's begin:
 
    * Modify the React application then verify that we can preview the changes made inside Studio.
 
-     For this part, we'll change the text ``Featured Channels`` in the home page to ``My Featured Channels``. Using your favorite editor, in your React app, navigate to ``video-center-blueprint/sources/app/src/containers/Home`` and open the ``Home.js`` file. Scroll down to the line with ``key: 'featured-channels'`` and edit the ``value``:
+     For this part, we'll change the text ``Featured Channels`` in the home page to ``My Featured Channels``. Using your favorite editor, in your React app, navigate to ``video-center-blueprint/sources/app/src/containers/Home`` and open the ``Home.jsx`` file. Scroll down to the line with ``key: 'featured-channels'`` and edit the ``value``:
 
        .. code-block:: js
           :emphasize-lines: 3
@@ -1340,6 +1334,101 @@ Let's begin:
         :align: center
 
      |
+
+""""""""""""""""""""""
+Proxy Example: Next.js
+""""""""""""""""""""""
+Let’s take a look at another example of setting up the proxy, this time for a Next.js application.
+
+We’ll look at the Next.js Blueprint, a Next.js application available from the public marketplace, that runs on localhost:3000, then setup the Studio proxy so we can preview the Next.js application inside Studio. Finally, we’ll make some changes in the Next.js application and view the changes made inside Studio.
+
+#. Setup Studio
+
+   * Create a project using the Next.js blueprint from the Public Marketplace.
+
+     From the **Main Menu**, click on **Project**, then click on the **Create Project** button. This will open the **Create Project** dialog. Look for **Next.js**, then click on the **Use** button, fill in the required information then click on the **Review** button, then finally the **Create Project** button. This **Next.js** blueprint we selected from the Marketplace contains the Next.js application that we will be proxying to Studio and the instructions for configuring the proxy.
+
+     .. image:: /_static/images/site-admin/nextjsbp-marketplace.webp
+        :alt: Select Next.js blueprint from the Public Marketplace
+        :width: 70 %
+        :align: center
+
+     |
+
+   * Follow the instructions listed in the README to run the Next.js application
+
+     .. code-block:: text
+
+         1. In the CrafterCMS site sandbox directory, you'll find a directory called app, which is the Next.js app. Visit that directory on your terminal and run ``yarn``
+         2. Create a copy of ``app/.env.local.example`` to produce ``app/.env.local``. If you named your project ``nextjs`` and CrafterCMS is running on ``localhost:8080``, no further edits are necessary; otherwise, change the file accordingly.
+         3. Run ``yarn dev`` to start the node server on localhost:3000
+
+     In your terminal, navigate to ``CRAFTER_HOME/data/repos/sites/nextjs/sandbox/app`` then run ``yarn``
+
+     .. code-block:: sh
+          :caption: *CRAFTER_HOME/data/repos/sites/nextjs/sandbox/app*
+          :emphasize-lines: 1
+
+          ➜  app git:(master) yarn
+          yarn install v1.22.4
+          [1/4] 🔍  Resolving packages...
+          success Already up-to-date.
+          ✨  Done in 0.68s.
+
+     Create a copy of ``app/.env.local.example`` to produce ``app/.env.local``
+
+     .. code-block:: sh
+         :caption: *CRAFTER_HOME/data/repos/sites/nextjs/sandbox/app*
+
+         ➜ cp .env.local.example .env.local
+
+     Start the node server on ``localhost:3000`` by running ``yarn dev``
+
+       .. code-block:: sh
+          :caption: *CRAFTER_HOME/data/repos/sites/nextjs/sandbox/app*
+          :emphasize-lines: 1
+
+          ➜ yarn dev
+             ▲ Next.js 14.0.1
+             - Local:        http://localhost:3000
+             - Environments: .env.local
+
+          ✓ Ready in 9.6s
+
+     If you point your browser to ``http://localhost:3000`` we can view the app
+
+     .. image:: /_static/images/site-admin/nextjs-preview.webp
+        :alt: Next.js Blueprint preview on "localhost:3000"
+        :width: 70 %
+        :align: center
+
+     |
+
+   * Setup the proxy for the Next.js application we started above
+
+     .. code-block:: text
+
+         4. Open Project Tools (on the sidebar on the left) and select "Configuration"
+         5. Search for "Proxy Config"
+         6. Comment line 58 and uncomment line 59
+         7. Close the pop-up and refresh the page. You'll now see the next.js application in this area.
+
+     Open the **Sidebar**, click on |projectTools|, then click on **Configuration**. Select **Proxy Config** from the dropdown menu.
+     The proxy configuration included in the Next.js blueprint is very similar to the proxy configuration listed in the React example above. Comment line 58 and uncomment line 59 in the configuration:
+
+     .. code-block:: xml
+         :emphasize-lines: 3,4
+
+         <server>
+           <id>preview</id>
+           <!--url/-->
+           <url>http://localhost:3000</url>
+           <patterns>
+             <pattern>.*</pattern>
+           </patterns>
+         </server>
+
+     After saving your changes in the configuration file, close the dialog and refresh the page. You will now see the next.js application inside Studio.
 
 |hr|
 
