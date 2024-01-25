@@ -24,14 +24,9 @@ for your application to retrieve said content), and how to access content items 
 
 CrafterCMS supports both headless and templated projects (templated projects are the traditional web sites with a view layer).
 
-----------------
-General Concepts
-----------------
 Regardless of type of project, a developer needs to be familiar with the following core concepts.
 
-.. TODO Turn the list below into a table indicating the topic (with link) and why you'd want to learn about it (a description)
-
-.. list-table:: Developer General Concepts
+.. list-table:: Developer Core Concepts
     :header-rows: 1
 
     * - Topic
@@ -54,6 +49,31 @@ Regardless of type of project, a developer needs to be familiar with the followi
       - Provides you information on security features that can be used to secure your project/site
     * - :ref:`content-search`
       - Provides you information on how to perform content queries
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+    :hidden:
+
+    common/content-modeling/content-modeling
+    common/content-modeling/information-architecture
+    common/content-modeling/content-inheritance
+    common/content-access
+    common/static-content-access
+    common/experience-builder
+    common/security
+    common/search
+
+----------------
+General Concepts
+----------------
+Aside from the core concepts listed above, a developer needs to be familiar with the following general concepts.
+
+.. list-table:: Developer General Concepts
+    :header-rows: 1
+
+    * - Topic
+      - Description
     * - :ref:`scheduled-jobs`
       - Provides you information on scheduling jobs
     * - :ref:`content-type-controllers`
@@ -82,14 +102,6 @@ Regardless of type of project, a developer needs to be familiar with the followi
     :titlesonly:
     :hidden:
 
-    common/content-modeling/content-modeling
-    common/content-modeling/information-architecture
-    common/content-modeling/content-inheritance
-    common/content-access
-    common/static-content-access
-    common/experience-builder
-    common/security
-    common/search
     common/scheduled-jobs
     common/content-type-controllers
     common/targeting
