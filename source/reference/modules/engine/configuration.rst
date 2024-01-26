@@ -188,54 +188,48 @@ Since serverless delivery requires a single OpenSearch endpoint readable by all 
 create an AWS OpenSearch domain for delivery. If you don't want to use an AWS OpenSearch domain then you should
 create and maintain your own OpenSearch cluster.
 
-   .. important:: Authoring can also use an OpenSearch domain, but be aware that in a clustered authoring environment
-                  each authoring instance requires a separate OpenSearch instance. If you try to use the same OpenSearch domain
-                  then you will have multiple preview deployers writing to the same index.
-
 To create an AWS OpenSearch domain please do the following:
 
-#. In the top navigation bar of your AWS console, click the ``Analytics`` dropdown menu, and search for
-   ``Amazon OpenSearch Service``.
+.. important::
+    The following are settings used in common Crafter deployments with AWS OpenSearch, and by no means should be 
+    considered the only way to configure AWS OpenSearch with Crafter.
+
+#. In the top navigation bar of your AWS console, on the search bar, enter ``Amazon OpenSearch Service``.
 #. Click on ``Create domain``.
-#. Select ``Deployment Type`` and on the OpenSearch version, pick the closest to ``v2.8.0``.
+#. Select ``Standard Create`` on ``Domain creation method``.
+#. On ``Templates``, select ``Dev/test``.
 
-   .. TODO Fix the image, hide for now
-      .. image:: /_static/images/system-admin/serverless/es-deployment-type.webp
-          :alt: Serverless Site - OpenSearch Deployment Type
-          :align: center
+.. important::
+    Even for Production deployments, we recommend you pick the ``Dev/test`` template. We do this because that's the only
+    way to avoid setting dedicated master nodes. AWS recommends in all Production environments to use dedicated master 
+    nodes. From experience, most Crafter Production deployments don't need dedicated master nodes, but that will depend
+    on your project's search utilization.
 
-      |
+#. On ``Deployment Options``, select ``Domain without standby`` and ``3-AZ``.
+#. On the ``Engine options`` section, select ``Include older versions`` and pick ``2.9`` as the version.
+#. On ``Data Nodes``, pick a configuration for the nodes like the one showed in the image below. For volume size, most Crafter installations
+   should be ok with 20 GB per node, but you can adjust the size based on ``number of projects * average project size in GB * 3 (for preview,
+   authoring and delivery indices)``.
 
-#. On the next screen, enter the domain name. Leave the defaults on the rest of the settings or change as needed per
-   your environment requirements, then click on ``Next``.
-#. On ``Network Configuration``, we recommend you pick the VPC where your delivery nodes reside. If they're not running
-   on an Amazon VPC, then pick ``Public Access``.
-
-   .. TODO Fix the image, hide for now
-      .. image:: /_static/images/system-admin/serverless/es-network-access.webp
-          :alt: Serverless Site - OpenSearch Network Access
-          :align: center
-
-      |
-
-#. Select the ``Access Policy`` that fits your Crafter environment, and click on ``Next`` (if on the same VPC as
-   delivery, we recommend ``Do not require signing request with IAM credential``).
-
-   .. image:: /_static/images/system-admin/serverless/es-access-policy.webp
-      :alt: Serverless Site - OpenSearch Access Policy
-      :align: center
-
-   |
-
-#. Review the settings and click on ``Confirm``.
-#. Wait for a few minutes until the domain is ready. Copy the ``Endpoint``. You'll need this URL later to configure
-   the Deployer and Delivery Engine which will need access to the OpenSearch.
-
-   .. image:: /_static/images/system-admin/serverless/es-endpoint.webp
-       :alt: Serverless Site - OpenSearch Endpoint
+   .. image:: /_static/images/system-admin/serverless/os-data-nodes-config.webp
+       :alt: Serverless Site - OpenSearch Data Nodes Configuration
        :align: center
 
    |
+
+#. On ``Network``, we recommend you pick the VPC and subnets where your delivery nodes reside. Make sure that the security group
+   only allows access to port 443 from the delivery nodes. If they're not running on an Amazon VPC, then pick ``Public Access``
+#. On the ``Fine-grained access control``, select ``Create master user``, and specify a username and password (save this for later).
+#. Select ``Only use fine-grained access control`` in ``Access Policy``. 
+#. Adjust any other setting to your preferences, and click on ``Create`` on the right sidebar.
+
+   .. image:: /_static/images/system-admin/serverless/os-domain-summary.webp
+       :alt: Serverless Site - OpenSearch Domain Summary
+       :align: center
+
+   |
+
+#. Wait until the domain has been created, then copy the ``Domain Endpoint``.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 Step 2: Configure the Delivery for Serverless Mode
@@ -275,7 +269,7 @@ Step 2: Configure the Delivery for Serverless Mode
       :force:
 
       # Content root folder when using S3 store. Format is s3://<BUCKET_NAME>/<SITES_ROOT>/{siteName}
-      crafter.engine.site.default.rootFolder.path=s3://serverless-test-site-{siteName}/{siteName}
+      crafter.engine.site.default.rootFolder.path=s3://serverless-delivery-test-site-{siteName}
       ...
 
       # S3 Serverless properties
@@ -325,43 +319,47 @@ Step 2: Configure the Delivery for Serverless Mode
    |
 
 #. Edit the ``SEARCH_URL`` in ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh`` to point to the OpenSearch endpoint you
-   created in the previous step:
+   created in the previous step, and provide the OpenSearch master credentials:
 
    .. code-block:: bash
 
-      export SEARCH_URL=https://vpc-serverless-test-jpwyav2k43bb4xebdrzldjncbq.us-east-1.es.amazonaws.com
+      export SEARCH_URL="https://search-serverless-delivery-test-wyz36fsmutzsw2evgroc47lvve.us-east-1.es.amazonaws.com"
+      export SEARCH_USERNAME="*****"
+      export SEARCH_PASSWORD="**********"
 
    |
-
-#. Make sure that the you have an application load balancer (ALB) fronting the Delivery Engine instances and that it's
-   accessible by AWS CloudFront.
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 Step 3: Configure Authoring for Serverless Deployment
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 Instead of having one Crafter Deployer per node in delivery, for serverless you just need a single Deployer uploading
-files to S3. The authoring preview deployer can also be used for serverless deployment, when there's only one
-authoring node. When there's multiple authoring nodes (a cluster), then you'll need to have a separate deployer pulling
-from a load balanced SSH/HTTPS URL fronting the Studio Git repos.
+files to S3. The authoring preview Deployer thus can also be used for serverless deployment.
 
-In both cases you still need to configure Studio to call the Deployer to create the serverless targets on site creation.
-You can find this configuration under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``. The properties are well documented in the file so they won't be explained here, but there are still some important things to
+.. note::
+    In a Studio cluster, only one preview Deployer is active at a time and indexing (the one belonging to the primary). 
+    When using the preview Deployers for serverless, that also means only one Deployer will be pushing files to S3 at a 
+    time, so you don't need to worry about multiple deployers stepping over each other
+
+You will need to configure Studio to call the preview Deployer to create the serverless targets on site creation.
+You can find this configuration under ``AUTHORING_INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``. 
+The properties are well documented in the file so they won't be explained here, but there are still some important things to
 notice:
 
-- You need to add the URL of the OpenSearch domain created in a previous step under
-  ``studio.serverless.delivery.deployer.target.template.params.search_url``:
+- You can provide the URL of the OpenSearch domain created in a previous step under
+  ``studio.serverless.delivery.deployer.target.template.params.search_url``, but there's no current property to pass the credentials, which is why we 
+  recommend you to use ``SEARCH_URL``, ``SEARCH_USERNAME`` and  ``SEARCH_PASSWORD`` environment variables in ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh``:
 
-  .. code-block:: yaml
+   .. code-block:: bash
 
-    studio.serverless.delivery.deployer.target.template.params:
-      # The delivery search endpoint (optional is authoring is using the same one, specified in the SEARCH_URL env variable)
-      search_url: https://vpc-serverless-test-jpwyav2k43bb4xebdrzldjncbq.us-east-1.es.amazonaws.com
+      export SEARCH_URL="https://search-serverless-delivery-test-wyz36fsmutzsw2evgroc47lvve.us-east-1.es.amazonaws.com"
+      export SEARCH_USERNAME="*****"
+      export SEARCH_PASSWORD="**********"
 
-  |
+   |
 
 - When using the ``aws-cloudformed-s3`` target template (the default one), the Deployer creates first an AWS
   CloudFormation stack with an S3 bucket where the site content will be uploaded and a CloudFront that will serve
-  ``/static-assets`` directly and will redirect any other requests to the Delivery Engine LB (which you specify in
+  ``/static-assets`` directly and will redirect any other requests to the Delivery Engine Load Balancer (which you specify in
   ``studio.serverless.delivery.deployer.target.template.params.aws.cloudformation.deliveryLBDomainName``).
 - The ``aws.cloudformation.namespace`` is basically the prefix of the S3 bucket mentioned in the previous step. This
   prefix will be part of the name of most of the AWS resources created by the serverless deployer.
@@ -456,7 +454,15 @@ notice:
                      "s3:PutBucketCORS",
                      "s3:GetObject",
                      "s3:PutObject",
-                     "s3:DeleteObject"
+                     "s3:DeleteObject",
+                     "s3:PutBucketPublicAccessBlock",
+                     "s3:GetBucketAcl",
+                     "s3:PutBucketAcl",
+                     "s3:PutBucketVersioning",
+                     "s3:PutReplicationConfiguration",
+                     "s3:ListBucketVersions",
+                     "s3:GetObjectVersion",
+                     "s3:DeleteObjectVersion"
                  ],
                  "Resource": "arn:aws:s3:::$CLOUDFORMATION_NAMESPACE-*"
              }
@@ -496,7 +502,7 @@ name requirements is the following:
    studio.serverless.delivery.deployer.target.createUrl: ${studio.preview.createTargetUrl}
    # The URL for the serverless delivery deployer delete URL
    studio.serverless.delivery.deployer.target.deleteUrl: ${studio.preview.deleteTargetUrl}
-   # The template name for serverless deployer targets
+   # The template name for serverless deployer targets (supported: aws-s3, aws-cloudformed-s3)
    studio.serverless.delivery.deployer.target.template: aws-cloudformed-s3
    # Replace existing target configuration if one exists?
    studio.serverless.delivery.deployer.target.replace: false
@@ -508,20 +514,20 @@ name requirements is the following:
    studio.serverless.delivery.deployer.target.localRepoPath: ${env:CRAFTER_DATA_DIR}/repos/aws/{siteName}
    # Parameters for the target template. Please check the deployer template documentation for the possible parameters.
    # The following parameters will be sent automatically, and you don't need to specify them: env, site_name, replace,
-   # disable_deploy_cron, local_repo_path, repo_url, use_crafter_search
+   # disable_deploy_cron, local_repo_path, repo_url
    studio.serverless.delivery.deployer.target.template.params:
-      # The delivery search endpoint (optional if authoring is using the same one, specified in the SEARCH_URL env variable)
-      search_url: https://vpc-serverless-test-jpwyav2k43bb4xebdrzldjncbq.us-east-1.es.amazonaws.com
       aws:
+        # AWS region (optional if specified through default AWS chain)
+        region: us-east-1
         # AWS access key (optional if specified through default AWS chain)
         default_access_key: XXXXXXXXXX
         # AWS secret key (optional if specified through default AWS chain)
         default_secret_key: XXXXXXXXXXXXXXXXXXXX
         cloudformation:
           # Namespace to use for CloudFormation resources (required when target template is aws-cloudformed-s3)
-          namespace: serverless-test
+          namespace: serverless-delivery-test
           # The domain name of the serverless delivery LB (required when target template is aws-cloudformed-s3)
-          deliveryLBDomainName: serverless-test-lb-1780491458.us-east-1.elb.amazonaws.com
+          deliveryLBDomainName: serverless-delivery-test-lb-1780491458.us-east-1.elb.amazonaws.com
 
 |
 
@@ -536,9 +542,9 @@ Step 4: Create the Site in the Authoring Environment
    the status should change to ``CREATE_COMPLETE``, which tells the Crafter Deployer that it is able to start
    uploading files to S3.
 
-   .. image:: /_static/images/system-admin/serverless/cloudformation.webp
-      :alt: Serverless Site - CloudFormation
-      :align: center
+   .. image:: /_static/images/system-admin/serverless/cloudformation-created.webp
+       :alt: Serverless Site - CloudFormation Created
+       :align: center
 
    |
 
@@ -549,19 +555,19 @@ Step 4: Create the Site in the Authoring Environment
       :caption: deployer.log
       :linenos:
 
-      2019-12-20 20:48:58.780  INFO 18846 --- [deployment-3] llCloudFormationStackUsableLifecycleHook : CloudFormation stack 'serverless-test-site-editorial' is usable (status 'CREATE_COMPLETE')
-      2019-12-20 20:48:58.781  INFO 18846 --- [deployment-3] org.craftercms.deployer.impl.TargetImpl  : Creating deployment pipeline for target 'editorial-serverless-delivery'
-      2019-12-20 20:48:58.854  INFO 18846 --- [deployment-3] org.craftercms.deployer.impl.TargetImpl  : Checking if deployments need to be scheduled for target 'editorial-serverless-delivery'
-      2019-12-20 20:48:58.855  INFO 18846 --- [deployment-3] org.craftercms.deployer.impl.TargetImpl  : Deployments for target 'editorial-serverless-delivery' scheduled with cron 0 * * * * *
-      2019-12-20 20:49:00.001  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : ============================================================
-      2019-12-20 20:49:00.001  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : Deployment for editorial-serverless-delivery started
-      2019-12-20 20:49:00.001  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : ============================================================
+      2024-01-24 15:58:15.121  INFO 899353 --- [deployment-3] llCloudFormationStackUsableLifecycleHook : CloudFormation stack 'serverless-delivery-test-site-editorial' is usable (status 'CREATE_COMPLETE')
+      2024-01-24 15:58:15.122  INFO 899353 --- [deployment-3] org.craftercms.deployer.impl.TargetImpl  : Creating deployment pipeline for target 'editorial-serverless-delivery'
+      2024-01-24 15:58:15.169  INFO 899353 --- [deployment-3] org.craftercms.deployer.impl.TargetImpl  : Checking if deployments need to be scheduled for target 'editorial-serverless-delivery'
+      2024-01-24 15:58:15.169  INFO 899353 --- [deployment-3] org.craftercms.deployer.impl.TargetImpl  : Deployments for target 'editorial-serverless-delivery' scheduled with cron 0 * * * * *
+      2024-01-24 15:59:00.002  INFO 899353 --- [deployment-6] org.craftercms.deployer.impl.TargetImpl  : ============================================================
+      2024-01-24 15:59:00.002  INFO 899353 --- [deployment-6] org.craftercms.deployer.impl.TargetImpl  : Deployment for editorial-serverless-delivery started
+      2024-01-24 15:59:00.002  INFO 899353 --- [deployment-6] org.craftercms.deployer.impl.TargetImpl  : ============================================================
       ...
       ...
       ...
-      2019-12-20 20:49:15.882  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : ============================================================
-      2019-12-20 20:49:15.882  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : Deployment for editorial-serverless-delivery finished in 15.878 secs
-      2019-12-20 20:49:15.882  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : ============================================================
+      2024-01-24 16:04:00.039  INFO 899353 --- [deployment-1] org.craftercms.deployer.impl.TargetImpl  : ============================================================
+      2024-01-24 16:04:00.039  INFO 899353 --- [deployment-1] org.craftercms.deployer.impl.TargetImpl  : Deployment for editorial-serverless-delivery finished in 0.004 secs
+      2024-01-24 16:04:00.039  INFO 899353 --- [deployment-1] org.craftercms.deployer.impl.TargetImpl  : ===========================================================
 
    |
 
