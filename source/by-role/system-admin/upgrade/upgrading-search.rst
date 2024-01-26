@@ -84,7 +84,9 @@ Here are the steps to  upgrade your CrafterCMS  3.1.x install:
 ---------------------------------------
 Upgrading 4.0.x -> 4.1.0 (from ES 7.15)
 ---------------------------------------
-When upgrading from 4.0.x (running ES 7) the indices are not compatible at all, so the content needs to be reprocessed and indices rebuilt completely. The rebuilding of the indices is handled by the post-upgrade script.
+When upgrading from 4.0.x (running ES 7) the indices are not compatible at all, so the content needs to be reprocessed
+and indices rebuilt completely. The rebuilding of the indices is handled by the ``post-upgrade.sh`` script.
+Remember that the ``upgrade-search.sh`` script should NOT be run when upgrading your CrafterCMS 4.0.x install.
 
 To upgrade your 4.0.x installation, we'll be running the upgrade scripts from a new binary archive.
 Here are the steps:
