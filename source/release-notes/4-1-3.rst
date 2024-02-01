@@ -18,9 +18,23 @@ New Features
 ^^^^^^^
 Updates
 ^^^^^^^
+* `Fixed issue with lockOwner in workflow item_states <https://github.com/craftercms/craftercms/issues/6477>`__
+
+* `Updated the S3 upload API to include the bucket name for the given profile <https://github.com/craftercms/craftercms/issues/6467>`__
+
+* `Fixed issue with AWS File upload <https://github.com/craftercms/craftercms/issues/6453>`__
+
+* `Git pull branch is now configurable <https://github.com/craftercms/craftercms/issues/6445>`__
+
+* `Fixed issue with video content item not disassociating from parent content item in React app <https://github.com/craftercms/craftercms/issues/6433>`__
+
 * `Fixed issue with text area line breaks in XB <https://github.com/craftercms/craftercms/issues/6432>`__
 
 * `Improved publish commit dialog confirmation <https://github.com/craftercms/craftercms/issues/6431>`__
+
+* `Fixed issue with UI prepending a "/" to policy suggested file names <https://github.com/craftercms/craftercms/issues/6429>`__
+
+* `Fixed issue with Publishing dialog failing when current date values are supplied in no-offset format <https://github.com/craftercms/craftercms/issues/6412>`__
 
 * Improved Audit logs
 
@@ -29,9 +43,15 @@ Updates
 
 * Improved Crafter Studio startup times in orchestrated environments
 
+* `Improved XB communication status and error experience <https://github.com/craftercms/craftercms/issues/6390>`__
+
 * `Fixed issue with saving a profile without all attributes in Crafter Profile <https://github.com/craftercms/craftercms/issues/6374>`__
 
+* `Fixed issue with the Form Engine calendar getting cut off when DateTime is the only control <https://github.com/craftercms/craftercms/issues/6368>`__
+
 * `Fixed issue with Experience Builder not refreshing items on edit screen <https://github.com/craftercms/craftercms/issues/6361>`__
+
+* `Improved "Publish by Commit ID" implementation <https://github.com/craftercms/craftercms/issues/6326>`__
 
 * `Fixed issue with \Browse for Existing\ button not showing children pages of a page <https://github.com/craftercms/craftercms/issues/6322>`__
 
@@ -61,6 +81,8 @@ Updates
   - Spring Framework to version ``5.3.31``
   - Spring Security to version ``5.8.8``
   - Tika to version ``2.9.1``
+  - Tomcat to version ``9.0.85``
+  - OpenSearch to version ``2.9.0``
 
 For a complete list of community tickets, please visit: `GitHub 4.1.3 <https://github.com/craftercms/craftercms/issues?q=is%3Aissue+project%3Acraftercms%2F9+is%3Aclosed>`_
 
