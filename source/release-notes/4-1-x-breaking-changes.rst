@@ -1,11 +1,11 @@
-:orphan:
 :is-up-to-date: True
 :last-updated: 4.1.0
+:orphan:
 
-.. _breaking-changes-4-1-0:
+.. _breaking-changes-4-1-x:
 
 ====================================
-Breaking Changes in CrafterCMS 4.1.0
+Breaking Changes in CrafterCMS 4.1.x
 ====================================
 This section covers changes that might affect your CrafterCMS projects, as well as other considerations
 before upgrading. Please review the following and apply changes as required:
