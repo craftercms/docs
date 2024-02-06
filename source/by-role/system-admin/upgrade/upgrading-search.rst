@@ -130,13 +130,21 @@ following error will appear:
 
 This error is caused by an existing issue in OpenSearch when updating to OpenSearch version 2.9 from a previous version.
 
-To fix the error, after upgrading to CrafterCMS version 4.1.3 and starting the services, delete the old templates by executing:
+To fix the error, after upgrading to CrafterCMS version 4.1.3 and starting the services, delete the old templates in the
+Authoring  and Delivery environments by executing:
 
 .. code-block:: bash
-    :caption: *Delete original templates in OpenSearch*
+    :caption: *Delete original templates in OpenSearch in the Authoring Environment*
 
     curl -XDELETE "http://localhost:9201/_index_template/ss4o_metric_template"
     curl -XDELETE "http://localhost:9201/_index_template/ss4o_trace_template"
+
+
+.. code-block:: bash
+    :caption: *Delete original templates in OpenSearch in the Delivery Environment*
+
+    curl -XDELETE "http://localhost:9202/_index_template/ss4o_metric_template"
+    curl -XDELETE "http://localhost:9202/_index_template/ss4o_trace_template"
 
 |
 
