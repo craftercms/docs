@@ -21,39 +21,49 @@ This release includes fixes for issues with the release version 4.1.2
 ^^^^^^^^^^^^
 New Features
 ^^^^^^^^^^^^
-
 * New `React JS empty blueprint <https://github.com/craftercms/react-blueprint>`__ added in the marketplace |br|
   This blueprint is a great starting point for building your own React JS application.
 
-^^^^^^^
-Updates
-^^^^^^^
+* Studio header-based authentication now expects attribute ``secure_key`` in its own header |br|
+  See :ref:`crafter-studio-configure-header-based-auth` for more information on ``secure_key``
+
+^^^^^^^^^^^^
+Enhancements
+^^^^^^^^^^^^
+* `Git pull branch is now configurable <https://github.com/craftercms/craftercms/issues/6445>`__
+
+* `Improved publish commit dialog confirmation <https://github.com/craftercms/craftercms/issues/6431>`__
+
+* Improved Crafter Studio startup times in orchestrated environments
+
+* `Improved XB communication status and error experience <https://github.com/craftercms/craftercms/issues/6390>`__
+
+* `Improved "Publish by Commit ID" implementation <https://github.com/craftercms/craftercms/issues/6326>`__
+
+* `Added ability to disable the Audit History job <https://github.com/craftercms/craftercms/issues/6294>`__ |br|
+  To learn more about disabling the audit history job, see the article :ref:`studio-audit-log`
+
+* `Added WebSocket support to Engine's proxy <https://github.com/craftercms/craftercms/issues/6292>`__ |br|
+  See :ref:`proxy-configuration` for examples on configuring proxies.
+
+^^^^^^^^^
+Bug Fixes
+^^^^^^^^^
 * `Fixed issue with lockOwner in workflow item_states <https://github.com/craftercms/craftercms/issues/6477>`__
 
 * `Updated the S3 upload API to include the bucket name for the given profile <https://github.com/craftercms/craftercms/issues/6467>`__
 
 * `Fixed issue with AWS File upload <https://github.com/craftercms/craftercms/issues/6453>`__
 
-* `Git pull branch is now configurable <https://github.com/craftercms/craftercms/issues/6445>`__
-
 * `Fixed issue with video content item not disassociating from parent content item in React app <https://github.com/craftercms/craftercms/issues/6433>`__
 
 * `Fixed issue with text area line breaks in XB <https://github.com/craftercms/craftercms/issues/6432>`__
-
-* `Improved publish commit dialog confirmation <https://github.com/craftercms/craftercms/issues/6431>`__
 
 * `Fixed issue with UI prepending a "/" to policy suggested file names <https://github.com/craftercms/craftercms/issues/6429>`__
 
 * `Fixed issue with Publishing dialog failing when current date values are supplied in no-offset format <https://github.com/craftercms/craftercms/issues/6412>`__
 
-* Improved Audit logs
-
-* Studio header-based authentication now expects attribute ``secure_key`` in its own header |br|
-  See :ref:`crafter-studio-configure-header-based-auth` for more information on ``secure_key``
-
-* Improved Crafter Studio startup times in orchestrated environments
-
-* `Improved XB communication status and error experience <https://github.com/craftercms/craftercms/issues/6390>`__
+* Fixed issue with Audit logs
 
 * `Fixed issue with saving a profile without all attributes in Crafter Profile <https://github.com/craftercms/craftercms/issues/6374>`__
 
@@ -61,18 +71,11 @@ Updates
 
 * `Fixed issue with Experience Builder not refreshing items on edit screen <https://github.com/craftercms/craftercms/issues/6361>`__
 
-* `Improved "Publish by Commit ID" implementation <https://github.com/craftercms/craftercms/issues/6326>`__
-
 * `Fixed issue with \Browse for Existing\ button not showing children pages of a page <https://github.com/craftercms/craftercms/issues/6322>`__
 
 * `Improved get_configuration API performance <https://github.com/craftercms/craftercms/issues/6306>`__
 
 * `Fixed issue with base repository path macros not working <https://github.com/craftercms/craftercms/issues/6305>`__
-
-* `Fixed issue with Lock Owner field not being cleared <https://github.com/craftercms/craftercms/issues/6296>`__
-
-* `Added ability to disable the Audit History job <https://github.com/craftercms/craftercms/issues/6294>`__ |br|
-  To learn more about disabling the audit history job, see the article :ref:`studio-audit-log`
 
 * `Fixed issue with single field form for an embedded component opening the full form <https://github.com/craftercms/craftercms/issues/6293>`__
 
@@ -81,10 +84,12 @@ Updates
 * `Fixed issue with Textarea input type ignoring rows and columns configuration <https://github.com/craftercms/craftercms/issues/6259>`__
 
 * `Fixed issue with WebSocket proxy not working <https://github.com/craftercms/craftercms/issues/6174>`__ |br|
-  WebSocket support has been added to Engine's proxy.  See :ref:`proxy-configuration` for examples on configuring proxies.
 
 * Fixed issue with Content-Type (text/html) incorrectly stated in response
 
+^^^^^^^^^^^^^^^^^^
+Dependency Updates
+^^^^^^^^^^^^^^^^^^
 * Noteworthy dependency updates:
 
   - Spring Boot to version ``2.7.18``
