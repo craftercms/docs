@@ -16,6 +16,8 @@ This release includes fixes for issues with the release version 4.1.2
     For instructions on how to update your CrafterCMS install to 4.1.0 (applies to 4.1.3),
     please see :ref:`upgrading-craftercms`
 
+    Please see :ref:`upgrading-search-4-1-x-to-4-1-3` for important information on upgrading CrafterCMS version 4.1.x to 4.1.3
+
 ^^^^^^^^^^^^
 New Features
 ^^^^^^^^^^^^

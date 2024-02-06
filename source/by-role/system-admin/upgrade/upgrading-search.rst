@@ -112,6 +112,38 @@ Here are the steps:
 
 |hr|
 
+.. _upgrading-search-4-1-x-to-4-1-3:
+
+------------------------
+Upgrading 4.1.x -> 4.1.3
+------------------------
+CrafterCMS version 4.1.3 uses OpenSearch version 2.9. When upgrading CrafterCMS version 4.1.x to version 4.1.3, the
+following error will appear:
+
+.. code-block:: bash
+    :caption: *OpenSearch error when upgrading to 4.1.3*
+
+    java.lang.IllegalArgumentException: index template [ss4o_metrics_template] has index patterns [ss4o_metrics-*-*] matching patterns from existing templates [ss4o_metric_template] with patterns (ss4o_metric_template => [ss4o_metrics-*-*]) that have the same priority [1], multiple index templates may not match during index creation, please use a different priority
+        at org.opensearch.cluster.metadata.MetadataIndexTemplateService.addIndexTemplateV2(MetadataIndexTemplateService.java:558)
+        at org.opensearch.cluster.metadata.MetadataIndexTemplateService$4.execute(MetadataIndexTemplateService.java:491)
+        at org.opensearch.cluster.ClusterStateUpdateTask.execute(ClusterStateUpdateTask.java:65)
+
+This error is caused by an existing issue in OpenSearch when updating to OpenSearch version 2.9 from a previous version.
+
+To fix the error, after upgrading to CrafterCMS version 4.1.3 and starting the services, delete the old templates by executing:
+
+.. code-block:: bash
+    :caption: *Delete original templates in OpenSearch*
+
+    curl -XDELETE "http://localhost:9201/_index_template/ss4o_metric_template"
+    curl -XDELETE "http://localhost:9201/_index_template/ss4o_trace_template"
+
+|
+
+See https://github.com/opensearch-project/observability/issues/1771 for more information on the OpenSearch issue.
+
+|hr|
+
 -------------------------
 Manual Updates for Search
 -------------------------
