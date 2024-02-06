@@ -117,7 +117,7 @@ Here are the steps:
 ------------------------
 Upgrading 4.1.x -> 4.1.3
 ------------------------
-CrafterCMS version 4.1.3 uses OpenSearch version 2.9. When upgrading CrafterCMS version 4.1.x to version 4.1.3, the
+CrafterCMS version 4.1.3 uses OpenSearch version 2.9. When upgrading CrafterCMS version 4.1 before 4.1.3, the
 following error will appear:
 
 .. code-block:: bash
@@ -128,7 +128,7 @@ following error will appear:
         at org.opensearch.cluster.metadata.MetadataIndexTemplateService$4.execute(MetadataIndexTemplateService.java:491)
         at org.opensearch.cluster.ClusterStateUpdateTask.execute(ClusterStateUpdateTask.java:65)
 
-This error is caused by an existing issue in OpenSearch when updating to OpenSearch version 2.9 from a previous version.
+This error is caused by an `existing issue in OpenSearch <https://github.com/opensearch-project/observability/issues/1771>`__ when updating to OpenSearch version 2.9 from a previous version.
 
 To fix the error, after upgrading to CrafterCMS version 4.1.3 and starting the services, delete the old templates in the
 Authoring  and Delivery environments by executing:
@@ -147,8 +147,6 @@ Authoring  and Delivery environments by executing:
     curl -XDELETE "http://localhost:9202/_index_template/ss4o_trace_template"
 
 |
-
-See https://github.com/opensearch-project/observability/issues/1771 for more information on the OpenSearch issue.
 
 |hr|
 
