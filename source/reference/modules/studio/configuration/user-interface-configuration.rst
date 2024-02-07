@@ -385,7 +385,7 @@ Icon Options
 SPA Sources Sidebar Cabinet
 ---------------------------
 Users may want to manage (edit/view) SPA sources in their projects through Studio.
-To view/edit SPA sources, simply add another ``PathNavigator`` widget, named ``sources``,
+To view/edit SPA sources, simply add another ``PathNavigatorTree`` or ``PathNavigator`` widget, named ``sources``,
 in the Sidebar widget like below:
 
 .. code-block:: xml
