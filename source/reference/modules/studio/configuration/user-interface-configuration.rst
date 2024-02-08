@@ -280,9 +280,13 @@ Here's the Sidebar with the folder ``2021/3`` hidden:
 
 .. _sidebar-widget-icon-colors:
 
------------------------------
-Sidebar Widget Icon/Container
------------------------------
+---------------------------------
+Navigator Widgets Styling Options
+---------------------------------
+Several styling options are available for the navigator widgets. Both the widget's container element
+and the icon element can receive CSS classes and targeted base styles, collapsed styles and expanded styles.
+Custom css style sheets may be loaded into Studio via :ref:`plugins`.
+
 Colors, background colors, borders (css properties) etc can be added to widgets in the Sidebar when expanding/collapsing a widget via the ``icon`` and ``container`` properties.
 
 Let's take a look at an example of putting a red border when ``Taxonomy`` is expanded and for ``Templates``, a red font color when expanded and a blue font color when collapsed
@@ -352,6 +356,71 @@ Here's the Sidebar with the colors and border added:
    :width: 25 %
 
 |
+
+^^^^^^^^^^^^^^^^^
+Container Options
+^^^^^^^^^^^^^^^^^
+
+- ``baseClass``: a class name (string) applied to the container regardless of state
+- ``expandedClass``: a class name (string) applied to the container when expanded
+- ``collapsedClass``: a class name (string) applied to the container when collapsed
+- ``baseStyle``: a set of CSS rules applied to the container regardless of state (e.g. ``<baseStyles><backgroundColor>red</backgroundColor></baseStyles>``)
+- ``expandedStyle``: a set of CSS rules applied to the container when expanded
+- ``collapsedStyle``: a set of CSS rules applied to the container when collapsed
+
+^^^^^^^^^^^^
+Icon Options
+^^^^^^^^^^^^
+
+- ``class``: a class name (string) applied to the icon regardless of state
+- ``style``: a set of CSS rules applied to the icon regardless of state  (e.g. ``<baseStyles><backgroundColor>red</backgroundColor></baseStyles>``)
+- ``content``: inner content of the icon to use in case you're using a font icon library that uses content to render the icon
+- ``expandedStyle``: a set of CSS rules applied to the icon when expanded
+- ``collapsedStyle``: a set of CSS rules applied to the icon when collapsed
+
+|hr|
+
+.. _spa-sources-sidebar-cabinet:
+
+---------------------------
+SPA Sources Sidebar Cabinet
+---------------------------
+Users may want to manage (edit/view) SPA sources in their projects through Studio.
+To view/edit SPA sources, simply add another ``PathNavigatorTree`` or ``PathNavigator`` widget, named ``sources``,
+in the Sidebar widget like below:
+
+.. code-block:: xml
+   :caption: **SPA sources - ui.xml**
+   :linenos:
+   :emphasize-lines: 6-14
+
+   <siteUI>
+     <widget id="craftercms.components.ToolsPanel">
+       <configuration>
+         <widgets>
+           ...
+           <widget id="craftercms.components.PathNavigatorTree">
+             <configuration>
+               <id>Sources</id>
+               <label>Sources</label>
+               <icon id="@mui/icons-material/InsertDriveFileOutlined"/>
+               <rootPath>/sources/</rootPath>
+               <locale>en</locale>
+             </configuration>
+           </widget>
+           ...
+
+
+.. Note:: Adding SPA sources in top folders other than ``/sources`` is not supported.  Also note that
+   items under ``/sources`` are excluded from search.
+
+The ``Video Center`` blueprint from the marketplace contains an example of SPA sources managed in Studio
+(``/sources`` added to the sidebar).
+
+.. image:: /_static/images/site-admin/sources-folder-sidebar-ex.webp
+   :alt: Configurations - User Interface Configuration Sources Widget in Sidebar
+   :width: 90 %
+   :align: center
 
 |hr|
 
