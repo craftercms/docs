@@ -285,6 +285,7 @@ Navigator Widgets Styling Options
 ---------------------------------
 Several styling options are available for the navigator widgets. Both the widget's container element
 and the icon element can receive CSS classes and targeted base styles, collapsed styles and expanded styles.
+Custom css style sheets may be loaded into Studio via :ref:`plugins`.
 
 Colors, background colors, borders (css properties) etc can be added to widgets in the Sidebar when expanding/collapsing a widget via the ``icon`` and ``container`` properties.
 
@@ -398,7 +399,7 @@ in the Sidebar widget like below:
        <configuration>
          <widgets>
            ...
-           <widget id="craftercms.components.PathNavigator">
+           <widget id="craftercms.components.PathNavigatorTree">
              <configuration>
                <id>Sources</id>
                <label>Sources</label>
@@ -411,7 +412,7 @@ in the Sidebar widget like below:
 
 
 .. Note:: Adding SPA sources in top folders other than ``/sources`` is not supported.  Also note that
-   items under ``/sources`` is excluded from search.
+   items under ``/sources`` are excluded from search.
 
 The ``Video Center`` blueprint from the marketplace contains an example of SPA sources managed in Studio
 (``/sources`` added to the sidebar).
