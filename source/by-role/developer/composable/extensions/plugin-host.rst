@@ -4,8 +4,6 @@
 
 .. index:: Plugin Host
 
-:orphan:
-
 .. _plugin-host:
 
 ===========
