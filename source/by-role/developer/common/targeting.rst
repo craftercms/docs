@@ -208,7 +208,7 @@ the groovy script used to get the articles according to the right segment:
   import org.craftercms.sites.editorial.ProfileUtils
 
   def segment = ProfileUtils.getSegment(profile, siteItemService)
-  def searchHelper = new SearchHelper(searchService, urlTransformationService)
+  def searchHelper = new SearchHelper(searchClient, urlTransformationService)
   def articles = searchHelper.searchArticles(true, null, segment)
 
   templateModel.articles = articles
@@ -372,7 +372,7 @@ Sidebar, navigate to scripts -> pages -> category-landing.groovy) Please see
   def segment = ProfileUtils.getSegment(profile, siteItemService)
   def category = contentModel.category.text
   def maxArticles = contentModel.max_articles.text as Integer
-  def searchHelper = new SearchHelper(searchService, urlTransformationService)
+  def searchHelper = new SearchHelper(searchClient, urlTransformationService)
   def articles = searchHelper.searchArticles(false, category, segment, 0, maxArticles)
 
   templateModel.articles = articles

@@ -1318,7 +1318,7 @@ We can now start adding the script to get a list of articles depending on the ac
     import org.craftercms.sites.editorial.ProfileUtils
 
     def segment = ProfileUtils.getSegment(profile, siteItemService)
-    def searchHelper = new SearchHelper(searchService, urlTransformationService)
+    def searchHelper = new SearchHelper(searchClient, urlTransformationService)
     def articles = searchHelper.searchArticles(false, null, segment, 0, 2)
 
     templateModel.articles = articles
@@ -1520,7 +1520,7 @@ A dialog will then open where you can start entering your script. Let's take a l
     import org.craftercms.sites.editorial.ProfileUtils
 
     def segment = ProfileUtils.getSegment(profile, siteItemService)
-    def searchHelper = new SearchHelper(searchService, urlTransformationService)
+    def searchHelper = new SearchHelper(searchClient, urlTransformationService)
     def articles = searchHelper.searchArticles(false, null, segment, 0, 2)
 
     templateModel.articles = articles

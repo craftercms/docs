@@ -261,24 +261,40 @@ Groovy
 	.. code-block:: groovy
 
 		import org.craftercms.engine.service.context.SiteContext
-		
+		import org.opensearch.client.opensearch.core.SearchRequest
+        import org.craftercms.search.opensearch.client.OpenSearchClientWrapper
+        import org.opensearch.client.opensearch._types.SortOrder
+
 		import utils.DateUtils
-		
+
+        OpenSearchClientWrapper searchClient
+
 		def now = DateUtils.formatDateAsIso(new Date())
 		def start = 0
 		def rows = 1000
-		def sort = "date_dt asc"
-		def query = searchService.createQuery()
-		
-		query.setQuery(queryStr)
-		
-		def events = []
-		if (searchResults.response) {
-			searchResults.response.documents.each {
-				events.add(event)
-			}
-		}
-		
+        def q = "crafterSite:\"${siteContext.siteName}\" AND content-type:\"/component/event\" AND disabled:\"false\" AND date_dt:[${now} TO *]"
+
+		// Execute the query
+        def result = searchClient.search(r -> r
+          .query(q -> q
+            .queryString(s -> s
+              .query(q as String)
+            )
+          )
+          .from(start)
+          .size(rows)
+          .sort(s -> s
+            .field(f -> f
+              .field(date_dt)
+              .order(SortOrder.Asc)
+            )
+          )
+        , Map)
+
+        result.hits().hits().each {
+          events.add(it.source())
+        }
+
 		contentModel.events = events
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
