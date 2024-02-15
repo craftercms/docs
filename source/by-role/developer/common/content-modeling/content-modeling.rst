@@ -933,19 +933,36 @@ There are a number of macros available for the content model designer to use in 
 || {dd}               || Inserts the current day (2-digit day of the month)                            |
 +---------------------+--------------------------------------------------------------------------------+
 
-For an example of how the macros are used when modeling your content, the website_editorial blueprint uses some of the macros available in the content type ``Article``.
+**Data Sources macro: parentPath**
 
-The section :ref:`item-specific-dependencies` above details the use of some of the macros in the website_editorial blueprint, content type ``Article``.
+Let's take a look at an example of using the ``{parentPath}`` data source macro. We'll use a project created using
+the website editorial blueprint for our example. We'll be editing the ``Article`` content type to add a data source that
+will use ``{parentPath}`` macro.
 
-   .. note::
-      For both the ``parentPath`` and ``parentPath[index]`` macros, the path starts **without** ``/site/website`` and ``/site/components``.
+Open the ``Sidebar`` then click on |projectTools|. Click on ``Content Types`` -> ``Article``. Scroll to the
+``Data Sources`` section of the form and drag a ``Shared Content`` data source into the section. Fill in the ``Title``
+and ``Name`` fields, then in the ``Repository Path`` and ``Browser Path`` input ``/site/components/{parentPath}``.
+In our example in the image below, the name of the data source is ``feature``. Next, we need to add a control that will
+use the data source we just configured. Scroll to the ``Content`` section of the form and drag an ``Item Selector``
+control into the section. Fill in the ``Title`` field, ``Child`` for our our example, then in the ``Item Manager`` field,
+put a check next to ``Feature``, the data source we set up earlier. Save your changes to the content type.
 
-      For example, if in the repository the parent is a page, and the page URL in the repository is ``/site/website/en/about-us/index.xml``, then the parentPath is ``/en/about-us/index.xml``.
+.. image:: /_static/images/content-model/datasource-macro-parentpath-example.webp
+   :alt: Form Engine Data Sources Example - {parentPath} Data Source Macro Configuration Example
+   :width: 70%
+   :align: center
 
-      If in the repository the parent is a component, and the component URL in the repository is ``/site/components/en/products/myproduct.xml``, then the  parentPath is ``/en/products/myproduct.xml``.
+We'll now use the control and data source we set up and see how the ``{parentPath}`` macro works. Recall that we setup
+the data source ``Repository Path`` to ``/site/components/{parentPath}``. From the project preview, edit one of the articles,
+say the article ``Men Styles For Winter`` under ``/articles/2021/1/men-styles-for-winter``. Scroll down to the ``Content``
+section of the form to the field ``Child``. Click on ``Add +`` then select ``Create New - Feature``. Fill in the required
+fields then save your changes. Note that ``{parentPath}`` is ``/articles/2021/1/men-styles-for-winter``. The newly
+created component is now stored in the ``/site/components/articles/2021/1/men-styles-for-winter`` folder.
 
-|
-|
+.. image:: /_static/images/content-model/datasource-macro-parentpath.webp
+   :alt: Form Engine Data Sources Example - {parentPath} Data Source Macro Example
+   :width: 90%
+   :align: center
 
 **Data Sources macro: parentPath[index]**
 
@@ -958,11 +975,24 @@ If the parentPath is ``/en/mypage``, then to get the sub element ``en``, use **0
 
 If the parentPath is ``/products/household/cleaning`` then to get  the sub  element ``household``, use **1** as the index in the macro like so ``{parentpath[1]}``
 
+.. note::
+      For both the ``parentPath`` and ``parentPath[index]`` macros, the path starts **without** ``/site/website`` and ``/site/components``.
+
+      For example, if in the repository the parent is a page, and the page URL in the repository is ``/site/website/en/about-us/index.xml``, then the parentPath is ``/en/about-us/index.xml``.
+
+      If in the repository the parent is a component, and the component URL in the repository is ``/site/components/en/products/myproduct.xml``, then the  parentPath is ``/en/products/myproduct.xml``.
+
+|
+
+The website_editorial blueprint contains more examples of how the some of the macros listed above are used
+when modeling your content, found in the content type ``Article``.
+
+The section :ref:`item-specific-dependencies` above also details the use of some of the macros in the website_editorial blueprint, content type ``Article``.
+
 
 ^^^^^^^^^^^
 Form Canvas
 ^^^^^^^^^^^
-
 The canvas is where the form actually gets built. The building process is performed by simply dragging the controls from the Form Controls over to the canvas, rearranging the controls in the order you'd like to present to the content authors, and configuring the controls individually.
 
 Controls on the canvas are configured by clicking on the control, and then editing the control's configuration in the Properties Explorer, see item #3 in :ref:`form-builder-basics`. Different controls have different configuration, so please review the individual form control configuration listed in :ref:`form-controls`.
