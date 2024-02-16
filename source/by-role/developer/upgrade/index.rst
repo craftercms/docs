@@ -7,7 +7,17 @@
 =======
 Upgrade
 =======
-.. TODO: Write a general introduction to the upgrade process
+Each new version of CrafterCMS brings new features and/or improvements to one or more of the following: performance,
+security, UI, configuration, and more.
+Upgrading your CrafterCMS install allows you to take advantage of these new features/improvements.
+
+Upgrading CrafterCMS may vary based on how it was installed (on a server or via Kubernetes/Docker Compose).
+See :ref:`upgrading-craftercms` for more information on upgrading your CrafterCMS install.
+
+Remember to review the :ref:`release-notes` for the release you are upgrading to for additional instructions that may
+need to be performed depending on the install you're upgrading..
+
+Below are some things to note when upgrading:
 
 ---------------
 From 4.0 to 4.1
@@ -17,7 +27,8 @@ Upgrading to CrafterCMS 4.1 from 4.0 is a simple process. The upgrade script wil
 ---------------
 From 3.1 to 4.1
 ---------------
-Upgrading to CrafterCMS 4.1 from 3.1 is a bit more involved. Please follow the steps below to upgrade your project/site.
+Upgrading to CrafterCMS 4.1 from 3.1 is a bit more involved. Please follow the steps in the guide to upgrade your project/site.
+
 
 .. _upgrade-search:
 
@@ -30,6 +41,12 @@ Upgrade from Elasticsearch to OpenSearch
 Most of the upgrade to OpenSearch is transparent to the developer. CrafterCMS automatically updates the minor changes to the import statements, and for the most part this should work automatically.
 
 The indexes may need to be regenerated, and the upgrade script will handle this for you.
+
+When upgrading from 4.0.x (running ES 7) the indices are not compatible at all, so the content needs to be reprocessed and indices rebuilt completely, which is handled by the post-upgrade script, as mentioned above.
+
+When upgrading from 3.1.x (running ES 6), we'll use the ``upgrade-search.sh`` script, which tells the search engine to re-index internally to the new format.
+
+See :ref:`upgrading-search` for more information on upgrading your search from Elasticsearch to OpenSearch along with some manual updates that may be required in some instances.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Migrate from Solr to OpenSearch
