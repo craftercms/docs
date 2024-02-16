@@ -49,12 +49,11 @@ script in ``Scripts`` > ``components`` > ``upcoming-events.groovy`` so that it i
     import org.craftercms.search.opensearch.client.OpenSearchClientWrapper
     import org.opensearch.client.opensearch._types.SortOrder
 
-    OpenSearchClientWrapper searchClient
-
     def now = DateUtils.formatDateAsIso(new Date())
     def q = "crafterSite:\"${siteContext.siteName}\" AND content-type:\"/component/event\" AND disabled:\"false\" AND date_dt:[${now} TO *]"
     def start = 0
     def rows = 1000
+    def events = []
 
     // Execute the query
     def result = searchClient.search(r -> r

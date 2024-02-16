@@ -267,12 +267,11 @@ Groovy
 
 		import utils.DateUtils
 
-        OpenSearchClientWrapper searchClient
-
 		def now = DateUtils.formatDateAsIso(new Date())
 		def start = 0
 		def rows = 1000
         def q = "crafterSite:\"${siteContext.siteName}\" AND content-type:\"/component/event\" AND disabled:\"false\" AND date_dt:[${now} TO *]"
+        def events = []
 
 		// Execute the query
         def result = searchClient.search(r -> r
