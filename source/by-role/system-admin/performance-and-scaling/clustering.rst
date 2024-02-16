@@ -341,8 +341,8 @@ Authoring Load Balancer
 To configure the LB to detect which node is the Primary and send traffic to it, we should review the health-check API.
 The health-check endpoint is at `/studio/api/2/monitoring/status?token={your management token} <../../../_static/api/studio.html#tag/monitoring/operation/getStatus>`__
 which returns the current status of a node, including the role (primary or replica) and status for accepting traffic
-when clustering is enabled. Note that the Primary node is the only node that returns HTTP Code 200, while the Replicas
-return HTTP Code 202. This can be used as the main mechanism for the LB to know where to route traffic.
+when clustering is enabled. Note that the Primary node is the only node that returns HTTP Code ``200``, while the Replicas
+return HTTP Code ``202``. This can be used as the main mechanism for the LB to know where to route traffic.
 
 .. _cluster-health-check-response:
 
