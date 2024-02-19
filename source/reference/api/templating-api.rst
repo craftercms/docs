@@ -204,6 +204,18 @@ Crafter Engine allows executing scripts/controllers from inside Freemarker templ
    <@controller path=“/scripts/plugins/MyPlugin/1/get-tweets.groovy” />
    <@controller path=“/scripts/plugins/MyPlugin/1/get-fbs.groovy” />
 
+-------------------------
+Escaping HTML and Scripts
+-------------------------
+To escape HTML and scripts and prevent their execution in your template, simply wrap the HTML/script to be
+escaped with the ``outputformat`` Freemarker directive set to ``html``:
+
+.. code-block::
+    :caption: *Escaping HTML and Scripts in Templates*
+
+    <#outputformat "HTML">
+    ...
+    </#outputformat>
 
 ------------------------
 Keeping Templates Simple
