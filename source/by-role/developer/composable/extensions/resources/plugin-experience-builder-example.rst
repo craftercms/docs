@@ -53,7 +53,7 @@ a project called ``My Editorial`` created using the **Website Editorial** bluepr
    For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/experiencebuilder-plugin``
 
 #. We'll create the JavaScript file for our plugin by following the instructions in the plugin example
-   `here <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-component-library>`__ which will generate the
+   `here <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/examples/component-library>`__ which will generate the
    ``index.js`` file.
 
    Inside the ``test-experiencebuilder`` folder, create two empty files, ``index.css`` and ``script.js``,
