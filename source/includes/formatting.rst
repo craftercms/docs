@@ -35,3 +35,5 @@
 .. role:: header4
 .. role:: header5
 .. role:: header6
+
+.. role:: bolditalic
