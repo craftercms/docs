@@ -177,5 +177,5 @@ We can now view the Bulk Edit plugin at ``/studio/plugin?site=skateboard-shop&ty
 Examples
 --------
 
-- `CRA example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-cra>`_: illustrates a plugin host app using a dev toolchain with dev server.
-- `Vanilla example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla>`_: illustrates the simplest use of a single JS entry point without transpilation or anything special.
+- `Vite example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/examples/app-external-sources>`_: illustrates a plugin host app using a dev toolchain with dev server and how to optionally keep the app resources out of the project repo while still using the plugin host.
+- `Vanilla example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/examples/app-vanilla>`_: illustrates the simplest use of a single JS entry point plugin host app without any transpilation.

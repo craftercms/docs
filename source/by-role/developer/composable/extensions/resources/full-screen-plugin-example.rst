@@ -9,12 +9,12 @@
 Crafter Studio Full Screen Plugin Example
 =========================================
 Here we'll take a look at an example of creating a Full Screen Plugin for the plugin host page using the
-`Vanilla example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla>`__
+`Vanilla example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/examples/app-vanilla>`__
 
 For more information on the plugin host, see :ref:`here <plugin-host>`
 
 For this example, as outlined in the vanilla example referenced above, we will need a project created using the
-``Website  Editorial Blueprint``. We'll name the project ``editorial-neue``.
+``Website Editorial Blueprint``. We'll name the project ``editorial``.
 
 #. The first thing we have to do is to create the folder structure where we will be placing the JS file for our vanilla  plugin. We'll follow the convention listed in :ref:`ui-plugin-directory-structure`. For our example, CATEGORY is ``apps`` and the NAME is ``example-vanilla``
 
@@ -56,7 +56,7 @@ For this example, as outlined in the vanilla example referenced above, we will n
       </details>
 
 
-#. We'll copy the JavaScript file ``index.js`` found `here <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla>`__
+#. We'll copy the JavaScript file ``index.js`` found `here <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/examples/app-vanilla>`__
    for our plugin
 
 #. After placing your plugin file, the plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
@@ -68,11 +68,11 @@ For this example, as outlined in the vanilla example referenced above, we will n
 
    |
 
-   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``editorial-neue`` by running the following:
+   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``editorial`` by running the following:
 
    .. code-block:: console
 
-       ./crafter-cli copy-plugin -e local -s editorial-neue --path /users/myuser/myplugins/vanilla-plugin
+       ./crafter-cli copy-plugin -e local -s editorial --path /users/myuser/myplugins/vanilla-plugin
 
 
 
@@ -80,7 +80,7 @@ For this example, as outlined in the vanilla example referenced above, we will n
 
    .. code-block:: text
 
-      http://localhost:8080/studio/plugin?site=editorial-neue&type=apps&name=example-vanilla&pluginId=org.craftercms.plugin.vanilla
+      http://localhost:8080/studio/plugin?site=editorial&type=apps&name=example-vanilla&pluginId=org.craftercms.plugin.vanilla
 
   Below is our plugin host page:
 
