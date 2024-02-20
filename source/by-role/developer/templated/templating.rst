@@ -15,21 +15,23 @@ of rendering this views, uses Freemarker as the template engine to generate the 
 
 See :ref:`here <templating-api>` for more information on the Freemarker (templating) API.
 
----------------
-Rendering pages
----------------
+.. todo Check if this section needs to be filled in and added
+   ---------------
+   Rendering pages
+   ---------------
 
 --------------------
-Rendering components
+Rendering Components
 --------------------
 To render components, see :ref:`renderComponent`
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Rendering nested components
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. todo Check if this section needs to be filled in and added
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   Rendering nested components
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ----------------
-More information
+More Information
 ----------------
 
 Below we'll take a look at some examples on how to use the Freemarker date built-ins:
