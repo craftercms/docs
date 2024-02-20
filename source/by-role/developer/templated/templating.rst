@@ -10,10 +10,9 @@ Templating
 ----------------------------------
 Content Rendering API (FreeMarker)
 ----------------------------------
-Each page and component content type in CrafterCMS generally has it's own view. Crafter Engine, which is in charge
-of rendering this views, uses Freemarker as the template engine to generate the HTML returned to the client.
+When using CrafterCMS in templated mode, each page and component content type generally has its own view. Crafter Engine uses the FreeMarker templating engine to render these views into the HTML returned to the client.
 
-See :ref:`here <templating-api>` for more information on the Freemarker (templating) API.
+The section ref:`<templating-api>` details the Freemarker (templating) API.
 
 .. todo Check if this section needs to be filled in and added
    ---------------
