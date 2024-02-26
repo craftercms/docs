@@ -49,6 +49,14 @@ Enhancements
 ^^^^^^^^^
 Bug Fixes
 ^^^^^^^^^
+* `Fixed issue with node selector control <https://github.com/craftercms/craftercms/issues/6533>`__
+
+* `Fixed issue with  disableFlattening flag <https://github.com/craftercms/craftercms/issues/6532>`__
+
+* `Fixed issue with Engine content store get item API empty value behavior <https://github.com/craftercms/craftercms/issues/6526>`__ |br|
+  We now have a property to enable/disable serialization of XML node attributes to JSON. XML node attributes are not
+  serialized to JSON by default. See :ref:`engine-attributes-serialization` for more information on the property.
+
 * `Fixed issue with lockOwner in workflow item_states <https://github.com/craftercms/craftercms/issues/6477>`__
 
 * `Updated the S3 upload API to include the bucket name for the given profile <https://github.com/craftercms/craftercms/issues/6467>`__

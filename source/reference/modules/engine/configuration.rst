@@ -727,6 +727,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure static methods in Freemarker templates
     * - :ref:`engine-spring-expression-language`
       - Allows you to configure SpEL expressions for custom app contexts
+    * - :ref:`engine-attributes-serialization`
+      - Allows you to configure whether attributes are omitted or serialized to JSON.
     * - :ref:`Setting log levels <permanently-set-logging-levels>`
       - Allows you to configure logging levels
     * - :ref:`engine-project-spring-configuration`
@@ -1801,6 +1803,23 @@ also have access to Engine's global properties (like ``crafter.engine.preview``)
     incorrect configuration or if your beans do not properly handle their own errors on initialization.
 
 |
+
+|hr|
+
+.. _engine-attributes-serialization:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Attributes Serialization to JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following allows you to configure whether attributes are serialized to JSON for REST services.
+Attributes are omitted by default and not rendered as properties of the JSON object.
+
+.. code-block:: properties
+    :linenos:
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+    # True to render attributes as properties of the JSON object, false to omit them.
+    crafter.core.rest.views.json.renderAttributes=false
 
 |hr|
 
