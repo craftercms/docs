@@ -85,7 +85,7 @@ Plugins can access Studio client-side components (React), services and utilities
 Examples of UI Plugins are
 
 * `Component library <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/examples/component-library>`_: illustrates the creation of a library of widgets that can be rendered throughout Studio UI.
-- `Vite example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/examples/app-external-sources>`_: illustrates a plugin host app using a dev toolchain with dev server and how to optionally keep the app resources out of the project repo while still using the plugin host.
+* `Vite example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/examples/app-external-sources>`_: illustrates a plugin host app using a dev toolchain with dev server and how to optionally keep the app resources out of the project repo while still using the plugin host.
 * `Vanilla Standalone <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/examples/app-vanilla>`_: illustrates a simple standalone app with single JS entry point without transpilation.
 
 """"""""
@@ -532,7 +532,7 @@ To add parameters to be passed to projects via a plugin, simply add the followin
    parameters:
     - label: My Parameter Label
       name: myParam
-      type: string
+      type: STRING
       description: My parameter
       required: true
 
