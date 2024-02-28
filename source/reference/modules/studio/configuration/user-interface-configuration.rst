@@ -509,14 +509,14 @@ under ``Pages`` for our example. The image on the right is a screenshot of the t
 changes to the ``Top Books For Young Women`` article, where we expect our edited article to be the first one listed:
 
 .. image:: /_static/images/site-admin/ui-widget-children-sorting-before.webp
-   :alt: Configurations - User Interface Configuration widget sorting screenshot of static-assets folder children
+   :alt: Configurations - User Interface Configuration widget sorting screenshot of /articles/2021/3 folder children
    :width: 25 %
 
 .. image:: /_static/images/site-admin/ui-widget-children-sorting-spacer.webp
    :width: 5 %
 
 .. image:: /_static/images/site-admin/ui-widget-children-sorting-after-updates-to-a-child.webp
-   :alt: Configurations - User Interface Configuration widget sorting screenshot of static-assets folder after modifying a child
+   :alt: Configurations - User Interface Configuration widget sorting screenshot of /articles/2021/3 folder after modifying a child
    :width: 25 %
 
 |hr|
