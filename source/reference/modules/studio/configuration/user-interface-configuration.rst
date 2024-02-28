@@ -435,7 +435,7 @@ Limit
 The number of children displayed at a time when expanding a container can be limited via the ``limit`` property like below:
 
 .. code-block:: xml
-    :caption: *PathNavigatorTree sidebar widget configuration*
+    :caption: *PathNavigatorTree sidebar widget limit configuration*
     :emphasize-lines: 8
 
     <widget id="craftercms.components.PathNavigatorTree">
@@ -469,6 +469,55 @@ items will be displayed as shown on the image on the right.
 
 Remember to do a refresh of your browser after making the limit changes and saving your configuration in order to see
 the changes you've made in action.
+
+^^^^^^^
+Sorting
+^^^^^^^
+The order of children displayed may be sorted via the ``sortStrategy`` and ``order`` property like below:
+
+.. code-block:: xml
+    :caption: *PathNavigatorTree Sidebar Widget Sorting Configuration Example*
+    :emphasize-lines: 8-9
+
+    <widget id="craftercms.components.PathNavigatorTree">
+      <configuration>
+        <id>Pages</id>
+        <label>Pages</label>
+        <icon id="@mui/icons-material/DescriptionOutlined"/>
+        <rootPath>/site/website/index.xml</rootPath>
+        <locale>en</locale>
+        <sortStrategy>lastUpdate</sortStrategy>
+        <order>DESC</order>
+      </configuration>
+    </widget>
+
+The following ``sortStrategy`` property options are available:
+
+- ``alphabetical``: sort in alphabetical order
+- ``foldersFirst``: sort in alphabetical order, listing folders first
+- ``lastUpdate``: sort using the last modified date
+
+The following ``order`` property options are available:
+
+- ``ASC``: display children in ascending order
+- ``DESC``: display children in descending order
+
+In the example configuration above, the children of the ``Pages`` folder will be sorted using the last modified
+date in descending order. Let's take a look on how the example configuration above affects the order of children
+displayed in the ``Pages`` folder.  The image on the left is a baseline screenshot of the ``/articles/2021/3`` folder
+under ``Pages`` for our example. The image on the right is a screenshot of the the same folder after editing and saving
+changes to the ``Top Books For Young Women`` article, where we expect our edited article to be the first one listed:
+
+.. image:: /_static/images/site-admin/ui-widget-children-sorting-before.webp
+   :alt: Configurations - User Interface Configuration widget sorting screenshot of static-assets folder children
+   :width: 25 %
+
+.. image:: /_static/images/site-admin/ui-widget-children-sorting-spacer.webp
+   :width: 5 %
+
+.. image:: /_static/images/site-admin/ui-widget-children-sorting-after-updates-to-a-child.webp
+   :alt: Configurations - User Interface Configuration widget sorting screenshot of static-assets folder after modifying a child
+   :width: 25 %
 
 |hr|
 
