@@ -37,6 +37,7 @@ Request
 
 ``GET .../api/1/profile/set.json?username=john&lastname=doe&age=30``
 
+
 ^^^^^^^^
 Response
 ^^^^^^^^
@@ -45,7 +46,12 @@ Response
 
 .. code-block:: json
 
-  { "username" : "john" }
+    {
+      "id": "65de6381b77c310708fbde2665de6381b77c310708fbde26",
+      "username": "john",
+      "lastname": "doe",
+      "age": "30"
+    }
 
 ---------
 Responses
