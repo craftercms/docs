@@ -17,7 +17,7 @@ plugin:
   description: A simple plugin host example
   website:
     name: Plugin Host Vanilla Example
-    url: https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla
+    url: https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/examples/app-vanilla
   media:
     screenshots:
       - title: CrafterCMS
