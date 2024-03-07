@@ -29,7 +29,7 @@ What's Supported?
     * - 4.0
       - May 12, 2022
       - :maroon:`Ended on June 17, 2023`
-      - :green:`Ends on January 31, 2025`
+      - :green:`Ends on December 31, 2024`
       - 4.0.7 (July 17, 2023)
     * - 3.1
       - May 1, 2019
