@@ -49,13 +49,21 @@ Enhancements
 ^^^^^^^^^
 Bug Fixes
 ^^^^^^^^^
+* `Fixed issue with table buttons tool for in-context editing not working  <https://github.com/craftercms/craftercms/issues/6561>`__
+
+* `Fixed issue with inserting a link to RTE not working if the link starts with www when XB is enabled <https://github.com/craftercms/craftercms/issues/6556>`__
+
 * `Fixed issue with node selector control <https://github.com/craftercms/craftercms/issues/6533>`__
 
-* `Fixed issue with  disableFlattening flag <https://github.com/craftercms/craftercms/issues/6532>`__
+* `Fixed issue with disableFlattening flag <https://github.com/craftercms/craftercms/issues/6532>`__
 
 * `Fixed issue with Engine content store get item API empty value behavior <https://github.com/craftercms/craftercms/issues/6526>`__ |br|
   We now have a property to enable/disable serialization of XML node attributes to JSON. XML node attributes are not
   serialized to JSON by default. See :ref:`engine-attributes-serialization` for more information on the property.
+
+* `Fixed issue with children count and X more items button not working in the Sidebar Navigator tree <https://github.com/craftercms/craftercms/issues/6518>`__
+
+* `Fixed issue with site screenshot request when proxy is enabled  <https://github.com/craftercms/craftercms/issues/6511>`__
 
 * `Fixed issue with lockOwner in workflow item_states <https://github.com/craftercms/craftercms/issues/6477>`__
 
@@ -66,6 +74,8 @@ Bug Fixes
 * `Fixed issue with video content item not disassociating from parent content item in React app <https://github.com/craftercms/craftercms/issues/6433>`__
 
 * `Fixed issue with text area line breaks in XB <https://github.com/craftercms/craftercms/issues/6432>`__
+
+* `Fixed issue with the Publish Commit Dialog incorrectly showing pending changes confirmation dialog <https://github.com/craftercms/craftercms/issues/6431>`__
 
 * `Fixed issue with UI prepending a "/" to policy suggested file names <https://github.com/craftercms/craftercms/issues/6429>`__
 
@@ -95,16 +105,30 @@ Bug Fixes
 
 * Fixed issue with Content-Type (text/html) incorrectly stated in response
 
+* Fixed issue with unflattened content. |br|
+
+  .. note::
+     The following is primarily an internal change. It would only affect those developing authoring applications using the functions described below either via ``@craftercms/studio-ui`` npm package or using the craftercms global on an authoring extension.
+
+  New argument ``unflattenedPaths`` added to the bottom of the arguments list of the following functions:
+
+  - ``utils/content/parseContentXML``
+  - ``utils/content/parseElementByContentType``
+
+  The argument should be an object that will be populated by the method with ``path: object`` pairs for the unflattened content items whose data is incomplete while processing.
+  *Note: This argument is likely to be required in the next versions of the package.*
+
+
 ^^^^^^^^^^^^^^^^^^
 Dependency Updates
 ^^^^^^^^^^^^^^^^^^
 * Noteworthy dependency updates:
 
   - Spring Boot to version ``2.7.18``
-  - Spring Framework to version ``5.3.31``
-  - Spring Security to version ``5.8.8``
+  - Spring Framework to version ``5.3.32``
+  - Spring Security to version ``5.8.9``
   - Tika to version ``2.9.1``
-  - Tomcat to version ``9.0.85``
+  - Tomcat to version ``9.0.86``
   - OpenSearch to version ``2.9.0``
   - Studio UI dependencies
 
