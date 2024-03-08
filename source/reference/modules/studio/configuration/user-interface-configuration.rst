@@ -424,10 +424,24 @@ The ``Video Center`` blueprint from the marketplace contains an example of SPA s
 
 |hr|
 
---------------------------------
-PathNavigatorTree Sidebar Widget
---------------------------------
-The ``PathNavigatorTree`` sidebar widget allows the display of trees with the ability to expand/collapse containers. It shows elements (children) in a level and allows the container children to be further expanded without navigating to the child, allowing many children to be open at the same time. Also, each container child allows filtering/searching via keywords allowing users  to find items faster.
+--------------------------------------------------
+PathNavigatorTree and PathNavigator Sidebar Widget
+--------------------------------------------------
+The ``PathNavigatorTree`` sidebar widget allows the display of trees with the ability to expand/collapse containers. It shows elements (children) in a level and allows the container children to be further expanded without navigating to the child, allowing many children to be open at the same time. Also, each container child allows filtering/searching via keywords allowing users to find items faster.
+
+.. figure:: /_static/images/site-admin/ui-pathnavigatortree-widget.webp
+   :alt: Configurations - PathNavigatorTree Widget in Sidebar
+
+   *PathNavigatorTree widget*
+
+The ``PathNavigator`` sidebar widget shows elements (children) of a level and allows filtering/searching via keywords allowing users to find items faster.  It doesn't provide an overview like the PathNavigatorTree, but, the ``PathNavigator`` but is the recommended widget if your project contains thousands of pages where a tree becomes unresponsive due to painting a massive number of items.
+
+.. figure:: /_static/images/site-admin/ui-pathnavigator-widget.webp
+   :alt: Configurations - PathNavigator Widget in Sidebar
+
+   *PathNavigator widget*
+
+Here are some options on displaying elements (children) of navigator widgets:
 
 ^^^^^
 Limit
@@ -476,7 +490,7 @@ Sorting
 The order of children displayed may be sorted via the ``sortStrategy`` and ``order`` property like below:
 
 .. code-block:: xml
-    :caption: *PathNavigatorTree Sidebar Widget Sorting Configuration Example*
+    :caption: *Sidebar Widget Sorting Configuration Example*
     :emphasize-lines: 8-9
 
     <widget id="craftercms.components.PathNavigatorTree">
