@@ -85,6 +85,8 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure the workflow notifications
     * - :ref:`Commit Message <studio-commit-message>`
       - Configure the commit messages used by Crafter Studio
+    * - :ref:`Audit Log <studio-audit-log>`
+      - Configure whether to enable/disable the Studio audit log job for operations not performed through Crafter Studio
     * - :ref:`Publishing Blacklist <publishing-blacklist>`
       - Configure the publishing blacklist
     * - :ref:`Content Type Editor Configuration <content-type-editor-config>`
@@ -632,6 +634,29 @@ using one of the override files.
     studio.repo.moveContent.commitMessage: "Moving {fromPath} to {toPath}"
     # Copy content commit message
     studio.repo.copyContent.commitMessage: "Copying {fromPath} to {toPath}"
+
+|
+
+|hr|
+
+.. _studio-audit-log:
+
+^^^^^^^^^
+Audit Log
+^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.1.3
+
+CrafterCMS allows disabling the job for populating the audit log from external git changes. When disabled, the audit table will not log external operations synced from git. Crafter Studio updates and changes are always audited. Disabling this job improves performance for large git pull operations.
+
+To disable populating the audit log, set the ``studio.clockJob.task.auditLogProcessing.disableAudit`` property to ``true``.
+
+.. code-block:: yaml
+    :caption: *studio-config-override.yaml*
+
+    # Disable the db audit log population
+    studio.clockJob.task.auditLogProcessing.disableAudit: false
 
 |
 
