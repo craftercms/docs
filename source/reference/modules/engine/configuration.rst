@@ -1806,23 +1806,6 @@ also have access to Engine's global properties (like ``crafter.engine.preview``)
 
 |hr|
 
-.. _engine-attributes-serialization:
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Attributes Serialization to JSON
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following allows you to configure whether attributes are serialized to JSON for REST services.
-Attributes are omitted by default and not rendered as properties of the JSON object.
-
-.. code-block:: properties
-    :linenos:
-    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
-
-    # True to render attributes as properties of the JSON object, false to omit them.
-    crafter.core.rest.views.json.renderAttributes=false
-
-|hr|
-
 .. _engine-mongodb-configuration:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
