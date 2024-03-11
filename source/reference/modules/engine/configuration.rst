@@ -727,8 +727,6 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure static methods in Freemarker templates
     * - :ref:`engine-spring-expression-language`
       - Allows you to configure SpEL expressions for custom app contexts
-    * - :ref:`engine-attributes-serialization`
-      - Allows you to configure whether attributes are omitted or serialized to JSON.
     * - :ref:`Setting log levels <permanently-set-logging-levels>`
       - Allows you to configure logging levels
     * - :ref:`engine-project-spring-configuration`
