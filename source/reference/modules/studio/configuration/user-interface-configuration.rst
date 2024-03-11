@@ -434,7 +434,7 @@ The ``PathNavigatorTree`` sidebar widget allows the display of trees with the ab
 
    *PathNavigatorTree widget*
 
-The ``PathNavigator`` sidebar widget shows elements (children) of a level and allows filtering/searching via keywords allowing users to find items faster.  It doesn't provide an overview like the PathNavigatorTree, but, the ``PathNavigator`` but is the recommended widget if your project contains thousands of pages where a tree becomes unresponsive due to painting a massive number of items.
+The ``PathNavigator`` sidebar widget shows elements (children) of a level and allows filtering/searching via keywords allowing users to find items faster.  It doesn't provide an overview like the ``PathNavigatorTree``, but, the ``PathNavigator`` is the recommended widget if your project contains thousands of pages where a tree becomes unresponsive due to painting a massive number of items.
 
 .. figure:: /_static/images/site-admin/ui-pathnavigator-widget.webp
    :alt: Configurations - PathNavigator Widget in Sidebar
