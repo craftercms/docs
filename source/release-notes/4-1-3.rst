@@ -1,0 +1,149 @@
+.. index:: CrafterCMS 4.1.3 Release Notes
+
+----------------
+CrafterCMS 4.1.3
+----------------
+
+Released *TBD*
+
+This release includes fixes for issues with the release version 4.1.2
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-1-x>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.1.0 (applies to 4.1.3),
+    please see :ref:`upgrading-craftercms`
+
+    Please see :ref:`upgrading-search-4-1-x-to-4-1-3` for important information on upgrading CrafterCMS version 4.1.x to 4.1.3
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+* New `React JS empty blueprint <https://github.com/craftercms/react-blueprint>`__ added in the marketplace |br|
+  This blueprint is a great starting point for building your own React JS application.
+
+* Studio header-based authentication now expects attribute ``secure_key`` in its own header |br|
+  See :ref:`crafter-studio-configure-header-based-auth` for more information on ``secure_key``
+
+^^^^^^^^^^^^
+Enhancements
+^^^^^^^^^^^^
+* `Git pull branch is now configurable <https://github.com/craftercms/craftercms/issues/6445>`__
+
+* `Improved publish commit dialog confirmation <https://github.com/craftercms/craftercms/issues/6431>`__
+
+* Improved Crafter Studio startup times in orchestrated environments
+
+* `Improved XB communication status and error experience <https://github.com/craftercms/craftercms/issues/6390>`__
+
+* `Improved "Publish by Commit ID" implementation <https://github.com/craftercms/craftercms/issues/6326>`__
+
+* `Added ability to disable the Audit History job <https://github.com/craftercms/craftercms/issues/6294>`__ |br|
+  To learn more about disabling the audit history job, see the article :ref:`studio-audit-log`
+
+* `Added WebSocket support to Engine's proxy <https://github.com/craftercms/craftercms/issues/6292>`__ |br|
+  See :ref:`proxy-configuration` for examples on configuring proxies.
+
+^^^^^^^^^
+Bug Fixes
+^^^^^^^^^
+* `Fixed issue with table buttons tool for in-context editing not working  <https://github.com/craftercms/craftercms/issues/6561>`__
+
+* `Fixed issue with inserting a link to RTE not working if the link starts with www when XB is enabled <https://github.com/craftercms/craftercms/issues/6556>`__
+
+* `Fixed issue with node selector control <https://github.com/craftercms/craftercms/issues/6533>`__
+
+* `Fixed issue with disableFlattening flag <https://github.com/craftercms/craftercms/issues/6532>`__
+
+* `Fixed issue with Engine content store get item API empty value behavior <https://github.com/craftercms/craftercms/issues/6526>`__ |br|
+  
+* `Fixed issue with children count and X more items button not working in the Sidebar Navigator tree <https://github.com/craftercms/craftercms/issues/6518>`__
+
+* `Fixed issue with site screenshot request when proxy is enabled  <https://github.com/craftercms/craftercms/issues/6511>`__
+
+* `Fixed issue with lockOwner in workflow item_states <https://github.com/craftercms/craftercms/issues/6477>`__
+
+* `Updated the S3 upload API to include the bucket name for the given profile <https://github.com/craftercms/craftercms/issues/6467>`__
+
+* `Fixed issue with AWS File upload <https://github.com/craftercms/craftercms/issues/6453>`__
+
+* `Fixed issue with video content item not disassociating from parent content item in React app <https://github.com/craftercms/craftercms/issues/6433>`__
+
+* `Fixed issue with text area line breaks in XB <https://github.com/craftercms/craftercms/issues/6432>`__
+
+* `Fixed issue with the Publish Commit Dialog incorrectly showing pending changes confirmation dialog <https://github.com/craftercms/craftercms/issues/6431>`__
+
+* `Fixed issue with UI prepending a "/" to policy suggested file names <https://github.com/craftercms/craftercms/issues/6429>`__
+
+* `Fixed issue with Publishing dialog failing when current date values are supplied in no-offset format <https://github.com/craftercms/craftercms/issues/6412>`__
+
+* Fixed issue with Audit logs
+
+* `Fixed issue with saving a profile without all attributes in Crafter Profile <https://github.com/craftercms/craftercms/issues/6374>`__
+
+* `Fixed issue with the Form Engine calendar getting cut off when DateTime is the only control <https://github.com/craftercms/craftercms/issues/6368>`__
+
+* `Fixed issue with Experience Builder not refreshing items on edit screen <https://github.com/craftercms/craftercms/issues/6361>`__
+
+* `Fixed issue with \Browse for Existing\ button not showing children pages of a page <https://github.com/craftercms/craftercms/issues/6322>`__
+
+* `Improved get_configuration API performance <https://github.com/craftercms/craftercms/issues/6306>`__
+
+* `Fixed issue with base repository path macros not working <https://github.com/craftercms/craftercms/issues/6305>`__
+
+* `Fixed issue with single field form for an embedded component opening the full form <https://github.com/craftercms/craftercms/issues/6293>`__
+
+* `Improved get_configuration API performance <https://github.com/craftercms/craftercms/issues/6265>`__
+
+* `Fixed issue with Textarea input type ignoring rows and columns configuration <https://github.com/craftercms/craftercms/issues/6259>`__
+
+* `Fixed issue with WebSocket proxy not working <https://github.com/craftercms/craftercms/issues/6174>`__ |br|
+
+* Fixed issue with Content-Type (text/html) incorrectly stated in response
+
+* Fixed issue with unflattened content. |br|
+
+  .. note::
+     The following is primarily an internal change. It would only affect those developing authoring applications using the functions described below either via ``@craftercms/studio-ui`` npm package or using the craftercms global on an authoring extension.
+
+  New argument ``unflattenedPaths`` added to the bottom of the arguments list of the following functions:
+
+  - ``utils/content/parseContentXML``
+  - ``utils/content/parseElementByContentType``
+
+  The argument should be an object that will be populated by the method with ``path: object`` pairs for the unflattened content items whose data is incomplete while processing.
+  *Note: This argument is likely to be required in the next versions of the package.*
+
+
+^^^^^^^^^^^^^^^^^^
+Dependency Updates
+^^^^^^^^^^^^^^^^^^
+* Noteworthy dependency updates:
+
+  - Spring Boot to version ``2.7.18``
+  - Spring Framework to version ``5.3.32``
+  - Spring Security to version ``5.8.9``
+  - Tika to version ``2.9.1``
+  - Tomcat to version ``9.0.86``
+  - OpenSearch to version ``2.9.0``
+  - Studio UI dependencies
+
+    - yarn to version ``4.0.2``
+    - @mui/* to version ``5.15.7``
+    - jquery to version ``3.7.1``
+    - moment to version ``0.5.44``
+    - ace to version ``1.32.5``
+    - bootstrap to version ``5.3.2``
+  - JavaScript SDK dependencies
+
+    - React to version ``18.2.0``
+    - TypeScript to version ``5.3.3``
+
+
+For a complete list of community tickets, please visit: `GitHub 4.1.3 <https://github.com/orgs/craftercms/projects/9/views/1>`__
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+|hr|

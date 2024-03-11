@@ -6,6 +6,14 @@ CrafterCMS 4.1.0
 
 Released *June 17, 2023*
 
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-1-x>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.1.0,
+    please see :ref:`upgrading-craftercms`
+
 ^^^^^^^^^^^^
 New Features
 ^^^^^^^^^^^^
@@ -75,13 +83,5 @@ Lot's of other small enhancements and bug fixes :)
 For a full list of tickets, please visit: `GitHub 4.1.0 Milestone <https://github.com/craftercms/craftercms/milestone/95?closed=1>`_
 
 For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
-
-.. important::
-
-    Please see :ref:`Breaking changes <breaking-changes-4-1-0>` for breaking changes and other
-    things to consider before upgrading
-
-    For instructions on how to update your CrafterCMS install to 4.1.0,
-    please see :ref:`upgrading-craftercms`
 
 |hr|

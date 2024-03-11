@@ -357,3 +357,8 @@
     font-weight: bolder;
     font-family: FontAwesome;
 }
+
+.bolditalic {
+  font-weight: bold;
+  font-style: italic;
+}

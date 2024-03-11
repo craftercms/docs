@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.1.3
 
 .. index:: Open Source Acknowledgements
 
@@ -164,13 +164,13 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `org.bitbucket.b_c:jose4j <https://mvnrepository.com/artifact/org.bitbucket.b_c/jose4j>`_
 |br|
-`org.bouncycastle:bcmail-jdk15on <https://mvnrepository.com/artifact/org.bouncycastle/bcmail-jdk15on>`_
+`org.bouncycastle:bcmail-jdk18on <https://mvnrepository.com/artifact/org.bouncycastle/bcmail-jdk18on>`_
 |br|
-`org.bouncycastle:bcpg-jdk15on <https://mvnrepository.com/artifact/org.bouncycastle/bcpg-jdk15on>`_
+`org.bouncycastle:bcpg-jdk18on <https://mvnrepository.com/artifact/org.bouncycastle/bcpg-jdk18on>`_
 |br|
-`org.bouncycastle:bcpkix-jdk15on <https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk15on>`_
+`org.bouncycastle:bcpkix-jdk18on <https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk18on>`_
 |br|
-`org.bouncycastle:bcprov-jdk15on <https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on>`_
+`org.bouncycastle:bcprov-jdk18on <https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on>`_
 |br|
 `org.codehaus.groovy:groovy-all <https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all>`_
 |br|
@@ -316,6 +316,8 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `@mui/x-date-pickers <https://www.npmjs.com/package/@mui/x-date-pickers>`_
 |br|
+`@mui/x-tree-view <https://www.npmjs.com/package/@mui/x-tree-view>`_
+|br|
 `@popperjs/core <https://www.npmjs.com/package/@popperjs/core>`_
 |br|
 `@prettier/plugin-xml <https://www.npmjs.com/package/@prettier/plugin-xml>`_
@@ -391,8 +393,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `eslint-config-prettier <https://www.npmjs.com/package/eslint-config-prettier>`_
 |br|
 `eslint-plugin-prettier <https://www.npmjs.com/package/eslint-plugin-prettier>`_
-|br|
-`eslint <https://www.npmjs.com/package/eslint>`_
 |br|
 `eslint <https://www.npmjs.com/package/eslint>`_
 |br|
