@@ -14,8 +14,19 @@ Studio Clustering |enterpriseOnly|
 
 Crafter Studio can be clustered for high-availability.
 
-.. image:: /_static/images/system-admin/studio-enterprise-clustering.webp
-   :alt: CrafterCMS - Studio Enterprise Clustering
+Here's an overview of a serverless Studio Enterprise cluster:
+
+.. image:: /_static/images/system-admin/studio-enterprise-clustering-serverless.webp
+   :alt: CrafterCMS - Studio Enterprise Clustering Serverless
+   :width: 75%
+   :align: center
+
+|
+
+Here's an overview of a disk-based Studio Enterprise cluster:
+
+.. image:: /_static/images/system-admin/studio-enterprise-clustering-disk-based.webp
+   :alt: CrafterCMS - Studio Enterprise Clustering Disk-Based
    :width: 75%
    :align: center
 
