@@ -1,0 +1,29 @@
+.. index:: CrafterCMS 4.1.4 Release Notes
+
+----------------
+CrafterCMS 4.1.4
+----------------
+
+Released *TBD*
+
+This release includes fixes for issues with the release version 4.1.3
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-1-x>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.1.0 (applies to 4.1.4),
+    please see :ref:`upgrading-craftercms`
+
+^^^^^^^^^
+Bug Fixes
+^^^^^^^^^
+* `Fixed issue with docker compose deployments unable to duplicate projects  <https://github.com/craftercms/craftercms/issues/6625>`__
+
+
+For a complete list of community tickets, please visit: `GitHub 4.1.4 <https://github.com/orgs/craftercms/projects/10/views/1>`__
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+|hr|
