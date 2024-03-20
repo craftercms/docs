@@ -65,6 +65,8 @@ Before starting your upgrade:
 
 #. **Review the** :ref:`release notes <release-notes>` **for the version you are upgrading to**. It contains specific information on the changes that have been made and how it may affect you when upgrading to that specific version.
 
+   Remember to read all other release notes in between the version you currently have and the version you are upgrading to as it contains information on the changes that have occurred and steps you might have to take when upgrading to a specific version. Remember to also check :ref:`breaking changes <breaking-changes-4-1-x>` as it may require changes on your installation or system for the version you are upgrading to to work.
+
 #. **Backup CrafterCMS** just in case something goes wrong with the upgrade.
 
    When upgrading CrafterCMS installed on a server, the upgrade scripts performs an automated backup of CrafterCMS, but it's recommended not to rely on the automated backup, just in case. See :ref:`backup-and-restore` for details on how to perform the backup of CrafterCMS
