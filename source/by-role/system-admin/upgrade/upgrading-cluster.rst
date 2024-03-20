@@ -134,15 +134,15 @@ After upgrading a node, we can now add the rest of the node/s to the cluster.
 Here are the steps for adding a new node to the cluster:
 
 #. Stop the Studio cluster (the primary server)
-#. Make a copy of the ``data/db`` folder from the Primary server.
+#. If you are upgrading from Studio version 3.1.x, make a copy of the ``data/db`` folder from the Primary server,
+   then, on the server that will be a new Replica, extract the new bundle, then paste the data/db from previous step,
+   otherwise, skip this step.
 
    .. code-block:: bash
        :caption: *Make a copy of the data/db folder in Primary server*
 
        cd crafter/data
-       tar -czvf dbBackup.tar.gz db/
-
-#. On the server that will be a new Replica, extract the new bundle, then paste the data/db from previous step.
+       tar -czvf dbData.tar.gz db/
 
    .. code-block:: bash
       :caption: *In the Replica server, paste the data/db folder copied from the Primary server*
