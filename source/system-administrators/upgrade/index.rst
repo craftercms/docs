@@ -23,6 +23,12 @@ This section details the steps required to upgrade your CrafterCMS install.
 
 Here are the instructions for upgrading CrafterCMS based on how it was installed:
 
+.. important::
+
+   Remember to read the release notes for the version you're upgrading to and all other release notes in between the
+   version you currently have and the version you are upgrading to, as it contains information on all the changes that
+   have occurred and steps you might have to take when upgrading to a specific version.
+
 .. toctree::
    :maxdepth: 1
    :titlesonly:
