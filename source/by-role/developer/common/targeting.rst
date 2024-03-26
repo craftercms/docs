@@ -380,7 +380,7 @@ Sidebar, navigate to scripts -> pages -> category-landing.groovy) Please see
 Another way of using the categories tag is for displaying a list of related articles based on the
 article being browsed. We will look at the content type component **Articles Widget**
 to see how this is done in our Website Editorial blueprint. We will open the model for the
-component article widget by going to the Sidebar ``Site Tools``, then clicking on **Content Types -> Articles Widget -> Open Type**
+component article widget by going to the Sidebar ``Project Tools``, then clicking on **Content Types -> Articles Widget -> Open Type**
 
 .. figure:: /_static/images/targeting/tagging-component-article-open.webp
     :alt: Targeting - Open Component Articles Widget

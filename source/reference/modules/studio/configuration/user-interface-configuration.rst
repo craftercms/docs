@@ -103,7 +103,7 @@ Here's the configuration:
              <role>developer</role>
            </permittedRoles>
            <configuration>
-             <title id="siteTools.title" defaultMessage="Site Tools"/>
+             <title id="siteTools.title" defaultMessage="Project Tools"/>
              <icon id="@mui/icons-material/ConstructionRounded"/>
              <widget id="craftercms.components.EmbeddedSiteTools"/>
            </configuration>
