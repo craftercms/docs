@@ -200,7 +200,7 @@ To update to OpenSearch, in the example above, the property is called ``elastics
         <bean id="demoProfileService" class="com.demo.services.ProfileService" />
 
         <bean id="demoSearchService" class="com.demo.services.SearchService">
-            <property name="searchClient" ref="crafter.searchClient" />
+            <property name="searchClient" ref="crafter.searchService" />
             <property name="urlTransformationService" ref="crafter.urlTransformationService" />
         </bean>
     </beans>
