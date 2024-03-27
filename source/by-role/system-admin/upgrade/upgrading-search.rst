@@ -205,6 +205,36 @@ To update to OpenSearch, in the example above, the property is called ``elastics
         </bean>
     </beans>
 
+Here's a sample Groovy script that executes a search query:
+
+.. code-block:: groovy
+    :linenos:
+
+    package com.demo.services
+
+    import org.craftercms.search.opensearch.OpenSearchWrapper
+    import org.craftercms.search.opensearch.OpenSearchService
+
+    class SearchService {
+
+      OpenSearchService opensearchService
+
+      /**
+       * Executes a search query
+       *
+       */
+      def search(Map<String, Object> request, Closure<?> resultsProcessor) {
+        log.debug("Search request: {}", request)
+
+        def results = opensearchService.search(request).hits.hits*.sourceAsMap
+        if (results == null) {
+          results = []
+        }
+
+        return resultsProcessor.call(results)
+      }
+    }
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Search Methods/Groovy Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
