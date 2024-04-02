@@ -21,10 +21,24 @@ Enhancements
 ^^^^^^^^^^^^
 * Updated Studio UI SDK ``writeContent`` API abstraction to use the supplied path without unexpected internal transformations.
 
+* `Extended valid email addresses accepted by Studio according to RFC 3696 section 2 <https://github.com/craftercms/craftercms/issues/6645>`__
+
+* `Added audio datasource support \'Audio Uploaded from Desktop\' and \'Audio from Repository\' <https://github.com/craftercms/craftercms/issues/6535>`__
+
 ^^^^^^^^^
 Bug Fixes
 ^^^^^^^^^
+* `Fixed issue with the Studio Configuration Editor saving an environment specific copy of the Project Policy Configuration file <https://github.com/craftercms/craftercms/issues/6525>`__
+
 * `Fixed issue with docker compose deployments unable to duplicate projects  <https://github.com/craftercms/craftercms/issues/6625>`__
+
+* `Fixed issue with RTE Insert->Link using previewUrl instead of path <https://github.com/craftercms/craftercms/issues/6635>`__
+
+* `Fixed issue with the transcoded-video control in XB returning XML instead of JSON <https://github.com/craftercms/craftercms/issues/6659>`__
+
+* `Fixed issue with \'requireModule\' and \'addJavascript\' creating an incorrect url with \'buildFileUrl\'. <https://github.com/craftercms/craftercms/issues/6667>`__
+
+* Fixed issues with XB when item selectors have flattening disabled for search
 
 For a complete list of community tickets, please visit: `GitHub 4.1.4 <https://github.com/orgs/craftercms/projects/10/views/1>`__
 
