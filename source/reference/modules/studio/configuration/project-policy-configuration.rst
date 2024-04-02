@@ -13,7 +13,7 @@ Project Policy Configuration
 The project policy configuration file allows the administrator to configure constraints for content being added to the project
 (via uploads), such as filename constraints, minimum/maximum size of files, permitted content types or file types (MIME-types), etc.
 
-* Note that the project policy does not apply to content created directly on disk via the Git or APIs.*
+*Note that the project policy does not apply to content created directly on disk via the Git or APIs.*
 
 CrafterCMS supports the following project policies:
 
@@ -23,7 +23,7 @@ CrafterCMS supports the following project policies:
 - Content-type limits
 
 To modify the project policy configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration** and
-select **Project Policy Configuration** from the dropdown list.
+select **Project Policy Configuration** from the list.
 
 .. image:: /_static/images/site-admin/config-open-project-policy-config.webp
    :alt: Configurations - Open Project Policy Configuration
