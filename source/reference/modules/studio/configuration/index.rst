@@ -872,7 +872,7 @@ To set up a Studio environment, do the following:
 #. Restart Studio
 
 .. note::
-    All configuration files under ``CRAFTER_HOME/data/repos/sites/${site}/sandbox/config/studio`` can be overridden by environment, except for the Project Policy Configuration.
+    All configuration files under ``CRAFTER_HOME/data/repos/sites/${site}/sandbox/config/studio`` can be overridden by environment, except for the Project Policy Configuration (site-policy-config.xml) and items under the ``content-types`` folder.
 
 ^^^^^^^
 Example
