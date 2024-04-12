@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.2.0
 
 :orphan:
 
@@ -10,7 +10,7 @@ Dependency Resolver Configuration
 =================================
 Crafter Studio extracts and tracks dependencies between content items to assist authors with publishing, workflow and core content operations like copy and delete. This file configures what file paths Crafter considers a dependency and how they should be extracted.
 
-To modify the Dependency Resolver configuration, click on |projectTools| from the bottom of the Sidebar, then click on **Configuration** and select **Dependency Resolver** from the dropdown list.
+To modify the Dependency Resolver configuration, click on |projectTools| from the bottom of the Sidebar, then click on **Configuration** and select **Dependency Resolver** from the list.
 
 .. image:: /_static/images/site-admin/config-open-dependency-config.webp
     :alt: Configurations - Open Dependency Resolver Configuration
@@ -38,4 +38,22 @@ Here's a sample Dependency Resolver Configuration file (click on the triangle on
 
 |
 |
+
+-------------------------------
+Soft Dependencies Configuration
+-------------------------------
+.. version_tag::
+    :label: Since
+    :version: 4.2.0
+
+Soft dependencies are referenced items that are in a modified state and are not a hard dependency. When calculating soft
+dependencies, CrafterCMS follows transitive dependencies using recursive common table expressions (recursive CTE) in
+the database. To set the depth of soft dependencies calculated, a maximum recursion iterations property
+``studio.db.maxRecursiveIterations`` can be configured with a value between 0 and 20. The default value is 10.
+
+.. code-block:: yaml
+    :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+    # DB max_recursive_iterations value. This property should be set to a value between 0 and 20 (hard limit)
+    studio.db.maxRecursiveIterations: 10
 
