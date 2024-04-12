@@ -133,16 +133,20 @@ The following browsers are supported:
 ^^^^^^^^^^^^^
 Prerequisites
 ^^^^^^^^^^^^^
-"""""""""""""""""
-OS X Prerequisite
-"""""""""""""""""
-For OS X users, the latest ``openssl`` formula needs to be installed via homebrew:
+""""""""""""""""""
+MacOS Prerequisite
+""""""""""""""""""
+For MacOS users, the following applies:
 
-.. code-block:: sh
+#. The latest ``openssl`` formula needs to be installed via homebrew:
 
-    brew install openssl
+   .. code-block:: sh
 
-|
+       brew install openssl
+
+   |
+
+#. Docker is used to run OpenSearch and needs to be installed. Follow the instructions `here <https://docs.docker.com/install/>`__ to install Docker.
 
 """"""""""""""""""
 Linux Prerequisite
