@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.1.4
 
 .. _form-source-image-repo:
 
@@ -27,4 +27,5 @@ Configuration
 
 +------------------------+--------------------------------------------------------------------------+
 || Properties            || - Repository Path: Path where to browse the images from the repository. |
+||                       || - Use Search: Enable or disable searching for images in the repository. |
 +------------------------+--------------------------------------------------------------------------+
