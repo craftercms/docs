@@ -239,7 +239,7 @@ To add parameters to be passed to blueprints, simply add the following to the ``
    parameters:
     - label: My Parameter Label
       name: myParam
-      type: string
+      type: STRING
       description: My parameter
       required: true
 
