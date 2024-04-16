@@ -25,7 +25,7 @@ To run CrafterCMS, the following are required:
     - Java 17
     - 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
     - Git 2.20.1 and later
-    - Docker (if running in Docker)
+    - Docker (if running in Docker or MacOS)
 
 Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic experiences. MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide external (non-author) user management and social features.
 
@@ -133,16 +133,20 @@ The following browsers are supported:
 ^^^^^^^^^^^^^
 Prerequisites
 ^^^^^^^^^^^^^
-"""""""""""""""""
-OS X Prerequisite
-"""""""""""""""""
-For OS X users, the latest ``openssl`` formula needs to be installed via homebrew:
+""""""""""""""""""
+MacOS Prerequisite
+""""""""""""""""""
+For MacOS users, the following applies:
 
-.. code-block:: sh
+#. The latest ``openssl`` formula needs to be installed via homebrew:
 
-    brew install openssl
+   .. code-block:: sh
 
-|
+       brew install openssl
+
+   |
+
+#. Docker is used to run OpenSearch and needs to be installed. Follow the instructions `here <https://docs.docker.com/install/>`__ to install Docker.
 
 """"""""""""""""""
 Linux Prerequisite
