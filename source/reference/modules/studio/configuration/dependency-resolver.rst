@@ -46,10 +46,10 @@ Soft Dependencies Configuration
     :label: Since
     :version: 4.2.0
 
-Soft dependencies are referenced items that are in a modified state and are not a hard dependency. When calculating soft
-dependencies, CrafterCMS follows transitive dependencies using recursive common table expressions (recursive CTE) in
-the database. To set the depth of soft dependencies calculated, configure the maximum recursion iterations property
-``studio.db.maxRecursiveIterations`` with a value between 0 and 20. The default value is 10.
+Soft dependencies are referenced items that are in a modified state and are optional. When calculating soft
+dependencies, CrafterCMS follows dependencies recursively. To set the depth of soft dependencies calculated, configure
+the maximum recursion iterations property ``studio.db.maxRecursiveIterations`` with a value between 0 and 20.
+The default value is 10.
 
 .. code-block:: yaml
     :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
