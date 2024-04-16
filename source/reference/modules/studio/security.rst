@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.2.0
 
 .. index:: Studio Security
 
@@ -845,6 +845,8 @@ You can also change the Studio session timeouts from the |mainMenu| **Main Menu*
 
 |hr|
 
+.. _studio-cipher-configuration:
+
 ^^^^^^^^^^^^^^^^^^^^
 Cipher Configuration
 ^^^^^^^^^^^^^^^^^^^^
@@ -919,5 +921,46 @@ The following section of Studio's configuration overrides allows you to configur
     studio.security.token.cookie.secure: ${env:STUDIO_REFRESH_TOKEN_SECURE}
 
 |
+
+.. _studio-preview cookie:
+
+^^^^^^^^^^^^^^
+Preview Cookie
+^^^^^^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.2.0
+
+The following section of Studio's configuration overrides allows you to configure settings for the Preview cookie.
+Studio adds a short-lived encrypted cookie called ``crafterPreview`` with the current preview site. This cookie gets
+re-issued along with the JWT auth token (if ``crafterSite`` is already set).
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :linenos:
+
+    ##############################################################
+    ##                      Preview Cookie                      ##
+    ##############################################################
+    # Name of the preview
+    studio.security.token.previewCookie.name: crafterPreview
+    # Time in seconds for the expiration of the preview cookie
+    studio.security.token.previewCookie.maxAge: 600
+    # The path used to set the preview cookie
+    studio.security.token.previewCookie.path: /
+    # The domain used to set the preview cookie (if set to null or empty the domain will be detected from the request)
+    studio.security.token.previewCookie.domain: null
+    # Indicates if the preview cookie should be secure (should be true for production environments behind HTTPS)
+    studio.security.token.previewCookie.secure: false
+    # Indicates if the preview cookie should be HTTPOnly
+    studio.security.token.previewCookie.httpOnly: true
+    Password requirements validation allows the admin to setup rules that ensures users create passwords based on an organization’s password security policy.
+
+The Preview cookie  ``crafterPreview`` is encrypted using the encryption option for configuration files (which are
+shared between Studio and Engine) and admins will need to update the default configurations for the encryption key and
+salt in :ref:`Studio <studio-cipher-configuration>` and in :ref:`Engine <engine-configuration-properties-encryption>`.
+
+Use the API `switchPreviewSite <../../../_static/api/studio.html#tag/users/operation/getCurrentUserSites>`__ to refresh
+the ``crafterPreview`` cookie. This API must be called whenever the ``crafterSite`` cookie value is updated
 
 |hr|
