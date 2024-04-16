@@ -257,7 +257,7 @@ rst_epilog = """
 .. |js_sdk_link| replace:: :ref:`javascript-sdk`
 .. |graphql_link| replace:: :ref:`graphql`
 .. |rest_api_link| replace:: :ref:`rest-content-retrieval-api`
-.. |search_link| replace:: :ref:`search`
+.. |search_link| replace:: :ref:`content-search`
 .. |groovy_link| replace:: :ref:`groovy-api` and :ref:`java-api`
 .. |static_asset_link| replace:: :ref:`static-content-access`
 .. |freemarker_link| replace:: :ref:`templating-api`

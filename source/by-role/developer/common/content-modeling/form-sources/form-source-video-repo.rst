@@ -26,4 +26,5 @@ Configuration
 
 +------------------------+--------------------------------------------------------------------------+
 || Properties            || - Repository Path: Path where to browse the videos from the repository. |
+||                       || - Use Search: Enable or disable searching for videos in the repository. |
 +------------------------+--------------------------------------------------------------------------+
