@@ -32,17 +32,28 @@ Java Doc
 --------
 
 Crafter Profile's Java Doc is here:
-    - :javadoc_base_url:`profile/index.html`
+
+- :javadoc_base_url:`profile/index.html`
+
+.. _crafter-profile-api:
 
 --------
 ReST API
 --------
+To view the Crafter Profile REST APIs:
 
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
+.. open_iframe_modal_button::
+    :label: Open here
+    :url: ../../../_static/api/profile.html
+    :title: Engine API
 
-   api/index
+.. raw:: html
+
+    or <a href="../../../_static/api/profile.html" target="_blank">in a new tab</a>
+
+|
+|
+
 
 -------------
 Configuration
