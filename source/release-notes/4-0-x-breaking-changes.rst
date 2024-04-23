@@ -43,6 +43,17 @@ before upgrading.  Please review the following and apply changes as required:
     See :ref:`migrating-a-site-from-previous-elasticsearch-client` for more information on
     upgrading to the latest Elasticsearch client and query mechanism
   - Update ICE to move to :ref:`XB <experience-builder>` (if desired).
+  - CrafterCMS 4.0.x by default now classifies all items under ``/site`` as ``file`` type, instead of ``item`` type.
+
+    Items under preconfigured paths in the Project configuration ``config/studio/site-config.xml``, such as
+    ``/site/website`` and ``/site/components`` are classified as an ``item`` type by default. Before upgrading your
+    version 3.1.x install, non-standard paths/custom paths must be configured under ``repository.patterns`` in the
+    Project configuration file ``config/studio/site-config.xml`` in order to be classified correctly.
+
+    Any item that is misclassified after an upgrade can be corrected by updating the Project configuration file
+    ``config/studio/site-config.xml`` and then editing and saving the misclassified item(s) OR by modifying the
+    ``system_type`` field for the item in the ``item`` table in the database.
+
 
 .. raw:: html
 
