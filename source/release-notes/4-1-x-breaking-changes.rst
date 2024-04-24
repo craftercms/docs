@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.0
+:last-updated: 4.1.3
 :orphan:
 
 .. _breaking-changes-4-1-x:
@@ -29,6 +29,17 @@ before upgrading. Please review the following and apply changes as required:
 
   - Studio and Engine SAML configuration now uses a key and certificate for configuration instead of using keystore. |br|
     See :ref:`engine-saml2-configuration` and :ref:`crafter-studio-configure-studio-saml` for more information.
+
+  - CrafterCMS 4.1.x by default now classifies all items under ``/site`` as ``file`` type, instead of ``item`` type.
+
+    Items under preconfigured paths in the Project configuration ``config/studio/site-config.xml``, such as
+    ``/site/website`` and ``/site/components`` are classified as an ``item`` type by default. Before upgrading your
+    version 3.1.x install, non-standard paths/custom paths must be configured under ``repository.patterns`` in the
+    Project configuration file ``config/studio/site-config.xml`` in order to be classified correctly.
+
+    Any item that is misclassified after an upgrade can be corrected by updating the Project configuration file
+    ``config/studio/site-config.xml`` and then editing and saving the misclassified item(s) OR by modifying the
+    ``system_type`` field for the item in the ``item`` table in the database.
 
 |hr|
 
