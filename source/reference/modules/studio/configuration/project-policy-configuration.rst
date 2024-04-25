@@ -22,6 +22,15 @@ CrafterCMS supports the following project policies:
 - MIME-type limits
 - Content-type limits
 
+.. note::
+    .. version_tag::
+        :label: Since
+        :version: 4.1.4
+
+    The default policy for filenames and automatic renaming rules is to lowercase everything except items under: ``/scripts``, ``/templates``, and ``/static-assets/app``
+
+
+
 To modify the project policy configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration** and
 select **Project Policy Configuration** from the list.
 
@@ -32,7 +41,7 @@ select **Project Policy Configuration** from the list.
 
 .. note::
 
-   The Project Policy Configuration file (site-policy-config.xml) is not overridden by environment. |br|
+   The Project Policy Configuration file (site-policy-config.xml) is not overridden by environment.
    Learn more about Studio multi-environment support in :ref:`studio-multi-environment-support`.
 
 ******

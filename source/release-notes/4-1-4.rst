@@ -40,6 +40,11 @@ Bug Fixes
 
 * Fixed issues with XB when item selectors have flattening disabled for search
 
+* `Enforced Project Policy for all items in the Sidebar <https://github.com/craftercms/craftercms/issues/6104>`__ |br|
+  The new default project policy for filenames and automatic renaming rules is to lowercase everything except items
+  under: ``/scripts``, ``/templates``, and ``/static-assets/app``. |br|
+  See :ref:`here <project-policy-configuration>` for more information on the project policy configuration.
+
 For a complete list of community tickets, please visit: `GitHub 4.1.4 <https://github.com/orgs/craftercms/projects/10/views/1>`__
 
 For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
