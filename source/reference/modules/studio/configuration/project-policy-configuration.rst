@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.2
+:last-updated: 4.1.4
 
 .. _project-policy-configuration:
 
@@ -23,12 +23,17 @@ CrafterCMS supports the following project policies:
 - Content-type limits
 
 To modify the project policy configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration** and
-select **Project Policy Configuration** from the dropdown list.
+select **Project Policy Configuration** from the list.
 
 .. image:: /_static/images/site-admin/config-open-project-policy-config.webp
    :alt: Configurations - Open Project Policy Configuration
    :width: 45 %
    :align: center
+
+.. note::
+
+   The Project Policy Configuration file (site-policy-config.xml) is not overridden by environment. |br|
+   Learn more about Studio multi-environment support in :ref:`studio-multi-environment-support`.
 
 ******
 Sample

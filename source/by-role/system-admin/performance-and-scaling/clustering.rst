@@ -14,8 +14,19 @@ Studio Clustering |enterpriseOnly|
 
 Crafter Studio can be clustered for high-availability.
 
-.. image:: /_static/images/system-admin/studio-enterprise-clustering.webp
-   :alt: CrafterCMS - Studio Enterprise Clustering
+Here's an overview of a serverless Studio Enterprise cluster:
+
+.. image:: /_static/images/system-admin/studio-enterprise-clustering-serverless.webp
+   :alt: CrafterCMS - Studio Enterprise Clustering Serverless
+   :width: 75%
+   :align: center
+
+|
+
+Here's an overview of a disk-based Studio Enterprise cluster:
+
+.. image:: /_static/images/system-admin/studio-enterprise-clustering-disk-based.webp
+   :alt: CrafterCMS - Studio Enterprise Clustering Disk-Based
    :width: 75%
    :align: center
 
@@ -335,6 +346,61 @@ the nodes already running will timeout while trying to synchronize for bootstrap
 timeout in the ``bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml`` file,
 under the property ``studio.db.cluster.nodes.startup.wait.timeout``).
 
+"""""""""""""""""""""""
+Authoring Load Balancer
+"""""""""""""""""""""""
+To configure the authoring load balancer to detect which node is the Primary and send traffic to it, we should review the health-check API.
+The health-check endpoint is at `/studio/api/2/monitoring/status?token={your management token} <../../../_static/api/studio.html#tag/monitoring/operation/getStatus>`__
+which returns the current status of a node, including the role (primary or replica) and status for accepting traffic
+when clustering is enabled. Note that the Primary node is the only node that returns HTTP Code ``200``, while the Replicas
+return HTTP Code ``202``. This can be used as the main mechanism for the LB to know where to route traffic.
+
+.. _cluster-health-check-response:
+
+Below is a sample health response for the load balancer for a primary node:
+
+.. code-block:: json
+    :caption: *Studio monitoring API response - Primary status 200*
+
+    {
+      "response": {
+        "code": 0,
+        "message": "OK",
+        "remedialAction": "",
+        "documentationUrl": ""
+      },
+      "status": {
+        "uptime": 330,
+        "startup": "2024-02-06T20:12:24.956Z",
+        "age": 275,
+        "role": "PRIMARY",
+        "readyToTakeTraffic": true,
+        "readyToBecomePrimary": false
+      }
+    }
+
+Below is a sample health response for the load balancer for a replica node:
+
+.. code-block:: json
+    :caption: *Studio monitoring API response - Replica status 202:*
+
+    {
+      "response": {
+        "code": 0,
+        "message": "OK",
+        "remedialAction": "",
+        "documentationUrl": ""
+      },
+      "status": {
+        "uptime": 351,
+        "startup": "2024-02-06T20:12:31.147Z",
+        "age": 289,
+        "role": "REPLICA",
+        "readyToTakeTraffic": false,
+        "readyToBecomePrimary": true
+      }
+    }
+
 For information on errors you may encounter in your cluster, see :ref:`authoring-cluster-troubleshooting`.
 
 |
@@ -414,7 +480,7 @@ Studio clustering is based on Primary/Replica clustering mechanics. Failure scen
     - The replicas will automatically perform an election and appoint a new primary. The new primary's health check will report that it's ready to receive traffic, the load balancer or DNS can then redirect or repoint traffic to the new primary.
     - As a new node or the old failed primary rejoin the cluster, they'll assume a replica role and catch up with the new primary.
 
-Crafter Studio provides a health check endpoint at ``/studio/api/2/monitoring/status?token={your management token}``. You can use this endpoint to check the health of any node in the cluster. This can be used to facilitate automatic failover.
+Crafter Studio provides a health check endpoint at ``/studio/api/2/monitoring/status?token={your management token}``. You can use this endpoint to :ref:`check the health of any node <cluster-health-check-response>` in the cluster. This can be used to facilitate automatic failover.
 
 |hr|
 

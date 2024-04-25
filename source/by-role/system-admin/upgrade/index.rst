@@ -22,7 +22,25 @@ This section details the steps required to upgrade your CrafterCMS install.
 
 |
 
+---------------------
+Verifying the Upgrade
+---------------------
+.. important::
+    CrafterCMS will attempt to upgrade your project (site), which includes your configuration, code, and other assets. After the upgrade, perform a `git diff` on your project to see exactly what changed. This will help you identify any undesired upgrades that the system made and revert them if needed.
+
+|
+
+----------------------------
+Upgrade by Installation Type
+----------------------------
 Here are the instructions for upgrading CrafterCMS based on how it was installed (on a server or via Kubernetes/Docker Compose):
+
+.. important::
+
+   Remember to read the release notes for the version you're upgrading to and all other release notes in between the
+   version you currently have and the version you are upgrading to, as it contains information on all the changes that
+   have occurred and steps you might have to take when upgrading to a specific version.
+
 
 .. toctree::
    :maxdepth: 1

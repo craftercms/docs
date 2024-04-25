@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.1.4
 
 .. Grammar Checked 2023-10-06
 
@@ -870,6 +870,9 @@ To set up a Studio environment, do the following:
       |
 
 #. Restart Studio
+
+.. note::
+    All configuration files under ``CRAFTER_HOME/data/repos/sites/${site}/sandbox/config/studio`` can be overridden by environment, except for the Project Policy Configuration (site-policy-config.xml) and Content Types (items under the ``content-types`` folder).
 
 ^^^^^^^
 Example

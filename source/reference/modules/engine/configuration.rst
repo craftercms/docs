@@ -649,8 +649,9 @@ The main configuration files for a project/site can be edited within Crafter Stu
 .. note:: All configuration files can be overridden by environment. Learn more about multi-environment support in :ref:`engine-multi-environment-support`.
 
 The configuration file ``site-config.xml`` has some additional considerations. This file can be defined in:
-    - ``/config/engine/env/{envName}/site-config.xml``: This is the environment override, and is loaded first if present.
-    - ``/config/engine/site-config.xml``: This is the main configuration file for the project/site. This file is loaded if the environment override is not present.
+
+- ``/config/engine/env/{envName}/site-config.xml``: This is the environment override, and is loaded first if present.
+- ``/config/engine/site-config.xml``: This is the main configuration file for the project/site. This file is loaded if the environment override is not present.
 
 .. note:: All properties will be available for developers in the Freemarker templates and Groovy scripts using the ``siteConfig`` variable. The ``siteConfig`` variable is an instance of the `XMLConfiguration <https://commons.apache.org/proper/commons-configuration/apidocs/org/apache/commons/configuration2/XMLConfiguration.html>`_ class.
 
