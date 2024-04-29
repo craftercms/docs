@@ -89,7 +89,7 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure whether to enable/disable the Studio audit log job for operations not performed through Crafter Studio
     * - :ref:`Publishing Blacklist <publishing-blacklist>`
       - Configure the publishing blacklist
-    * - :ref:`Configuration Content Maximum Length <configuration-content-max-length>`
+    * - :ref:`Configuration Files Maximum <configuration-files-maximum>`
       - Configure the maximum length of configuration content
     * - :ref:`Content Type Editor Configuration <content-type-editor-config>`
       - Configure the content types
@@ -743,16 +743,16 @@ Let's take a look at the tomcat log, notice that it was logged that the file we 
 
 |hr|
 
-.. _configuration-content-max-length:
+.. _configuration-files-maximum:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Configuration Content Maximum Length
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuration Files Maximum
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. version_tag::
     :label: Since
     :version: 4.1.4
 
-To set the file size limit for the configuration content of the `write_configuration <../../../../_static/api/studio.html#tag/configuration/operation/writeConfiguration>`__ API, set the following property:
+To set the maximum size of a project/site configuration file of the `write_configuration <../../../../_static/api/studio.html#tag/configuration/operation/writeConfiguration>`__ API, set the following property:
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*

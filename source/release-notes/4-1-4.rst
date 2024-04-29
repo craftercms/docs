@@ -25,8 +25,8 @@ Enhancements
 
 * `Added audio datasource support \'Audio Uploaded from Desktop\' and \'Audio from Repository\' <https://github.com/craftercms/craftercms/issues/6535>`__
 
-* `Added support for setting a maximum length limit for the configuration content of write_configuration <https://github.com/craftercms/craftercms/issues/6710>`__ |br|
-  See :ref:`here <configuration-content-max-length>` for more information on setting the configuration content limit.
+* `Added support for changing the maximum configuration file size when using the write_configuration API <https://github.com/craftercms/craftercms/issues/6710>`__ |br|
+  See :ref:`here <configuration-files-maximum>` for more information on setting the configuration content limit.
 
 ^^^^^^^^^
 Bug Fixes
