@@ -1,0 +1,55 @@
+.. index:: CrafterCMS 4.1.4 Release Notes
+
+----------------
+CrafterCMS 4.1.4
+----------------
+
+Released *TBD*
+
+This release includes fixes for issues with the release version 4.1.3
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-1-x>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.1.0 (applies to 4.1.4),
+    please see :ref:`upgrading-craftercms`
+
+^^^^^^^^^^^^
+Enhancements
+^^^^^^^^^^^^
+* Updated Studio UI SDK ``writeContent`` API abstraction to use the supplied path without unexpected internal transformations.
+
+* `Extended valid email addresses accepted by Studio according to RFC 3696 section 2 <https://github.com/craftercms/craftercms/issues/6645>`__
+
+* `Added audio datasource support \'Audio Uploaded from Desktop\' and \'Audio from Repository\' <https://github.com/craftercms/craftercms/issues/6535>`__
+
+* `Added support for changing the maximum configuration file size when using the write_configuration API <https://github.com/craftercms/craftercms/issues/6710>`__ |br|
+  See :ref:`here <configuration-files-maximum>` for more information on setting the configuration content limit.
+
+^^^^^^^^^
+Bug Fixes
+^^^^^^^^^
+* `Fixed issue with the Studio Configuration Editor saving an environment specific copy of the Project Policy Configuration file <https://github.com/craftercms/craftercms/issues/6525>`__
+
+* `Fixed issue with docker compose deployments unable to duplicate projects  <https://github.com/craftercms/craftercms/issues/6625>`__
+
+* `Fixed issue with RTE Insert->Link using previewUrl instead of path <https://github.com/craftercms/craftercms/issues/6635>`__
+
+* `Fixed issue with the transcoded-video control in XB returning XML instead of JSON <https://github.com/craftercms/craftercms/issues/6659>`__
+
+* `Fixed issue with \'requireModule\' and \'addJavascript\' creating an incorrect url with \'buildFileUrl\'. <https://github.com/craftercms/craftercms/issues/6667>`__
+
+* Fixed issues with XB when item selectors have flattening disabled for search
+
+* `Enforced Project Policy for all items in the Sidebar <https://github.com/craftercms/craftercms/issues/6104>`__ |br|
+  The new default project policy for filenames and automatic renaming rules is to lowercase everything except items
+  under: ``/scripts``, ``/templates``, and ``/static-assets/app``. |br|
+  See :ref:`here <project-policy-configuration>` for more information on the project policy configuration.
+
+For a complete list of community tickets, please visit: `GitHub 4.1.4 <https://github.com/orgs/craftercms/projects/10/views/1>`__
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+|hr|
