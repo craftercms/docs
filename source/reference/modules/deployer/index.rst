@@ -1519,11 +1519,13 @@ Configuration Files
 The search configuration can be changed in two places:
 
 #. Global configuration file ``$CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml``, this will be applied to
-    all targets loaded.
+   all targets loaded.
 
 #. Individual target configuration file ``$CRAFTER_HOME/data/deployer/targets/{siteName}-{environment}.yaml``
 
 |hr|
+
+.. _crafter-deployer-api:
 
 --------
 REST API

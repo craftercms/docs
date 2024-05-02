@@ -62,6 +62,8 @@ Learn about configuring Crafter Engine in the :ref:`Crafter Engine Configuration
 
    configuration
 
+|hr|
+
 --------
 Security
 --------
@@ -71,6 +73,10 @@ Learn about Crafter Engine's security features in the :ref:`Crafter Engine Secur
    :hidden:
 
    security
+
+|hr|
+
+.. _crafter-engine-api:
 
 --------
 REST API
