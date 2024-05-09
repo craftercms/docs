@@ -355,6 +355,52 @@ the steps described in :ref:`debugging-deployer-issues`
   Changing or deleting a processed commit file could cause unchanged files to be indexed again and
   it should be done as a last resort in case of errors.
 
+.. _jacket:
+
+^^^^^^
+Jacket
+^^^^^^
+Indexing rich document content into a single search entry greatly improves searchability in your project.
+Crafter Deployer is able to index the content of a rich document (e.g. PDF, DOC, DOCX, PTT, etc.) along with metadata
+and content found in an associated descriptor item (the items that reference the rich document).
+This descriptor item is called a ``jacket``.
+
+Jackets are identified by their path and a regex that is configured at the Deployer configuration's target level.
+Below is a sample ``base-target.yaml`` file showing how jackets are configured:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
+    :linenos:
+
+    binary:
+      # The list of binary file mime types that should be indexed
+      supportedMimeTypes:
+        - application/pdf
+        - application/msword
+        - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+        - application/vnd.ms-excel
+        - application/vnd.ms-powerpoint
+        - application/vnd.openxmlformats-officedocument.presentationml.presentation
+      # The regex path patterns for the metadata ("jacket") files of binary/document files
+      metadataPathPatterns:
+        - ^/?site/documents/.+\.xml$
+      # The regex path patterns for binary/document files that are store remotely
+      remoteBinaryPathPatterns: &remoteBinaryPathPatterns
+        # HTTP/HTTPS URLs are only indexed if they contain the protocol (http:// or https://). Protocol relative
+        # URLs (like //mydoc.pdf) are not supported since the protocol is unknown to the back-end indexer.
+        - ^(http:|https:)//.+$
+        - ^/remote-assets/.+$
+      # The regex path patterns for binary/document files that should be associated to just one metadata file and are
+      # dependant on that parent metadata file, so if the parent is deleted the binary should be deleted from the index
+      childBinaryPathPatterns: *remoteBinaryPathPatterns
+      # The XPaths of the binary references in the metadata files
+      referenceXPaths:
+        - //item/key
+        - //item/url
+
+Administrators must configure where jackets are located via the ``base-target.yaml`` configuration file as described
+above. For Crafter Cloud users, deployment target configurations must be submitted to Crafter Cloud Ops.
+
 |hr|
 
 .. _crafter-deployer-processors-guide:
