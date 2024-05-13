@@ -366,7 +366,7 @@ and content found in an associated descriptor item (the items that reference the
 This descriptor item is called a ``jacket``.
 
 Jackets are identified by their path and a regex that is configured at the Deployer configuration's target level.
-Below is a sample ``base-target.yaml`` file showing how jackets are configured:
+In the example below, jacket files live under ``/site/documents``:
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
