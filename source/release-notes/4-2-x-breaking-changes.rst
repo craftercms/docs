@@ -23,7 +23,7 @@ before upgrading. Please review the following and apply changes as required:
   - CrafterCMS 4.2.x requires Git. |br| See :ref:`Requirements <requirements_supported_platforms>` for more
     information on CrafterCMS requirements.
 
-  - CrafterCMS 4.1.0 has a new Studio UI. To get the same Sidebar you're used to, update
+  - CrafterCMS 4.2.x has a new Studio UI. To get the same Sidebar you're used to, update
     the :ref:`user-interface-configuration`
 
   - Update ICE to move to :ref:`XB <experience-builder>`
