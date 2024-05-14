@@ -31,8 +31,6 @@ Dependency Updates
 ^^^^^^^^^^^^^^^^^^
 * Noteworthy dependency updates:
 
-* Noteworthy dependency updates:
-
   - Spring Framework to version 6
   - Spring Boot to version 3
   - Freemarker to version 2.3.33
