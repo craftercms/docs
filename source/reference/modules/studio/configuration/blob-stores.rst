@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.3
+:last-updated: 4.1.4
 
 .. _blob-stores:
 
@@ -38,6 +38,10 @@ Here's a sample Blob Stores Configuration file (click on the triangle on the lef
    </details>
 
 |
+
+where:
+
+- The environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file. See :ref:`here <env-var-serverless-deployments>` for more information on environment variables used in serverless deployments
 
 Remember to encrypt your credentials. For more information on how to manage/encode your secrets such as AWS credentials,
 please see :ref:`managing-secrets`

@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.1.4
 
 .. index:: Configuration, Ports, Hostnames, Apache HTTPd, Configure Reverse Proxy
 
@@ -323,6 +323,567 @@ Depending on your setup, the following CrafterCMS properties may need to be setu
 
 .. note::
     When configuring the delivery environment, it is possible to specify an HTTP header called ``X-Crafter-Site`` set to the value of ``{myproject}`` instead of using a URL rewrite as shown in the examples above.
+
+.. _environment-variables:
+
+^^^^^^^^^^^^^^^^^^^^^
+Environment Variables
+^^^^^^^^^^^^^^^^^^^^^
+Using environment variables allows you to inject properties into a vanilla installation without modifying any actual files, which is especially useful when using Docker or Kubernetes. The following environment variables are configured in the ``CRAFTER_HOME/bin/crafter-setenv.sh``  file. Remember to restart your installation so your changes to the file will take effect.
+
+.. _env-var-location:
+
+""""""""
+Location
+""""""""
+The following environment variables are used to change location of data, logs, etc.
+
+.. list-table:: Location Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - CRAFTER_HOME
+      - CrafterCMS *Authoring/Delivery* path
+      - {CrafterCMS-install-directory}/crafter-{env}/
+    * - CRAFTER_LOGS_DIR
+      - CrafterCMS logs file path
+      - $CRAFTER_HOME/logs
+    * - CRAFTER_DATA_DIR
+      - CrafterCMS data file path
+      - $CRAFTER_HOME/data
+    * - CRAFTER_TEMP_DIR
+      - CrafterCMS temporary directory path
+      - $CRAFTER_HOME/temp
+    * - CRAFTER_BACKUPS_DIR
+      - CrafterCMS backup directory path
+      - $CRAFTER_HOME/backups
+
+See the following for more information on using the above location environment variables:
+
+- :ref:`logging`
+- :ref:`running-the-backup-script`
+- :ref:`changing-the-data-and-logs-folder-location`
+
+.. _env-var-ports-and-hosts:
+
+"""""""""""""""
+Ports and Hosts
+"""""""""""""""
+Here are the environment variables used for configuring hosts and ports:
+
+.. list-table:: Location Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - MAIL_HOST
+      - CrafterCMS mail host
+      - localhost
+    * - MAIL_PORT
+      - CrafterCMS mail port
+      - 25
+    * - SEARCH_HOST
+      - Search host
+      - localhost
+    * - SEARCH_PORT
+      - Search port
+      - 9201
+    * - DEPLOYER_HOST
+      - Deployer host
+      - localhost
+    * - DEPLOYER_PORT
+      - Deployer port
+      - 9201
+    * - MONGODB_HOST
+      - MongoDB host
+      - localhost
+    * - MONGODB_PORT
+      - MongoDB port
+      - 27020
+    * - MARIADB_HOST
+      - MariaDb host (authoring only)
+      - 127.0.0.1
+    * - MARIADB_PORT
+      - MariaDb port  (authoring only)
+      - 33306
+    * - TOMCAT_HOST
+      - Tomcat host
+      - localhost
+    * - TOMCAT_HTTP_PORT
+      - Tomcat Http port
+      - 8080
+    * - TOMCAT_HTTPS_PORT
+      - Tomcat SSL (https) port
+      - 8443
+    * - TOMCAT_AJP_PORT
+      - Tomcat AJP port
+      - 8009
+    * - TOMCAT_SHUTDOWN_PORT
+      - Tomcat shutdown port
+      - 8005
+    * - TOMCAT_DEBUG_PORT
+      - Tomcat debug port
+      - 8000
+
+See :ref:`change-ports-and-hostnames` for more information.
+
+.. _env-var-urls:
+
+""""
+URLs
+""""
+Here are the environment variables used for setting URLs for various CrafterCMS modules:
+
+.. list-table:: Location Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - SEARCH_URL
+      - Search URL
+      - http://\$SEARCH_HOST:\$SEARCH_PORT
+    * - DEPLOYER_URL
+      - Crafter Deployer URL
+      - http://\$DEPLOYER_HOST:\$DEPLOYER_PORT
+    * - STUDIO_URL
+      - Crafter Studio URL
+      - http://\$TOMCAT_HOST:\$TOMCAT_HTTP_PORT/studio
+    * - ENGINE_URL
+      - Crafter Engine URL
+      - http://\$TOMCAT_HOST:\$TOMCAT_HTTP_PORT/
+    * - PROFILE_URL
+      - Crafter Profile URL
+      - http://\$TOMCAT_HOST:\$TOMCAT_HTTP_PORT/crafter-profile
+    * - SOCIAL_URL
+      - Crafter Social URL
+      - http://\$TOMCAT_HOST:\$TOMCAT_HTTP_PORT/crafter-social
+
+See the following for examples on where the above URL environment variables are used:
+
+- :ref:`studio-preview-deployer-config`
+- :ref:`crafter-deployer-administration`
+
+
+.. _env-var-java-options:
+
+""""""""""""
+Java Options
+""""""""""""
+Here are the environment variables used for setting Java JVM options:
+
+.. list-table:: Java Options Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - OPENSEARCH_JAVA_OPTS
+      - OpenSearch Java options
+      - "-server -Xss1024K -Xmx1G"
+    * - DEPLOYER_JAVA_OPTS
+      - Deployer Java options
+      - "-server -Xss1024K -Xmx1G"
+    * - CATALINA_OPTS
+      - Tomcat options
+      - "-server -Xss1024K -Xms1G -Xmx4G"
+
+See the following for examples using the Java options environment variable:
+
+- :ref:`studio-performance-tuning`
+- :ref:`engine-performance-tuning`
+
+.. _env-var-tomcat:
+
+""""""
+Tomcat
+""""""
+Here are the environment variables used for configuring Tomcat:
+
+.. list-table:: Tomcat Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - CATALINA_HOME
+      - Apache Tomcat files path
+      - $CRAFTER_HOME/bin/apache-tomcat
+    * - CATALINA_PID
+      - Tomcat process id file save path
+      - $CATALINA_HOME/bin/tomcat.pid
+    * - CATALINA_LOGS_DIR
+      - Tomcat file logs path
+      - $CRAFTER_LOGS_DIR/tomcat
+    * - CATALINA_OUT
+      - Tomcat main log file
+      - $CATALINA_LOGS_DIR/catalina.out
+    * - CATALINA_TMPDIR
+      - Tomcat temporary directory
+      - $CRAFTER_TEMP_DIR/tomcat
+
+.. _env-var-opensearch:
+
+""""""""""
+OpenSearch
+""""""""""
+Here are the environment variables used for configuring OpenSearch:
+
+.. list-table:: OpenSearch Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - OPENSEARCH_JAVA_HOME
+      - OpenSearch Java home directory
+      - $JAVA_HOME
+    * - OPENSEARCH_HOME
+      - OpenSearch home directory
+      - $CRAFTER_BIN_DIR/opensearch
+    * - OPENSEARCH_INDEXES_DIR
+      - OpenSearch indexes directory
+      - $CRAFTER_DATA_DIR/indexes-es
+    * - OPENSEARCH_LOGS_DIR
+      - OpenSearch log files directory
+      - $CRAFTER_LOGS_DIR/logs/search
+    * - OPENSEARCH_PID
+      - OpenSearch process Id
+      - $OPENSEARCH_HOME/opensearch.pid
+    * - OPENSEARCH_USERNAME
+      - OpenSearch username
+      -
+    * - OPENSEARCH_PASSWORD
+      - OpenSearch password
+      -
+    * - SEARCH_DOCKER_NAME
+      - OpenSearch Docker name
+      - {env}-search
+
+.. _env-var-deployer:
+
+""""""""
+Deployer
+""""""""
+Here are the environment variables used for configuring the Deployer:
+
+.. list-table:: Deployer Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - DEPLOYER_HOME
+      - Crafter Deployer jar files path
+      - $CRAFTER_HOME/bin/crafter-deployer
+    * - DEPLOYER_DATA_DIR
+      - Deployer data files directory
+      - $CRAFTER_DATA_DIR/deployer
+    * - DEPLOYER_LOGS_DIR
+      - Deployer log files directory
+      - $CRAFTER_LOGS_DIR/deployer
+    * - DEPLOYER_DEPLOYMENTS_DIR
+      - Deployer deployments files directory
+      - $CRAFTER_DATA_DIR/repos/sites
+    * - DEPLOYER_SDOUT
+      - Deployer SDOUT path
+      - $DEPLOYER_LOGS_DIR/crafter-deployer.out
+    * - DEPLOYER_PID
+      - Deployer process id file
+      - $DEPLOYER_HOME/crafter-deployer.pid
+
+.. _env-var-mongodb:
+
+"""""""
+MongoDB
+"""""""
+Here are the environment variables used for configuring MongoDB:
+
+.. list-table:: MongoDB Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - MONGODB_HOME
+      - MongoDB files path
+      - $CRAFTER_BIN_DIR/mongodb
+    * - MONGODB_PID
+      - MongoDB process id file save path
+      - $MONGODB_DATA_DIR/mongod.lock
+    * - MONGODB_DATA_DIR
+      - MongoDB data directory
+      - $CRAFTER_DATA_DIR/mongodb
+    * - MONGODB_LOGS_DIR
+      - MongoDB log files directory
+      - $CRAFTER_LOGS_DIR/mongodb
+
+.. _env-var-mariadb:
+
+"""""""
+MariaDb
+"""""""
+Here are the environment variables used for configuring MariaDb:
+
+.. list-table:: MariaDb Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - MARIADB_SCHEMA
+      - MariaDb schema
+      - crafter
+    * - MARIADB_HOME
+      - MariaDb files path
+      - $CRAFTER_BIN_DIR/dbms
+    * - MARIADB_DATA_DIR
+      - MariaDb data directory
+      - $CRAFTER_DATA_DIR/db
+    * - MARIADB_ROOT_USER
+      - MariaDb root username
+      -
+    * - MARIADB_ROOT_PASSWD
+      - MariaDb root password
+      -
+    * - MARIADB_USER
+      - MariaDb username
+      - crafter
+    * - MARIADB_PASSWD
+      - MariaDb user password
+      - crafter
+    * - MARIADB_SOCKET_TIMEOUT
+      - MariaDB socket timeout
+      - 60000
+    * - MARIADB_TCP_TIMEOUT
+      - MariaDB TCP timeout
+      - 120
+    * - MARIADB_PID
+      - MariaDB process id file
+      - \$MARIADB_HOME/\$HOSTNAME.pid
+
+.. _env-var-git:
+
+"""
+Git
+"""
+Here are the environment variables used for configuring Git:
+
+.. list-table:: Git Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - GIT_CONFIG_NOSYSTEM
+      - Ignore Git system wide configuration file
+      - true
+
+.. _env-var-management-tokens:
+
+"""""""""""""""""
+Management Tokens
+"""""""""""""""""
+Here are the environment variables used for configuring Management Tokens.
+Remember to update these per installation and provide these tokens to the status monitors:
+
+.. list-table:: Management Tokens Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - STUDIO_MANAGEMENT_TOKEN
+      - Authorization token for Studio
+      - defaultManagementToken
+    * - ENGINE_MANAGEMENT_TOKEN
+      - Authorization token for Engine
+      - defaultManagementToken
+    * - DEPLOYER_MANAGEMENT_TOKEN
+      - Authorization token for Deployer
+      - defaultManagementToken
+    * - PROFILE_MANAGEMENT_TOKEN
+      - Authorization token for Profile
+      - defaultManagementToken
+    * - SOCIAL_MANAGEMENT_TOKEN
+      - Authorization token for Social
+      - defaultManagementToken
+
+.. _env-var-configuration-files-encryption:
+
+""""""""""""""""""""""""""""""
+Configuration Files Encryption
+""""""""""""""""""""""""""""""
+Here are the environment variables used to encrypt and decrypt values inside configuration files:
+
+.. list-table:: Configuration Files Encryption Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - CRAFTER_ENCRYPTION_KEY
+      - Key used for encrypting properties
+      - default_encryption_key
+    * - CRAFTER_ENCRYPTION_SALT
+      - Salt used for encrypting properties
+      - default_encryption_salt
+
+See the following for more information on using the configuration files encryption environment variables:
+
+- :ref:`change-the-defaults`
+- :ref:`crafter-deployer-administration`
+- :ref:`cipher-configuration`
+
+.. _env-var-database-encryption:
+
+"""""""""""""""""""
+Database Encryption
+"""""""""""""""""""
+Here are the environment variables used to encrypt and decrypt values in the database:
+
+.. list-table:: Database Encryption Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - CRAFTER_SYSTEM_ENCRYPTION_KEY
+      - Key used for encrypting database values
+      - \<someDefaultKeyValue\>
+    * - CRAFTER_SYSTEM_ENCRYPTION_SALT
+      - Salt used for encrypting database values
+      - \<someDefaultSaltValue\>
+
+See - :ref:`cipher-configuration` for more information on using the above environment variables.
+
+.. _env-var-serverless-deployments:
+
+""""""""""""""""""""""
+Serverless Deployments
+""""""""""""""""""""""
+Here are the environment variables used for serverless deployments:
+
+.. list-table:: Serverless Deployments Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - AWS_S3_ENDPOINT
+      - Endpoint used for accessing S3 buckets
+      - ""
+    * - AWS_S3_PATH_STYLE_ACCESS
+      - Use path style URLs for accessing S3 buckets
+      - false
+    * - SERVERLESS_NAMESPACE
+      - Namespace used for deployment
+      - cloud-sites
+    * - PREVIEW_BUCKET_NAME_PATTERN
+      - Name pattern for S3 Preview bucket
+      - ${SERVERLESS_NAMESPACE}-blobs-\${siteName}
+    * - PREVIEW_BUCKET_PREFIX_PATTERN
+      - Prefix pattern for S3 Preview bucket
+      - ""
+    * - STAGING_BUCKET_NAME_PATTERN
+      - Name pattern for S3 Staging bucket
+      - ${SERVERLESS_NAMESPACE}-site-\${siteName}-staging
+    * - STAGING_BUCKET_PREFIX_PATTERN
+      - Prefix pattern for S3 Staging bucket
+      - ""
+    * - LIVE_BUCKET_NAME_PATTERN
+      - Name pattern for S3 Live bucket
+      - ${SERVERLESS_NAMESPACE}-site-\${siteName}
+    * - LIVE_BUCKET_PREFIX_PATTERN
+      - Prefix pattern for S3 Live bucket
+      - ""
+
+See :ref:`blob-stores` for more information on using the above environment variables.
+
+.. _env-var-configuration:
+
+"""""""""""""
+Configuration
+"""""""""""""
+Here are the configuration variables used in CrafterCMS:
+
+.. list-table:: Configuration Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - CRAFTER_ENVIRONMENT
+      - Name used for environment specific configurations in Studio, Engine and Deployer
+      - default
+
+See the following for examples on using the configuration environment variable:
+
+- :ref:`engine-multi-environment-support`
+- :ref:`studio-multi-environment-support`
+
+.. _env-var-ssh:
+
+"""
+SSH
+"""
+Here are the SSH variables used in CrafterCMS:
+
+.. list-table:: SSH Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - CRAFTER_SSH_CONFIG
+      - CrafterCMS folder path for the SSH configuration
+      - $CRAFTER_DATA_DIR/ssh |
+
+.. _env-var-studio-token:
+
+""""""""""""
+Studio Token
+""""""""""""
+Here are the environment variables used for configuring Studio's access tokens for API's:
+
+.. list-table:: Studio Configuration Environment Variables
+    :header-rows: 1
+
+    * - Variable Name
+      - Description
+      - Default Value
+    * - STUDIO_TOKEN_ISSUER
+      - Issuer for generated tokens
+      - Crafter Studio
+    * - STUDIO_TOKEN_VALID_ISSUERS
+      - Issuer for generated tokens
+      - Crafter Studio
+    * - STUDIO_TOKEN_AUDIENCE
+      - Audience for generation and validation of access tokens
+      -
+    * - STUDIO_TOKEN_TIMEOUT
+      - Expiration time of access tokens in minutes
+      - 5
+    * - STUDIO_TOKEN_SIGN_PASSWORD
+      - Password for signing the access tokens
+      -
+    * - STUDIO_TOKEN_ENCRYPT_PASSWORD
+      - Password for encrypting the access tokens
+      -
+    * - STUDIO_REFRESH_TOKEN_NAME
+      - Name of the cookie to store the refresh token
+      - refresh_token
+    * - STUDIO_REFRESH_TOKEN_MAX
+      - Expiration time of the refresh token cookie in seconds
+      - 300
+    * - STUDIO_REFRESH_TOKEN_SECURE
+      - Indicates if refresh token cookie should be secure
+      - false
+
+See :ref:`studio-access-tokens` for more information.
 
 |hr|
 

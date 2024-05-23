@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.1.4
 
 .. _authoring-env-performance-tuning:
 
@@ -38,6 +38,8 @@ Vertical scaling can be very effective in scaling out Crafter Studio.
 .. include:: /includes/server-performance-tuning.rst
 
 |hr|
+
+.. _studio-performance-tuning:
 
 -------------------------
 Studio Performance Tuning
