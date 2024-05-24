@@ -404,10 +404,10 @@ Here are the environment variables used for configuring hosts and ports:
       - MongoDB port
       - 27020
     * - MARIADB_HOST
-      - MariaDb host (authoring only)
+      - MariaDB host (authoring only)
       - 127.0.0.1
     * - MARIADB_PORT
-      - MariaDb port  (authoring only)
+      - MariaDB port  (authoring only)
       - 33306
     * - TOMCAT_HOST
       - Tomcat host
@@ -624,36 +624,36 @@ Here are the environment variables used for configuring MongoDB:
 .. _env-var-mariadb:
 
 """""""
-MariaDb
+MariaDB
 """""""
-Here are the environment variables used for configuring MariaDb:
+Here are the environment variables used for configuring MariaDB:
 
-.. list-table:: MariaDb Environment Variables
+.. list-table:: MariaDB Environment Variables
     :header-rows: 1
 
     * - Variable Name
       - Description
       - Default Value
     * - MARIADB_SCHEMA
-      - MariaDb schema
+      - MariaDB schema
       - crafter
     * - MARIADB_HOME
-      - MariaDb files path
+      - MariaDB files path
       - $CRAFTER_BIN_DIR/dbms
     * - MARIADB_DATA_DIR
-      - MariaDb data directory
+      - MariaDB data directory
       - $CRAFTER_DATA_DIR/db
     * - MARIADB_ROOT_USER
-      - MariaDb root username
+      - MariaDB root username
       -
     * - MARIADB_ROOT_PASSWD
-      - MariaDb root password
+      - MariaDB root password
       -
     * - MARIADB_USER
-      - MariaDb username
+      - MariaDB username
       - crafter
     * - MARIADB_PASSWD
-      - MariaDb user password
+      - MariaDB user password
       - crafter
     * - MARIADB_SOCKET_TIMEOUT
       - MariaDB socket timeout
