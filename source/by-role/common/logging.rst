@@ -102,6 +102,8 @@ To tail the log file in the delivery environment:
 
 |hr|
 
+.. _changing-the-data-and-logs-folder-location:
+
 ------------------------------------------
 Changing the Data and Logs Folder Location
 ------------------------------------------
