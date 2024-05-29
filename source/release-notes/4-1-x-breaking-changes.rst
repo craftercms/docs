@@ -53,9 +53,6 @@ The following breaking changes applies to CrafterCMS version 4.1.3
 ^^^^^^^^^
 Studio UI
 ^^^^^^^^^
-.. note::
-    This is primarily an internal change. It would only affect those developing authoring applications using the functions described below either via ``@craftercms/studio-ui`` npm package or using the ``craftercms`` global variable in an authoring extension.
-
 * ``services/content/insertComponent``: function now requires the parent document content type and the path argument
   moves to being earlier in the argument list. The shifting of the arguments seeks a more coherent argument order,
   grouping parent-related arguments first, followed by inserted instance related arguments, and finally supportive
@@ -79,3 +76,6 @@ Studio UI
 
 * ``components/LegacyComponentsPanel/utils/fetchAndInsertContentInstance``: the function now requires the parent
   content type id as its last argument. Note this whole component module is likely to be removed in the future.
+
+.. note::
+    The changes above in Studio UI is primarily an internal change. It would only affect those developing authoring applications using the functions described above either via ``@craftercms/studio-ui`` npm package or using the ``craftercms`` global variable in an authoring extension.
