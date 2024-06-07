@@ -366,11 +366,22 @@ and content found in an associated descriptor item (the items that reference the
 This descriptor item is called a ``jacket``.
 
 Jackets are identified by their path and a regex that is configured at the Deployer configuration's target level.
-In the example below, jacket files live under ``/site/documents``:
+Administrators must configure where jackets are located via the ``base-target.yaml`` configuration file found in
+``CRAFTER_HOME/bin/crafter-deployer/config/``. For Crafter Cloud users, deployment target configurations must be
+submitted to Crafter Cloud Ops. Jacket files live under ``/site/documents`` by default.
+
+Jackets are basically additional metadata for content. When a binary file (which includes documents like PDFs and
+word files) is indexed, the XML of the jacket, along with the content of the binary file, are indexed under the path of
+the binary file. E.g. when indexing the file ``/static-assets/documents/contracts/2024-contract.pdf``, the Deployer
+resolves its jacket at ``/site/documents/contracts/2024-contract.xml``, extracts the XML content of the jacket,
+and indexes everything under ``/static-assets/documents/contracts/2024-contract.pdf``
+
+See below for an example of configuring jackets. Note that in the example below, jacket files live under ``/site/documents``:
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
     :linenos:
+    :emphasize-lines: 10-12
 
     binary:
       # The list of binary file mime types that should be indexed
@@ -384,7 +395,7 @@ In the example below, jacket files live under ``/site/documents``:
       # The regex path patterns for the metadata ("jacket") files of binary/document files
       metadataPathPatterns:
         - ^/?site/documents/.+\.xml$
-      # The regex path patterns for binary/document files that are store remotely
+      # The regex path patterns for binary/document files that are stored remotely
       remoteBinaryPathPatterns: &remoteBinaryPathPatterns
         # HTTP/HTTPS URLs are only indexed if they contain the protocol (http:// or https://). Protocol relative
         # URLs (like //mydoc.pdf) are not supported since the protocol is unknown to the back-end indexer.
@@ -398,8 +409,7 @@ In the example below, jacket files live under ``/site/documents``:
         - //item/key
         - //item/url
 
-Administrators must configure where jackets are located via the ``base-target.yaml`` configuration file as described
-above. For Crafter Cloud users, deployment target configurations must be submitted to Crafter Cloud Ops.
+|
 
 |hr|
 
