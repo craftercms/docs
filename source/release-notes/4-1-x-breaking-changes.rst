@@ -50,6 +50,50 @@ Breaking Changes in CrafterCMS 4.1.3
 ------------------------------------
 The following breaking changes applies to CrafterCMS version 4.1.3
 
+^^^^^^
+Engine
+^^^^^^
+Crafter Engine relies on a library that marshals objects to JSON. This dependency was updated in CrafterCMS version 4.1.0,
+and it introduced a change of behavior in Crafter Engine for ``getItem`` that affected a small subset of content items
+and fields.
+
+The change was as follows:
+If you set an attribute on the field (e.g., ``tokenized``) then the library would marshal the field as an object where
+the attribute was a property of the object and the value was marshaled as a property called ``text``
+
+.. code-block:: json
+    :caption: *Response for Crafter Engine getItem API for versions 4.1.0 - 4.1.2*
+    :force:
+
+    {
+      ...
+      "productName_s": {
+        tokenized": "true",
+        "text": "test"
+      }
+    }
+
+|
+
+However, the correct response is as follows:
+
+.. code-block:: json
+    :caption: *Response for Crafter Engine getItem API for versions 4.1.3 and later*
+    :force:
+
+    {
+      ...
+      "productName_s": "test"
+    }
+
+|
+
+CrafterCMS version 4.1.3 and later does not marshal single value fields with attributes as objects.
+This issue has been corrected so all string and text fields, with or without attributes, are marshaled in a consistent
+fashion. Users of CrafterCMS version 4.1.0 - 4.1.2 may need to make minor changes to code that consumes Crafter Engine
+``getItem`` responses if they have fields that leverage the ``tokenized`` property.
+
+
 ^^^^^^^^^
 Studio UI
 ^^^^^^^^^

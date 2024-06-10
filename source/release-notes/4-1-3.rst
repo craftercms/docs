@@ -58,7 +58,10 @@ Bug Fixes
 * `Fixed issue with disableFlattening flag <https://github.com/craftercms/craftercms/issues/6532>`__
 
 * `Fixed issue with Engine content store get item API empty value behavior <https://github.com/craftercms/craftercms/issues/6526>`__ |br|
-  
+  Crafter Engine does not marshal single value fields with attributes as objects starting version 4.1.3 and later |br|
+  See :ref:`Breaking changes <breaking-changes-4-1-3>` for more information on the updates to Crafter Engine marshaling
+  approach for fields with attributes.
+
 * `Fixed issue with children count and X more items button not working in the Sidebar Navigator tree <https://github.com/craftercms/craftercms/issues/6518>`__
 
 * `Fixed issue with site screenshot request when proxy is enabled  <https://github.com/craftercms/craftercms/issues/6511>`__
