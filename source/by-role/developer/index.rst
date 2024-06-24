@@ -96,6 +96,8 @@ Aside from the core concepts listed above, a developer needs to be familiar with
       - Provides you information on adding a new language to Studio
     * - :ref:`localization`
       - Provides you information on localizing content
+    * - :ref:`developer-environment-variable-access`
+      - Provides you information on accessing custom environment variables
 
 .. toctree::
     :maxdepth: 1
@@ -112,6 +114,7 @@ Aside from the core concepts listed above, a developer needs to be familiar with
     common/custom-error-pages
     common/adding-a-new-language
     common/localization
+    common/environment-variable-access
 
 For templated projects, there are more topics to cover:
 

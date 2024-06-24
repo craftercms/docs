@@ -329,13 +329,20 @@ Depending on your setup, the following CrafterCMS properties may need to be setu
 ^^^^^^^^^^^^^^^^^^^^^
 Environment Variables
 ^^^^^^^^^^^^^^^^^^^^^
-Using environment variables allows you to inject properties into a vanilla installation without modifying any actual files, which is especially useful when using Docker or Kubernetes. The following environment variables are configured in the ``CRAFTER_HOME/bin/crafter-setenv.sh``  file. Remember to restart your installation so your changes to the file will take effect.
+Using environment variables allows you to inject properties into a vanilla installation without modifying any actual
+files, which is especially useful when using Docker or Kubernetes.
+
+""""""""""""""""""""""""""""""""""""""""
+CrafterCMS Default Environment Variables
+""""""""""""""""""""""""""""""""""""""""
+The following environment variables are configured in the ``CRAFTER_HOME/bin/crafter-setenv.sh``  file. Remember to
+restart your installation so your changes to the file will take effect.
 
 .. _env-var-location:
 
-""""""""
+~~~~~~~~
 Location
-""""""""
+~~~~~~~~
 The following environment variables are used to change location of data, logs, etc.
 
 .. list-table:: Location Environment Variables
@@ -368,9 +375,9 @@ See the following for more information on using the above location environment v
 
 .. _env-var-ports-and-hosts:
 
-"""""""""""""""
+~~~~~~~~~~~~~~~
 Ports and Hosts
-"""""""""""""""
+~~~~~~~~~~~~~~~
 Here are the environment variables used for configuring hosts and ports:
 
 .. list-table:: Location Environment Variables
@@ -432,9 +439,9 @@ See :ref:`change-ports-and-hostnames` for more information.
 
 .. _env-var-urls:
 
-""""
+~~~~
 URLs
-""""
+~~~~
 Here are the environment variables used for setting URLs for various CrafterCMS modules:
 
 .. list-table:: Location Environment Variables
@@ -470,9 +477,9 @@ See the following for examples on where the above URL environment variables are 
 
 .. _env-var-java-options:
 
-""""""""""""
+~~~~~~~~~~~~
 Java Options
-""""""""""""
+~~~~~~~~~~~~
 Here are the environment variables used for setting Java JVM options:
 
 .. list-table:: Java Options Environment Variables
@@ -498,9 +505,9 @@ See the following for examples using the Java options environment variable:
 
 .. _env-var-tomcat:
 
-""""""
+~~~~~~
 Tomcat
-""""""
+~~~~~~
 Here are the environment variables used for configuring Tomcat:
 
 .. list-table:: Tomcat Environment Variables
@@ -527,9 +534,9 @@ Here are the environment variables used for configuring Tomcat:
 
 .. _env-var-opensearch:
 
-""""""""""
+~~~~~~~~~~
 OpenSearch
-""""""""""
+~~~~~~~~~~
 Here are the environment variables used for configuring OpenSearch:
 
 .. list-table:: OpenSearch Environment Variables
@@ -565,9 +572,9 @@ Here are the environment variables used for configuring OpenSearch:
 
 .. _env-var-deployer:
 
-""""""""
+~~~~~~~~
 Deployer
-""""""""
+~~~~~~~~
 Here are the environment variables used for configuring the Deployer:
 
 .. list-table:: Deployer Environment Variables
@@ -597,9 +604,9 @@ Here are the environment variables used for configuring the Deployer:
 
 .. _env-var-mongodb:
 
-"""""""
+~~~~~~~
 MongoDB
-"""""""
+~~~~~~~
 Here are the environment variables used for configuring MongoDB:
 
 .. list-table:: MongoDB Environment Variables
@@ -623,9 +630,9 @@ Here are the environment variables used for configuring MongoDB:
 
 .. _env-var-mariadb:
 
-"""""""
+~~~~~~~
 MariaDB
-"""""""
+~~~~~~~
 Here are the environment variables used for configuring MariaDB:
 
 .. list-table:: MariaDB Environment Variables
@@ -667,9 +674,9 @@ Here are the environment variables used for configuring MariaDB:
 
 .. _env-var-git:
 
-"""
+~~~
 Git
-"""
+~~~
 Here are the environment variables used for configuring Git:
 
 .. list-table:: Git Environment Variables
@@ -684,9 +691,9 @@ Here are the environment variables used for configuring Git:
 
 .. _env-var-management-tokens:
 
-"""""""""""""""""
+~~~~~~~~~~~~~~~~~
 Management Tokens
-"""""""""""""""""
+~~~~~~~~~~~~~~~~~
 Here are the environment variables used for configuring Management Tokens.
 Remember to update these per installation and provide these tokens to the status monitors:
 
@@ -714,9 +721,9 @@ Remember to update these per installation and provide these tokens to the status
 
 .. _env-var-configuration-files-encryption:
 
-""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Configuration Files Encryption
-""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Here are the environment variables used to encrypt and decrypt values inside configuration files:
 
 .. list-table:: Configuration Files Encryption Environment Variables
@@ -740,9 +747,9 @@ See the following for more information on using the configuration files encrypti
 
 .. _env-var-database-encryption:
 
-"""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~
 Database Encryption
-"""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~
 Here are the environment variables used to encrypt and decrypt values in the database:
 
 .. list-table:: Database Encryption Environment Variables
@@ -762,9 +769,9 @@ See - :ref:`cipher-configuration` for more information on using the above enviro
 
 .. _env-var-serverless-deployments:
 
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 Serverless Deployments
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 Here are the environment variables used for serverless deployments:
 
 .. list-table:: Serverless Deployments Environment Variables
@@ -805,9 +812,9 @@ See :ref:`blob-stores` for more information on using the above environment varia
 
 .. _env-var-configuration:
 
-"""""""""""""
+~~~~~~~~~~~~~
 Configuration
-"""""""""""""
+~~~~~~~~~~~~~
 Here are the configuration variables used in CrafterCMS:
 
 .. list-table:: Configuration Environment Variables
@@ -827,9 +834,9 @@ See the following for examples on using the configuration environment variable:
 
 .. _env-var-ssh:
 
-"""
+~~~
 SSH
-"""
+~~~
 Here are the SSH variables used in CrafterCMS:
 
 .. list-table:: SSH Environment Variables
@@ -844,9 +851,9 @@ Here are the SSH variables used in CrafterCMS:
 
 .. _env-var-studio-token:
 
-""""""""""""
+~~~~~~~~~~~~
 Studio Token
-""""""""""""
+~~~~~~~~~~~~
 Here are the environment variables used for configuring Studio's access tokens for API's:
 
 .. list-table:: Studio Configuration Environment Variables
@@ -884,6 +891,11 @@ Here are the environment variables used for configuring Studio's access tokens f
       - false
 
 See :ref:`studio-access-tokens` for more information.
+
+"""""""""""""""""""""""""""""""
+Accessing Environment Variables
+"""""""""""""""""""""""""""""""
+.. include:: /includes/environment-variables-whitelist.rst
 
 |hr|
 
