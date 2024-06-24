@@ -104,7 +104,7 @@ Here's a sample ``application.yaml`` file (click on the triangle on the left to 
 
 The ``base-target.yaml`` file is handled a little bit different. This file is loaded by Crafter Deployer every time a new target is
 being added, and is merged with the specific properties of the target, with the target's properties taking precedence. By default, the override
-location for this configuration file is ``./config/base-target.yaml``, but it can be changed through the ``application.yaml`` property
+location for this configuration file is ``{env-directory}/bin/crafter-deployer/config/base-target.yaml``, but it can be changed through the ``application.yaml`` property
 ``deployer.main.targets.config.baseYaml.overrideLocation``.
 
 Here's a sample ``base-target.yaml`` file (click on the triangle on the left to expand/collapse):

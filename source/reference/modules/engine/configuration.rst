@@ -801,6 +801,7 @@ To setup HTTP response headers, do the following:
 
 .. code-block:: xml
     :emphasize-lines: 3, 6-7
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/site-config.xml*
 
     <headerMappings>
       <mapping>
@@ -835,6 +836,7 @@ Your configuration should look something like below:
 
 .. code-block:: xml
     :emphasize-lines: 3, 6-7
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/site-config.xml*
 
     <headerMappings>
       <mapping>
@@ -865,8 +867,9 @@ compromise the system. When you try to execute a script that contains insecure e
 similar to this:
 
 .. code-block:: none
+    :caption: *Error message encountered for scripts containing insecure expressions*
 
-  UnsupportedOperationException: Insecure call staticMethod java.lang.Runtime getRuntime ...
+    UnsupportedOperationException: Insecure call staticMethod java.lang.Runtime getRuntime ...
 
 |
 
@@ -1065,7 +1068,7 @@ Here's a sample urlrewrite.xml file (click on the triangle on the left to expand
    <summary><a>Sample "urlrewrite.xml"</a></summary>
 
 .. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-urlrewrite.xml
-   :caption: *CRAFTER_HOME/data/repos/sites/PROJECTNAME/sandbox/config/engine/urlrewrite.xml*
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/urlrewrite.xml*
    :language: xml
    :linenos:
 
@@ -1100,7 +1103,7 @@ The following section allows you to configure Single Page Application (SPA) mode
 
 
 .. code-block:: xml
-    :caption: *config/engine/site-config.xml*
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/site-config.xml*
 
     (Single Page Application Properties (React JS, Angular, Vue.js, etc.))
     <spa>
@@ -1120,7 +1123,7 @@ CORS
 The following section allows you to configure CORS headers in REST API responses when not in preview mode.
 
 .. code-block:: xml
-    :caption: *config/engine/site-config.xml*
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/site-config.xml*
 
     (CORS Properties)
     <cors>
@@ -1454,9 +1457,10 @@ Max Items
 The following allows you to configure the maximum number of objects in Engine's cache:
 
 .. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
-   # The max number of items that each site cache can have
-   crafter.engine.site.default.cache.maxAllowedItems=250000
+    # The max number of items that each site cache can have
+    crafter.engine.site.default.cache.maxAllowedItems=250000
 
 """""""""""""
 Cache Warming
@@ -1464,6 +1468,7 @@ Cache Warming
 The following allows you to configure items to be warmed up (preloaded) in the cache:
 
 .. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
     :emphasize-lines: 7,10,13
 
     #################
@@ -1495,9 +1500,10 @@ URL Transformations Cache
 The following allows you to configure whether the URL transformation performed by the view resolver will be cached:
 
 .. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
-   # Flag that indicates if the URL transformations performed by the view resolver should be cached
-   crafter.engine.page.view.resolver.url.transformation.cache=false
+    # Flag that indicates if the URL transformations performed by the view resolver should be cached
+    crafter.engine.page.view.resolver.url.transformation.cache=false
 
 .. _s3-object-caching:
 
@@ -1511,6 +1517,7 @@ S3 Object
 The following allows you to configure a white list of paths for caching in memory when using S3 store and also the maximum content length for S3 objects allowed to be cached in memory
 
 .. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
     # Maximum content length (in bytes) for S3 objects to be cached in memory. Larger files will be retrieved
     # directly from S3 every time they are requested.
@@ -1639,7 +1646,7 @@ when `status <../../../_static/api/engine.html#tag/monitoring/operation/status>`
 location of your health check custom script, is configured in your project's ``site-config.xml`` file as seen below:
 
 .. code-block::
-    :caption: *config/engine/site-config.xml*
+    :caption: *CRAFTER_HOME/data/repos/site/PROJECT_NAME/sandbox/config/engine/site-config.xml*
 
     # The path of the Groovy script for site health check
     crafter.engine.site.default.health-check.script.path=/scripts/health-check.groovy
@@ -1656,7 +1663,7 @@ Navigation
 The following section allows you to configure additional fields for dynamic navigation items
 
 .. code-block:: xml
-    :caption: *config/engine/site-config.xml*
+    :caption: *CRAFTER_HOME/data/repos/site/PROJECT_NAME/sandbox/config/engine/site-config.xml*
 
     (Navigation Properties)
     <navigation>
@@ -1675,6 +1682,7 @@ Search Timeouts
 The following allows you to configure the search client connection timeout, socket timeout and number of threads.
 
 .. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
     :linenos:
 
     # The connection timeout in milliseconds, if set to -1 the default will be used
@@ -1756,7 +1764,7 @@ SpEL expressions support is disabled by default.
 ^^^^^^^^^^^^^^^^^^^^
 Spring Configuration
 ^^^^^^^^^^^^^^^^^^^^
-Each project can have it's own Spring application context. Just as with site-config.xml, beans
+Each project can have it's own Spring application context. Just as with ``site-config.xml``, beans
 can be overwritten using the following locations:
 
 Spring Configuration Files
@@ -1776,7 +1784,7 @@ As an example, assuming you have defined a Groovy class under ``/scripts/classes
 you can define a bean like this:
 
 .. code-block:: xml
-  :caption: application-context.xml
+  :caption: */config/engine/application-context.xml*
   :linenos:
 
 	<?xml version="1.0" encoding="UTF-8"?>
@@ -1820,6 +1828,7 @@ Configure the MongoDB URI
 To define the connection between MongoDB and Engine, add the URI in the config file `/config/engine/site-config.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio sidebar to Project Tools > Configuration, and finally picking up the **Engine Project Configuration** option from the dropdown).
 
 .. code-block:: xml
+    :caption: */config/engine/site-config.xml*
 
     <site>
       <db>
@@ -1840,6 +1849,7 @@ Create a GMongo Client
 To access Mongo from Groovy, we'll use a GMongo client. We'll need to add some beans in `/config/engine/application-context.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio sidebar to Project Tools > Configuration, and finally picking up the **Engine Site Application Context** option from the dropdown).
 
 .. code-block:: xml
+    :caption: */config/engine/application-context.xml*
     :linenos:
 
     <beans xmlns="http://www.springframework.org/schema/beans"
