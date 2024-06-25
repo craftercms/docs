@@ -411,6 +411,38 @@ See below for an example of configuring jackets. Note that in the example below,
 
 |
 
+"""""""
+Example
+"""""""
+Let's take a look at an example of setting up jackets for binary content. We'll use a project created using the Website
+Editorial blueprint, and do the following:
+
+#. Create directory for binary content ``static-assets/documents``, and the directory for storing the
+   jackets ``/site/documents/`` in your project
+#. Setup permissions for roles interacting with the documents and add Sidebar cabinet for the new content type created
+   in a previous step
+#. Create content model for jackets, we'll use ``Document`` as the content type name
+
+Let's begin setting up a jacket for binary contents.
+
+First, we'll create the directory that will contain the binary content, ``static-assets/documents`` via Studio. On the
+Sidebar, scroll down to ``static-assets``, then click on the three dots next to it and select ``New Folder`` and type in
+``Documents`` for the ``Folder Name``.
+
+Next, we'll create the directory for storing the jackets in the project ``/site/documents/`` using your favorite
+terminal program, add a ``.keep`` file inside the directory and finally add and commit it.
+
+.. code-block:: bash
+
+    cd CRAFTER_HOME/data/repos/sites/SITENAME/sandbox
+    mkdir site/documents
+    touch site/documents/.keep
+    git add site/documents/.keep
+    git commit -m "Add documents folder"
+
+The next step is to set up the Sidebar cabinet for our jackets in Studio.
+
+
 |hr|
 
 .. _crafter-deployer-processors-guide:
