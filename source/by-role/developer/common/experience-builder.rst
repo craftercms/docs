@@ -1575,6 +1575,28 @@ Angular, Vue and Other JS Applications
 The easiest way to integrate XB with your JS application is by putting attributes on each HTML element that
 represents a model, field or item of a CrafterCMS content type and then invoking XB initializer.
 
+To initialize XB, the following needs to be added to your code:
+
+.. code-block:: js
+
+    import { fetchIsAuthoring, initExperienceBuilder } from '@craftercms/experience-builder';
+
+    // Check if we're in authoring
+    fetchIsAuthoring().then((isAuthoring) => {
+       // If we're in authoring, initialize XB
+       if (isAuthoring) {
+          initExperienceBuilder()
+       }
+    })
+
+Remember that we need an object parameter for the ``initExperienceBuilder`` function with the following keys/values:
+
+.. code-block:: js
+
+    initExperienceBuilder({ isAuthoring, path, modelId });
+
+Note that ``modelId`` is an optional key/value.
+
 .. _fetchIsAuthoring:
 
 ~~~~~~~~~~~~~~~~
