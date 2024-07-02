@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.0
+:last-updated: 4.2.0
 
 .. _upgrading-search:
 
@@ -21,7 +21,7 @@ The steps for upgrading to OpenSearch follows almost exactly the same steps as l
 |hr|
 
 --------------------------------------
-Upgrading 3.1.x -> 4.1.0 (from ES 6.x)
+Upgrading 3.1.x -> 4.2.0 (from ES 6.x)
 --------------------------------------
 To upgrade your 3.1.x installation, we'll be running the upgrade scripts from a new binary archive.
 We'll use the ``upgrade-search.sh`` script, which will update the data in place.
@@ -54,35 +54,103 @@ Here is the ``upgrade-search`` script params:
 Here are the steps to  upgrade your CrafterCMS  3.1.x install:
 
 #. Download the CrafterCMS version you'd like to upgrade to, and extract the files.
+#. Configure the root directory of the new bundle to use Java version 17 (This is required to run the ``upgrade-search.sh`` 
+   script since ES 7 won't run with Java 21)
 #. Run the ``upgrade-search.sh`` script from your newly extracted files.
 
    .. code-block:: bash
        :caption: *Run the upgrade-search script*
+       :emphasize-lines: 1
 
-       ./upgrade-search.sh /path/of/install/to/be/upgraded --stay-alive
+       ./bin/upgrade/upgrade-search.sh /path/of/install/to/be/upgraded --stay-alive
+       ========================================================================
+       Search upgrade started
+       ========================================================================
+       ...
+       End process. Stop Elasticsearch
+       Move indexes from 'data/indexes-es' to 'indexes'
+       ========================================================================
+       Search upgrade completed
+       ========================================================================
 
-#. Upgrade using the ``upgrade-target.sh`` script
+#. Configure the root directory back to Java version 21
+#. Upgrade using the ``upgrade-target.sh`` script. We'll need to upgrade the target without backing up the bin folder.
+   This is because the MariaDB version is now 11 for 4.2.0, and we cannot start the old MariaDB from the new bundle.
+   Please manually back it up before running the ``upgrade-target.sh`` script. Remember to enter ``No`` when prompted
+   by the script ``Backup the bin folder before upgrade? [(Y)es/(N)o]:``
 
    .. code-block:: bash
        :caption: *Run the upgrade-target script*
+       :emphasize-lines: 1,3
 
-       ./upgrade-target.sh /path/of/install/to/be/upgraded
+       ./bin/upgrade/upgrade-target.sh /path/of/install/to/be/upgraded
+       ...
+       > Backup the bin folder before upgrade? [(Y)es/(N)o]:n
+       ...
+       ========================================================================
+       Upgrade completed
+       ========================================================================
+       !!! Please read the release notes and make any necessary manual changes, then run the post upgrade script: /path/of/install/to/be/upgraded/bin/upgrade/post-upgrade.sh !!!
 
-#. Run the ``post-upgrade.sh`` script from the install that's being upgraded.  Before starting CrafterCMS, you'll need to configure the installation root directory to use Java version 17.  Remember to read the release notes or any relevant upgrade articles and make any necessary manual changes before running the `post-upgrade.sh`` script
+#. Before performing the post-upgrade, please upgrade the DB in the install that's being upgraded.
+   You'll need to configure the installation root directory to use Java version 21 before upgrading the DB.
+
+   .. code-block:: bash
+       :caption: *Upgrade the DB*
+       :emphasize-lines: 2
+
+       cd /path/of/install/to/be/upgraded
+       ./bin/crafter.sh upgradedb
+       ...
+       ------------------------------------------------------------------------
+       Starting upgrade of embedded database /path/of/install/to/be/upgraded/data/db
+       ------------------------------------------------------------------------
+       ...
+       > Upgrade database completed
+
+#. Run the ``post-upgrade.sh`` script from the install that's being upgraded. This will start CrafterCMS and ask for
+   a signal to continue, then recreate search indexes. Remember to read the release notes or any relevant upgrade
+   articles and make any necessary manual changes before running the `post-upgrade.sh` script
 
    .. code-block:: bash
        :caption: *Run the post-upgrade script*
+       :emphasize-lines: 2,7-8
 
+       cd /path/of/install/to/be/upgraded/bin/upgrade/
        ./post-upgrade.sh
+       ========================================================================
+       Post-upgrade 3.1.30 -> 4.2.0
+       ========================================================================
+       ...
+       Please make sure Crafter has started successfully before continuing
+       > Continue? [(Y)es/(N)o]: y
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Re-creating Search indexes for sites
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       WARNING: This will delete the current Search site indexes and recreate them.
+       This is necessary because of a major Search upgrade. Don't proceed
+       if you can't have any search downtime.
+       > Proceed? [(Y)es/(N)o]: y
+       ...
+       ========================================================================
+       Post-upgrade completed
+       ========================================================================
+       Crafter has already been started, you can use the system again
 
-#. Start CrafterCMS (this could take a while because of the upgrade manager (UM) updates).
-#. All indices should be now available in OpenSearch
-#. Monitor tomcat logs on startup.
+   The script will prompt you to check that CrafterCMS has started successfully before proceeding as noted above.
+   To do this, monitor the tomcat logs and check for the line like below to make sure CrafterCMS has started
+   (this could take a while because of the upgrade manager (UM) updates):
+
+   .. code-block:: text
+
+       27-Jun-2024 08:14:11.119 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [127790] milliseconds
+
+   Once the post-upgrade script is done, all indices should be now available in OpenSearch and CrafterCMS is now ready for use.
 
 |hr|
 
 ---------------------------------------
-Upgrading 4.0.x -> 4.1.0 (from ES 7.15)
+Upgrading 4.0.x -> 4.2.0 (from ES 7.15)
 ---------------------------------------
 When upgrading from 4.0.x (running ES 7) the indices are not compatible at all, so the content needs to be reprocessed
 and indices rebuilt completely. The rebuilding of the indices is handled by the ``post-upgrade.sh`` script.
@@ -99,7 +167,22 @@ Here are the steps:
 
        ./upgrade-target.sh /path/of/install/to/be/upgraded
 
-#. Before starting CrafterCMS, you'll need to configure the installation root directory to use Java version 17.  Remember to read the release notes or any relevant upgrade articles and make any necessary manual changes before running the `post-upgrade.sh`` script as described next
+#. Before performing the post-upgrade, please upgrade the DB in the install that's being upgraded.
+   You'll need to configure the installation root directory to use Java version 21 before upgrading the DB.
+
+   .. code-block:: bash
+       :caption: *Upgrade the DB*
+       :emphasize-lines: 2
+
+       cd /path/of/install/to/be/upgraded
+       ./bin/crafter.sh upgradedb
+       ...
+       ------------------------------------------------------------------------
+       Starting upgrade of embedded database /path/of/install/to/be/upgraded/data/db
+       ------------------------------------------------------------------------
+       ...
+       > Upgrade database completed
+
 #. Run the ``post-upgrade.sh`` script. This will:
 
    - Remove old *data/indexes-es* directory (old indexes are not usable by OpenSearch)
@@ -117,45 +200,7 @@ Here are the steps:
 
    .. code-block:: text
 
-       2023-04-20 14:36:46.050  INFO 376430 --- [deployment-1] org.craftercms.deployer.impl.TargetImpl  : Deployment for editorial110-authoring finished in 9.953 secs
-
-|hr|
-
-.. _upgrading-search-4-1-x-to-4-1-3:
-
-------------------------
-Upgrading 4.1.x -> 4.1.3
-------------------------
-CrafterCMS version 4.1.3 uses OpenSearch version 2.9. When upgrading CrafterCMS version 4.1 before 4.1.3, the
-following error will appear:
-
-.. code-block:: bash
-    :caption: *OpenSearch error when upgrading to 4.1.3*
-
-    java.lang.IllegalArgumentException: index template [ss4o_metrics_template] has index patterns [ss4o_metrics-*-*] matching patterns from existing templates [ss4o_metric_template] with patterns (ss4o_metric_template => [ss4o_metrics-*-*]) that have the same priority [1], multiple index templates may not match during index creation, please use a different priority
-        at org.opensearch.cluster.metadata.MetadataIndexTemplateService.addIndexTemplateV2(MetadataIndexTemplateService.java:558)
-        at org.opensearch.cluster.metadata.MetadataIndexTemplateService$4.execute(MetadataIndexTemplateService.java:491)
-        at org.opensearch.cluster.ClusterStateUpdateTask.execute(ClusterStateUpdateTask.java:65)
-
-This error is caused by an `existing issue in OpenSearch <https://github.com/opensearch-project/observability/issues/1771>`__ when updating to OpenSearch version 2.9 from a previous version.
-
-To fix the error, after upgrading to CrafterCMS version 4.1.3 and starting the services, delete the old templates in the
-Authoring  and Delivery environments by executing:
-
-.. code-block:: bash
-    :caption: *Delete original templates in OpenSearch in the Authoring Environment*
-
-    curl -XDELETE "http://localhost:9201/_index_template/ss4o_metric_template"
-    curl -XDELETE "http://localhost:9201/_index_template/ss4o_trace_template"
-
-
-.. code-block:: bash
-    :caption: *Delete original templates in OpenSearch in the Delivery Environment*
-
-    curl -XDELETE "http://localhost:9202/_index_template/ss4o_metric_template"
-    curl -XDELETE "http://localhost:9202/_index_template/ss4o_trace_template"
-
-|
+       2024-04-20 14:36:46.050  INFO 376430 --- [deployment-1] org.craftercms.deployer.impl.TargetImpl  : Deployment for editorial110-authoring finished in 9.953 secs
 
 |hr|
 
