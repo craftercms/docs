@@ -204,6 +204,15 @@ Here are the steps:
 
 |hr|
 
+------------------------
+Upgrading 4.1.x -> 4.2.0
+------------------------
+There are no extra steps required for upgrading your 4.1.x install to 4.2.0, simply follow the instructions
+:ref:`here <upgrading-craftercms-on-a-server>`. Remember that the ``upgrade-search.sh`` script should NOT be run when
+upgrading your CrafterCMS 4.1.x install.
+
+|hr|
+
 -------------------------
 Manual Updates for Search
 -------------------------
