@@ -52,3 +52,21 @@ Setup CrafterCMS authoring and delivery using Crafter's AWS AMI.
 
    authoring/setup-authoring-using-aws-ami
    delivery/setup-delivery-using-aws-ami
+
+------------
+Using Docker
+------------
+^^^^^^^^^^^^^^
+Docker Compose
+^^^^^^^^^^^^^^
+Follow the instructions :ref:`here <running-craftercms-in-docker>` to run CrafterCMS in a Docker container
+
+^^^^^^
+Images
+^^^^^^
+CrafterCMS provides Docker images on `dockerhub <https://hub.docker.com/u/craftercms>`__ for the latest release versions
+and snapshots of versions in development. The CrafterCMS Docker images may be pulled by using the tag for a release
+version, e.g. ``craftercms/authoring_tomcat:4.0.7``, the latest release, e.g. ``craftercms/authoring_tomcat:latest``
+or the tag for a snapshot of a version in development, e.g. ``craftercms/authoring_tomcat:4.0.7-SNAPSHOT``
+
+As mentioned, CrafterCMS is open source and you can always build Docker images from source code `here <https://github.com/craftercms/craftercms>`__
