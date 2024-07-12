@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-update: 4.1.0
+:last-update: 4.1.5
 
 .. index:: Experience Builder, XB, In-Context Editing, ICE
 
@@ -1575,27 +1575,37 @@ Angular, Vue and Other JS Applications
 The easiest way to integrate XB with your JS application is by putting attributes on each HTML element that
 represents a model, field or item of a CrafterCMS content type and then invoking XB initializer.
 
-To initialize XB, the following needs to be added to your code:
+To initialize XB, you need to invoke the ``initExperienceBuilder`` function. This function receives a single argument which gets passed down to the :ref:`ExperienceBuilder component <ExperienceBuilder>`. See argument details on the ExperienceBuilder component section.
+At a minimum, you need to supply the ``isAuthoring`` boolean flag, together with either a ``ContentInstance`` or the ``path`` for the main model to initialize XB with.
+For example, a simple application that uses the UMD bundle for XB, would look something like this:
+
+.. code-block:: js
+    :force:
+
+    <script defer src="/studio/static-assets/scripts/craftercms-xb.umd.js"></script>
+    <script>
+      // Run when XB script has been loaded, as it is deferred.
+      document.addEventListener('craftercms.xb:loaded', () => {
+        // Determine if we're on authoring using `fetchIsAuthoring` utility. Remove/replace if you determine whether it is authoring/delivery through some other mechanism.
+        window.craftercms.xb.fetchIsAuthoring().then((isAuthoring) => {
+          // If we're in authoring, initialize XB
+          isAuthoring && window.craftercms.xb.initExperienceBuilder({ isAuthoring, path: '/site/website/index.xml' });
+        });
+      });
+    </script>
+
+In contrast, in an npm project setup, this might look something like this:
 
 .. code-block:: js
 
     import { fetchIsAuthoring, initExperienceBuilder } from '@craftercms/experience-builder';
-
-    // Check if we're in authoring
+    // Determine if we're on authoring using `fetchIsAuthoring` utility. Remove/replace if you determine whether it is authoring/delivery through some other mechanism.
     fetchIsAuthoring().then((isAuthoring) => {
        // If we're in authoring, initialize XB
        if (isAuthoring) {
-          initExperienceBuilder()
+          initExperienceBuilder({ isAuthoring, path: '/site/website/index.xml' });
        }
-    })
-
-Remember that we need an object parameter for the ``initExperienceBuilder`` function with the following keys/values:
-
-.. code-block:: js
-
-    initExperienceBuilder({ isAuthoring, path, modelId });
-
-Note that ``modelId`` is an optional key/value.
+    });
 
 .. _fetchIsAuthoring:
 
