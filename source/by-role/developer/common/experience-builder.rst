@@ -1579,7 +1579,7 @@ To initialize XB, you need to invoke the ``initExperienceBuilder`` function. Thi
 At a minimum, you need to supply the ``isAuthoring`` boolean flag, together with either a ``ContentInstance`` or the ``path`` for the main model to initialize XB with.
 For example, a simple application that uses the UMD bundle for XB, would look something like this:
 
-.. code-block:: js
+.. code-block:: html
     :force:
 
     <script defer src="/studio/static-assets/scripts/craftercms-xb.umd.js"></script>
