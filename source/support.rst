@@ -39,7 +39,7 @@ What's Supported?
     * - 3.1
       - May 1, 2019
       - :maroon:`Ended on May 12, 2022`
-      - :orange:`Ends on June 30, 2024`
+      - :maroon:`Ended on June 30, 2024`
       - 3.1.31 (September 19, 2023)
     * - 3.0
       - August 1, 2017
