@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.0
+:last-updated: 4.1.5
 
 .. highlight:: groovy
    :linenothreshold: 5
@@ -46,9 +46,9 @@ REST Scripts
 REST scripts function just like RESTful services. They just need to return the object to serialize
 back to the caller. REST scripts must be placed in any folder under Scripts > rest.
 
-A REST script URL has the following format: it starts with /api/1/services, then contains all the folders that are part of the hierarchy
-for the particular script, and ends with the script name, the HTTP method and the .groovy extension. So, a script file at
-Scripts > rest > myfolder > myscript.get.groovy will respond to GET method calls at http://mysite/api/1/services/myfolder/myscript.json.
+A REST script URL has the following format: it starts with ``/api/1/services``, then contains all the folders that are part of the hierarchy
+for the particular script, and ends with the script name, the HTTP method and the ``.groovy`` extension. So, a script file at
+``Scripts > rest > myfolder > myscript.get.groovy`` will respond to GET method calls at http://mysite/api/1/services/myfolder/myscript.json.
 
 The following is a very simple sample script that returns a date attribute saved in the session. If no attribute is set yet, the current
 date is set as the attribute. Assume that the REST script exists under Scripts > rest > session_date.get.groovy
@@ -68,6 +68,62 @@ date is set as the attribute. Assume that the REST script exists under Scripts >
     }
 
     return ["date": date]
+
+""""""""""""""
+Path Variables
+""""""""""""""
+Path variables (``pathVars``) allows you to pass a value as part of the URL. It's a part of the path of the document
+to be accessed during the API call. In a REST controller the system can automatically pick out those portions of
+the URL and feed them to you with the name you supplied.
+
+To specify ``pathVars`` for a REST API, simply name the folder as the variables, for example, for the following API
+call ``http://mysite/api/1/services//bar/{model}/{make}/{year}/foo``, to create the pathVars ``{model}``,
+``{make}`` and ``{year}``, your folder structure under ``/scripts/rest`` should look like this: ``/bar/{model}/{make}/{year}/foo``.
+
+Let's take a look at an example of creating a REST API ``http://mysite/api/1/services/foo/{version}/helloworld.json``
+where, ``{version}`` could either be ``1`` or ``2``.
+
+First, we'll set up the folder structure for the API. Under ``scripts`` > ``rest``, add a folder named ``foo``, then
+under the ``foo`` folder, add a folder named ``1`` and a folder named ``2`` which will be the ``pathVars``.
+Next we'll add the scripts. Under  ``scripts`` > ``rest`` > ``foo`` > ``1`` create the script ``helloworld.get.groovy``
+
+.. code-block:: groovy
+    :caption: *scripts/rest/foo/1/helloworld.get.groovy*
+
+    return 'Hello world version 1!'
+
+Then under ``scripts`` > ``rest`` > ``foo`` > ``2`` create the script ``helloworld.get.groovy``
+
+.. code-block:: groovy
+    :caption: */scripts/rest/foo/2/helloworld.get.groovy*
+
+    return 'Hello world version 2!'
+
+Here's how the folders and files should look like for our example:
+
+.. code-block:: text
+    :caption: *Folder structure for REST API*
+
+    scripts/
+      rest/
+        foo/
+          1/
+            helloworld.json
+          2/
+            helloworld.json
+
+
+When we make a call to http://mysite/api/1/services/foo/1/helloworld.json, the output will be:
+
+.. code-block:: text
+
+    "Hello world version 1!"
+
+Similarly, a call to http://mysite/api/1/services/foo/2/helloworld.json will output:
+
+.. code-block:: text
+
+    "Hello world version 2!"
 
 .. _groovy-rest-script-not-found:
 
