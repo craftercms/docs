@@ -24,6 +24,9 @@
 |                        || user has logged in), created by     ||                                |
 |                        || Spring Security                     ||                                |
 +------------------------+--------------------------------------+---------------------------------+
+| pathVars               || The path variable values for the    || `Map`_                         |
+|                        || current request                     ||                                |
++------------------------+--------------------------------------+---------------------------------+
 
 The following variables are provided for backward compatibility when using Crafter Profile, should be replaced
 with ``authToken`` if possible:

@@ -72,32 +72,34 @@ date is set as the attribute. Assume that the REST script exists under Scripts >
 """"""""""""""
 Path Variables
 """"""""""""""
-Path variables (``pathVars``) allows you to pass a value as part of the URL. It's a part of the path of the document
+Path variables allows you to pass a value as part of the URL. It's a part of the path of the document
 to be accessed during the API call. In a REST controller the system can automatically pick out those portions of
 the URL and feed them to you with the name you supplied.
 
-To specify ``pathVars`` for a REST API, simply name the folder as the variables, for example, for the following API
-call ``http://mysite/api/1/services//bar/{model}/{make}/{year}/foo``, to create the pathVars ``{model}``,
-``{make}`` and ``{year}``, your folder structure under ``/scripts/rest`` should look like this: ``/bar/{model}/{make}/{year}/foo``.
+Use of path variables is done by allowing you to have a folder in ``{NAME}`` format under ``scripts/rest/``
+and these folders become templates for parameterized URLs. Values added in these ``/`` locations are added to the
+params map with the key of the name inside the ``{..}``. The ``pathVars`` variable is available for accessing the
+value passed in the API call.
 
-Let's take a look at an example of creating a REST API ``http://mysite/api/1/services/foo/{version}/helloworld.json``
-where, ``{version}`` could either be ``1`` or ``2``.
+To specify path variables for a REST API, simply name the folder as the variables, for example, for the following API
+call ``http://mysite/api/1/services//bar/{model}/{make}/{year}/foo``, to create the path variables ``{model}``,
+``{make}`` and ``{year}``, your folder structure under ``/scripts/rest`` should look something like this:
+``/bar/{model}/{make}/{year}/foo``. To access the values passed to the path variables, use the ``pathVars`` variable
+e.g. to access the value passed to ``{make}`` in the API call, use ``pathVars.make``, for ``{model}`` use
+``pathVars.model`` and for ``{year}`` use ``pathVars.year}``.
+
+Let's take a look at an example of creating a REST API ``http://mysite/api/1/services/foo/{version}/helloworld.json``.
 
 First, we'll set up the folder structure for the API. Under ``scripts`` > ``rest``, add a folder named ``foo``, then
-under the ``foo`` folder, add a folder named ``1`` and a folder named ``2`` which will be the ``pathVars``.
-Next we'll add the scripts. Under  ``scripts`` > ``rest`` > ``foo`` > ``1`` create the script ``helloworld.get.groovy``
+under the ``foo`` folder, add a folder named ``{version}`` which will be the path variable.
+Next we'll add the script. Under  ``scripts`` > ``rest`` > ``foo`` > ``{version}``, create the script ``helloworld.get.groovy``
 
 .. code-block:: groovy
-    :caption: *scripts/rest/foo/1/helloworld.get.groovy*
+    :caption: *scripts/rest/foo/{version}/helloworld.get.groovy*
 
-    return 'Hello world version 1!'
+    def version = pathVars.version
+    return "Hello world version ${version}!"
 
-Then under ``scripts`` > ``rest`` > ``foo`` > ``2`` create the script ``helloworld.get.groovy``
-
-.. code-block:: groovy
-    :caption: */scripts/rest/foo/2/helloworld.get.groovy*
-
-    return 'Hello world version 2!'
 
 Here's how the folders and files should look like for our example:
 
@@ -107,11 +109,8 @@ Here's how the folders and files should look like for our example:
     scripts/
       rest/
         foo/
-          1/
+          {version}/
             helloworld.json
-          2/
-            helloworld.json
-
 
 When we make a call to http://mysite/api/1/services/foo/1/helloworld.json, the output will be:
 
