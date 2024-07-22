@@ -21,6 +21,12 @@ New Features
 ^^^^^^^^^^^^
 Enhancements
 ^^^^^^^^^^^^
+* Improved permissions.
+
+  - Added a new permission, ``publish_by_commits``, that allows users to publish by commit ids. See the API
+    `publishCommits <../_static/api/studio.html#tag/publishing/operation/publishCommits>`__ for permission usage.
+  - The permission ``~DASHBOARD~`` is now removed from the list of allowed permissions.
+    The upgrade manager will remove it from your project during your install upgrade.
 
 ^^^^^^^^^
 Bug Fixes
@@ -34,7 +40,7 @@ Dependency Updates
   - Spring Framework to version 6
   - Spring Boot to version 3
   - Freemarker to version 2.3.33
-  - MariaDb4J to version ``3.1.0.1`` and MariaDB to ``11.3.2``
+  - MariaDb4J to version ``3.1.0.2`` and MariaDB to ``11.3.2``
   - HTTP Proxy to version 2.0
   - UrlRewriteFilter to version 5.1.3
   - ESAPI to version 2.5.3.1
