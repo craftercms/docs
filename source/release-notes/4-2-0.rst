@@ -25,8 +25,9 @@ Enhancements
 
   - Added a new permission, ``publish_by_commits``, that allows users to publish by commit ids. See the API
     `publishCommits <../_static/api/studio.html#tag/publishing/operation/publishCommits>`__ for permission usage.
-  - The permission ``~DASHBOARD~`` is now removed from the list of allowed permissions.
-    The upgrade manager will remove it from your project during your install upgrade.
+  - Items are evaluated for permissions based on their paths regardless of where they are listed. The permission
+    ``~DASHBOARD~`` is now removed from the list of allowed permissions. The upgrade manager will remove it from your
+    project during your install upgrade.
 
 ^^^^^^^^^
 Bug Fixes
