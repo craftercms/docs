@@ -41,7 +41,7 @@ Configuration
 """"""""""""""""""""
 Global Configuration
 """"""""""""""""""""
-Crafter Deployer has two main property configuration files found in ``{env-directory}/bin/crafter-deployer/config``:
+Crafter Deployer has two main property configuration files found in ``CRAFTER_HOME/bin/crafter-deployer/config``:
 
 * **application.yaml:** contains the global application properties, like the server port and the locations of other configuration files.
 * **base-target.yaml:** contains the common properties for all targets. In here you can find properties for configuring indexing with
@@ -104,7 +104,7 @@ Here's a sample ``application.yaml`` file (click on the triangle on the left to 
 
 The ``base-target.yaml`` file is handled a little bit different. This file is loaded by Crafter Deployer every time a new target is
 being added, and is merged with the specific properties of the target, with the target's properties taking precedence. By default, the override
-location for this configuration file is ``./config/base-target.yaml``, but it can be changed through the ``application.yaml`` property
+location for this configuration file is ``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml``, but it can be changed through the ``application.yaml`` property
 ``deployer.main.targets.config.baseYaml.overrideLocation``.
 
 Here's a sample ``base-target.yaml`` file (click on the triangle on the left to expand/collapse):
@@ -354,6 +354,261 @@ the steps described in :ref:`debugging-deployer-issues`
 .. warning::
   Changing or deleting a processed commit file could cause unchanged files to be indexed again and
   it should be done as a last resort in case of errors.
+
+.. _jacket:
+
+^^^^^^
+Jacket
+^^^^^^
+Indexing rich document content into a single search entry greatly improves searchability in your project.
+Crafter Deployer is able to index the content of a rich document (e.g. PDF, DOC, DOCX, PTT, etc.) along with metadata
+and content found in an associated descriptor item (the items that reference the rich document).
+This descriptor item is called a ``jacket``.
+
+Jackets are identified by their path and a regex that is configured at the Deployer configuration's target level.
+Administrators must configure where jackets are located via the ``base-target.yaml`` configuration file found in
+``CRAFTER_HOME/bin/crafter-deployer/config/``. For Crafter Cloud users, deployment target configurations must be
+submitted to Crafter Cloud Ops. Jacket files live under ``/site/documents`` by default.
+
+Jackets are basically additional metadata for content. When a binary file (which includes documents like PDFs and
+word files) is indexed, the XML of the jacket, along with the content of the binary file, are indexed under the path of
+the binary file. E.g. when indexing the file ``/static-assets/documents/contracts/2024-contract.pdf``, the Deployer
+resolves its jacket at ``/site/documents/contracts/2024-contract.xml``, extracts the XML content of the jacket,
+and indexes everything under ``/static-assets/documents/contracts/2024-contract.pdf``
+
+Below is an example Deployer configuration for jackets. Note that in the example below, jacket files live under ``/site/documents``:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
+    :linenos:
+    :emphasize-lines: 15-17, 60-62
+
+    target:
+    ...
+      search:
+        openSearch:
+        ...
+        binary:
+          # The list of binary file mime types that should be indexed
+          supportedMimeTypes:
+            - application/pdf
+            - application/msword
+            - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+            - application/vnd.ms-excel
+            - application/vnd.ms-powerpoint
+            - application/vnd.openxmlformats-officedocument.presentationml.presentation
+          # The regex path patterns for the metadata ("jacket") files of binary/document files
+          metadataPathPatterns:
+            - ^/?site/documents/.+\.xml$
+          # The regex path patterns for binary/document files that are stored remotely
+          remoteBinaryPathPatterns: &remoteBinaryPathPatterns
+            # HTTP/HTTPS URLs are only indexed if they contain the protocol (http:// or https://). Protocol relative
+            # URLs (like //mydoc.pdf) are not supported since the protocol is unknown to the back-end indexer.
+            - ^(http:|https:)//.+$
+            - ^/remote-assets/.+$
+          # The regex path patterns for binary/document files that should be associated to just one metadata file and are
+          # dependant on that parent metadata file, so if the parent is deleted the binary should be deleted from the index
+          childBinaryPathPatterns: *remoteBinaryPathPatterns
+          # The XPaths of the binary references in the metadata files
+          referenceXPaths:
+            - //item/key
+            - //item/url
+          # Setting specific for authoring indexes
+          authoring:
+            # Xpath for the internal name field
+            internalName:
+              xpath: '*/internal-name'
+              includePatterns:
+                - ^/?site/.+$
+                - ^/?static-assets/.+$
+                - ^/?remote-assets/.+$
+                - ^/?scripts/.+$
+                - ^/?templates/.+$
+            contentType:
+              xpath: '*/content-type'
+            # Same as for delivery but include images and videos
+            supportedMimeTypes:
+              - application/pdf
+              - application/msword
+              - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+              - application/vnd.ms-excel
+              - application/vnd.ms-powerpoint
+              - application/vnd.openxmlformats-officedocument.presentationml.presentation
+              - application/x-subrip
+              - image/*
+              - video/*
+              - audio/*
+              - text/x-freemarker
+              - text/x-groovy
+              - text/javascript
+              - text/css
+            # The regex path patterns for the metadata ("jacket") files of binary/document files
+            metadataPathPatterns:
+              - ^/?site/documents/.+\.xml$
+            binaryPathPatterns:
+              - ^/?static-assets/.+$
+              - ^/?remote-assets/.+$
+              - ^/?scripts/.+$
+              - ^/?templates/.+$
+            # Look into all XML descriptors to index all binary files referenced
+            binarySearchablePathPatterns:
+              - ^/?site/.+\.xml$
+            # Additional metadata such as contentLength, content-type specific metadata
+            metadataExtractorPathPatterns:
+              - ^/?site/.+$
+            excludePathPatterns:
+              - ^/?config/.*$
+            # Include all fields marked as remote resources (S3, Box, CMIS)
+            referenceXPaths:
+              - //item/key
+              - //item/url
+              - //*[@remote="true"]
+
+"""""""
+Example
+"""""""
+Let's take a look at an example of setting up jackets for binary content. We'll use a project created using the Website
+Editorial blueprint, and do the following:
+
+#. Create directory for binary content ``static-assets/documents``, and the directory for storing the
+   jackets ``/site/documents/`` in your project
+#. Configure Sidebar cabinet for the new content type created in a previous step and set up permissions for roles
+   interacting with the documents
+#. Create content model for jackets and configure the project for the new content model
+
+Let's begin setting up a jacket for binary contents.
+
+First, we'll create the directory that will contain the binary content, ``static-assets/documents`` via Studio. On the
+Sidebar, scroll down to ``static-assets``, then click on the three dots next to it and select ``New Folder`` and type in
+``Documents`` for the ``Folder Name``.
+
+Next, we'll create the directory for storing the jackets in the project ``/site/documents/`` using your favorite
+terminal program, add a ``.keep`` file inside the directory and finally add and commit it.
+
+.. code-block:: bash
+
+    cd CRAFTER_HOME/data/repos/sites/SITENAME/sandbox
+    mkdir site/documents
+    touch site/documents/.keep
+    git add site/documents/.keep
+    git commit -m "Add documents folder"
+
+The next step is to set up the Sidebar cabinet for our jackets in Studio. To add the cabinet, open the
+``User Interface Configuration`` file by opening the Sidebar in Studio, then clicking on ``Project Tools`` -> ``Configuration``
+-> ``User Interface Configuration``. Scroll down to the ``ToolsPanel`` widget, and add a ``Documents`` widget under the
+``Pages`` widget like below:
+
+.. code-block:: xml
+    :emphasize-lines: 9-17
+
+    <widget id="craftercms.components.ToolsPanel">
+      <configuration>
+        <widgets>
+          ...
+          <widget id="craftercms.components.PathNavigatorTree">
+            <configuration>
+              <id>Pages</id>
+              ...
+          <widget id="craftercms.components.PathNavigatorTree">
+            <configuration>
+              <id>Documents</id>
+              <label>Documents</label>
+              <icon id="@mui/icons-material/DescriptionOutlined"/>
+              <rootPath>/site/documents</rootPath>
+              <locale>en</locale>
+            </configuration>
+          </widget>
+          ...
+
+
+We'll now set up permissions for roles interacting with the documents. For our example, we'll add permissions for
+the ``author`` role. Open the ``Permissions Mapping`` file by opening the Sidebar in Studio, then clicking on
+``Project Tools`` -> ``Configuration`` -> ``Permissions Mapping``. Scroll down to the ``<role name="author">`` section,
+and add a regex for our ``/site/documents`` folder we created like below:
+
+.. code-block:: xml
+    :emphasize-lines: 7-16
+
+    <permissions>
+    <version>4.1.2</version>
+    <role name="author">
+      <rule regex="/site/website/.*">
+            <allowed-permissions>
+      ...
+      <rule regex="/site/documents|/site/documents/.*">
+        <allowed-permissions>
+          <permission>content_read</permission>
+          <permission>content_write</permission>
+          <permission>content_create</permission>
+          <permission>folder_create</permission>
+          <permission>get_children</permission>
+          <permission>content_copy</permission>
+        </allowed-permissions>
+      </rule>
+      ...
+
+
+Next we'll create the content model for your jacket. To create a new content type, open the ``Content Types`` tool by
+opening the Sidebar in Studio, then clicking on ``Project Tools`` -> ``Content Types``. Click on the ``Create New Type``
+button, and use ``Document`` for the ``label`` and ``ID``, and select ``Component`` for ``Type``, then finally, click
+on the ``Create`` button.
+
+For the content type, we will add an ``Item Selector`` control that we'll name ``Asset``, and
+a couple of data sources that will be bound to the control.  We will use the ``/static-assets/documents`` folder we
+created earlier for the ``Repository Path`` of the two data sources we'll be adding, a ``File Upload From Desktop`` data
+source that we'll name ``Upload`` and a ``File Browse`` data source that we'll name ``Existing``. For the metadata in
+the jacket, it is up to you on what you'd like in the content model. For our example, we will add a ``Text Area`` control
+named ``Summary``, a ``Check Box`` control named ``Featured``.
+
+.. image:: /_static/images/system-admin/deployer-jacket-content-model.webp
+    :width: 80%
+    :alt: Jacket Content Model
+    :align: center
+
+Finally, we'll set up our project for the content model we just created. Open the ``Project Configuration`` file by
+opening the Sidebar in Studio, then clicking on ``Project Tools`` -> ``Configuration`` -> ``Project Configuration``.
+Scroll down to the ``<repository rootPrefix="/site">`` section and add the folder ``/site/documents`` we created to the
+``folders`` section. Next, scroll down to the ``<patterns>`` section. We'll add ``/site/documents`` to the component group.
+
+.. code-block:: xml
+    :emphasize-lines: 6,15
+
+    <repository rootPrefix="/site">
+      ...
+      <folders>
+        <folder name="Pages" path="/website" read-direct-children="false" attach-root-prefix="true"/>
+        <folder name="Components" path="/components" read-direct-children="false" attach-root-prefix="true"/>
+        <folder name="Documents" path="/documents" read-direct-children="false" attach-root-prefix="false"/>
+        <folder name="Taxonomy" path="/taxonomy" read-direct-children="false" attach-root-prefix="true"/>
+      ...
+      </folders>
+        <!-- Item Patterns -->
+        <patterns>
+          ...
+          <pattern-group name="component">
+            <pattern>/site/components/([^&lt;]+)\.xml</pattern>
+            <pattern>/site/documents/([^&lt;]+)\.xml</pattern>
+            <pattern>/site/system/page-components/([^&lt;]+)\.xml</pattern>
+          ...
+
+Our content model for the jacket is now complete! To add a jacket to content uploaded in ``static-assets/documents``,
+open the Sidebar and scroll to ``Documents``. Open the cabinet then click on the three dots next to ``documents``, then
+select ``New Content``.
+
+.. image:: /_static/images/system-admin/deployer-jacket-new-document.webp
+    :width: 40%
+    :alt: Create New Jacket Document
+    :align: center
+
+
+Fill in the fields on the form and save.
+
+.. image:: /_static/images/system-admin/deployer-create-jacket-for-binary-content.webp
+    :width: 80%
+    :alt: Fill In Form For New Jacket Document
+    :align: center
+
+Publish the changes. The binary content and jacket will now be indexed under the location of the binary content.
 
 |hr|
 

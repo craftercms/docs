@@ -1,0 +1,60 @@
+.. index:: CrafterCMS 4.1.5 Release Notes
+
+----------------
+CrafterCMS 4.1.5
+----------------
+
+Released May 30, 2024
+
+This release includes fixes for issues with the release version 4.1.4
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-1-x>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.1.0 (applies to 4.1.5),
+    please see :ref:`upgrading-craftercms`
+
+^^^^^^^^^^^^
+Enhancements
+^^^^^^^^^^^^
+* `Added support for indexing subtitle files and audio files <https://github.com/craftercms/craftercms/issues/6536>`__
+
+* `Added support for variable types of _i and _f when using a dropdown control <https://github.com/craftercms/craftercms/issues/6704>`__
+
+* `Added site unlock API <https://github.com/craftercms/craftercms/issues/6718>`__ |br|
+  The site `unlock API <https://docs.craftercms.org/en/4.1/_static/api/studio.html#tag/sites/operation/unlockSite>`__
+  allows an admin to unlock a site in LOCKED state.
+
+* `Added \'initialExpanded\' prop to \'WidgetsAccordion\' component <https://github.com/craftercms/craftercms/issues/6724>`__
+
+^^^^^^^^^
+Bug Fixes
+^^^^^^^^^
+* `Fixed issue with XB dropping request parameters on page view <https://github.com/craftercms/craftercms/issues/6872>`__
+
+* `Fixed issue with Form freezing on save if user cancels a policy suggestion dialog <https://github.com/craftercms/craftercms/issues/6736>`__
+
+* `Fixed issue with Image cropper increasing size of an image relative to the original <https://github.com/craftercms/craftercms/issues/6702>`__
+
+* `Fixed issue with Studio not ingesting correctly a rename from lowercase to uppercase done directly in Git <https://github.com/craftercms/craftercms/issues/6691>`__
+
+* `Fixed issue with Content Type Controller overwriting changes made to object in controller <https://github.com/craftercms/craftercms/issues/6674>`__
+
+* `Fixed issue with Filename control rename dialog behaving differently than the initial create <https://github.com/craftercms/craftercms/issues/6666>`__
+
+* `Fixed issue with double slash in path when using the Node selector datasource configuration <https://github.com/craftercms/craftercms/issues/6643>`__
+
+* Fixed the following roles and permissions defects in the UI:
+
+  - Fixed issue where XB edit mode is blocked for pages that are readonly to the user, but contain items that the user does have write access to.
+  - Fixed issue where the item selector items to which the user doesn't have edit permissions, display the edit button. Clicking the edit button and trying to save an edit crashes the form leaving it in an unusable.
+  - Fixed issue with adding a tree navigator with the path of the folder of a page shows an item which clicking it doesn't take the user to preview as expected and clicking to open the item menu shows a skeletonised item menu that never resolves.
+  - Fixed issue where the TreeNavigator UI doesn't handle error in the service response and displays a spinner that doesn't go away.
+
+For a complete list of community tickets, please visit: `GitHub 4.1.5 <https://github.com/orgs/craftercms/projects/14/views/1>`__
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+|hr|
