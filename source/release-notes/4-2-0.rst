@@ -17,6 +17,13 @@ Released *TBD*
 ^^^^^^^^^^^^
 New Features
 ^^^^^^^^^^^^
+* Crafter CLI has the following new options:
+
+  - Publish Content
+  - Create Group
+  - List Groups
+
+  Please see :ref:`crafter-cli` for more information.
 
 ^^^^^^^^^^^^
 Enhancements
