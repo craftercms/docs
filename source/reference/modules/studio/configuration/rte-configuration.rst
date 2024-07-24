@@ -123,6 +123,8 @@ We'll add a media button to our editor instance to be able to embed a YouTube vi
 
    |
 
+.. _rte-configuration-tinymce-plugin-template-example:
+
 """""""""""""""""""""""""""""""
 TinyMCE Plugin Template Example
 """""""""""""""""""""""""""""""
