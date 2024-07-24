@@ -25,6 +25,9 @@ New Features
 
   Please see :ref:`crafter-cli` for more information.
 
+* New RTE configuration for TinyMCE plugin ``template``
+  Please see :ref:`rte-configuration-tinymce-plugin-template-example` for more information
+
 ^^^^^^^^^^^^
 Enhancements
 ^^^^^^^^^^^^
