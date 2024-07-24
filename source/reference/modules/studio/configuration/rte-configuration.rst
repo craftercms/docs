@@ -29,7 +29,7 @@ Here are some things to consider for setting up effective RTEs:
 What Out-of-the-Box Functionality Does Crafter Studio's RTE Support?
 --------------------------------------------------------------------
 
-Our RTE is based on TinyMCE 5 (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.  You can find the documentation for these TinyMCE configurations and settings here: https://www.tiny.cloud/docs/
+Our RTE is based on TinyMCE 7 (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.  You can find the documentation for these TinyMCE configurations and settings here: https://www.tiny.cloud/docs/
 
 
 ^^^^^^^^^^^^^^^
@@ -40,23 +40,26 @@ look for  ``plugins`` in the configuration:
 
 .. code-block:: xml
    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/ui.xml*
-   :emphasize-lines: 10
+   :force:
+   :emphasize-lines: 12
 
    <widget id="craftercms.components.TinyMCE">
      <configuration>
        <setups>
          <setup id="generic">
-           <!-- Configuration options: https://www.tiny.cloud/docs/configure/ -->
-           <!-- Plugins: https://www.tiny.cloud/docs/plugins/opensource/ -->
-           <tinymceOptions>{
-             "menubar": true,
-             "theme": "silver",
-             "plugins": "print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount textpattern help acecode paste editform",
+           <!-- Configuration options: https://www.tiny.cloud/docs/tinymce/latest/initial-configuration/ -->
+           <!-- Plugins: https://www.tiny.cloud/docs/plugins/#open-source-plugins -->
+           <tinymceOptions>
+             <![CDATA[
+               {
+                 "menubar": true,
+                 "theme": "silver",
+                 "plugins": "preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help acecode",
    ...
 
 |
 
-See https://www.tiny.cloud/docs/plugins/opensource/ for more information on the TinyMCE plugins.
+See https://www.tiny.cloud/docs/plugins/#open-source-plugins for more information on the TinyMCE plugins.
 
 
 .. |rteMediaBtn| image:: /_static/images/site-admin/rte/rte-media-button.webp
@@ -74,7 +77,7 @@ Crafter Studio by default adds plugins to ``toolbar1`` as seen in the example be
 
 |
 
-See https://www.tiny.cloud/docs/configure/editor-appearance/#toolbarn for more information on the toolbar(n) option of Tiny MCE
+See https://www.tiny.cloud/docs/tinymce/latest/toolbar-configuration-options/#toolbarn for more information on the toolbar(n) option of Tiny MCE
 
 """"""""""""""""""""""""""""""
 TinyMCE Plugin Toolbar Example
@@ -128,23 +131,38 @@ Let's take a look at another example of using the TinyMCE plugin, ``template``.
 
 The ``template`` plugin adds support for custom templates. The default editor instance only adds the menu item ``Insert template...`` under the ``Insert`` menu in the menubar. On TinyMCE, it adds a menu item ``Insert template`` under the ``Insert`` menu and a toolbar button.
 
-To add a template to the RTE, simply add ``templates`` under ``setup`` in the RTE configuration.
-Under ``templates``, add ``title``, ``description`` and ``content``:
+Note that the open-source ``template`` plugin and associated config options have been removed in TinyMCE 7. To achieve
+an equivalent TinyMCE config before the version 7 upgrade, the ``insert`` menu needs to be added/customised to the config as shown below:
 
-.. code-block::xml
+.. code-block:: xml
+    :emphasize-lines: 3
+
+    "menu": {
+      "tools": { "title": "Tools", "items": "tinymcespellchecker code acecode wordcount" },
+      "insert": { "title": "Insert", "items": "image link media template codesample inserttable | charmap hr | pagebreak nonbreaking anchor | insertdatetime" }
+    },
+
+To add a template to the RTE, simply add ``templates`` under ``setup`` in the RTE configuration.
+Under ``templates``, add ``title``, ``description`` and ``content``
+
+.. code-block:: xml
    :linenos:
-   :emphasize-lines: 11-17
+   :force:
+   :emphasize-lines: 12,14-20
 
    <widget id="craftercms.components.TinyMCE">
    <configuration>
      <setups>
        <setup id="...">
-          ...
           <tinymceOptions>
             <![CDATA[
               {
                 "menubar": true,
                 ...
+                "menu": {
+                  "tools": { "title": "Tools", "items": "tinymcespellchecker code acecode wordcount" },
+                  "insert": { "title": "Insert", "items": "image link media template codesample inserttable | charmap hr | pagebreak nonbreaking anchor | insertdatetime" }
+                },
                 "templates" : [
                   {
                     "title": "Your Template Title",
@@ -192,15 +210,14 @@ Let us take a look at an example of adding two templates to the RTE configuratio
 
    |
 
-
-See https://www.tiny.cloud/docs/plugins/opensource/template/ for more information on the template plugin.
+See https://www.tiny.cloud/docs/tinymce/6/template/ for more information on the template plugin.
 
 .. _rte-paste-plugin-hooks:
 
 """""""""""""""""""""""""""""""""""
 TinyMCE paste plugin callback hooks
 """""""""""""""""""""""""""""""""""
-The TinyMCE ``paste`` plugin enables you to modify the pasted content before it gets inserted into the editor (``paste_preprocess``) and before it gets inserted into the editor but after it’s been parsed into a DOM structure (``paste_postprocess``). For more information on these options, see https://www.tiny.cloud/docs/plugins/opensource/paste#paste_preprocess.
+The TinyMCE ``paste`` plugin enables you to modify the pasted content before it gets inserted into the editor (``paste_preprocess``) and before it gets inserted into the editor but after it’s been parsed into a DOM structure (``paste_postprocess``). For more information on these options, see https://www.tiny.cloud/docs/tinymce/latest/copy-and-paste/#paste_preprocess.
 
 In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess``), do the following in the RTE configuration:
 
@@ -341,7 +358,7 @@ Adding External Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^
 TinyMCE provides an option to specify URLS to plugins outside the tinymce plugins directory. These external plugins allow the user to extend TinyMCE. For example, you can create custom dialogs, buttons, menu items, etc.
 
-For more information on the Tiny MCE external_plugins option, see https://www.tiny.cloud/docs/configure/integration-and-setup/#external_plugins
+For more information on the Tiny MCE external_plugins option, see https://www.tiny.cloud/docs/tinymce/latest/editor-important-options/#external_plugins
 
 The Crafter Studio developer does not have full control of the tinymce initialization. To add a custom button to the toolbar in Crafter Studio, it would be done using the external plugin route since, what TinyMCE docs advise – i.e. using the ``setup`` function to add the button – is not viable in Studio without creating a :ref:`form control plugin <building-plugins-controls>` where they'd have full control of tinymce initialization.
 
@@ -464,7 +481,7 @@ To add/remove child elements to the list of valid child elements, add/remove the
 The example above shows you how to add **style** as a valid child of **body** and remove **div** as a valid child. It also forces only *strong* and **a** and *text contents* to be valid children of **p**.
 
 
-For more information on the TinyMCE ``valid_children`` option, see https://www.tiny.cloud/docs/configure/content-filtering/#valid_chiildren
+For more information on the TinyMCE ``valid_children`` option, see https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#valid_children
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 Example adding valid child elements to parent element
@@ -537,8 +554,8 @@ The RTE's configuration file looks like this:
         <configuration>
           <setups>
             <setup id="generic">
-              <!-- Configuration options: https://www.tiny.cloud/docs/configure/ -->
-              <!-- Plugins: https://www.tiny.cloud/docs/plugins/opensource/ -->
+              <!-- Configuration options: https://www.tiny.cloud/docs/tinymce/latest/initial-configuration/ -->
+              <!-- Plugins: https://www.tiny.cloud/docs/tinymce/latest/plugins/#open-source-plugins -->
               <tinymceOptions>
                 <![CDATA[
                   {
@@ -560,7 +577,8 @@ The RTE's configuration file looks like this:
                     "autoresize_on_init": false,
                     "autoresize_bottom_margin": 0,
                     "menu": {
-                      "tools": { "title": "Tools", "items": "tinymcespellchecker code acecode wordcount" }
+                      "tools": { "title": "Tools", "items": "tinymcespellchecker code acecode wordcount" },
+                      "insert": { "title": "Insert", "items": "image link media template codesample inserttable | charmap hr | pagebreak nonbreaking anchor | insertdatetime" }
                       },
                       "automatic_uploads": true,
                       "file_picker_types":  "image media file",
@@ -592,7 +610,7 @@ You can access the ``RTE Configuration`` file by going to the **Sidebar** then c
 Inside the ``<setups>`` tag, there can be multiple ``<setup>`` tags. Each setup represents a possible RTE configuration that can be specified to be used by a RTE control. To add your own configuration, create a new ``<setup>`` tag. Each ``<setup>`` tag contains:
 
 * An ``<id>`` tag with the name that must be specified for an RTE control to use this configuration.
-* An ``<tinymceOptions>`` tag containing TinyMCE Configuration options (see https://www.tiny.cloud/docs/configure/ for more information) and plugins (see https://www.tiny.cloud/docs/plugins/opensource/ for more information)
+* An ``<tinymceOptions>`` tag containing TinyMCE Configuration options (see https://www.tiny.cloud/docs/tinymce/latest/initial-configuration/ for more information) and plugins (see https://www.tiny.cloud/docs/tinymce/latest/plugins/#open-source-plugins for more information)
 
 |hr|
 
