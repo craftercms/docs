@@ -165,7 +165,7 @@ Linux Prerequisite
 
    To install ``lsof`` for RedHat-based Linux distros: ``yum install lsof``
 
-#. The library ``libncurses5`` is required for the Authoring install and the restore script. You may get the following error when running an Authoring install or the restore script without the ``libncurses5`` library installed:
+#. The library ``libncurses5`` is required by the Authoring install due to the embedded MariaDB. You may get the following error when running an Authoring install or the restore script without the ``libncurses5`` library installed:
 
    .. code-block:: text
 
