@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.5
+:last-updated: 4.1.6
 
 .. highlight:: groovy
    :linenothreshold: 5
@@ -492,6 +492,10 @@ Other Topics
 ^^^^^^^^^^^^^^^^^^^^
 Studio Content Write
 ^^^^^^^^^^^^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.1.6
+
 To write content from an input stream and notify subscribers (including the preview indexing) about the ``ContentEvent``
 in Studio only, use the method ``writeContentAndNotify``:
 
