@@ -486,6 +486,28 @@ Let's take a look at the result of our unit test which can be found here: *CRAFT
 
 |
 
+------------
+Other Topics
+------------
+^^^^^^^^^^^^^^^^^^^^
+Studio Content Write
+^^^^^^^^^^^^^^^^^^^^
+To write content from an input stream and notify subscribers (including the preview indexing) about the ``ContentEvent``
+in Studio only, use the method ``writeContentAndNotify``:
+
+.. code-block:: java
+
+    boolean writeContentAndNotify(String site, String path, InputStream content) throws ServiceLayerException;
+
+This method can be used from any Groovy script in Studio, this includes for example REST scripts in Studio plugins and
+content type controllers. Remember to get the ``contentService`` bean when using the method like below:
+
+.. code-block:: groovy
+
+    def documentStream = ContentUtils.convertDocumentToStream(document, "UTF-8")
+    def contentService = applicationContext.getBean("cstudioContentService")
+    contentService.writeContentAndNotify(site, path, documentStream)
+
 --------
 See Also
 --------
