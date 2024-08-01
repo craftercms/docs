@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.0
+:last-updated: 4.2.0
 
 .. _author:
 
@@ -804,6 +804,8 @@ Using Experience Builder
     :width: 75 %
     :align: center
 
+|
+
 To turn on Experience Builder, simply click on the pencil (Edit mode), which will turn green when enabled,
 or the two sets of three vertical dots (Move Mode), which will turn blue when enabled, at the top right of
 Studio. Enabling ``Edit mode`` or ``Move mode``  turns on the ``Experience builder`` panel on the right
@@ -816,6 +818,8 @@ Edit Mode
     :alt: Getting Started - XB Edit Mode
     :width: 35 %
     :align: center
+
+|
 
 ``Edit Mode`` allows editing the content directly in its preview for configured sections of the project.
 It also provides short-cut menus to open specific pieces of the content form, and the experience builder
@@ -832,6 +836,8 @@ that the editable section will be inside a blue box like below:
     :width: 75 %
     :align: center
 
+|
+
 For editable non-text sections, clicking on it will give the user options to edit, cancel, etc. and also
 highlight the section in a green box
 
@@ -841,6 +847,8 @@ highlight the section in a green box
     :width: 75 %
     :align: center
 
+|
+
 """""""""
 Move Mode
 """""""""
@@ -848,6 +856,8 @@ Move Mode
     :alt: Getting Started - XB Move mode
     :width: 35 %
     :align: center
+
+|
 
 ``Move Mode`` allows you to drag around a items from one position to a different position and also
 provides short-cut menus to open specific pieces of the content form, and the experience builder
@@ -888,11 +898,14 @@ highlighted in a green box. This is the area where we want to change the image
 
 |
 
-Let's now change the image for author ``John Doe``. In the XB panel, click on ``Search``. We can
-scroll through the items listed there to look for a new image for ``John Doe``, or, we can also type
-``image`` in the search box to narrow down items we're scrolling through to just images in the project.
-We'll pick the image ``person_2.jpg`` to replace the current ``Profile Pic`` in the ``Bio`` section.
-To replace the image, simply drag ``person_2.jpg`` image from the XB panel to the profile pic on the
+Let's now change the image for author ``John Doe``.
+
+**Via XB Search**
+
+In the XB panel, click on ``Search``. We can scroll through the items listed there to look for a new image for
+``John Doe``, or, we can also type ``image`` in the search box to narrow down items we're scrolling through to just
+images in the project. We'll pick the image ``person_2.jpg`` to replace the current ``Profile Pic`` in the ``Bio``
+section. To replace the image, simply drag ``person_2.jpg`` image from the XB panel to the profile pic on the
 page. The ``Bio`` section should now have a new image.
 
 .. image:: /_static/images/content-author/xb-new-pic-bio.webp
@@ -901,6 +914,8 @@ page. The ``Bio`` section should now have a new image.
     :align: center
 
 |
+
+**Via XB Assets**
 
 Another way to browse for images to replace the Bio picture is by browsing items under ``Assets`` in
 the XB panel. Scroll through the items, then when you find a suitable image, simply drag it on to the
@@ -911,6 +926,38 @@ into that area.
 .. image:: /_static/images/content-author/xb-assets-list.webp
     :alt: Getting Started - Assets list in XB
     :width: 85 %
+    :align: center
+
+|
+
+**Via In-Context Editing**
+
+Yet another way to browse for images to replace the Bio picture is via in-context editing, by clicking on the image.
+A pencil icon will then appear in the green box above the highlighted image to be replaced.
+Click on the pencil (the ``Edit`` button)
+
+.. image:: /_static/images/content-author/xb-edit-btn.webp
+    :alt: Getting Started - Edit an image in XB via in-context editing
+    :width: 75 %
+    :align: center
+
+|
+
+Next, click on the ``Replace`` button on the form. Next, click on ``Image from CMS``
+
+.. image:: /_static/images/content-author/form-add-replace-image-btn.webp
+    :alt: Getting Started - Assets list in XB
+    :width: 75 %
+    :align: center
+
+|
+
+Make your selection, then finally click on the ``Select`` button. Remember to click on ``Save & Close`` on the content
+form to save your changes.
+
+.. image:: /_static/images/content-author/form-browse-images.webp
+    :alt: Getting Started - Assets list in XB
+    :width: 75 %
     :align: center
 
 |
@@ -1030,7 +1077,7 @@ Editing a Page
 ^^^^^^^^^^^^^^
 There are multiple ways to edit a page.
 
-#. In the context nav, got to the address bar and search for the page you'd like to edit by
+#. In the context nav, go to the address bar and search for the page you'd like to edit by
    entering some keywords.
 
    .. image:: /_static/images/first-project/first-project-search-for-page.webp
@@ -1099,6 +1146,8 @@ on the Sidebar
    :width: 40 %
    :align: center
    :alt: Content Author - Page Access History Tree
+
+|
 
 and then selecting **History**
 
