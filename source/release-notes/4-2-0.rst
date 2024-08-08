@@ -17,6 +17,9 @@ Released *TBD*
 ^^^^^^^^^^^^
 New Features
 ^^^^^^^^^^^^
+* New authentication mechanism for Engine Preview |br|
+  To learn more about configuring Engine Preview, see :ref:`studio-preview-cookie` and :ref:`engine-security-preview-mode`
+
 * Crafter CLI has the following new options:
 
   - Publish Content
@@ -27,6 +30,18 @@ New Features
 
 * New RTE configuration for TinyMCE plugin ``template``
   Please see :ref:`rte-configuration-tinymce-plugin-template-example` for more information
+
+* YAML, JSON and CSV files are now editable via the "Edit" option in Preview |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6980>`__ for more information
+
+* Image placeholder generation util is now integrated into XB |br|
+  When generating items on XB, fields without default values use ``placehold.it`` for images.
+  See `here <https://github.com/craftercms/craftercms/issues/6668>`__ for more information
+
+* Broken dependencies are now recorded in the DB and with every content written, if the item being written is referenced
+  as a broken dependency, the reference will be fixed. |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6228>`__ for more information
+
 
 ^^^^^^^^^^^^
 Enhancements
@@ -39,9 +54,34 @@ Enhancements
     ``~DASHBOARD~`` is now removed from the list of allowed permissions. The upgrade manager will remove it from your
     project during your install upgrade.
 
+* `Improved startup message for \"Error when creating PropertyDescriptor for public final void\" <https://github.com/craftercms/craftercms/issues/6936>`__
+* `Changed message in \"FolderScanningSiteListResolver\" to \"Debug\" <https://github.com/craftercms/craftercms/issues/6800>`__
+* `Improved handling of content type read-only file-name with a default value <https://github.com/craftercms/craftercms/issues/6744>`__
+* `Added support for multiple browser tabs for the same project/site <https://github.com/craftercms/craftercms/issues/6206>`__
+* `Set the default sort order of Studio UI search to alphabetical when no keyword is supplied <https://github.com/craftercms/craftercms/issues/5995>`__
+* Bulk Publishing enhancements
+
+  * `Added an option to include soft dependencies when bulk publishing <https://github.com/craftercms/craftercms/issues/6191>`__
+    This new option is set to false by default.
+  * `Studio now does a \"Publish All\" request when \"Publish By Path='/'\" request is received <https://github.com/craftercms/craftercms/issues/5950>`__
+
+
+* Improved XB ease-of-use and resilience for JS apps programmatically registering elements for XB |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6983>`__ for more information
+
+  For more information on registering elements for XB, see :ref:`xb-lazy-loaded-content`.
+
+
 ^^^^^^^^^
 Bug Fixes
 ^^^^^^^^^
+* `Fixed issue with checkbox-group while using the targeting user roles <https://github.com/craftercms/craftercms/issues/7011>`__
+* `Fixed issue with empty/null Date/Time fields reporting it is valid <https://github.com/craftercms/craftercms/issues/6998>`__
+* `Fixed issue with new items in repeated groups requiring a refresh to show changes <https://github.com/craftercms/craftercms/issues/6954>`__
+* `Fixed issue with PathNavigator ignoring the exclude list when searching <https://github.com/craftercms/craftercms/issues/6934>`__
+* `Fixed issue with permission used in Dependency Service \"getDependentItems\" <https://github.com/craftercms/craftercms/issues/6873>`__
+* `Fixed issue with item stuck in read only mode if the \"lockedOwner\" value is not null <https://github.com/craftercms/craftercms/issues/6808>`__
+* `Fixed issues with dependency calculations \"getDependentItems\" <https://github.com/craftercms/craftercms/issues/6189>`__
 
 ^^^^^^^^^^^^^^^^^^
 Dependency Updates
@@ -58,6 +98,7 @@ Dependency Updates
   - FileUpload to version 2.0
   - Groovy to version 4
   - Tomcat to version 10
+  - OpenSearch to version 2.15
 
 For a complete list of community tickets, please visit: `GitHub 4.2.0 <https://github.com/orgs/craftercms/projects/6/views/1>`_
 
