@@ -165,17 +165,43 @@ Linux Prerequisite
 
    To install ``lsof`` for RedHat-based Linux distros: ``yum install lsof``
 
-#. The library ``libncurses5`` is required for the Authoring install and the restore script. You may get the following error when running an Authoring install or the restore script without the ``libncurses5`` library installed:
+#. The library ``libncurses5`` is required by the Authoring install due to the embedded MariaDB. You may get the following error when running an Authoring install or the restore script without the ``libncurses5`` library installed:
 
-   **error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory**
+   .. code-block:: text
+
+       error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory
 
    To install the library ``libncurses5``, use the following commands:
 
-   On Debian-based Linux distros: ``sudo apt install libncurses5``
+   **On Debian-based Linux distros:**
 
-   On RHEL, CentOS:  ``sudo yum install ncurses-compat-libs``
+   - For Ubuntu 24.04 and later versions, ``libncurses5`` was removed starting in version 24.04. To install ``libncurses5``,
+     run the following commands:
 
-   On Fedora 22 and newer version: ``sudo dnf install ncurses-compat-libs``
+     .. code-block:: bash
+
+         wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.4-2_amd64.deb && sudo dpkg -i libtinfo5_6.4-2_amd64.deb && rm -f libtinfo5_6.4-2_amd64.deb
+
+         wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.4-2_amd64.deb && sudo dpkg -i libncurses5_6.4-2_amd64.deb && rm -f libncurses5_6.4-2_amd64.deb
+
+         sudo apt install lib32ncurses5-dev libncurses5 libncurses5-dev -y
+
+   - All other versions of Debian-based linux distro: ``sudo apt install libncurses5``
+
+   **On RHEL, CentOS:**
+
+   - For versions 8 and later, the EPEL repository needs to be added in order to install the ``ncurses-compat-libs``.
+     To add the EPEL repository, do the following:
+
+     - Enable the CodeReady Linux Builder repository |br|
+       CentOS: ``sudo dnf config-manager --set-enabled crb`` |br|
+       RHEL: ``sudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms``
+     - Next, install the EPEL RPM: ``sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm``
+     - Finally, we can now install ``ncurses-compat-libs``: ``sudo dnf install ncurses-compat-libs``
+
+   - All other versions of RHEL, CentOS: ``sudo yum install ncurses-compat-libs``
+
+   **On Fedora 22 and newer version:** ``sudo dnf install ncurses-compat-libs``
 
 """"""""""""""""""""
 Windows Prerequisite
