@@ -28,6 +28,7 @@ Bug Fixes
 ^^^^^^^^^
 * `Fixed issue with item selector maximum limit <https://github.com/craftercms/craftercms/issues/7018>`__
 * `Fixed issue with checkbox-group while using the targeting user roles <https://github.com/craftercms/craftercms/issues/7011>`__
+* `Fixed issue with custom \"contentWrite\" via content type controller not triggering reindex on Preview <https://github.com/craftercms/craftercms/issues/7010>`__
 * `Fixed issue with empty/null Date/Time fields reporting it is valid <https://github.com/craftercms/craftercms/issues/6998>`__
 * `Fixed issue with folders in path selection for search <https://github.com/craftercms/craftercms/issues/6988>`__
 * `Fixed issue with new items in repeated groups requiring a refresh to show changes <https://github.com/craftercms/craftercms/issues/6954>`__
