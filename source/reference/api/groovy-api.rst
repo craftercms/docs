@@ -489,6 +489,8 @@ Let's take a look at the result of our unit test which can be found here: *CRAFT
 ------------
 Other Topics
 ------------
+.. _groovy-studio-content-write:
+
 ^^^^^^^^^^^^^^^^^^^^
 Studio Content Write
 ^^^^^^^^^^^^^^^^^^^^
