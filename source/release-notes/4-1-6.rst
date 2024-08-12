@@ -28,7 +28,9 @@ Bug Fixes
 ^^^^^^^^^
 * `Fixed issue with item selector maximum limit <https://github.com/craftercms/craftercms/issues/7018>`__
 * `Fixed issue with checkbox-group while using the targeting user roles <https://github.com/craftercms/craftercms/issues/7011>`__
-* `Fixed issue with custom \"contentWrite\" via content type controller not triggering reindex on Preview <https://github.com/craftercms/craftercms/issues/7010>`__
+* `Fixed issue with custom \"contentWrite\" via content type controller not triggering reindex on Preview <https://github.com/craftercms/craftercms/issues/7010>`__ |br|
+  Added new interface for use in Studio, for writing content from an input stream and notifies subscribers. See
+  :ref:`groovy-studio-content-write` for more information.
 * `Fixed issue with empty/null Date/Time fields reporting it is valid <https://github.com/craftercms/craftercms/issues/6998>`__
 * `Fixed issue with folders in path selection for search <https://github.com/craftercms/craftercms/issues/6988>`__
 * `Fixed issue with new items in repeated groups requiring a refresh to show changes <https://github.com/craftercms/craftercms/issues/6954>`__
@@ -36,6 +38,7 @@ Bug Fixes
 * `Fixed issue with permission used in Dependency Service \"getDependentItems\" <https://github.com/craftercms/craftercms/issues/6873>`__
 * `Fixed issue with item stuck in read only mode if the \"lockedOwner\" value is not null <https://github.com/craftercms/craftercms/issues/6808>`__
 * Fixed issue with ``Create Project`` failing due to missing index when multiple values for writeClusters are used
+* `Fixed issue with image cropper <https://github.com/craftercms/craftercms/issues/6702>`__
 
 ^^^^^^^^^^^^^^^^^^
 Dependency Updates
