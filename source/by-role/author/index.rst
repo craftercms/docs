@@ -1432,6 +1432,35 @@ There are a number of tools available from the RTE out of the box for editing yo
 tools may also be added to the RTE, depending on your needs. Please see the developer section
 :ref:`rte-configuration` of the docs for more details.
 
+~~~~~~~~~~~~
+Code Samples
+~~~~~~~~~~~~
+The RTE allows authors to insert and embed code samples. To insert code samples, click on ``Insert`` then ``Code sample...``.
+
+.. figure:: /_static/images/page/rte-screen-insert-codesample.webp
+   :width: 45 %
+   :align: center
+   :alt: Content Author - RTE Screen Insert Code Sample
+
+   RTE Screen for inserting a code sample
+
+|
+
+Below is an example of a code sample inserted via the RTE. To edit the code sample in the RTE, double click on an empty
+space in the code sample block and not on the text as shown below:
+
+.. figure:: /_static/images/page/rte-screen-form-codesample-example.webp
+   :width: 65 %
+   :align: center
+   :alt: Content Author - RTE Screen Example of a Code Sample
+
+   RTE Screen for an example code sample
+
+|
+
+.. note::
+    The best practice for editing code samples is to double click on the existing code sample to open the code sample editor.
+
 |hr|
 
 ^^^^^^^^^^^^^^
