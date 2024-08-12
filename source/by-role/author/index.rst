@@ -1458,6 +1458,8 @@ space in the code sample block and not on the text as shown below:
 
 |
 
+.. note::
+    The best practice for editing code samples is to double click on the existing code sample to open the code sample editor.
 
 |hr|
 
