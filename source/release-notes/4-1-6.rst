@@ -26,6 +26,7 @@ Enhancements
 ^^^^^^^^^
 Bug Fixes
 ^^^^^^^^^
+* `Sort \"Add\" and \"Browse Components\" alphabetically <https://github.com/craftercms/craftercms/issues/7020>`__
 * `Fixed issue with item selector maximum limit <https://github.com/craftercms/craftercms/issues/7018>`__
 * `Fixed issue with checkbox-group while using the targeting user roles <https://github.com/craftercms/craftercms/issues/7011>`__
 * `Fixed issue with custom \"contentWrite\" via content type controller not triggering reindex on Preview <https://github.com/craftercms/craftercms/issues/7010>`__ |br|
@@ -48,7 +49,7 @@ Dependency Updates
   - OpenSearch to version 2.15
   - Apache CXF to version 3.5.8
   - GraphQL to version 20.9
-  - Tomcat to version 9.0.91
+  - Tomcat to version 9.0.93
   - Studio UI dependencies
 
     - yarn to version ``v1.22.22``
