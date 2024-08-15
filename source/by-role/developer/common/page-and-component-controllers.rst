@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-update: 4.1.6
+:last-updated: 4.1.6
 
 .. index:: Page Controllers, Component Controllers, Page Interceptors
 
