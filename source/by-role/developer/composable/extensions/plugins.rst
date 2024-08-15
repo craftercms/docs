@@ -657,7 +657,7 @@ to match the final destination of the file:
 +------------------------------------------+---------------------------------------------------------------+
 | ``authoring/static-assets/*``            | ``/config/studio/static-assets/plugins/<plugin id path>/*``   |
 +------------------------------------------+---------------------------------------------------------------+
-| ``authoring/scripts/classes/*``          | ``/config/studio/plugins/scripts/classes/<plugin id path>/*`` |
+| ``authoring/scripts/classes/*``          | ``/config/studio/scripts/classes/<plugin id path>/*``         |
 +------------------------------------------+---------------------------------------------------------------+
 | ``authoring/scripts/rest/*``             | ``/config/studio/plugins/scripts/rest/<plugin id path>/*``    |
 +------------------------------------------+---------------------------------------------------------------+
