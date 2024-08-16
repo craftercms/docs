@@ -23,6 +23,12 @@ Enhancements
 * `Changed message in \"FolderScanningSiteListResolver\" to \"Debug\" <https://github.com/craftercms/craftercms/issues/6800>`__
 * `Improved handling of content type read-only file-name with a default value <https://github.com/craftercms/craftercms/issues/6744>`__
 
+"""""""""
+Studio UI
+"""""""""
+* ``getICEAttributes`` function (``getICEAttributes`` from ``@craftercms/experience-builder`` or ``craftercms.xb.getICEAttributes``)
+  now accepts either the full model object (as it did) or two separate properties for ``modelId`` and ``path``.
+
 ^^^^^^^^^
 Bug Fixes
 ^^^^^^^^^
