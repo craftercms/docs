@@ -25,6 +25,8 @@ New Features
   - Publish Content
   - Create Group
   - List Groups
+  - Create User
+  - Get Users
 
   Please see :ref:`crafter-cli` for more information.
 
