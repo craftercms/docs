@@ -38,6 +38,7 @@ manage_access_token        User is permitted to manage the access tokens
 publish                    User is permitted to approve submitted content for publishing or publish content
 publish_status             User is permitted to get the publishing status
 publish_clear_lock         User is permitted to clear publishing locks
+publish_by_commits         User is permitted to publish by commit ids
 pull_from_remote           User is permitted to pull content from remote repository to project content repository
 push_to_remote             User is permitted to push content to remote repository from project content repository
 read_configuration         user is permitted to read configuration content for project
@@ -75,6 +76,5 @@ where:
   Role name
 - ``/permissions/site/role/rule@regex``
   Regular expression to filter paths where permission is applied.
-  The value ``regex="~DASHBOARD~"`` is a special regular expression applied for content displayed in dashboard widgets only
 - ``/permissions/site/role/rule/allowed-permissions/permission``
   Allowed permission for role and rule (possible values given in the table above)
