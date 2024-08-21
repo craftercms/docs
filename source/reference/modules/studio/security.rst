@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.4
+:last-updated: 4.1.6
 
 .. index:: Studio Security
 
@@ -891,7 +891,12 @@ Access Tokens
     :label: Since
     :version: 4.0.0
 
-The following section of Studio's configuration overrides allows you to configure settings for the Studio access tokens. Access tokens can then be used to invoke `Crafter Studio's REST APIs <../../../_static/api/studio.html>`_, or used in :ref:`crafter-cli` to perform operations on Studio.
+The following section of Studio's configuration overrides allows you to configure settings for the Studio access tokens.
+Access tokens can then be used to invoke `Crafter Studio's REST APIs <../../../_static/api/studio.html>`_ from the out
+of the box UI as well as any customized JavaScript, CURL commands, or used in :ref:`crafter-cli` to perform operations on Studio.
+
+Studio access tokens uses JWT tokens for authentication. The following environment variables are used to customize the
+default behavior of the JWT token that is used.
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -920,6 +925,33 @@ The following section of Studio's configuration overrides allows you to configur
     # Indicates if the refresh token cookie should be secure (should be true for production environments behind HTTPS)
     studio.security.token.cookie.secure: ${env:STUDIO_REFRESH_TOKEN_SECURE}
 
-|
+where:
+
+- ``STUDIO_TOKEN_ISSUER``, ``STUDIO_TOKEN_VALID_ISSUERS``, ``STUDIO_TOKEN_AUDIENCE`` |br|
+  These variables are used in the JWT claims set. See https://datatracker.ietf.org/doc/html/rfc7519#section-4.1 for more
+  information on JWT claims set.
+
+- ``STUDIO_TOKEN_TIMEOUT`` |br|
+  This variable sets the expiration of the JWT token in minutes (default is 5 minutes). The expiration value is also
+  injected into the JWT claims when a token is published. This cannot be changed after the token is published.
+  After the expiration time, the token is invalid and a new token must be published to use for API calls. (This can be
+  done automatically with the ``refresh_token`` in the UI)
+
+- ``STUDIO_TOKEN_SIGN_PASSWORD`` |br|
+  This variable is used for the Signature part of the JWT token. The signature is used to verify the message wasn't
+  changed along the way, and, in the case of tokens signed with a private key, it can also verify that the sender of
+  the JWT is who it says it is. For Studio, we use HMAC_SHA512 algorithm for the signature.
+
+- ``STUDIO_TOKEN_ENCRYPT_PASSWORD`` |br|
+  This variable is used for encrypting the JWT token itself so that it won't be decrypted without a password.
+
+- ``STUDIO_REFRESH_TOKEN_NAME``, ``STUDIO_REFRESH_TOKEN_MAX_AGE``, ``STUDIO_REFRESH_TOKEN_SECURE`` |br|
+  These variables are used for customizing the refresh token cookie. JWT token is short lived in general and we use a
+  refresh token to exchange for a new JWT token when the old one is expired. By default the cookie name is ``refresh_token``.
+  When creating a new access token, the backend will validate if the refresh token cookie is valid. You should find
+  this from the cookies in the browser while logging in with Studio.
+
+For more information on JWT tokens in general, see https://jwt.io/introduction.
+For information on creating access tokens in Studio, see :ref:`here <access-tokens>`.
 
 |hr|
