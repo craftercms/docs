@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.1.6
 :orphan:
 
 .. index:: Modules; Crafter Deployer
@@ -21,7 +21,6 @@ Crafter Deployer
 Crafter Deployer is the deployment agent for CrafterCMS.
 
 .. TODO: We need a bigger/better description of this.
-
 
 .. _crafter-deployer-administration:
 
@@ -354,6 +353,122 @@ the steps described in :ref:`debugging-deployer-issues`
 .. warning::
   Changing or deleting a processed commit file could cause unchanged files to be indexed again and
   it should be done as a last resort in case of errors.
+
+^^^^^^^^^^^^^^^^^
+Document Indexing
+^^^^^^^^^^^^^^^^^
+Crafter Deployer indexes documents via the following configured items:
+
+- A full text index of any document that has a mimetype that matches the configured list of mimetypes.
+- Indexing of any remote document that matches the configured list of remote documents pattern
+- Indexing of jacketed documents with anything that matches the configured pattern.
+
+Note that indexing of documents in authoring and indexing of documents in delivery each have their own configuration.
+
+"""""""""
+Mimetypes
+"""""""""
+The list of supported mimetypes determines what's considered a document that should be full-text indexed.
+The default mimetypes are configured as follows:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
+    :linenos:
+    :emphasize-lines: 7-8
+
+    target:
+    ...
+      search:
+        openSearch:
+        ...
+        binary:
+          # The list of binary file mime types that should be indexed
+          supportedMimeTypes:
+            - application/pdf
+            - application/msword
+            - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+            - application/vnd.ms-excel
+            - application/vnd.ms-powerpoint
+            - application/vnd.openxmlformats-officedocument.presentationml.presentation
+
+""""""""""""""""""""""""
+Remote Documents Pattern
+""""""""""""""""""""""""
+The ``remoteBinaryPathPatterns`` in the config determines what a remote document is via path pattern.
+The default for this is configured as follows:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
+    :linenos:
+    :emphasize-lines: 8-9
+
+    target:
+    ...
+      search:
+        openSearch:
+        ...
+        binary:
+          ...
+        # The regex path patterns for binary/document files that are stored remotely
+          remoteBinaryPathPatterns: &remoteBinaryPathPatterns
+            # HTTP/HTTPS URLs are only indexed if they contain the protocol (http:// or https://). Protocol relative
+            # URLs (like //mydoc.pdf) are not supported since the protocol is unknown to the back-end indexer.
+            - ^(http:|https:)//.+$
+            - ^/remote-assets/.+$
+
+""""""""""""""
+Jacket Pattern
+""""""""""""""
+The ``metadataPathPatterns`` in the configuration determines if a document should be indexed with the metadata of the
+object that points to it (a so-called "jacket"). The deployer will re-index the jacket and the document together
+whenever the jacket is updated. See :ref:`jacket` for more information.
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
+    :linenos:
+    :emphasize-lines: 8-9
+
+    target:
+    ...
+      search:
+        openSearch:
+        ...
+        binary:
+          ...
+          # The regex path patterns for the metadata ("jacket") files of binary/document files
+          metadataPathPatterns:
+            - ^/?site/documents/.+\.xml$
+
+""""""""""""""""
+Indexing Failure
+""""""""""""""""
+When a document cannot be indexed:
+
+- The Deployer skips the document and leaves an error in the logs.
+- The document is not re-processed unless it is updated/re-deployed or the re-process API is called.
+
+The default behavior when a document cannot be indexed is that the Deployer logs the error and moves on. Process commits
+files are updated and the Deployer never revisits the indexing unless a future publish requires it to, or, a
+re-process API is called, such as the `deployTarget <../../_static/api/studio.html#tag/target/operation/deployTarget>`__ API
+
+If a catastrophic exception interferes with the update of the processed commits file then the Deployer will re-process
+the commits from the last commit presently in the processed commits file.
+
+A few installations disable this behavior in the :ref:`GitDiffProcessor <deployer-git-diff-processor>` (via the
+``target.yaml``) that always moves forward.
+
+In these configurations, an additional processor is added to the end of the processor chain called the
+:ref:`Git Update Commit ID processor <deployer-git-update-commit-id-processor>` which only updates this ID on successful
+completion of the processor chain.
+
+Note that using this model can lead to A LOT of re-processing if there is no additional circuit breaker logging added
+for error conditions that do not resolve themselves.
+
+If the deployment as a whole cannot be completed due to a catastrophic exception, then all content including documents
+will be re-processed until the deployment succeeds. By default the Git Diff process is configured to update the processed
+commits regardless of success or failure. Some deployments set this to false and force the processor chain to be
+successful before updating processed commits (via the GitUpdateCommits Processor).
+
 
 .. _jacket:
 
