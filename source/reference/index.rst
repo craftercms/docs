@@ -65,7 +65,7 @@ APIs
     ../../reference/api/templating-api
     ../../reference/api/javascript-sdk
     ../../reference/api/graphql
-    ../../by-role/developer/common/search
+    ../../reference/api/search
     ../../reference/api/rest-content-retrieval-api
     ../../reference/api/groovy-api
     ../../reference/api/java-api

@@ -26,6 +26,9 @@ CrafterCMS supports both headless and templated projects (templated projects are
 
 Regardless of type of project, a developer needs to be familiar with the following core concepts.
 
+-------------
+Core Concepts
+-------------
 .. list-table:: Developer Core Concepts
     :header-rows: 1
 
@@ -62,12 +65,11 @@ Regardless of type of project, a developer needs to be familiar with the followi
     common/static-content-access
     common/experience-builder
     common/security
-    common/search
 
-----------------
-General Concepts
-----------------
-Aside from the core concepts listed above, a developer needs to be familiar with the following general concepts.
+-------------------
+Additional Concepts
+-------------------
+Aside from the core concepts listed above, a developer needs to be familiar with the following additional general concepts.
 
 .. list-table:: Developer General Concepts
     :header-rows: 1

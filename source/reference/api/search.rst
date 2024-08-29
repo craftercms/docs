@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.0
+:last-updated: 4.1.6
 
 .. index:: Search, Query, OpenSearch, GraphQL
 
@@ -11,17 +11,25 @@ Search
 .. contents::
     :local:
 
+----------
+Search API
+----------
 To perform content queries you need to use the client provided by Crafter Engine, the bean name is
 ``searchClient`` and it can be used from any Groovy script.
-Note that the old client ``searchService`` is now deprecated and ``searchClient`` should be used.
 
-You can find the interface for this service :javadoc_base_url:`here <search/org/craftercms/search/opensearch/client/OpenSearchClientWrapper.html>`
+.. Remove the following note in 4.3.0
+
+.. Note::
+    The old client ``searchService`` is now deprecated and ``searchClient`` should be used.
+
+You can find the interface for this service :javadoc_base_url:`in the JavaDoc <search/org/craftercms/search/opensearch/client/OpenSearchClientWrapper.html>`
 
 Depending on the complexity of the queries there are two ways to create the queries:
 
-**Query DSL**
-
-This follows the same structure that OpenSearch uses for the REST API. This method is suitable for constant or
+^^^^^^^^^
+Query DSL
+^^^^^^^^^
+This follows the same structure that OpenSearch uses for the REST API, see their `query documentation <https://opensearch.org/docs/latest/query-dsl/>`_. This method is suitable for constant or
 simple queries that don't require too much configuration.
 
 .. code-block:: groovy
@@ -63,11 +71,11 @@ simple queries that don't require too much configuration.
   You can find detailed information for the JSON DSL in the
   `query documentation <https://opensearch.org/docs/latest/query-dsl/>`_
 
-
-**Query Builders**
-
-You can use all classes available in the official OpenSearch client package to build your queries. This method
-allow you to use builder objects to develop complex logic for building the queries.
+^^^^^^^^^^^^^^
+Query Builders
+^^^^^^^^^^^^^^
+You can use all classes available in the official OpenSearch client package to build your queries, more in their `java documentation <https://opensearch.org/docs/latest/clients/java/>`_. This
+method allows you to use builder objects to develop complex logic for building the queries.
 
 .. code-block:: groovy
   :linenos:
@@ -101,14 +109,16 @@ allow you to use builder objects to develop complex logic for building the queri
 
   return items
 
-
 .. note::
     You can find detailed information for each builder in the
     `java documentation <https://opensearch.org/docs/latest/clients/java/>`_
 
------------------------------
+--------
+Examples
+--------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Implementing a Faceted Search
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 It is possible to use aggregations to provide a faceted search to allow users to refine the search
 results based on one or more fields.
 
@@ -148,9 +158,9 @@ To build the faceted search we must:
 #. Process the aggregations from the search response
 #. Display the facets in the search result page
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""
 Sending Aggregations in the Search Request
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""
 Aggregations are added in the request using the ``aggs`` key, each aggregation must have a unique name
 as key and the configuration depending on the type.
 
@@ -177,9 +187,9 @@ as key and the configuration depending on the type.
 In the previous example we include a ``terms`` aggregation called ``categories`` that will return all found values for
 the field ``categories.item.value_smv`` that have at least 1 article assigned.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""
 Processing Aggregations in the Search Response
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""
 Search will return the aggregations in the response under the ``aggregations`` field, the contents of each
 aggregation will be different depending on the type.
 
@@ -217,9 +227,9 @@ According to the given example, if we run our query again including a filter for
 it will return exactly 3 articles, and in the next query we will get a new set of facets based on those articles.
 This is how users can quickly reduce the number of result and find more useful data with less effort.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""
 Displaying Facets in the Search Result Pages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""
 This step will change depending on the technology being used to display all information, it can be done in Freemarker
 or a SPA using Angular, React or Vue. As an example we will use Handlebars templates that will be rendered using
 jQuery.
@@ -286,9 +296,9 @@ The final step is to trigger a new search when the user selects one of the value
 
 .. _search-multi-index-query:
 
------------------
+^^^^^^^^^^^^^^^^^
 Multi-index Query
------------------
+^^^^^^^^^^^^^^^^^
 CrafterCMS supports querying more than one search index in a single query.
 
 To search your site and other indexes, simply send a search query with a comma separated list of indexes/aliases (pointer to an index). It will then search your site and the other indexes
@@ -338,10 +348,9 @@ See `the official docs <https://opensearch.org/docs/latest/api-reference/search/
 
 For more information on ``indices_boost``, see index boosting in this article `<https://opensearch.org/docs/latest/api-reference/search/>`__
 
-
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Implementing a Type-ahead Service
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In this section, we will be looking at how to use a query to provide suggestions as the user types.
 
 .. image:: /_static/images/search/search-typeahead-box.webp
@@ -352,14 +361,14 @@ In this section, we will be looking at how to use a query to provide suggestions
     :width: 50 %
     :align: center
 
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 Build the Service
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 Create a REST service that returns suggestions based on the content in your site.
 
-""""""""""""
+~~~~~~~~~~~~
 Requirements
-""""""""""""
+~~~~~~~~~~~~
 - The service will take the user's current search term and find similar content.
 - The service will return the results as a list of strings
 
@@ -440,14 +449,14 @@ REST endpoint from a browser and get a result similar to this:
         "5 Popular Diets for Women"
     ]
 
-^^^^^^^^^^^^
+""""""""""""
 Build the UI
-^^^^^^^^^^^^
+""""""""""""
 The front end experience is built with HTML, JavaScript and specifically AJAX.
 
-""""""""""""
+~~~~~~~~~~~~
 Requirements
-""""""""""""
+~~~~~~~~~~~~
   - When the user types a value send a request to the server to get instant results
   - Display the results and show suggestions about what the user might be looking for
   - *Do not* fire a query for every keystroke. This can lead to more load than necessary, instead,
