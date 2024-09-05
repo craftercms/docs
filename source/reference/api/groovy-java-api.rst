@@ -226,9 +226,9 @@ date is set as the attribute. Assume that the REST script exists under Scripts >
 
 .. _groovy-path-variables:
 
-""""""""""""""
-Path Variables
-""""""""""""""
+""""""""""""""""""""
+Using Path Variables
+""""""""""""""""""""
 Path variables allows you to pass a value as part of the URL. It's a part of the path of the document
 to be accessed during the API call. In a REST controller the system can automatically pick out those portions of
 the URL and feed them to you with the name you supplied.
@@ -283,9 +283,9 @@ Similarly, a call to http://mysite/api/1/services/foo/2/helloworld.json will out
 
 .. _groovy-rest-script-not-found:
 
-""""""""""""""""
-Script Not Found
-""""""""""""""""
+"""""""""""""""""""""
+Custom HTTP Responses
+"""""""""""""""""""""
 Rest scripts will return the ``404`` page when a script is not found.
 Developers will still be able to return custom ``404`` responses from rest scripts. e.g.:
 
