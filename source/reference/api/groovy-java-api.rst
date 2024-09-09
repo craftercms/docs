@@ -4,26 +4,148 @@
 .. highlight:: groovy
    :linenothreshold: 5
 
-.. index:: Groovy, Groovy API, Custom Services, Services, Controllers, Unit Testing
+.. index:: Groovy, Groovy API, Java API, Custom Services, Services, Controllers, Unit Testing
 
-.. _groovy-api:
+.. _groovy-java-api:
 
-==================
-Groovy Development
-==================
+===============
+Groovy/Java API
+===============
 .. contents::
     :local:
     :depth: 2
 
-CrafterCMS supports server-side development with Groovy. By using Groovy, you can create RESTful services, MVC controllers, code that runs before a page or component is rendered, servlet filters, scheduled jobs, and entire backend applications.
+CrafterCMS supports server-side development with Groovy. By using Groovy, you can create RESTful services, MVC controllers,
+code that runs before a page or component is rendered, servlet filters, scheduled jobs, and entire backend applications.
 
 ----------
 Groovy API
 ----------
+^^^^^^^^^^^^^^^^
+Global Variables
+^^^^^^^^^^^^^^^^
 CrafterCMS provides a number of useful global variables that can be used in all the different types of scripts available:
 
 .. include:: /includes/global-groovy-variables.rst
 
+.. _groovy-examples:
+
+""""""""
+Examples
+""""""""
+The following examples shows you how to use the global variables in your scripts. For more information on available
+interfaces for your Groovy scripts, see the :ref:`CrafterCMS JavaDocs <java-api>`.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Make a Query for Content Based on Structure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The following code examples use the Site Item Service in Crafter Engine to get content.
+You can find the interface for this service here at :javadoc_base_url:`Site Item Service JavaDoc <engine/org/craftercms/engine/service/SiteItemService.html>`
+
+.. code-block:: groovy
+
+    def topNavItems = [:]
+    def siteDir = siteItemService.getSiteTree("/site/website", 2)
+
+    if (siteDir) {
+        def dirs = siteDir.childItems
+        dirs.each { dir ->
+            def dirName = dir.getStoreName()
+            def dirItem = siteItemService.getSiteItem("/site/website/${dirName}/index.xml")
+            if (dirItem != null) {
+                def dirDisplayName = dirItem.queryValue('internal-name')
+                topNavItems.put(dirName, dirDisplayName)
+            }
+        }
+    }
+
+    return topNavItems
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Make a Query for Content Based on Structure with Filter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The following code examples use the Site Item Service in Crafter Engine to get content.
+In the example we build on the Site Item Service of getting objects under a specific tree in the repository by supplying
+a filter that will be applied to each object first to determine if it should be part of the result.
+Filters can make their determination based on the path or the content or even "outside" influence.
+
+    * You can find the interface for this service here at :javadoc_base_url:`Site Item Service JavaDoc <engine/org/craftercms/engine/service/SiteItemService.html>`
+    * Note in the example below we define our own filter based on the ItemFilter interface found at :javadoc_base_url:`ItemFilter JavaDoc <core/org/craftercms/core/service/ItemFilter.html>`
+    * However, you may use out of the box filters as well if they meet your needs. These are found here at the :javadoc_base_url:`Filter Package Summary <engine/org/craftercms/engine/service/filter/package-summary.html>`
+    * Finally be aware that for simple filename patterns, methods for this already exist in the Site Item Service and no filter is required (but they make for an simple to understand example.)
+
+.. code-block:: groovy
+
+    import org.craftercms.core.service.ItemFilter
+    import org.craftercms.core.service.Item
+    import java.util.List
+
+
+    def result = [:]
+    def navItems = [:]
+    def siteDir = siteItemService.getSiteTree("/site/website", 2, new StartsWithAItemFilter(), null)
+
+    if (siteDir) {
+        def dirs = siteDir.childItems
+        dirs.each { dir ->
+                def dirName = dir.getStoreName()
+                def dirItem = siteItemService.getSiteItem("/site/website/${dirName}/index.xml")
+                if (dirItem != null) {
+                    def dirDisplayName = dirItem.queryValue('internal-name')
+                       navItems.put(dirName, dirDisplayName)
+                }
+       }
+    }
+    result.navItems = navItems
+
+    return result
+
+    /**
+     * Define a filter that returns only items that have a name that starts with "A" or "a"
+     */
+    class StartsWithAItemFilter implements ItemFilter {
+
+        public boolean runBeforeProcessing() {
+            return true
+        }
+
+        public boolean runAfterProcessing() {
+            return false
+        }
+
+        public boolean accepts(Item item, List acceptedItems, List rejectedItems, boolean runBeforeProcessing) {
+
+          if (item.getName().toLowerCase().startsWith("a")) {
+              return true
+          }
+
+          return false
+        }
+     }
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Make a Query Against Fields in a Content Object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The following code examples use the Site Item Service in Crafter Engine to get content.
+You can find the interface for this service at :javadoc_base_url:`Site Item Service JavaDoc <engine/org/craftercms/engine/service/SiteItemService.html>`
+
+.. code-block:: groovy
+
+    def result = [:]
+    def segment = "a segment value" // could come from profile, query param etc
+
+    // load a specific content object
+    def itemDom = siteItemService.getSiteItem("/site/components/sliders/default.xml")
+
+    // query specific values from the object
+    result.header = itemDom.queryValue("/component/targetedSlide//segment[contains(.,'" +  segment + "')]../label")
+    result.image = itemDom.queryValue("/component/targetedSlide//segment[contains(.,'" +  segment + "')]/../image")
+
+    return result
+
+^^^^^^^^^^^^^^^
+Other Variables
+^^^^^^^^^^^^^^^
 There are also several other variables available to scripts that are executed during the scope of a request (REST scripts, controller
 scripts, page/component scripts and filter scripts):
 
@@ -33,6 +155,39 @@ All scripts are executed in a sandbox to prevent insecure code from running, to 
 :ref:`groovy-sandbox-configuration`
 
 To create unit tests for your groovy code, see :ref:`unit-testing-groovy-code`
+
+|hr|
+
+.. _java-api:
+
+--------
+Java API
+--------
+CrafterCMS provides the following Java libraries for managing your projects:
+
+.. list-table::
+   :widths: 30 70
+
+   * - Crafter Commons
+     - :javadoc_base_url:`commons/index.html`
+   * - Crafter Core
+     - :javadoc_base_url:`core/index.html`
+   * - Crafter Deployer
+     - :javadoc_base_url:`deployer/index.html`
+   * - Crafter Engine
+     - :javadoc_base_url:`engine/index.html`
+   * - Crafter Profile
+     - :javadoc_base_url:`profile/index.html`
+   * - Crafter Search
+     - :javadoc_base_url:`search/index.html`
+   * - Crafter Social
+     - :javadoc_base_url:`social/index.html`
+   * - Crafter Studio
+     - :javadoc_base_url:`studio/index.html`
+
+The Groovy examples listed :ref:`above <groovy-examples>` uses interfaces from the Java libraries in the table.
+
+|hr|
 
 ----------------
 Types of Scripts
@@ -71,9 +226,9 @@ date is set as the attribute. Assume that the REST script exists under Scripts >
 
 .. _groovy-path-variables:
 
-""""""""""""""
-Path Variables
-""""""""""""""
+""""""""""""""""""""
+Using Path Variables
+""""""""""""""""""""
 Path variables allows you to pass a value as part of the URL. It's a part of the path of the document
 to be accessed during the API call. In a REST controller the system can automatically pick out those portions of
 the URL and feed them to you with the name you supplied.
@@ -128,9 +283,9 @@ Similarly, a call to http://mysite/api/1/services/foo/2/helloworld.json will out
 
 .. _groovy-rest-script-not-found:
 
-""""""""""""""""
-Script Not Found
-""""""""""""""""
+"""""""""""""""""""""
+Custom HTTP Responses
+"""""""""""""""""""""
 Rest scripts will return the ``404`` page when a script is not found.
 Developers will still be able to return custom ``404`` responses from rest scripts. e.g.:
 
@@ -258,6 +413,7 @@ controller then must be placed in Scripts > controllers > sitemap.groovy. The co
 
     return null
 
+|hr|
 
 .. _unit-testing-groovy-code:
 
@@ -268,7 +424,7 @@ For larger sites with complex services implemented in Groovy, it is very helpful
 
 This section details how to create unit tests for CrafterCMS Groovy code with Gradle.
 
-For more information on the classes of the variables that can be mocked for unit testing, see :ref:`above <groovy-api>`
+For more information on the classes of the variables that can be mocked for unit testing, see :ref:`above <groovy-java-api>`
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Steps for Creating Groovy Unit Test
@@ -484,7 +640,7 @@ Let's take a look at the result of our unit test which can be found here: *CRAFT
    :width: 60 %
    :align: center
 
-|
+|hr|
 
 ------------
 Other Topics
@@ -513,6 +669,8 @@ content type controllers. Remember to get the ``contentService`` bean when using
     def documentStream = ContentUtils.convertDocumentToStream(document, "UTF-8")
     def contentService = applicationContext.getBean("cstudioContentService")
     contentService.writeContentAndNotify(site, path, documentStream)
+
+|hr|
 
 --------
 See Also

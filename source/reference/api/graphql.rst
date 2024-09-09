@@ -424,7 +424,7 @@ After Crafter Engine builds the types corresponding to the Content Types in the 
 Groovy script that allows you to make customizations to the schema before making it available to the clients. By
 default the full path of the script is ``/scripts/graphql/init.groovy``.
 
-In this script you will be able to use most of the global variables described in :ref:`groovy-api` (except the ones
+In this script you will be able to use most of the global variables described in :ref:`groovy-java-api` (except the ones
 for the request scope). Additionally there is a global variable specific for this script:
 
 +-------------+--------------------------------------------------------+--------------------------------+
