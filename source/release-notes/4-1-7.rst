@@ -4,7 +4,7 @@
 CrafterCMS 4.1.7
 ----------------
 
-Released *TBD*
+Released *September 11, 2024*
 
 This release includes fixes for issues with the release version 4.1.6
 
