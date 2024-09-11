@@ -22,24 +22,26 @@ Crafter Deployer is the deployment agent for CrafterCMS.
 
 .. TODO: We need a bigger/better description of this.
 
-.. _crafter-deployer-administration:
+Crafter Deployer performs indexing and runs scheduled deployments to perform tasks like pushing/pulling content
+created/edited in Crafter Studio to an external service, executing actions every time a deployment succeeds or fails,
+sending out deployment email notifications, etc.
 
---------------
-Administration
---------------
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-How to Start/Stop the Deployer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're using CrafterCMS installed on a server, starting and stopping the Deployer is very easy. From the command line, navigate to the
-{env-directory}, authoring or delivery environment folder, and then inside the ``bin`` folder, run ``./crafter.sh start_deployer`` to start
-the Deployer or ``./crafter.sh stop_deployer`` to stop the Deployer.
-
-^^^^^^^^^^^^^
+-------------
 Configuration
-^^^^^^^^^^^^^
-""""""""""""""""""""
-Global Configuration
-""""""""""""""""""""
+-------------
+^^^^^^^^^^^^^^^^^^^
+Configuration Files
+^^^^^^^^^^^^^^^^^^^
+Crafter Deployer can be configured at the global level and individual target level.
+
+#. Global configuration files are in ``$CRAFTER_HOME/bin/crafter-deployer/config/``, and will be applied to
+   all targets loaded.
+
+#. Individual target configuration files are in ``$CRAFTER_HOME/data/deployer/targets/{siteName}-{environment}.yaml``
+
+""""""""""""""""""""""""""
+Global Configuration Files
+""""""""""""""""""""""""""
 Crafter Deployer has two main property configuration files found in ``CRAFTER_HOME/bin/crafter-deployer/config``:
 
 * **application.yaml:** contains the global application properties, like the server port and the locations of other configuration files.
@@ -50,7 +52,7 @@ The ``application.yaml`` file is loaded automatically by Spring Boot, so its pro
 defined by Spring Boot:
 
 #. ``application.yaml`` in a ``config`` directory under the current directory.
-#. ``application.yaml`` in the the current directory.
+#. ``application.yaml`` in the current directory.
 #. ``application.yaml`` in a ``config`` directory in the classpath.
 #. ``application.yaml`` in the classpath root.
 
@@ -179,9 +181,9 @@ where:
   - ``engineURL`` and ``engineManagementToken`` is used for calling Engine APIs, and the environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file
   - ``studioURL`` and ``studioManagementToken`` is required for calling Studio APIs, and the environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file
 
-""""""""""""""""""""
-Target Configuration
-""""""""""""""""""""
+""""""""""""""""""""""""""
+Target Configuration Files
+""""""""""""""""""""""""""
 Each deployment target has it's own YAML configuration file, where the properties of the target and it's entire deployment pipeline is specified.
 Without this file the Deployer doesn't know of the existence of the target. By default these configuration files reside under
 ``./config/targets`` (in the case of the CrafterCMS installed on a server, they're under ``CRAFTER_HOME/data/deployer/targets``).
@@ -286,6 +288,227 @@ The Deployer out of the box provides the following processor beans:
 * **mailNotificationProcessor:** sends an email notification when there's a successful deployment with file changes or when
   a deployment failed.
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Deployer Configuration Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In this section we will highlight some of the more commonly used properties in the configuration of Crafter Deployer.
+
+.. list-table:: Common Configuration Properties
+    :header-rows: 1
+
+    * - Property
+      - Purpose
+    * - :ref:`deployer-single-search-cluster`
+      - Allows you to configure a target with a single search cluster
+    * - :ref:`deployer-multiple-search-cluster`
+      - Allows you to configure a target with multiple search clusters
+    * - :ref:`deployer-indexing-mime-types`
+      - Allows you to configure MIME types used for document indexing
+    * - :ref:`deployer-indexing-remote-documents-path-pattern`
+      - Allows you to configure remote documents path patterns used for document indexing
+    * - :ref:`deployer-indexing-metadata-path-pattern`
+      - Allows you to configure metadata path patterns used for document indexing
+
+The properties listed above may be configured in the following locations:
+
+- Global configuration file ``$CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml``
+- Individual target configuration file ``$CRAFTER_HOME/data/deployer/targets/{siteName}-{environment}.yaml``
+
+.. _deployer-single-search-cluster:
+
+"""""""""""""""""""""
+Single Search Cluster
+"""""""""""""""""""""
+The following allows you to configure a target with a single search cluster.
+This is the most common configuration used, all operations will be performed on a single search cluster:
+
+.. code-block:: yaml
+  :linenos:
+  :caption: Target configuration for a single search cluster
+
+    target:
+      search:
+        openSearch:
+          # Single cluster
+          urls:
+            - ${env:SEARCH_URL}
+          username: ${env:SEARCH_USERNAME}
+          password: ${env:SEARCH_PASSWORD}
+          timeout:
+            # The connection timeout in milliseconds, if set to -1 the default will be used
+            connect: -1
+            # The socket timeout in milliseconds, if set to -1 the default will be used
+            socket: -1
+          # The number of threads to use, if set to -1 the default will be used
+          threads: -1
+          # Indicates if keep alive should be enabled for sockets used by the search client, defaults to false
+          keepAlive: false
+
+.. _deployer-multiple-search-cluster:
+
+""""""""""""""""""""""""
+Multiple Search Clusters
+""""""""""""""""""""""""
+The following allows you to configure a target with multiple search clusters.
+In the configuration below, all read operations will be performed on one search cluster but write operations will
+be performed on multiple search clusters:
+
+.. code-block:: yaml
+  :linenos:
+  :caption: Target configuration for multiple search clusters
+  :emphasize-lines: 8,14
+
+    target:
+      search:
+        openSearch:
+          # Global auth, used for all clusters
+          username: search
+          password: passw0rd
+          # Cluster for read operations
+          readCluster:
+            urls:
+              - 'http://read-cluster-node-1:9200'
+              - 'http://read-cluster-node-2:9200'
+              # This cluster will use the global auth
+          # Clusters for write operations
+          writeClusters:
+            - urls:
+              - 'http://write-cluster-1-node-1:9200'
+              - 'http://write-cluster-1-node-2:9200'
+              # This cluster will use the global auth
+            - urls:
+              - 'http://write-cluster-2-node-1:9200'
+              - 'http://write-cluster-2-node-2:9200'
+              # Override the global auth for this cluster
+              username: search2
+              password: passw0rd2
+
+.. _deployer-indexing-mime-types:
+
+""""""""""
+MIME types
+""""""""""
+The ``supportedMimeTypes`` configured in the ``base-target.yaml`` file determines what MIME types are used for indexing.
+The following is the default list of MIME types with full-text-search indexing enabled.
+
+.. code-block:: yaml
+    :caption: *Default supported MIME types in base-target.yaml*
+    :linenos:
+    :emphasize-lines: 7-8
+
+    target:
+    ...
+      search:
+        openSearch:
+        ...
+        binary:
+          # The list of binary file mime types that should be indexed
+          supportedMimeTypes:
+            - application/pdf
+            - application/msword
+            - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+            - application/vnd.ms-excel
+            - application/vnd.ms-powerpoint
+            - application/vnd.openxmlformats-officedocument.presentationml.presentation
+
+To add other MIME types to the list of MIME types with full-text-search indexing enabled, simply edit the override file
+``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml`` and add to the list.
+
+Say we want to add bitmaps to the supported MIME types, we'll add the MIME type ``image/bmp`` to the list above under
+``target.search.binary.supportedMimeTypes``:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
+    :linenos:
+    :emphasize-lines: 7-8
+
+    target:
+    ...
+      search:
+        openSearch:
+        ...
+        binary:
+          # The list of binary file mime types that should be indexed
+          supportedMimeTypes:
+            - image/bmp
+
+For a list of common MIME types, see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types.
+
+.. _deployer-indexing-remote-documents-path-pattern:
+
+"""""""""""""""""""""""""""""
+Remote Documents Path Pattern
+"""""""""""""""""""""""""""""
+The ``remoteBinaryPathPatterns`` configured in the ``base-target.yaml`` file determines what a remote document
+is via path pattern. The default for this is configured as follows:
+
+.. code-block:: yaml
+    :caption: *Default remoteBinaryPathPatterns in base-target.yaml*
+    :linenos:
+    :emphasize-lines: 8-9
+
+    target:
+    ...
+      search:
+        openSearch:
+        ...
+        binary:
+          ...
+        # The regex path patterns for binary/document files that are stored remotely
+          remoteBinaryPathPatterns: &remoteBinaryPathPatterns
+            # HTTP/HTTPS URLs are only indexed if they contain the protocol (http:// or https://). Protocol relative
+            # URLs (like //mydoc.pdf) are not supported since the protocol is unknown to the back-end indexer.
+            - ^(http:|https:)//.+$
+            - ^/remote-assets/.+$
+
+To add other remote document path patterns to the list, simply edit the override file
+``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml`` and add to the list under
+``target.search.binary.remoteBinaryPathPatterns``.
+
+.. _deployer-indexing-metadata-path-pattern:
+
+"""""""""""""""""""""
+Metadata Path Pattern
+"""""""""""""""""""""
+The ``metadataPathPatterns`` configured in the ``base-target.yaml`` file determines if a document should be indexed with
+the metadata of the object that points to it (a so-called "jacket"). The deployer will re-index the jacket and the
+document together whenever the jacket is updated. See :ref:`jacket` for more information.
+
+.. code-block:: yaml
+    :caption: *Default metadataPathPatterns in base-target.yaml*
+    :linenos:
+    :emphasize-lines: 8-9
+
+    target:
+    ...
+      search:
+        openSearch:
+        ...
+        binary:
+          ...
+          # The regex path patterns for the metadata ("jacket") files of binary/document files
+          metadataPathPatterns:
+            - ^/?site/documents/.+\.xml$
+
+To add other jacket patterns to the list, simply edit the override file
+``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml`` and add to the list under
+``target.search.binary.metadataPathPatterns``.
+
+
+|hr|
+
+.. _crafter-deployer-administration:
+
+--------------
+Administration
+--------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How to Start/Stop the Deployer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If you're using CrafterCMS installed on a server, starting and stopping the Deployer is very easy. From the command line, navigate to the
+{env-directory}, authoring or delivery environment folder, and then inside the ``bin`` folder, run ``./crafter.sh start_deployer`` to start
+the Deployer or ``./crafter.sh stop_deployer`` to stop the Deployer.
+
 ^^^^^^^^^^^^^^
 Manage Targets
 ^^^^^^^^^^^^^^
@@ -319,6 +542,245 @@ There are two options for deleting a target:
 
 * Delete the target configuration file in the filesystem.
 
+.. _crafter-deployer-templates-guide:
+
+^^^^^^^^^^^^^^^^
+Target Templates
+^^^^^^^^^^^^^^^^
+When you are creating a target in Crafter Deployer, you can use one of the included templates that can be easily
+customized with additional parameters during the creation.
+
+""""""""""""""""""
+Built-in Templates
+""""""""""""""""""
+All target templates support the following parameters:
+
++-------------+-----------+------------------------------------+
+|Name         |Required   |Description                         |
++=============+===========+====================================+
+|``env``      ||checkmark||The target’s environment (e.g. dev) |
++-------------+-----------+------------------------------------+
+|``site_name``||checkmark||The target’s site name (e.g. mysite)|
++-------------+-----------+------------------------------------+
+|``repo_url`` ||checkmark||The target's repository URL         |
++-------------+-----------+------------------------------------+
+
+~~~~~~~~~~~~~~~~
+Authoring Target
+~~~~~~~~~~~~~~~~
+This is one of the templates used by Crafter Studio when a new project/site is created, this template will setup a target for
+Studio's search features including: indexing all xml files, binary files and indexing additional Git metadata from the
+site repository.
+
+This target will:
+
+- Identify the changed files according to the local Git repository history
+- Index all site content in search
+
+**Parameters**
+
+This target has no additional parameters.
+
+.. note:: When this target is used, the value of ``repo_url`` must be a local filesystem path
+
+~~~~~~~~~~~~
+Local Target
+~~~~~~~~~~~~
+This is the other template used by Crafter Studio when a new project is created, this template will setup a target for
+previewing the project.
+
+This target will:
+
+- Identify the changed files according to the local Git repository history
+- Index all project content in search
+- Rebuild Crafter Engine's site context when there are changes in configuration files or Groovy scripts
+- Clear Crafter Engine's cache
+- Rebuild Crafter Engine's project GraphQL schema when there are changes in content-type definitions
+- Send email notifications if enabled
+
+**Parameters**
+
++--------------------------+----------+------------------------------------------------------------------------+
+|Name                      |Required  |Description                                                             |
++==========================+==========+========================================================================+
+|``disable_deploy_cron``   |          |Disables the cron job that runs deployments every certain amount of time|
++--------------------------+----------+------------------------------------------------------------------------+
+|``notification_addresses``|          |The email addresses that should receive deployment notifications        |
++--------------------------+----------+------------------------------------------------------------------------+
+
+.. note:: When this target is used, the value of ``repo_url`` must be a local filesystem path
+
+~~~~~~~~~~~~~
+Remote Target
+~~~~~~~~~~~~~
+This is the default template used for Crafter Engine in delivery environments, it is very similar to the Local Target
+but it adds support for remote Git repositories.
+
+This target will:
+
+- Clone the remote repository if needed
+- Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
+- Identify the changed files according to the Git repository history
+- Index all project content in the appropriate search engine
+- Rebuild Crafter Engine's site context when there are changes in configuration files or Groovy scripts
+- Clear Crafter Engine's cache
+- Rebuild Crafter Engine's project GraphQL schema when there are changes in content-type definitions
+- Send email notifications if enabled
+
+**Parameters**
+
++------------------------------+----------+------------------------------------------------------------------------+
+|Name                          |Required  |Description                                                             |
++==============================+==========+========================================================================+
+|``disable_deploy_cron``       |          |Disables the cron job that runs deployments every certain amount of time|
++------------------------------+----------+------------------------------------------------------------------------+
+|``repo_branch``               |          |The branch name of the remote Git repo to pull from                     |
++------------------------------+----------+------------------------------------------------------------------------+
+|``repo_username``             |          |Username to access remote repository                                    |
++------------------------------+----------+------------------------------------------------------------------------+
+|``repo_password``             |          |Password to access remote repository                                    |
++------------------------------+----------+------------------------------------------------------------------------+
+|``ssh_private_key_path``      |          |The path for the private key to access remote repository                |
++------------------------------+----------+------------------------------------------------------------------------+
+|``ssh_private_key_passphrase``|          |The passphrase for the private key to access remote repository (only if |
+|                              |          |the key is passphrase-protected)                                        |
++------------------------------+----------+------------------------------------------------------------------------+
+|``notification_addresses``    |          |The email addresses that should receive deployment notifications        |
++------------------------------+----------+------------------------------------------------------------------------+
+
+.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
+
+~~~~~~~~~~~~~
+AWS S3 Target
+~~~~~~~~~~~~~
+This template is used for Crafter Engine in serverless delivery environments, it is very similar to the Remote Target
+but it adds support for syncing files to an AWS S3 bucket and also handles AWS Cloudfront invalidations.
+
+This target will:
+
+- Clone the remote repository if needed
+- Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
+- Identify the changed files according to the Git repository history
+- Index all project content in search
+- Sync all new, updated and deleted files to an AWS S3 bucket
+- Execute an invalidation for all updated files in one or more AWS Cloudfront distributions
+- Submit deployments events for all Crafter Engine instances:
+
+  - Rebuild the site context when there are changes in configuration files or Groovy scripts
+  - Clear the project cache
+  - Rebuild the site GraphQL schema when there are changes in content-type definitions
+
+- Send email notifications if enabled
+
+**Parameters**
+
++------------------------------+-----------+------------------------------------------------------------------------+
+|Name                          |Required   |Description                                                             |
++==============================+===========+========================================================================+
+|``aws.region``                |           |The AWS Region to use                                                   |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``aws.access_key``            |           |The AWS Access Key to use                                               |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``aws.secret_key``            |           |The AWS Secret Key to use                                               |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``aws.distribution.ids``      |           |An array of AWS Cloudfront distribution ids to execute invalidations    |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``aws.s3.url``                ||checkmark||The full AWS S3 URI of the folder to sync files                         |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``disable_deploy_cron``       |           |Disables the cron job that runs deployments every certain amount of time|
++------------------------------+-----------+------------------------------------------------------------------------+
+|``local_repo_path``           |           |The local path where to put the remote Git repo clone                   |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``repo_branch``               |           |The branch name of the remote Git repo to pull from                     |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``repo_username``             |           |Username to access remote repository                                    |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``repo_password``             |           |Password to access remote repository                                    |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``ssh_private_key_path``      |           |The path for the private key to access remote repository                |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``ssh_private_key_passphrase``|           |The passphrase for the private key to access remote repository (only if |
+|                              |           |the key is passphrase-protected)                                        |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``notification_addresses``    |           |The email addresses that should receive deployment notifications        |
++------------------------------+-----------+------------------------------------------------------------------------+
+
+.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
+
+.. note:: For more details about setting up a serverless delivery see :ref:`setup-serverless-delivery`
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+AWS CloudFormation Target
+~~~~~~~~~~~~~~~~~~~~~~~~~
+This template is used to provide a serverless delivery environment without the need to manually create all required
+resources in AWS. It works similar to the AWS S3 Target but uses an AWS CloudFormation template to create the AWS
+resources on target creation: the S3 bucket where the site content will be stored and a CloudFront distribution that
+will front an Engine load balancer and deliver the static assets directly from the S3 bucket. These resources will be
+deleted when the target is deleted.
+
+This target will:
+
+- Clone the remote repository if needed
+- Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
+- Identify the changed files according to the Git repository history
+- Index all project content in search
+- Sync all new, updated and deleted files to an AWS S3 bucket
+- Execute an invalidation for all updated files in the AWS CloudFront distribution
+- Submit deployments events for all Crafter Engine instances:
+
+  - Rebuild the site context when there are changes in configuration files or Groovy scripts
+  - Clear the site cache
+  - Rebuild the site GraphQL schema when there are changes in content-type definitions
+
+- Send email notifications if enabled
+
+**Parameters**
+
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|Name                                                 |Required   |Description                                         |
++=====================================================+===========+====================================================+
+|``aws.region``                                       |           |The AWS Region to use                               |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.default_access_key``                           |           |The AWS Access Key to use for S3 and CloudFront     |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.default_secret_key``                           |           |The AWS Secret Key to use for S3 and CloudFront     |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.cloudformation.namespace``                     ||checkmark||Prefix to use for CloudFormation resource names     |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.cloudformation.deliveryLBDomainName``          ||checkmark||The domain name of the Engine delivery LB           |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.cloudformation.cloudfrontCertificateArn``      |           |The ARN of the CloudFront SSL certificate           |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.cloudformation.alternateCloudFrontDomainNames``|           |The alternate domain names for the CloudFront to use|
+|                                                     |           |(must match the valid certificate domain names)     |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.cloudformation.access_key``                    |           |The AWS Access Key to use for CloudFormation        |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.cloudformation.secret_key``                    |           |The AWS Secret Key to use for CloudFormation        |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``disable_deploy_cron``                              |           |Disables the cron job that runs deployments every   |
+|                                                     |           |certain amount of time                              |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``local_repo_path``                                  |           |The local path where to put the remoe Git repo clone|
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``repo_branch``                                      |           |The branch name of the remote Git repo to pull from |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``repo_username``                                    |           |Username to access remote repository                |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``repo_password``                                    |           |Password to access remote repository                |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``ssh_private_key_path``                             |           |The path for the private key to access remote       |
+|                                                     |           |repository                                          |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``ssh_private_key_passphrase``                       |           |The passphrase for the private key to access remote |
+|                                                     |           |repository (only if the key is passphrase-protected)|
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``notification_addresses``                           |           |The email addresses that should receive deployment  |
+|                                                     |           |notifications                                       |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+
+.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
+
 ^^^^^^^^^^^^^^^
 Run Deployments
 ^^^^^^^^^^^^^^^
@@ -327,6 +789,8 @@ want to manually trigger a deployment, you just need to call the API endpoint `d
 `deployAllTargets <../../../_static/api/deployer.html#tag/target/operation/deployAllTargets>`_). This will start the deployment if the request is correct. To watch the progress of a scheduled or a manually
 triggered deployment, check the Deployer log. When the deployment has finished, and the target has a ``fileOutputProcessor`` in the deployment pipeline, a
 CSV file with the final result of that particular deployment will be written under ``./logs`` (or ``CRAFTER_HOME/logs/deployer``).
+
+.. _deployer-processed-commits:
 
 ^^^^^^^^^^^^^^^^^
 Processed Commits
@@ -353,122 +817,6 @@ the steps described in :ref:`debugging-deployer-issues`
 .. warning::
   Changing or deleting a processed commit file could cause unchanged files to be indexed again and
   it should be done as a last resort in case of errors.
-
-^^^^^^^^^^^^^^^^^
-Document Indexing
-^^^^^^^^^^^^^^^^^
-Crafter Deployer indexes documents via the following configured items:
-
-- A full text index of any document that has a mimetype that matches the configured list of mimetypes.
-- Indexing of any remote document that matches the configured list of remote documents pattern
-- Indexing of jacketed documents with anything that matches the configured pattern.
-
-Note that indexing of documents in authoring and indexing of documents in delivery each have their own configuration.
-
-"""""""""
-Mimetypes
-"""""""""
-The list of supported mimetypes determines what's considered a document that should be full-text indexed.
-The default mimetypes are configured as follows:
-
-.. code-block:: yaml
-    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
-    :linenos:
-    :emphasize-lines: 7-8
-
-    target:
-    ...
-      search:
-        openSearch:
-        ...
-        binary:
-          # The list of binary file mime types that should be indexed
-          supportedMimeTypes:
-            - application/pdf
-            - application/msword
-            - application/vnd.openxmlformats-officedocument.wordprocessingml.document
-            - application/vnd.ms-excel
-            - application/vnd.ms-powerpoint
-            - application/vnd.openxmlformats-officedocument.presentationml.presentation
-
-""""""""""""""""""""""""
-Remote Documents Pattern
-""""""""""""""""""""""""
-The ``remoteBinaryPathPatterns`` in the config determines what a remote document is via path pattern.
-The default for this is configured as follows:
-
-.. code-block:: yaml
-    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
-    :linenos:
-    :emphasize-lines: 8-9
-
-    target:
-    ...
-      search:
-        openSearch:
-        ...
-        binary:
-          ...
-        # The regex path patterns for binary/document files that are stored remotely
-          remoteBinaryPathPatterns: &remoteBinaryPathPatterns
-            # HTTP/HTTPS URLs are only indexed if they contain the protocol (http:// or https://). Protocol relative
-            # URLs (like //mydoc.pdf) are not supported since the protocol is unknown to the back-end indexer.
-            - ^(http:|https:)//.+$
-            - ^/remote-assets/.+$
-
-""""""""""""""
-Jacket Pattern
-""""""""""""""
-The ``metadataPathPatterns`` in the configuration determines if a document should be indexed with the metadata of the
-object that points to it (a so-called "jacket"). The deployer will re-index the jacket and the document together
-whenever the jacket is updated. See :ref:`jacket` for more information.
-
-.. code-block:: yaml
-    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
-    :linenos:
-    :emphasize-lines: 8-9
-
-    target:
-    ...
-      search:
-        openSearch:
-        ...
-        binary:
-          ...
-          # The regex path patterns for the metadata ("jacket") files of binary/document files
-          metadataPathPatterns:
-            - ^/?site/documents/.+\.xml$
-
-""""""""""""""""
-Indexing Failure
-""""""""""""""""
-When a document cannot be indexed:
-
-- The Deployer skips the document and leaves an error in the logs.
-- The document is not re-processed unless it is updated/re-deployed or the re-process API is called.
-
-The default behavior when a document cannot be indexed is that the Deployer logs the error and moves on. Process commits
-files are updated and the Deployer never revisits the indexing unless a future publish requires it to, or, a
-re-process API is called, such as the `deployTarget <../../_static/api/studio.html#tag/target/operation/deployTarget>`__ API
-
-If a catastrophic exception interferes with the update of the processed commits file then the Deployer will re-process
-the commits from the last commit presently in the processed commits file.
-
-A few installations disable this behavior in the :ref:`GitDiffProcessor <deployer-git-diff-processor>` (via the
-``target.yaml``) that always moves forward.
-
-In these configurations, an additional processor is added to the end of the processor chain called the
-:ref:`Git Update Commit ID processor <deployer-git-update-commit-id-processor>` which only updates this ID on successful
-completion of the processor chain.
-
-Note that using this model can lead to A LOT of re-processing if there is no additional circuit breaker logging added
-for error conditions that do not resolve themselves.
-
-If the deployment as a whole cannot be completed due to a catastrophic exception, then all content including documents
-will be re-processed until the deployment succeeds. By default the Git Diff process is configured to update the processed
-commits regardless of success or failure. Some deployments set this to false and force the processor chain to be
-successful before updating processed commits (via the GitUpdateCommits Processor).
-
 
 .. _jacket:
 
@@ -1570,328 +1918,6 @@ Once the bean has been defined it can be added to the target's pipeline in the y
 
 Any change in the classpath will require a restart of Crafter Deployer, changes in configuration files will be
 applied when the target is reloaded.
-
-|hr|
-
-.. _crafter-deployer-templates-guide:
-
-----------------
-Target Templates
-----------------
-When you are creating a target in Crafter Deployer, you can use one of the included templates that can be easily
-customized with additional parameters during the creation.
-
-^^^^^^^^^^^^^^^^^^
-Built-in Templates
-^^^^^^^^^^^^^^^^^^
-All target templates support the following parameters:
-
-+-------------+-----------+------------------------------------+
-|Name         |Required   |Description                         |
-+=============+===========+====================================+
-|``env``      ||checkmark||The target’s environment (e.g. dev) |
-+-------------+-----------+------------------------------------+
-|``site_name``||checkmark||The target’s site name (e.g. mysite)|
-+-------------+-----------+------------------------------------+
-|``repo_url`` ||checkmark||The target's repository URL         |
-+-------------+-----------+------------------------------------+
-
-""""""""""""""""
-Authoring Target
-""""""""""""""""
-This is one of the templates used by Crafter Studio when a new project/site is created, this template will setup a target for
-Studio's search features including: indexing all xml files, binary files and indexing additional Git metadata from the
-site repository.
-
-This target will:
-
-- Identify the changed files according to the local Git repository history
-- Index all site content in search
-
-**Parameters**
-
-This target has no additional parameters.
-
-.. note:: When this target is used, the value of ``repo_url`` must be a local filesystem path
-
-""""""""""""
-Local Target
-""""""""""""
-This is the other template used by Crafter Studio when a new project is created, this template will setup a target for
-previewing the project.
-
-This target will:
-
-- Identify the changed files according to the local Git repository history
-- Index all project content in search
-- Rebuild Crafter Engine's site context when there are changes in configuration files or Groovy scripts
-- Clear Crafter Engine's cache
-- Rebuild Crafter Engine's project GraphQL schema when there are changes in content-type definitions
-- Send email notifications if enabled
-
-**Parameters**
-
-+--------------------------+----------+------------------------------------------------------------------------+
-|Name                      |Required  |Description                                                             |
-+==========================+==========+========================================================================+
-|``disable_deploy_cron``   |          |Disables the cron job that runs deployments every certain amount of time|
-+--------------------------+----------+------------------------------------------------------------------------+
-|``notification_addresses``|          |The email addresses that should receive deployment notifications        |
-+--------------------------+----------+------------------------------------------------------------------------+
-
-.. note:: When this target is used, the value of ``repo_url`` must be a local filesystem path
-
-"""""""""""""
-Remote Target
-"""""""""""""
-This is the default template used for Crafter Engine in delivery environments, it is very similar to the Local Target
-but it adds support for remote Git repositories.
-
-This target will:
-
-- Clone the remote repository if needed
-- Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
-- Identify the changed files according to the Git repository history
-- Index all project content in the appropriate search engine
-- Rebuild Crafter Engine's site context when there are changes in configuration files or Groovy scripts
-- Clear Crafter Engine's cache
-- Rebuild Crafter Engine's project GraphQL schema when there are changes in content-type definitions
-- Send email notifications if enabled
-
-**Parameters**
-
-+------------------------------+----------+------------------------------------------------------------------------+
-|Name                          |Required  |Description                                                             |
-+==============================+==========+========================================================================+
-|``disable_deploy_cron``       |          |Disables the cron job that runs deployments every certain amount of time|
-+------------------------------+----------+------------------------------------------------------------------------+
-|``repo_branch``               |          |The branch name of the remote Git repo to pull from                     |
-+------------------------------+----------+------------------------------------------------------------------------+
-|``repo_username``             |          |Username to access remote repository                                    |
-+------------------------------+----------+------------------------------------------------------------------------+
-|``repo_password``             |          |Password to access remote repository                                    |
-+------------------------------+----------+------------------------------------------------------------------------+
-|``ssh_private_key_path``      |          |The path for the private key to access remote repository                |
-+------------------------------+----------+------------------------------------------------------------------------+
-|``ssh_private_key_passphrase``|          |The passphrase for the private key to access remote repository (only if |
-|                              |          |the key is passphrase-protected)                                        |
-+------------------------------+----------+------------------------------------------------------------------------+
-|``notification_addresses``    |          |The email addresses that should receive deployment notifications        |
-+------------------------------+----------+------------------------------------------------------------------------+
-
-.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
-
-"""""""""""""
-AWS S3 Target
-"""""""""""""
-This template is used for Crafter Engine in serverless delivery environments, it is very similar to the Remote Target
-but it adds support for syncing files to an AWS S3 bucket and also handles AWS Cloudfront invalidations.
-
-This target will:
-
-- Clone the remote repository if needed
-- Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
-- Identify the changed files according to the Git repository history
-- Index all project content in search
-- Sync all new, updated and deleted files to an AWS S3 bucket
-- Execute an invalidation for all updated files in one or more AWS Cloudfront distributions
-- Submit deployments events for all Crafter Engine instances:
-
-  - Rebuild the site context when there are changes in configuration files or Groovy scripts
-  - Clear the project cache
-  - Rebuild the site GraphQL schema when there are changes in content-type definitions
-
-- Send email notifications if enabled
-
-**Parameters**
-
-+------------------------------+-----------+------------------------------------------------------------------------+
-|Name                          |Required   |Description                                                             |
-+==============================+===========+========================================================================+
-|``aws.region``                |           |The AWS Region to use                                                   |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``aws.access_key``            |           |The AWS Access Key to use                                               |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``aws.secret_key``            |           |The AWS Secret Key to use                                               |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``aws.distribution.ids``      |           |An array of AWS Cloudfront distribution ids to execute invalidations    |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``aws.s3.url``                ||checkmark||The full AWS S3 URI of the folder to sync files                         |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``disable_deploy_cron``       |           |Disables the cron job that runs deployments every certain amount of time|
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``local_repo_path``           |           |The local path where to put the remote Git repo clone                   |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``repo_branch``               |           |The branch name of the remote Git repo to pull from                     |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``repo_username``             |           |Username to access remote repository                                    |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``repo_password``             |           |Password to access remote repository                                    |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``ssh_private_key_path``      |           |The path for the private key to access remote repository                |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``ssh_private_key_passphrase``|           |The passphrase for the private key to access remote repository (only if |
-|                              |           |the key is passphrase-protected)                                        |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``notification_addresses``    |           |The email addresses that should receive deployment notifications        |
-+------------------------------+-----------+------------------------------------------------------------------------+
-
-.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
-
-.. note:: For more details about setting up a serverless delivery see :ref:`setup-serverless-delivery`
-
-"""""""""""""""""""""""""
-AWS CloudFormation Target
-"""""""""""""""""""""""""
-This template is used to provide a serverless delivery environment without the need to manually create all required
-resources in AWS. It works similar to the AWS S3 Target but uses an AWS CloudFormation template to create the AWS
-resources on target creation: the S3 bucket where the site content will be stored and a CloudFront distribution that
-will front an Engine load balancer and deliver the static assets directly from the S3 bucket. These resources will be
-deleted when the target is deleted.
-
-This target will:
-
-- Clone the remote repository if needed
-- Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
-- Identify the changed files according to the Git repository history
-- Index all project content in search
-- Sync all new, updated and deleted files to an AWS S3 bucket
-- Execute an invalidation for all updated files in the AWS CloudFront distribution
-- Submit deployments events for all Crafter Engine instances:
-
-  - Rebuild the site context when there are changes in configuration files or Groovy scripts
-  - Clear the site cache
-  - Rebuild the site GraphQL schema when there are changes in content-type definitions
-
-- Send email notifications if enabled
-
-**Parameters**
-
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|Name                                                 |Required   |Description                                         |
-+=====================================================+===========+====================================================+
-|``aws.region``                                       |           |The AWS Region to use                               |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.default_access_key``                           |           |The AWS Access Key to use for S3 and CloudFront     |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.default_secret_key``                           |           |The AWS Secret Key to use for S3 and CloudFront     |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.namespace``                     ||checkmark||Prefix to use for CloudFormation resource names     |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.deliveryLBDomainName``          ||checkmark||The domain name of the Engine delivery LB           |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.cloudfrontCertificateArn``      |           |The ARN of the CloudFront SSL certificate           |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.alternateCloudFrontDomainNames``|           |The alternate domain names for the CloudFront to use|
-|                                                     |           |(must match the valid certificate domain names)     |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.access_key``                    |           |The AWS Access Key to use for CloudFormation        |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.secret_key``                    |           |The AWS Secret Key to use for CloudFormation        |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``disable_deploy_cron``                              |           |Disables the cron job that runs deployments every   |
-|                                                     |           |certain amount of time                              |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``local_repo_path``                                  |           |The local path where to put the remoe Git repo clone|
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``repo_branch``                                      |           |The branch name of the remote Git repo to pull from |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``repo_username``                                    |           |Username to access remote repository                |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``repo_password``                                    |           |Password to access remote repository                |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``ssh_private_key_path``                             |           |The path for the private key to access remote       |
-|                                                     |           |repository                                          |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``ssh_private_key_passphrase``                       |           |The passphrase for the private key to access remote |
-|                                                     |           |repository (only if the key is passphrase-protected)|
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``notification_addresses``                           |           |The email addresses that should receive deployment  |
-|                                                     |           |notifications                                       |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-
-.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
-
-|hr|
-
-.. _crafter-deployer-search-configuration-guide:
-
---------------------
-Search Configuration
---------------------
-Crafter Deployer provides two ways to use search:
-
-^^^^^^^^^^^^^^^^^^^^^
-Single Search Cluster
-^^^^^^^^^^^^^^^^^^^^^
-This is the most common configuration used, all operations will be performed on a single search cluster:
-
-.. code-block:: yaml
-  :linenos:
-  :caption: Target configuration for a single search cluster
-
-    target:
-      search:
-        openSearch:
-          # Single cluster
-          urls:
-            - ${env:SEARCH_URL}
-          username: ${env:SEARCH_USERNAME}
-          password: ${env:SEARCH_PASSWORD}
-          timeout:
-            # The connection timeout in milliseconds, if set to -1 the default will be used
-            connect: -1
-            # The socket timeout in milliseconds, if set to -1 the default will be used
-            socket: -1
-          # The number of threads to use, if set to -1 the default will be used
-          threads: -1
-          # Indicates if keep alive should be enabled for sockets used by the search client, defaults to false
-          keepAlive: false
-
-^^^^^^^^^^^^^^^^^^^^^^^^
-Multiple Search Clusters
-^^^^^^^^^^^^^^^^^^^^^^^^
-Using this configuration all read operations will be performed on one search cluster but write operations will
-be performed on multiple search clusters:
-
-.. code-block:: yaml
-  :linenos:
-  :caption: Target configuration for multiple search clusters
-
-    target:
-      search:
-        openSearch:
-          # Global auth, used for all clusters
-          username: search
-          password: passw0rd
-          # Cluster for read operations
-          readCluster:
-            urls:
-              - 'http://read-cluster-node-1:9200'
-              - 'http://read-cluster-node-2:9200'
-              # This cluster will use the global auth
-          # Clusters for write operations
-          writeClusters:
-            - urls:
-              - 'http://write-cluster-1-node-1:9200'
-              - 'http://write-cluster-1-node-2:9200'
-              # This cluster will use the global auth
-            - urls:
-              - 'http://write-cluster-2-node-1:9200'
-              - 'http://write-cluster-2-node-2:9200'
-              # Override the global auth for this cluster
-              username: search2
-              password: passw0rd2
-
-^^^^^^^^^^^^^^^^^^^
-Configuration Files
-^^^^^^^^^^^^^^^^^^^
-The search configuration can be changed in two places:
-
-#. Global configuration file ``$CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml``, this will be applied to
-   all targets loaded.
-
-#. Individual target configuration file ``$CRAFTER_HOME/data/deployer/targets/{siteName}-{environment}.yaml``
 
 |hr|
 
