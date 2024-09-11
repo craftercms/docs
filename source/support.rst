@@ -30,7 +30,7 @@ What's Supported?
       - June 17, 2023
       - :green:`Ends when 4.2.0 is released`
       - :green:`Ends on December 31, 2024`
-      - 4.1.6 (August 19, 2024)
+      - 4.1.7 (September 11, 2024)
     * - 4.0
       - May 12, 2022
       - :maroon:`Ended on June 17, 2023`
