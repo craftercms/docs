@@ -26,9 +26,10 @@ You can find the interface for this service :javadoc_base_url:`in the JavaDoc <s
 
 |hr|
 
----------------------
-Content Item Indexing
----------------------
+-----------------------
+Content Search Indexing
+-----------------------
+Search indexing is the collecting, parsing and storing of data to help optimize finding relevant information for a search query.
 CrafterCMS indexes content items as follows:
 
 - A full text index of any document that has a MIME type that matches the configured list of MIME types.
@@ -60,7 +61,7 @@ index is tuned to help authors and is not used by the project/site for delivery 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Delivery Search Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^^
-On the other hand, delivery indexing is done to enable search and search-based features for the delivery project/site.
+Delivery indexing is done to enable search and search-based features for the delivery project/site.
 This is configurable per project/site, and the index is tuned to help end-users use the project/site.
 
 |hr|
