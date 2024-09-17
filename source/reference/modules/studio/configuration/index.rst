@@ -682,7 +682,7 @@ Add the following lines with the regex for the item you wish not to be published
 
     # Publishing blacklist configuration, items matching regexes on this list will never be published
     studio.configuration.publishing.blacklist.regex: >-
-    .*/\.keep
+        .*/\.keep
 
 |
 
@@ -706,7 +706,7 @@ Say, you do not want files under ``/static-assets/images/mytempimages`` to be pu
 
     # Publishing blacklist configuration, items matching regexes on this list will never be published
     studio.configuration.publishing.blacklist.regex: >-
-    .*/\.keep,\/static-assets\/images\/mytempimages\/.*
+        .*/\.keep,\/static-assets\/images\/mytempimages\/.*
 
 |
 
