@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-update: 4.1.5
+:last-update: 4.1.8
 
 .. index:: Experience Builder, XB, In-Context Editing, ICE
 
@@ -20,8 +20,15 @@ with in-context editing (ICE) for all the model fields defined in the content ty
 CrafterCMS developers must integrate their applications with XB, essentially telling XB what field of the
 model each element on the view represents. See :ref:`content-modeling` to learn more about the model.
 
-.. TODO insert <figure: example page with a sample content type side by side showing the relation between page elements
-   and content type fields>
+Below is an example page with a sample content type side by side showing the relation between page elements
+and content type fields:
+
+.. image:: /_static/images/developer/page-content-type-side-by-side.webp
+   :align: center
+   :width: 75 %
+   :alt: Page Side-by-Side with the Content Type Model
+
+|
 
 If you`re starting from a 3.x ICE system, see :ref:`upgrading-in-context-editing` for more information on how
 to move from the 3.x ICE system to the 4.x Experience Builder (XB) system discussed here.
