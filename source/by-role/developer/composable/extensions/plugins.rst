@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.1
+:last-updated: 4.1.6
 :orphan:
 
 .. index:: Plugins, Create a Plugin
@@ -657,7 +657,7 @@ to match the final destination of the file:
 +------------------------------------------+---------------------------------------------------------------+
 | ``authoring/static-assets/*``            | ``/config/studio/static-assets/plugins/<plugin id path>/*``   |
 +------------------------------------------+---------------------------------------------------------------+
-| ``authoring/scripts/classes/*``          | ``/config/studio/plugins/scripts/classes/<plugin id path>/*`` |
+| ``authoring/scripts/classes/*``          | ``/config/studio/scripts/classes/<plugin id path>/*``         |
 +------------------------------------------+---------------------------------------------------------------+
 | ``authoring/scripts/rest/*``             | ``/config/studio/plugins/scripts/rest/<plugin id path>/*``    |
 +------------------------------------------+---------------------------------------------------------------+

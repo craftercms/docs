@@ -56,6 +56,7 @@ Enhancements
     ``~DASHBOARD~`` is now removed from the list of allowed permissions. The upgrade manager will remove it from your
     project during your install upgrade.
 
+* `Improved item duplication in XB <https://github.com/craftercms/craftercms/issues/7169>`__
 * `Added support for multiple browser tabs for the same project/site <https://github.com/craftercms/craftercms/issues/6206>`__
 * `Set the default sort order of Studio UI search to alphabetical when no keyword is supplied <https://github.com/craftercms/craftercms/issues/5995>`__
 * Bulk Publishing enhancements
@@ -70,10 +71,17 @@ Enhancements
 
   For more information on registering elements for XB, see :ref:`xb-lazy-loaded-content`.
 
+* Improved ``SiteItemService``. The object returned by ``SiteItemService`` is now a copy of the item.
+
 
 ^^^^^^^^^
 Bug Fixes
 ^^^^^^^^^
+* `Fixed issue with an XB error when duplicating an item in a repeat group <https://github.com/craftercms/craftercms/issues/7151>`__
+* `Fixed issue with TinyMCE not saving HTML code properly <https://github.com/craftercms/craftercms/issues/7079>`__ |br|
+  See :ref:`working in the RTE with code samples <author-rte-code-samples>` for more information on editing code samples in the RTE.
+* `Fixed issue uppercase role names not being recognized by the permission evaluation system <https://github.com/craftercms/craftercms/issues/7001>`__
+* `Fixed issue with \"File Upload From Desktop\" datasource throwing an error when the dialog is open and closed <https://github.com/craftercms/craftercms/issues/6697>`__
 * `Fixed issues with dependency calculations \"getDependentItems\" <https://github.com/craftercms/craftercms/issues/6189>`__
 
 ^^^^^^^^^^^^^^^^^^
@@ -87,7 +95,7 @@ Dependency Updates
   - MariaDb4J to version ``3.1`` and MariaDB to ``11.3``
   - HTTP Proxy to version 2.0
   - UrlRewriteFilter to version 5.1.
-  - ESAPI to version 2.5.3.1
+  - ESAPI to version 2.5.4.0
   - FileUpload to version 2.0
   - Groovy to version 4
   - Tomcat to version 10
