@@ -1432,6 +1432,8 @@ There are a number of tools available from the RTE out of the box for editing yo
 tools may also be added to the RTE, depending on your needs. Please see the developer section
 :ref:`rte-configuration` of the docs for more details.
 
+.. _author-rte-code-samples:
+
 ~~~~~~~~~~~~
 Code Samples
 ~~~~~~~~~~~~
