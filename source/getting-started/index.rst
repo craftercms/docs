@@ -26,7 +26,7 @@ If you have `Docker <https://www.docker.com/>`_ installed, you can get started w
 
     docker run -p 8080:8080 craftercms/authoring_local:latest
 
-Then point your browser to http://localhost:8080/studio and you will be presented with the Crafter Studio login page. The default username is ``admin`` and the default password is ``admin``.
+Then you can just point your browser to http://localhost:8080/studio and you will be presented with the Crafter Studio login page. The default username is ``admin`` and the default password is ``admin``.
 
 |hr|
 
