@@ -1,4 +1,4 @@
-This is a TODO file, what's in here must be done then removed from this file
+This is a TODO file, what's in here must be done and then removed from this file
 
 Getting Started
 ===============
