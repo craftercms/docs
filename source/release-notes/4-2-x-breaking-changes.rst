@@ -1,6 +1,7 @@
-:orphan:
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.2.0
+
+:orphan:
 
 .. _breaking-changes-4-2-x:
 
@@ -13,9 +14,11 @@ before upgrading. Please review the following and apply changes as required:
 - CrafterCMS 4.2.x requires Java 21. |br| See :ref:`Requirements <requirements_supported_platforms>` for more
   information on CrafterCMS requirements.
 
-.. .. _compatibility-with-3.1.x:
+.. _compatibility-with-3.1.x:
 
-- **Upgrading 3.1.x sites** |br|
+---------------------
+Upgrading 3.1.x Sites
+---------------------
 
   - MongoDB in CrafterCMS Social and Profile has been updated. To upgrade MongoDB in your installation, see
     :ref:`upgrading-mongodb`
