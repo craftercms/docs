@@ -1289,6 +1289,7 @@ and :javadoc_base_url:`AccessRestrictionExpressionRoot.java <profile/org/crafter
 ----------------------------
 Other Security Configuration
 ----------------------------
+.. _engine-security-preview-mode:
 
 ^^^^^^^^^^^^
 Preview Mode
