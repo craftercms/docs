@@ -29,7 +29,7 @@ author = u'CrafterCMS'
 # The short X.Y version.
 version = u'4.1'
 # The full version, including alpha/beta/rc tags.
-release = u'4.1.3'
+release = u'4.1.8'
 
 
 # -- General configuration ---------------------------------------------------
@@ -257,8 +257,8 @@ rst_epilog = """
 .. |js_sdk_link| replace:: :ref:`javascript-sdk`
 .. |graphql_link| replace:: :ref:`graphql`
 .. |rest_api_link| replace:: :ref:`rest-content-retrieval-api`
-.. |search_link| replace:: :ref:`search`
-.. |groovy_link| replace:: :ref:`groovy-api` and :ref:`java-api`
+.. |search_link| replace:: :ref:`content-search`
+.. |groovy_link| replace:: :ref:`groovy-java-api`
 .. |static_asset_link| replace:: :ref:`static-content-access`
 .. |freemarker_link| replace:: :ref:`templating-api`
 
@@ -267,7 +267,7 @@ rst_epilog = """
 
 # Javadoc home and version
 javadoc_base = 'http://javadoc.craftercms.org/'
-javadoc_version = '4.1.3'
+javadoc_version = '4.1.8'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),

@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.1.5
 
 .. _system-admin-installation:
 
@@ -25,7 +25,7 @@ To run CrafterCMS, the following are required:
     - Java 17
     - 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
     - Git 2.20.1 and later
-    - Docker (if running in Docker)
+    - Docker (if running in Docker or MacOS)
 
 Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic experiences. MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide external (non-author) user management and social features.
 
@@ -133,16 +133,20 @@ The following browsers are supported:
 ^^^^^^^^^^^^^
 Prerequisites
 ^^^^^^^^^^^^^
-"""""""""""""""""
-OS X Prerequisite
-"""""""""""""""""
-For OS X users, the latest ``openssl`` formula needs to be installed via homebrew:
+""""""""""""""""""
+MacOS Prerequisite
+""""""""""""""""""
+For MacOS users, the following applies:
 
-.. code-block:: sh
+#. The latest ``openssl`` formula needs to be installed via homebrew:
 
-    brew install openssl
+   .. code-block:: sh
 
-|
+       brew install openssl
+
+   |
+
+#. Docker is used to run OpenSearch and needs to be installed. Follow the instructions `here <https://docs.docker.com/install/>`__ to install Docker.
 
 """"""""""""""""""
 Linux Prerequisite
@@ -161,17 +165,43 @@ Linux Prerequisite
 
    To install ``lsof`` for RedHat-based Linux distros: ``yum install lsof``
 
-#. The library ``libncurses5`` is required for the Authoring install and the restore script. You may get the following error when running an Authoring install or the restore script without the ``libncurses5`` library installed:
+#. The library ``libncurses5`` is required by the Authoring install due to the embedded MariaDB. You may get the following error when running an Authoring install or the restore script without the ``libncurses5`` library installed:
 
-   **error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory**
+   .. code-block:: text
+
+       error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory
 
    To install the library ``libncurses5``, use the following commands:
 
-   On Debian-based Linux distros: ``sudo apt install libncurses5``
+   **On Debian-based Linux distros:**
 
-   On RHEL, CentOS:  ``sudo yum install ncurses-compat-libs``
+   - For Ubuntu 24.04 and later versions, ``libncurses5`` was removed starting in version 24.04. To install ``libncurses5``,
+     run the following commands:
 
-   On Fedora 22 and newer version: ``sudo dnf install ncurses-compat-libs``
+     .. code-block:: bash
+
+         wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.4-2_amd64.deb && sudo dpkg -i libtinfo5_6.4-2_amd64.deb && rm -f libtinfo5_6.4-2_amd64.deb
+
+         wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.4-2_amd64.deb && sudo dpkg -i libncurses5_6.4-2_amd64.deb && rm -f libncurses5_6.4-2_amd64.deb
+
+         sudo apt install lib32ncurses5-dev libncurses5 libncurses5-dev -y
+
+   - All other versions of Debian-based linux distro: ``sudo apt install libncurses5``
+
+   **On RHEL, CentOS:**
+
+   - For versions 8 and later, the EPEL repository needs to be added in order to install the ``ncurses-compat-libs``.
+     To add the EPEL repository, do the following:
+
+     - Enable the CodeReady Linux Builder repository |br|
+       CentOS: ``sudo dnf config-manager --set-enabled crb`` |br|
+       RHEL: ``sudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms``
+     - Next, install the EPEL RPM: ``sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm``
+     - Finally, we can now install ``ncurses-compat-libs``: ``sudo dnf install ncurses-compat-libs``
+
+   - All other versions of RHEL, CentOS: ``sudo yum install ncurses-compat-libs``
+
+   **On Fedora 22 and newer version:** ``sudo dnf install ncurses-compat-libs``
 
 """"""""""""""""""""
 Windows Prerequisite
@@ -298,6 +328,16 @@ To configure working on projects in Docker via a local IDE follow the instructio
 For more information on Docker Desktop Dashboard, see https://docs.docker.com/desktop/dashboard/
 
 For more information on CrafterCMS Docker Compose, please see: https://github.com/craftercms/docker-compose.
+
+""""""
+Images
+""""""
+CrafterCMS provides Docker images on `dockerhub <https://hub.docker.com/u/craftercms>`__ for the latest release versions
+and snapshots of versions in development. The CrafterCMS Docker images may be pulled by using the tag for a release
+version, e.g. ``craftercms/authoring_tomcat:4.1.5``, the latest release, e.g. ``craftercms/authoring_tomcat:latest``
+or the tag for a snapshot of a version in development, e.g. ``craftercms/authoring_tomcat:4.1.6-SNAPSHOT``
+
+As mentioned, CrafterCMS is open source and you can always build Docker images from source code `here <https://github.com/craftercms/craftercms>`__
 
 |hr|
 

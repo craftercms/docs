@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.3
+:last-updated: 4.1.8
 
 .. index:: Open Source Acknowledgements
 
@@ -210,6 +210,8 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `org.mockito:mockito-core <https://mvnrepository.com/artifact/org.mockito/mockito-core>`_
 |br|
+`org.mockito:mockito-inline <https://mvnrepository.com/artifact/org.mockito/mockito-inline>`_
+|br|
 `org.mongodb:bson <https://mvnrepository.com/artifact/org.mongodb/bson>`_
 |br|
 `org.mongodb:mongodb-driver-legacy <https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-legacy>`_
@@ -324,6 +326,8 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `@reduxjs/toolkit <https://www.npmjs.com/package/@reduxjs/toolkit>`_
 |br|
+`@rollup/plugin-alias <https://www.npmjs.com/package/@rollup/plugin-alias>`_
+|br|
 `@rollup/plugin-commonjs <https://www.npmjs.com/package/@rollup/plugin-commonjs>`_
 |br|
 `@rollup/plugin-node-resolve <https://www.npmjs.com/package/@rollup/plugin-node-resolve>`_
@@ -367,6 +371,8 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `@types/rimraf <https://www.npmjs.com/package/@types/rimraf>`_
 |br|
 `@types/tinymce <https://www.npmjs.com/package/@types/tinymce>`_
+|br|
+`@types/uuid <https://www.npmjs.com/package/@types/uuid>`_
 |br|
 `@types/video.js <https://www.npmjs.com/package/@types/video.js>`_
 |br|

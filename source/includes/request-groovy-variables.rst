@@ -24,6 +24,9 @@
 |                        || user has logged in), created by     ||                                |
 |                        || Spring Security                     ||                                |
 +------------------------+--------------------------------------+---------------------------------+
+| pathVars               || The |pathVars| values for the       || `Map`_                         |
+|                        || current request                     ||                                |
++------------------------+--------------------------------------+---------------------------------+
 
 The following variables are provided for backward compatibility when using Crafter Profile, should be replaced
 with ``authToken`` if possible:
@@ -60,3 +63,4 @@ The following variables are restricted by default, to use them see :ref:`configu
 .. |Authentication| replace:: :javadoc_base_url:`Authentication <profile/org/craftercms/security/authentication/Authentication.html>`
 .. |Profile| replace:: :javadoc_base_url:`Profile <profile/org/craftercms/profile/api/Profile.html>`
 .. _Authentication: https://docs.spring.io/spring-security/site/docs/4.0.x/apidocs/org/springframework/security/core/Authentication.html
+.. |pathVars| replace:: :ref:`path variable <groovy-path-variables>`
