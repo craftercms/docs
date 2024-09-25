@@ -1765,6 +1765,8 @@ Example Applications
       * The e & m keys
       * ICE on hints (class & event)
 
+.. _xb-lazy-loaded-content:
+
 ^^^^^^^^^^^^^^^^^^^
 Lazy Loaded Content
 ^^^^^^^^^^^^^^^^^^^
