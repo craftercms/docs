@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.2.0
 
 .. _engine-security:
 
@@ -1283,3 +1283,65 @@ and :javadoc_base_url:`AccessRestrictionExpressionRoot.java <profile/org/crafter
         </restriction>
       </urlRestrictions>
     </security>
+
+|hr|
+
+----------------------------
+Other Security Configuration
+----------------------------
+.. _engine-security-preview-mode:
+
+^^^^^^^^^^^^
+Preview Mode
+^^^^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.2.0
+
+In preview mode, CrafterCMS provides a security filter that can be enabled to intercept all requests and validates the following:
+
+- ``crafterPreview`` cookie exists
+- ``crafterPreview`` cookie decrypted value contains a site name and an expiration timestamp
+- Site name matches the one from ``SiteContextResolver``
+- Expiration timestamp is in the future
+
+To enable the Engine Preview Mode security filters, set ``crafter.security.preview.enabled`` to true.
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+    #######################
+    # Security Properties #
+    #######################
+    # If the preview security filters should be enabled
+    crafter.security.preview.enabled=true
+
+There may be some URLs that may not need filtering in Preview mode by the security filter when it is enabled.
+To exclude a URL from being intercepted and validated by the security filter, add the URL to the
+``crafter.security.preview.urlsToExclude`` property:
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+    # The URLs to be excluded from preview security checks
+    crafter.security.preview.urlsToExclude=\
+      /api/1/monitoring/**,\
+      /api/1/site/context/**,\
+      /api/1/site/cache/**
+
+Enabling the security filter in Preview Mode requires the configuration encryption configurations (which are shared
+between Studio and Engine) and admins will need to update the default configurations for the encryption key and salt in
+:ref:`Studio <studio-cipher-configuration>` and in :ref:`Engine <engine-configuration-properties-encryption>`.
+
+.. _engine-configuration-properties-encryption:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuration Properties Encryption
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+    # The key used for encryption of configuration properties
+    crafter.security.encryption.key=${CRAFTER_ENCRYPTION_KEY}
+    # The salt used for encryption of configuration properties
+    crafter.security.encryption.salt=${CRAFTER_ENCRYPTION_SALT}
