@@ -1823,3 +1823,42 @@ Example Applications
 - `React Example <https://github.com/craftercms/react-blueprint>`_
 - `Next JS Example <https://github.com/craftercms/craftercms-example-nextjs>`_
 - `Angular Example <https://github.com/craftercms/craftercms-example-angular>`_
+
+.. _xb-lazy-loaded-content:
+
+^^^^^^^^^^^^^^^^^^^
+Lazy Loaded Content
+^^^^^^^^^^^^^^^^^^^
+Lazy loading is a strategy to identify non-critical content and load these only when needed.
+It's a way to reduce page load times and memory consumption.
+
+In templated projects, typically content is preloaded and pre-rendered on to the view. When the view loads, XB
+initialises normally. If content is loaded lazily, additional steps are required to enable XB on top of that content.
+
+In simple JS applications, lazy loaded content without a page refresh also needs some programmatic management to notify
+XB about changes.
+
+To enable XB for lazy loaded content, once the attributes are printed, register the new elements with XB using ``registerElements``.
+Remember that the lifecycle of markup (lazy loaded content) needs to be integrated in XB. To de-register elements with XB,
+use ``deregisterElements``.
+
+Below is an example of registering/de-registering lazy loaded content with XB using the ``home.ftl`` file from a project
+created using the Website Editorial blueprint.
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample registering/de-registering lazy loaded content in home.ftl</a></summary>
+
+.. literalinclude:: /_static/code/developer/xb/home.ftl
+    :language: html
+    :force:
+    :emphasize-lines: 143, 168
+    :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
