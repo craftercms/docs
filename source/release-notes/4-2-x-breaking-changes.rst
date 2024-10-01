@@ -14,6 +14,10 @@ before upgrading. Please review the following and apply changes as required:
 - CrafterCMS 4.2.x requires Java 21. |br| See :ref:`Requirements <requirements_supported_platforms>` for more
   information on CrafterCMS requirements.
 
+- CrafterCMS 4.2.x now uses Jakarta EE. |br| The ``jakarta.*`` namespace is now used instead of ``javax.*``.
+  To update your project, find and replace ``javax`` with ``jakarta`` in your Groovy code or Java if you are
+  bringing in jars with Grab.
+
 .. _compatibility-with-3.1.x:
 
 ---------------------
