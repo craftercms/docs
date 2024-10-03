@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.1.7
 
 .. index:: Studio Clustering, Clustering
 
@@ -52,6 +52,31 @@ existing Primary Component to join.
 
 Once the cluster is up, one node in the cluster is elected to be the primary and the rest of the node(s) as replica(s).
 Deployment processors can be configured when Studio Clustering is setup.
+
+Crafter Studio provides a ``Cluster`` tool that allows administrators to monitor the status of nodes in the cluster.
+To access the ``Cluster`` tool, click the |mainMenu| Navigation Menu icon from the top right of the browser, then click on ``Cluster``
+from the Sidebar.
+
+.. _clustering-cluster-tool:
+
+.. image:: /_static/images/system-admin/cluster-upgraded.webp
+    :alt: Studio Clustering Screen
+    :width: 100%
+    :align: center
+
+The ``Cluster`` tool provides the following information on the nodes in the cluster:
+
+- ``State``: Indicates whether the node is ``ACTIVE`` (green dot), ``STARTING`` (yellow dot) or ``OUT_OF_SYNC`` (red dot)
+- ``Role``: Indicates whether the node is the ``Primary`` or a ``Replica``
+- ``Local Address``: The local address of the node
+- ``Git``: The Git remote name and URL
+- ``Sync Status``: Displays the sync status of the node where:
+
+  - ``Event handler setup``: Indicates whether the node is ready to receive events
+  - ``Initial repo sync``: Indicates whether the node is done syncing when bootstrapping a new replica.
+    *Note:* This only applies to nodes with the ``Replica`` role
+- ``DB Replication Threads``: Indicates whether the Replication I/O thread (``IO``) and the Replication SQL thread
+  (``SQL``) are running. *Note:* This only applies to nodes with the ``Replica`` role
 
 |hr|
 
@@ -535,6 +560,7 @@ There are a few ways to check that the cluster is running.
 - via logs
 - via the status
 - via the Global Transaction ID
+- via the ``Cluster`` tool in Studio UI
 
 """"""""
 Via Logs
@@ -692,6 +718,20 @@ To check the ``gtid_current_pos`` and ``gtid_slave_pos`` system variables, log i
       | 0-167772164-2145        |
       +-------------------------+
       1 row in set (0.000 sec)
+
+"""""""""""""
+Via Studio UI
+"""""""""""""
+Crafter Studio provides a tool for checking on the status of your cluster. To open the tool, click the |mainMenu| Navigation Menu
+icon from the top right of the browser, then click on ``Cluster`` from the Sidebar.
+
+.. image:: /_static/images/system-admin/cluster-upgraded.webp
+    :alt: Studio Clustering Screen
+    :width: 100%
+    :align: center
+
+The above image shows a working cluster. See the :ref:`Cluster Tool <clustering-cluster-tool>` section above for more
+information on the items displayed in the tool.
 
 |hr|
 

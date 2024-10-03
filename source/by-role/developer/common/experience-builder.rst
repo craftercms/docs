@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-update: 4.1.0
+:last-update: 4.1.5
 
 .. index:: Experience Builder, XB, In-Context Editing, ICE
 
@@ -239,7 +239,7 @@ this element as editable. Such ``div`` would look as shown below:
          data-craftercms-index="0.1"
        >...</div>
 
-    Start by importing the crafter FreeMarker library on to your FreeMarker template.
+Start by importing the crafter FreeMarker library on to your FreeMarker template.
 
 .. code-block:: text
 
@@ -1575,6 +1575,38 @@ Angular, Vue and Other JS Applications
 The easiest way to integrate XB with your JS application is by putting attributes on each HTML element that
 represents a model, field or item of a CrafterCMS content type and then invoking XB initializer.
 
+To initialize XB, you need to invoke the ``initExperienceBuilder`` function. This function receives a single argument which gets passed down to the :ref:`ExperienceBuilder component <ExperienceBuilder>`. See argument details on the ExperienceBuilder component section.
+At a minimum, you need to supply the ``isAuthoring`` boolean flag, together with either a ``ContentInstance`` or the ``path`` for the main model to initialize XB with.
+For example, a simple application that uses the UMD bundle for XB, would look something like this:
+
+.. code-block:: html
+    :force:
+
+    <script defer src="/studio/static-assets/scripts/craftercms-xb.umd.js"></script>
+    <script>
+      // Run when XB script has been loaded, as it is deferred.
+      document.addEventListener('craftercms.xb:loaded', () => {
+        // Determine if we're on authoring using `fetchIsAuthoring` utility. Remove/replace if you determine whether it is authoring/delivery through some other mechanism.
+        window.craftercms.xb.fetchIsAuthoring().then((isAuthoring) => {
+          // If we're in authoring, initialize XB
+          isAuthoring && window.craftercms.xb.initExperienceBuilder({ isAuthoring, path: '/site/website/index.xml' });
+        });
+      });
+    </script>
+
+In contrast, in an npm project setup, this might look something like this:
+
+.. code-block:: js
+
+    import { fetchIsAuthoring, initExperienceBuilder } from '@craftercms/experience-builder';
+    // Determine if we're on authoring using `fetchIsAuthoring` utility. Remove/replace if you determine whether it is authoring/delivery through some other mechanism.
+    fetchIsAuthoring().then((isAuthoring) => {
+       // If we're in authoring, initialize XB
+       if (isAuthoring) {
+          initExperienceBuilder({ isAuthoring, path: '/site/website/index.xml' });
+       }
+    });
+
 .. _fetchIsAuthoring:
 
 ~~~~~~~~~~~~~~~~
@@ -1732,3 +1764,42 @@ Example Applications
       * The z key
       * The e & m keys
       * ICE on hints (class & event)
+
+.. _xb-lazy-loaded-content:
+
+^^^^^^^^^^^^^^^^^^^
+Lazy Loaded Content
+^^^^^^^^^^^^^^^^^^^
+Lazy loading is a strategy to identify non-critical content and load these only when needed.
+It's a way to reduce page load times and memory consumption.
+
+In templated projects, typically content is preloaded and pre-rendered on to the view. When the view loads, XB
+initialises normally. If content is loaded lazily, additional steps are required to enable XB on top of that content.
+
+In simple JS applications, lazy loaded content without a page refresh also needs some programmatic management to notify
+XB about changes.
+
+To enable XB for lazy loaded content, once the attributes are printed, register the new elements with XB using ``registerElements``.
+Remember that the lifecycle of markup (lazy loaded content) needs to be integrated in XB. To de-register elements with XB,
+use ``deregisterElements``.
+
+Below is an example of registering/de-registering lazy loaded content with XB using the ``home.ftl`` file from a project
+created using the Website Editorial blueprint.
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample registering/de-registering lazy loaded content in home.ftl</a></summary>
+
+.. literalinclude:: /_static/code/developer/xb/home.ftl
+    :language: html
+    :force:
+    :emphasize-lines: 143, 168
+    :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
