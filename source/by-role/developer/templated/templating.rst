@@ -617,7 +617,7 @@ steps are required. Below is an example of a component named ``feature`` with a 
 .. raw:: html
 
    <details>
-   <summary><a>Template file "quote.ftl" for component nested in the feature component above</a></summary>
+   <summary><a>Template file "quote.ftl" for "quote" component nested in the "feature" component above</a></summary>
 
 .. code-block:: html
     :force:
