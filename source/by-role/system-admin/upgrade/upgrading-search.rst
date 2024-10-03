@@ -92,25 +92,10 @@ Here are the steps to  upgrade your CrafterCMS  3.1.x install:
        ========================================================================
        !!! Please read the release notes and make any necessary manual changes, then run the post upgrade script: /path/of/install/to/be/upgraded/bin/upgrade/post-upgrade.sh !!!
 
-#. Before performing the post-upgrade, please upgrade the DB in the install that's being upgraded.
-   You'll need to configure the installation root directory to use Java version 21 before upgrading the DB.
-
-   .. code-block:: bash
-       :caption: *Upgrade the DB*
-       :emphasize-lines: 2
-
-       cd /path/of/install/to/be/upgraded
-       ./bin/crafter.sh upgradedb
-       ...
-       ------------------------------------------------------------------------
-       Starting upgrade of embedded database /path/of/install/to/be/upgraded/data/db
-       ------------------------------------------------------------------------
-       ...
-       > Upgrade database completed
-
 #. Run the ``post-upgrade.sh`` script from the install that's being upgraded. This will start CrafterCMS and ask for
    a signal to continue, then recreate search indexes. Remember to read the release notes or any relevant upgrade
-   articles and make any necessary manual changes before running the `post-upgrade.sh` script
+   articles and make any necessary manual changes before running the `post-upgrade.sh` script. You'll need to configure
+   the installation root directory to use Java version 21 before running the script.
 
    .. code-block:: bash
        :caption: *Run the post-upgrade script*
@@ -167,23 +152,8 @@ Here are the steps:
 
        ./upgrade-target.sh /path/of/install/to/be/upgraded
 
-#. Before performing the post-upgrade, please upgrade the DB in the install that's being upgraded.
-   You'll need to configure the installation root directory to use Java version 21 before upgrading the DB.
-
-   .. code-block:: bash
-       :caption: *Upgrade the DB*
-       :emphasize-lines: 2
-
-       cd /path/of/install/to/be/upgraded
-       ./bin/crafter.sh upgradedb
-       ...
-       ------------------------------------------------------------------------
-       Starting upgrade of embedded database /path/of/install/to/be/upgraded/data/db
-       ------------------------------------------------------------------------
-       ...
-       > Upgrade database completed
-
-#. Run the ``post-upgrade.sh`` script. This will:
+#. Run the ``post-upgrade.sh`` script. You'll need to configure the installation root directory to use Java version 21
+   before running the script. This will:
 
    - Remove old *data/indexes-es* directory (old indexes are not usable by OpenSearch)
    - Start CrafterCMS and ask for signal to continue
