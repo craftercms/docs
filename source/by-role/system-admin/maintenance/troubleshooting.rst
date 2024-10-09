@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.2.0
 
 .. _troubleshooting:
 
@@ -224,6 +224,32 @@ If the Deployer is not able to clone the remote repository and an error like bel
 Try a manual clone from the command line: `git clone ssh://jdoe@authoring-server/path/to/repo`
 
 If the manual clone works, it's very probable that there's a proxy between the servers. The Deployer currently does not support connections through proxies but might get support in a future update.
+
+^^^^^^^^
+Low Disk
+^^^^^^^^
+When OpenSearch disk utilization goes above the configured high disk watermark (default is 90%), errors in creating
+indexes for Deployer targets may appear and the following message will appear in your OpenSearch logs:
+
+.. code-block:: text
+    :caption: *OpenSearch Logs - High disk watermark exceeded*
+
+    2024-10-08 02:13:37 [2024-10-09T06:13:37,787][WARN ][o.o.c.r.a.DiskThresholdMonitor] [30afa082cf18] Putting index create block on cluster as all nodes are breaching high disk watermark. Number of nodes above high watermark: 1.
+    2024-10-08 02:13:37 [2024-10-09T06:13:37,855][WARN ][o.o.c.r.a.AllocationService] [30afa082cf18] Falling back to single shard assignment since batch mode disable or multiple custom allocators set
+    2024-10-08 02:13:37 [2024-10-09T06:13:37,980][WARN ][o.o.c.r.a.DiskThresholdMonitor] [30afa082cf18] high disk watermark [90%] exceeded on [Hvfsz707SbiNkljIdIu-2w][30afa082cf18][/usr/share/opensearch/data/nodes/0] free: 39.8gb[8.5%], shards will be relocated away from this node; currently relocating away shards totalling [0] bytes; the node is expected to continue to exceed the high disk watermark when these relocations are complete
+
+|
+
+To  increase the high disk watermark, set the ``cluster.routing.allocation.disk.watermark.high`` property in
+*CRAFTER_HOME/bin/opensearch/config/opensearch.yml*, to desired value. Say we want to increase the high disk watermark
+to 95%, add the following to your OpenSearch configuration:
+
+.. code-block:: yaml
+    :caption: *Example increasing high watermark to 95% in CRAFTER_HOME/bin/opensearch/config/opensearch.yml*
+
+    cluster.routing.allocation.disk.watermark.high: 0.95
+
+|
 
 |hr|
 
