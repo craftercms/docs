@@ -89,12 +89,20 @@
              :alt: Form Data Sources - Video From Repository
 
 .. |ctlKVPair| image:: /_static/images/form-sources/ds-key-pair-val.webp
-             :width: 58%
+             :width: 55%
              :alt: Form Data Sources - Static Key Value Pairs
 
 .. |ctlSimpleTaxonomy| image:: /_static/images/form-sources/ds-simple-taxonomy.webp
              :width: 45%
              :alt: Form Data Sources - Simple Taxonomy
+
+.. |ctlAudioDt| image:: /_static/images/form-sources/ds-aud-up-dt.webp
+             :width: 70%
+             :alt: Form Data Sources - Audio Uploaded from Desktop
+
+.. |ctlAudioRepo| image:: /_static/images/form-sources/ds-aud-repo.webp
+             :width: 55%
+             :alt: Form Data Sources - Audio from Repository
 
 |
 
@@ -152,3 +160,7 @@
      - Details are in the :ref:`form-source-kvp` page.
    * - |ctlSimpleTaxonomy|
      - Details are in the :ref:`form-source-simple-taxonomy` page.
+   * - |ctlAudioDt|
+     - Details are in the :ref:`form-source-audio-desktop` page.
+   * - |ctlAudioRepo|
+     - Details are in the :ref:`form-source-audio-repo` page.
