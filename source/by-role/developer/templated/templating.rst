@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.0
+:last-updated: 4.1.8
 
 .. index:: Templating
 
@@ -137,7 +137,7 @@ uses the FreeMarker templating engine to render these views into the HTML return
 
 Review the section :ref:`templating-api` for more information on available variables for your templates and the full API.
 
-In authoring, CrafterCMS provides a UI layer on top of your applications that enables authors with in-context editing (ICE)
+In authoring, CrafterCMS provides a UI layer on top of your applications that enables authors with in-context editing
 for all the model fields defined in the content types of pages and components, called **Experience Builder (XB)**. In order to
 integrate with XB, CrafterCMS provides macros for use in your templates. See the :ref:`Freemarker section in XB<xb-freemarker>`
 for more information on using the CrafterCMS provided macros for integrating XB into your application/templates, and
