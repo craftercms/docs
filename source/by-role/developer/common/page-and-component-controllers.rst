@@ -1,13 +1,13 @@
 :is-up-to-date: True
-:last-updated: 4.1.6
+:last-updated: 4.1.8
 
-.. index:: Page Controllers, Component Controllers, Page Interceptors
+.. index:: Page Controllers, Component Controllers
 
 .. _page-and-component-controllers:
 
-----------------------------------------------------------------
-Page and Component Controllers (Page and Component Interceptors)
-----------------------------------------------------------------
+------------------------------
+Page and Component Controllers
+------------------------------
 .. |SiteItem| replace:: :javadoc_base_url:`SiteItem <engine/org/craftercms/engine/model/SiteItem.html>`
 .. |AllHttpScopesAndAppContextHashModel| replace:: :javadoc_base_url:`AllHttpScopesAndAppContextHashModel <engine/org/craftercms/engine/view/freemarker/AllHttpScopesAndAppContextHashModel.html>`
 
