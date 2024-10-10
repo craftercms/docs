@@ -118,15 +118,6 @@ Aside from the core concepts listed above, a developer needs to be familiar with
     common/localization
     common/environment-variable-access
 
-For templated projects, there are more topics to cover:
-
-.. toctree::
-    :maxdepth: 1
-    :titlesonly:
-
-    templated/templating
-    templated/working-with-dates-freemarker
-
 .. _developer-headless:
 
 --------
@@ -153,6 +144,16 @@ variance, templating engine to render HTML directly from CrafterCMS.
 It allows developers to model the content as general reusable items, and fold those into pages.
 Pages aggregate content from components as needed and are associated with a FreeMarker template that
 can render the final page. The choice of HTML tools and frameworks doesn't matter to CrafterCMS.
+
+The article, :ref:`templating`, provides more details on CrafterCMS provided tools for creating your templated project.
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+    :titlesonly:
+
+    templated/templating
+
 
 ^^^^^^^^^^^^^^^^^^
 Templated Examples
