@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.0
+:last-updated: 4.1.8
 
 .. _targeting:
 
@@ -359,7 +359,7 @@ the page renders. To do this, we need to create a script named after the page we
 to run before rendering, under *scripts -> pages*   In the groovy script below, a query is sent to
 ask for all articles targeted for the requested category. (To see the script in Studio, from the
 Sidebar, navigate to scripts -> pages -> category-landing.groovy) Please see
-:ref:`content-type-controllers` for more details on binding a script to a page or component.
+:ref:`page-and-component-controllers` for more details on binding a script to a page or component.
 
 .. code-block:: groovy
   :caption: Category Landing Page Script

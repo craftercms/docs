@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.1.8
 
 .. _developer:
 
@@ -78,8 +78,8 @@ Aside from the core concepts listed above, a developer needs to be familiar with
       - Description
     * - :ref:`scheduled-jobs`
       - Provides you information on scheduling jobs
-    * - :ref:`content-type-controllers`
-      - Provides you information on content type controllers
+    * - :ref:`page-and-component-controllers`
+      - Provides you information on page and component controllers
     * - :ref:`targeting`
       - Provides you information on rendering content adapted to different things
     * - :ref:`servlet-filters`
@@ -107,7 +107,7 @@ Aside from the core concepts listed above, a developer needs to be familiar with
     :hidden:
 
     common/scheduled-jobs
-    common/content-type-controllers
+    common/page-and-component-controllers
     common/targeting
     common/servlet-filters
     common/working-with-dates-groovy
