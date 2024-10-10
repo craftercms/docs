@@ -1,0 +1,179 @@
+.. index:: CrafterCMS 4.2.0 Release Notes
+
+----------------
+CrafterCMS 4.2.0
+----------------
+
+Released *TBD*
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-2-x>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.2.x,
+    please see :ref:`upgrading-craftercms`
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+* New authentication mechanism for Engine Preview |br|
+  To learn more about configuring Engine Preview, see :ref:`studio-preview-cookie` and :ref:`engine-security-preview-mode`
+
+* Crafter CLI has the following new options:
+
+  - Publish Content
+  - Create Group
+  - List Groups
+  - Create User
+  - Get Users
+
+  Please see :ref:`crafter-cli` for more information.
+
+* New RTE configuration for TinyMCE plugin ``template``
+  Please see :ref:`rte-configuration-tinymce-plugin-template-example` for more information
+
+* YAML, JSON and CSV files are now editable via the "Edit" option in Preview |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6980>`__ for more information
+
+* Image placeholder generation util is now integrated into XB |br|
+  When generating items on XB, fields without default values use ``placehold.it`` for images.
+  See `here <https://github.com/craftercms/craftercms/issues/6668>`__ for more information
+
+* Broken dependencies are now recorded in the DB and with every content written, if the item being written is referenced
+  as a broken dependency, the reference will be fixed. |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6228>`__ for more information
+
+* New configuration property for Deployer HTTP requests response timeout |br|
+  See :ref:`studio-deployer-http-request-timeout` for more information
+
+^^^^^^^^^^^^
+Enhancements
+^^^^^^^^^^^^
+* Improved permissions.
+
+  - Added a new permission, ``publish_by_commits``, that allows users to publish by commit ids. See the API
+    `publishCommits <../_static/api/studio.html#tag/publishing/operation/publishCommits>`__ for permission usage.
+  - Items are evaluated for permissions based on their paths regardless of where they are listed. The permission
+    ``~DASHBOARD~`` is now removed from the list of allowed permissions. The upgrade manager will remove it from your
+    project during your install upgrade.
+
+* `Improved item duplication in XB <https://github.com/craftercms/craftercms/issues/7169>`__
+* `Added support for multiple browser tabs for the same project/site <https://github.com/craftercms/craftercms/issues/6206>`__
+* `Set the default sort order of Studio UI search to alphabetical when no keyword is supplied <https://github.com/craftercms/craftercms/issues/5995>`__
+* Bulk Publishing enhancements
+
+  * `Added an option to include soft dependencies when bulk publishing <https://github.com/craftercms/craftercms/issues/6191>`__
+    This new option is set to false by default.
+  * `Studio now does a \"Publish All\" request when \"Publish By Path='/'\" request is received <https://github.com/craftercms/craftercms/issues/5950>`__
+
+
+* Improved XB ease-of-use and resilience for JS apps programmatically registering elements for XB |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6983>`__ for more information
+
+  For more information on registering elements for XB, see :ref:`xb-lazy-loaded-content`.
+
+* Improved ``SiteItemService``. The object returned by ``SiteItemService`` is now a copy of the item.
+
+* `Added a single item per line view to search and browse item selection dialogs <https://github.com/craftercms/craftercms/issues/6517>`__
+
+"""""""""
+Studio UI
+"""""""""
+* [utils/xml] Upgrade prettier to v3x which changed from sync apis to async
+
+  * ``serialize`` no longer formats code
+  * ``beautify`` is now async
+
+* [components]
+
+  * HostUI removed, merged with Host (its container component)
+  * EditModeSwitcherUI removed, merged with EditModeSwitcher (its container component)
+  * Removed Legacy Dashboard components:
+
+    * ``LegacyApprovedScheduledDashlet``
+    * ``LegacyAwaitingApprovalDashlet``
+    * ``LegacyInReviewDashlet``
+    * ``LegacyRecentActivityDashlet``
+    * ``LegacyRecentActivityDashlet``
+    * ``LegacyRecentlyPublishedDashlet``
+    * ``LegacyUnpublishedDashlet``
+
+  * Removed ``documentDomain`` property from ExperienceBuilder component and its usage in ``PreviewConcierge`` component
+  * ``WorkflowCancellationDialogUI``: prop ``items`` type changed from an async Resource to sync SandboxItem array.
+  * ``AuthorFilter`` removed, merged with ActivityDashlet
+  * ``UsersAutocomplete`` removed
+  * ``UploadDialog``: Added ``autoProceed`` prop to enable/disable automatic upload after file selection
+  * ``DropDownMenuButton`` component:
+
+    * Internal structure changed so that ListItem wraps the ListItemButton
+    * ``listItemProps`` are routed to the list ``ListItem`` component instead of the ``ListItemButton``
+    * Added ``listItemButtonProps`` property
+
+  * ``DraggablePanelListItem`` prop ``onMenu`` send the pointer event as its first and only argument instead of the anchor element attached to the event. Can get element through ``event.currentTarget``.
+
+* [services] Removed services associated with v1 APIs:
+
+  * ``fetchLegacyGetGoLiveItems``
+  * ``fetchLegacyUserActivities``
+  * ``fetchLegacyScheduledItems``
+  * ``fetchPendingApprovalPackageItems``
+  * ``fetchLegacyDeploymentHistory``
+  * ``getUserPermissions``
+
+    * Use ``fetchMyPermissions`` instead
+
+  * [services/contentTypes] Add ``fetchContentType`` service
+
+* [state]
+
+  * ``actions/dialogs``: Renamed ``updateEditConfig`` action to ``updateEditDialogConfig``
+
+* [hooks]
+
+  * ``usePreviewUrlControl``: Removed ``history`` prop. Retrieval of search and navigate (previously called 'push') is now done internally.
+
+* Removed deprecated ``aws-file-upload`` and ``aws-video`` upload controls.
+* Migrated the Studio UI build to Vite/SWC
+* Rollup's XB build to use SWC
+* Upgraded target compilation to ES2022, dropping many code transforms for features that are supported by most modern browsers such as nullish coalescing, optional chaining, object spreading and destructuring.
+* The ``allowedContentTypes`` ContentTypeField validation changed from being an array to a Record<contentTypeId, { embedded?: true; shared?: true; sharedExisting?: true; }>
+* Remove legacy ``browseCMIS`` dialog and ``openCMISBrowse`` function from common-api.
+* Remove ``CMIS-repo``, ``CMIS-upload``, ``img-cmis-repo``, ``img-CMIS-upload``, ``video-cmis-repo`` and ``video-CMIS-upload`` datasources.
+* ``ICEConfig`` TypeScript ``interface`` changed to be ``type``. It now accepts either the (model) or (modelId & path).
+* The ``acecode`` TinyMCE plugin (for code-highlighted Rich Text Editor code editing), renders the code exactly as Tiny provides without decoding entities.
+
+
+^^^^^^^^^
+Bug Fixes
+^^^^^^^^^
+* `Fixed issue with an XB error when duplicating an item in a repeat group <https://github.com/craftercms/craftercms/issues/7151>`__
+* `Fixed issue with TinyMCE not saving HTML code properly <https://github.com/craftercms/craftercms/issues/7079>`__ |br|
+  See :ref:`working in the RTE with code samples <author-rte-code-samples>` for more information on editing code samples in the RTE.
+* `Fixed issue with mixed case role names not being recognized by the permission evaluation system <https://github.com/craftercms/craftercms/issues/7001>`__
+* `Fixed issue with \"File Upload From Desktop\" datasource throwing an error when the dialog is opened and closed <https://github.com/craftercms/craftercms/issues/6697>`__
+* `Fixed issues with dependency calculations \"getDependentItems\" <https://github.com/craftercms/craftercms/issues/6189>`__
+* `Fixed issue with rootless Docker images build not working <https://github.com/craftercms/craftercms/issues/7291>`__
+
+^^^^^^^^^^^^^^^^^^
+Dependency Updates
+^^^^^^^^^^^^^^^^^^
+* Noteworthy dependency updates:
+
+  - Spring Framework to version 6
+  - Spring Boot to version 3
+  - Freemarker to version 2.3.33
+  - MariaDB to version 11.3
+  - MariaDb4J to version 3.1
+  - HTTP Proxy to version 2.0
+  - UrlRewriteFilter to version 5.1
+  - ESAPI to version 2.5.4.0
+  - FileUpload to version 2.0
+  - Groovy to version 4
+  - Tomcat to version 10
+
+For a complete list of community tickets, please visit: `GitHub 4.2.0 <https://github.com/orgs/craftercms/projects/6/views/1>`_
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+|hr|
