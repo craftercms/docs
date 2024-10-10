@@ -125,6 +125,6 @@ Groovy classes to follow this convention.
 
 For more information on the FreeMarker (Templating) APIs, please see :ref:`templating-api`.
 
-For more information on the Groovy APIs, please see :ref:`groovy-api`
+For more information on the Groovy APIs, please see :ref:`groovy-java-api`
 
   .. include:: /includes/scripts-templates-security.rst

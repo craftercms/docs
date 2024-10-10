@@ -872,7 +872,7 @@ authentication provider used, but you can always obtain an instance of |CustomUs
     <#-- show login button -->
   </#if>
 
-.. note:: You can find more details about the ``authToken`` variable in :ref:`templating-api` or :ref:`groovy-api`
+.. note:: You can find more details about the ``authToken`` variable in :ref:`templating-api` or :ref:`groovy-java-api`
 
 |
 
