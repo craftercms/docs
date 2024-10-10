@@ -103,10 +103,9 @@ Here's a sample ``application.yaml`` file (click on the triangle on the left to 
 
 |
 
-The ``base-target.yaml`` file is handled a little bit different. This file is loaded by Crafter Deployer every time a new target is
-being added, and is merged with the specific properties of the target, with the target's properties taking precedence. By default, the override
-location for this configuration file is ``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml``, but it can be changed through the ``application.yaml`` property
-``deployer.main.targets.config.baseYaml.overrideLocation``.
+The ``base-target.yaml`` file is handled a little bit differently. This file is loaded by Crafter Deployer every time a new target is added and is merged with the specific properties of the target, 
+with the target's properties taking precedence. By default, the override location for this configuration file is ``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml``, 
+but it can be changed through the ``application.yaml`` property ``deployer.main.targets.config.baseYaml.overrideLocation``.
 
 Here's a sample ``base-target.yaml`` file (click on the triangle on the left to expand/collapse):
 
@@ -178,17 +177,17 @@ Here's a sample ``base-target.yaml`` file (click on the triangle on the left to 
 
 where:
 
-  - ``engineURL`` and ``engineManagementToken`` is used for calling Engine APIs, and the environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file
-  - ``studioURL`` and ``studioManagementToken`` is required for calling Studio APIs, and the environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file
+  - ``engineURL`` and ``engineManagementToken``are required for calling Engine APIs, and the environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file
+  - ``studioURL`` and ``studioManagementToken``are required for calling Studio APIs, and the environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file
 
 """"""""""""""""""""""""""
 Target Configuration Files
 """"""""""""""""""""""""""
-Each deployment target has it's own YAML configuration file, where the properties of the target and it's entire deployment pipeline is specified.
-Without this file the Deployer doesn't know of the existence of the target. By default these configuration files reside under
+Each deployment target has its own YAML configuration file, where the properties of the target and its entire deployment pipeline are specified.
+Without this file, the Deployer doesn't know of the target's existence. By default, these configuration files reside under
 ``./config/targets`` (in the case of the CrafterCMS installed on a server, they're under ``CRAFTER_HOME/data/deployer/targets``).
 
-Target configurations vary a lot between authoring and delivery, since an authoring target works on a local repository while a delivery target
+Target configurations vary a lot between authoring and delivery since an authoring target works on a local repository while a delivery target
 pulls the files from a remote repository. But target configurations between the same environment don't change a lot. Having said that, the
 following two examples can be taken as a base for most authoring/delivery target configuration files:
 
@@ -270,12 +269,11 @@ the YAML file name is ``editorial-preview.yaml``, the corresponding Spring conte
 The Deployer out of the box provides the following processor beans:
 
 * **gitPullProcessor:** Clones a remote repository into a local path. If the repository has been cloned already, it performs
-  a Git pull. Useful for delivery targets which need to reach out to the authoring server to retrieve the changes on
-  deployment. Must be the first processor in the list, since the rest of the processors all work on the local repository.
+  a Git pull. This is useful for delivery targets which need to reach out to the authoring server to retrieve the changes on
+  deployment. This must be the first processor in the list since the rest of the processors work on the local repository.
 
 * **gitDiffProcessor:** Calculates the diff between the latest commit in the local repository and the last commit processed,
-  which is usually stored under ``./processed-commits`` (in the folder ``CRAFTER_HOME/data/deployer/processed-commits``). This diff is then used to build the change set of the deployment, so
-  this processor should be the second one in the list.
+  which is usually stored under ``./processed-commits`` (in the folder ``CRAFTER_HOME/data/deployer/processed-commits``). This diff is then used to build the change set of the deployment, so this processor should be the second on the list.
 
 * **searchIndexingProcessor:** grabs the files from the change set and sends them to Crafter Search for indexing. It
   also does some XML processing before submitting the files like flattening (recursive inclusion of components), merging
@@ -283,7 +281,7 @@ The Deployer out of the box provides the following processor beans:
 
 * **httpMethodCallProcessor:** executes an HTTP method call to a specified URL.
 
-* **fileOutputProcessor:** generates the output of the deployment and saves it in a CSV file.
+* **fileOutputProcessor:** generates the deployment output and saves it to a CSV file.
 
 * **mailNotificationProcessor:** sends an email notification when there's a successful deployment with file changes or when
   a deployment failed.
@@ -291,7 +289,7 @@ The Deployer out of the box provides the following processor beans:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Deployer Configuration Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In this section we will highlight some of the more commonly used properties in the configuration of Crafter Deployer.
+In this section, we will highlight some of the more commonly used properties in the configuration of Crafter Deployer.
 
 .. list-table:: Common Configuration Properties
     :header-rows: 1
@@ -346,12 +344,12 @@ This is the most common configuration used, all operations will be performed on 
 
 .. _deployer-multiple-search-cluster:
 
-""""""""""""""""""""""""
-Multiple Search Clusters
-""""""""""""""""""""""""
-The following allows you to configure a target with multiple search clusters.
-In the configuration below, all read operations will be performed on one search cluster but write operations will
-be performed on multiple search clusters:
+"""""""""""""""""""""""""""""""""""""""""""""""""
+Multiple Search Engines or Search Engine Clusters
+"""""""""""""""""""""""""""""""""""""""""""""""""
+There may be cases where an enterprise needs to run multiple search engines or search engine clusters that carry the same data for extra redundancy beyond regular clustering. The following allows you to configure a target with multiple search clusters.
+In the configuration below, all read operations will be performed against one search cluster but write operations will
+be performed against all search clusters:
 
 .. code-block:: yaml
   :linenos:
@@ -439,8 +437,9 @@ For a list of common MIME types, see https://developer.mozilla.org/en-US/docs/We
 """""""""""""""""""""""""""""
 Remote Documents Path Pattern
 """""""""""""""""""""""""""""
+CrafterCMS can index documents that reside in remote repositories, but are pointed-to by CrafterCMS content.
 The ``remoteBinaryPathPatterns`` configured in the ``base-target.yaml`` file determines what a remote document
-is via path pattern. The default for this is configured as follows:
+is, within a content item, via the regex path pattern. The default for this is configured as follows:
 
 .. code-block:: yaml
     :caption: *Default remoteBinaryPathPatterns in base-target.yaml*
@@ -506,7 +505,7 @@ Administration
 How to Start/Stop the Deployer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're using CrafterCMS installed on a server, starting and stopping the Deployer is very easy. From the command line, navigate to the
-{env-directory}, authoring or delivery environment folder, and then inside the ``bin`` folder, run ``./crafter.sh start_deployer`` to start
+``{env-directory}``, authoring or delivery environment folder, and then inside the ``bin`` folder, run ``./crafter.sh start_deployer`` to start
 the Deployer or ``./crafter.sh stop_deployer`` to stop the Deployer.
 
 ^^^^^^^^^^^^^^
@@ -519,7 +518,7 @@ There are two different ways in which a target configuration file can be created
 
 * By calling the API endpoint `createTarget <../../../_static/api/deployer.html#tag/target/operation/createTarget>`_, which creates a new target based on a template. The Deployer comes out
   of the box with two templates: one for local repositories (useful for authoring environments) and one for remote repositories (useful for
-  delivery environments). You can also specify your own templates under ``./config/templates/targets``, and use the same API endpoint to create
+  delivery environments). You can also specify your templates under ``./config/templates/targets``, and use the same API endpoint to create
   targets based on those templates.
 * By placing the YAML target configuration file under ``./config/targets`` (or ``CRAFTER_HOME/data/deployer/targets``, like indicated
   above). The Deployer will automatically load the file on a schedule, and whenever there's a change it will re-load it.
@@ -568,14 +567,13 @@ All target templates support the following parameters:
 ~~~~~~~~~~~~~~~~
 Authoring Target
 ~~~~~~~~~~~~~~~~
-This is one of the templates used by Crafter Studio when a new project/site is created, this template will setup a target for
-Studio's search features including: indexing all xml files, binary files and indexing additional Git metadata from the
-site repository.
+This is one of the templates used by Crafter Studio when a new project/site is created, this template will set up a target for
+Studio's search features to index all content items.
 
 This target will:
 
 - Identify the changed files according to the local Git repository history
-- Index all site content in search
+- Index all site content using the search engine
 
 **Parameters**
 
