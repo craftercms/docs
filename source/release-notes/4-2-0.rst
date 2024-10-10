@@ -44,6 +44,8 @@ New Features
   as a broken dependency, the reference will be fixed. |br|
   See `here <https://github.com/craftercms/craftercms/issues/6228>`__ for more information
 
+* New configuration property for Deployer HTTP requests response timeout |br|
+  See :ref:`studio-deployer-http-request-timeout` for more information
 
 ^^^^^^^^^^^^
 Enhancements
@@ -72,6 +74,8 @@ Enhancements
   For more information on registering elements for XB, see :ref:`xb-lazy-loaded-content`.
 
 * Improved ``SiteItemService``. The object returned by ``SiteItemService`` is now a copy of the item.
+
+* `Added a single item per line view to search and browse item selection dialogs <https://github.com/craftercms/craftercms/issues/6517>`__
 
 """""""""
 Studio UI
@@ -149,6 +153,7 @@ Bug Fixes
 * `Fixed issue with mixed case role names not being recognized by the permission evaluation system <https://github.com/craftercms/craftercms/issues/7001>`__
 * `Fixed issue with \"File Upload From Desktop\" datasource throwing an error when the dialog is opened and closed <https://github.com/craftercms/craftercms/issues/6697>`__
 * `Fixed issues with dependency calculations \"getDependentItems\" <https://github.com/craftercms/craftercms/issues/6189>`__
+* `Fixed issue with rootless Docker images build not working <https://github.com/craftercms/craftercms/issues/7291>`__
 
 ^^^^^^^^^^^^^^^^^^
 Dependency Updates
