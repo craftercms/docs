@@ -77,6 +77,9 @@ Enhancements
 
 * `Added a single item per line view to search and browse item selection dialogs <https://github.com/craftercms/craftercms/issues/6517>`__
 
+* Added parameter for setting CloudFormation capabilities |br|
+  See :ref:`studio-cloudformation-capabilities` for more information
+
 """""""""
 Studio UI
 """""""""
@@ -163,7 +166,7 @@ Dependency Updates
   - Spring Framework to version 6
   - Spring Boot to version 3
   - Freemarker to version 2.3.33
-  - MariaDB to version 11.3
+  - MariaDB to version 11.4
   - MariaDb4J to version 3.1
   - HTTP Proxy to version 2.0
   - UrlRewriteFilter to version 5.1
