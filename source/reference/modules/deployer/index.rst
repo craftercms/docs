@@ -1625,6 +1625,8 @@ This target will:
 
 .. note:: For more details about setting up a serverless delivery see :ref:`setup-serverless-delivery`
 
+.. _aws-cloudformation-target:
+
 """""""""""""""""""""""""
 AWS CloudFormation Target
 """""""""""""""""""""""""
@@ -1673,6 +1675,12 @@ This target will:
 |``aws.cloudformation.access_key``                    |           |The AWS Access Key to use for CloudFormation        |
 +-----------------------------------------------------+-----------+----------------------------------------------------+
 |``aws.cloudformation.secret_key``                    |           |The AWS Secret Key to use for CloudFormation        |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.cloudformation.stackCapabilities``             |           |The stack capabilities e.g. ``CAPABILITY_IAM``,     |
+|                                                     |           |``CAPABILITY_NAMED_IAM`` and                        |
+|.. version_tag::                                     |           |``CAPABILITY_AUTO_EXPAND``                          |
+|    :label: Since                                    |           |                                                    |
+|    :version: 4.2.0                                  |           |                                                    |
 +-----------------------------------------------------+-----------+----------------------------------------------------+
 |``disable_deploy_cron``                              |           |Disables the cron job that runs deployments every   |
 |                                                     |           |certain amount of time                              |
