@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.2.0
 :orphan:
 
 .. index:: Modules; Crafter Deployer
@@ -286,6 +286,54 @@ The Deployer out of the box provides the following processor beans:
 
 * **mailNotificationProcessor:** sends an email notification when there's a successful deployment with file changes or when
   a deployment failed.
+
+""""""""""""""""
+Thread Pool Size
+""""""""""""""""
+As the number of sites grows you may need more workers (threads) in the Deployer to service them. If you do not add more
+workers then you will see errors in scheduled tasks. Eventually, the system will get through the workload with the workers it
+has available, and the error will stop, but the presence of these errors on a regular basis indicates that you need
+more workers in the pool.
+
+To increase the number of workers, set the thread pool size of the task scheduler by setting the ``poolSize`` property
+in ``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml`` as shown below:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
+    :emphasize-lines: 3-5
+    :linenos:
+
+    deployer:
+      main:
+        taskScheduler:
+          # Thread pool size of the task scheduler
+          poolSize: 20
+        config:
+          environment:
+            active: ${CRAFTER_ENVIRONMENT}
+        targets:
+          config:
+            folderPath: ${targets.dir}
+        deployments:
+          folderPath: ${deployments.dir}
+          output:
+            folderPath: ${logs.dir}
+          processedCommits:
+            folderPath: ${processedCommits.dir}
+        logging:
+          folderPath: ${logs.dir}
+        management:
+          # Deployer management authorization token
+          authorizationToken: ${DEPLOYER_MANAGEMENT_TOKEN}
+        security:
+          encryption:
+            # The key used for encryption of configuration properties
+            key: ${CRAFTER_ENCRYPTION_KEY}
+            # The salt used for encryption of configuration properties
+            salt: ${CRAFTER_ENCRYPTION_SALT}
+          ssh:
+            # The path of the folder used for the SSH configuration
+            config: ${CRAFTER_SSH_CONFIG}
 
 ^^^^^^^^^^^^^^
 Manage Targets
