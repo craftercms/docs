@@ -295,12 +295,54 @@ workers then you will see errors in scheduled tasks. Eventually, the system will
 has available, and the error will stop, but the presence of these errors on a regular basis indicates that you need
 more workers in the pool.
 
-To increase the number of workers, set the thread pool size of the task scheduler by setting the ``poolSize`` property
-in ``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml`` as shown below:
+There are two thread pools available. The deployment pool, which is used to run all deployments and the task scheduler
+pool, which is used for starting deployments on a schedule of every 10 secs. For deployments of sites with a lot content
+(big sites), we recommend increasing the deployment pool. For deployments with a lot of sites, we recommend increasing
+the task scheduler pool.
+
+To increase the deployment pool, set the following items in ``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml``
+as shown below:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml - Deployment Pool*
+    :linenos:
+
+    deployer:
+      main:
+        deployments:
+          pool:
+            # Thread pool core size
+            size: 25
+            # Thread pool max size
+            max: 100
+            # Thread pool queue size
+            queue: 100
+
+|
+
+To increase the thread pool size of the task scheduler, set the ``poolSize`` property in
+``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml`` as shown below:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml - Task Scheduler Pool*
+    :linenos:
+
+    deployer:
+      main:
+        taskScheduler:
+          # Thread pool size of the task scheduler
+          poolSize: 20
+
+Here's a sample *application.yaml* file with the deployment pool and task thread pool configured:
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample application.yaml file showing Deployment and Task Scheduler Pools</a></summary>
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
-    :emphasize-lines: 3-5
+    :emphasize-lines: 3-5, 12-19
     :linenos:
 
     deployer:
@@ -315,6 +357,13 @@ in ``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml`` as shown below:
           config:
             folderPath: ${targets.dir}
         deployments:
+          pool:
+            # Thread pool core size
+            size: 25
+            # Thread pool max size
+            max: 100
+            # Thread pool queue size
+            queue: 100
           folderPath: ${deployments.dir}
           output:
             folderPath: ${logs.dir}
@@ -334,6 +383,12 @@ in ``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml`` as shown below:
           ssh:
             # The path of the folder used for the SSH configuration
             config: ${CRAFTER_SSH_CONFIG}
+
+.. raw:: html
+
+   </details>
+
+|
 
 ^^^^^^^^^^^^^^
 Manage Targets
