@@ -150,6 +150,7 @@ Studio UI
 ^^^^^^^^^
 Bug Fixes
 ^^^^^^^^^
+* `Fixed issue with duplicating a site in serverless mode <https://github.com/craftercms/craftercms/issues/7392>`__
 * `Fixed issue with an XB error when duplicating an item in a repeat group <https://github.com/craftercms/craftercms/issues/7151>`__
 * `Fixed issue with TinyMCE not saving HTML code properly <https://github.com/craftercms/craftercms/issues/7079>`__ |br|
   See :ref:`working in the RTE with code samples <author-rte-code-samples>` for more information on editing code samples in the RTE.
