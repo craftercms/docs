@@ -1,17 +1,17 @@
 :is-up-to-date: True
-:last-update: 4.1.2
+:last-updated: 4.1.8
 
-.. index:: Content Controllers, Content Type Controllers, Page Interceptors
+.. index:: Page Controllers, Component Controllers
 
-.. _content-type-controllers:
+.. _page-and-component-controllers:
 
----------------------------------------------------------
-Content Type Controller (Page and Component Interceptors)
----------------------------------------------------------
+------------------------------
+Page and Component Controllers
+------------------------------
 .. |SiteItem| replace:: :javadoc_base_url:`SiteItem <engine/org/craftercms/engine/model/SiteItem.html>`
 .. |AllHttpScopesAndAppContextHashModel| replace:: :javadoc_base_url:`AllHttpScopesAndAppContextHashModel <engine/org/craftercms/engine/view/freemarker/AllHttpScopesAndAppContextHashModel.html>`
 
-Crafter content types (page, components) can have their own controller scripts too, that are executed before the page or component
+Crafter pages and components can have their own controller scripts too, that are executed before the page or component
 is rendered, and that can contribute to the model of the template. These scripts, besides the common variables, have
 the ``templateModel`` and the ``contentModel`` available.
 

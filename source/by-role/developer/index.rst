@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.1.8
 
 .. _developer:
 
@@ -78,8 +78,8 @@ Aside from the core concepts listed above, a developer needs to be familiar with
       - Description
     * - :ref:`scheduled-jobs`
       - Provides you information on scheduling jobs
-    * - :ref:`content-type-controllers`
-      - Provides you information on content type controllers
+    * - :ref:`page-and-component-controllers`
+      - Provides you information on page and component controllers
     * - :ref:`targeting`
       - Provides you information on rendering content adapted to different things
     * - :ref:`servlet-filters`
@@ -107,7 +107,7 @@ Aside from the core concepts listed above, a developer needs to be familiar with
     :hidden:
 
     common/scheduled-jobs
-    common/content-type-controllers
+    common/page-and-component-controllers
     common/targeting
     common/servlet-filters
     common/working-with-dates-groovy
@@ -117,15 +117,6 @@ Aside from the core concepts listed above, a developer needs to be familiar with
     common/adding-a-new-language
     common/localization
     common/environment-variable-access
-
-For templated projects, there are more topics to cover:
-
-.. toctree::
-    :maxdepth: 1
-    :titlesonly:
-
-    templated/templating
-    templated/working-with-dates-freemarker
 
 .. _developer-headless:
 
@@ -153,6 +144,16 @@ variance, templating engine to render HTML directly from CrafterCMS.
 It allows developers to model the content as general reusable items, and fold those into pages.
 Pages aggregate content from components as needed and are associated with a FreeMarker template that
 can render the final page. The choice of HTML tools and frameworks doesn't matter to CrafterCMS.
+
+The article, :ref:`templating`, provides more details on CrafterCMS provided tools for creating your templated project.
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+    :titlesonly:
+
+    templated/templating
+
 
 ^^^^^^^^^^^^^^^^^^
 Templated Examples
