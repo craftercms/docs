@@ -584,16 +584,16 @@ This target has no additional parameters.
 ~~~~~~~~~~~~
 Local Target
 ~~~~~~~~~~~~
-This is the other template used by Crafter Studio when a new project is created, this template will setup a target for
+This is the other template used by Crafter Studio when a new project is created, this template will create a target for
 previewing the project.
 
 This target will:
 
 - Identify the changed files according to the local Git repository history
-- Index all project content in search
-- Rebuild Crafter Engine's site context when there are changes in configuration files or Groovy scripts
+- Index all project content in the search index
+- Rebuild Crafter Engine's site context when there are changes in the configuration files or Groovy scripts
 - Clear Crafter Engine's cache
-- Rebuild Crafter Engine's project GraphQL schema when there are changes in content-type definitions
+- Rebuild Crafter Engine's project GraphQL schema when there are changes in the content-type definitions
 - Send email notifications if enabled
 
 **Parameters**
@@ -620,9 +620,9 @@ This target will:
 - Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
 - Identify the changed files according to the Git repository history
 - Index all project content in the appropriate search engine
-- Rebuild Crafter Engine's site context when there are changes in configuration files or Groovy scripts
+- Rebuild Crafter Engine's site context when there are changes in the configuration files or Groovy scripts
 - Clear Crafter Engine's cache
-- Rebuild Crafter Engine's project GraphQL schema when there are changes in content-type definitions
+- Rebuild Crafter Engine's project GraphQL schema when there are changes in the content-type definitions
 - Send email notifications if enabled
 
 **Parameters**
@@ -638,35 +638,35 @@ This target will:
 +------------------------------+----------+------------------------------------------------------------------------+
 |``repo_password``             |          |Password to access remote repository                                    |
 +------------------------------+----------+------------------------------------------------------------------------+
-|``ssh_private_key_path``      |          |The path for the private key to access remote repository                |
+|``ssh_private_key_path``      |          |The path for the private key to access the remote repository            |
 +------------------------------+----------+------------------------------------------------------------------------+
-|``ssh_private_key_passphrase``|          |The passphrase for the private key to access remote repository (only if |
-|                              |          |the key is passphrase-protected)                                        |
+|``ssh_private_key_passphrase``|          |The passphrase for the private key to access the remote repository      |
+|                              |          |(only if the key is passphrase-protected)                               |
 +------------------------------+----------+------------------------------------------------------------------------+
 |``notification_addresses``    |          |The email addresses that should receive deployment notifications        |
 +------------------------------+----------+------------------------------------------------------------------------+
 
-.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
+.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP/S or SSH)
 
 ~~~~~~~~~~~~~
 AWS S3 Target
 ~~~~~~~~~~~~~
 This template is used for Crafter Engine in serverless delivery environments, it is very similar to the Remote Target
-but it adds support for syncing files to an AWS S3 bucket and also handles AWS Cloudfront invalidations.
+but it adds support for syncing files to an AWS S3 bucket and handles AWS Cloudfront invalidations.
 
 This target will:
 
 - Clone the remote repository if needed
 - Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
 - Identify the changed files according to the Git repository history
-- Index all project content in search
-- Sync all new, updated and deleted files to an AWS S3 bucket
+- Index all project content in the search index
+- Sync all new, updated, and deleted files to an AWS S3 bucket
 - Execute an invalidation for all updated files in one or more AWS Cloudfront distributions
 - Submit deployments events for all Crafter Engine instances:
 
-  - Rebuild the site context when there are changes in configuration files or Groovy scripts
-  - Clear the project cache
-  - Rebuild the site GraphQL schema when there are changes in content-type definitions
+  - Rebuild the site context when there are changes in the configuration files or Groovy scripts
+  - Clear Crafter Engine's cache
+  - Rebuild the site GraphQL schema when there are changes in the content-type definitions
 
 - Send email notifications if enabled
 
@@ -695,15 +695,15 @@ This target will:
 +------------------------------+-----------+------------------------------------------------------------------------+
 |``repo_password``             |           |Password to access remote repository                                    |
 +------------------------------+-----------+------------------------------------------------------------------------+
-|``ssh_private_key_path``      |           |The path for the private key to access remote repository                |
+|``ssh_private_key_path``      |           |The path for the private key to access the remote repository            |
 +------------------------------+-----------+------------------------------------------------------------------------+
-|``ssh_private_key_passphrase``|           |The passphrase for the private key to access remote repository (only if |
-|                              |           |the key is passphrase-protected)                                        |
+|``ssh_private_key_passphrase``|           |The passphrase for the private key to access the remote repository      |
+|                              |           |(only if the key is passphrase-protected)                               |
 +------------------------------+-----------+------------------------------------------------------------------------+
 |``notification_addresses``    |           |The email addresses that should receive deployment notifications        |
 +------------------------------+-----------+------------------------------------------------------------------------+
 
-.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
+.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP/S or SSH)
 
 .. note:: For more details about setting up a serverless delivery see :ref:`setup-serverless-delivery`
 
@@ -711,7 +711,7 @@ This target will:
 AWS CloudFormation Target
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 This template is used to provide a serverless delivery environment without the need to manually create all required
-resources in AWS. It works similar to the AWS S3 Target but uses an AWS CloudFormation template to create the AWS
+resources in AWS. It works similarly to the AWS S3 Target but uses an AWS CloudFormation template to create the AWS
 resources on target creation: the S3 bucket where the site content will be stored and a CloudFront distribution that
 will front an Engine load balancer and deliver the static assets directly from the S3 bucket. These resources will be
 deleted when the target is deleted.
@@ -721,70 +721,70 @@ This target will:
 - Clone the remote repository if needed
 - Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
 - Identify the changed files according to the Git repository history
-- Index all project content in search
-- Sync all new, updated and deleted files to an AWS S3 bucket
+- Index all project content in the search index
+- Sync all new, updated, and deleted files to an AWS S3 bucket
 - Execute an invalidation for all updated files in the AWS CloudFront distribution
 - Submit deployments events for all Crafter Engine instances:
 
-  - Rebuild the site context when there are changes in configuration files or Groovy scripts
-  - Clear the site cache
-  - Rebuild the site GraphQL schema when there are changes in content-type definitions
+  - Rebuild the site context when there are changes in the configuration files or Groovy scripts
+  - Clear Crafter Engine's cache
+  - Rebuild the site GraphQL schema when there are changes in the content-type definitions
 
 - Send email notifications if enabled
 
 **Parameters**
 
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|Name                                                 |Required   |Description                                         |
-+=====================================================+===========+====================================================+
-|``aws.region``                                       |           |The AWS Region to use                               |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.default_access_key``                           |           |The AWS Access Key to use for S3 and CloudFront     |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.default_secret_key``                           |           |The AWS Secret Key to use for S3 and CloudFront     |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.namespace``                     ||checkmark||Prefix to use for CloudFormation resource names     |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.deliveryLBDomainName``          ||checkmark||The domain name of the Engine delivery LB           |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.cloudfrontCertificateArn``      |           |The ARN of the CloudFront SSL certificate           |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.alternateCloudFrontDomainNames``|           |The alternate domain names for the CloudFront to use|
-|                                                     |           |(must match the valid certificate domain names)     |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.access_key``                    |           |The AWS Access Key to use for CloudFormation        |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.secret_key``                    |           |The AWS Secret Key to use for CloudFormation        |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``disable_deploy_cron``                              |           |Disables the cron job that runs deployments every   |
-|                                                     |           |certain amount of time                              |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``local_repo_path``                                  |           |The local path where to put the remoe Git repo clone|
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``repo_branch``                                      |           |The branch name of the remote Git repo to pull from |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``repo_username``                                    |           |Username to access remote repository                |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``repo_password``                                    |           |Password to access remote repository                |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``ssh_private_key_path``                             |           |The path for the private key to access remote       |
-|                                                     |           |repository                                          |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``ssh_private_key_passphrase``                       |           |The passphrase for the private key to access remote |
-|                                                     |           |repository (only if the key is passphrase-protected)|
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``notification_addresses``                           |           |The email addresses that should receive deployment  |
-|                                                     |           |notifications                                       |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|Name                                                 |Required   |Description                                             |
++=====================================================+===========+========================================================+
+|``aws.region``                                       |           |The AWS Region to use                                   |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.default_access_key``                           |           |The AWS Access Key to use for S3 and CloudFront         |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.default_secret_key``                           |           |The AWS Secret Key to use for S3 and CloudFront         |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.cloudformation.namespace``                     ||checkmark||Prefix to use for CloudFormation resource names         |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.cloudformation.deliveryLBDomainName``          ||checkmark||The domain name of the Engine delivery LB               |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.cloudformation.cloudfrontCertificateArn``      |           |The ARN of the CloudFront SSL certificate               |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.cloudformation.alternateCloudFrontDomainNames``|           |The alternate domain names for the CloudFront to use    |
+|                                                     |           |(must match the valid certificate domain names)         |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.cloudformation.access_key``                    |           |The AWS Access Key to use for CloudFormation            |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.cloudformation.secret_key``                    |           |The AWS Secret Key to use for CloudFormation            |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``disable_deploy_cron``                              |           |Disables the cron job that runs deployments every       |
+|                                                     |           |certain amount of time                                  |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``local_repo_path``                                  |           |The local path where to put the remote Git repo clone   |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``repo_branch``                                      |           |The branch name of the remote Git repo to pull from     |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``repo_username``                                    |           |Username to access remote repository                    |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``repo_password``                                    |           |Password to access remote repository                    |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``ssh_private_key_path``                             |           |The path for the private key to access remote           |
+|                                                     |           |repository                                              |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``ssh_private_key_passphrase``                       |           |The passphrase for the private key to access the remote |
+|                                                     |           |repository (only if the key is passphrase-protected)    |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``notification_addresses``                           |           |The email addresses that should receive deployment      |
+|                                                     |           |notifications                                           |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
 
-.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
+.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP/S or SSH)
 
 ^^^^^^^^^^^^^^^
 Run Deployments
 ^^^^^^^^^^^^^^^
 Crafter Deployer has an option of running scheduled deployments for a target (``deployment.scheduling.enabled``), which is enabled by default, but if you
 want to manually trigger a deployment, you just need to call the API endpoint `deployTarget <../../../_static/api/deployer.html#tag/target/operation/deployTarget>`_ (or
-`deployAllTargets <../../../_static/api/deployer.html#tag/target/operation/deployAllTargets>`_). This will start the deployment if the request is correct. To watch the progress of a scheduled or a manually
+`deployAllTargets <../../../_static/api/deployer.html#tag/target/operation/deployAllTargets>`_). This will start the deployment if the request is correct. To watch the progress of a scheduled or manually
 triggered deployment, check the Deployer log. When the deployment has finished, and the target has a ``fileOutputProcessor`` in the deployment pipeline, a
 CSV file with the final result of that particular deployment will be written under ``./logs`` (or ``CRAFTER_HOME/logs/deployer``).
 
@@ -793,12 +793,12 @@ CSV file with the final result of that particular deployment will be written und
 ^^^^^^^^^^^^^^^^^
 Processed Commits
 ^^^^^^^^^^^^^^^^^
-Crafter Deployer keeps track of the most recent commit id that was processed in the last deployment
-for each target, during a deployment it will use this commit id to get the list of files that have been
+Crafter Deployer keeps track of the most recent commit ID that was processed in the last deployment
+for each target, during a deployment, it will use this commit ID to get the list of files that have been
 changed in the repository.
-By default the processed commits are stored in a folder (``CRAFTER_HOME/data/deployer/processed-commits``)
+By default, the processed commits are stored in a folder (``CRAFTER_HOME/data/deployer/processed-commits``)
 as an individual file for each target (for example ``editorial-preview.commit``). Each file contains
-only the commit id that will be used to track the changes during deployments:
+only the commit ID will be used to track the changes during deployments:
 
 .. code-block:: none
   :caption: Example of a processed commit file
@@ -807,9 +807,9 @@ only the commit id that will be used to track the changes during deployments:
   0be0d2e52283c17b834901e9cda6332d06fb05b6
 
 If the repository is changed manually using Git commands instead of updating files using Crafter
-Studio it is possible that a deployment may found a conflict, for example if a specific commit is
-deleted from the repository. In most cases Crafter Deployer should be able to detect those conflicts
-and solve them automatically, however if a deployment does not finish successfully you can follow
+Studio it is possible that a deployment may find a conflict, for example, if a specific commit is
+deleted from the repository. In most cases, Crafter Deployer should be able to detect those conflicts
+and solve them automatically, however, if a deployment does not finish successfully you can follow
 the steps described in :ref:`debugging-deployer-issues`
 
 .. warning::
@@ -821,19 +821,15 @@ the steps described in :ref:`debugging-deployer-issues`
 ^^^^^^
 Jacket
 ^^^^^^
-Indexing rich document content into a single search entry greatly improves searchability in your project.
-Crafter Deployer is able to index the content of a rich document (e.g. PDF, DOC, DOCX, PTT, etc.) along with metadata
-and content found in an associated descriptor item (the items that reference the rich document).
-This descriptor item is called a ``jacket``.
+Jackets are CrafterCMS content items that carry metadata about a binary file. Jackets _wrap_ a binary file and augment it with metadata that flows into the search index as a single document. This makes for a much richer and more effective search experience. Jackets are modeled as a content item like any other content item and can carry arbitrary fields.
+
+Crafter Deployer can index the content of a binary document if it can be transformed to text or has textual metadata. For example, PDF files, Office files, etc. will be indexed and made full-text-searchable. When jacketed, these files will be indexed along with the metadata provided by the jacket.
 
 Jackets are identified by their path and a regex that is configured at the Deployer configuration's target level.
 Administrators must configure where jackets are located via the ``base-target.yaml`` configuration file found in
-``CRAFTER_HOME/bin/crafter-deployer/config/``. For Crafter Cloud users, deployment target configurations must be
-submitted to Crafter Cloud Ops. Jacket files live under ``/site/documents`` by default.
+``CRAFTER_HOME/bin/crafter-deployer/config/``. Jacket files live under ``/site/documents`` by default.
 
-Jackets are basically additional metadata for content. When a binary file (which includes documents like PDFs and
-word files) is indexed, the XML of the jacket, along with the content of the binary file, are indexed under the path of
-the binary file. E.g. when indexing the file ``/static-assets/documents/contracts/2024-contract.pdf``, the Deployer
+An example of a how a jacket is resolved is to have a binary file ``/static-assets/documents/contracts/2024-contract.pdf``, and the Deployer
 resolves its jacket at ``/site/documents/contracts/2024-contract.xml``, extracts the XML content of the jacket,
 and indexes everything under ``/static-assets/documents/contracts/2024-contract.pdf``
 
@@ -931,16 +927,16 @@ Example
 Let's take a look at an example of setting up jackets for binary content. We'll use a project created using the Website
 Editorial blueprint, and do the following:
 
-#. Create directory for binary content ``static-assets/documents``, and the directory for storing the
+#. Create a directory for binary content ``static-assets/documents``, and the directory for storing the
    jackets ``/site/documents/`` in your project
-#. Configure Sidebar cabinet for the new content type created in a previous step and set up permissions for roles
+#. Configure the Sidebar cabinet for the new content type created in a previous step and set up permissions for roles
    interacting with the documents
 #. Create content model for jackets and configure the project for the new content model
 
 Let's begin setting up a jacket for binary contents.
 
 First, we'll create the directory that will contain the binary content, ``static-assets/documents`` via Studio. On the
-Sidebar, scroll down to ``static-assets``, then click on the three dots next to it and select ``New Folder`` and type in
+Sidebar, scroll down to ``static-assets``, then click on the more menu (the three dots) and select ``New Folder`` and type in
 ``Documents`` for the ``Folder Name``.
 
 Next, we'll create the directory for storing the jackets in the project ``/site/documents/`` using your favorite
@@ -1008,8 +1004,7 @@ and add a regex for our ``/site/documents`` folder we created like below:
       </rule>
       ...
 
-
-Next we'll create the content model for your jacket. To create a new content type, open the ``Content Types`` tool by
+Next, we'll create the content model for your jacket. To create a new content type, open the ``Content Types`` tool by
 opening the Sidebar in Studio, then clicking on ``Project Tools`` -> ``Content Types``. Click on the ``Create New Type``
 button, and use ``Document`` for the ``label`` and ``ID``, and select ``Component`` for ``Type``, then finally, click
 on the ``Create`` button.
@@ -1019,7 +1014,7 @@ a couple of data sources that will be bound to the control.  We will use the ``/
 created earlier for the ``Repository Path`` of the two data sources we'll be adding, a ``File Upload From Desktop`` data
 source that we'll name ``Upload`` and a ``File Browse`` data source that we'll name ``Existing``. For the metadata in
 the jacket, it is up to you on what you'd like in the content model. For our example, we will add a ``Text Area`` control
-named ``Summary``, a ``Check Box`` control named ``Featured``.
+named ``Summary``, and a ``Check Box`` control named ``Featured``.
 
 .. image:: /_static/images/system-admin/deployer-jacket-content-model.webp
     :width: 80%
