@@ -664,6 +664,8 @@ The following variable names are used by CrafterCMS.
 || id                  || reserved for a unique identifier                                  |
 +----------------------+--------------------------------------------------------------------+
 || authorizedRoles     || Used to restrict pages based on roles                             |
+||                     || For more information, see :ref:`targeting-using-roles` and        |
+|                      | :ref:`emulating-authorizedroles-in-XB`                             |
 +----------------------+--------------------------------------------------------------------+
 || role                || Contains the role required to access a page                       |
 +----------------------+--------------------------------------------------------------------+
