@@ -749,6 +749,11 @@ Interface Configuration`` from the list, then add the following highlighted sect
             </configuration>
           </widget>
 
+
+In the above configuration, we configured three roles to emulate, ``Anonymous``, ``Role A`` and ``Role B``.
+This assumes that the project has those roles setup. For more information on configuring roles, see
+:ref:`project-role-mappings` and :ref:`roles-and-permissions`.
+
 Once you saved all your changes, let's take a look and preview one of the articles and see what happens. Open the Sidebar,
 then navigate to ``/articles/2020/12/`` then click on ``Top Books For Young Women`` and notice that we are unable to
 preview the page since the "user" (role we are emulating) is unauthenticated/unauthorized.
