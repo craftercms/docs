@@ -502,7 +502,7 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `tss-react <https://www.npmjs.com/package/tss-react>`_
 |br|
-`typescript@patch <https://www.npmjs.com/package/typescript@patch>`_
+`typescript <https://www.npmjs.com/package/typescript>`_
 |br|
 `uppy <https://www.npmjs.com/package/uppy>`_
 |br|
