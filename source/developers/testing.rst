@@ -24,4 +24,4 @@ See :ref:`unit-testing-groovy-code` for a unit test example.
 
 .. rubric:: Footnotes
 
-.. [#] http://msdn.microsoft.com/en-us/library/aa292197(v=vs.71).aspx
+.. [#] Taken from a retired technical documentation from MSDN available for download here: https://www.microsoft.com/en-us/download/details.aspx?id=55979
