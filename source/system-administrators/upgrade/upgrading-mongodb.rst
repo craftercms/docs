@@ -39,7 +39,8 @@ Upgrading 3.1.x -> 4.0.x (from MongoDB 3.x)
 #. Manually upgrade MongoDB from version ``3.4.4`` to version ``4.0.280``.
    We need to upgrade from each release version and run the ``setFeatureCompatibilityVersion`` command against the admin database.
 
-   Please see https://www.mongodb.com/docs/manual/release-notes/4.0-upgrade-standalone/ for more information on upgrading MongoDB.
+   Please see the section on ``Upgrade a Standalone`` at https://www.mongodb.com/docs/manual/release-notes/ for a general information on upgrading MongoDB.
+   MongoDB version 4 is EOL, but legacy documentation for it may be downloaded here: https://www.mongodb.com/docs/legacy/?site=docs
 
    Download and extract the following MongoDB versions available from https://www.mongodb.com/try/download/community:
 

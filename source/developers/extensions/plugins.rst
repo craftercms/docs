@@ -47,7 +47,7 @@ UI Widgets and Standalone Apps
 
 There are two types of UI plugins
 
-- UI widgets to be used around the different plugable sections of Studio UI
+- UI widgets to be used around the different pluggable sections of Studio UI
 - Standalone apps that run in the :ref:`Plugin Host <plugin-host>`
 
 Plugins can access Studio client-side components (React), services and utilities through two main mechanisms:
@@ -77,11 +77,6 @@ Plugins can access Studio client-side components (React), services and utilities
 
 .. include:: /includes/plugin-dev-recommendations.rst
 
-Examples of UI Plugins are
-
-* `CRA Standalone <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-cra>`_: illustrates a standalone app using a dev toolchain with dev server
-* `Vanilla Standalone <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla>`_: illustrates a simple standalone app with single JS entry point without transpilation or anything special
-* `Component library <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-component-library>`_: illustrates the creation of a library of widgets that can be rendered throughout Studio UI
 
 Services
 ^^^^^^^^
