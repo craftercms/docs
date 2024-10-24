@@ -14,3 +14,4 @@ This section covers the basic maintenance tasks for your CrafterCMS installation
     backup-and-restore
     ../../common/logging
     troubleshooting
+    reindexing-content
