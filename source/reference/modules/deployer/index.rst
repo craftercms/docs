@@ -1076,8 +1076,8 @@ Deployer Processors
 Crafter Deployer includes an extensive list of deployment processors that can be easily added to any target
 to meet specific requirements. Some examples of the use cases that can be addressed with deployment processors are:
 
-- Pushing content created/edited in Crafter Studio to an external service
-- Pulling content created/edited from an external service
+- Pushing content created/edited in Crafter Studio to an external git repository
+- Pulling content created/edited from an external git repository
 - Execute actions every time a deployment succeeds or fails
 
 .. note::
@@ -1091,8 +1091,8 @@ to meet specific requirements. Some examples of the use cases that can be addres
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Main Deployment Processors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-The main deployment processors can do any task related to detect changed files or process changed files that were
-detected by other processors. To process changed files a processor may interact with any external service as needed.
+The main deployment processors can do any task related to detecting a change-set (changed files) or processing a change-set (changed files) that were
+detected by other processors. To process a change-set, a processor may interact with any external service as needed.
 
 All deployment processors support the following properties:
 
@@ -1163,7 +1163,7 @@ All deployment processors support the following properties:
 """"""""""""""""""
 Git Pull Processor
 """"""""""""""""""
-Processor that clones/pulls a remote Git repository into a local path in the filesystem.
+Processor that clones/pulls a remote Git repository into a local path on the filesystem.
 
 .. note:: This needs to be the first processor in the pipeline
 
@@ -1224,9 +1224,9 @@ Processor that clones/pulls a remote Git repository into a local path in the fil
 """"""""""""""""""
 Git Diff Processor
 """"""""""""""""""
-Processor that, based on a previous processed commit that's stored, does a diff with the current commit of the
-deployment, to find out the change set. If there is no previous processed commit, then the entire repository becomes
-the change set.
+Processor that, based on a previously processed commit that's stored, does a diff with the current commit of the
+deployment, to find out the change-set. If there is no previously processed commit, then the entire repository becomes
+the change-set.
 
 .. note::
   This processor needs to be placed after the ``gitPullProcessor`` and before any other processor like the
@@ -1320,7 +1320,7 @@ Processor that pushes a local repo to a remote Git repository.
 """"""""""""""""""""""""""""""
 Git Update Commit Id Processor
 """"""""""""""""""""""""""""""
-Processor that updates the processed commits value with the current commit
+Processor that updates the processed commits value with the current commit.
 
 **Example**
 
@@ -1375,7 +1375,7 @@ originalChangeSet   The original change set returned by the previous processors 
 |
 
 Let's take a look at an example script that you can use for the Groovy script processor.
-Below is a script that only includes a file from the change set if a parameter is present in the deployment:
+Below is a script that only includes a file from the change-set if a parameter is present in the deployment:
 
 .. code-block:: groovy
    :caption: *Example Groovy script to be run by a script processor*
@@ -1395,12 +1395,11 @@ Below is a script that only includes a file from the change set if a parameter i
    // return the new change set
    return originalChangeSet
 
-
 """""""""""""""""""""""""""""""""""""
 File Based Deployment Event Processor
 """""""""""""""""""""""""""""""""""""
-Processor that triggers a deployment event that consumers of the repository (Crafter Engines) can subscribe to by
-reading a file from the repository.
+Processor that triggers a deployment event that consumers of the repository (Crafter Engine instances) can subscribe to by
+reading a specific file from the repository.
 
 **Properties**
 
@@ -1426,7 +1425,7 @@ reading a file from the repository.
 """"""""""""""""""""""
 Command Line Processor
 """"""""""""""""""""""
-Processor that runs a command line process.
+Processor that runs a command line process (e.g. a shell script).
 
 **Properties**
 
@@ -1462,7 +1461,7 @@ Processor that runs a command line process.
 """""""""""""""""""""""""
 Search Indexing Processor
 """""""""""""""""""""""""
-Processor that indexes the files on the change set, using one or several BatchIndexer. After the files have been
+Processor that indexes the files on the change-set, using one or several BatchIndexer. After the files have been
 indexed it submits a commit.
 
 **Properties**
@@ -1515,7 +1514,7 @@ Processor that does a HTTP method call.
 """""""""""""""
 Delay Processor
 """""""""""""""
-Processor that stops the pipeline execution for a given number of seconds.
+Processor that pauses the pipeline execution for a given number of seconds.
 
 **Properties**
 
@@ -1541,9 +1540,9 @@ Find And Replace Processor
 """"""""""""""""""""""""""
 Processor that replaces a pattern on the content of the created or updated files.
 
-.. note::
+.. warning::
   The files changed by this processor will not be committed to the git repository and will be discarded when the next
-  deployment starts
+  deployment starts.
 
 **Properties**
 
@@ -1595,7 +1594,6 @@ S3 Sync Processor
 ~~~~~~~~~~~~~~~~~
 Processor that syncs files to an AWS S3 Bucket.
 
-
 **Example**
 
 .. code-block:: yaml
@@ -1636,8 +1634,6 @@ Processor that uploads the deployment events to an AWS S3 Bucket
       secretKey: ${aws.secretKey}
       url: {{aws.s3.url}}
 
-
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Cloudfront Invalidation Processor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1665,7 +1661,7 @@ Processor that invalidates the changed files in the given AWS Cloudfront distrib
 Post Deployment Processors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 The post deployment processors assume that all changed files have been handled and the result of the deployment is
-already known (either successful or failed) and take actions based on those results, because of that they need to be
+already known (either successful or failed) and take actions based on those results, because of that, these processors need to be
 placed after all main deployment processors to work properly.
 
 """""""""""""""""""""
