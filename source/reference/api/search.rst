@@ -22,7 +22,7 @@ To perform content queries, you need to use the client provided by Crafter Engin
 .. Note::
     The old client ``searchService`` is now deprecated, and ``searchClient`` should be used.
 
-You can find the interface for this service :javadoc_base_url:`in the JavaDoc <search/org/craftercms/search/opensearch/client/OpenSearchClientWrapper.html>`
+You can find the interface for this service :javadoc_base_url:`in the JavaDoc <search/org/craftercms/search/opensearch/client/OpenSearchClientWrapper.html>`.
 
 |hr|
 
@@ -32,11 +32,11 @@ Content Search Indexing
 Search indexing is the collecting, parsing, and storing of data to enable search across content in CrafterCMS.
 CrafterCMS indexes content items as follows:
 
-- A full text index of any document that has a MIME type that matches the configured list of MIME types.
+- A full text index of any document that has a MIME type that matches the configured list of MIME types. |br|
   See :ref:`deployer-indexing-mime-types` for more information on configuring MIME types used for indexing.
-- Indexing of any remote document that matches the configured list of remote documents pattern
+- Indexing of any remote document that matches the configured list of remote documents pattern. |br|
   See :ref:`deployer-indexing-remote-documents-path-pattern` for more information on configuring remote documents pattern used for indexing.
-- Indexing of jacketed documents (binary documents with additional added metadata) with anything that matches the configured pattern.
+- Indexing of jacketed documents (binary documents with additional added metadata) with anything that matches the configured pattern. |br|
   See :ref:`deployer-indexing-metadata-path-pattern` for more information on configuring metadata path patterns used for indexing.
 
 Indexing is done differently in the authoring environment vs the delivery environment.
