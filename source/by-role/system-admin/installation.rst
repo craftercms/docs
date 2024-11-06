@@ -249,7 +249,7 @@ For a quick start to evaluate CrafterCMS, you follow these simple instructions. 
 
     docker run -p 8080:8080 craftercms/authoring_local:latest
 
-Then point your browser to http://localhost:8080/studio and you will be presented with the Crafter Studio login page. The default username is ``admin`` and the default password is ``admin``.
+Then point your browser to ``http://localhost:8080/studio`` and you will be presented with the Crafter Studio login page. The default username is ``admin`` and the default password is ``admin``.
 
 """"""""""""""
 Docker Compose
@@ -300,7 +300,7 @@ To run CrafterCMS in a set of Docker containers using Docker Compose, make sure 
           authoring-tomcat-1    | 11-Aug-2023 11:28:25.535 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
           authoring-tomcat-1    | 11-Aug-2023 11:28:25.579 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [68028] milliseconds
 
-You may now login to Crafter Studio at http://localhost:8080/studio. The default username is ``admin`` and the default password is ``admin``.
+You may now login to Crafter Studio at ``http://localhost:8080/studio``. The default username is ``admin`` and the default password is ``admin``.
 
 The console output when you start the container (as shown above) contains useful information that you can use to debug or monitor the status of CrafterCMS. To view more of the logs, the Docker Desktop Dashboard provides a runtime view of all your containers and applications, including logs for monitoring/debugging CrafterCMS. To access the Docker Desktop Dashboard, from the **Docker menu**, select **Dashboard**.
 
@@ -480,7 +480,7 @@ To setup the project in delivery, follow the instructions listed here: :ref:`sim
 """""""""""""""""""""""""""""""""""""
 Simple Delivery Kubernetes Deployment
 """""""""""""""""""""""""""""""""""""
-CrafterCMS has an example Kubernetes deployment for a Delivery with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/delivery/cluster. This guide covers how to install this example in a Kubernetes cluster.
+CrafterCMS has an example Kubernetes deployment for a Delivery with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/delivery/simple. This guide covers how to install this example in a Kubernetes cluster.
 
 .. important::
    This guide assumes you have a working understanding of Kubernetes
@@ -866,7 +866,7 @@ Step 2: Access the Crafter Studio login screen
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this step we want to prove that the application is up and running now that our instance has started and initialized fully. To do this, we're simply going to check that the application login screen shows up when we access it via a web browser.
 
-To access the login screen open a web browser and navigate to http://DNS_NAME_OR_IP_ADDRESS/studio.
+To access the login screen open a web browser and navigate to ``http://DNS_NAME_OR_IP_ADDRESS/studio``.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-authoring-login.webp
     :width: 100 %
@@ -922,7 +922,7 @@ Step 4: Sign into Crafter Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Now that we have the randomly generated admin password for Crafter Studio we can sign in to the application.
 
-In your web browser, navigate to http://DNS_NAME/studio and then enter admin as the Email/Username, paste the password you acquired from Step 3 then click "Sign In."
+In your web browser, navigate to ``http://DNS_NAME/studio`` and then enter admin as the Email/Username, paste the password you acquired from Step 3 then click "Sign In."
 
 .. image:: /_static/images/ami/craftercms-aws-ami-authoring-login.webp
     :width: 100 %
@@ -1003,7 +1003,7 @@ Step 2: Access the Crafter Engine via the Web
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this step we want to prove that the application is up and running now that our instance has started and initialized fully. To do this, we're simply going to check that the application login screen shows up when we access it via a web browser.
 
-To access the login screen open a web browser and navigate to http://DNS_NAME_OR_IP_ADDRESS.
+To access the login screen open a web browser and navigate to ``http://DNS_NAME_OR_IP_ADDRESS``.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-delivery-engine-running.webp
     :width: 100 %
@@ -1353,7 +1353,7 @@ To access Crafter Studio, In your browser, go to
   http://SERVER:PORT/studio
 
 .. note::
-    For local deployments, the URL is http://localhost:8000/studio
+    For local deployments, the URL is ``http://localhost:8000/studio``
 
 * Login with the following:
 

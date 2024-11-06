@@ -237,7 +237,7 @@ Below is a short set of links to other documentation for technology that Crafter
 +----------------+------------------------------+-----------------------------------------------+
 | Attribute Name |             Usage            | Links                                         |
 +================+==============================+===============================================+
-|| Spring Beans  || Server App Framework        || https://spring.io/docs                       |
+|| Spring Beans  || Server App Framework        || https://docs.spring.io/spring-framework      |
 || Spring MVC    ||                             ||                                              |
 +----------------+------------------------------+-----------------------------------------------+
 || Freemarker    || Server side templates       || http://freemarker.org/                       |
