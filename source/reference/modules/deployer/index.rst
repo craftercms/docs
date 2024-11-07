@@ -291,7 +291,18 @@ Deployer Configuration Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In this section, we will highlight some of the more commonly used properties in the configuration of Crafter Deployer.
 
-.. list-table:: Common Configuration Properties
+.. list-table:: Common Global Application Configuration Properties
+    :header-rows: 1
+
+    * - Property
+      - Purpose
+    * - :ref:`deployer-thread-pool-size`
+      - Allows you to configure the deployment pool |br|
+
+The properties listed above are configured in ``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml``.
+
+
+.. list-table:: Common Target Configuration Properties
     :header-rows: 1
 
     * - Property
@@ -307,7 +318,7 @@ In this section, we will highlight some of the more commonly used properties in 
     * - :ref:`deployer-indexing-metadata-path-pattern`
       - Allows you to configure metadata path patterns used for document indexing
 
-The properties listed above may be configured in the following locations:
+The target properties listed above may be configured in the following locations:
 
 - Global configuration file ``$CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml``
 - Individual target configuration file ``$CRAFTER_HOME/data/deployer/targets/{siteName}-{environment}.yaml``
@@ -493,6 +504,110 @@ To add other jacket patterns to the list, simply edit the override file
 ``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml`` and add to the list under
 ``target.search.binary.metadataPathPatterns``.
 
+.. _deployer-thread-pool-size:
+
+""""""""""""""""
+Thread Pool Size
+""""""""""""""""
+As the number of sites grows you may need more workers (threads) in the Deployer to service them. If you do not add more
+workers then you will see errors in scheduled tasks. Eventually, the system will get through the workload with the workers it
+has available, and the error will stop, but the presence of these errors on a regular basis indicates that you need
+more workers in the pool.
+
+There are two thread pools available. The deployment pool, which is used to run all deployments and the task scheduler
+pool, which is used for starting deployments on a schedule of every 10 secs. For deployments of sites with a lot content
+(big sites), we recommend increasing the deployment pool. For deployments with a lot of sites, we recommend increasing
+the task scheduler pool.
+
+To increase the deployment pool, set the following items in ``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml``
+as shown below:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml - Deployment Pool*
+    :linenos:
+
+    deployer:
+      main:
+        deployments:
+          pool:
+            # Thread pool core size
+            size: 25
+            # Thread pool max size
+            max: 100
+            # Thread pool queue size
+            queue: 100
+
+|
+
+To increase the thread pool size of the task scheduler, set the ``poolSize`` property in
+``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml`` as shown below:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml - Task Scheduler Pool*
+    :linenos:
+
+    deployer:
+      main:
+        taskScheduler:
+          # Thread pool size of the task scheduler
+          poolSize: 20
+
+Here's a sample *application.yaml* file with the deployment pool and task thread pool configured:
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample application.yaml file showing Deployment and Task Scheduler Pools</a></summary>
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
+    :emphasize-lines: 3-5, 12-19
+    :linenos:
+
+    deployer:
+      main:
+        taskScheduler:
+          # Thread pool size of the task scheduler
+          poolSize: 20
+        config:
+          environment:
+            active: ${CRAFTER_ENVIRONMENT}
+        targets:
+          config:
+            folderPath: ${targets.dir}
+        deployments:
+          pool:
+            # Thread pool core size
+            size: 25
+            # Thread pool max size
+            max: 100
+            # Thread pool queue size
+            queue: 100
+          folderPath: ${deployments.dir}
+          output:
+            folderPath: ${logs.dir}
+          processedCommits:
+            folderPath: ${processedCommits.dir}
+        logging:
+          folderPath: ${logs.dir}
+        management:
+          # Deployer management authorization token
+          authorizationToken: ${DEPLOYER_MANAGEMENT_TOKEN}
+        security:
+          encryption:
+            # The key used for encryption of configuration properties
+            key: ${CRAFTER_ENCRYPTION_KEY}
+            # The salt used for encryption of configuration properties
+            salt: ${CRAFTER_ENCRYPTION_SALT}
+          ssh:
+            # The path of the folder used for the SSH configuration
+            config: ${CRAFTER_SSH_CONFIG}
+
+.. raw:: html
+
+   </details>
+
+|
 
 |hr|
 
