@@ -150,6 +150,7 @@ Studio UI
 ^^^^^^^^^
 Bug Fixes
 ^^^^^^^^^
+* `Fixed issue when editing an item from a node selector  <https://github.com/craftercms/craftercms/issues/7469>`__
 * `Fixed issue with duplicating a site in serverless mode <https://github.com/craftercms/craftercms/issues/7392>`__
 * `Fixed issue with an XB error when duplicating an item in a repeat group <https://github.com/craftercms/craftercms/issues/7151>`__
 * `Fixed issue with TinyMCE not saving HTML code properly <https://github.com/craftercms/craftercms/issues/7079>`__ |br|
