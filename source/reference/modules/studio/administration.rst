@@ -858,26 +858,20 @@ Adding permissions
       <role name="newseditor">
          <rule regex="/site/website/news/.*">
            <allowed-permissions>
-             <permission>Read</permission>
-             <permission>Write</permission>
-             <permission>Create Content</permission>
-             <permission>Create Folder</permission>
-             <permission>Publish</permission>
+             <permission>content_read</permission>
+             <permission>content_write</permission>
+             <permission>content_create</permission>
+             <permission>folder_create</permission>
+             <permission>publish</permission>
            </allowed-permissions>
          </rule>
          <rule regex="/static-assets/.*">
            <allowed-permissions>
-             <permission>Read</permission>
-             <permission>Write</permission>
-             <permission>Delete</permission>
-             <permission>Create Content</permission>
-             <permission>Create Folder</permission>
-             <permission>Publish</permission>
-           </allowed-permissions>
-         </rule>
-         <rule regex="~DASHBOARD~">
-           <allowed-permissions>
-             <permission>Publish</permission>
+             <permission>content_read</permission>
+             <permission>content_write</permission>
+             <permission>content_create</permission>
+             <permission>folder_create</permission>
+             <permission>publish</permission>
            </allowed-permissions>
          </rule>
        </role>

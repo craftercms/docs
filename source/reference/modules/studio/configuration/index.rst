@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.4
+:last-updated: 4.2.0
 
 .. Grammar Checked 2023-10-06
 
@@ -77,8 +77,12 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure policy headers
     * - :ref:`crafterSite Cookie Domain <studio-crafterSite-cookie-domain>`
       - Configure the ``crafterSite`` cookie domain
+    * - :ref:`Deployer HTTP Requests <studio-deployer-http-request-timeout>`
+      - Configure timeout for Deployer HTTP requests
     * - :ref:`Serverless Delivery Targets <studio-serverless-delivery-targets>`
       - Configure serverless delivery
+    * - :ref:`CloudFormation Capabilities <studio-cloudformation-capabilities>`
+      - Configure capabilities for CloudFormation stack
     * - :ref:`Validations Regex <studio-validations-regex>`
       - Configure the regex used for validating various inputs
     * - :ref:`Workflow Notification Configuration <notifications-configuration>`
@@ -480,6 +484,29 @@ The following section of Studio's configuration overrides allows you to set the 
 
 |hr|
 
+.. _studio-deployer-http-request-timeout:
+
+^^^^^^^^^^^^^^^^^^^^^^
+Deployer HTTP Requests
+^^^^^^^^^^^^^^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.2.0
+
+The following section of Studio's configuration overrides allows you to set the timeout for Deployer HTTP requests.
+The default timeout is 5 minutes.
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :linenos:
+
+    # Response timeout in seconds for deployer http requests
+    studio.deployer.request.timeoutSeconds: 300
+
+|
+
+|hr|
+
 .. _studio-serverless-delivery-targets:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -540,6 +567,45 @@ The following section of Studio's configuration overrides allows you to set up s
 |
 
 |hr|
+
+.. _studio-cloudformation-capabilities:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CloudFormation Capabilities
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.2.0
+
+The following section of Studio's configuration overrides allows you to configure CloudFormation capabilities.
+This allows users to pass in the capabilities from the Deployer target configuration in ``custom-serverless-site-stack.yaml``
+See :ref:`aws-cloudformation-target` for more information.
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :linenos:
+
+    # # A comma-separated string listing the required capabilities for the CloudFormation stack. Ex: CAPABILITY_IAM,CAPABILITY_NAMED_IAM,CAPABILITY_AUTO_EXPAND (optional)
+    # stackCapabilities:
+
+|
+
+Here's an example of configuring the ``CAPABILITY_IAM``, ``CAPABILITY_NAMED_IAM`` and ``CAPABILITY_AUTO_EXPAND`` stack
+capabilities:
+
+.. code-block:: yaml
+    :emphasize-lines: 6
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+    studio.serverless.delivery.deployer.target.template.params:
+      aws:
+        ...
+        cloudformation:
+        ...
+          stackCapabilities: CAPABILITY_IAM,CAPABILITY_NAMED_IAM,CAPABILITY_AUTO_EXPAND
+
+|
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Workflow Notifications Configuration

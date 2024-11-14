@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.1
+:last-updated: 4.2.0
 :orphan:
 
 .. index:: Crafter CLI, CLI
@@ -69,15 +69,21 @@ To view the available commands, type in ``./crafter-cli -h``
         -h, --help      Show this help message and exit.
         -V, --version   Print version information and exit.
       Commands:
-        help             Displays help information about the specified command
-        add-environment  Adds the configuration to connect to CrafterCMS
-        add-remote       Adds a remote repository to a site
-        create-site      Creates a site from a blueprint or a remote repository
-        list-remotes     List the remote repositories of a site
-        sync-from        Sync the content of a site from a remote repository
-        sync-to          Sync the content of a site to a remote repository
-        list-sites       List the sites that the current user can access
-        copy-plugin      Copies a plugin from a Studio local folder into a site
+        help                 Displays help information about the specified command
+        add-environment      Adds the configuration to connect to CrafterCMS
+        add-remote           Adds a remote repository to a site
+        create-site          Creates a site from a blueprint or a remote repository
+        list-remotes         List the remote repositories of a site
+        sync-from            Sync the content of a site from a remote repository
+        sync-to              Sync the content of a site to a remote repository
+        list-sites           List the sites that the current user can access
+        copy-plugin          Copies a plugin from a Studio local folder into a site
+        create-user          Creates a user from command parameters or bulk create users from a CSV file
+        list-users           Get all Studio users
+        create-access-token  Creates an access token for the user
+        publish-content      Publish content from a project or site.
+        create-group         Creates a group from command parameters or bulk create groups from a CSV file
+        list-groups          List all the groups or search for groups by keyword or sort by a field.
 
    |
 

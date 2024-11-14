@@ -1,5 +1,4 @@
 :is-up-to-date: False
-
 :orphan:
 
 .. _system-admin-deployment-architecture:
