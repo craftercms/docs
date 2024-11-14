@@ -1235,9 +1235,10 @@ To create a Preview Token, click on ``Token Management`` from the Main Menu, the
 
 |
 
-The only required fields for the preview token is the dropdown for selecting projects to grant preview access, and to set
-an expiration date to minimize the risk of lost or stolen tokens being used without being noticed. Click on the
-``Generate`` button to create the token.
+The only required fields for the preview token is the dropdown for selecting projects to grant preview access, and the
+date/time fields to set an expiration date for the token, which is pre-populated to a date in the near future. The expiration
+date is set to minimize the risk of lost or stolen tokens being used without being noticed. Click on the ``Generate``
+button to create the token.
 
 .. figure:: /_static/images/system-admin/main-menu/create-preview-token-2.webp
     :width: 70%
