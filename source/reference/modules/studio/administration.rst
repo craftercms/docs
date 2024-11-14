@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.2.0
 
 .. index:: Audit, Users, Groups, User Management, Group Management, Cluster, Log Console, Logging Levels, Global Config, Encryption Tool, Navigation Menu
 
@@ -191,10 +191,13 @@ The ``Encryption Tool`` allows the user to encrypt sensitive data such as access
 
 For more information on how to use the encryption tool, see :ref:`studio-encryption-tool`.
 
+.. _main-menu-tool-token-management:
+
 ^^^^^^^^^^^^^^^^
 Token Management
 ^^^^^^^^^^^^^^^^
-The ``Token Management Tool`` allows the user to manage access tokens used to make API requests on behalf of the user
+The ``Token Management Tool`` allows the user to manage access tokens used to make API requests on behalf of the user and
+create tokens for accessing a project/site in Preview.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-token-management.webp
     :alt: System Administrator - Navigation Menu Token Management Tool
@@ -203,7 +206,7 @@ The ``Token Management Tool`` allows the user to manage access tokens used to ma
 
 |
 
-For an example of how to use the generated token, see :ref:`crafter-cli`.
+For more information on the token management tool, see :ref:`nav-menu-token-management`
 
 ^^^^^^^
 Account
@@ -1131,3 +1134,139 @@ on the dropdown arrow in the ``Project`` field.  Give it a good ``Project Name``
 
 When duplicating a project that uses S3 buckets (blob stores), the S3 buckets may be copied over to the new project and the
 configuration updated if separate S3 buckets from the source project are required.
+
+|hr|
+
+.. _nav-menu-token-management:
+
+--------------------------------
+Navigation Menu Token Management
+--------------------------------
+Crafter Studio supports managing tokens for making API requests on behalf of the user and generating tokens for accessing
+a project/site in Preview.
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-token-management.webp
+    :alt: System Administrator - Navigation Menu Token Management Tool
+    :align: center
+    :width: 70%
+
+|
+
+^^^^^^^^^
+API Token
+^^^^^^^^^
+To create a new access token, click on ``Token Management`` from the Main Menu, then click on the ``API Token`` button.
+The only required field for the access token is the label to identify it, however, it is also recommended to set
+an expiration date to minimize the risk of lost or stolen tokens being used without being noticed.
+
+.. figure:: /_static/images/jwt/create-token.webp
+    :width: 70%
+    :alt: Crafter Studio - Create API Access Token
+    :align: center
+
+|
+
+Once the expiration date is reached the access token will stop working automatically. Click on the ``Submit`` button to
+create the token.
+
+.. figure:: /_static/images/jwt/create-token-2.webp
+    :width: 70%
+    :alt: Crafter Studio - Access Token Expiration
+    :align: center
+
+|
+
+The next step is to copy the value of the access token. The value of the access token will not be stored on the server,
+so it needs to be stored by the user in a safe place as it is impossible to recover it after it is created.
+
+.. figure:: /_static/images/system-admin/main-menu/access-token-created.webp
+    :width: 70%
+    :alt: Crafter Studio - Access Token Created
+    :align: center
+
+|
+
+If an access token is lost or exposed in any way it should be disabled or completely deleted to avoid any
+possible use. To delete a token, simply click on the trash can icon to the right of the token you want to delete.
+
+.. figure:: /_static/images/system-admin/main-menu/delete-token-1.webp
+    :width: 70%
+    :alt: Crafter Studio - Delete a Token
+    :align: center
+
+|
+
+You can also delete multiple tokens at once by placing a checkmark on the tokens you want to delete, then clicking on
+``Delete Selected``.
+
+.. figure:: /_static/images/system-admin/main-menu/delete-token-2.webp
+    :width: 70%
+    :alt: Crafter Studio - Delete Multiple Tokens
+    :align: center
+
+|
+
+To disable/enable a token, simply click on the slider on the right side of the token next to the trash can icon.
+
+.. figure:: /_static/images/system-admin/main-menu/token-disable.webp
+    :width: 70%
+    :alt: Crafter Studio - Disable/Enable Token
+    :align: center
+
+|
+
+For an example of how to use the generated API token, see :ref:`crafter-cli`.
+
+.. note:: Users needs the ``manage_access_token`` permission to create access tokens
+
+^^^^^^^^^^^^^
+Preview Token
+^^^^^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.2.0
+
+To create a Preview Token, click on ``Token Management`` from the Main Menu, then click on the ``Preview Token`` button.
+
+.. figure:: /_static/images/system-admin/main-menu/create-preview-token.webp
+    :width: 70%
+    :alt: Crafter Studio - Create Preview Access Token
+    :align: center
+
+|
+
+The only required fields for the preview token is the dropdown for selecting projects to grant preview access, and to set
+an expiration date to minimize the risk of lost or stolen tokens being used without being noticed. Click on the
+``Generate`` button to create the token.
+
+.. figure:: /_static/images/system-admin/main-menu/create-preview-token-2.webp
+    :width: 70%
+    :alt: Crafter Studio - Create Preview Access Token
+    :align: center
+
+|
+
+The next step is to copy the value of the preview token. The value of the preview token is not stored on the server,
+so it needs to be stored by the user in a safe place as it is impossible to recover it after it is created.
+
+.. figure:: /_static/images/system-admin/main-menu/preview-token-created.webp
+    :width: 70%
+    :alt: Crafter Studio - Create Preview Access Token
+    :align: center
+
+|
+
+To use the preview token, do the following:
+
+#. Set a cookie with the name crafterPreview
+#. Add a query string argument with the name crafterPreview
+#. Set a header with the name X-Crafter-Preview
+
+Here's an example of using the token with Curl, where ``{Generated-Preview-Token}`` is the token just created:
+
+.. code-block:: bash
+
+    curl --header "cookie: crafterPreview={Generated-Preview-Token};" "http://localhost:8080/api/1/site/content_store/item.json?url=/site/website/index.xml&crafterSite=ed"
+
+
+The dialog above that shows the preview token generated also shows other examples on how to use the preview token.

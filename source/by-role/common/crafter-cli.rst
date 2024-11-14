@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.1
+:last-updated: 4.2.0
 :orphan:
 
 .. index:: Crafter CLI, CLI
@@ -158,7 +158,7 @@ Let's begin:
 
       |
 
-   2. Open the ``Token Management`` tool
+   2. Open the ``Token Management`` tool, then click on the ``API Token`` button
 
       .. figure:: /_static/images/jwt/token-management.webp
         :width: 70%
@@ -174,7 +174,7 @@ Let's begin:
 
       .. figure:: /_static/images/jwt/create-token.webp
         :width: 70%
-        :alt: Crafter Studio - Create Access Token
+        :alt: Crafter Studio - Create API Access Token
         :align: center
 
       |
@@ -205,7 +205,7 @@ Let's begin:
 
    5. Include the access token with all requests
 
-      Most HTTP clients provide built-in support for access token athentication, in the case of cURL you will need
+      Most HTTP clients provide built-in support for access token authentication, in the case of cURL you will need
       to use the header option ``--header`` or ``-H``
 
       ``curl -H 'Authentication: Bearer <access token>' ...``
