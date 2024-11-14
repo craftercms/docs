@@ -1,0 +1,29 @@
+.. index:: CrafterCMS 4.1.7 Release Notes
+
+----------------
+CrafterCMS 4.1.7
+----------------
+
+Released *September 11, 2024*
+
+This release includes fixes for issues with the release version 4.1.6
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-1-x>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.1.0 (applies to 4.1.7),
+    please see :ref:`upgrading-craftercms`
+
+^^^^^^^^^
+Bug Fixes
+^^^^^^^^^
+* `Fixed race condition with multiple write operation API calls <https://github.com/craftercms/craftercms/issues/7244>`__
+* `Fixed issue with author role failing to unlock an item when writing content <https://github.com/craftercms/craftercms/issues/7236>`__
+
+For a complete list of community tickets, please visit: `GitHub 4.1.7 <https://github.com/orgs/craftercms/projects/18/views/1>`__
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+|hr|
