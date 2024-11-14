@@ -1,6 +1,5 @@
 :is-up-to-date: True
 :last-updated: 4.1.1
-
 :orphan:
 
 .. _aws-profile-configuration:
