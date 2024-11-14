@@ -14,16 +14,64 @@ Search
 ----------
 Search API
 ----------
-To perform content queries you need to use the client provided by Crafter Engine, the bean name is
-``searchClient`` and it can be used from any Groovy script.
+To perform content queries, you need to use the client provided by Crafter Engine; the bean name is
+``searchClient`` and can be used in any Groovy script.
 
 .. Remove the following note in 4.3.0
 
 .. Note::
-    The old client ``searchService`` is now deprecated and ``searchClient`` should be used.
+    The old client ``searchService`` is now deprecated, and ``searchClient`` should be used.
 
-You can find the interface for this service :javadoc_base_url:`in the JavaDoc <search/org/craftercms/search/opensearch/client/OpenSearchClientWrapper.html>`
+You can find the interface for this service :javadoc_base_url:`in the JavaDoc <search/org/craftercms/search/opensearch/client/OpenSearchClientWrapper.html>`.
 
+|hr|
+
+-----------------------
+Content Search Indexing
+-----------------------
+Search indexing is the collecting, parsing, and storing of data to enable search across content in CrafterCMS.
+CrafterCMS indexes content items as follows:
+
+- A full text index of any document that has a MIME type that matches the configured list of MIME types. |br|
+  See :ref:`deployer-indexing-mime-types` for more information on configuring MIME types used for indexing.
+- Indexing of any remote document that matches the configured list of remote documents pattern. |br|
+  See :ref:`deployer-indexing-remote-documents-path-pattern` for more information on configuring remote documents pattern used for indexing.
+- Indexing of jacketed documents (binary documents with additional added metadata) with anything that matches the configured pattern. |br|
+  See :ref:`deployer-indexing-metadata-path-pattern` for more information on configuring metadata path patterns used for indexing.
+
+Indexing is done differently in the authoring environment vs the delivery environment.
+To this end, indexing of documents in authoring and indexing of documents in delivery each have their own configuration.
+
+The default behavior when a document cannot be indexed is that the Deployer logs the error and moves on. :ref:`Processed commits <deployer-processed-commits>`
+files are updated, and the Deployer never revisits the indexing unless a future publish requires it to, or, a
+re-process API is called, such as the `deployTarget <../../_static/api/studio.html#tag/target/operation/deployTarget>`__ API
+
+If the deployment as a whole cannot be completed due to a catastrophic exception, then all content including documents
+will be re-processed until the deployment succeeds. By default the Git Diff process is configured to update the processed
+commits regardless of success or failure. Some deployments set this to false and force the processor chain to be
+successful before updating processed commits (via the :ref:`GitUpdateCommits Processor <deployer-git-update-commit-id-processor>`).
+See :ref:`crafter-deployer-processors-guide` for more information on available Deployer processors.
+
+^^^^^^^^^^^^^^^^^^
+Authoring Indexing
+^^^^^^^^^^^^^^^^^^
+Authoring indexing is done to help content authors do their work and is controlled by CrafterCMS. The authoring search
+index is tuned to help authors and is not used by the project/site for delivery concerns. Developers working on CrafterCMS projects don't need to concern
+themselves with this indexing/search. Developers working on authoring plugins may leverage this search index to perform authoring-related searches to aid
+content authors' workflow.
+
+^^^^^^^^^^^^^^^^^^^^^^^^
+Delivery Search Indexing
+^^^^^^^^^^^^^^^^^^^^^^^^
+Delivery indexing is done to enable search and search-based features for the delivery project/site.
+This is configurable per project/site, and the index is tuned to help end-users use the project/site. Developers working on projects/sites will leverage this
+to perform search and add search-based features. Tuning this index might make sense for specific use cases where the defaults are not enough.
+
+|hr|
+
+----------------
+Creating Queries
+----------------
 Depending on the complexity of the queries there are two ways to create the queries:
 
 ^^^^^^^^^
@@ -112,6 +160,8 @@ method allows you to use builder objects to develop complex logic for building t
 .. note::
     You can find detailed information for each builder in the
     `java documentation <https://opensearch.org/docs/latest/clients/java/>`_
+
+|hr|
 
 --------
 Examples
