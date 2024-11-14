@@ -1,6 +1,5 @@
 :is-up-to-date: True
 :last-updated: 4.2.0
-
 :orphan:
 
 .. _dependency-resolver-config:
