@@ -22,13 +22,13 @@ What's Supported?
       - Latest
 
     * - 4.2
-      - TBD
-      - TBD
-      - TBD
-      - TBD
+      - November 13, 2024
+      - :green:`TBD`
+      - :green:`TBD`
+      - 4.2.0 (November 13, 2024)
     * - 4.1
       - June 17, 2023
-      - :green:`Ends when 4.2.0 is released`
+      - :maroon:`Ended November 13, 2024`
       - :green:`Ends on December 31, 2024`
       - 4.1.8 (September 13, 2024)
     * - 4.0
