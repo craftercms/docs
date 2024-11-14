@@ -289,7 +289,7 @@ Step 3: Test your setup
 """""""""""""""""""""""
 To test your CrafterCMS authoring, open your browser and type in:
 
-   https://localhost:8443/studio
+   ``https://localhost:8443/studio``
 
 Since we are using a self-signed certificate, you'll get a message similar to this depending on your browser:
 

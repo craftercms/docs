@@ -34,7 +34,7 @@ If the same property is present in multiple files, the value from the last confi
 You'll note that the first override file from the ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` folder resides on the local file system. This makes it easy for system admins but will not replicate across a cluster. The second override file from the ``CRAFTER_HOME/data/repos/global/configuration`` folder is a repository item and will replicate across a cluster. Furthermore, the second override file can be managed from Studio without the need to access the file system. See :ref:`nav-menu-global-config` for more information on how to access the global configuration file from Studio.
 
 .. note:: Changing the configuration files requires a restart of Crafter Studio for the changes to take effect.
-.. note:: Environment variables can be used to override any property defined as ``${env:ENVIRONMENT_VARIABLE}`` in the configuration files. This allows you to inject these properties into a vanilla installation without modifying any actual files, which is especially useful when using Docker or Kubernetes.
+.. note:: Environment variables can be used to override any property defined as ``${env:ENVIRONMENT_VARIABLE}`` in the configuration files. This allows you to inject these properties into a vanilla installation without modifying any actual files, which is especially useful when using Docker or Kubernetes. See :ref:`here <environment-variables>` for a list of environment variables used by CrafterCMS.
 
 -------------------------------
 Studio Configuration Properties
@@ -89,6 +89,8 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure whether to enable/disable the Studio audit log job for operations not performed through Crafter Studio
     * - :ref:`Publishing Blacklist <publishing-blacklist>`
       - Configure the publishing blacklist
+    * - :ref:`Configuration Files Maximum <configuration-files-maximum>`
+      - Configure the maximum length of configuration content
     * - :ref:`Content Type Editor Configuration <content-type-editor-config>`
       - Configure the content types
     * - :ref:`Dependency Resolver Configuration <dependency-resolver-config>`
@@ -680,7 +682,7 @@ Add the following lines with the regex for the item you wish not to be published
 
     # Publishing blacklist configuration, items matching regexes on this list will never be published
     studio.configuration.publishing.blacklist.regex: >-
-    .*/\.keep
+        .*/\.keep
 
 |
 
@@ -704,7 +706,7 @@ Say, you do not want files under ``/static-assets/images/mytempimages`` to be pu
 
     # Publishing blacklist configuration, items matching regexes on this list will never be published
     studio.configuration.publishing.blacklist.regex: >-
-    .*/\.keep,\/static-assets\/images\/mytempimages\/.*
+        .*/\.keep,\/static-assets\/images\/mytempimages\/.*
 
 |
 
@@ -741,6 +743,26 @@ Let's take a look at the tomcat log, notice that it was logged that the file we 
 
 |hr|
 
+.. _configuration-files-maximum:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuration Files Maximum
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.1.4
+
+To set the maximum size of a project/site configuration file for the `write_configuration <../../../../_static/api/studio.html#tag/configuration/operation/writeConfiguration>`__ API, set the following property:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
+
+    # The maximum length of configuration content for the configuration service. Default to 512kB -> 512 * 1024
+    studio.configuration.maxContentSize: 524288
+
+|
+
+|hr|
 
 .. _content-type-editor-configuration:
 

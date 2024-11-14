@@ -27,9 +27,9 @@ copyright = u"%s, Crafter Software Corporation"% str(date.today().year)
 author = u'CrafterCMS'
 
 # The short X.Y version.
-version = u'4.1'
+version = u'4.2'
 # The full version, including alpha/beta/rc tags.
-release = u'4.1.3'
+release = u'4.2.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -139,7 +139,7 @@ html_favicon = "_static/images/favicon.ico"
 
 # Add versions for the bottom menu
 html_context = {
-    'versions': ['4.1', '4.0', '3.1'],
+    'versions': ['4.2', '4.1', '4.0', '3.1'],
     'docsUrl': 'https://docs.craftercms.org'
 }
 
@@ -257,8 +257,8 @@ rst_epilog = """
 .. |js_sdk_link| replace:: :ref:`javascript-sdk`
 .. |graphql_link| replace:: :ref:`graphql`
 .. |rest_api_link| replace:: :ref:`rest-content-retrieval-api`
-.. |search_link| replace:: :ref:`search`
-.. |groovy_link| replace:: :ref:`groovy-api` and :ref:`java-api`
+.. |search_link| replace:: :ref:`content-search`
+.. |groovy_link| replace:: :ref:`groovy-java-api`
 .. |static_asset_link| replace:: :ref:`static-content-access`
 .. |freemarker_link| replace:: :ref:`templating-api`
 
@@ -267,7 +267,7 @@ rst_epilog = """
 
 # Javadoc home and version
 javadoc_base = 'http://javadoc.craftercms.org/'
-javadoc_version = '4.1.3'
+javadoc_version = '4.2.0'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),

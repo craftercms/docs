@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.1.5
 
 .. _system-admin-installation:
 
@@ -25,7 +25,7 @@ To run CrafterCMS, the following are required:
     - Java 17
     - 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
     - Git 2.20.1 and later
-    - Docker (if running in Docker)
+    - Docker (if running in Docker or MacOS)
 
 Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic experiences. MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide external (non-author) user management and social features.
 
@@ -133,16 +133,20 @@ The following browsers are supported:
 ^^^^^^^^^^^^^
 Prerequisites
 ^^^^^^^^^^^^^
-"""""""""""""""""
-OS X Prerequisite
-"""""""""""""""""
-For OS X users, the latest ``openssl`` formula needs to be installed via homebrew:
+""""""""""""""""""
+MacOS Prerequisite
+""""""""""""""""""
+For MacOS users, the following applies:
 
-.. code-block:: sh
+#. The latest ``openssl`` formula needs to be installed via homebrew:
 
-    brew install openssl
+   .. code-block:: sh
 
-|
+       brew install openssl
+
+   |
+
+#. Docker is used to run OpenSearch and needs to be installed. Follow the instructions `here <https://docs.docker.com/install/>`__ to install Docker.
 
 """"""""""""""""""
 Linux Prerequisite
@@ -161,17 +165,43 @@ Linux Prerequisite
 
    To install ``lsof`` for RedHat-based Linux distros: ``yum install lsof``
 
-#. The library ``libncurses5`` is required for the Authoring install and the restore script. You may get the following error when running an Authoring install or the restore script without the ``libncurses5`` library installed:
+#. The library ``libncurses5`` is required by the Authoring install due to the embedded MariaDB. You may get the following error when running an Authoring install or the restore script without the ``libncurses5`` library installed:
 
-   **error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory**
+   .. code-block:: text
+
+       error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory
 
    To install the library ``libncurses5``, use the following commands:
 
-   On Debian-based Linux distros: ``sudo apt install libncurses5``
+   **On Debian-based Linux distros:**
 
-   On RHEL, CentOS:  ``sudo yum install ncurses-compat-libs``
+   - For Ubuntu 24.04 and later versions, ``libncurses5`` was removed starting in version 24.04. To install ``libncurses5``,
+     run the following commands:
 
-   On Fedora 22 and newer version: ``sudo dnf install ncurses-compat-libs``
+     .. code-block:: bash
+
+         wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.4-2_amd64.deb && sudo dpkg -i libtinfo5_6.4-2_amd64.deb && rm -f libtinfo5_6.4-2_amd64.deb
+
+         wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.4-2_amd64.deb && sudo dpkg -i libncurses5_6.4-2_amd64.deb && rm -f libncurses5_6.4-2_amd64.deb
+
+         sudo apt install lib32ncurses5-dev libncurses5 libncurses5-dev -y
+
+   - All other versions of Debian-based linux distro: ``sudo apt install libncurses5``
+
+   **On RHEL, CentOS:**
+
+   - For versions 8 and later, the EPEL repository needs to be added in order to install the ``ncurses-compat-libs``.
+     To add the EPEL repository, do the following:
+
+     - Enable the CodeReady Linux Builder repository |br|
+       CentOS: ``sudo dnf config-manager --set-enabled crb`` |br|
+       RHEL: ``sudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms``
+     - Next, install the EPEL RPM: ``sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm``
+     - Finally, we can now install ``ncurses-compat-libs``: ``sudo dnf install ncurses-compat-libs``
+
+   - All other versions of RHEL, CentOS: ``sudo yum install ncurses-compat-libs``
+
+   **On Fedora 22 and newer version:** ``sudo dnf install ncurses-compat-libs``
 
 """"""""""""""""""""
 Windows Prerequisite
@@ -219,7 +249,7 @@ For a quick start to evaluate CrafterCMS, you follow these simple instructions. 
 
     docker run -p 8080:8080 craftercms/authoring_local:latest
 
-Then point your browser to http://localhost:8080/studio and you will be presented with the Crafter Studio login page. The default username is ``admin`` and the default password is ``admin``.
+Then point your browser to ``http://localhost:8080/studio`` and you will be presented with the Crafter Studio login page. The default username is ``admin`` and the default password is ``admin``.
 
 """"""""""""""
 Docker Compose
@@ -270,7 +300,7 @@ To run CrafterCMS in a set of Docker containers using Docker Compose, make sure 
           authoring-tomcat-1    | 11-Aug-2023 11:28:25.535 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
           authoring-tomcat-1    | 11-Aug-2023 11:28:25.579 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [68028] milliseconds
 
-You may now login to Crafter Studio at http://localhost:8080/studio. The default username is ``admin`` and the default password is ``admin``.
+You may now login to Crafter Studio at ``http://localhost:8080/studio``. The default username is ``admin`` and the default password is ``admin``.
 
 The console output when you start the container (as shown above) contains useful information that you can use to debug or monitor the status of CrafterCMS. To view more of the logs, the Docker Desktop Dashboard provides a runtime view of all your containers and applications, including logs for monitoring/debugging CrafterCMS. To access the Docker Desktop Dashboard, from the **Docker menu**, select **Dashboard**.
 
@@ -298,6 +328,16 @@ To configure working on projects in Docker via a local IDE follow the instructio
 For more information on Docker Desktop Dashboard, see https://docs.docker.com/desktop/dashboard/
 
 For more information on CrafterCMS Docker Compose, please see: https://github.com/craftercms/docker-compose.
+
+""""""
+Images
+""""""
+CrafterCMS provides Docker images on `dockerhub <https://hub.docker.com/u/craftercms>`__ for the latest release versions
+and snapshots of versions in development. The CrafterCMS Docker images may be pulled by using the tag for a release
+version, e.g. ``craftercms/authoring_tomcat:4.1.5``, the latest release, e.g. ``craftercms/authoring_tomcat:latest``
+or the tag for a snapshot of a version in development, e.g. ``craftercms/authoring_tomcat:4.1.6-SNAPSHOT``
+
+As mentioned, CrafterCMS is open source and you can always build Docker images from source code `here <https://github.com/craftercms/craftercms>`__
 
 |hr|
 
@@ -440,7 +480,7 @@ To setup the project in delivery, follow the instructions listed here: :ref:`sim
 """""""""""""""""""""""""""""""""""""
 Simple Delivery Kubernetes Deployment
 """""""""""""""""""""""""""""""""""""
-CrafterCMS has an example Kubernetes deployment for a Delivery with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/delivery/cluster. This guide covers how to install this example in a Kubernetes cluster.
+CrafterCMS has an example Kubernetes deployment for a Delivery with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/delivery/simple. This guide covers how to install this example in a Kubernetes cluster.
 
 .. important::
    This guide assumes you have a working understanding of Kubernetes
@@ -826,7 +866,7 @@ Step 2: Access the Crafter Studio login screen
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this step we want to prove that the application is up and running now that our instance has started and initialized fully. To do this, we're simply going to check that the application login screen shows up when we access it via a web browser.
 
-To access the login screen open a web browser and navigate to http://DNS_NAME_OR_IP_ADDRESS/studio.
+To access the login screen open a web browser and navigate to ``http://DNS_NAME_OR_IP_ADDRESS/studio``.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-authoring-login.webp
     :width: 100 %
@@ -882,7 +922,7 @@ Step 4: Sign into Crafter Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Now that we have the randomly generated admin password for Crafter Studio we can sign in to the application.
 
-In your web browser, navigate to http://DNS_NAME/studio and then enter admin as the Email/Username, paste the password you acquired from Step 3 then click "Sign In."
+In your web browser, navigate to ``http://DNS_NAME/studio`` and then enter admin as the Email/Username, paste the password you acquired from Step 3 then click "Sign In."
 
 .. image:: /_static/images/ami/craftercms-aws-ami-authoring-login.webp
     :width: 100 %
@@ -963,7 +1003,7 @@ Step 2: Access the Crafter Engine via the Web
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this step we want to prove that the application is up and running now that our instance has started and initialized fully. To do this, we're simply going to check that the application login screen shows up when we access it via a web browser.
 
-To access the login screen open a web browser and navigate to http://DNS_NAME_OR_IP_ADDRESS.
+To access the login screen open a web browser and navigate to ``http://DNS_NAME_OR_IP_ADDRESS``.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-delivery-engine-running.webp
     :width: 100 %
@@ -1313,7 +1353,7 @@ To access Crafter Studio, In your browser, go to
   http://SERVER:PORT/studio
 
 .. note::
-    For local deployments, the URL is http://localhost:8000/studio
+    For local deployments, the URL is ``http://localhost:8000/studio``
 
 * Login with the following:
 

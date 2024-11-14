@@ -65,10 +65,10 @@ APIs
     ../../reference/api/templating-api
     ../../reference/api/javascript-sdk
     ../../reference/api/graphql
-    ../../by-role/developer/common/search
+    ../../reference/api/search
     ../../reference/api/rest-content-retrieval-api
-    ../../reference/api/groovy-api
-    ../../reference/api/java-api
+    ../../reference/api/groovy-java-api
+
 
 For non-content related APIs, such as user/group management, monitoring, indexing and more, please consult the module API directly.
 
@@ -83,21 +83,15 @@ REST API
     * - Module
       - REST API
     * - :ref:`Studio<crafter-studio>`
-      - :ref:`crafter-studio-api`
+      - :ref:`Crafter Studio APIs <crafter-studio-api>`
     * - :ref:`Engine<crafter-engine>`
-      - `Crafter Engine APIs <../_static/api/engine.html>`_
+      - :ref:`Crafter Engine APIs <crafter-engine-api>`
     * - :ref:`Deployer<crafter-deployer>`
-      - `Crafter Deployer APIs <../_static/api/deployer.html>`_
+      - :ref:`Crafter Deployer APIs <crafter-deployer-api>`
     * - :ref:`Profile<crafter-profile>`
-      - :ref:`crafter-profile-api`
+      - :ref:`Crafter Profile APIs <crafter-profile-api>`
     * - :ref:`Social<crafter-Social>`
-      - :ref:`crafter-social-api`
-
-^^^^^^^^
-Java Doc
-^^^^^^^^
-
-.. include:: /includes/javadoc.rst
+      - :ref:`Crafter Social APIs <crafter-social-api>`
 
 |hr|
 

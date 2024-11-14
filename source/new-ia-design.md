@@ -1,4 +1,4 @@
-This is a TODO file, what's in here must be done then removed from this file
+This is a TODO file, what's in here must be done and then removed from this file
 
 Getting Started
 ===============
@@ -10,7 +10,7 @@ Common
 Reference
 =========
 - Secrets Management
-  - Store secrets externally or using an external key-store like AWS Secrets (ask AV)
+  - Store secrets externally or use an external key store like AWS Secrets (ask AV)
     - Passing secrets into CrafterCMS via environment variables
       - Explain `crafter-setenv.sh` and give examples
         - Ask AV for real examples and add them

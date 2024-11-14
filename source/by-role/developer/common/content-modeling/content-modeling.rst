@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.0
+:last-updated: 4.1.8
 
 .. index:: Content Modeling, Modeling, Content Model, Page Content Type, Component Content Type
 
@@ -664,6 +664,8 @@ The following variable names are used by CrafterCMS.
 || id                  || reserved for a unique identifier                                  |
 +----------------------+--------------------------------------------------------------------+
 || authorizedRoles     || Used to restrict pages based on roles                             |
+||                     || For more information, see :ref:`targeting-using-roles` and        |
+|                      | :ref:`emulating-authorizedroles-in-XB`                             |
 +----------------------+--------------------------------------------------------------------+
 || role                || Contains the role required to access a page                       |
 +----------------------+--------------------------------------------------------------------+
@@ -1010,7 +1012,7 @@ The canvas allows the form-based content capture only, and is used by content au
 Content Type View Templates
 ---------------------------
 
-View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the primary CrafterCMS model or additional model (via APIs, please read :ref:`groovy-api` for that topic).
+View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the primary CrafterCMS model or additional model (via APIs, please read :ref:`groovy-java-api` for that topic).
 
 An example view template
 
@@ -1065,11 +1067,11 @@ The `FreeMarker <http://freemarker.org>`_ language is supported. For detailed Fr
 
 |hr|
 
----------------------------------------------------------------
-Content Type Controller (Page and Component Scripts) Definition
----------------------------------------------------------------
+---------------------------------------------------------------------
+Page and Component Controller (Page and Component Scripts) Definition
+---------------------------------------------------------------------
 Crafter page and components can have their own controller scripts too, that are executed before the page or component
-is rendered, and that can contribute to the model of the template. Learn more about page and script controllers in :ref:`content-type-controllers`.
+is rendered, and that can contribute to the model of the template. Learn more about page and script controllers in :ref:`page-and-component-controllers`.
 
 |hr|
 
@@ -1357,7 +1359,7 @@ We can now start adding the script to get a list of articles depending on the ac
 
 There are two ways to bind a script/controller to a page/component. The first way, as we have seen is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type. We'll show the other way how to bind a script to a page/component in the next section :ref:`content-type-component`
 
-To find out more about page and component scripts, please see :ref:`content-type-controllers`.
+To find out more about page and component scripts, please see :ref:`page-and-component-controllers`.
 
 Now that we have our controller, we just need to add code to the freemarker template (view) to display the list of articles returned by the script.
 
@@ -1399,7 +1401,7 @@ Now that we have our controller, we just need to add code to the freemarker temp
 
 |
 
-As you can see from the controller we just added, the controller is used to customize your page by enabling you to run a script before the page is rendered. To find out more about groovy APIs in CrafterCMS, please see the section :ref:`content-type-controllers`.
+As you can see from the controller we just added, the controller is used to customize your page by enabling you to run a script before the page is rendered. To find out more about groovy APIs in CrafterCMS, please see the section :ref:`page-and-component-controllers`.
 
 .. _content-type-component:
 

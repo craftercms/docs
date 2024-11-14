@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.1
+:last-updated: 4.1.4
 
 .. _backup-and-restore:
 
@@ -36,6 +36,8 @@ is necessary. In this case, you will need to shutdown the cluster first to perfo
    Performing a backup while CrafterCMS is running is technically possible, but the resulting backup may not be viable.
 
 |hr|
+
+.. _running-the-backup-script:
 
 -------------------------
 Running the Backup Script

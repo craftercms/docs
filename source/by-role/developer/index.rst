@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.1.8
 
 .. _developer:
 
@@ -26,6 +26,9 @@ CrafterCMS supports both headless and templated projects (templated projects are
 
 Regardless of type of project, a developer needs to be familiar with the following core concepts.
 
+-------------
+Core Concepts
+-------------
 .. list-table:: Developer Core Concepts
     :header-rows: 1
 
@@ -43,7 +46,7 @@ Regardless of type of project, a developer needs to be familiar with the followi
       - Provides you information on how to access static contents such as images, CSS files, etc.
     * - :ref:`experience-builder`
       - Provides information on the UI layer on top of your applications that enables authors with in-context editing (ICE)
-    * - :ref:`Server-side Development with Groovy <groovy-api>`
+    * - :ref:`Server-side Development with Groovy <groovy-java-api>`
       - Provides you information on how to use Groovy to develop server-side services and applications
     * - :ref:`project-security`
       - Provides you information on security features that can be used to secure your project/site
@@ -62,12 +65,11 @@ Regardless of type of project, a developer needs to be familiar with the followi
     common/static-content-access
     common/experience-builder
     common/security
-    common/search
 
-----------------
-General Concepts
-----------------
-Aside from the core concepts listed above, a developer needs to be familiar with the following general concepts.
+-------------------
+Additional Concepts
+-------------------
+Aside from the core concepts listed above, a developer needs to be familiar with the following additional general concepts.
 
 .. list-table:: Developer General Concepts
     :header-rows: 1
@@ -76,8 +78,8 @@ Aside from the core concepts listed above, a developer needs to be familiar with
       - Description
     * - :ref:`scheduled-jobs`
       - Provides you information on scheduling jobs
-    * - :ref:`content-type-controllers`
-      - Provides you information on content type controllers
+    * - :ref:`page-and-component-controllers`
+      - Provides you information on page and component controllers
     * - :ref:`targeting`
       - Provides you information on rendering content adapted to different things
     * - :ref:`servlet-filters`
@@ -96,6 +98,8 @@ Aside from the core concepts listed above, a developer needs to be familiar with
       - Provides you information on adding a new language to Studio
     * - :ref:`localization`
       - Provides you information on localizing content
+    * - :ref:`developer-environment-variable-access`
+      - Provides you information on accessing custom environment variables
 
 .. toctree::
     :maxdepth: 1
@@ -103,7 +107,7 @@ Aside from the core concepts listed above, a developer needs to be familiar with
     :hidden:
 
     common/scheduled-jobs
-    common/content-type-controllers
+    common/page-and-component-controllers
     common/targeting
     common/servlet-filters
     common/working-with-dates-groovy
@@ -112,15 +116,7 @@ Aside from the core concepts listed above, a developer needs to be familiar with
     common/custom-error-pages
     common/adding-a-new-language
     common/localization
-
-For templated projects, there are more topics to cover:
-
-.. toctree::
-    :maxdepth: 1
-    :titlesonly:
-
-    templated/templating
-    templated/working-with-dates-freemarker
+    common/environment-variable-access
 
 .. _developer-headless:
 
@@ -148,6 +144,16 @@ variance, templating engine to render HTML directly from CrafterCMS.
 It allows developers to model the content as general reusable items, and fold those into pages.
 Pages aggregate content from components as needed and are associated with a FreeMarker template that
 can render the final page. The choice of HTML tools and frameworks doesn't matter to CrafterCMS.
+
+The article, :ref:`templating`, provides more details on CrafterCMS provided tools for creating your templated project.
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+    :titlesonly:
+
+    templated/templating
+
 
 ^^^^^^^^^^^^^^^^^^
 Templated Examples
@@ -231,7 +237,7 @@ Below is a short set of links to other documentation for technology that Crafter
 +----------------+------------------------------+-----------------------------------------------+
 | Attribute Name |             Usage            | Links                                         |
 +================+==============================+===============================================+
-|| Spring Beans  || Server App Framework        || https://spring.io/docs                       |
+|| Spring Beans  || Server App Framework        || https://docs.spring.io/spring-framework      |
 || Spring MVC    ||                             ||                                              |
 +----------------+------------------------------+-----------------------------------------------+
 || Freemarker    || Server side templates       || http://freemarker.org/                       |

@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-update: 4.1.0
+:last-update: 4.1.8
 
 .. index:: Experience Builder, XB, In-Context Editing, ICE
 
@@ -20,8 +20,15 @@ with in-context editing (ICE) for all the model fields defined in the content ty
 CrafterCMS developers must integrate their applications with XB, essentially telling XB what field of the
 model each element on the view represents. See :ref:`content-modeling` to learn more about the model.
 
-.. TODO insert <figure: example page with a sample content type side by side showing the relation between page elements
-   and content type fields>
+Below is an example page with a sample content type side by side showing the relation between page elements
+and content type fields:
+
+.. image:: /_static/images/developer/page-content-type-side-by-side.webp
+   :align: center
+   :width: 75 %
+   :alt: Page Side-by-Side with the Content Type Model
+
+|
 
 If you`re starting from a 3.x ICE system, see :ref:`upgrading-in-context-editing` for more information on how
 to move from the 3.x ICE system to the 4.x Experience Builder (XB) system discussed here.
@@ -128,10 +135,9 @@ carousel class.
      </div>
    </div>
 
-^^^^^^^^^^^
-Rules of XB
-^^^^^^^^^^^
-.. TODO: Find better title?
+^^^^^^^^^^^^^^^^^^^^^^^^^
+XB Integration Guidelines
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * The HTML element that is registered with XB as a field must contain only that content, unwrapped.
 
@@ -187,6 +193,38 @@ Rules of XB
                      </div>
                   </div>
 
+  * XB makes available a set of classes and JavaScript to help in best supporting
+    the authoring experience of your applications.
+
+    * ``craftercms-ice-on``: When edit mode is active, the ``html`` element gets this class.
+    * ``craftercms-ice-bypass``: When/while the ``z`` key is pressed, the ``html`` element gets this class.
+    * ``craftercms-highlight-move``: When edit mode is active and mode is *move*, the ``html`` element gets this class.
+    * ``craftercms-highlight-all``: When edit mode is active and mode is *edit* (not move), the ``html`` element gets this class.
+    * Empty fields  are likely to have a height/width of 0 pixels, making them invisible for authors trying to edit those fields.
+      XB makes available classes to be added to the the container element of the field which will add some padding and text content
+      making the empty element visible and indicating it is an empty field to catch the author's attention. The specific styles can be
+      customized using the ``globalStyleOverrides`` prop of the :ref:`ExperienceBuilder` component either directly when using React,
+      or through the ``props`` argument of the :ref:`freemarker-initExperienceBuilder` macro.
+      * ``craftercms-empty-collection``: Use it for collection type fields such as repeat groups and item selectors.
+      * ``craftercms-empty-field``: Use it for simple fields such as text, html, etc.
+
+    * ``craftercms-drag-n-drop-active``: When drag and drop is active, the ``html`` element gets this class.
+    * ``craftercms-edit-mode-padding``: When padding mode is active, the ``html`` element gets this class. You may use the class to
+      conditionally add padding during edit mode to the elements that may be hard to reach for authors due to the html structure and
+      resulting rendering.
+    * ``data-craftercms-event-capture-overlay``: Elements like video players or iframes can sometimes interfere with the normal flow of
+      pointer events and make it challenging for authors to access in-context editing for the field. Adding this **attribute** to an element
+      wrapping one of these event-capturing elements (e.g. an iframe), will put styles in place to prevent it from blocking XB from getting
+      the necessary pointer events for authors to edit the model. See also :ref:`eventCaptureOverlay` for usage on Freemaker.
+    * ``craftercms.editMode``: When edit mode is turned on/off, XB will dispatch this custom event on the ``document`` object. You can
+      listen to this event to trigger custom actions when the edit mode is turned on/off. For example, turn off a carousel from auto-rotating
+      which could make it challenging for authors to edit. The event detail will be a boolean indicating if the edit mode is on or off.
+    * ``craftercms.xb:loaded``: When XB is fully loaded and ready to be used, XB will dispatch this custom event on the ``document`` object.
+      You can listen to this event to trigger custom actions when XB is fully loaded and ready to be used. For example, use a function that's
+      part of the ``craftercms.xb`` global (e.g. `craftercms.xb.getICEAttributes({ ... })`), which might not be available before XB is loaded.
+    * ``craftercms.iceBypass``: On the ``z`` (XB bypass key) keydown or keyup, XB will dispatch this custom event on the ``document`` object.
+      You can listen to this event to trigger custom actions when ``z`` is pressed. The event detail will be a boolean indicating if the key is pressed or not.
+
 .. _xb-freemarker:
 
 ^^^^^^^^^^
@@ -239,7 +277,7 @@ this element as editable. Such ``div`` would look as shown below:
          data-craftercms-index="0.1"
        >...</div>
 
-    Start by importing the crafter FreeMarker library on to your FreeMarker template.
+Start by importing the crafter FreeMarker library on to your FreeMarker template.
 
 .. code-block:: text
 
@@ -324,8 +362,7 @@ groups. :ref:`renderRepeatGroup` for all the available customizations and config
          </@crafter.h2>
        </@crafter.renderRepeatGroup>
 
-    The ``renderRepeatGroup`` macro does several things for us:
-
+The ``renderRepeatGroup`` macro does several things for us:
 
 * Prints the repeat group *container element*
 * Prints the repeat group *item elements*
@@ -359,8 +396,6 @@ The complete FreeMarker template for the carousel component becomes:
          </@crafter.renderRepeatGroup>
        </@crafter.componentRootTag>
 
-.. TODO Speak about the ice support classes, event capture overlay and special treatment for empty zones
-
 .. _xbMacros:
 
 """""""""""""""""""""""""""""
@@ -390,10 +425,6 @@ After importing ``crafter.ftl``, you'll have all the available XB macros describ
 
    <#import "/templates/system/common/crafter.ftl" as crafter />
 
-
-.. TODO eventCaptureOverlay $onlyInPreview=false $tag="div" $attributes={} attrs
-   const editModeClass = 'craftercms-ice-on';
-   const zKeyClass = 'craftercms-ice-bypass';
 
 .. _freemarker-initExperienceBuilder:
 
@@ -432,22 +463,23 @@ would indeed `unmount` XB from the current page.
 ''''''''
 Examples
 ''''''''
-.. TODO Add context to the examples below or find a way to make these look better/more meaningful when rendered
 
 .. code-block:: text
 
+   <#-- Simple XB initialisation -->
    <@initExperienceBuilder />
 
 
 .. code-block:: text
 
-   <@initExperienceBuilder props="{ themeOptions: { ... } }" />
+   <#-- XB initialisation providing XB component props to customise behaviour or styles -->
+   <@initExperienceBuilder props="{ themeOptions: { ... }, globalStyleOverrides: { ... } }" />
 
 
 .. code-block:: text
 
+   <#-- `body_bottom` internally invokes `initExperienceBuilder`; xbProps can be provided. -->
    <@crafter.body_bottom xbProps="{ scrollElement: '#mainWrapper' }" />
-   <#-- `body_bottom` internally invokes `initExperienceBuilder` -->
 
 .. _htmlElementTagMacros:
 
@@ -467,7 +499,6 @@ The following tags are available:
 ``td``, ``table``, ``abbr``, ``address``, ``aside``, ``audio``, ``video``, ``blockquote``, ``cite``, ``em``, ``code``, ``nav``,
 ``figure``, ``figcaption``, ``pre``, ``time``, ``map``, ``picture``, ``source``, ``meta``, ``title``
 
-.. TODO review the description
 
 .. list-table::
    :widths: 10 90
@@ -500,6 +531,11 @@ The following tags are available:
      - Specify which tag to use. For example ``<@crafter.tag $tag="article"... />`` will print out an
        ``<article>`` tag. Use only if you're using ``@crafter.tag``, which in most cases you don't need to as you
        can use the tag alias (e.g. ``<@crafter.article ... />``)
+   * - ``renderEmpty``
+     - By default set to true. When true, even if the value is blank (or not preset), the macro
+       will still print out the tag. When false, the macro will not print out the tag.
+   * - ``defaultValue``
+     - A value to use when the field is blank (or not preset).
 
 ''''''''
 Examples
@@ -518,7 +554,7 @@ In this first example:
          <@crafter.h1 $field="heading_t">${model.heading_t}</@crafter.h1>
        </@crafter.section>
 
-    In this example, the html tag is printed dynamically using what's specified on the content model.
+In this example, the html tag is printed dynamically using what's specified on the content model.
 
 .. code-block:: text
    :emphasize-lines: 1
@@ -890,6 +926,48 @@ The sample above would print out the following html:
      </div>
    </section>
 
+.. _eventCaptureOverlay:
+
+~~~~~~~~~~~~~~~~~~~
+eventCaptureOverlay
+~~~~~~~~~~~~~~~~~~~
+
+Elements like video players (e.g. a YouTube embed, an iframe) can sometimes interfere with the normal flow of pointer events
+and make it challenging for authors to access the in-context editing for the field being represented by these elements.
+
+The ``eventCaptureOverlay`` macro prints out an element with styles to overlay and stop the inner element from capturing
+pointer events when in Edit mode.
+
+.. code-block:: text
+
+   <@crafter.eventCaptureOverlay $onlyInPreview=true $tag="section" class="craftercms-overlay-example">
+      <@crafter.tag
+         $tag="iframe"
+         id="ytplayer"
+         type="text/html"
+         width="640"
+         height="360"
+         src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+         frameborder="0"
+      ></@crafter.iframe>
+   </@crafter.eventCaptureOverlay>
+
+The `iframe` tag macro includes the event capture overlay by default, so the above can be achieved simply by using ``@crafter.iframe``.
+
+.. code-block:: text
+
+   <@crafter.iframe
+      id="ytplayer"
+      type="text/html"
+      width="640"
+      height="360"
+      src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+      frameborder="0"
+   ></@crafter.iframe>
+
+You may disable the overlay for the iframe macro by setting the `$omitEventCaptureOverlay`
+attribute to `true` or specify the eventCaptureOverlay macro arguments using the `$eventCaptureOverlayProps`.
+
 .. _forEach:
 
 ~~~~~~~
@@ -908,7 +986,8 @@ Examples
      />
    </@crafter.forEach>
 
-.. code-block:: text
+.. code-block:: html
+   :force:
 
    <@crafter.forEach contentModel.slides_o; slide, index>
      <button
@@ -1020,7 +1099,8 @@ printIfPreview
 Receives a string which it will print if Crafter Engine is running in preview mode. Doesn't print
 anything if Engine is running the published site.
 
-.. code-block:: text
+.. code-block:: html
+   :force:
 
    <#-- Import the "debug" version of the script in preview. -->
    <script src="/static-assets/js/bootstrap.bundle${crafter.printIfPreview('.debug')}.js"></script>
@@ -1028,7 +1108,8 @@ anything if Engine is running the published site.
 You can also use the FreeMarker context variable ``modePreview`` to do similar things; in fact,
 ``printIfPreview`` uses it internally.
 
-.. code-block:: text
+.. code-block:: html
+   :force:
 
    <#-- Import a in-context editing stylesheet only in preview. -->
    <#if modePreview><link href="/static-assets/css/ice.css" rel="stylesheet"></#if>
@@ -1038,13 +1119,47 @@ You can also use the FreeMarker context variable ``modePreview`` to do similar t
 ~~~~~~~~~~~~~~~~~
 printIfNotPreview
 ~~~~~~~~~~~~~~~~~
-Receives a string which it will print if Crafter Engine is not running in preview mode. Doesn't print
+Receives a string which will be printed if Crafter Engine is **not** running in preview mode. Doesn't print
 anything if Engine is running the published site.
 
-.. code-block:: text
+.. code-block:: html
+   :force:
 
    <#-- Import the "minified" version of the script in delivery. -->
    <script src="/static-assets/js/bootstrap.bundle${crafter.printIfNotPreview('.min')}.js"></script>
+
+.. _printIfNotEmpty:
+
+~~~~~~~~~~~~~~~
+printIfNotEmpty
+~~~~~~~~~~~~~~~
+Receives the target value, the value to print if the target is not empty, and an optional *fallback* value to print if the target is empty.
+
+.. code-block:: html
+   :force:
+
+   <!-- Use an anchor if an href was provided, button otherwise. -->
+   <#local tag = crafter.printIfNotEmpty(contentModel.href, "a", "button")>
+   <#if tag == "a"><#local attributes = attributes + { "href": href }></#if>
+   <@crafter.tag $tag=tag $attributes=attributes>
+     <#nested>
+   </@crafter.tag>
+
+.. _notEmptyString:
+
+~~~~~~~~~~~~~~
+notEmptyString
+~~~~~~~~~~~~~~
+Receives the target property value and returns true/false. Can be used to check if a CrafterCMS
+model string field value is empty. Returns true if the trimmed value is **not** empty or null.
+
+.. _isEmptyString:
+
+~~~~~~~~~~~~~
+isEmptyString
+~~~~~~~~~~~~~
+Receives the target property value and returns true/false. Can be used to check if a CrafterCMS
+model string field value is empty. Returns true if the trimmed value **is** empty or null.
 
 .. _navigation:
 
@@ -1336,10 +1451,10 @@ this component only once and it should be a parent of all the XB-enabled compone
      - ExperienceBuilderStylesSx
      - XB's defaults
      - You may change XB-specific theming through this argument
-   * - ``documentDomain``
-     - string
+   * - ``globalStyleOverrides``
+     - `GuestGlobalStylesProps['styles'] <https://github.com/craftercms/studio-ui/blob/develop/ui/guest/src/react/GuestGlobalStyles.tsx>`__
      - null
-     - You may specify a ``documentDomain`` if your preview runs on a different domain than Studio does.
+     - Specify style overrides for various XB global styles.
    * - ``scrollElement``
      - string
      - html, body
@@ -1575,6 +1690,38 @@ Angular, Vue and Other JS Applications
 The easiest way to integrate XB with your JS application is by putting attributes on each HTML element that
 represents a model, field or item of a CrafterCMS content type and then invoking XB initializer.
 
+To initialize XB, you need to invoke the ``initExperienceBuilder`` function. This function receives a single argument which gets passed down to the :ref:`ExperienceBuilder component <ExperienceBuilder>`. See argument details on the ExperienceBuilder component section.
+At a minimum, you need to supply the ``isAuthoring`` boolean flag, together with either a ``ContentInstance`` or the ``path`` for the main model to initialize XB with.
+For example, a simple application that uses the UMD bundle for XB, would look something like this:
+
+.. code-block:: html
+    :force:
+
+    <script defer src="/studio/static-assets/scripts/craftercms-xb.umd.js"></script>
+    <script>
+      // Run when XB script has been loaded, as it is deferred.
+      document.addEventListener('craftercms.xb:loaded', () => {
+        // Determine if we're on authoring using `fetchIsAuthoring` utility. Remove/replace if you determine whether it is authoring/delivery through some other mechanism.
+        window.craftercms.xb.fetchIsAuthoring().then((isAuthoring) => {
+          // If we're in authoring, initialize XB
+          isAuthoring && window.craftercms.xb.initExperienceBuilder({ isAuthoring, path: '/site/website/index.xml' });
+        });
+      });
+    </script>
+
+In contrast, in an npm project setup, this might look something like this:
+
+.. code-block:: js
+
+    import { fetchIsAuthoring, initExperienceBuilder } from '@craftercms/experience-builder';
+    // Determine if we're on authoring using `fetchIsAuthoring` utility. Remove/replace if you determine whether it is authoring/delivery through some other mechanism.
+    fetchIsAuthoring().then((isAuthoring) => {
+       // If we're in authoring, initialize XB
+       if (isAuthoring) {
+          initExperienceBuilder({ isAuthoring, path: '/site/website/index.xml' });
+       }
+    });
+
 .. _fetchIsAuthoring:
 
 ~~~~~~~~~~~~~~~~
@@ -1589,7 +1736,8 @@ on your application bootstrap and cached for the rest of the app lifecycle. Depe
 you should then carry on to initialize XB or bypass it's initialization and assume the app is running
 in "production", where authoring tools are completely absent.
 
-.. TODO Internally it uses `crafterConf < add docs on readme and link to them >`_
+``fetchIsAuthoring`` internally uses the ``crafterConf`` object from the ``@craftercms/classes`` package.
+See `SDK docs <https://github.com/craftercms/js-sdk/tree/develop/packages/classes#crafterconf>`__ for more information.
 
 .. code-block:: js
 
@@ -1616,10 +1764,6 @@ in "production", where authoring tools are completely absent.
      - undefined
      - You can supply a baseUrl and/or site to make the check. ``fetchIsAuthoring`` uses ``crafterConf``
        (from ``@craftercms/classes`` package) values when not supplied.
-
-.. TODO
-   Is addAuthoringSupport still needed? If used via npm, everything is imported from the package and,
-   if imported as a script, everything is already loaded.
 
 ~~~~~~~~~~~~~~~~~~~
 addAuthoringSupport
@@ -1676,59 +1820,45 @@ Use this method to initialize experience builder once you have printed all the a
 """"""""""""""""""""
 Example Applications
 """"""""""""""""""""
-- `React Example <https://github.com/craftercms/wordify-blueprint/tree/react>`_
+- `React Example <https://github.com/craftercms/react-blueprint>`_
 - `Next JS Example <https://github.com/craftercms/craftercms-example-nextjs>`_
 - `Angular Example <https://github.com/craftercms/craftercms-example-angular>`_
 
-.. TODO
-   Npm
-   ~~~
+.. _xb-lazy-loaded-content:
 
-      yada
+^^^^^^^^^^^^^^^^^^^
+Lazy Loaded Content
+^^^^^^^^^^^^^^^^^^^
+Lazy loading is a strategy to identify non-critical content and load these only when needed.
+It's a way to reduce page load times and memory consumption.
 
-      UMD Bundle
-      ~~~~~~~~~~
+In templated projects, typically content is preloaded and pre-rendered on to the view. When the view loads, XB
+initialises normally. If content is loaded lazily, additional steps are required to enable XB on top of that content.
 
-      craftercms-guest.umd.js
-      craftercms-guest.no-react.umd.js
+In simple JS applications, lazy loaded content without a page refresh also needs some programmatic management to notify
+XB about changes.
 
-      React Native
-      ~~~~~~~~~~~~
+To enable XB for lazy loaded content, once the attributes are printed, register the new elements with XB using ``registerElements``.
+Remember that the lifecycle of markup (lazy loaded content) needs to be integrated in XB. To de-register elements with XB,
+use ``deregisterElements``.
 
-      React native...
+Below is an example of registering/de-registering lazy loaded content with XB using the ``home.ftl`` file from a project
+created using the Website Editorial blueprint.
 
-      API
-      ~~~
+.. raw:: html
 
-      Api...
+   <details>
+   <summary><a>Sample registering/de-registering lazy loaded content in home.ftl</a></summary>
 
-      ContentType
-      """""""""""
+.. literalinclude:: /_static/code/developer/xb/home.ftl
+    :language: html
+    :force:
+    :emphasize-lines: 143, 168
+    :linenos:
 
-      <ContentType />
+.. raw:: html
 
-      RenderField
-      """""""""""
+   </details>
 
-      <RenderField />
-
-      useICE hook
-      """""""""""
-
-      The useICE hook
-
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      Other Html or JavaScript applications
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-      XB uses DOM events to power authoring. Because XB sits on top of your applications, you may need to
-      make your applications aware of XB's behaviours to facilitate the authoring experience.
-
-      END
-
-      **Plugins**
-
-
-      * The z key
-      * The e & m keys
-      * ICE on hints (class & event)
+|
+|

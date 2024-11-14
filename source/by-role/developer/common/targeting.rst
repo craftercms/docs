@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.0
+:last-updated: 4.1.8
 
 .. _targeting:
 
@@ -359,7 +359,7 @@ the page renders. To do this, we need to create a script named after the page we
 to run before rendering, under *scripts -> pages*   In the groovy script below, a query is sent to
 ask for all articles targeted for the requested category. (To see the script in Studio, from the
 Sidebar, navigate to scripts -> pages -> category-landing.groovy) Please see
-:ref:`content-type-controllers` for more details on binding a script to a page or component.
+:ref:`page-and-component-controllers` for more details on binding a script to a page or component.
 
 .. code-block:: groovy
   :caption: Category Landing Page Script
@@ -459,6 +459,8 @@ in the page (articles tagged for category Health).
     :align: center
 
 |
+
+.. _targeting-using-roles:
 
 ---------------------
 Targeting Using Roles
@@ -639,3 +641,139 @@ in the ``Entertainment`` category page.
 
 |
 
+.. _emulating-authorizedroles-in-XB:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Emulating authorizedRoles in XB
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Some projects use authentication such as SSO based on SAML, etc., in the delivery experience. Crafter Studio allows you
+to setup and test those rules through targeting. In this section, we'll take a look at an example of emulating
+authentication of users using ``authorizedRoles`` in XB for limiting access to articles in the Editorial blueprint.
+
+One of the ways to define security for a project whether it's screens or pages in a site, is to configure security rules.
+To configure security rules for our example, in Studio, click on |projectTools| -> ``Configuration``. Select ``Engine Project
+Configuration`` from the list, then add the following highlighted section to the config file to configure URL restrictions:
+
+.. code-block:: xml
+    :caption: *Engine Project Configuration - Editorial Blueprint*
+    :emphasize-lines: 3-10
+    :linenos:
+
+    <site>
+      <version>4.0.1</version>
+      <security>
+        <urlRestrictions>
+          <restriction>
+            <url>/articles/**</url>
+            <expression>isAuthenticated()</expression>
+          </restriction>
+        </urlRestrictions>
+      </security>
+    </site>
+
+The URL restriction configured above indicates that authenticated users can access all items under ``/articles`` in the
+project and are able to view the page.
+
+Next, let's configure Audience Targeting in XB which allows you to pick a role you want to emulate and see how your pages
+will react. To configure roles to emulate, in Studio, click on |projectTools| -> ``Configuration``. Select ``User
+Interface Configuration`` from the list, then add the following highlighted section to the config file:
+
+.. code-block:: xml
+    :caption: *User Interface Configuration*
+    :emphasize-lines: 11-32
+    :linenos:
+
+    ...
+    <widget id="craftercms.components.ToolsPanelPageButton">
+      <configuration>
+        <target id="icePanel"/>
+        <title id="previewAudiencesPanel.title" defaultMessage="Audience Targeting"/>
+        <icon id="@mui/icons-material/EmojiPeopleRounded"/>
+        <widgets>
+          <widget id="craftercms.components.PreviewAudiencesPanel">
+            <configuration>
+              <fields>
+                <roles>
+                  <id>roles</id>
+                  <name>User Role</name>
+                  <description>User Role</description>
+                  <type>dropdown</type>
+                  <defaultValue>anonymous</defaultValue>
+                  <values>
+                    <value>
+                      <label>Anonymous</label>
+                      <value>anonymous</value>
+                    </value>
+                    <value>
+                      <label>Role A</label>
+                      <value>RoleA</value>
+                    </value>
+                    <value>
+                      <label>Role B</label>
+                      <value>RoleB</value>
+                    </value>
+                  </values>
+                  <helpText>Emulate the user's authentication and authorization</helpText>
+                </roles>
+
+                <segment>
+                  <id>segment</id>
+                  <name>Segment</name>
+                  <description>User segment.</description>
+                  <type>dropdown</type>
+                  <defaultValue>anonymous</defaultValue>
+                  <values>
+                    <value>
+                      <label>Guy</label>
+                      <value>guy</value>
+                    </value>
+                    <value>
+                      <label>Gal</label>
+                      <value>gal</value>
+                    </value>
+                    <value>
+                      <label>Anonymous</label>
+                      <value>anonymous</value>
+                    </value>
+                  </values>
+                  <helpText>Setting the segment will change content targeting to the audience selected.</helpText>
+                </segment>
+                <name>
+                  <id>name</id>
+                  <name>Name</name>
+                  <description>User's first and last name.</description>
+                  <type>input</type>
+                  <helpText>Enter user's first and last name.</helpText>
+                </name>
+              </fields>
+            </configuration>
+          </widget>
+
+
+In the above configuration, we configured three roles to emulate, ``Anonymous``, ``Role A`` and ``Role B``.
+This assumes that the project has those roles setup. For more information on configuring roles, see
+:ref:`project-role-mappings` and :ref:`roles-and-permissions`.
+
+Once you saved all your changes, let's take a look and preview one of the articles and see what happens. Open the Sidebar,
+then navigate to ``/articles/2020/12/`` then click on ``Top Books For Young Women`` and notice that we are unable to
+preview the page since the "user" (role we are emulating) is unauthenticated/unauthorized.
+
+.. image:: /_static/images/developer/authorizedRoles-emulation-unauthorized.webp
+   :align: center
+   :width: 75 %
+   :alt: Emulation of accessing a page by an unauthorized user
+
+|
+
+Next, we'll emulate a role that is authenticated and see what happens to the page. Open the XB panel by turning on
+``Edit Mode`` (Click on the pencil icon on the top right of your screen. The icon turns green when ``Edit Mode`` is on.)
+Click on ``Audience Targeting``. Select a role from the ``User Role`` dropdown (This is the item we  configured in the
+User Interface Configuration`` file). For our example, we'll select ``Role A``, then click on the ``Apply`` button.
+Refresh the page. Notice that we are now able to preview the page.
+
+.. image:: /_static/images/developer/authorizedRoles-emulation-authorized.webp
+   :align: center
+   :width: 75 %
+   :alt: Emulation of accessing a page by an authorized user
+
+|
