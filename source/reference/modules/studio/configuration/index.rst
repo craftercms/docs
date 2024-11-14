@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.4
+:last-updated: 4.2.0
 
 .. Grammar Checked 2023-10-06
 
@@ -77,6 +77,8 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure policy headers
     * - :ref:`crafterSite Cookie Domain <studio-crafterSite-cookie-domain>`
       - Configure the ``crafterSite`` cookie domain
+    * - :ref:`Deployer HTTP Requests <studio-deployer-http-request-timeout>`
+      - Configure timeout for Deployer HTTP requests
     * - :ref:`Serverless Delivery Targets <studio-serverless-delivery-targets>`
       - Configure serverless delivery
     * - :ref:`CloudFormation Capabilities <studio-cloudformation-capabilities>`
@@ -477,6 +479,29 @@ The following section of Studio's configuration overrides allows you to set the 
 
     # Use base domain instead of subdomain for the crafterSite cookie
     studio.cookie.useBaseDomain: false
+
+|
+
+|hr|
+
+.. _studio-deployer-http-request-timeout:
+
+^^^^^^^^^^^^^^^^^^^^^^
+Deployer HTTP Requests
+^^^^^^^^^^^^^^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.2.0
+
+The following section of Studio's configuration overrides allows you to set the timeout for Deployer HTTP requests.
+The default timeout is 5 minutes.
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :linenos:
+
+    # Response timeout in seconds for deployer http requests
+    studio.deployer.request.timeoutSeconds: 300
 
 |
 
