@@ -452,22 +452,22 @@ Here are the environment variables used for setting URLs for various CrafterCMS 
       - Default Value
     * - SEARCH_URL
       - Search URL
-      - http://\$SEARCH_HOST:\$SEARCH_PORT
+      - ``http://$SEARCH_HOST:$SEARCH_PORT``
     * - DEPLOYER_URL
       - Crafter Deployer URL
-      - http://\$DEPLOYER_HOST:\$DEPLOYER_PORT
+      - ``http://$DEPLOYER_HOST:$DEPLOYER_PORT``
     * - STUDIO_URL
       - Crafter Studio URL
-      - http://\$TOMCAT_HOST:\$TOMCAT_HTTP_PORT/studio
+      - ``http://$TOMCAT_HOST:$TOMCAT_HTTP_PORT/studio``
     * - ENGINE_URL
       - Crafter Engine URL
-      - http://\$TOMCAT_HOST:\$TOMCAT_HTTP_PORT/
+      - ``http://$TOMCAT_HOST:$TOMCAT_HTTP_PORT/``
     * - PROFILE_URL
       - Crafter Profile URL
-      - http://\$TOMCAT_HOST:\$TOMCAT_HTTP_PORT/crafter-profile
+      - ``http://$TOMCAT_HOST:$TOMCAT_HTTP_PORT/crafter-profile``
     * - SOCIAL_URL
       - Crafter Social URL
-      - http://\$TOMCAT_HOST:\$TOMCAT_HTTP_PORT/crafter-social
+      - ``http://$TOMCAT_HOST:$TOMCAT_HTTP_PORT/crafter-social``
 
 See the following for examples on where the above URL environment variables are used:
 

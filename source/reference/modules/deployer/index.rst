@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.1.6
 :orphan:
 
 .. index:: Modules; Crafter Deployer
@@ -22,25 +22,26 @@ Crafter Deployer is the deployment agent for CrafterCMS.
 
 .. TODO: We need a bigger/better description of this.
 
+Crafter Deployer performs indexing and runs scheduled deployments to perform tasks like pushing/pulling content
+created/edited in Crafter Studio to an external service, executing actions every time a deployment succeeds or fails,
+sending out deployment email notifications, etc.
 
-.. _crafter-deployer-administration:
-
---------------
-Administration
---------------
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-How to Start/Stop the Deployer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're using CrafterCMS installed on a server, starting and stopping the Deployer is very easy. From the command line, navigate to the
-{env-directory}, authoring or delivery environment folder, and then inside the ``bin`` folder, run ``./crafter.sh start_deployer`` to start
-the Deployer or ``./crafter.sh stop_deployer`` to stop the Deployer.
-
-^^^^^^^^^^^^^
+-------------
 Configuration
-^^^^^^^^^^^^^
-""""""""""""""""""""
-Global Configuration
-""""""""""""""""""""
+-------------
+^^^^^^^^^^^^^^^^^^^
+Configuration Files
+^^^^^^^^^^^^^^^^^^^
+Crafter Deployer can be configured at the global level and individual target level.
+
+#. Global configuration files are in ``$CRAFTER_HOME/bin/crafter-deployer/config/``, and will be applied to
+   all targets loaded.
+
+#. Individual target configuration files are in ``$CRAFTER_HOME/data/deployer/targets/{siteName}-{environment}.yaml``
+
+""""""""""""""""""""""""""
+Global Configuration Files
+""""""""""""""""""""""""""
 Crafter Deployer has two main property configuration files found in ``CRAFTER_HOME/bin/crafter-deployer/config``:
 
 * **application.yaml:** contains the global application properties, like the server port and the locations of other configuration files.
@@ -51,7 +52,7 @@ The ``application.yaml`` file is loaded automatically by Spring Boot, so its pro
 defined by Spring Boot:
 
 #. ``application.yaml`` in a ``config`` directory under the current directory.
-#. ``application.yaml`` in the the current directory.
+#. ``application.yaml`` in the current directory.
 #. ``application.yaml`` in a ``config`` directory in the classpath.
 #. ``application.yaml`` in the classpath root.
 
@@ -102,10 +103,9 @@ Here's a sample ``application.yaml`` file (click on the triangle on the left to 
 
 |
 
-The ``base-target.yaml`` file is handled a little bit different. This file is loaded by Crafter Deployer every time a new target is
-being added, and is merged with the specific properties of the target, with the target's properties taking precedence. By default, the override
-location for this configuration file is ``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml``, but it can be changed through the ``application.yaml`` property
-``deployer.main.targets.config.baseYaml.overrideLocation``.
+The ``base-target.yaml`` file is handled a little bit differently. This file is loaded by Crafter Deployer every time a new target is added and is merged with the specific properties of the target, 
+with the target's properties taking precedence. By default, the override location for this configuration file is ``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml``, 
+but it can be changed through the ``application.yaml`` property ``deployer.main.targets.config.baseYaml.overrideLocation``.
 
 Here's a sample ``base-target.yaml`` file (click on the triangle on the left to expand/collapse):
 
@@ -177,17 +177,17 @@ Here's a sample ``base-target.yaml`` file (click on the triangle on the left to 
 
 where:
 
-  - ``engineURL`` and ``engineManagementToken`` is used for calling Engine APIs, and the environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file
-  - ``studioURL`` and ``studioManagementToken`` is required for calling Studio APIs, and the environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file
+  - ``engineURL`` and ``engineManagementToken``are required for calling Engine APIs, and the environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file
+  - ``studioURL`` and ``studioManagementToken``are required for calling Studio APIs, and the environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file
 
-""""""""""""""""""""
-Target Configuration
-""""""""""""""""""""
-Each deployment target has it's own YAML configuration file, where the properties of the target and it's entire deployment pipeline is specified.
-Without this file the Deployer doesn't know of the existence of the target. By default these configuration files reside under
+""""""""""""""""""""""""""
+Target Configuration Files
+""""""""""""""""""""""""""
+Each deployment target has its own YAML configuration file, where the properties of the target and its entire deployment pipeline are specified.
+Without this file, the Deployer doesn't know of the target's existence. By default, these configuration files reside under
 ``./config/targets`` (in the case of the CrafterCMS installed on a server, they're under ``CRAFTER_HOME/data/deployer/targets``).
 
-Target configurations vary a lot between authoring and delivery, since an authoring target works on a local repository while a delivery target
+Target configurations vary a lot between authoring and delivery since an authoring target works on a local repository while a delivery target
 pulls the files from a remote repository. But target configurations between the same environment don't change a lot. Having said that, the
 following two examples can be taken as a base for most authoring/delivery target configuration files:
 
@@ -269,12 +269,11 @@ the YAML file name is ``editorial-preview.yaml``, the corresponding Spring conte
 The Deployer out of the box provides the following processor beans:
 
 * **gitPullProcessor:** Clones a remote repository into a local path. If the repository has been cloned already, it performs
-  a Git pull. Useful for delivery targets which need to reach out to the authoring server to retrieve the changes on
-  deployment. Must be the first processor in the list, since the rest of the processors all work on the local repository.
+  a Git pull. This is useful for delivery targets which need to reach out to the authoring server to retrieve the changes on
+  deployment. This must be the first processor in the list since the rest of the processors work on the local repository.
 
 * **gitDiffProcessor:** Calculates the diff between the latest commit in the local repository and the last commit processed,
-  which is usually stored under ``./processed-commits`` (in the folder ``CRAFTER_HOME/data/deployer/processed-commits``). This diff is then used to build the change set of the deployment, so
-  this processor should be the second one in the list.
+  which is usually stored under ``./processed-commits`` (in the folder ``CRAFTER_HOME/data/deployer/processed-commits``). This diff is then used to build the change set of the deployment, so this processor should be the second on the list.
 
 * **searchIndexingProcessor:** grabs the files from the change set and sends them to Crafter Search for indexing. It
   also does some XML processing before submitting the files like flattening (recursive inclusion of components), merging
@@ -282,10 +281,347 @@ The Deployer out of the box provides the following processor beans:
 
 * **httpMethodCallProcessor:** executes an HTTP method call to a specified URL.
 
-* **fileOutputProcessor:** generates the output of the deployment and saves it in a CSV file.
+* **fileOutputProcessor:** generates the deployment output and saves it to a CSV file.
 
 * **mailNotificationProcessor:** sends an email notification when there's a successful deployment with file changes or when
   a deployment failed.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Deployer Configuration Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In this section, we will highlight some of the more commonly used properties in the configuration of Crafter Deployer.
+
+.. list-table:: Common Global Application Configuration Properties
+    :header-rows: 1
+
+    * - Property
+      - Purpose
+    * - :ref:`deployer-thread-pool-size`
+      - Allows you to configure the deployment pool |br|
+
+The properties listed above are configured in ``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml``.
+
+
+.. list-table:: Common Target Configuration Properties
+    :header-rows: 1
+
+    * - Property
+      - Purpose
+    * - :ref:`deployer-single-search-cluster`
+      - Allows you to configure a target with a single search cluster
+    * - :ref:`deployer-multiple-search-cluster`
+      - Allows you to configure a target with multiple search clusters
+    * - :ref:`deployer-indexing-mime-types`
+      - Allows you to configure MIME types used for document indexing
+    * - :ref:`deployer-indexing-remote-documents-path-pattern`
+      - Allows you to configure remote documents path patterns used for document indexing
+    * - :ref:`deployer-indexing-metadata-path-pattern`
+      - Allows you to configure metadata path patterns used for document indexing
+
+The target properties listed above may be configured in the following locations:
+
+- Global configuration file ``$CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml``
+- Individual target configuration file ``$CRAFTER_HOME/data/deployer/targets/{siteName}-{environment}.yaml``
+
+.. _deployer-single-search-cluster:
+
+"""""""""""""""""""""
+Single Search Cluster
+"""""""""""""""""""""
+The following allows you to configure a target with a single search cluster.
+This is the most common configuration used, all operations will be performed on a single search cluster:
+
+.. code-block:: yaml
+  :linenos:
+  :caption: Target configuration for a single search cluster
+
+    target:
+      search:
+        openSearch:
+          # Single cluster
+          urls:
+            - ${env:SEARCH_URL}
+          username: ${env:SEARCH_USERNAME}
+          password: ${env:SEARCH_PASSWORD}
+          timeout:
+            # The connection timeout in milliseconds, if set to -1 the default will be used
+            connect: -1
+            # The socket timeout in milliseconds, if set to -1 the default will be used
+            socket: -1
+          # The number of threads to use, if set to -1 the default will be used
+          threads: -1
+          # Indicates if keep alive should be enabled for sockets used by the search client, defaults to false
+          keepAlive: false
+
+.. _deployer-multiple-search-cluster:
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+Multiple Search Engines or Search Engine Clusters
+"""""""""""""""""""""""""""""""""""""""""""""""""
+There may be cases where an enterprise needs to run multiple search engines or search engine clusters that carry the same data for extra redundancy beyond regular clustering. The following allows you to configure a target with multiple search clusters.
+In the configuration below, all read operations will be performed against one search cluster but write operations will
+be performed against all search clusters:
+
+.. code-block:: yaml
+  :linenos:
+  :caption: Target configuration for multiple search clusters
+  :emphasize-lines: 8,14
+
+    target:
+      search:
+        openSearch:
+          # Global auth, used for all clusters
+          username: search
+          password: passw0rd
+          # Cluster for read operations
+          readCluster:
+            urls:
+              - 'http://read-cluster-node-1:9200'
+              - 'http://read-cluster-node-2:9200'
+              # This cluster will use the global auth
+          # Clusters for write operations
+          writeClusters:
+            - urls:
+              - 'http://write-cluster-1-node-1:9200'
+              - 'http://write-cluster-1-node-2:9200'
+              # This cluster will use the global auth
+            - urls:
+              - 'http://write-cluster-2-node-1:9200'
+              - 'http://write-cluster-2-node-2:9200'
+              # Override the global auth for this cluster
+              username: search2
+              password: passw0rd2
+
+.. _deployer-indexing-mime-types:
+
+""""""""""
+MIME types
+""""""""""
+The ``supportedMimeTypes`` configured in the ``base-target.yaml`` file determines what MIME types are used for indexing.
+The following is the default list of MIME types with full-text-search indexing enabled.
+
+.. code-block:: yaml
+    :caption: *Default supported MIME types in base-target.yaml*
+    :linenos:
+    :emphasize-lines: 7-8
+
+    target:
+    ...
+      search:
+        openSearch:
+        ...
+        binary:
+          # The list of binary file mime types that should be indexed
+          supportedMimeTypes:
+            - application/pdf
+            - application/msword
+            - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+            - application/vnd.ms-excel
+            - application/vnd.ms-powerpoint
+            - application/vnd.openxmlformats-officedocument.presentationml.presentation
+
+To add other MIME types to the list of MIME types with full-text-search indexing enabled, simply edit the override file
+``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml`` and add to the list.
+
+Say we want to add bitmaps to the supported MIME types, we'll add the MIME type ``image/bmp`` to the list above under
+``target.search.binary.supportedMimeTypes``:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
+    :linenos:
+    :emphasize-lines: 7-8
+
+    target:
+    ...
+      search:
+        openSearch:
+        ...
+        binary:
+          # The list of binary file mime types that should be indexed
+          supportedMimeTypes:
+            - image/bmp
+
+For a list of common MIME types, see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types.
+
+.. _deployer-indexing-remote-documents-path-pattern:
+
+"""""""""""""""""""""""""""""
+Remote Documents Path Pattern
+"""""""""""""""""""""""""""""
+CrafterCMS can index documents that reside in remote repositories, but are pointed-to by CrafterCMS content.
+The ``remoteBinaryPathPatterns`` configured in the ``base-target.yaml`` file determines what a remote document
+is, within a content item, via the regex path pattern. The default for this is configured as follows:
+
+.. code-block:: yaml
+    :caption: *Default remoteBinaryPathPatterns in base-target.yaml*
+    :linenos:
+    :emphasize-lines: 8-9
+
+    target:
+    ...
+      search:
+        openSearch:
+        ...
+        binary:
+          ...
+        # The regex path patterns for binary/document files that are stored remotely
+          remoteBinaryPathPatterns: &remoteBinaryPathPatterns
+            # HTTP/HTTPS URLs are only indexed if they contain the protocol (http:// or https://). Protocol relative
+            # URLs (like //mydoc.pdf) are not supported since the protocol is unknown to the back-end indexer.
+            - ^(http:|https:)//.+$
+            - ^/remote-assets/.+$
+
+To add other remote document path patterns to the list, simply edit the override file
+``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml`` and add to the list under
+``target.search.binary.remoteBinaryPathPatterns``.
+
+.. _deployer-indexing-metadata-path-pattern:
+
+"""""""""""""""""""""
+Metadata Path Pattern
+"""""""""""""""""""""
+The ``metadataPathPatterns`` configured in the ``base-target.yaml`` file determines if a document should be indexed with
+the metadata of the object that points to it (a so-called "jacket"). The deployer will re-index the jacket and the
+document together whenever the jacket is updated. See :ref:`jacket` for more information.
+
+.. code-block:: yaml
+    :caption: *Default metadataPathPatterns in base-target.yaml*
+    :linenos:
+    :emphasize-lines: 8-9
+
+    target:
+    ...
+      search:
+        openSearch:
+        ...
+        binary:
+          ...
+          # The regex path patterns for the metadata ("jacket") files of binary/document files
+          metadataPathPatterns:
+            - ^/?site/documents/.+\.xml$
+
+To add other jacket patterns to the list, simply edit the override file
+``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml`` and add to the list under
+``target.search.binary.metadataPathPatterns``.
+
+.. _deployer-thread-pool-size:
+
+""""""""""""""""
+Thread Pool Size
+""""""""""""""""
+As the number of sites grows you may need more workers (threads) in the Deployer to service them. If you do not add more
+workers then you will see errors in scheduled tasks. Eventually, the system will get through the workload with the workers it
+has available, and the error will stop, but the presence of these errors on a regular basis indicates that you need
+more workers in the pool.
+
+There are two thread pools available. The deployment pool, which is used to run all deployments and the task scheduler
+pool, which is used for starting deployments on a schedule of every 10 secs. For deployments of sites with a lot content
+(big sites), we recommend increasing the deployment pool. For deployments with a lot of sites, we recommend increasing
+the task scheduler pool.
+
+To increase the deployment pool, set the following items in ``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml``
+as shown below:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml - Deployment Pool*
+    :linenos:
+
+    deployer:
+      main:
+        deployments:
+          pool:
+            # Thread pool core size
+            size: 25
+            # Thread pool max size
+            max: 100
+            # Thread pool queue size
+            queue: 100
+
+|
+
+To increase the thread pool size of the task scheduler, set the ``poolSize`` property in
+``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml`` as shown below:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml - Task Scheduler Pool*
+    :linenos:
+
+    deployer:
+      main:
+        taskScheduler:
+          # Thread pool size of the task scheduler
+          poolSize: 20
+
+Here's a sample *application.yaml* file with the deployment pool and task thread pool configured:
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample application.yaml file showing Deployment and Task Scheduler Pools</a></summary>
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
+    :emphasize-lines: 3-5, 12-19
+    :linenos:
+
+    deployer:
+      main:
+        taskScheduler:
+          # Thread pool size of the task scheduler
+          poolSize: 20
+        config:
+          environment:
+            active: ${CRAFTER_ENVIRONMENT}
+        targets:
+          config:
+            folderPath: ${targets.dir}
+        deployments:
+          pool:
+            # Thread pool core size
+            size: 25
+            # Thread pool max size
+            max: 100
+            # Thread pool queue size
+            queue: 100
+          folderPath: ${deployments.dir}
+          output:
+            folderPath: ${logs.dir}
+          processedCommits:
+            folderPath: ${processedCommits.dir}
+        logging:
+          folderPath: ${logs.dir}
+        management:
+          # Deployer management authorization token
+          authorizationToken: ${DEPLOYER_MANAGEMENT_TOKEN}
+        security:
+          encryption:
+            # The key used for encryption of configuration properties
+            key: ${CRAFTER_ENCRYPTION_KEY}
+            # The salt used for encryption of configuration properties
+            salt: ${CRAFTER_ENCRYPTION_SALT}
+          ssh:
+            # The path of the folder used for the SSH configuration
+            config: ${CRAFTER_SSH_CONFIG}
+
+.. raw:: html
+
+   </details>
+
+|
+
+|hr|
+
+.. _crafter-deployer-administration:
+
+--------------
+Administration
+--------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How to Start/Stop the Deployer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If you're using CrafterCMS installed on a server, starting and stopping the Deployer is very easy. From the command line, navigate to the
+``{env-directory}``, authoring or delivery environment folder, and then inside the ``bin`` folder, run ``./crafter.sh start_deployer`` to start
+the Deployer or ``./crafter.sh stop_deployer`` to stop the Deployer.
 
 ^^^^^^^^^^^^^^
 Manage Targets
@@ -297,7 +633,7 @@ There are two different ways in which a target configuration file can be created
 
 * By calling the API endpoint `createTarget <../../../_static/api/deployer.html#tag/target/operation/createTarget>`_, which creates a new target based on a template. The Deployer comes out
   of the box with two templates: one for local repositories (useful for authoring environments) and one for remote repositories (useful for
-  delivery environments). You can also specify your own templates under ``./config/templates/targets``, and use the same API endpoint to create
+  delivery environments). You can also specify your templates under ``./config/templates/targets``, and use the same API endpoint to create
   targets based on those templates.
 * By placing the YAML target configuration file under ``./config/targets`` (or ``CRAFTER_HOME/data/deployer/targets``, like indicated
   above). The Deployer will automatically load the file on a schedule, and whenever there's a change it will re-load it.
@@ -320,24 +656,264 @@ There are two options for deleting a target:
 
 * Delete the target configuration file in the filesystem.
 
+.. _crafter-deployer-templates-guide:
+
+^^^^^^^^^^^^^^^^
+Target Templates
+^^^^^^^^^^^^^^^^
+When you are creating a target in Crafter Deployer, you can use one of the included templates that can be easily
+customized with additional parameters during the creation.
+
+""""""""""""""""""
+Built-in Templates
+""""""""""""""""""
+All target templates support the following parameters:
+
++-------------+-----------+------------------------------------+
+|Name         |Required   |Description                         |
++=============+===========+====================================+
+|``env``      ||checkmark||The target’s environment (e.g. dev) |
++-------------+-----------+------------------------------------+
+|``site_name``||checkmark||The target’s site name (e.g. mysite)|
++-------------+-----------+------------------------------------+
+|``repo_url`` ||checkmark||The target's repository URL         |
++-------------+-----------+------------------------------------+
+
+~~~~~~~~~~~~~~~~
+Authoring Target
+~~~~~~~~~~~~~~~~
+This is one of the templates used by Crafter Studio when a new project/site is created, this template will set up a target for
+Studio's search features to index all content items.
+
+This target will:
+
+- Identify the changed files according to the local Git repository history
+- Index all site content using the search engine
+
+**Parameters**
+
+This target has no additional parameters.
+
+.. note:: When this target is used, the value of ``repo_url`` must be a local filesystem path
+
+~~~~~~~~~~~~
+Local Target
+~~~~~~~~~~~~
+This is the other template used by Crafter Studio when a new project is created, this template will create a target for
+previewing the project.
+
+This target will:
+
+- Identify the changed files according to the local Git repository history
+- Index all project content in the search index
+- Rebuild Crafter Engine's site context when there are changes in the configuration files or Groovy scripts
+- Clear Crafter Engine's cache
+- Rebuild Crafter Engine's project GraphQL schema when there are changes in the content-type definitions
+- Send email notifications if enabled
+
+**Parameters**
+
++--------------------------+----------+------------------------------------------------------------------------+
+|Name                      |Required  |Description                                                             |
++==========================+==========+========================================================================+
+|``disable_deploy_cron``   |          |Disables the cron job that runs deployments every certain amount of time|
++--------------------------+----------+------------------------------------------------------------------------+
+|``notification_addresses``|          |The email addresses that should receive deployment notifications        |
++--------------------------+----------+------------------------------------------------------------------------+
+
+.. note:: When this target is used, the value of ``repo_url`` must be a local filesystem path
+
+~~~~~~~~~~~~~
+Remote Target
+~~~~~~~~~~~~~
+This is the default template used for Crafter Engine in delivery environments, it is very similar to the Local Target
+but it adds support for remote Git repositories.
+
+This target will:
+
+- Clone the remote repository if needed
+- Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
+- Identify the changed files according to the Git repository history
+- Index all project content in the appropriate search engine
+- Rebuild Crafter Engine's site context when there are changes in the configuration files or Groovy scripts
+- Clear Crafter Engine's cache
+- Rebuild Crafter Engine's project GraphQL schema when there are changes in the content-type definitions
+- Send email notifications if enabled
+
+**Parameters**
+
++------------------------------+----------+------------------------------------------------------------------------+
+|Name                          |Required  |Description                                                             |
++==============================+==========+========================================================================+
+|``disable_deploy_cron``       |          |Disables the cron job that runs deployments every certain amount of time|
++------------------------------+----------+------------------------------------------------------------------------+
+|``repo_branch``               |          |The branch name of the remote Git repo to pull from                     |
++------------------------------+----------+------------------------------------------------------------------------+
+|``repo_username``             |          |Username to access remote repository                                    |
++------------------------------+----------+------------------------------------------------------------------------+
+|``repo_password``             |          |Password to access remote repository                                    |
++------------------------------+----------+------------------------------------------------------------------------+
+|``ssh_private_key_path``      |          |The path for the private key to access the remote repository            |
++------------------------------+----------+------------------------------------------------------------------------+
+|``ssh_private_key_passphrase``|          |The passphrase for the private key to access the remote repository      |
+|                              |          |(only if the key is passphrase-protected)                               |
++------------------------------+----------+------------------------------------------------------------------------+
+|``notification_addresses``    |          |The email addresses that should receive deployment notifications        |
++------------------------------+----------+------------------------------------------------------------------------+
+
+.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP/S or SSH)
+
+~~~~~~~~~~~~~
+AWS S3 Target
+~~~~~~~~~~~~~
+This template is used for Crafter Engine in serverless delivery environments, it is very similar to the Remote Target
+but it adds support for syncing files to an AWS S3 bucket and handles AWS Cloudfront invalidations.
+
+This target will:
+
+- Clone the remote repository if needed
+- Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
+- Identify the changed files according to the Git repository history
+- Index all project content in the search index
+- Sync all new, updated, and deleted files to an AWS S3 bucket
+- Execute an invalidation for all updated files in one or more AWS Cloudfront distributions
+- Submit deployments events for all Crafter Engine instances:
+
+  - Rebuild the site context when there are changes in the configuration files or Groovy scripts
+  - Clear Crafter Engine's cache
+  - Rebuild the site GraphQL schema when there are changes in the content-type definitions
+
+- Send email notifications if enabled
+
+**Parameters**
+
++------------------------------+-----------+------------------------------------------------------------------------+
+|Name                          |Required   |Description                                                             |
++==============================+===========+========================================================================+
+|``aws.region``                |           |The AWS Region to use                                                   |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``aws.access_key``            |           |The AWS Access Key to use                                               |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``aws.secret_key``            |           |The AWS Secret Key to use                                               |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``aws.distribution.ids``      |           |An array of AWS Cloudfront distribution ids to execute invalidations    |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``aws.s3.url``                ||checkmark||The full AWS S3 URI of the folder to sync files                         |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``disable_deploy_cron``       |           |Disables the cron job that runs deployments every certain amount of time|
++------------------------------+-----------+------------------------------------------------------------------------+
+|``local_repo_path``           |           |The local path where to put the remote Git repo clone                   |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``repo_branch``               |           |The branch name of the remote Git repo to pull from                     |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``repo_username``             |           |Username to access remote repository                                    |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``repo_password``             |           |Password to access remote repository                                    |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``ssh_private_key_path``      |           |The path for the private key to access the remote repository            |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``ssh_private_key_passphrase``|           |The passphrase for the private key to access the remote repository      |
+|                              |           |(only if the key is passphrase-protected)                               |
++------------------------------+-----------+------------------------------------------------------------------------+
+|``notification_addresses``    |           |The email addresses that should receive deployment notifications        |
++------------------------------+-----------+------------------------------------------------------------------------+
+
+.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP/S or SSH)
+
+.. note:: For more details about setting up a serverless delivery see :ref:`setup-serverless-delivery`
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+AWS CloudFormation Target
+~~~~~~~~~~~~~~~~~~~~~~~~~
+This template is used to provide a serverless delivery environment without the need to manually create all required
+resources in AWS. It works similarly to the AWS S3 Target but uses an AWS CloudFormation template to create the AWS
+resources on target creation: the S3 bucket where the site content will be stored and a CloudFront distribution that
+will front an Engine load balancer and deliver the static assets directly from the S3 bucket. These resources will be
+deleted when the target is deleted.
+
+This target will:
+
+- Clone the remote repository if needed
+- Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
+- Identify the changed files according to the Git repository history
+- Index all project content in the search index
+- Sync all new, updated, and deleted files to an AWS S3 bucket
+- Execute an invalidation for all updated files in the AWS CloudFront distribution
+- Submit deployments events for all Crafter Engine instances:
+
+  - Rebuild the site context when there are changes in the configuration files or Groovy scripts
+  - Clear Crafter Engine's cache
+  - Rebuild the site GraphQL schema when there are changes in the content-type definitions
+
+- Send email notifications if enabled
+
+**Parameters**
+
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|Name                                                 |Required   |Description                                             |
++=====================================================+===========+========================================================+
+|``aws.region``                                       |           |The AWS Region to use                                   |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.default_access_key``                           |           |The AWS Access Key to use for S3 and CloudFront         |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.default_secret_key``                           |           |The AWS Secret Key to use for S3 and CloudFront         |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.cloudformation.namespace``                     ||checkmark||Prefix to use for CloudFormation resource names         |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.cloudformation.deliveryLBDomainName``          ||checkmark||The domain name of the Engine delivery LB               |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.cloudformation.cloudfrontCertificateArn``      |           |The ARN of the CloudFront SSL certificate               |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.cloudformation.alternateCloudFrontDomainNames``|           |The alternate domain names for the CloudFront to use    |
+|                                                     |           |(must match the valid certificate domain names)         |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.cloudformation.access_key``                    |           |The AWS Access Key to use for CloudFormation            |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``aws.cloudformation.secret_key``                    |           |The AWS Secret Key to use for CloudFormation            |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``disable_deploy_cron``                              |           |Disables the cron job that runs deployments every       |
+|                                                     |           |certain amount of time                                  |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``local_repo_path``                                  |           |The local path where to put the remote Git repo clone   |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``repo_branch``                                      |           |The branch name of the remote Git repo to pull from     |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``repo_username``                                    |           |Username to access remote repository                    |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``repo_password``                                    |           |Password to access remote repository                    |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``ssh_private_key_path``                             |           |The path for the private key to access remote           |
+|                                                     |           |repository                                              |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``ssh_private_key_passphrase``                       |           |The passphrase for the private key to access the remote |
+|                                                     |           |repository (only if the key is passphrase-protected)    |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+|``notification_addresses``                           |           |The email addresses that should receive deployment      |
+|                                                     |           |notifications                                           |
++-----------------------------------------------------+-----------+--------------------------------------------------------+
+
+.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP/S or SSH)
+
 ^^^^^^^^^^^^^^^
 Run Deployments
 ^^^^^^^^^^^^^^^
 Crafter Deployer has an option of running scheduled deployments for a target (``deployment.scheduling.enabled``), which is enabled by default, but if you
 want to manually trigger a deployment, you just need to call the API endpoint `deployTarget <../../../_static/api/deployer.html#tag/target/operation/deployTarget>`_ (or
-`deployAllTargets <../../../_static/api/deployer.html#tag/target/operation/deployAllTargets>`_). This will start the deployment if the request is correct. To watch the progress of a scheduled or a manually
+`deployAllTargets <../../../_static/api/deployer.html#tag/target/operation/deployAllTargets>`_). This will start the deployment if the request is correct. To watch the progress of a scheduled or manually
 triggered deployment, check the Deployer log. When the deployment has finished, and the target has a ``fileOutputProcessor`` in the deployment pipeline, a
 CSV file with the final result of that particular deployment will be written under ``./logs`` (or ``CRAFTER_HOME/logs/deployer``).
+
+.. _deployer-processed-commits:
 
 ^^^^^^^^^^^^^^^^^
 Processed Commits
 ^^^^^^^^^^^^^^^^^
-Crafter Deployer keeps track of the most recent commit id that was processed in the last deployment
-for each target, during a deployment it will use this commit id to get the list of files that have been
+Crafter Deployer keeps track of the most recent commit ID that was processed in the last deployment
+for each target, during a deployment, it will use this commit ID to get the list of files that have been
 changed in the repository.
-By default the processed commits are stored in a folder (``CRAFTER_HOME/data/deployer/processed-commits``)
+By default, the processed commits are stored in a folder (``CRAFTER_HOME/data/deployer/processed-commits``)
 as an individual file for each target (for example ``editorial-preview.commit``). Each file contains
-only the commit id that will be used to track the changes during deployments:
+only the commit ID will be used to track the changes during deployments:
 
 .. code-block:: none
   :caption: Example of a processed commit file
@@ -346,9 +922,9 @@ only the commit id that will be used to track the changes during deployments:
   0be0d2e52283c17b834901e9cda6332d06fb05b6
 
 If the repository is changed manually using Git commands instead of updating files using Crafter
-Studio it is possible that a deployment may found a conflict, for example if a specific commit is
-deleted from the repository. In most cases Crafter Deployer should be able to detect those conflicts
-and solve them automatically, however if a deployment does not finish successfully you can follow
+Studio it is possible that a deployment may find a conflict, for example, if a specific commit is
+deleted from the repository. In most cases, Crafter Deployer should be able to detect those conflicts
+and solve them automatically, however, if a deployment does not finish successfully you can follow
 the steps described in :ref:`debugging-deployer-issues`
 
 .. warning::
@@ -360,19 +936,15 @@ the steps described in :ref:`debugging-deployer-issues`
 ^^^^^^
 Jacket
 ^^^^^^
-Indexing rich document content into a single search entry greatly improves searchability in your project.
-Crafter Deployer is able to index the content of a rich document (e.g. PDF, DOC, DOCX, PTT, etc.) along with metadata
-and content found in an associated descriptor item (the items that reference the rich document).
-This descriptor item is called a ``jacket``.
+Jackets are CrafterCMS content items that carry metadata about a binary file. Jackets _wrap_ a binary file and augment it with metadata that flows into the search index as a single document. This makes for a much richer and more effective search experience. Jackets are modeled as a content item like any other content item and can carry arbitrary fields.
+
+Crafter Deployer can index the content of a binary document if it can be transformed to text or has textual metadata. For example, PDF files, Office files, etc. will be indexed and made full-text-searchable. When jacketed, these files will be indexed along with the metadata provided by the jacket.
 
 Jackets are identified by their path and a regex that is configured at the Deployer configuration's target level.
 Administrators must configure where jackets are located via the ``base-target.yaml`` configuration file found in
-``CRAFTER_HOME/bin/crafter-deployer/config/``. For Crafter Cloud users, deployment target configurations must be
-submitted to Crafter Cloud Ops. Jacket files live under ``/site/documents`` by default.
+``CRAFTER_HOME/bin/crafter-deployer/config/``. Jacket files live under ``/site/documents`` by default.
 
-Jackets are basically additional metadata for content. When a binary file (which includes documents like PDFs and
-word files) is indexed, the XML of the jacket, along with the content of the binary file, are indexed under the path of
-the binary file. E.g. when indexing the file ``/static-assets/documents/contracts/2024-contract.pdf``, the Deployer
+An example of a how a jacket is resolved is to have a binary file ``/static-assets/documents/contracts/2024-contract.pdf``, and the Deployer
 resolves its jacket at ``/site/documents/contracts/2024-contract.xml``, extracts the XML content of the jacket,
 and indexes everything under ``/static-assets/documents/contracts/2024-contract.pdf``
 
@@ -470,16 +1042,16 @@ Example
 Let's take a look at an example of setting up jackets for binary content. We'll use a project created using the Website
 Editorial blueprint, and do the following:
 
-#. Create directory for binary content ``static-assets/documents``, and the directory for storing the
+#. Create a directory for binary content ``static-assets/documents``, and the directory for storing the
    jackets ``/site/documents/`` in your project
-#. Configure Sidebar cabinet for the new content type created in a previous step and set up permissions for roles
+#. Configure the Sidebar cabinet for the new content type created in a previous step and set up permissions for roles
    interacting with the documents
 #. Create content model for jackets and configure the project for the new content model
 
 Let's begin setting up a jacket for binary contents.
 
 First, we'll create the directory that will contain the binary content, ``static-assets/documents`` via Studio. On the
-Sidebar, scroll down to ``static-assets``, then click on the three dots next to it and select ``New Folder`` and type in
+Sidebar, scroll down to ``static-assets``, then click on the more menu (the three dots) and select ``New Folder`` and type in
 ``Documents`` for the ``Folder Name``.
 
 Next, we'll create the directory for storing the jackets in the project ``/site/documents/`` using your favorite
@@ -547,8 +1119,7 @@ and add a regex for our ``/site/documents`` folder we created like below:
       </rule>
       ...
 
-
-Next we'll create the content model for your jacket. To create a new content type, open the ``Content Types`` tool by
+Next, we'll create the content model for your jacket. To create a new content type, open the ``Content Types`` tool by
 opening the Sidebar in Studio, then clicking on ``Project Tools`` -> ``Content Types``. Click on the ``Create New Type``
 button, and use ``Document`` for the ``label`` and ``ID``, and select ``Component`` for ``Type``, then finally, click
 on the ``Create`` button.
@@ -558,7 +1129,7 @@ a couple of data sources that will be bound to the control.  We will use the ``/
 created earlier for the ``Repository Path`` of the two data sources we'll be adding, a ``File Upload From Desktop`` data
 source that we'll name ``Upload`` and a ``File Browse`` data source that we'll name ``Existing``. For the metadata in
 the jacket, it is up to you on what you'd like in the content model. For our example, we will add a ``Text Area`` control
-named ``Summary``, a ``Check Box`` control named ``Featured``.
+named ``Summary``, and a ``Check Box`` control named ``Featured``.
 
 .. image:: /_static/images/system-admin/deployer-jacket-content-model.webp
     :width: 80%
@@ -620,8 +1191,8 @@ Deployer Processors
 Crafter Deployer includes an extensive list of deployment processors that can be easily added to any target
 to meet specific requirements. Some examples of the use cases that can be addressed with deployment processors are:
 
-- Pushing content created/edited in Crafter Studio to an external service
-- Pulling content created/edited from an external service
+- Pushing content created/edited in Crafter Studio to an external git repository
+- Pulling content created/edited from an external git repository
 - Execute actions every time a deployment succeeds or fails
 
 .. note::
@@ -635,8 +1206,8 @@ to meet specific requirements. Some examples of the use cases that can be addres
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Main Deployment Processors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-The main deployment processors can do any task related to detect changed files or process changed files that were
-detected by other processors. To process changed files a processor may interact with any external service as needed.
+The main deployment processors can do any task related to detecting a change-set (changed files) or processing a change-set (changed files) that were
+detected by other processors. To process a change-set, a processor may interact with any external service as needed.
 
 All deployment processors support the following properties:
 
@@ -707,7 +1278,7 @@ All deployment processors support the following properties:
 """"""""""""""""""
 Git Pull Processor
 """"""""""""""""""
-Processor that clones/pulls a remote Git repository into a local path in the filesystem.
+Processor that clones/pulls a remote Git repository into a local path on the filesystem.
 
 .. note:: This needs to be the first processor in the pipeline
 
@@ -768,9 +1339,9 @@ Processor that clones/pulls a remote Git repository into a local path in the fil
 """"""""""""""""""
 Git Diff Processor
 """"""""""""""""""
-Processor that, based on a previous processed commit that's stored, does a diff with the current commit of the
-deployment, to find out the change set. If there is no previous processed commit, then the entire repository becomes
-the change set.
+Processor that, based on a previously processed commit that's stored, does a diff with the current commit of the
+deployment, to find out the change-set. If there is no previously processed commit, then the entire repository becomes
+the change-set.
 
 .. note::
   This processor needs to be placed after the ``gitPullProcessor`` and before any other processor like the
@@ -864,7 +1435,7 @@ Processor that pushes a local repo to a remote Git repository.
 """"""""""""""""""""""""""""""
 Git Update Commit Id Processor
 """"""""""""""""""""""""""""""
-Processor that updates the processed commits value with the current commit
+Processor that updates the processed commits value with the current commit.
 
 **Example**
 
@@ -919,7 +1490,7 @@ originalChangeSet   The original change set returned by the previous processors 
 |
 
 Let's take a look at an example script that you can use for the Groovy script processor.
-Below is a script that only includes a file from the change set if a parameter is present in the deployment:
+Below is a script that only includes a file from the change-set if a parameter is present in the deployment:
 
 .. code-block:: groovy
    :caption: *Example Groovy script to be run by a script processor*
@@ -939,12 +1510,11 @@ Below is a script that only includes a file from the change set if a parameter i
    // return the new change set
    return originalChangeSet
 
-
 """""""""""""""""""""""""""""""""""""
 File Based Deployment Event Processor
 """""""""""""""""""""""""""""""""""""
-Processor that triggers a deployment event that consumers of the repository (Crafter Engines) can subscribe to by
-reading a file from the repository.
+Processor that triggers a deployment event that consumers of the repository (Crafter Engine instances) can subscribe to by
+reading a specific file from the repository.
 
 **Properties**
 
@@ -970,7 +1540,7 @@ reading a file from the repository.
 """"""""""""""""""""""
 Command Line Processor
 """"""""""""""""""""""
-Processor that runs a command line process.
+Processor that runs a command line process (e.g. a shell script).
 
 **Properties**
 
@@ -1006,7 +1576,7 @@ Processor that runs a command line process.
 """""""""""""""""""""""""
 Search Indexing Processor
 """""""""""""""""""""""""
-Processor that indexes the files on the change set, using one or several BatchIndexer. After the files have been
+Processor that indexes the files on the change-set, using one or several BatchIndexer. After the files have been
 indexed it submits a commit.
 
 **Properties**
@@ -1059,7 +1629,7 @@ Processor that does a HTTP method call.
 """""""""""""""
 Delay Processor
 """""""""""""""
-Processor that stops the pipeline execution for a given number of seconds.
+Processor that pauses the pipeline execution for a given number of seconds.
 
 **Properties**
 
@@ -1085,9 +1655,9 @@ Find And Replace Processor
 """"""""""""""""""""""""""
 Processor that replaces a pattern on the content of the created or updated files.
 
-.. note::
+.. warning::
   The files changed by this processor will not be committed to the git repository and will be discarded when the next
-  deployment starts
+  deployment starts.
 
 **Properties**
 
@@ -1139,7 +1709,6 @@ S3 Sync Processor
 ~~~~~~~~~~~~~~~~~
 Processor that syncs files to an AWS S3 Bucket.
 
-
 **Example**
 
 .. code-block:: yaml
@@ -1180,8 +1749,6 @@ Processor that uploads the deployment events to an AWS S3 Bucket
       secretKey: ${aws.secretKey}
       url: {{aws.s3.url}}
 
-
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Cloudfront Invalidation Processor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1209,7 +1776,7 @@ Processor that invalidates the changed files in the given AWS Cloudfront distrib
 Post Deployment Processors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 The post deployment processors assume that all changed files have been handled and the result of the deployment is
-already known (either successful or failed) and take actions based on those results, because of that they need to be
+already known (either successful or failed) and take actions based on those results, because of that, these processors need to be
 placed after all main deployment processors to work properly.
 
 """""""""""""""""""""
@@ -1455,328 +2022,6 @@ Once the bean has been defined it can be added to the target's pipeline in the y
 
 Any change in the classpath will require a restart of Crafter Deployer, changes in configuration files will be
 applied when the target is reloaded.
-
-|hr|
-
-.. _crafter-deployer-templates-guide:
-
-----------------
-Target Templates
-----------------
-When you are creating a target in Crafter Deployer, you can use one of the included templates that can be easily
-customized with additional parameters during the creation.
-
-^^^^^^^^^^^^^^^^^^
-Built-in Templates
-^^^^^^^^^^^^^^^^^^
-All target templates support the following parameters:
-
-+-------------+-----------+------------------------------------+
-|Name         |Required   |Description                         |
-+=============+===========+====================================+
-|``env``      ||checkmark||The target’s environment (e.g. dev) |
-+-------------+-----------+------------------------------------+
-|``site_name``||checkmark||The target’s site name (e.g. mysite)|
-+-------------+-----------+------------------------------------+
-|``repo_url`` ||checkmark||The target's repository URL         |
-+-------------+-----------+------------------------------------+
-
-""""""""""""""""
-Authoring Target
-""""""""""""""""
-This is one of the templates used by Crafter Studio when a new project/site is created, this template will setup a target for
-Studio's search features including: indexing all xml files, binary files and indexing additional Git metadata from the
-site repository.
-
-This target will:
-
-- Identify the changed files according to the local Git repository history
-- Index all site content in search
-
-**Parameters**
-
-This target has no additional parameters.
-
-.. note:: When this target is used, the value of ``repo_url`` must be a local filesystem path
-
-""""""""""""
-Local Target
-""""""""""""
-This is the other template used by Crafter Studio when a new project is created, this template will setup a target for
-previewing the project.
-
-This target will:
-
-- Identify the changed files according to the local Git repository history
-- Index all project content in search
-- Rebuild Crafter Engine's site context when there are changes in configuration files or Groovy scripts
-- Clear Crafter Engine's cache
-- Rebuild Crafter Engine's project GraphQL schema when there are changes in content-type definitions
-- Send email notifications if enabled
-
-**Parameters**
-
-+--------------------------+----------+------------------------------------------------------------------------+
-|Name                      |Required  |Description                                                             |
-+==========================+==========+========================================================================+
-|``disable_deploy_cron``   |          |Disables the cron job that runs deployments every certain amount of time|
-+--------------------------+----------+------------------------------------------------------------------------+
-|``notification_addresses``|          |The email addresses that should receive deployment notifications        |
-+--------------------------+----------+------------------------------------------------------------------------+
-
-.. note:: When this target is used, the value of ``repo_url`` must be a local filesystem path
-
-"""""""""""""
-Remote Target
-"""""""""""""
-This is the default template used for Crafter Engine in delivery environments, it is very similar to the Local Target
-but it adds support for remote Git repositories.
-
-This target will:
-
-- Clone the remote repository if needed
-- Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
-- Identify the changed files according to the Git repository history
-- Index all project content in the appropriate search engine
-- Rebuild Crafter Engine's site context when there are changes in configuration files or Groovy scripts
-- Clear Crafter Engine's cache
-- Rebuild Crafter Engine's project GraphQL schema when there are changes in content-type definitions
-- Send email notifications if enabled
-
-**Parameters**
-
-+------------------------------+----------+------------------------------------------------------------------------+
-|Name                          |Required  |Description                                                             |
-+==============================+==========+========================================================================+
-|``disable_deploy_cron``       |          |Disables the cron job that runs deployments every certain amount of time|
-+------------------------------+----------+------------------------------------------------------------------------+
-|``repo_branch``               |          |The branch name of the remote Git repo to pull from                     |
-+------------------------------+----------+------------------------------------------------------------------------+
-|``repo_username``             |          |Username to access remote repository                                    |
-+------------------------------+----------+------------------------------------------------------------------------+
-|``repo_password``             |          |Password to access remote repository                                    |
-+------------------------------+----------+------------------------------------------------------------------------+
-|``ssh_private_key_path``      |          |The path for the private key to access remote repository                |
-+------------------------------+----------+------------------------------------------------------------------------+
-|``ssh_private_key_passphrase``|          |The passphrase for the private key to access remote repository (only if |
-|                              |          |the key is passphrase-protected)                                        |
-+------------------------------+----------+------------------------------------------------------------------------+
-|``notification_addresses``    |          |The email addresses that should receive deployment notifications        |
-+------------------------------+----------+------------------------------------------------------------------------+
-
-.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
-
-"""""""""""""
-AWS S3 Target
-"""""""""""""
-This template is used for Crafter Engine in serverless delivery environments, it is very similar to the Remote Target
-but it adds support for syncing files to an AWS S3 bucket and also handles AWS Cloudfront invalidations.
-
-This target will:
-
-- Clone the remote repository if needed
-- Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
-- Identify the changed files according to the Git repository history
-- Index all project content in search
-- Sync all new, updated and deleted files to an AWS S3 bucket
-- Execute an invalidation for all updated files in one or more AWS Cloudfront distributions
-- Submit deployments events for all Crafter Engine instances:
-
-  - Rebuild the site context when there are changes in configuration files or Groovy scripts
-  - Clear the project cache
-  - Rebuild the site GraphQL schema when there are changes in content-type definitions
-
-- Send email notifications if enabled
-
-**Parameters**
-
-+------------------------------+-----------+------------------------------------------------------------------------+
-|Name                          |Required   |Description                                                             |
-+==============================+===========+========================================================================+
-|``aws.region``                |           |The AWS Region to use                                                   |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``aws.access_key``            |           |The AWS Access Key to use                                               |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``aws.secret_key``            |           |The AWS Secret Key to use                                               |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``aws.distribution.ids``      |           |An array of AWS Cloudfront distribution ids to execute invalidations    |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``aws.s3.url``                ||checkmark||The full AWS S3 URI of the folder to sync files                         |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``disable_deploy_cron``       |           |Disables the cron job that runs deployments every certain amount of time|
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``local_repo_path``           |           |The local path where to put the remote Git repo clone                   |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``repo_branch``               |           |The branch name of the remote Git repo to pull from                     |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``repo_username``             |           |Username to access remote repository                                    |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``repo_password``             |           |Password to access remote repository                                    |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``ssh_private_key_path``      |           |The path for the private key to access remote repository                |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``ssh_private_key_passphrase``|           |The passphrase for the private key to access remote repository (only if |
-|                              |           |the key is passphrase-protected)                                        |
-+------------------------------+-----------+------------------------------------------------------------------------+
-|``notification_addresses``    |           |The email addresses that should receive deployment notifications        |
-+------------------------------+-----------+------------------------------------------------------------------------+
-
-.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
-
-.. note:: For more details about setting up a serverless delivery see :ref:`setup-serverless-delivery`
-
-"""""""""""""""""""""""""
-AWS CloudFormation Target
-"""""""""""""""""""""""""
-This template is used to provide a serverless delivery environment without the need to manually create all required
-resources in AWS. It works similar to the AWS S3 Target but uses an AWS CloudFormation template to create the AWS
-resources on target creation: the S3 bucket where the site content will be stored and a CloudFront distribution that
-will front an Engine load balancer and deliver the static assets directly from the S3 bucket. These resources will be
-deleted when the target is deleted.
-
-This target will:
-
-- Clone the remote repository if needed
-- Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
-- Identify the changed files according to the Git repository history
-- Index all project content in search
-- Sync all new, updated and deleted files to an AWS S3 bucket
-- Execute an invalidation for all updated files in the AWS CloudFront distribution
-- Submit deployments events for all Crafter Engine instances:
-
-  - Rebuild the site context when there are changes in configuration files or Groovy scripts
-  - Clear the site cache
-  - Rebuild the site GraphQL schema when there are changes in content-type definitions
-
-- Send email notifications if enabled
-
-**Parameters**
-
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|Name                                                 |Required   |Description                                         |
-+=====================================================+===========+====================================================+
-|``aws.region``                                       |           |The AWS Region to use                               |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.default_access_key``                           |           |The AWS Access Key to use for S3 and CloudFront     |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.default_secret_key``                           |           |The AWS Secret Key to use for S3 and CloudFront     |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.namespace``                     ||checkmark||Prefix to use for CloudFormation resource names     |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.deliveryLBDomainName``          ||checkmark||The domain name of the Engine delivery LB           |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.cloudfrontCertificateArn``      |           |The ARN of the CloudFront SSL certificate           |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.alternateCloudFrontDomainNames``|           |The alternate domain names for the CloudFront to use|
-|                                                     |           |(must match the valid certificate domain names)     |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.access_key``                    |           |The AWS Access Key to use for CloudFormation        |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``aws.cloudformation.secret_key``                    |           |The AWS Secret Key to use for CloudFormation        |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``disable_deploy_cron``                              |           |Disables the cron job that runs deployments every   |
-|                                                     |           |certain amount of time                              |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``local_repo_path``                                  |           |The local path where to put the remoe Git repo clone|
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``repo_branch``                                      |           |The branch name of the remote Git repo to pull from |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``repo_username``                                    |           |Username to access remote repository                |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``repo_password``                                    |           |Password to access remote repository                |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``ssh_private_key_path``                             |           |The path for the private key to access remote       |
-|                                                     |           |repository                                          |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``ssh_private_key_passphrase``                       |           |The passphrase for the private key to access remote |
-|                                                     |           |repository (only if the key is passphrase-protected)|
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-|``notification_addresses``                           |           |The email addresses that should receive deployment  |
-|                                                     |           |notifications                                       |
-+-----------------------------------------------------+-----------+----------------------------------------------------+
-
-.. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
-
-|hr|
-
-.. _crafter-deployer-search-configuration-guide:
-
---------------------
-Search Configuration
---------------------
-Crafter Deployer provides two ways to use search:
-
-^^^^^^^^^^^^^^^^^^^^^
-Single Search Cluster
-^^^^^^^^^^^^^^^^^^^^^
-This is the most common configuration used, all operations will be performed on a single search cluster:
-
-.. code-block:: yaml
-  :linenos:
-  :caption: Target configuration for a single search cluster
-
-    target:
-      search:
-        openSearch:
-          # Single cluster
-          urls:
-            - ${env:SEARCH_URL}
-          username: ${env:SEARCH_USERNAME}
-          password: ${env:SEARCH_PASSWORD}
-          timeout:
-            # The connection timeout in milliseconds, if set to -1 the default will be used
-            connect: -1
-            # The socket timeout in milliseconds, if set to -1 the default will be used
-            socket: -1
-          # The number of threads to use, if set to -1 the default will be used
-          threads: -1
-          # Indicates if keep alive should be enabled for sockets used by the search client, defaults to false
-          keepAlive: false
-
-^^^^^^^^^^^^^^^^^^^^^^^^
-Multiple Search Clusters
-^^^^^^^^^^^^^^^^^^^^^^^^
-Using this configuration all read operations will be performed on one search cluster but write operations will
-be performed on multiple search clusters:
-
-.. code-block:: yaml
-  :linenos:
-  :caption: Target configuration for multiple search clusters
-
-    target:
-      search:
-        openSearch:
-          # Global auth, used for all clusters
-          username: search
-          password: passw0rd
-          # Cluster for read operations
-          readCluster:
-            urls:
-              - 'http://read-cluster-node-1:9200'
-              - 'http://read-cluster-node-2:9200'
-              # This cluster will use the global auth
-          # Clusters for write operations
-          writeClusters:
-            - urls:
-              - 'http://write-cluster-1-node-1:9200'
-              - 'http://write-cluster-1-node-2:9200'
-              # This cluster will use the global auth
-            - urls:
-              - 'http://write-cluster-2-node-1:9200'
-              - 'http://write-cluster-2-node-2:9200'
-              # Override the global auth for this cluster
-              username: search2
-              password: passw0rd2
-
-^^^^^^^^^^^^^^^^^^^
-Configuration Files
-^^^^^^^^^^^^^^^^^^^
-The search configuration can be changed in two places:
-
-#. Global configuration file ``$CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml``, this will be applied to
-   all targets loaded.
-
-#. Individual target configuration file ``$CRAFTER_HOME/data/deployer/targets/{siteName}-{environment}.yaml``
 
 |hr|
 
