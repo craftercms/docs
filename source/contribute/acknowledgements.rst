@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.8
+:last-updated: 4.2.0
 
 .. index:: Open Source Acknowledgements
 
@@ -12,31 +12,13 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 
 `cglib:cglib <https://mvnrepository.com/artifact/cglib/cglib>`_
 |br|
-`com.amazonaws:aws-java-sdk-cloudformation <https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cloudformation>`_
-|br|
-`com.amazonaws:aws-java-sdk-cloudfront <https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cloudfront>`_
-|br|
-`com.amazonaws:aws-java-sdk-elastictranscoder <https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-elastictranscoder>`_
-|br|
-`com.amazonaws:aws-java-sdk-mediaconvert <https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-mediaconvert>`_
-|br|
-`com.amazonaws:aws-java-sdk-s3 <https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3>`_
-|br|
-`com.amazonaws:aws-java-sdk-sts <https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sts>`_
-|br|
 `com.box:box-java-sdk <https://mvnrepository.com/artifact/com.box/box-java-sdk>`_
 |br|
 `com.drewnoakes:metadata-extractor <https://mvnrepository.com/artifact/com.drewnoakes/metadata-extractor>`_
 |br|
 `com.fasterxml.jackson.core:jackson-annotations <https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations>`_
 |br|
-`com.fasterxml.jackson.core:jackson-annotations <https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations>`_
-|br|
 `com.fasterxml.jackson.core:jackson-core <https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core>`_
-|br|
-`com.fasterxml.jackson.core:jackson-core <https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core>`_
-|br|
-`com.fasterxml.jackson.core:jackson-databind <https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind>`_
 |br|
 `com.fasterxml.jackson.core:jackson-databind <https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind>`_
 |br|
@@ -74,10 +56,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `com.squareup.okio:okio <https://mvnrepository.com/artifact/com.squareup.okio/okio>`_
 |br|
-`com.sun.activation:javax.activation <https://mvnrepository.com/artifact/com.sun.activation/javax.activation>`_
-|br|
-`com.sun.mail:javax.mail <https://mvnrepository.com/artifact/com.sun.mail/javax.mail>`_
-|br|
 `com.thoughtworks.xstream:xstream <https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream>`_
 |br|
 `com.tinify:tinify <https://mvnrepository.com/artifact/com.tinify/tinify>`_
@@ -90,27 +68,27 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `commons-codec:commons-codec <https://mvnrepository.com/artifact/commons-codec/commons-codec>`_
 |br|
-`commons-fileupload:commons-fileupload <https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload>`_
-|br|
 `commons-io:commons-io <https://mvnrepository.com/artifact/commons-io/commons-io>`_
 |br|
 `io.methvin:directory-watcher <https://mvnrepository.com/artifact/io.methvin/directory-watcher>`_
 |br|
-`javax.measure:unit-api <https://mvnrepository.com/artifact/javax.measure/unit-api>`_
+`jakarta.activation:jakarta.activation-api <https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api>`_
 |br|
-`javax.servlet:javax.servlet-api <https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api>`_
+`jakarta.servlet:jakarta.servlet-api <https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api>`_
+|br|
+`jakarta.validation:jakarta.validation-api <https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api>`_
+|br|
+`javax.measure:unit-api <https://mvnrepository.com/artifact/javax.measure/unit-api>`_
 |br|
 `javax.transaction:jta <https://mvnrepository.com/artifact/javax.transaction/jta>`_
 |br|
-`javax.validation:validation-api <https://mvnrepository.com/artifact/javax.validation/validation-api>`_
+`javax.xml.bind:jaxb-api <https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api>`_
 |br|
 `joda-time:joda-time <https://mvnrepository.com/artifact/joda-time/joda-time>`_
 |br|
 `junit:junit <https://mvnrepository.com/artifact/junit/junit>`_
 |br|
 `net.i2p.crypto:eddsa <https://mvnrepository.com/artifact/net.i2p.crypto/eddsa>`_
-|br|
-`net.sf.json-lib:json-lib <https://mvnrepository.com/artifact/net.sf.json-lib/json-lib>`_
 |br|
 `net.sf.saxon:Saxon-HE <https://mvnrepository.com/artifact/net.sf.saxon/Saxon-HE>`_
 |br|
@@ -124,6 +102,8 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `org.apache.commons:commons-dbcp2 <https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2>`_
 |br|
+`org.apache.commons:commons-fileupload2-jakarta-servlet6 <https://mvnrepository.com/artifact/org.apache.commons/commons-fileupload2-jakarta-servlet6>`_
+|br|
 `org.apache.commons:commons-lang3 <https://mvnrepository.com/artifact/org.apache.commons/commons-lang3>`_
 |br|
 `org.apache.commons:commons-text <https://mvnrepository.com/artifact/org.apache.commons/commons-text>`_
@@ -134,7 +114,11 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `org.apache.cxf:cxf-rt-ws-policy <https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-ws-policy>`_
 |br|
-`org.apache.httpcomponents:httpclient <https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient>`_
+`org.apache.groovy:groovy-all <https://mvnrepository.com/artifact/org.apache.groovy/groovy-all>`_
+|br|
+`org.apache.groovy:groovy-all <https://mvnrepository.com/artifact/org.apache.groovy/groovy-all>`_
+|br|
+`org.apache.httpcomponents.client5:httpclient5 <https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5>`_
 |br|
 `org.apache.ibatis:ibatis-sqlmap <https://mvnrepository.com/artifact/org.apache.ibatis/ibatis-sqlmap>`_
 |br|
@@ -144,9 +128,9 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `org.apache.logging.log4j:log4j-core <https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core>`_
 |br|
-`org.apache.logging.log4j:log4j-slf4j2-impl <https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j2-impl>`_
+`org.apache.logging.log4j:log4j-jakarta-web <https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-jakarta-web>`_
 |br|
-`org.apache.logging.log4j:log4j-web <https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-web>`_
+`org.apache.logging.log4j:log4j-slf4j2-impl <https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j2-impl>`_
 |br|
 `org.apache.poi:poi-scratchpad <https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad>`_
 |br|
@@ -172,13 +156,15 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `org.bouncycastle:bcprov-jdk18on <https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on>`_
 |br|
-`org.codehaus.groovy:groovy-all <https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all>`_
-|br|
 `org.codehaus.woodstox:stax2-api <https://mvnrepository.com/artifact/org.codehaus.woodstox/stax2-api>`_
 |br|
 `org.codelibs.opensearch:opensearch-runner <https://mvnrepository.com/artifact/org.codelibs.opensearch/opensearch-runner>`_
 |br|
 `org.dom4j:dom4j <https://mvnrepository.com/artifact/org.dom4j/dom4j>`_
+|br|
+`org.eclipse.angus:angus-activation <https://mvnrepository.com/artifact/org.eclipse.angus/angus-activation>`_
+|br|
+`org.eclipse.angus:angus-mail <https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail>`_
 |br|
 `org.eclipse.jgit:org.eclipse.jgit.archive <https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.archive>`_
 |br|
@@ -202,6 +188,12 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `org.jsoup:jsoup <https://mvnrepository.com/artifact/org.jsoup/jsoup>`_
 |br|
+`org.junit.jupiter:junit-jupiter-engine <https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine>`_
+|br|
+`org.junit.support:testng-engine <https://mvnrepository.com/artifact/org.junit.support/testng-engine>`_
+|br|
+`org.junit.vintage:junit-vintage-engine <https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine>`_
+|br|
 `org.locationtech.spatial4j:spatial4j <https://mvnrepository.com/artifact/org.locationtech.spatial4j/spatial4j>`_
 |br|
 `org.mariadb.jdbc:mariadb-java-client <https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client>`_
@@ -209,8 +201,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `org.mitre.dsmiley.httpproxy:smiley-http-proxy-servlet <https://mvnrepository.com/artifact/org.mitre.dsmiley.httpproxy/smiley-http-proxy-servlet>`_
 |br|
 `org.mockito:mockito-core <https://mvnrepository.com/artifact/org.mockito/mockito-core>`_
-|br|
-`org.mockito:mockito-inline <https://mvnrepository.com/artifact/org.mockito/mockito-inline>`_
 |br|
 `org.mongodb:bson <https://mvnrepository.com/artifact/org.mongodb/bson>`_
 |br|
@@ -292,13 +282,31 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `org.yaml:snakeyaml <https://mvnrepository.com/artifact/org.yaml/snakeyaml>`_
 |br|
-`rome:rome <https://mvnrepository.com/artifact/rome/rome>`_
+`software.amazon.awssdk:cloudformation <https://mvnrepository.com/artifact/software.amazon.awssdk/cloudformation>`_
+|br|
+`software.amazon.awssdk:cloudfront <https://mvnrepository.com/artifact/software.amazon.awssdk/cloudfront>`_
+|br|
+`software.amazon.awssdk:elastictranscoder <https://mvnrepository.com/artifact/software.amazon.awssdk/elastictranscoder>`_
+|br|
+`software.amazon.awssdk:mediaconvert <https://mvnrepository.com/artifact/software.amazon.awssdk/mediaconvert>`_
+|br|
+`software.amazon.awssdk:s3-transfer-manager <https://mvnrepository.com/artifact/software.amazon.awssdk/s3-transfer-manager>`_
+|br|
+`software.amazon.awssdk:s3 <https://mvnrepository.com/artifact/software.amazon.awssdk/s3>`_
+|br|
+`software.amazon.awssdk:sts <https://mvnrepository.com/artifact/software.amazon.awssdk/sts>`_
 |br|
 `@babel/cli <https://www.npmjs.com/package/@babel/cli>`_
 |br|
-`@babel/plugin-transform-object-assign <https://www.npmjs.com/package/@babel/plugin-transform-object-assign>`_
+`@babel/plugin-proposal-class-properties <https://www.npmjs.com/package/@babel/plugin-proposal-class-properties>`_
 |br|
-`@craco/craco <https://www.npmjs.com/package/@craco/craco>`_
+`@babel/plugin-proposal-object-rest-spread <https://www.npmjs.com/package/@babel/plugin-proposal-object-rest-spread>`_
+|br|
+`@babel/plugin-transform-react-jsx <https://www.npmjs.com/package/@babel/plugin-transform-react-jsx>`_
+|br|
+`@babel/preset-env <https://www.npmjs.com/package/@babel/preset-env>`_
+|br|
+`@babel/preset-react <https://www.npmjs.com/package/@babel/preset-react>`_
 |br|
 `@emotion/css <https://www.npmjs.com/package/@emotion/css>`_
 |br|
@@ -307,6 +315,8 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `@emotion/styled <https://www.npmjs.com/package/@emotion/styled>`_
 |br|
 `@formatjs/cli <https://www.npmjs.com/package/@formatjs/cli>`_
+|br|
+`@graphiql/plugin-explorer <https://www.npmjs.com/package/@graphiql/plugin-explorer>`_
 |br|
 `@mui/icons-material <https://www.npmjs.com/package/@mui/icons-material>`_
 |br|
@@ -334,27 +344,27 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `@rollup/plugin-replace <https://www.npmjs.com/package/@rollup/plugin-replace>`_
 |br|
-`@rollup/plugin-typescript <https://www.npmjs.com/package/@rollup/plugin-typescript>`_
+`@rollup/plugin-swc <https://www.npmjs.com/package/@rollup/plugin-swc>`_
 |br|
 `@stomp/stompjs <https://www.npmjs.com/package/@stomp/stompjs>`_
 |br|
+`@swc/cli <https://www.npmjs.com/package/@swc/cli>`_
+|br|
+`@swc/core <https://www.npmjs.com/package/@swc/core>`_
+|br|
 `@types/ace <https://www.npmjs.com/package/@types/ace>`_
+|br|
+`@types/babel__preset-env <https://www.npmjs.com/package/@types/babel__preset-env>`_
 |br|
 `@types/bootstrap <https://www.npmjs.com/package/@types/bootstrap>`_
 |br|
 `@types/eslint <https://www.npmjs.com/package/@types/eslint>`_
 |br|
-`@types/graphql <https://www.npmjs.com/package/@types/graphql>`_
-|br|
 `@types/jquery <https://www.npmjs.com/package/@types/jquery>`_
 |br|
 `@types/js-cookie <https://www.npmjs.com/package/@types/js-cookie>`_
 |br|
-`@types/marked <https://www.npmjs.com/package/@types/marked>`_
-|br|
 `@types/node <https://www.npmjs.com/package/@types/node>`_
-|br|
-`@types/prettier <https://www.npmjs.com/package/@types/prettier>`_
 |br|
 `@types/prop-types <https://www.npmjs.com/package/@types/prop-types>`_
 |br|
@@ -370,15 +380,19 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `@types/rimraf <https://www.npmjs.com/package/@types/rimraf>`_
 |br|
-`@types/tinymce <https://www.npmjs.com/package/@types/tinymce>`_
-|br|
 `@types/uuid <https://www.npmjs.com/package/@types/uuid>`_
 |br|
 `@types/video.js <https://www.npmjs.com/package/@types/video.js>`_
 |br|
 `@types/zxcvbn <https://www.npmjs.com/package/@types/zxcvbn>`_
 |br|
-`@videojs/vhs-utils <https://www.npmjs.com/package/@videojs/vhs-utils>`_
+`@typescript-eslint/eslint-plugin <https://www.npmjs.com/package/@typescript-eslint/eslint-plugin>`_
+|br|
+`@typescript-eslint/parser <https://www.npmjs.com/package/@typescript-eslint/parser>`_
+|br|
+`@vitejs/plugin-react-swc <https://www.npmjs.com/package/@vitejs/plugin-react-swc>`_
+|br|
+`@vitejs/plugin-react <https://www.npmjs.com/package/@vitejs/plugin-react>`_
 |br|
 `ace-builds <https://www.npmjs.com/package/ace-builds>`_
 |br|
@@ -388,31 +402,39 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `babel-plugin-inline-package-json <https://www.npmjs.com/package/babel-plugin-inline-package-json>`_
 |br|
-`babel-plugin-react-intl <https://www.npmjs.com/package/babel-plugin-react-intl>`_
-|br|
 `bootstrap <https://www.npmjs.com/package/bootstrap>`_
 |br|
 `build-if-changed <https://www.npmjs.com/package/build-if-changed>`_
 |br|
 `clsx <https://www.npmjs.com/package/clsx>`_
 |br|
+`css-loader <https://www.npmjs.com/package/css-loader>`_
+|br|
 `eslint-config-prettier <https://www.npmjs.com/package/eslint-config-prettier>`_
 |br|
+`eslint-plugin-formatjs <https://www.npmjs.com/package/eslint-plugin-formatjs>`_
+|br|
 `eslint-plugin-prettier <https://www.npmjs.com/package/eslint-plugin-prettier>`_
+|br|
+`eslint-plugin-react-hooks <https://www.npmjs.com/package/eslint-plugin-react-hooks>`_
+|br|
+`eslint-plugin-react-refresh <https://www.npmjs.com/package/eslint-plugin-react-refresh>`_
 |br|
 `eslint <https://www.npmjs.com/package/eslint>`_
 |br|
 `fast-xml-parser <https://www.npmjs.com/package/fast-xml-parser>`_
 |br|
-`glob-gitignore <https://www.npmjs.com/package/glob-gitignore>`_
+`file-loader <https://www.npmjs.com/package/file-loader>`_
 |br|
-`graphiql-explorer <https://www.npmjs.com/package/graphiql-explorer>`_
+`glob-gitignore <https://www.npmjs.com/package/glob-gitignore>`_
 |br|
 `graphiql <https://www.npmjs.com/package/graphiql>`_
 |br|
 `graphql-ws <https://www.npmjs.com/package/graphql-ws>`_
 |br|
 `graphql <https://www.npmjs.com/package/graphql>`_
+|br|
+`grunt <https://www.npmjs.com/package/grunt>`_
 |br|
 `highlight.js <https://www.npmjs.com/package/highlight.js>`_
 |br|
@@ -427,6 +449,8 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `js-cookie <https://www.npmjs.com/package/js-cookie>`_
 |br|
 `js-yaml <https://www.npmjs.com/package/js-yaml>`_
+|br|
+`marked-highlight <https://www.npmjs.com/package/marked-highlight>`_
 |br|
 `marked <https://www.npmjs.com/package/marked>`_
 |br|
@@ -443,8 +467,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `notistack <https://www.npmjs.com/package/notistack>`_
 |br|
 `npm-run-all <https://www.npmjs.com/package/npm-run-all>`_
-|br|
-`postcss-normalize <https://www.npmjs.com/package/postcss-normalize>`_
 |br|
 `prettier <https://www.npmjs.com/package/prettier>`_
 |br|
@@ -468,8 +490,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `react-router-dom <https://www.npmjs.com/package/react-router-dom>`_
 |br|
-`react-scripts <https://www.npmjs.com/package/react-scripts>`_
-|br|
 `react-swipeable-views-utils <https://www.npmjs.com/package/react-swipeable-views-utils>`_
 |br|
 `react-swipeable-views <https://www.npmjs.com/package/react-swipeable-views>`_
@@ -484,13 +504,9 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `rimraf <https://www.npmjs.com/package/rimraf>`_
 |br|
-`rollup-plugin-babel <https://www.npmjs.com/package/rollup-plugin-babel>`_
-|br|
 `rollup-plugin-copy <https://www.npmjs.com/package/rollup-plugin-copy>`_
 |br|
-`rollup-plugin-terser <https://www.npmjs.com/package/rollup-plugin-terser>`_
-|br|
-`rollup-plugin-ts-treeshaking <https://www.npmjs.com/package/rollup-plugin-ts-treeshaking>`_
+`rollup-plugin-swc3 <https://www.npmjs.com/package/rollup-plugin-swc3>`_
 |br|
 `rollup <https://www.npmjs.com/package/rollup>`_
 |br|
@@ -500,9 +516,13 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `slugify <https://www.npmjs.com/package/slugify>`_
 |br|
+`style-loader <https://www.npmjs.com/package/style-loader>`_
+|br|
+`tinymce <https://www.npmjs.com/package/tinymce>`_
+|br|
 `tss-react <https://www.npmjs.com/package/tss-react>`_
 |br|
-`typescript <https://www.npmjs.com/package/typescript>`_
+`typescript@patch <https://www.npmjs.com/package/typescript@patch>`_
 |br|
 `uppy <https://www.npmjs.com/package/uppy>`_
 |br|
@@ -510,7 +530,7 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `video.js <https://www.npmjs.com/package/video.js>`_
 |br|
-`web-vitals <https://www.npmjs.com/package/web-vitals>`_
+`vite <https://www.npmjs.com/package/vite>`_
 |br|
 `webpack-cli <https://www.npmjs.com/package/webpack-cli>`_
 |br|
