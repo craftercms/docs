@@ -1257,11 +1257,11 @@ so it needs to be stored by the user in a safe place as it is impossible to reco
 
 |
 
-To use the preview token, do the following:
+You can now use the preview token in one of the following ways:
 
-#. Set a cookie with the name crafterPreview
-#. Add a query string argument with the name crafterPreview
-#. Set a header with the name X-Crafter-Preview
+- Set a header with the name X-Crafter-Preview, or
+- Add a query string argument with the name crafterPreview, or
+- Set a cookie with the name crafterPreview
 
 Here's an example of using the token with Curl, where ``{Generated-Preview-Token}`` is the token just created:
 
