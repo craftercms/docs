@@ -900,6 +900,8 @@ Form Engine Data Sources (please use the scrollbar to see more data sources)
     form-sources/form-source-video-repo
     form-sources/form-source-kvp
     form-sources/form-source-simple-taxonomy
+    form-sources/form-source-audio-desktop
+    form-sources/form-source-audio-repo
 
 
 .. _macros-for-data-sources:
