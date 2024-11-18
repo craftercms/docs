@@ -954,7 +954,7 @@ where:
 For more information on JWT tokens in general, see https://jwt.io/introduction.
 For information on creating access tokens in Studio, see :ref:`here <access-tokens>`.
 
-.. _studio-preview cookie:
+.. _studio-preview-cookie:
 
 ^^^^^^^^^^^^^^
 Preview Cookie
