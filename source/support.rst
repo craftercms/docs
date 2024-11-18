@@ -23,13 +23,13 @@ What's Supported?
 
     * - 4.2
       - November 13, 2024
-      - :green:`TBD`
-      - :green:`TBD`
+      - :green:`Active`
+      - :green:`Active`
       - 4.2.0 (November 13, 2024)
     * - 4.1
       - June 17, 2023
       - :maroon:`Ended November 13, 2024`
-      - :green:`Ends on December 31, 2024`
+      - :orange:`Ends on December 31, 2024`
       - 4.1.8 (September 13, 2024)
     * - 4.0
       - May 12, 2022
