@@ -222,7 +222,7 @@ Step 1: Create a REST Controller
 Step 2: Execute the Service
 """""""""""""""""""""""""""
 * Open a browser and hit the following URL:
-	* http://localhost:8080/api/1/services/get-rendered-components.json?pageId=/site/website/index.xml
+	* ``http://localhost:8080/api/1/services/get-rendered-components.json?pageId=/site/website/index.xml``
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Get the Names of Sites Running in Crafter Engine
@@ -261,7 +261,7 @@ Step 1: Create a REST Controller
 Step 2: Execute the Service
 """""""""""""""""""""""""""
 * Open a browser and hit the following URL:
-    * http://localhost:8080/api/1/services/get-sites.json
+    * ``http://localhost:8080/api/1/services/get-sites.json``
     * See results
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -315,5 +315,5 @@ Step 1: Create a REST Controller
 Step 2: Execute the Service
 """""""""""""""""""""""""""
 * Open a browser and hit the following URL:
-    * http://localhost:8080/api/1/services/get-pages.json
+    * ``http://localhost:8080/api/1/services/get-pages.json``
     * See results

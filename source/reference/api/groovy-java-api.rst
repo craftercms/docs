@@ -203,7 +203,7 @@ back to the caller. REST scripts must be placed in any folder under Scripts > re
 
 A REST script URL has the following format: it starts with ``/api/1/services``, then contains all the folders that are part of the hierarchy
 for the particular script, and ends with the script name, the HTTP method and the ``.groovy`` extension. So, a script file at
-``Scripts > rest > myfolder > myscript.get.groovy`` will respond to GET method calls at http://mysite/api/1/services/myfolder/myscript.json.
+``Scripts > rest > myfolder > myscript.get.groovy`` will respond to GET method calls at ``http://mysite/api/1/services/myfolder/myscript.json``.
 
 The following is a very simple sample script that returns a date attribute saved in the session. If no attribute is set yet, the current
 date is set as the attribute. Assume that the REST script exists under Scripts > rest > session_date.get.groovy
@@ -269,13 +269,13 @@ Here's how the folders and files should look like for our example:
           {version}/
             helloworld.json
 
-When we make a call to http://mysite/api/1/services/foo/1/helloworld.json, the output will be:
+When we make a call to ``http://mysite/api/1/services/foo/1/helloworld.json``, the output will be:
 
 .. code-block:: text
 
     "Hello world version 1!"
 
-Similarly, a call to http://mysite/api/1/services/foo/2/helloworld.json will output:
+Similarly, a call to ``http://mysite/api/1/services/foo/2/helloworld.json`` will output:
 
 .. code-block:: text
 
@@ -312,7 +312,7 @@ they return a string with the view to render. Most of the time, this is just the
 
 Controller scripts basically work like a controller in the MVC pattern. They should be put under Scripts > controllers,
 and similarly to REST scripts, the URL is made up of the directory hierarchy, the script name and the HTTP method. For example,
-a script at Scripts > controllers > myfolder > mycontroller.get.groovy will respond to GET calls at http://mysite/myfolder/mycontroller.
+a script at Scripts > controllers > myfolder > mycontroller.get.groovy will respond to GET calls at ``http://mysite/myfolder/mycontroller``.
 
 The following is a very simple example script that will do the sum of 2 parameters, put the result in the ``templateModel`` and return
 the path of the FTL template that will render the result:
@@ -464,7 +464,7 @@ This structure is the equivalent of the standard folders used for Java/Groovy pr
 """""""""""""""""""""""""
 Write Your Unit Test Code
 """""""""""""""""""""""""
-There are no restrictions or requirements for the unit test code, developers can choose any testing framework supported by the build tool. Examples: `spring-test <http://docs.spring.io/spring-batch/reference/html/testing.html>`__, `junit <http://junit.org/>`__, `testng <https://testng.org/doc/index.html>`__, `spock <https://spockframework.org/>`__
+There are no restrictions or requirements for the unit test code, developers can choose any testing framework supported by the build tool. Examples: `spring-test <http://docs.spring.io/spring-batch/reference/html/testing.html>`__, `junit <http://junit.org/>`__, `testng <https://testng.org/>`__, `spock <https://spockframework.org/>`__
 
 Remember when writing unit test code, developers will be responsible for:
 

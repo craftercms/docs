@@ -18,7 +18,7 @@ are able to access all of Studio UI components and apis through the ``window.cra
 variable on the browser or when using a development stack, through the ``@craftercms/studio-ui`` npm package.
 
 The plugin host can be accessed when logged in to Studio at ``/studio/plugin``. For example,
-in your local environment, http://localhost:8080/studio/plugin. In order to render a plugin,
+in your local environment, ``http://localhost:8080/studio/plugin``. In order to render a plugin,
 the plugin host requires three to five query string arguments.
 
 .. table:: Plugin Host Arguments
