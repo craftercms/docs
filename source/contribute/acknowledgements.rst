@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.8
+:last-updated: 4.1.9
 
 .. index:: Open Source Acknowledgements
 
@@ -432,10 +432,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `moment-timezone <https://www.npmjs.com/package/moment-timezone>`_
 |br|
-`monaco-editor-webpack-plugin <https://www.npmjs.com/package/monaco-editor-webpack-plugin>`_
-|br|
-`monaco-editor <https://www.npmjs.com/package/monaco-editor>`_
-|br|
 `nanoid <https://www.npmjs.com/package/nanoid>`_
 |br|
 `ncp <https://www.npmjs.com/package/ncp>`_
@@ -502,7 +498,7 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `tss-react <https://www.npmjs.com/package/tss-react>`_
 |br|
-`typescript <https://www.npmjs.com/package/typescript>`_
+`typescript@patch <https://www.npmjs.com/package/typescript>`_
 |br|
 `uppy <https://www.npmjs.com/package/uppy>`_
 |br|
@@ -511,10 +507,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `video.js <https://www.npmjs.com/package/video.js>`_
 |br|
 `web-vitals <https://www.npmjs.com/package/web-vitals>`_
-|br|
-`webpack-cli <https://www.npmjs.com/package/webpack-cli>`_
-|br|
-`webpack <https://www.npmjs.com/package/webpack>`_
 |br|
 `yargs <https://www.npmjs.com/package/yargs>`_
 |br|
