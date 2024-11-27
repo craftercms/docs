@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.8
+:last-updated: 4.1.9
 
 .. _release-notes:
 
@@ -11,6 +11,7 @@ release's release notes page here: http://docs.craftercms.org or :ref:`see below
 
    .. note:: CrafterCMS 4.1.x requires Java 17
 
+.. include:: /release-notes/4-1-9.rst
 .. include:: /release-notes/4-1-8.rst
 .. include:: /release-notes/4-1-7.rst
 .. include:: /release-notes/4-1-6.rst
@@ -22,6 +23,10 @@ release's release notes page here: http://docs.craftercms.org or :ref:`see below
 .. include:: /release-notes/4-1-0.rst
 
 .. _other-release-notes:
+
+For CrafterCMS version 4.2 release notes, see https://docs.craftercms.org/en/4.2/release-notes/index.html
+
+|hr|
 
 For CrafterCMS version 4.0 release notes, see https://docs.craftercms.org/en/4.0/release-notes/index.html
 
