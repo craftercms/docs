@@ -432,6 +432,10 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `moment-timezone <https://www.npmjs.com/package/moment-timezone>`_
 |br|
+`monaco-editor-webpack-plugin <https://www.npmjs.com/package/monaco-editor-webpack-plugin>`_
+|br|
+`monaco-editor <https://www.npmjs.com/package/monaco-editor>`_
+|br|
 `nanoid <https://www.npmjs.com/package/nanoid>`_
 |br|
 `ncp <https://www.npmjs.com/package/ncp>`_
@@ -507,6 +511,10 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `video.js <https://www.npmjs.com/package/video.js>`_
 |br|
 `web-vitals <https://www.npmjs.com/package/web-vitals>`_
+|br|
+`webpack-cli <https://www.npmjs.com/package/webpack-cli>`_
+|br|
+`webpack <https://www.npmjs.com/package/webpack>`_
 |br|
 `yargs <https://www.npmjs.com/package/yargs>`_
 |br|
