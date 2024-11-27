@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.8
+:last-updated: 4.1.9
 
 .. index:: Open Source Acknowledgements
 
@@ -502,7 +502,7 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `tss-react <https://www.npmjs.com/package/tss-react>`_
 |br|
-`typescript <https://www.npmjs.com/package/typescript>`_
+`typescript@patch <https://www.npmjs.com/package/typescript>`_
 |br|
 `uppy <https://www.npmjs.com/package/uppy>`_
 |br|
