@@ -4,7 +4,7 @@
 CrafterCMS 4.1.9
 ----------------
 
-Released *TBD*
+Released *November 27, 2024*
 
 This release includes fixes for issues with the release version 4.1.8
 
@@ -15,6 +15,14 @@ This release includes fixes for issues with the release version 4.1.8
 
     For instructions on how to update your CrafterCMS install to 4.1.0 (applies to 4.1.9),
     please see :ref:`upgrading-craftercms`
+
+^^^^^^^^^^^^
+Enhancements
+^^^^^^^^^^^^
+"""""""""
+Studio UI
+"""""""""
+- ``DateTimePicker`` is now deprecated. Use ``DateTimeTimezonePicker`` instead.
 
 ^^^^^^^^^
 Bug Fixes
