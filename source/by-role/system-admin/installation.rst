@@ -22,7 +22,7 @@ Requirements
 
 To run CrafterCMS, the following are required:
 
-    - Java 17
+    - Java 21
     - 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
     - Git 2.20.1 and later
     - Docker (if running in Docker or MacOS)
@@ -47,14 +47,14 @@ JVMs (All components)
 """""""""""""""""""""
 The following JVMs are supported:
 
-    - OpenJDK 17
-    - Oracle JDK (HotSpot) 17
+    - OpenJDK 21
+    - Oracle JDK (HotSpot) 21
 
 ~~~~~~~~~~~~~~~~~~~
 Verify Java Version
 ~~~~~~~~~~~~~~~~~~~
-Ensure that you are running Java 17. To check,
-run the following command at the command prompt and make sure that the version displayed is Java 17:
+Ensure that you are running Java 21. To check,
+run the following command at the command prompt and make sure that the version displayed is Java 21:
 
 .. code-block:: sh
 
@@ -66,7 +66,7 @@ The command above should output something like this:
 
 .. code-block:: sh
 
-    openjdk version "17.0.6"
+    openjdk version "21.0.5"
 
 |
 
@@ -155,7 +155,7 @@ Linux Prerequisite
 
    **error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory**
 
-   To install ``libaio`` for Debian-based Linux distros: ``sudo apt install libaio1``
+   To install ``libaio`` for Debian-based Linux distros: ``sudo apt install libaio1t64`` then ``sudo ln -sf /lib/x86_64-linux-gnu/libaio.so.1t64 /usr/lib/libaio.so.1``
 
    To install ``libaio`` for RedHat-based Linux distros: ``yum install libaio``
 
@@ -707,10 +707,10 @@ Another way to monitor the Pods is by tailing the Tomcat container log with the 
 
    .. code-block:: bash
 
-      [INFO] 2022-10-17T19:59:31,135 [main] [cluster.StudioPrimaryReplicaUtils] | This server is a replica node in a cluster, it will not perform any write                                                                                                                                                                                                                            │
-      17-Oct-2022 19:59:31.152 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/usr/local/tomcat/webapps/studio.war] has finished in [139,582] ms                                                                                                                                                                                  │
-      17-Oct-2022 19:59:31.157 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]                                                                                                                                                                                                                                                         │
-      17-Oct-2022 19:59:31.170 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [168732] milliseconds
+      [INFO] 2024-10-17T19:59:31,135 [main] [cluster.StudioPrimaryReplicaUtils] | This server is a replica node in a cluster, it will not perform any write                                                                                                                                                                                                                            │
+      17-Oct-2024 19:59:31.152 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/usr/local/tomcat/webapps/studio.war] has finished in [139,582] ms                                                                                                                                                                                  │
+      17-Oct-2024 19:59:31.157 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]                                                                                                                                                                                                                                                         │
+      17-Oct-2024 19:59:31.170 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [168732] milliseconds
 
 ~~~~~~~~~~~~~
 Access Studio
@@ -1234,8 +1234,8 @@ Look for output that is similar to the following:
 .. code-block:: bash
     :linenos:
 
-    2019-04-17 21:39:00.001 INFO 4389 --- [pool-5-thread-1] o.c.d.impl.processors.GitPullProcessor : Cloning Git remote repository ssh://crafter@ec2-3-93-34-40.compute-1.amazonaws.com:/opt/crafter/data/repos/sites/editorial/published into /opt/crafter/data/repos/sites/editorial
-    2019-04-17 21:39:00.806 INFO 4389 --- [pool-5-thread-1] o.c.d.impl.processors.GitPullProcessor : Successfully cloned Git remote repository ssh://crafter@ec2-3-93-34-40.compute-1.amazonaws.com:/opt/crafter/data/repos/sites/editorial/published into /opt/crafter/data/repos/sites/editorial
+    2024-04-17 21:39:00.001 INFO 4389 --- [pool-5-thread-1] o.c.d.impl.processors.GitPullProcessor : Cloning Git remote repository ssh://crafter@ec2-3-93-34-40.compute-1.amazonaws.com:/opt/crafter/data/repos/sites/editorial/published into /opt/crafter/data/repos/sites/editorial
+    2024-04-17 21:39:00.806 INFO 4389 --- [pool-5-thread-1] o.c.d.impl.processors.GitPullProcessor : Successfully cloned Git remote repository ssh://crafter@ec2-3-93-34-40.compute-1.amazonaws.com:/opt/crafter/data/repos/sites/editorial/published into /opt/crafter/data/repos/sites/editorial
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Step 5: View the project on the delivery server from a web browser
