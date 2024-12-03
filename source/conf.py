@@ -271,7 +271,8 @@ javadoc_version = '4.2.0'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
-            'base_url': ('/docs/' + version + '/%s', None)
+            'base_url': ('/docs/' + version + '/%s', None),
+            'docs_base_url': ('/docs' + '/%s', None)
             }
 
 
