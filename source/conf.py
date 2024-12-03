@@ -73,7 +73,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'en'
+#language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -138,7 +138,7 @@ html_favicon = "_static/images/favicon.ico"
 # Add versions for the bottom menu
 html_context = {
     'versions': ['4.2', '4.1', '4.0', '3.1'],
-    'docsUrl': 'https://docs.craftercms.org'
+    'docsUrl': '/docs'
 }
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -243,7 +243,7 @@ javadoc_version = '3.1.31'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
-            'base_url': ('/' + language + '/' + version + '/%s', None)}
+            'base_url': ('/docs/' + version + '/%s', None)}
 
 #
 # Open links in new tab
