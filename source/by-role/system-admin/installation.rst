@@ -176,8 +176,11 @@ Linux Prerequisite
    **On Debian-based Linux distros:**
 
    - For Ubuntu 24.04 and later versions, ``libncurses5`` was removed starting in version 24.04. To install ``libncurses5``,
-     we need to add the ``focal-security`` distribution main and universe repository to the sources list before installing
-     by running the following commands:
+     we need to add the ``focal-security`` distribution main and universe repository to the sources list before installing.
+     This will bring the 22.04 APT repository to 24.04 and will then allow us to install ``libncurses5`` within the system.
+
+     Before following the commands below, check if ``ubuntu-focal-sources.list`` exists under ``/etc/apt/sources.list.d``.
+     If the file does not exist, create the file first, then run the commands below to install ``libncurses5``
 
      .. code-block:: bash
 
