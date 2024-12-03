@@ -15,13 +15,13 @@ release's release notes page here: http://docs.craftercms.org or :ref:`see below
 
 .. _other-release-notes:
 
-For CrafterCMS version 4.1 release notes, see https://docs.craftercms.org/en/4.1/release-notes/index.html
+For CrafterCMS version 4.1 release notes, see `/docs/4.1/release-notes/index.html`_
 
 |hr|
 
-For CrafterCMS version 4.0 release notes, see https://docs.craftercms.org/en/4.0/release-notes/index.html
+For CrafterCMS version 4.0 release notes, see `/docs/4.0/release-notes/index.html`_
 
 |hr|
 
-For CrafterCMS version 3.1 release notes, see https://docs.craftercms.org/en/3.1/release-notes/index.html
+For CrafterCMS version 3.1 release notes, see `/docs/3.1/release-notes/index.html`_
 
