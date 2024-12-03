@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.5
+:last-updated: 4.2.0
 
 .. _system-admin-installation:
 
@@ -176,15 +176,19 @@ Linux Prerequisite
    **On Debian-based Linux distros:**
 
    - For Ubuntu 24.04 and later versions, ``libncurses5`` was removed starting in version 24.04. To install ``libncurses5``,
-     run the following commands:
+     we need to add the ``focal-security`` distribution main and universe repository to the sources list before installing.
+     This will bring the 22.04 APT repository to 24.04 and will then allow us to install ``libncurses5`` within the system.
+
+     Before following the commands below, check if ``ubuntu-focal-sources.list`` exists under ``/etc/apt/sources.list.d``.
+     If the file does not exist, create the file first, then run the commands below to install ``libncurses5``
 
      .. code-block:: bash
 
-         wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.4-2_amd64.deb && sudo dpkg -i libtinfo5_6.4-2_amd64.deb && rm -f libtinfo5_6.4-2_amd64.deb
+         echo "deb http://security.ubuntu.com/ubuntu focal-security main universe" > /etc/apt/sources.list.d/ubuntu-focal-sources.list
 
-         wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.4-2_amd64.deb && sudo dpkg -i libncurses5_6.4-2_amd64.deb && rm -f libncurses5_6.4-2_amd64.deb
+         sudo apt update
 
-         sudo apt install lib32ncurses5-dev libncurses5 libncurses5-dev -y
+         sudo apt install libncurses5
 
    - All other versions of Debian-based linux distro: ``sudo apt install libncurses5``
 
