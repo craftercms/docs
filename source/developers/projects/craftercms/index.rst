@@ -275,27 +275,27 @@ Here are the environment variables used for URLs in ``crafter.sh``:
 +==========================+=====================================================================+
 || ES_URL                  || Elasticsearch URL                                                  |
 ||                         +---------------------------------------------------------------------+
-||                         || "http://$ES_HOST:$ES_PORT"                                         |
+||                         || ``http://$ES_HOST:$ES_PORT``                                       |
 +--------------------------+---------------------------------------------------------------------+
 || DEPLOYER_URL            || Crafter Deployer URL                                               |
 ||                         +---------------------------------------------------------------------+
-||                         || "http://$DEPLOYER_HOST:$DEPLOYER_PORT"                             |
+||                         || ``http://$DEPLOYER_HOST:$DEPLOYER_PORT``                           |
 +--------------------------+---------------------------------------------------------------------+
 || STUDIO_URL              || Crafter Studio URL                                                 |
 ||                         +---------------------------------------------------------------------+
-||                         || "http://$TOMCAT_HOST:$TOMCAT_HTTP_PORT/studio"                     |
+||                         || ``http://$TOMCAT_HOST:$TOMCAT_HTTP_PORT/studio``                   |
 +--------------------------+---------------------------------------------------------------------+
 || ENGINE_URL              || Crafter Engine URL                                                 |
 ||                         +---------------------------------------------------------------------+
-||                         || "http://$TOMCAT_HOST:$TOMCAT_HTTP_PORT/studio"                     |
+||                         || ``http://$TOMCAT_HOST:$TOMCAT_HTTP_PORT/studio``                   |
 +--------------------------+---------------------------------------------------------------------+
 || PROFILE_URL             || Crafter Profile URL                                                |
 ||                         +---------------------------------------------------------------------+
-||                         || "http://$TOMCAT_HOST:$TOMCAT_HTTP_PORT/crafter-profile"            |
+||                         || ``http://$TOMCAT_HOST:$TOMCAT_HTTP_PORT/crafter-profile``          |
 +--------------------------+---------------------------------------------------------------------+
 || SOCIAL_URL              || Crafter Social URL                                                 |
 ||                         +---------------------------------------------------------------------+
-||                         || "http://$TOMCAT_HOST:$TOMCAT_HTTP_PORT/crafter-social"             |
+||                         || ``http://$TOMCAT_HOST:$TOMCAT_HTTP_PORT/crafter-social``           |
 +--------------------------+---------------------------------------------------------------------+
 
 Here are the environment variables used for Java options in ``crafter.sh``:

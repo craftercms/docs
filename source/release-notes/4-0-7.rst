@@ -1,0 +1,41 @@
+.. index:: CrafterCMS 4.0.7 Release Notes
+
+----------------
+CrafterCMS 4.0.7
+----------------
+
+*Released July 17, 2023*
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Upgraded dependencies |br|
+
+* Git performance optimization |br|
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+.. important::
+
+    Please see :ref:`Breaking Changes <breaking-changes-4-0-x>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.0.0 (applies to 4.0.7),
+    please see :ref:`upgrading-craftercms`
+
+    When using private key SSH authentication in the ``init-site.sh`` script, the private key path must be set explicitly. |br|
+    Please see :ref:`setup-project-for-delivery` for more information on using the ``-k`` option of ``init-site.sh`` to
+    set the private key path
+
+    For Linux installs, the Studio upgrade requires the library ``libaio`` which is not installed
+    by default in some Linux distributions.  Please see the section on **Linux Prerequisites**
+    in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+|
+|
+
+.. raw:: html
+
+   <hr>
+

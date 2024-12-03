@@ -24,7 +24,7 @@ Crafter Studio uses `zxcvbn <https://github.com/dropbox/zxcvbn>`__ for password 
 
 |
 
-The password strength configured here are displayed to the user when resetting a password or creating a user.
+The password strength configured here is displayed to the user when resetting a password or creating a user.
 
 .. image:: /_static/images/system-admin/password-requirements.webp
     :alt: System Administrator - Password Requirements Display

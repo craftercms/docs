@@ -29,7 +29,7 @@ author = u'CrafterCMS'
 # The short X.Y version.
 version = u'4.0'
 # The full version, including alpha/beta/rc tags.
-release = u'4.0.6'
+release = u'4.0.7'
 
 
 # -- General configuration ---------------------------------------------------
@@ -138,7 +138,7 @@ html_favicon = "_static/images/favicon.ico"
 
 # Add versions for the bottom menu
 html_context = {
-    'versions': ['4.1', '4.0', '3.1'],
+    'versions': ['4.2', '4.1', '4.0', '3.1'],
     'docsUrl': '/docs'
 }
 
@@ -240,7 +240,7 @@ rst_epilog = """
 
 # Javadoc home and version
 javadoc_base = 'http://javadoc.craftercms.org/'
-javadoc_version = '4.0.6'
+javadoc_version = '4.0.7'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),

@@ -43,12 +43,6 @@ This Manual introduces key concepts in CrafterCMS, presents the authoring and de
 
    Acknowledgements </acknowledgements/index>
 
-.. toctree::
-   :maxdepth: 3
-
-   CrafterCMS docs Beta </new-ia/index>
-
-
 Indices and tables
 ==================
 

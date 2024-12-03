@@ -16,17 +16,14 @@ For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1
 
 .. important::
 
-    Please see :ref:`Breaking changes in 4.0.3 <breaking-changes-4-0-3>` for breaking changes and other
-    things to consider before upgrading
-
-    Please see :ref:`Breaking changes in 4.0.0 <breaking-changes-4-0-0>` for breaking changes and other
+    Please see :ref:`Breaking Changes <breaking-changes-4-0-x>` for breaking changes and other
     things to consider before upgrading
 
     For instructions on how to update your CrafterCMS install to 4.0.0 (applies to 4.0.6),
     please see :ref:`upgrading-craftercms`
 
     When using private key SSH authentication in the ``init-site.sh`` script, the private key path must be set explicitly. |br|
-    Please see :ref:`newIa-setup-project-for-delivery` for more information on using the ``-k`` option of ``init-site.sh`` to
+    Please see :ref:`setup-project-for-delivery` for more information on using the ``-k`` option of ``init-site.sh`` to
     set the private key path
 
     For Linux installs, the Studio upgrade requires the library ``libaio`` which is not installed

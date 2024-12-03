@@ -2,18 +2,18 @@
 
 .. _crafter-studio-configure-headers-based-auth:
 
-=======================================================
-Configure Headers Based Authentication |enterpriseOnly|
-=======================================================
+======================================================
+Configure Header-Based Authentication |enterpriseOnly|
+======================================================
 
-Crafter Studio is able to integrate with any authentication system that sends custom HTTP headers containing information that will be used to authenticate the user in Studio.  This section details how to setup Studio for headers based authentication.
+Crafter Studio can integrate with any authentication system that sends custom HTTP headers containing information that will be used to authenticate the user in Studio.  This section details how to set up Studio for header-based authentication.
 
 
--------------------------------------------------
-Configure Studio for Headers Based Authentication
--------------------------------------------------
+------------------------------------------------
+Configure Studio for Header-Based Authentication
+------------------------------------------------
 
-Configuring Studio for headers based authentication is very simple: in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+Configuring Studio for header-based authentication is very simple: in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: properties
     :linenos:
@@ -23,7 +23,7 @@ Configuring Studio for headers based authentication is very simple: in your Auth
       # Authentication provider type
       # - provider: HEADERS
         # Authentication via headers enabled
-        # enabled: false
+        # enabled: true
         # Authentication header for secure key
         # secureKeyHeader: secure_key
         # Authentication headers secure key that is expected to match secure key value from headers
@@ -48,20 +48,17 @@ Configuring Studio for headers based authentication is very simple: in your Auth
         # after logout (https://STUDIO_SERVER:STUDIO_PORT/studio)
         # logoutUrl: /YOUR_DOMAIN/logout?ReturnTo={baseUrl}
 
+The attribute ``enabled`` enables/disables headers authentication, make sure this is set to **true** for header-based authentication.
 
-From the above configuration, here are the attributes that Studio expects from the headers to be provided:
+The ``secure_key`` attribute is a secret shared between the authentication agent and Studio via this header. Note that this ``secure_key`` is
+**required** and header-based authentication will not proceed unless the ``secure_key`` sent to Studio matches this configuration.
 
-- username
-- firstname
-- lastname
-- email
-- groups
+Upon matching the ``secure_key`` header, Studio will then look for the principal. This comes in as a set of loose headers
+that indicate the principal's attributes: ``username``, ``firstname``, ``lastname``, ``email``, and ``groups``.
 
-The attribute ``secure_key`` is placed by the authentication agent in the header.
-The attribute ``enabled`` enables/disables headers authentication, make sure this is set to **true** for headers authentication
-
+^^^^^^^^^^^^^^^^^^
 Configuring Logout
-------------------
+^^^^^^^^^^^^^^^^^^
 
 The **Sign out** button link is disabled/hidden by default when headers based authentication is enabled.
 

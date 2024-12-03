@@ -2,6 +2,8 @@
 
 .. index:: Upgrading CrafterCMS, Upgrading
 
+.. _upgrading-craftercms-on-a-server:
+
 ====================
 Upgrading CrafterCMS
 ====================
@@ -72,6 +74,8 @@ Before Upgrading
 Before starting your upgrade:
 
 #. **Review the** :ref:`release notes<release-notes>` **for the version you are upgrading to**. It contains specific information on the changes that have been made and how it may affect you when upgrading to that specific version.
+
+   Remember to read all other release notes in between the version you currently have and the version you are upgrading to as it contains information on the changes that have occurred and steps you might have to take when upgrading to a specific version.
 
 #. **Backup CrafterCMS** just in case something goes wrong with the upgrade.
 
