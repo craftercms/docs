@@ -7,7 +7,7 @@ Release Notes
 =============
 
 This section contains release notes for CrafterCMS 4.0.x.  For other release notes, please visit your
-release's release notes page here: https://docs.craftercms.org or :ref:`see below <other-release-notes>`
+release's release notes page :ref:`below <other-release-notes>`
 
    .. note:: CrafterCMS 4.0.x requires Java 11
 
@@ -22,4 +22,4 @@ release's release notes page here: https://docs.craftercms.org or :ref:`see belo
 
 .. _other-release-notes:
 
-For CrafterCMS version 3.1 release notes, see https://docs.craftercms.org/en/3.1/release-notes/index.html
+For CrafterCMS version 3.1 release notes, see :docs_base_url:`3.1 Release Notes <3.1/release-notes/index.html>`
