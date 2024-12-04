@@ -20,7 +20,7 @@ This section details the steps required to upgrade your CrafterCMS install.
      - 3.1.13
      - 3.1.17 and later versions
 
-     If you are upgrading from a version other than the ones listed above, you will need to upgrade to one of the above listed supported upgrade paths release version first before upgrading to 4.0.0.  See the 3.1 release’s Upgrading CrafterCMS page here: https://docs.craftercms.org
+     If you are upgrading from a version other than the ones listed above, you will need to upgrade to one of the above listed supported upgrade paths release version first before upgrading to 4.0.0.  See the 3.1 release’s Upgrading CrafterCMS page here: :docs_base_url:`Upgrading CrafterCMS <3.1/system-administrators/upgrade/index.html>`
 
 |
 
