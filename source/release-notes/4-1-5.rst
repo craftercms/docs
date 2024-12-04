@@ -24,7 +24,7 @@ Enhancements
 * `Added support for variable types of _i and _f when using a dropdown control <https://github.com/craftercms/craftercms/issues/6704>`__
 
 * `Added site unlock API <https://github.com/craftercms/craftercms/issues/6718>`__ |br|
-  The site `unlock API <https://docs.craftercms.org/en/4.1/_static/api/studio.html#tag/sites/operation/unlockSite>`__
+  The site :docs_base_url:`unlock API <4.1/_static/api/studio.html#tag/sites/operation/unlockSite>`
   allows an admin to unlock a site in LOCKED state.
 
 * `Added \'initialExpanded\' prop to \'WidgetsAccordion\' component <https://github.com/craftercms/craftercms/issues/6724>`__
