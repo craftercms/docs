@@ -243,7 +243,9 @@ javadoc_version = '3.1.31'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
-            'base_url': ('/docs/' + version + '/%s', None)}
+            'base_url': ('/docs/' + version + '/%s', None),
+            'docs_base_url': ('/docs' + '/%s', None)
+            }
 
 #
 # Open links in new tab
