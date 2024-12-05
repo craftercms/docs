@@ -1,4 +1,4 @@
-# CrafterCMS documentation.
+# CrafterCMS documentation
 
 ## Requirements
 
