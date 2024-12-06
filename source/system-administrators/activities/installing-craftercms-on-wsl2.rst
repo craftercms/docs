@@ -65,7 +65,7 @@ Here are the steps to start using CrafterCMS for development or evaluation by in
 
 #. **Download CrafterCMS binaries**
 
-   Download the CrafterCMS install prebuilt binaries from https://craftercms.org/downloads
+   Download the CrafterCMS install prebuilt binaries from https://craftercms.com/download
 
    Select ``crafter-cms-authoring-VERSION.tar.gz``.  The ``.tar.gz`` file will install a fully functional authoring instance. Out of the box, the authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set up for local development.
 

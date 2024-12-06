@@ -18,7 +18,7 @@ If you have any questions, please look in the following:
 	* `Support Forums <https://groups.google.com/forum/#!forum/craftercms>`_
 	* `Q&A at StackOverflow <https://stackoverflow.com/questions/tagged/crafter-cms>`_
 
-For additional resources, please visit the `CrafterCMS developer community <http://craftercms.org>`_.
+For additional resources, please visit the `CrafterCMS developer community <http://craftercms.com/resources>`_.
 
 Enterprise Support
 ------------------
