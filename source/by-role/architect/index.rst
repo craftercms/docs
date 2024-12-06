@@ -19,20 +19,20 @@ General Architecture
 --------------------
 CrafterCMS distinguishes itself by its modern architecture, which in turn enables:
 
-* Truly decoupled content management (and disconnected global delivery), composed of independent microservice-based components
+* Truly decoupled content management (content authoring decoupled from content delivery), composed of independent microservice-based components
 * Dynamic, personalized content delivery of every request at speed
-* API first CMS (content as a service via extensible GraphQL & REST)
-* Git-based CMS (allows for excellent developer cadence)
+* API-first headless CMS (content as a service via extensible GraphQL & REST)
+* Git-based content repository (allows for excellent developer cadence and highly effective DevContentOps processes)
 * Shared-nothing, serverless, delivery architecture (planet-scale)
 * Front-end agnostic (bring your favorite UI framework or use as a headless CMS)
-* Equal support for all three CMS stakeholders: content authors, developers and system administrators
+* First-class support for all three CMS stakeholders: content authors, developers and system administrators (DevContentOps support)
 * Build new apps or weave into existing apps and sites
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Modern Decoupled Architecture
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-CrafterCMS is a truly decoupled content management system, yet it supports dynamic and personalized content
-delivery. To understand this better, Crafter's decoupled architecture is as follows:
+CrafterCMS is a truly decoupled content management system, and it supports dynamic and personalized content
+delivery. To understand this better, CrafterCMS's decoupled architecture is as follows:
 
 .. image:: /_static/images/architecture/decoupled-overview.webp
     :width: 75%
@@ -41,7 +41,7 @@ delivery. To understand this better, Crafter's decoupled architecture is as foll
 
 |
 
-You'll note that Crafter doesn't share a database between the authoring and delivery systems. Instead, the authoring system reduces the content to XML and static assets, and the delivery system rehydrates those for personalized, planet-scale, disconnected, and fast delivery.
+You'll note that CrafterCMS doesn't share a database between the authoring and delivery systems. Instead, the authoring system reduces the content to XML and static assets, and the delivery system rehydrates those for personalized, planet-scale, disconnected, and fast delivery.
 
 """"""""""""""""""""""""""""""""""""
 CrafterCMS Modules and Core Services
@@ -117,7 +117,7 @@ CrafterCMS supports various deployments (both SaaS solutions and PaaS and self-h
 ^^^^^^^^^^^^^
 Crafter Cloud
 ^^^^^^^^^^^^^
-Crafter Cloud provides a private SaaS offering of CrafterCMS. CrafterCloud is:
+Crafter Cloud provides a private SaaS offering of CrafterCMS. Crafter Cloud is:
 
 * Fully elastically scalable (based on Kubernetes)
 * High-availability with disaster recovery
@@ -194,7 +194,7 @@ considerations that CrafterCMS supports. Considerations include:
 ---------
 Templated
 ---------
-While CrafterCMS is an API-first CMS, it has first-class support for templated (page-based) sites. CrafterCMS embeds
+While CrafterCMS is an API-first CMS, it also has first-class support for templated (page-based) sites. CrafterCMS embeds
 FreeMarker provides a high-performance, clean, flexible, and tolerant of syntax variance, templating engine
 to render HTML directly from CrafterCMS.
 
@@ -213,7 +213,7 @@ augment with in-context and in-place editing for content authors.
 
 Features like workflow, review and approval processes, staging, and final go-live are of course all built-in.
 
-Finally, given that CrafterCMS is Git-based, full DevContentOps support is native and fully supports templated sites. Learn more in the article :ref:`devcontentops`.
+Finally, given that CrafterCMS's content repository is built on Git, full DevContentOps support is native and fully supports templated sites. Learn more in the article :ref:`devcontentops`.
 
 |hr|
 
@@ -375,4 +375,4 @@ of processes for its developers, machines, and facilities. This includes, but no
 - Secure deployment practices
 - Secure operations practices
 
-Learn more about CrafterCMS' security policies in the :ref:`security section <security>`.
+Learn more about CrafterCMS's security policies in the :ref:`security section <security>`.
