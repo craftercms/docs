@@ -7,21 +7,26 @@ CrafterCMS |version| Documentation
 
 .. default-domain:: craftercms
 
-This documentation introduces key concepts in CrafterCMS |version|, presents the authoring and development environment, and provides operational and administrative considerations and procedures as well as a comprehensive reference section.
+This documentation introduces key concepts in CrafterCMS |version|, details the decoupled authoring and development systems, and provides operational and administrative considerations and procedures as well as a comprehensive reference section.
 
 ==================
 What is CrafterCMS
 ==================
-CrafterCMS is a modern content management platform for building digital experience applications including:
+CrafterCMS is a modern content management platform for building content-centric digital experience applications including:
 
+* Enterprise websites, corporate intranets, customer portals
 * Single Page Applications (SPAs) using frameworks like React, Vue, and Angular
-* Native mobile apps and headless applications (IOT, digital signage, wearables, etc.)
-* HTML5 websites
-* e-commerce front-ends
+* Native mobile apps and headless applications (consumer mobile, IOT, digital signage, wearables, etc.)
+* HTML5 websites (Freemarker templating built-in)
+* E-Commerce front-ends
 * OTT video experiences on AWS Elemental Media Services
-* AR/VR applications using A-Frame
+* E-Learning sites
+* AR/VR applications (e.g., using A-Frame)
+* Search-driven sites and apps (OpenSearch built-in)
+* AI-enabled applications
+* and lots more (See https://craftercms.com/headless-cms-solutions/enterprise).
 
-CrafterCMS is a dynamic CMS based on Git and supports DevContentOps processes for code and content. It is also a hybrid-headless, API-first (GraphQL, REST, in-process) CMS, and that allows developers to use their favorite UI frameworks and tools.
+CrafterCMS's authoring system is built on Git and supports DevContentOps processes for content, code, and configuration. It is also a hybrid-headless, API-first (GraphQL, REST, in-process) CMS, and that allows developers to use their favorite UI frameworks and tools.
 
 CrafterCMS differentiates itself from existing CMSs with its architecture: microservices-based, serverless, elastic and planet-wide scalability. To learn more, see the :ref:`general-architecture`.
 
@@ -30,9 +35,9 @@ When/where to use CrafterCMS
 ============================
 CrafterCMS is best suited for:
 
-* Content-rich applications that are authored by a few and consumed by many.
+* Large-scale sites and apps that require a high degree of performance, security, availability, and scalability. 
+* Content-rich applications that are authored by a non-technical content authors and consumed by many, many site visitors.
 * Enterprise-grade, complex, and integration-rich applications.
-* Applications that require a high degree of scalability, performance, and availability.
 
 ===================
 Who uses CrafterCMS
