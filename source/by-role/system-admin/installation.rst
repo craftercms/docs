@@ -1286,7 +1286,7 @@ Follow the instructions below to install CrafterCMS using pe-built binary bundle
 """""""""""""""""""
 Download the Bundle
 """""""""""""""""""
-Download CrafterCMS binary bundle from https://craftercms.org/downloads
+Download CrafterCMS binary bundle from https://craftercms.com/download
 
 Select your operating system then click on the ``Download`` link next to ``Authoring`` or ``Delivery`` depending on your needs.  For the authoring, the file downloaded will be ``crafter-cms-authoring-*.tar.gz``  and ``crafter-cms-delivery*.tar.gz`` for delivery. The ``.tar.gz`` file will install a fully functional authoring/delivery instance. Out of the box, the authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set up for local development.
 
