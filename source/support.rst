@@ -56,7 +56,7 @@ If you have any questions, please look at the following:
     * `Slack <https://craftercms.com/slack>`_
     * `Q&A at StackOverflow <https://stackoverflow.com/questions/tagged/crafter-cms>`_
 
-For additional resources, please visit the :docs_base_url:`CrafterCMS developer community <current>`.
+For additional resources, please visit the `CrafterCMS developer community <https://craftercms.com/products/crafter-community>`_.
 
 ------------------
 Enterprise Support
