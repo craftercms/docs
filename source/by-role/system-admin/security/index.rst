@@ -445,7 +445,7 @@ Step 4: Test your setup
 """""""""""""""""""""""
 To test your CrafterCMS authoring, open your browser and type in:
 
-   https://localhost:8443/studio
+   ``https://localhost:8443/studio``
 
 You should see similar screens as shown :ref:`above<ssl-test-your-setup>` when we setup SSL/TLS for a traditional deployment.
 
