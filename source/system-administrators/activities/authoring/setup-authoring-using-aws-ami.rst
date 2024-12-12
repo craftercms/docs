@@ -70,7 +70,7 @@ Step 2: Access the Crafter Studio login screen
 
 In this step we want to prove that the application is up and running now that our instance has started and initialized fully. To do this, we're simply going to check that the application login screen shows up when we access it via a web browser.
 
-To access the login screen open a web browser and navigate to http://DNS_NAME_OR_IP_ADDRESS/studio.
+To access the login screen open a web browser and navigate to ``http://DNS_NAME_OR_IP_ADDRESS/studio``.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-authoring-login.webp
     :width: 100 %
@@ -128,7 +128,7 @@ Step 4: Sign into Crafter Studio
 
 Now that we have the randomly generated admin password for Crafter Studio we can sign in to the application.
 
-In your web browser, navigate to http://DNS_NAME/studio and then enter admin as the Email/Username, paste the password you acquired from Step 3 then click "Sign In."
+In your web browser, navigate to ``http://DNS_NAME/studio`` and then enter admin as the Email/Username, paste the password you acquired from Step 3 then click "Sign In."
 
 .. image:: /_static/images/ami/craftercms-aws-ami-authoring-login.webp
     :width: 100 %
