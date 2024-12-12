@@ -176,5 +176,5 @@ We can now view the Bulk Edit plugin at ``/studio/plugin?site=skateboard-shop&ty
 Examples
 --------
 
-- `CRA example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-cra>`_: illustrates a plugin host app using a dev toolchain with dev server.
-- `Vanilla example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla>`_: illustrates the simplest use of a single JS entry point without transpilation or anything special.
+- `CRA example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/examples/cra>`_: illustrates a plugin host app using a dev toolchain with dev server.
+- `Vanilla example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/examples/app-vanilla>`_: illustrates the simplest use of a single JS entry point without transpilation or anything special.

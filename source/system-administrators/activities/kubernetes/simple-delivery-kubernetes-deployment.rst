@@ -9,7 +9,7 @@
 Simple Delivery Kubernetes Deployment
 =====================================
 
-CrafterCMS has an example Kubernetes deployment for a Delivery with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/delivery/cluster. This guide covers how to install this example in a Kubernetes cluster.
+CrafterCMS has an example Kubernetes deployment for a Delivery with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/delivery/simple. This guide covers how to install this example in a Kubernetes cluster.
 
 .. important::
    This guide assumes you have a working understanding of Kubernetes

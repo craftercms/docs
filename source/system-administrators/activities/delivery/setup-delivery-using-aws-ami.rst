@@ -70,7 +70,7 @@ Step 2: Access the Crafter Engine via the Web
 
 In this step we want to prove that the application is up and running now that our instance has started and initialized fully. To do this, we're simply going to check that the application login screen shows up when we access it via a web browser.
 
-To access the login screen open a web browser and navigate to http://DNS_NAME_OR_IP_ADDRESS.
+To access the login screen open a web browser and navigate to ``http://DNS_NAME_OR_IP_ADDRESS``.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-delivery-engine-running.webp
     :width: 100 %

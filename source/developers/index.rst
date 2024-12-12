@@ -81,7 +81,7 @@ Below is a short set of links to other documentation for technology that Crafter
 +----------------+------------------------------+-----------------------------------------------+
 | Attribute Name |             Usage            | Links                                         |
 +================+==============================+===============================================+
-|| Spring Beans  || Server App Framework        || https://spring.io/docs                       |
+|| Spring Beans  || Server App Framework        || |spring_io_docs|                             |
 || Spring MVC    ||                             ||                                              |
 +----------------+------------------------------+-----------------------------------------------+
 || Freemarker    || Server side templates       || http://freemarker.org/                       |
@@ -104,3 +104,5 @@ Below is a short set of links to other documentation for technology that Crafter
 
 .. note::
     CrafterCMS is a Git-based CMS.  Please note that **your system's global git ignore file (list of rules for ignoring files in every Git repository on your computer) is respected by CrafterCMS**.  In case you find some of your content not being committed into CrafterCMS, check your global git ignore file to verify the content you're committing is not being ignored.
+
+.. |spring_io_docs| replace:: https://docs.spring.io/spring-framework/reference/index.html

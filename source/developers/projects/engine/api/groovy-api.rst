@@ -48,7 +48,7 @@ back to the caller. REST scripts must be placed in any folder under Scripts > re
 
 A REST script URL has the following format: it starts with /api/1/services, then contains all the folders that are part of the hierarchy
 for the particular script, and ends with the script name, the HTTP method and the .groovy extension. So, a script file at
-Scripts > rest > myfolder > myscript.get.groovy will respond to GET method calls at http://mysite/api/1/services/myfolder/myscript.json.
+Scripts > rest > myfolder > myscript.get.groovy will respond to GET method calls at ``http://mysite/api/1/services/myfolder/myscript.json``.
 
 The following is a very simple sample script that returns a date attribute saved in the session. If no attribute is set yet, the current
 date is set as the attribute. Assume that the REST script exists under Scripts > rest > session_date.get.groovy
@@ -80,7 +80,7 @@ they return a string with the view to render. Most of the time, this is just the
 
 Controller scripts basically work like a controller in the MVC pattern. They should be put under Scripts > controllers,
 and similarly to REST scripts, the URL is made up of the directory hierarchy, the script name and the HTTP method. For example,
-a script at Scripts > controllers > myfolder > mycontroller.get.groovy will respond to GET calls at http://mysite/myfolder/mycontroller.
+a script at Scripts > controllers > myfolder > mycontroller.get.groovy will respond to GET calls at ``http://mysite/myfolder/mycontroller``.
 
 The following is a very simple example script that will do the sum of 2 parameters, put the result in the ``templateModel`` and return
 the path of the FTL template that will render the result:

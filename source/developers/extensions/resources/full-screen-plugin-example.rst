@@ -8,7 +8,7 @@
 Crafter Studio Full Screen Plugin Example
 =========================================
 Here we'll take a look at an example of creating a Full Screen Plugin for the plugin host page using the
-`Vanilla example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla>`__
+`Vanilla example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/examples/app-vanilla>`__
 
 For more information on the plugin host, see :ref:`here <plugin-host>`
 
@@ -55,7 +55,7 @@ For this example, as outlined in the vanilla example referenced above, we will n
       </details>
 
 
-#. We'll copy the JavaScript file ``index.js`` found `here <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla>`__
+#. We'll copy the JavaScript file ``index.js`` found `here <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/examples/app-vanilla>`__
    for our plugin
 
 #. After placing your plugin file, the plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
