@@ -1149,7 +1149,9 @@ a project/site in Preview.
 ^^^^^^^^^
 API Token
 ^^^^^^^^^
-To create a new access token, click on ``Token Management`` from the Main Menu, then click on the ``API Token`` button.
+API tokens authorize the user to access APIs as a particular user with a particular role.
+
+To create a new API access token, click on ``Token Management`` from the Main Menu, then click on the ``API Token`` button.
 The only required field for the access token is the label to identify it, however, it is also recommended to set
 an expiration date to minimize the risk of lost or stolen tokens being used without being noticed.
 
@@ -1219,6 +1221,9 @@ Preview Token
 .. version_tag::
     :label: Since
     :version: 4.2.0
+
+Preview tokens allow preview applications to access delivery APIs in preview mode from within the authoring environment.
+This extra layer of security is required in authoring because the environment contains unpublished projects and content.
 
 To create a Preview Token, click on ``Token Management`` from the Main Menu, then click on the ``Preview Token`` button.
 
