@@ -17,16 +17,18 @@ Run CrafterCMS
 --------------
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
-Run CrafterCMS in Docker
+Try CrafterCMS in Docker
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you have `Docker <https://www.docker.com/>`_ installed, you can get started with CrafterCMS in a few minutes. Simply run the following command:
+If you have `Docker <https://www.docker.com/>`_ installed, you can start exploring CrafterCMS in a few minutes. Simply run the following command:
 
 .. code-block:: bash
 
     docker run -p 8080:8080 craftercms/authoring_local:latest
 
 Then you can just point your browser to ``http://localhost:8080/studio`` and you will be presented with the Crafter Studio login page. The default username is ``admin`` and the default password is ``admin``.
+
+If you are ready to start development, consult :ref:`documentation for developers <by-role/developer>` for advice on environment setup. 
 
 |hr|
 
