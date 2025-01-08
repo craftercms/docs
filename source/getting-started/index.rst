@@ -28,7 +28,7 @@ If you have `Docker <https://www.docker.com/>`_ installed, you can start explori
 
 Then you can just point your browser to ``http://localhost:8080/studio`` and you will be presented with the Crafter Studio login page. The default username is ``admin`` and the default password is ``admin``.
 
-If you are ready to start development, consult :ref:`documentation for developers <by-role/developer>` for advice on environment setup. 
+If you are ready to start development, consult the :ref:`documentation for developers <developer>` for advice on environment setup.
 
 |hr|
 
