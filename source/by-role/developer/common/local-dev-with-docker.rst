@@ -53,6 +53,7 @@ Here are the steps:
              - 8080:8080
            volumes:
              - /path/to/exported/directory/my-crafter-instance/data:/opt/crafter/data
+
    |
 
    Otherwise, open your existing ``docker-compose.yml`` file in an editor and edit the ``crafter_data`` volume like in the highlighted section below (assume C is the shared drive, and replace the ``/path/to/exported/directory/my-crafter-instance`` for the actual host path):
