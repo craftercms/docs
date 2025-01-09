@@ -17,6 +17,23 @@ This release includes fixes for issues with the release version 4.2.0
     For instructions on how to update your CrafterCMS install to 4.2.x,
     please see :ref:`upgrading-craftercms`
 
+^^^^^^^^^^^^
+Enhancements
+^^^^^^^^^^^^
+* `Deployer processors improvements <https://github.com/craftercms/craftercms/issues/7617>`__
+
+  - Added new options to ``gitPullProcessor``
+
+    - ``fastForwardMode``
+    - ``mergeStrategy``
+    - ``contentMergeOption``
+
+    See :ref:`` for more information on the new options.
+
+  - Updated ``mailNotificationProcessor`` default status condition to a new ``SUCCESS`` status (vs current ``ON_ANY_STATUS``).
+  - Added new ``failedProcessors`` option to ``mailNotificationProcessor``
+  - New Deployer processor ``webhookNotificationProcessor``
+  - Added support for a "mute period" for notification processors.
 
 ^^^^^^^^^
 Bug Fixes
