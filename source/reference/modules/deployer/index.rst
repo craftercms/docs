@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.0
+:last-updated: 4.2.1
 :orphan:
 
 .. index:: Modules; Crafter Deployer
@@ -1386,6 +1386,11 @@ Processor that clones/pulls a remote Git repository into a local path on the fil
       - ``true``
       - Enables failing a deployment when there's a processor failure.
     * - ``fastForwardMode``
+
+        .. version_tag::
+            :label: Since
+            :version: 4.2.1
+
       -
       - ``FF``
       - The fast forward mode to use when pulling changes from the remote repo.
@@ -1393,6 +1398,11 @@ Processor that clones/pulls a remote Git repository into a local path on the fil
         See the `jgit docs <https://javadoc.io/static/org.eclipse.jgit/org.eclipse.jgit/7.1.0.202411261347-r/org.eclipse.jgit/org/eclipse/jgit/api/MergeCommand.FastForwardMode.html>`__
         for more information on the supported fast forward mode values.
     * - ``mergeStrategy``
+
+        .. version_tag::
+            :label: Since
+            :version: 4.2.1
+
       -
       - ``theirs``
       - The merge strategy to use.
@@ -1400,6 +1410,11 @@ Processor that clones/pulls a remote Git repository into a local path on the fil
         See the `jgit docs <https://javadoc.io/static/org.eclipse.jgit/org.eclipse.jgit/7.1.0.202411261347-r/org.eclipse.jgit/org/eclipse/jgit/merge/MergeStrategy.html>`__
         for more information on the supported merge strategy values.
     * - ``contentMergeOption``
+
+        .. version_tag::
+            :label: Since
+            :version: 4.2.1
+
       -
       - ``CONFLICT``
       - The content merge strategy to handle conflicts.
@@ -1945,14 +1960,29 @@ All deployment processors related to notification processors support the followi
         - **ON_TOTAL_FAILURE**: Notifications will be sent for deployments in which the general status indicates failure
 
     * - ``failedProcessors``
+
+        .. version_tag::
+            :label: Since
+            :version: 4.2.1
+
       -
       -
       - A regex pattern to match the failed processors name that trigger the notification.
     * - ``mutePeriodMinutes``
+
+        .. version_tag::
+            :label: Since
+            :version: 4.2.1
+
       -
       - ``0``
       - The number of minutes to wait before sending another notification for the same processor.
     * - ``lastDateFilenameSuffix``
+
+        .. version_tag::
+            :label: Since
+            :version: 4.2.1
+
       -
       - ``-lastNotification``
       - The suffix to use when creating the last notification date file. This allows multiple notification processors
@@ -2038,6 +2068,10 @@ To change the location of mail templates, see the corresponding section in :ref:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Webhook Notification Processor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. version_tag::
+    :label: Since
+    :version: 4.2.1
+
 Post processor that sends a webhook notification with the result of the deployment.
 A default template for webhook notifications ``templates/webhook/slack-template.ftl`` is provided out-of-the-box.
 To change the location of webhook templates, see the corresponding section in :ref:`deployer-notification-templates-override-location`
