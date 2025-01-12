@@ -1335,6 +1335,7 @@ All deployment processors support the following properties:
 .. |path| replace:: ``remoteRepo.ssh.privateKey.path``
 .. |passphrase| replace:: ``remoteRepo.ssh.privateKey.passphrase``
 
+.. _deployer-git-pull-processor:
 
 """"""""""""""""""
 Git Pull Processor
