@@ -27,7 +27,7 @@ Here are the steps:
 
       |
 
-#. Check the project directory is a shared drive
+#. Ensure that the project directory is a shared drive
 
    Make sure the drive with the directory that will contain the projects is a shared drive by clicking on Docker Desktop ``Settings`` -> ``Resources`` -> ``File Sharing``)
 
@@ -39,9 +39,24 @@ Here are the steps:
    |
 
 
-#. Edit the ``docker-compose.yml`` file
+#. Modify ``docker-compose.yml``
 
-   Navigate to the ``authoring`` directory and open the ``docker-compose.yml`` file in an editor and edit the ``crafter_data`` volume like in the highlighted section below (assume C is the shared drive, and replace the ``/host/path/to/projects`` for the actual host path):
+   If you are not using your own ``docker-compose.yml`` to run CrafterCMS locally, you may use a trivial sample version like this:
+
+   .. code-block:: yaml
+       :caption: *simplified docker-compose.yml*
+
+       services:
+         crafter-combined:
+           image: craftercms/authoring_local:latest
+           ports:
+             - 8080:8080
+           volumes:
+             - /path/to/exported/directory/my-crafter-instance/data:/opt/crafter/data
+
+   |
+
+   Otherwise, open your existing ``docker-compose.yml`` file in an editor and edit the ``crafter_data`` volume like in the highlighted section below (assume C is the shared drive, and replace the ``/path/to/exported/directory/my-crafter-instance`` for the actual host path):
 
    .. code-block:: yaml
        :emphasize-lines: 25-31
@@ -76,7 +91,7 @@ Here are the steps:
            driver_opts:
              o: bind
              type: none
-             device: C:/host/path/to/projects
+             device: C:/path/to/exported/directory/my-crafter-instance
            name: crafter_authoring_data
          crafter_logs:
            name: crafter_authoring_logs
