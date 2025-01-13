@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.0
+:last-updated: 4.1.9
 
 ##################################
 CrafterCMS |version| Documentation
@@ -50,6 +50,7 @@ CrafterCMS is used by three main constituencies:
     by-role/index
     reference/index
     security/index
+    accessibility
     roadmap
     support
     release-notes/index
