@@ -2074,6 +2074,9 @@ Webhook Notification Processor
     :version: 4.2.1
 
 Post processor that sends a webhook notification with the result of the deployment.
+The processor will be included in remote target template if ``webhook_url`` param is provided to the add target API. See
+the example below.
+
 A default template for webhook notifications ``templates/webhook/slack-template.ftl`` is provided out-of-the-box.
 To change the location of webhook templates, see the corresponding section in :ref:`deployer-notification-templates-override-location`
 
@@ -2106,11 +2109,13 @@ To change the location of webhook templates, see the corresponding section in :r
     :linenos:
     :caption: *Webhook Notification Processor*
 
+    {{#if webhook_url}}
     - processorName: webhookNotificationProcessor
-        status: ON_ANY_FAILURE
-        mutePeriodMinutes: {{#if mute_period_minutes}}{{mute_period_minutes}}{{else}}60{{/if}}
-        url: {{webhook_url}}
-        method: POST
+      status: ON_ANY_FAILURE
+      mutePeriodMinutes: {{#if mute_period_minutes}}{{mute_period_minutes}}{{else}}60{{/if}}
+      url: {{webhook_url}}
+      method: POST
+    {{/if}}
 
 ^^^^^^^^^^^^^^^^^^^^^
 Full Pipeline Example
