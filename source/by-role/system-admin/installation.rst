@@ -184,7 +184,7 @@ Linux Prerequisite
 
      .. code-block:: bash
 
-         echo "deb http://security.ubuntu.com/ubuntu focal-security main universe" > /etc/apt/sources.list.d/ubuntu-focal-sources.list
+         sudo sh -c 'echo "deb http://security.ubuntu.com/ubuntu focal-security main universe" >> /etc/apt/sources.list.d/ubuntu-focal-sources.list'
 
          sudo apt update
 

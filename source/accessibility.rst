@@ -21,10 +21,10 @@ three levels of conformance: Level A, Level AA, and Level AAA. Many government a
 CrafterCMS Sites/Projects
 -------------------------
 Websites, portals, applications, and other digital experiences built on top of CrafterCMS can support
-`WCAG 2.1 <https://www.w3.org/TR/WCAG21/>`__ Level AA or higher. You can choose the technology that suits you best
-to implement accessibility for your digital experience. Many libraries and technologies will accelerate this, including `MUI <https://mui.com/>`__, which supports WCAG 2.1 Level AA and has UI components like accordions, tabs, and more.
+`WCAG <https://www.w3.org/WAI/standards-guidelines/wcag/>`__ or other accessibility standards at any level. You can choose the technology that suits you best
+to implement accessibility for your digital experience. Many libraries and technologies will accelerate this, including `MUI <https://mui.com/>`__, which supports WCAG and has UI components like accordions, tabs, and more.
 
 --------------
 Crafter Studio
 --------------
-Crafter Studio is the internal authoring tool of CrafterCMS. It allows content creators and managers to update sites/projects and applications. Crafter Studio version 4 is close to WCAG 2.1 Level AA compliance, and Crafter Studio version 5 is targeting WCAG 2.1 Level AA compliance.
+Crafter Studio is the internal authoring tool of CrafterCMS. It allows content creators and managers to update sites/projects and applications. Crafter Studio version 4 is close to WCAG 2.1 Level AA compliance, and Crafter Studio version 5 targets WCAG 2.1 Level AA compliance.
