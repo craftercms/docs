@@ -6,6 +6,22 @@
 Security Advisories
 ===================
 
+CV-2025011501
+=============
+
+======================= ======================================================================================
+**Date**                2025.01.15
+======================= ======================================================================================
+**Affected Versions**   **4.1** < 4.1.6, **4.0** < 4.0.8
+**Vulnerability Type**  CWE-402: Transmission of Private Resources into a New Sphere ('Resource Leak')
+**Impact**              CAPEC-127 Directory Indexing
+                        CAPEC-131 Resource Leak Exposure
+**Risk**                Medium
+**Description**
+**CVE**                 https://www.cve.org/cverecord?id=CVE-2025-0502
+**Credit**              Discovered by Carlos Ortiz, https://github.com/cortiz
+======================= ======================================================================================
+
 CV-2023080301
 =============
 
