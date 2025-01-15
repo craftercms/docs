@@ -43,7 +43,7 @@ Bug Fixes
 * `Fixed issue with deleting and recreating an item with the same name and page URL <https://github.com/craftercms/craftercms/issues/7608>`__
 * `Fixed issue with existing component drag and drop not working when XB is enabled <https://github.com/craftercms/craftercms/issues/7656>`__
 * `Fixed issue with AWS SSO authentication <https://github.com/craftercms/craftercms/issues/7663>`__
-* Fixed issue with externally managed users still a part of a group that has been removed in the Idp
+* Fixed issue with externally managed users still a part of a group that has been removed from the external authority
 
 ^^^^^^^^^^^^^^^^^^
 Dependency Updates
@@ -51,7 +51,6 @@ Dependency Updates
 * Noteworthy dependency updates:
 
   - OpenSearch to version 2.17
-  - Commons IO to version 2.18
 
 For a complete list of community tickets, please visit: `GitHub 4.2.1 <https://github.com/orgs/craftercms/projects/16/views/1>`_
 
