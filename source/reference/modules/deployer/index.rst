@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.0
+:last-updated: 4.2.1
 :orphan:
 
 .. index:: Modules; Crafter Deployer
@@ -24,7 +24,9 @@ Crafter Deployer is the deployment agent for CrafterCMS.
 
 Crafter Deployer performs indexing and runs scheduled deployments to perform tasks like pushing/pulling content
 created/edited in Crafter Studio to an external service, executing actions every time a deployment succeeds or fails,
-sending out deployment email notifications, etc.
+sending out deployment notifications, etc.
+
+|hr|
 
 -------------
 Configuration
@@ -46,7 +48,7 @@ Crafter Deployer has two main property configuration files found in ``CRAFTER_HO
 
 * **application.yaml:** contains the global application properties, like the server port and the locations of other configuration files.
 * **base-target.yaml:** contains the common properties for all targets. In here you can find properties for configuring indexing with
-  Crafter Search and deployment email notifications.
+  Crafter Search and deployment notifications.
 
 The ``application.yaml`` file is loaded automatically by Spring Boot, so its properties can be overridden in the standard external locations
 defined by Spring Boot:
@@ -286,6 +288,8 @@ The Deployer out of the box provides the following processor beans:
 * **mailNotificationProcessor:** sends an email notification when there's a successful deployment with file changes or when
   a deployment failed.
 
+* **webhookNotificationProcessor:** sends a webhook notification with the result of the deployment.
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Deployer Configuration Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -317,6 +321,8 @@ The properties listed above are configured in ``CRAFTER_HOME/bin/crafter-deploye
       - Allows you to configure remote documents path patterns used for document indexing
     * - :ref:`deployer-indexing-metadata-path-pattern`
       - Allows you to configure metadata path patterns used for document indexing
+    * - :ref:`deployer-notification-templates-override-location`
+      - Allows you to configure override locations for notification templates
 
 The target properties listed above may be configured in the following locations:
 
@@ -606,6 +612,53 @@ Here's a sample *application.yaml* file with the deployment pool and task thread
 .. raw:: html
 
    </details>
+
+|
+
+.. _deployer-notification-templates-override-location:
+
+"""""""""""""""""""""""""""""""""""""""""
+Notification Templates Override Locations
+"""""""""""""""""""""""""""""""""""""""""
+The mail and webhook notification processors uses templates for the notifications that are sent.
+
+The mail notification processor by default uses the templates located in ``classpath:templates/mail``.
+To change the mail templates location, simply set the ``mail.templates.overrideLocation`` property:
+
+.. code-block:: yaml
+    :linenos:
+    :caption: *Default Mail Notification Processor Templates Location in base-target.yaml*
+    :emphasize-lines: 6-7
+
+    notifications:
+      mail:
+        templates:
+          # The location (Spring URL) of  the mail templates
+          location: classpath:templates/mail
+          # The override location (Spring URL) of the mail templates
+          overrideLocation: file:${deployer.main.config.folderPath}/templates/mail
+          # The name of the default mail template
+          default: default
+
+The webhook notification processor by default uses the templates located in ``classpath:templates/webhook``.
+To change the webhook templates location, simply set the ``webhook.templates.overrideLocation`` property:
+
+.. code-block:: yaml
+    :linenos:
+    :caption: *Default Webhook Notification Processor Templates Location in base-target.yaml*
+    :emphasize-lines: 6-7
+
+    notifications:
+      webhook:
+        templates:
+          # The location (Spring URL) of  the webhook templates
+          location: classpath:templates/webhook
+          # The override location (Spring URL) of the webhook templates
+          overrideLocation: file:${deployer.main.config.folderPath}/templates/webhook
+          # The name of the default template
+          default: slack
+          # The suffix used to resolve the final name of a template
+          suffix: -template.ftl
 
 |
 
@@ -1282,6 +1335,7 @@ All deployment processors support the following properties:
 .. |path| replace:: ``remoteRepo.ssh.privateKey.path``
 .. |passphrase| replace:: ``remoteRepo.ssh.privateKey.passphrase``
 
+.. _deployer-git-pull-processor:
 
 """"""""""""""""""
 Git Pull Processor
@@ -1292,29 +1346,82 @@ Processor that clones/pulls a remote Git repository into a local path on the fil
 
 **Properties**
 
-+------------+-----------+-------------------------------+-------------------------------------------------------------+
-|Name        |Required   |Default Value                  |Description                                                  |
-+============+===========+===============================+=============================================================+
-||URL|       ||checkmark||                               |The URL of the remote Git repo to pull                       |
-+------------+-----------+-------------------------------+-------------------------------------------------------------+
-||Name|      |           |``origin``                     |The name to use for the remote repo when pulling from it     |
-+------------+-----------+-------------------------------+-------------------------------------------------------------+
-||Branch|    |           |The default branch in the repo |The branch of the remote Git repo to pull                    |
-+------------+-----------+-------------------------------+-------------------------------------------------------------+
-||username|  |           |                               |The username for authentication with the remote Git repo.    |
-|            |           |                               |Not needed when SSH with RSA key pair authentication is used |
-+------------+-----------+-------------------------------+-------------------------------------------------------------+
-||password|  |           |                               |The password for authentication with the remote Git repo.    |
-|            |           |                               |Not needed when SSH with RSA key pair authentication is used |
-+------------+-----------+-------------------------------+-------------------------------------------------------------+
-||path|      |           |                               |The SSH private key path, used only with SSH with RSA key    |
-|            |           |                               |pair authentication                                          |
-+------------+-----------+-------------------------------+-------------------------------------------------------------+
-||passphrase||           |                               |The SSH private key passphrase, used only with SSH withRSA   |
-|            |           |                               |key pair authentication                                      |
-+------------+-----------+-------------------------------+-------------------------------------------------------------+
-||failDep|   |           |``true``                       |Enables failing a deployment when there's a processor failure|
-+------------+-----------+-------------------------------+-------------------------------------------------------------+
+.. list-table::
+    :header-rows: 1
+    :widths: 20 10 10 60
+
+    * - Name
+      - Required
+      - Default Value
+      - Description
+    * - |URL|
+      - |checkmark|
+      -
+      - The URL of the remote Git repo to pull
+    * - |Name|
+      -
+      - ``origin``
+      - The name to use for the remote repo when pulling from it
+    * - |Branch|
+      -
+      - The default branch in the repo
+      - The branch of the remote Git repo to pull
+    * - |username|
+      -
+      -
+      - The username for authentication with the remote Git repo. Not needed when SSH with ``RSA`` key pair authentication is used.
+    * - |password|
+      -
+      -
+      - The password for authentication with the remote Git repo. Not needed when SSH with ``RSA`` key pair authentication is used.
+    * - |path|
+      -
+      -
+      - The SSH private key path, used only with SSH with ``RSA`` key pair authentication.
+    * - |passphrase|
+      -
+      -
+      - The SSH private key passphrase, used only with SSH ``withRSA`` key pair authentication.
+    * - |failDep|
+      -
+      - ``true``
+      - Enables failing a deployment when there's a processor failure.
+    * - ``fastForwardMode``
+
+        .. version_tag::
+            :label: Since
+            :version: 4.2.1
+
+      -
+      - ``FF``
+      - The fast forward mode to use when pulling changes from the remote repo.
+        Supported values are: ``FF``, ``NO_FF`` and ``FF_ONLY``.
+        See the `jgit docs <https://javadoc.io/static/org.eclipse.jgit/org.eclipse.jgit/7.1.0.202411261347-r/org.eclipse.jgit/org/eclipse/jgit/api/MergeCommand.FastForwardMode.html>`__
+        for more information on the supported fast forward mode values.
+    * - ``mergeStrategy``
+
+        .. version_tag::
+            :label: Since
+            :version: 4.2.1
+
+      -
+      - ``theirs``
+      - The merge strategy to use.
+        Supported values are: ``ours``, ``theirs``, ``simple-two-way-in-core``, ``resolve``, ``recursive``.
+        See the `jgit docs <https://javadoc.io/static/org.eclipse.jgit/org.eclipse.jgit/7.1.0.202411261347-r/org.eclipse.jgit/org/eclipse/jgit/merge/MergeStrategy.html>`__
+        for more information on the supported merge strategy values.
+    * - ``contentMergeOption``
+
+        .. version_tag::
+            :label: Since
+            :version: 4.2.1
+
+      -
+      - ``CONFLICT``
+      - The content merge strategy to handle conflicts.
+        Supported values are ``CONFLICT``, ``OURS``, ``THEIRS``, ``UNION``.
+        See the `jgit docs <https://javadoc.io/static/org.eclipse.jgit/org.eclipse.jgit/7.1.0.202411261347-r/org.eclipse.jgit/org/eclipse/jgit/merge/ContentMergeStrategy.html>`__
+        for more information on the supported content merge strategy values.
 
 **Example**
 
@@ -1329,6 +1436,8 @@ Processor that clones/pulls a remote Git repository into a local path on the fil
       username: myuser
       password: mypassword
 
+|
+
 .. code-block:: yaml
   :linenos:
   :caption: *Git Pull Processor using SSH with RSA key pair*
@@ -1341,6 +1450,22 @@ Processor that clones/pulls a remote Git repository into a local path on the fil
         privateKey:
           path: /home/myuser/myprivatekey
           passphrase: mypassphrase
+
+|
+
+.. code-block:: yaml
+    :linenos:
+    :caption: *Git Pull Processor with merge options*
+
+    - processorName: gitPullProcessor
+      fastForwardMode: FF_ONLY
+      contentMergeOption: CONFLICT
+      mergeStrategy: theirs
+      remoteRepo:
+        url: ......../repos/sites/ed1/published
+        branch: live
+
+|
 
 .. _deployer-git-diff-processor:
 
@@ -1801,13 +1926,81 @@ files were processed.
 
   - processorName: fileOutputProcessor
 
+.. _deployer-notification-processors:
+
+"""""""""""""""""""""""
+Notification Processors
+"""""""""""""""""""""""
+All deployment processors related to notification processors support the following properties:
+
+.. list-table::
+    :header-rows: 1
+    :widths: 20 5 15 60
+
+    * - Name
+      - Required
+      - Default Value
+      - Description
+    * - ``templateName``
+      -
+      -
+      - The name of the Freemarker template used for email creation.
+    * - ``serverName``
+      -
+      -
+      - The hostname of the email server.
+    * - ``status``
+      -
+      - ``SUCCESS``
+      - The status condition that triggers the notification.
+        Possible values are:
+
+        - **SUCCESS**: Notifications sent for successful deployments
+        - **ON_ANY_STATUS**: Notifications sent for all deployments
+        - **ON_ANY_FAILURE**: Notifications sent for deployments where at least one processor has failed
+        - **ON_TOTAL_FAILURE**: Notifications will be sent for deployments in which the general status indicates failure
+
+    * - ``failedProcessors``
+
+        .. version_tag::
+            :label: Since
+            :version: 4.2.1
+
+      -
+      -
+      - A regex pattern to match the failed processors name that trigger the notification.
+    * - ``mutePeriodMinutes``
+
+        .. version_tag::
+            :label: Since
+            :version: 4.2.1
+
+      -
+      - ``0``
+      - The number of minutes to wait before sending another notification for the same processor.
+    * - ``lastDateFilenameSuffix``
+
+        .. version_tag::
+            :label: Since
+            :version: 4.2.1
+
+      -
+      - ``-lastNotification``
+      - The suffix to use when creating the last notification date file. This allows multiple notification processors
+        for the same target.
+    * - ``dateTimePattern``
+      -
+      -
+      - The date time pattern to use when specifying a date in the message.
+
 .. _deployer-mail-notification-processor:
 
-"""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Mail Notification Processor
-"""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Post processor that sends an email notification with the result of a deployment, whenever a deployment fails or files
 were processed. The output file generated by the ``fileOutputProcessor`` is attached if it's available.
+To change the location of mail templates, see the corresponding section in :ref:`deployer-notification-templates-override-location`
 
 **Properties**
 
@@ -1830,34 +2023,99 @@ were processed. The output file generated by the ``fileOutputProcessor`` is atta
 |``dateTimePattern``|           |``MM/dd/yyyy hh:mm:ss.SSS a z``|The date time pattern to use when specifying a date  |
 |                   |           |                               |in the email                                         |
 +-------------------+-----------+-------------------------------+-----------------------------------------------------+
-|``status``         |           |``ON_ANY_STATUS``              |Indicates for which deployment status emails should  |
-|                   |           |                               |be sent                                              |
+|``status``         |           |``SUCCESS``                    |The status condition that triggers the notification. |
+|                   |           |                               |See above for possible values.                       |
 +-------------------+-----------+-------------------------------+-----------------------------------------------------+
-|``status``         |           |``ON_ANY_STATUS``              |Indicates for which deployment status emails         |
-|                   |           |                               |should be sent.                                      |
-|                   |           |                               |                                                     |
-|                   |           |                               |Possible values:                                     |
-|                   |           |                               |                                                     |
-|                   |           |                               |- **ON_ANY_STATUS** Notifications sent for all       |
-|                   |           |                               |  deployments                                        |
-|                   |           |                               |- **ON_ANY_FAILURE** Notifications sent for          |
-|                   |           |                               |  deployments where at least one processor has failed|
-|                   |           |                               |- **ON_TOTAL_FAILURE** Notifications will be sent    |
-|                   |           |                               |  for deployments in which the general status        |
-|                   |           |                               |  indicates failure                                  |
+||failedProc|       |           |                               |A regex pattern to match the failed processors name  |
+|                   |           |                               |that trigger the notification.                       |
 +-------------------+-----------+-------------------------------+-----------------------------------------------------+
+||mutePdMin|        |           |``0``                          |The number of minutes to wait before sending another |
+|                   |           |                               |notification for the same processor.                 |
++-------------------+-----------+-------------------------------+-----------------------------------------------------+
+||lastDateFNSuf|    |           |``-lastNotification``          |The suffix to use when creating the last notification|
+|                   |           |                               |date file.                                           |
++-------------------+-----------+-------------------------------+-----------------------------------------------------+
+
+.. |failedProc| replace:: ``failedProcessors``
+.. |mutePdMin| replace:: ``mutePeriodMinutes``
+.. |lastDateFNSuf| replace:: ``lastDateFilenameSuffix``
+
+**Examples**
+
+.. code-block:: yaml
+    :linenos:
+    :caption: *Mail Notification Processor for any failure*
+
+    - processorName: mailNotificationProcessor
+      to:
+        - admin@example.com
+        - author@example.com
+      status: ON_ANY_FAILURE
+
+.. code-block:: yaml
+     :linenos:
+     :caption: *Mail Notification Processor with mute period*
+
+     - processorName: mailNotificationProcessor
+       to:
+         - test@example.com
+       mutePeriodMinutes: 2
+       lastDateFilenameSuffix: -error
+
+|
+
+.. _deployer-webhook-notification-processor:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Webhook Notification Processor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. version_tag::
+    :label: Since
+    :version: 4.2.1
+
+Post processor that sends a webhook notification with the result of the deployment.
+The processor will be included in remote target template if ``webhook_url`` param is provided to the add target API. See
+the example below.
+
+A default template for webhook notifications ``templates/webhook/slack-template.ftl`` is provided out-of-the-box.
+To change the location of webhook templates, see the corresponding section in :ref:`deployer-notification-templates-override-location`
+
+**Properties**
+
+.. list-table::
+    :header-rows: 1
+    :widths: 20 10 10 60
+
+    * - Name
+      - Required
+      - Default Value
+      - Description
+    * - ``url``
+      - |checkmark|
+      -
+      - The URL to send the webhook notification to.
+    * - ``method``
+      -
+      - ``post``
+      - The HTTP method to use.
+    * - ``contentType``
+      -
+      - ``application/json``
+      - The content type of the request body.
 
 **Example**
 
 .. code-block:: yaml
-  :linenos:
-  :caption: *Mail Notification Processor for any failure*
+    :linenos:
+    :caption: *Webhook Notification Processor*
 
-  - processorName: mailNotificationProcessor
-    to:
-      - admin@example.com
-      - author@example.com
-    status: ON_ANY_FAILURE
+    {{#if webhook_url}}
+    - processorName: webhookNotificationProcessor
+      status: ON_ANY_FAILURE
+      mutePeriodMinutes: {{#if mute_period_minutes}}{{mute_period_minutes}}{{else}}60{{/if}}
+      url: {{webhook_url}}
+      method: POST
+    {{/if}}
 
 ^^^^^^^^^^^^^^^^^^^^^
 Full Pipeline Example
