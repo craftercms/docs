@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.1
+:last-updated: 4.2.2
 :orphan:
 
 .. index:: Modules; Crafter Deployer
@@ -1390,7 +1390,7 @@ Processor that clones/pulls a remote Git repository into a local path on the fil
 
         .. version_tag::
             :label: Since
-            :version: 4.2.1
+            :version: 4.2.2
 
       -
       - ``FF``
@@ -1402,7 +1402,7 @@ Processor that clones/pulls a remote Git repository into a local path on the fil
 
         .. version_tag::
             :label: Since
-            :version: 4.2.1
+            :version: 4.2.2
 
       -
       - ``theirs``
@@ -1414,7 +1414,7 @@ Processor that clones/pulls a remote Git repository into a local path on the fil
 
         .. version_tag::
             :label: Since
-            :version: 4.2.1
+            :version: 4.2.2
 
       -
       - ``CONFLICT``
@@ -1964,7 +1964,7 @@ All deployment processors related to notification processors support the followi
 
         .. version_tag::
             :label: Since
-            :version: 4.2.1
+            :version: 4.2.2
 
       -
       -
@@ -1973,7 +1973,7 @@ All deployment processors related to notification processors support the followi
 
         .. version_tag::
             :label: Since
-            :version: 4.2.1
+            :version: 4.2.2
 
       -
       - ``0``
@@ -1982,7 +1982,7 @@ All deployment processors related to notification processors support the followi
 
         .. version_tag::
             :label: Since
-            :version: 4.2.1
+            :version: 4.2.2
 
       -
       - ``-lastNotification``
@@ -2071,7 +2071,7 @@ Webhook Notification Processor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. version_tag::
     :label: Since
-    :version: 4.2.1
+    :version: 4.2.2
 
 Post processor that sends a webhook notification with the result of the deployment.
 The processor will be included in remote target template if ``webhook_url`` param is provided to the add target API. See
