@@ -51,7 +51,7 @@ Dependency Updates
 
   - OpenSearch to version 2.17
 
-For a complete list of community tickets, please visit: `GitHub 4.2.1 <https://github.com/orgs/craftercms/projects/16/views/1>`_
+For a complete list of community tickets, please visit: `GitHub 4.2.2 <https://github.com/orgs/craftercms/projects/16/views/1>`_
 
 For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
 
