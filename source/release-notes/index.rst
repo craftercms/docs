@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.1
+:last-updated: 4.2.2
 
 .. _release-notes:
 
@@ -11,7 +11,7 @@ release's release notes page :ref:`below <other-release-notes>`
 
    .. note:: CrafterCMS 4.2 requires Java 21
 
-.. include:: /release-notes/4-2-1.rst
+.. include:: /release-notes/4-2-2.rst
 .. include:: /release-notes/4-2-0.rst
 
 .. _other-release-notes:
