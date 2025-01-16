@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.1
+:last-updated: 4.2.2
 
 .. index:: Open Source Acknowledgements
 
