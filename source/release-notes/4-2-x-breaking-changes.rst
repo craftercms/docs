@@ -27,17 +27,23 @@ The following properties were removed from the RTE control in CrafterCMS version
 
 - ``forceRootBlockPTag``
 
-  This property uses the **forced_root_block** option in TinyMCE which has changed in
-  `version 6 <https://www.tiny.cloud/docs/tinymce/5/6.0-upcoming-changes/#options>`__. Since the option has changed,
-  the property is no longer needed.
+  This property uses the ``forced_root_block`` option in TinyMCE to set it to a ``true``/``false`` value. Starting in
+  `TinyMCE version 6 <https://www.tiny.cloud/docs/tinymce/5/6.0-upcoming-changes/#options>`__, this option no-longer
+  accepts the ``false`` value or an empty string value. Setting ``forced_root_block`` to ``false`` is not compatible
+  with Real-time Collaboration and also blocks various editor functions from working correctly and causes non-semantic
+  HTML to be generated. Newer options are now available for handling line breaks and paragraphs, like the
+  `newline_behavior <https://www.tiny.cloud/docs/tinymce/latest/content-behavior-options/#newline_behavior>`__.
 - ``forceBRTags``
 
-  This property uses the **force_br_newlines** option in TinyMCE version 3 and 4. Starting with TinyMCE 5.x, the handling
+  This property uses the ``force_br_newlines`` option in TinyMCE version 3 and 4. Starting with TinyMCE 5.x, the handling
   of line breaks and paragraphs became more standardized, and newer options like
   `newline_behavior <https://www.tiny.cloud/docs/tinymce/latest/content-behavior-options/#newline_behavior>`__ were
-  introduced to provide greater flexibility for managing line breaks. The **force_br_newlines** option is no longer
+  introduced to provide greater flexibility for managing line breaks. The ``force_br_newlines`` option is no longer
   actively recommended in newer versions due to potential issues with content formatting and compatibility with modern
   HTML standards, hence the removal of the ``forceBRTags`` property.
+
+To customise the new behaviours mentioned above, use the :ref:`TinyMCE config <rte-configuration>` in the
+:ref:`User Interface Configuration <user-interface-configuration>` ``ui.xml``
 
 |hr|
 
