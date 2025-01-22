@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.1
+:last-updated: 4.2.2
 :orphan:
 
 .. index:: Blueprints, Blueprint, Create a Blueprint
@@ -183,7 +183,8 @@ Adding a default image for a blueprint
 
 CrafterCMS uses a default path for CrafterCMS to look for a default representative image of a blueprint, the url ``../.crafter/screenshots/default.png``
 
-In the ``Projects`` screen where your projects are listed, if your project displays an image with the message **Screenshot not Set**, this means that there is no default image  under the ``.crafter/screenshots/`` folder in your blueprint:
+In the ``Projects`` screen where your projects are listed, if your project displays an image with the project name and a
+red background, this means that there is no default image  under the ``.crafter/screenshots/`` folder in your blueprint:
 
 .. image:: /_static/images/developer/plugins/screenshot-not-set.webp
    :alt: Plugin Descriptor - Screenshot not Set
@@ -196,7 +197,7 @@ To replace the **Screenshot not Set** image for your blueprint, simply add an im
 
 Let's take a look at an example of fixing the **Screenshot not Set** image for an installed project as seen in the above image.
 
-Below are the folders/files for the blueprint used to install the project ``Sample Site``:
+Below are the folders/files for the blueprint used to install the project ``Ed``:
 
 .. image:: /_static/images/developer/plugins/bp-files-w-o-default-image.webp
    :alt: Plugin Descriptor - Blueprint files and folders without a default image
@@ -214,11 +215,11 @@ We'll now fix the image displayed in the ``Projects`` screen after the blueprint
 
 |
 
-When you create a project using the blueprint we fixed above, ``Another Sample Site`` for our example, the project will now have the default image we added to the blueprint:
+When you create a project using the blueprint we fixed above, ``Ed`` for our example, the project will now have the default image we added to the blueprint:
 
 .. image:: /_static/images/developer/plugins/screenshot-default-set.webp
    :alt: Plugin Descriptor - Project created using a blueprint with a default image in ".crafter/screenshots`` folder
-   :width: 60%
+   :width: 70%
    :align: center
 
 |

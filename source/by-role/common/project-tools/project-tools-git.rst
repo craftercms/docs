@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.2.2
 
 .. index:: Project Tools Git
 
@@ -24,10 +24,12 @@ Below, we have a site **mysweetdotcom** with a link to a remote repository in Gi
 
 |
 
+.. _project-tools-git-add-a-repository:
+
 ----------------
 Add a Repository
 ----------------
-To add a remote repository for your site, click on the **New Remote** button. A **Create Repository** dialog will open where you'll need to fill in the required information then click on the **Create** button and you should see the new repository added in the **Remote Repositories**
+To add a remote repository for your site, click on the **New Remote** button. A **New Remote Repository** dialog will open where you'll need to fill in the required information then click on the **Create** button and you should see the new repository added in the **Remote Repositories** tab
 
 .. image:: /_static/images/site-admin/project-tools-add-repo.webp
     :alt: Git - New Repository
