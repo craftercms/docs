@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.0
+:last-updated: 4.2.2
 
 .. index:: Audit, Users, Groups, User Management, Group Management, Cluster, Log Console, Logging Levels, Global Config, Encryption Tool, Navigation Menu
 
@@ -993,13 +993,16 @@ Let's take a look at the fields where the remote repository details needs to be 
 #. In the **Git Branch** field, you can supply a branch name, but can be left blank, which in turn would default to the ``master`` branch.
 #. In the **Git Remote Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
 
+.. _create-project-based-on-a-blueprint-then-add-a-remote-bare-git-repository:
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Create project based on a blueprint then add a remote bare Git repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-To create a project based on a blueprint then add a remote bare git repository, click on **Create Site** from **Sites**, then select the blueprint you would like to use
+To create a project based on a blueprint then add a remote bare git repository, click on **Create Project** from
+**Projects**, then select the blueprint you would like to use
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-1.webp
-    :alt: Create Site Dialog in Crafter Studio, select a blueprint
+    :alt: Create Project Dialog in Crafter Studio, select a blueprint
     :width: 65 %
     :align: center
 
@@ -1008,14 +1011,16 @@ To create a project based on a blueprint then add a remote bare git repository, 
 The next step is to fill in the **Project ID** and **Project Name**, then click on the **Review** button, then finally  click on the **Create Project** button to create your project. Your project should be created in a short while.
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-2.webp
-    :alt: Create Site Dialog in Crafter Studio, fill in Site ID
+    :alt: Create Project Dialog in Crafter Studio, fill in Site ID
     :width: 65 %
     :align: center
 
 |
 
-Once your project is created, the next step is to add a remote repository to your newly created project. Open the **Sidebar** then click on **Site Config** -> **Remote Repositories**, then click on the **New Repository** on the top right.
-This will open up a dialog where we can fill in all the information for our remote repository as described above. Click on the **Create** button after filling in the required information.
+Once your project is created, the next step is to add a remote repository to your newly created project. Open the
+**Sidebar** then click on **Project Tools** -> **Git**, then click on the **New Remote** on the top.
+This will open up a dialog where we can fill in all the information for our remote repository as described above.
+Click on the **Create** button after filling in the required information.
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-3.webp
     :alt: Create Repository dialog to fill in information of remote repository being added to the project
@@ -1024,7 +1029,7 @@ This will open up a dialog where we can fill in all the information for our remo
 
 |
 
-Your project should now have a remote repository listed in the **Remotes** screen
+Your project should now have a remote repository listed in the **Remote Repositories** tab
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-4.webp
     :alt: Remotes screen displaying newly added remote repository to project
@@ -1065,7 +1070,7 @@ or alternatively for ssh:
 
 |
 
-Click on the **Review** button, then finally, the **Create Site** button.
+Click on the **Review** button, then finally, the **Create Project** button.
 
 
 .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-2.webp

@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.8
+:last-updated: 4.2.2
 
 .. _developer:
 
@@ -100,6 +100,8 @@ Aside from the core concepts listed above, a developer needs to be familiar with
       - Provides you information on localizing content
     * - :ref:`developer-environment-variable-access`
       - Provides you information on accessing custom environment variables
+    * - :ref:`adding-a-default-screenshot-to-a-project`
+      - Provides you information on adding a default screenshot to a project
 
 .. toctree::
     :maxdepth: 1
@@ -117,6 +119,7 @@ Aside from the core concepts listed above, a developer needs to be familiar with
     common/adding-a-new-language
     common/localization
     common/environment-variable-access
+    common/add-default-screenshot
 
 .. _developer-headless:
 
