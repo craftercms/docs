@@ -593,6 +593,15 @@ Here's a sample Permission Mappings Configuration file (click on the triangle on
 
 |
 
+where:
+
+- ``/permissions/site/role@name``
+  Role name
+- ``/permissions/site/role/rule@regex``
+  Regular expression to filter paths where permission is applied.
+- ``/permissions/site/role/rule/allowed-permissions/permission``
+  Allowed permission for role and rule (possible values given in the table above)
+
 """""""""""
 Description
 """""""""""

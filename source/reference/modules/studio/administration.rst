@@ -484,6 +484,8 @@ A modal dialog will be displayed, where the admin can reset the users password. 
 
 |
 
+.. _deleting-a-user:
+
 '''''''''''''''''''''''''
 Removing an Existing User
 '''''''''''''''''''''''''
@@ -617,6 +619,8 @@ A notification of successful group creation will pop up for a few seconds after 
    :align: center
 
 |
+
+.. _deleting-a-group:
 
 """"""""""""""""
 Removing a Group
