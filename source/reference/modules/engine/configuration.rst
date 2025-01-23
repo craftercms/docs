@@ -1149,6 +1149,21 @@ where:
 .. note::
     When engine is in preview mode, it is a proxy and therefore will not add CORS headers to REST API responses even if CORS is enabled.
 
+Here's an example of using patterns in ``accessControlAllowOrigin``:
+
+.. code-block:: xml
+    :caption: *Sample CORS configuration for using patterns in accessControlAllowOrigin*
+    :emphasize-lines: 4
+
+    <cors>
+        <enable>true</enable>
+        <accessControlMaxAge>3600</accessControlMaxAge>
+        <accessControlAllowOrigin>http://localhost:[8081\,8082],http://*.other.domain</accessControlAllowOrigin>
+        <accessControlAllowMethods>*</accessControlAllowMethods>
+        <accessControlAllowHeaders>*</accessControlAllowHeaders>
+        <accessControlAllowCredentials>true</accessControlAllowCredentials>
+    </cors>
+
 |
 
 |hr|
