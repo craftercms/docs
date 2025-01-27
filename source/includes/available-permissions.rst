@@ -45,12 +45,12 @@
       - Project
       - User is permitted to repair the repository
     * - resolve_conflict
-      - Project
+      - Path
       - User is permitted to resolve a conflict for a file by accepting ours or theirs |br|
         Required for using the :ref:`Git project tool <project-tools-git>` to resolve a conflict for a file in the UI via
         the API :base_url:`Resolve conflict <_static/api/studio.html#tag/repository/operation/resolveConflict>`
     * - site_diff_conflicted_file
-      - Project
+      - Path
       - User is permitted to get the difference between ``ours`` and ``theirs`` for a conflicted file for a project |br|
         Required for using the :ref:`Git project tool <project-tools-git>` to get the difference between ``ours`` and
         ``theirs`` for a conflicted file in the UI or via the API :base_url:`Diff conflicted file <_static/api/studio.html#tag/repository/operation/diffConflictedFile>`
@@ -67,17 +67,13 @@
         or via the API :base_url:`Publishing packages <_static/api/studio.html#tag/publishing/operation/PublishingPackages>` |br|
         Also required by the API :base_url:`Get package details <_static/api/studio.html#tag/publishing/operation/getPublishingPackageDetails>`
     * - publish
-      - Project
+      - Path
       - User is permitted to approve submitted content for publishing or publish content from the :ref:`UI <publishing-and-status>`
         or via the API :base_url:`Publish items <_static/api/studio.html#tag/publishing/operation/publishItems>`
     * - publish_status
       - Project
       - User is permitted to get the publishing status from the :ref:`UI <publishing-and-status>`
         or via the API :base_url:`Get publishing status <_static/api/studio.html#tag/publishing/operation/getPublishingStatus>`
-    * - publish_clear_lock
-      - Project
-      - User is permitted to clear publishing locks from the :ref:`UI <publishing-and-status>`
-        or via the API :base_url:`Clear publishing lock <_static/api/studio.html#tag/publishing/operation/clearPublishingLock>`
     * - start_stop_publisher
       - Project
       - User is permitted to start/stop the publisher from the :ref:`UI <publishing-and-status>`
@@ -100,21 +96,19 @@
       - System, Project
       - User is permitted to access the audit logs in the UI from the :ref:`main menu <nav-menu-audit>` or the
         :ref:`project tools <studio-logging>` via the API :base_url:`Get audit log <_static/api/studio.html#tag/audit/operation/getAuditLog>`
-    * - read_logs
-      - System
-      - User is permitted to read logs from the :ref:`Main Menu UI <main-menu-tool-log-console>`
     * -
       -
       -
-    * - change_content_type
-      - Path
-      - User is permitted to change content type from the UI :ref:`Sidebar <sidebar>` or the :ref:`Toolbar <toolbar>` options
     * - content_copy
       - Path
-      - User is permitted to copy content from the UI :ref:`Sidebar <sidebar>` or the :ref:`Toolbar <toolbar>` options
+      - User is permitted to copy content from the UI :ref:`Sidebar <sidebar>` or the :ref:`Toolbar <toolbar>` options |br|
+        Note that this permission enables the ``copy`` action in the UI but it does not enable the user to paste the items.
+        Paste requires ``content_write`` permission
     * - content_create
       - Path
-      - User is permitted to create new content from the UI :ref:`Sidebar <sidebar>` or the :ref:`Toolbar <toolbar>` options
+      - User is permitted to create new content from the UI :ref:`Sidebar <sidebar>` or the :ref:`Toolbar <toolbar>` options |br|
+        Note that this permission enables the action in the UI but it does not enable the user to create the content.
+        Actual content creation requires ``content_write`` permission
     * - content_delete
       - Path
       - User is permitted to delete content from the UI :ref:`Sidebar <sidebar>` or the :ref:`Toolbar <toolbar>` options
@@ -126,7 +120,7 @@
         getting the preview image of a given content type via the API
         :base_url:`Get content type preview image <_static/api/studio.html#tag/content/operation/getContentTypePreviewImage>`, etc.
     * - content_search
-      - Path
+      - Project
       - User is permitted to search for content from the UI
     * - content_write
       - Path
@@ -136,19 +130,19 @@
       - Path
       - User is permitted to create new folder
     * - s3_read
-      - Path
+      - Project
       - User is permitted to get a list of items from an S3 bucket defined in the :ref:`AWS S3 profile <aws-profile-configuration>`
         configured.|br| This is required when using the API to :base_url:`Get a list of items from an S3 bucket <_static/api/studio.html#tag/aws/operation/listItems>`
     * - s3_write
-      - Path
+      - Project
       - User is permitted to upload a file to an S3 bucket defined in the :ref:`AWS S3 profile <aws-profile-configuration>`
         configured.|br| This is required when using the API to :base_url:`Upload a file to an S3 bucket <_static/api/studio.html#tag/aws/operation/uploadItems>`, etc.
     * - webdav_read
-      - Path
+      - Project
       - User is permitted to get a list of items from a WebDAV server configured in the :ref:`WebDAV profiles <webdav-profiles-configuration>`
         configuration file. |br| This is required when using the API to :base_url:`Get a list of items from a WebDAV server <_static/api/studio.html#tag/webdav/operation/listItemsWebdav>`
     * - webdav_write
-      - Path
+      - Project
       - User is permitted to upload a file to a WebDAV server configured in the :ref:`WebDAV profiles <webdav-profiles-configuration>`
         configuration file. |br| This is required when using the API to :base_url:`Upload a file to a WebDAV server <_static/api/studio.html#tag/webdav/operation/uploadItemsWebdav>`
     * -
@@ -212,7 +206,7 @@
       - User is permitted to access the :ref:`encryption tool <studio-encryption-tool>` |br|
         Required when using the API to :base_url:`Encrypt a text value <_static/api/studio.html#tag/security/operation/encrypt>`
     * - get_children
-      - System
+      - Project
       - User is permitted to call getChildren* APIs for browsing project content |br|
         Required when using the following APIs:
 
@@ -261,9 +255,6 @@
         - :base_url:`Enable user <_static/api/studio.html#tag/users/operation/enableUser>`
         - :base_url:`Disable user <_static/api/studio.html#tag/users/operation/disableUser>`
         - :base_url:`Reset user password <_static/api/studio.html#tag/users/operation/resetUserPassword>`
-    * - rebuild_database
-      - Project
-      - User is permitted to rebuild Crafter Studio’s database and object state with the underlying repository
     * - remove_plugins
       - Project
       - User is permitted to :ref:`remove installed plugins <plugin-management>` |br|
@@ -272,7 +263,7 @@
         - :base_url:`Remove plugin <_static/api/studio.html#tag/marketplace/operation/removePlugin>`
         - :base_url:`Plugin usage <_static/api/studio.html#tag/marketplace/operation/pluginUsage>`
     * - search_plugins
-      - Project
+      - System
       - User is permitted to :ref:`search for plugins <plugin-management>`
     * - set_item_states
       - Project
@@ -288,22 +279,13 @@
     * - unlock_repository
       - Project
       - User is permitted to unlock the repository
-    * - update_cluster |enterpriseOnly|
-      - System
-      - User is permitted to update cluster
     * - read_cluster |enterpriseOnly|
       - System
-      - User is permitted to read cluster |br|
+      - User is allowed to list the cluster members and the cluster mode (PRIMARY vs REPLICA) |br|
         Required when using the following APIs:
 
         - :base_url:`Get the local Studio instance cluster mode <_static/api/studio.html#tag/cluster/operation/getClusterMode>`
         - :base_url:`Get all the members of the cluster <_static/api/studio.html#tag/cluster/operation/getClusterMembers>`
-    * - create_cluster |enterpriseOnly|
-      - System
-      - User is permitted to create cluster
-    * - delete_cluster |enterpriseOnly|
-      - System
-      - User is permitted to delete clusters
     * - read_configuration
       - Project
       - User is permitted to read configuration content for project |br|
@@ -313,7 +295,7 @@
         - :base_url:`Get configuration content for site and configuration location <_static/api/studio.html#tag/configuration/operation/getConfiguration>`
         - :base_url:`Get configuration history for site and configuration location <_static/api/studio.html#tag/configuration/operation/getConfigurationHistory>`
     * - write_configuration
-      - Project, System
+      - Project
       - User is permitted to write configuration content for project |br|
         Required when using the following APIs:
 
