@@ -13,7 +13,7 @@ Example
 -------
 
 .. figure:: /_static/images/form-controls/form-control-label-example.webp
-    :width: 40%
+    :width: 60%
     :alt: Form Control Label Example
 
 -------------
