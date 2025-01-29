@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.0
+:last-updated: 4.2.2
 
 .. index:: Studio Security
 
@@ -572,6 +572,11 @@ To modify/view the permission mappings for your project/site in Studio, click on
     :width: 40%
     :align: center
 
+Note that permissions assigned is a union, so a user can perform the action as long as:
+
+- The list of permissions contains the requested ACTION.
+- OR the list of permissions contains "*"
+
 """"""
 Sample
 """"""
@@ -592,6 +597,16 @@ Here's a sample Permission Mappings Configuration file (click on the triangle on
    </details>
 
 |
+
+where:
+
+- ``/permissions/site/role@name``
+  Role name
+- ``/permissions/site/role/rule@regex``
+  Regular expression to filter paths where permission is applied.
+- ``/permissions/site/role/rule/allowed-permissions/permission``
+  Allowed permission for role and rule (possible values given in the table above)
+
 
 """""""""""
 Description

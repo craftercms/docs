@@ -1068,6 +1068,8 @@ Here's the default global permissions configuration (click on the triangle on th
 
    </details>
 
+|
+
 """""""""""
 Description
 """""""""""
