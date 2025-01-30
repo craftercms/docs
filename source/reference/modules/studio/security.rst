@@ -607,23 +607,19 @@ where:
 - ``/permissions/site/role/rule/allowed-permissions/permission``
   Allowed permission for role and rule (possible values given in the table above)
 
-
-"""""""""""
-Description
-"""""""""""
-~~~~~~~~~~~~~~~~~~~~~~~~
-System Scope Permissions
-~~~~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""""""""""""""
+System (Global) Scope Permissions
+"""""""""""""""""""""""""""""""""
 .. include:: /includes/available-permissions-system-scope.rst
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""""""
 Project Scope Permissions
-~~~~~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""""""
 .. include:: /includes/available-permissions-project-scope.rst
 
-~~~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""""
 Path Scope Permissions
-~~~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""""
 .. include:: /includes/available-permissions-path-scope.rst
 
 |hr|
