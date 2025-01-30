@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.1
+:last-updated: 4.2.3
 
 .. index:: Support
 
@@ -25,7 +25,7 @@ What's Supported?
       - November 13, 2024
       - :green:`Active`
       - :green:`Active`
-      - 4.2.2 (January 15, 2025)
+      - 4.2.3 (TBD)
     * - 4.1
       - June 17, 2023
       - :maroon:`Ended on November 13, 2024`
