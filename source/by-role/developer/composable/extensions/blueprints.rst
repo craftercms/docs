@@ -338,8 +338,35 @@ Here are some things to note in the descriptor file:
    * - plugin.crafterCmsVersions
      - |checkmark|
      - Contains the CrafterCMS version/s that the plugin is compatible with |br|
-       (look in the :ref:`release-notes` section for the versions available), and |br|
-       you'll need to keep this up to date
+       (look in the :ref:`release-notes` section for the versions available), and you'll need to keep this up to date.
+
+       Note that ``patch`` is a legacy item in the plugin.crafterCmsversions field for backwards compatibility and is
+       no longer required in CrafterCMS version 4.2.3 and later. Users can use the full CrafterCMS version number or the
+       short version with only major and minor numbers but should not mix them in a plugin version in the descriptor file.
+
+       For example, the plugin version 1.0.0 can have:
+
+       crafterCmsVersions:
+         - major: 3
+           minor: 1
+           patch: 0
+         - major: 3
+           minor: 1
+           patch: 1
+         - major: 4
+           minor: 2
+           patch: 0
+         - major: 4
+           minor: 2
+           patch: 2
+
+       Then the plugin version 1.0.1 can have:
+
+       crafterCmsVersions:
+         - major: 3
+           minor: 2
+         - major: 4
+           minor: 2
 
 
 .. note::
