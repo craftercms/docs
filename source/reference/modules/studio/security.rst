@@ -611,7 +611,20 @@ where:
 """""""""""
 Description
 """""""""""
-.. include:: /includes/available-permissions.rst
+~~~~~~~~~~~~~~~~~~~~~~~~
+System Scope Permissions
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. include:: /includes/available-permissions-system-scope.rst
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Project Scope Permissions
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. include:: /includes/available-permissions-project-scope.rst
+
+~~~~~~~~~~~~~~~~~~~~~~
+Path Scope Permissions
+~~~~~~~~~~~~~~~~~~~~~~
+.. include:: /includes/available-permissions-path-scope.rst
 
 |hr|
 

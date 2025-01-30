@@ -1040,46 +1040,13 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 Access and Permissions
 ----------------------
 
-To configure access to Crafter Studio beyond adding groups and users, you'll need to configure the following files:
-
-.. _global-permission-mappings-config:
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Global Permission Mappings Config
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The global permission mappings configuration file lets you configure the permissions to a role globally for the entire application
-
-Permissions per project are managed within Crafter Studio's UI. See :ref:`permission-mappings` for more information on project permissions.
-
-Here's the default global permissions configuration (click on the triangle on the left to expand/collapse). It contains the permissions mappings for the roles defined in the :ref:`global role mappings configuration <global-role-mappings-config>` file. To access the file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/`` then open the file ``global-permission-mappings-config.xml``. Remember to restart CrafterCMS so your changes to the file will take effect.
-
-.. raw:: html
-
-   <details>
-   <summary><a>Sample "permission-mappings-config.xml"</a></summary>
-
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/global-permission-mappings-config.xml
-       :language: xml
-       :caption: *CRAFTER_HOME/data/repos/global/configuration/global-permission-mappings-config.xml*
-       :linenos:
-
-
-.. raw:: html
-
-   </details>
-
-|
-
-"""""""""""
-Description
-"""""""""""
-.. include:: /includes/available-permissions.rst
+To configure access to Crafter Studio beyond adding groups and users, you'll need to configure the system-wide configuration files:
 
 .. _global-role-mappings-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Global Role Mappings Config
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+Role Mappings Config
+^^^^^^^^^^^^^^^^^^^^
 The global role mappings config contains the role mappings for groups created in CrafterCMS that need global permissions. For more information on groups, see :ref:`groups-management`
 
 To access the global role mappings config file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/`` then open the file ``global-role-mappings-config.xml``. Remember to restart Crafter so your changes to the file will take effect.
@@ -1115,6 +1082,39 @@ See :ref:`global-permission-mappings-config` for more information on all items a
 |
 
 |hr|
+
+.. _global-permission-mappings-config:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Permission Mappings Config
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+The global permission mappings configuration file lets you configure the permissions to a role globally for the entire application
+
+Permissions per project are managed within Crafter Studio's UI. See :ref:`permission-mappings` for more information on project permissions.
+
+Here's the default global permissions configuration (click on the triangle on the left to expand/collapse). It contains the permissions mappings for the roles defined in the :ref:`global role mappings configuration <global-role-mappings-config>` file. To access the file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/`` then open the file ``global-permission-mappings-config.xml``. Remember to restart CrafterCMS so your changes to the file will take effect.
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "global-permission-mappings-config.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/global-permission-mappings-config.xml
+       :language: xml
+       :caption: *CRAFTER_HOME/data/repos/global/configuration/global-permission-mappings-config.xml*
+       :linenos:
+
+
+.. raw:: html
+
+   </details>
+
+|
+
+"""""""""""""""""""""""
+Permission Descriptions
+"""""""""""""""""""""""
+.. include:: /includes/available-permissions-system-scope.rst
 
 .. _global-menu-config:
 
