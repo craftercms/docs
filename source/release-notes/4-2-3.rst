@@ -1,0 +1,38 @@
+.. index:: CrafterCMS 4.2.3 Release Notes
+
+----------------
+CrafterCMS 4.2.3
+----------------
+
+Released *TBD*
+
+This release includes fixes for issues with the release version 4.2.2
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-2-x>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.2.x,
+    please see :ref:`upgrading-craftercms`
+
+^^^^^^^^^^^^
+Enhancements
+^^^^^^^^^^^^
+* `Added support for site selection via headers in Preview <https://github.com/craftercms/craftercms/issues/7676>`__ |br|
+
+* `Improved extension compatibility versioning <https://github.com/craftercms/craftercms/issues/7689>`__ |br|
+  Starting in CrafterCMS version 4.2.3, the patch level in the crafterCmsVersions field in your :ref:`plugin <plugin-descriptor-file>` or
+  :ref:`blueprint <blueprint-descriptor-file>` descriptor file is no longer required.
+
+^^^^^^^^^
+Bug Fixes
+^^^^^^^^^
+* `Fixed issue with item_unlock permission <https://github.com/craftercms/craftercms/issues/7694>`__
+
+
+For a complete list of community tickets, please visit: `GitHub 4.2.3 <https://github.com/orgs/craftercms/projects/23/views/1>`_
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+|hr|
