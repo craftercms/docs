@@ -305,7 +305,7 @@ Here are some things to note in the descriptor file:
    * - plugin.crafterCmsVersions
      - |checkmark|
      - Contains the CrafterCMS version/s that the plugin is compatible with
-       (look in the :ref:`release-notes` section for the versions available), and you'll need to keep this up to date. |br| |br|
+       (look in the :ref:`release-notes` section for the versions available), and remember to keep this up to date. |br| |br|
 
        Note that ``patch`` is a legacy level in the ``plugin.crafterCmsversions`` field for backwards compatibility and is
        no longer required in CrafterCMS version 4.2.3 and later. Users can use the full CrafterCMS version number or the
