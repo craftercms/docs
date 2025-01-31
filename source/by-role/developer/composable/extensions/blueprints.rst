@@ -283,8 +283,9 @@ Below is a sample descriptor file for a blueprint:
         url: https://opensource.org/licenses/MIT
       crafterCmsVersions:
         - major: 4
-          minor: 0
-          patch: 0
+          minor: 1
+        - major: 4
+          minor: 2
       crafterCmsEditions:
         - community
         - enterprise
@@ -337,43 +338,22 @@ Here are some things to note in the descriptor file:
      - The license supported by the blueprint
    * - plugin.crafterCmsVersions
      - |checkmark|
-     - Contains the CrafterCMS version/s that the blueprint is compatible with
+     - Contains the CrafterCMS version/s (major and minor numbers) that the blueprint is compatible with
        (look in the :ref:`release-notes` section for the versions available), and remember to keep this up to date. |br| |br|
 
-       Users can use the short version with the major and minor numbers, starting in CrafterCMS version 4.2.3 and later,
-       in the descriptor file. Use of the full CrafterCMS version with the major, minor and patch numbers is still
-       supported for backwards compatibility. |br| |br|
-
-       Remember to maintain the same version format used (either the short version or the full version) and not mix them
-       in a plugin version in the descriptor file. |br| |br|
-
-       For example, the plugin version 1.0.0 can have:
+       Here's an example:
 
        .. code-block:: yaml
 
            crafterCmsVersions:
-             - major: 3
+             - major: 4
                minor: 1
-               patch: 0
-             - major: 3
-               minor: 1
-               patch: 1
              - major: 4
                minor: 2
-               patch: 0
-             - major: 4
-               minor: 2
-               patch: 2
 
-       Then the plugin version 1.0.1 can have:
-
-       .. code-block:: yaml
-
-           crafterCmsVersions:
-             - major: 3
-               minor: 2
-             - major: 4
-               minor: 2
+       Note that use of the full CrafterCMS version with the major, minor and patch numbers is still supported for
+       backwards compatibility. Remember to maintain the same version format used (either the short version or the full
+       version) and not mix them in a plugin version in the descriptor file.
 
 .. note::
 
