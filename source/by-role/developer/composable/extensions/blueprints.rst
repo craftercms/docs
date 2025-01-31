@@ -351,8 +351,8 @@ Here are some things to note in the descriptor file:
              - major: 4
                minor: 2
 
-       Note that use of the full CrafterCMS version with the major, minor and patch numbers is still supported for
-       backwards compatibility. Remember to maintain the same version format used (either the short version or the full
+       Note that use of the full CrafterCMS version with the major, minor, and patch numbers is still supported for
+       backward compatibility. Remember to maintain the same version format used (either the short version or the full
        version) and not mix them in a plugin version in the descriptor file.
 
 .. note::
