@@ -340,9 +340,12 @@ Here are some things to note in the descriptor file:
      - Contains the CrafterCMS version/s that the blueprint is compatible with
        (look in the :ref:`release-notes` section for the versions available), and remember to keep this up to date. |br| |br|
 
-       Note that ``patch`` is a legacy level in the ``plugin.crafterCmsversions`` field for backwards compatibility and is
-       no longer required in CrafterCMS version 4.2.3 and later. Users can use the full CrafterCMS version number or the
-       short version with only major and minor numbers but should not mix them in a plugin version in the descriptor file. |br| |br|
+       Users can use the short version with the major and minor numbers, starting in CrafterCMS version 4.2.3 and later,
+       in the descriptor file. Use of the full CrafterCMS version with the major, minor and patch numbers is still
+       supported for backwards compatibility. |br| |br|
+
+       Remember to maintain the same version format used (either the short version or the full version) and not mix them
+       in a plugin version in the descriptor file. |br| |br|
 
        For example, the plugin version 1.0.0 can have:
 
