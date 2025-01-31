@@ -1,7 +1,7 @@
 :orphan:
 
 :is-up-to-date: True
-:last-updated: 4.0.3
+:last-updated: 4.0.7
 
 .. _plugin-descriptor-file:
 
@@ -54,7 +54,6 @@ configurations and metadata.  In this section, we'll take a look at a plugin des
        crafterCmsVersions:
          - major: 4
            minor: 0
-           patch: 0
        crafterCmsEditions:
          - community
          - enterprise
@@ -105,16 +104,29 @@ Here are some things to note in the descriptor file:
    * - plugin.media.url
      -
      - The path to look for a representative image of the plugin. |br|
-       CrafterCMS uses a default path for CrafterCMS to look for a default representative image of a plugin,|br|
+       CrafterCMS uses a default path for CrafterCMS to look for a default representative image of a plugin, |br|
        the url ``../.crafter/screenshots/``.
    * - plugin.license
      -
      - The license supported by the plugin
    * - plugin.crafterCmsVersions
      - |checkmark|
-     - Contains the CrafterCMS version/s that the plugin is compatible with |br|
-       (look in the :ref:`release-notes` section for the versions available), and you'll need to keep |br|
-       this up to date
+     - Contains the CrafterCMS version/s (major and minor numbers) that the plugin is compatible with |br|
+       (look in the :ref:`release-notes` section for the versions available), and remember to keep this up to date. |br| |br|
+
+       Here's an example:
+
+       .. code-block:: yaml
+
+           crafterCmsVersions:
+             - major: 3
+               minor: 1
+             - major: 4
+               minor: 0
+
+       Note that use of the full CrafterCMS version with the major, minor, and patch numbers is still supported for |br|
+       backward compatibility. Remember to maintain the same version format used (either the short version or the full |br|
+       version) and not mix them in a plugin version in the descriptor file.
 
 .. note::
 
