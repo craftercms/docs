@@ -1,7 +1,7 @@
 :orphan:
 
 :is-up-to-date: True
-:last-updated: 4.0.3
+:last-updated: 4.0.7
 
 .. _blueprint-descriptor-file:
 
@@ -57,7 +57,6 @@ Below is a sample descriptor file for a blueprint:
       crafterCmsVersions:
         - major: 4
           minor: 0
-          patch: 0
       crafterCmsEditions:
         - community
         - enterprise
@@ -101,7 +100,7 @@ Here are some things to note in the descriptor file:
    * - plugin.media.url
      -
      - The path to look for a representative image of the blueprint. |br|
-       If ``plugin.media.url`` is not specified, the url ``../.crafter/screenshots/default.png`` is the
+       If ``plugin.media.url`` is not specified, the url ``../.crafter/screenshots/default.png`` is the |br|
        default path for CrafterCMS to look for a default representative image of a blueprint. |br|
        For more information on adding a default representative image for your blueprint see |br|
        :ref:`adding-default-image-for-bp`
@@ -110,9 +109,22 @@ Here are some things to note in the descriptor file:
      - The license supported by the blueprint
    * - plugin.crafterCmsVersions
      - |checkmark|
-     - Contains the CrafterCMS version/s that the plugin is compatible with |br|
-       (look in the :ref:`release-notes` section for the versions available), and |br|
-       you'll need to keep this up to date
+     - Contains the CrafterCMS version/s (major and minor numbers) that the blueprint is compatible with |br|
+       (look in the :ref:`release-notes` section for the versions available), and remember to keep this up to date. |br| |br|
+
+       Here's an example:
+
+       .. code-block:: yaml
+
+           crafterCmsVersions:
+             - major: 3
+               minor: 1
+             - major: 4
+               minor: 0
+
+       Note that use of the full CrafterCMS version with the major, minor, and patch numbers is still supported for |br|
+       backward compatibility. Remember to maintain the same version format used (either the short version or the full |br|
+       version) and not mix them in a plugin version in the descriptor file.
 
 
 .. note::
