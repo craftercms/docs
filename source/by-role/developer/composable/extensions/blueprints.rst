@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.1
+:last-updated: 4.1.9
 :orphan:
 
 .. index:: Blueprints, Blueprint, Create a Blueprint
@@ -282,8 +282,7 @@ Below is a sample descriptor file for a blueprint:
         url: https://opensource.org/licenses/MIT
       crafterCmsVersions:
         - major: 4
-          minor: 0
-          patch: 0
+          minor: 1
       crafterCmsEditions:
         - community
         - enterprise
@@ -336,9 +335,22 @@ Here are some things to note in the descriptor file:
      - The license supported by the blueprint
    * - plugin.crafterCmsVersions
      - |checkmark|
-     - Contains the CrafterCMS version/s that the plugin is compatible with |br|
-       (look in the :ref:`release-notes` section for the versions available), and |br|
-       you'll need to keep this up to date
+     - Contains the CrafterCMS version/s (major and minor numbers) that the blueprint is compatible with
+       (look in the :ref:`release-notes` section for the versions available), and remember to keep this up to date. |br| |br|
+
+       Here's an example:
+
+       .. code-block:: yaml
+
+           crafterCmsVersions:
+             - major: 4
+               minor: 0
+             - major: 4
+               minor: 1
+
+       Note that use of the full CrafterCMS version with the major, minor, and patch numbers is still supported for
+       backward compatibility. Remember to maintain the same version format used (either the short version or the full
+       version) and not mix them in a plugin version in the descriptor file.
 
 
 .. note::
