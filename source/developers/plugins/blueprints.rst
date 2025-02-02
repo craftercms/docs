@@ -212,7 +212,6 @@ The ``craftercms-plugin.yaml`` file contains information for use in CrafterCMS. 
     crafterCmsVersions:
       - major: 3
         minor: 1
-        patch: 1
     crafterCmsEditions:
       - community
       - enterprise
@@ -225,7 +224,21 @@ where the following fields are required:
 - ``plugin.id`` - a unique Id that is meaningful/recognizable to people who will be using the blueprint/plugin
 - ``plugin.name`` - blueprint/plugin name (For our blueprint example, it is the blueprint name shown in the **Choose Blueprint** screen of **Create Site**)
 - ``plugin.version`` - a version number for the blueprint
-- ``plugin.crafterCmsVersions`` - CrafterCMS versions that the blueprint applies to (look in the :ref:`release-notes` section for the versions available)
+- ``plugin.crafterCmsVersions`` - CrafterCMS versions that the blueprint applies to (look in the :ref:`release-notes` section for the versions available) , and remember to keep this up to date.
+
+  Here's an example:
+
+  .. code-block:: yaml
+
+      crafterCmsVersions:
+        - major: 3
+          minor: 0
+        - major: 3
+          minor: 1
+
+  Note that use of the full CrafterCMS version with the major, minor, and patch numbers is still supported for
+  backward compatibility. Remember to maintain the same version format used (either the short version or the full
+  version) and not mix them in a plugin version in the descriptor file.
 - ``plugin.searchEngine`` - search engine that will be used when a site is created from the blueprint (possible values are, ``CrafterSearch`` and ``Elasticsearch``)
 
 For the ``plugin.media.screenshots``, CrafterCMS uses a default path ``.crafter/screenshots/default.png`` to look for a default representative image of a plugin or blueprint.
