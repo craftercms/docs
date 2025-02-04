@@ -1139,7 +1139,7 @@ The following section allows you to configure CORS headers in REST API responses
 where:
 
 - ``<enable>`` Enable/disable CORS headers, default is false. When enabled, :ref:`preview token <preview-token>`
-  validation is skipped. 
+  validation is skipped for CORS requests.
 
 - ``<accessControlAllowOrigin>`` values are split using ``,``. Remember that
   commas inside patterns need to be escaped with a ``\``,
