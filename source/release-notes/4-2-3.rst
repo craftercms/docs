@@ -22,14 +22,23 @@ Enhancements
 * `Added support for site selection via headers in Preview <https://github.com/craftercms/craftercms/issues/7676>`__ |br|
 
 * `Improved extension compatibility versioning <https://github.com/craftercms/craftercms/issues/7689>`__ |br|
-  Starting in CrafterCMS version 4.2.3, the patch level in the crafterCmsVersions field in your :ref:`plugin <plugin-descriptor-file>` or
-  :ref:`blueprint <blueprint-descriptor-file>` descriptor file is no longer required.
+  The ``crafterCmsVersions`` field in your :ref:`plugin <plugin-descriptor-file>` or :ref:`blueprint <blueprint-descriptor-file>`
+  descriptor file now uses the short version, using the major and minor numbers, e.g. ``4.2``.
+
+  Note that use of the full CrafterCMS version with the major, minor, and patch numbers is still supported for backward
+  compatibility. Remember to maintain the same version format used (either the short version or the full version) and
+  not mix them in a plugin version in your descriptor file.
+
+* `Added support for allowing unauthorized OPTIONS requests to preview <https://github.com/craftercms/craftercms/issues/7699>`__ |br|
+  When :ref:`CORS <engine-cors>` is enabled, preview token validation is skipped for preflight OPTIONS requests.
+
 
 ^^^^^^^^^
 Bug Fixes
 ^^^^^^^^^
 * `Fixed issue with item_unlock permission <https://github.com/craftercms/craftercms/issues/7694>`__
 
+* `Fixed issue with parent folder dependency on publish <https://github.com/craftercms/craftercms/issues/7709>`__
 
 For a complete list of community tickets, please visit: `GitHub 4.2.3 <https://github.com/orgs/craftercms/projects/23/views/1>`_
 
