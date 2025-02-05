@@ -469,12 +469,22 @@ Authorization
 ^^^^^^^^^^^^^
 Role Mappings
 ^^^^^^^^^^^^^
-Users only see the items that they have been granted access to based on the permissions granted to the Role they have been assigned to. The role mappings configuration file defines the mapping between the group that the user belongs to and the studio authoring role. To modify the role mappings, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Role Mappings** from the list.
+Users are allowed to perform actions on the items that they have been granted access to based on the permissions granted
+to the role they have been assigned to. Note that all users are given read permission to the entire project/site
+regardless of the role that they are assigned.
+
+The role mappings configuration file defines a list of roles available in the project/site and the mapping between the
+group that the user belongs to and Studio authoring roles. Note that each group may be mapped to multiple roles.
+
+To modify the role mappings, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration**
+and select **Role Mappings** from the list.
 
 .. image:: /_static/images/site-admin/config-open-role-mappings.webp
     :alt: Configurations - Open Role Mappings
     :width: 40%
     :align: center
+
+To configure the role mappings for groups created in CrafterCMS that need global permissions see :ref:`global-role-mappings-config`
 
 """"""
 Sample
@@ -576,6 +586,8 @@ Note that permissions assigned is a union, so a user can perform the action as l
 
 - The list of permissions contains the requested ACTION.
 - OR the list of permissions contains "*"
+
+To configure the permissions to a role globally for the entire application, see :ref:`global-permission-mappings-config`.
 
 """"""
 Sample
