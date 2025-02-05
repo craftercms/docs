@@ -1224,6 +1224,8 @@ For an example of how to use the generated API token, see :ref:`crafter-cli`.
 
 .. note:: Users needs the ``manage_access_token`` permission to create access tokens
 
+.. _preview-token:
+
 ^^^^^^^^^^^^^
 Preview Token
 ^^^^^^^^^^^^^
