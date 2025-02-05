@@ -1070,6 +1070,9 @@ Here's the default global role mappings configuration (click on the triangle on 
 
 |
 
+For more information on project role mappings, see :ref:`project-role-mappings`.
+
+
 """""""""""""""""""
 Default Global Role
 """""""""""""""""""
