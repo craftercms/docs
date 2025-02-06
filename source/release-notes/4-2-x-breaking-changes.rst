@@ -17,6 +17,10 @@ before upgrading. Please review the following and apply changes as required:
   To update your project, find and replace ``javax`` with ``jakarta`` in your Groovy code or Java if you are
   bringing in jars with Grab.
 
+- CrafterCMS 4.2.x has upgraded the AWS client library to version 2. |br| This may contain breaking changes that impact custom Java and
+  Groovy code. See https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/migration.html for more information
+  on the changes in the library that may affect your project/s.
+
 |hr|
 
 ------------------------------------
