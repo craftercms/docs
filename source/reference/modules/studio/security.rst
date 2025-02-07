@@ -470,11 +470,10 @@ Authorization
 Role Mappings
 ^^^^^^^^^^^^^
 Users are allowed to perform actions on the items that they have been granted access to based on the permissions granted
-to the role they have been assigned to. Note that all users are given read permission to the entire project/site
+to the role they have been assigned to. Note that site members have read permission to the entire project/site
 regardless of the role that they are assigned.
 
-The role mappings configuration file defines a list of roles available in the project/site and the mapping between the
-group that the user belongs to and Studio authoring roles. Note that each group may be mapped to multiple roles.
+The role mappings configuration file maps user groups to one or more roles which then get a set of permissions within a project.
 
 To modify the role mappings, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration**
 and select **Role Mappings** from the list.

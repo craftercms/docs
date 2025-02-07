@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.3
+:last-updated: 4.2.2
 
 .. Grammar Checked 2023-10-06
 
@@ -1047,11 +1047,14 @@ To configure access to Crafter Studio beyond adding groups and users, you'll nee
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Global Role Mappings Config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The global role mappings config contains the role mappings for groups created in CrafterCMS that need global permissions. For more information on groups, see :ref:`groups-management`
+The global role mappings configuration file maps user :ref:`groups <groups-management>` to one or more roles and serves
+as the base for every project in your CrafterCMS installation. All role mappings configured here are in addition to what
+is configured in the project role mappings.
 
-Role mappings per project are managed within Crafter Studio's UI. See :ref:`project-role-mappings` for more information on project role mappings.
+Role mappings per project are managed within Crafter Studio's UI. See :ref:`project-role-mappings` for more information.
 
-To access the global role mappings config file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/`` then open the file ``global-role-mappings-config.xml``. Remember to restart Crafter so your changes to the file will take effect.
+To access the global role mappings config file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/``
+then open the file ``global-role-mappings-config.xml``. Remember to restart Crafter so your changes to the file will take effect.
 
 Here's the default global role mappings configuration (click on the triangle on the left to expand/collapse):
 
