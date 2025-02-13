@@ -27,7 +27,7 @@ Enhancements
   not mix them in a plugin version in your descriptor file.
 
 * `Added support for allowing unauthorized OPTIONS requests to preview <https://github.com/craftercms/craftercms/issues/7699>`__ |br|
-  When :ref:`CORS <engine-cors>` is enabled, preview token validation is skipped for preflight OPTIONS requests.
+  When :ref:`CORS <engine-cors>` is enabled and the CORS request is preflight, preview token validation is skipped.
 
 ^^^^^^^^^
 Bug Fixes
