@@ -1031,3 +1031,87 @@ Use the API `switchPreviewSite <../../../_static/api/studio.html#tag/users/opera
 the ``crafterPreview`` cookie. This API must be called whenever the ``crafterSite`` cookie value is updated
 
 |hr|
+
+.. _studio-groovy-sandbox-configuration:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Groovy Sandbox Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When a Groovy script is executed all code is validated against a blacklist of insecure expressions to prevent code that could
+compromise the system. When you try to execute a script that contains insecure expressions you will see an error
+similar to this:
+
+.. code-block:: none
+    :caption: *Error message encountered for scripts containing insecure expressions*
+
+    UnsupportedOperationException: Insecure call staticMethod java.lang.Runtime getRuntime ...
+
+|
+
+It is recommended to keep the default configuration if possible. However, if access to one or more of the blacklisted expressions
+is required, it is possible to override the blacklist configuration. Configuration is global and affects all scripts on the server.
+
+.. warning:: When you allow a script to make an insecure call you should make sure it can only be executed with known
+             arguments and **never** with unverified user input.
+
+|
+
+"""""""""""""""""""""""""
+Groovy Sandbox Properties
+"""""""""""""""""""""""""
+The following allows you to configure the Groovy sandbox.
+The Groovy sandbox is enabled by default and can be disabled by changing the property ``studio.scripting.sandbox.enable`` to ``false``.
+
+.. code-block:: properties
+    :linenos:
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+    # Indicates if the sandbox should be enabled
+    studio.scripting.sandbox.enable: true
+    # Indicates if the blacklist should be enabled (this will have no effect if the sandbox is disabled)
+    studio.scripting.sandbox.blacklist.enable: true
+    # The location of the default blacklist to use (this will have no effect if the sandbox is disabled)
+    studio.scripting.sandbox.blacklist.path: classpath:crafter/studio/groovy/blacklist
+
+|
+
+"""""""""""""""""""""""""
+Using a Custom Blacklist
+"""""""""""""""""""""""""
+Crafter Studio includes a default blacklist that you can find
+`here <https://github.com/craftercms/studio/blob/support/4.x/src/main/resources/crafter/studio/groovy/blacklist>`_.
+Make sure you review the branch/tag you're using.
+
+To use a custom blacklist follow these steps:
+
+#. Copy the default blacklist file to your classpath, for example:
+
+    ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/groovy/blacklist``
+
+#. Remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
+#. Update the ``studio-config-override.yaml`` configuration file to load the custom blacklist:
+
+    .. code-block:: none
+        :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+        # The location of the default blacklist to use (this will have no effect if the sandbox is disabled)
+        studio.scripting.sandbox.blacklist.path: classpath:crafter/studio/groovy/blacklist
+
+#. Restart CrafterCMS
+
+Now you can execute the same script without any issues.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Disabling the Sandbox Blacklist
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+It is possible to disable the blacklist to allow the execution of most expressions, in case you need to use a
+considerable number of the expression included in the blacklist while keeping some basic restrictions. To disable
+the blacklist for all projects/sites update the ``studio-config-override.yaml`` configuration file:
+
+.. code-block:: none
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+    # Indicates if the blacklist should be enabled (this will have no effect if the sandbox is disabled)
+    studio.scripting.sandbox.blacklist.enable: false
+
+
