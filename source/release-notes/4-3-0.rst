@@ -40,7 +40,8 @@ Bug Fixes
 
 * `Fixed issue with move operations on items and folders <https://github.com/craftercms/craftercms/issues/7729>`__
 
-* Fixed issue with syncing users in groups for externally managed users (IdP).
+* Syncing is now changed such that users are synced based on IdP only for externally managed groups, but local group
+  membership is unchanged.
 
 For a complete list of community tickets, please visit: `GitHub 4.3.0 <https://github.com/orgs/craftercms/projects/23/views/1>`_
 
@@ -52,17 +53,5 @@ For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1
 Miscellaneous
 ^^^^^^^^^^^^^
 * `Removed Box in CrafterCMS <https://github.com/craftercms/craftercms/issues/7728>`__ |br|
-
-|hr|
-
-^^^^^^^^^^^^^^^^^^
-Dependency Updates
-^^^^^^^^^^^^^^^^^^
-Noteworthy dependency updates:
-
-- OpenSearch to version 2.20
-- Tika to version 3.1
-- Gson to version 2.12
-- Commons codec to version 1.18
 
 |hr|

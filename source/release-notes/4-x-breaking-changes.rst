@@ -31,7 +31,7 @@ Breaking Changes in CrafterCMS 4.3.0
 
 - The following APIs are removed from CrafterCMS 4.3.0:
 
-  `/api/1/services/api/1/repo/sync-from-repo.json`
+  ``/api/1/services/api/1/repo/sync-from-repo.json``
 
 |hr|
 
