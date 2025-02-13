@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.2
+:last-updated: 4.3.0
 
 .. Grammar Checked 2023-10-06
 
@@ -106,6 +106,11 @@ In this section, we will highlight some of the more commonly used properties in 
     * - :ref:`AWS Profiles Configuration <aws-profile-configuration>`
       - Configure AWS integration
     * - :ref:`Box Profiles Configuration <box-profile-configuration>`
+
+        .. version_tag::
+            :label: Until
+            :version: 4.2
+
       - Configure Box integration
     * - :ref:`WebDAV Profiles Configuration <webdav-profiles-configuration>`
       - Configure WebDAV integration
@@ -910,6 +915,10 @@ CrafterCMS has many integrations with AWS. Learn how to configure AWS Profiles i
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Box Profiles Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. version_tag::
+    :label: Until
+    :version: 4.2
+
 CrafterCMS integrates with Box. Learn how to configure Box Profiles in the article :ref:`box-profile-configuration`.
 
 .. toctree::
@@ -1063,7 +1072,7 @@ Here's the default global role mappings configuration (click on the triangle on 
    <details>
    <summary><a>Sample "global-role-mappings-config.xml"</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/global-role-mappings-config.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/global-role-mappings-config.xml
        :language: xml
        :caption: *CRAFTER_HOME/data/repos/global/configuration/global-role-mappings-config.xml*
        :linenos:
@@ -1104,7 +1113,7 @@ Here's the default global permissions configuration (click on the triangle on th
    <details>
    <summary><a>Sample "global-permission-mappings-config.xml"</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/global-permission-mappings-config.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/global-permission-mappings-config.xml
        :language: xml
        :caption: *CRAFTER_HOME/data/repos/global/configuration/global-permission-mappings-config.xml*
        :linenos:
@@ -1139,7 +1148,7 @@ open the file ``global-menu-config.xml``. Remember to restart Crafter so your ch
    <details>
    <summary><a>Sample "global-menu-config.xml"</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/global-menu-config.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/global-menu-config.xml
    :caption: *CRAFTER_HOME/data/repos/global/configuration/global-menu-config.xml*
    :language: xml
    :linenos:

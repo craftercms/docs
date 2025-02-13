@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.2
+:last-updated: 4.3.0
 
 .. TODO Review this article and see if it should be changes from the format: authoring - delivery to more general topics and how to implement the topic/concern
    Also, check for flow. We moved the site configuration to the top, make sure it flows well.
@@ -125,6 +125,11 @@ Here are the settings that can be configured through Crafter Studio:
       - Configures the project's AWS profiles
       - - :ref:`aws-profile-configuration`
     * - Box Profiles (``config/studio/box/box.xml``)
+
+        .. version_tag::
+            :label: Until
+            :version: 4.2
+
       - Configures the project's Box profiles
       - - :ref:`box-profile-configuration`
     * - WebDAV Profiles (``config/studio/webdav/webdav.xml``)
