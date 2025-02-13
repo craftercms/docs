@@ -495,7 +495,7 @@ Here's a sample Role Mappings Configuration file (click on the triangle on the l
    <details>
    <summary><a>Sample role mappings configuration</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-role-mappings-config.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-role-mappings-config.xml
    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/role-mappings-config.xml*
    :language: xml
    :linenos:
@@ -598,7 +598,7 @@ Here's a sample Permission Mappings Configuration file (click on the triangle on
    <details>
    <summary><a>Sample "permission-mappings-config.xml"</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-permission-mappings-config.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-permission-mappings-config.xml
        :language: xml
        :linenos:
 

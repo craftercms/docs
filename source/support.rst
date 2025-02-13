@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.3
+:last-updated: 4.3.0
 
 .. index:: Support
 
@@ -21,11 +21,16 @@ What's Supported?
       - Commercial Support
       - Latest
 
+    * - 4.3
+      - TBD
+      - :green:`Active`
+      - :green:`Active`
+      - 4.3.0 (TBD)
     * - 4.2
       - November 13, 2024
-      - :green:`Active`
-      - :green:`Active`
-      - 4.2.3 (TBD)
+      - :maroon:`TBD`
+      - :orange:`TBD`
+      - 4.2.2 (January 15, 2025)
     * - 4.1
       - June 17, 2023
       - :maroon:`Ended on November 13, 2024`
