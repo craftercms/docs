@@ -54,7 +54,7 @@ Here's a sample Project Policy Configuration file (click on the triangle on the 
    <details>
    <summary><a>Sample project policy configuration</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-site-policy-config.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.1.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-site-policy-config.xml
     :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/site-policy-config.xml*
     :language: xml
     :linenos:

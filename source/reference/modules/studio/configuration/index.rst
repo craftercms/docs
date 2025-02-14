@@ -992,7 +992,7 @@ Here's the default global permissions configuration (click on the triangle on th
    <details>
    <summary><a>Sample "permission-mappings-config.xml"</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/global-permission-mappings-config.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.1.x/src/main/webapp/repo-bootstrap/global/configuration/global-permission-mappings-config.xml
        :language: xml
        :caption: *CRAFTER_HOME/data/repos/global/configuration/global-permission-mappings-config.xml*
        :linenos:
@@ -1023,7 +1023,7 @@ Here's the default global role mappings configuration (click on the triangle on 
    <details>
    <summary><a>Sample "global-role-mappings-config.xml"</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/global-role-mappings-config.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.1.x/src/main/webapp/repo-bootstrap/global/configuration/global-role-mappings-config.xml
        :language: xml
        :caption: *CRAFTER_HOME/data/repos/global/configuration/global-role-mappings-config.xml*
        :linenos:
@@ -1066,7 +1066,7 @@ open the file ``global-menu-config.xml``. Remember to restart Crafter so your ch
    <details>
    <summary><a>Sample "global-menu-config.xml"</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/global-menu-config.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.1.x/src/main/webapp/repo-bootstrap/global/configuration/global-menu-config.xml
    :caption: *CRAFTER_HOME/data/repos/global/configuration/global-menu-config.xml*
    :language: xml
    :linenos:

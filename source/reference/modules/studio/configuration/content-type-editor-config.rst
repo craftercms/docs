@@ -38,7 +38,7 @@ Here is a sample Content Type Editor Config configuration file (click on the tri
    <details>
    <summary><a>Sample Content Type Editor Config configuration file</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-site-config-tools.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.1.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-site-config-tools.xml
    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/administration/site-config-tools.xml*
    :language: xml
    :linenos:
