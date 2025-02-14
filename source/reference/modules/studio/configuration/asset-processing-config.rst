@@ -25,7 +25,7 @@ Here's a sample Asset Processing Configuration file (click on the triangle on th
    <details>
    <summary><a>Sample "asset-processing-config.xml"</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-asset-processing-config.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-asset-processing-config.xml
    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/asset-processing/asset-processing-config.xml*
    :language: xml
    :linenos:
