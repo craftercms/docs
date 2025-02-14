@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.2
+:last-updated: 4.3.0
 
 .. _engine-config:
 
@@ -1138,8 +1138,9 @@ The following section allows you to configure CORS headers in REST API responses
 
 where:
 
-- ``<enable>`` Enable/disable CORS headers, default is false. When enabled, :ref:`preview token <preview-token>`
-  validation is skipped for CORS requests.
+- ``<enable>`` Enable/disable CORS headers, default is false.
+  When enabled and the request is `preflight <https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS#preflighted_requests_in_cors>`__,
+  :ref:`preview token <preview-token>` validation is skipped.
 
 - ``<accessControlAllowOrigin>`` values are split using ``,``. Remember that
   commas inside patterns need to be escaped with a ``\``,
