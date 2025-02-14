@@ -37,7 +37,7 @@ Here's a sample config-list.xml file (click on the triangle on the left to expan
    <details>
    <summary><a>Sample "config-list.xml"</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-config-list.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.0.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-config-list.xml
     :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/administration/config-list.xml*
     :language: xml
     :linenos:
