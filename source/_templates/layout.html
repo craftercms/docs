@@ -372,7 +372,11 @@
         <dt>{{ _('Versions') }}</dt>
         {%- if versions %}
           {%- for version in versions %}
-            <dd><a href="{{ docsUrl }}/{{ version }}/index.html">{{ version }}</a></dd>
+            {%- if version == '4' %}
+              <dd><a href="{{ docsUrl }}/{{ version }}/index.html">{{ version }} (latest)</a></dd>
+            {%- else %}
+              <dd><a href="{{ docsUrl }}/{{ version }}/index.html">{{ version }}</a></dd>
+            {%- endif %}
           {%- endfor %}
         {%- endif %}
       </dl>
