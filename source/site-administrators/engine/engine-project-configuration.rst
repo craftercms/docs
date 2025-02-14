@@ -58,7 +58,7 @@ This example file contains the properties used by Crafter Engine (click on the t
    <details>
    <summary><a>Sample file containing the properties used by Crafter Engine</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-engine-site-config.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.0.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-engine-site-config.xml
     :language: xml
     :linenos:
 
