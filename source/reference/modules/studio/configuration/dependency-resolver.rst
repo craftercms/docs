@@ -27,7 +27,7 @@ Here's a sample Dependency Resolver Configuration file (click on the triangle on
    <details>
    <summary><a>Sample dependency resolver configuration</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-resolver-config.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.1.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-resolver-config.xml
    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/dependency/resolver-config.xml*
    :language: xml
    :linenos:

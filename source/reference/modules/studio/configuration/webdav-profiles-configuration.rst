@@ -24,7 +24,7 @@ Here's a sample WebDAV Profiles Configuration file (click on the triangle on the
    <details>
    <summary><a>Sample WebDAV profiles configuration</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-webdav.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.1.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-webdav.xml
    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/webdav/webdav.xml*
    :language: xml
    :linenos:
