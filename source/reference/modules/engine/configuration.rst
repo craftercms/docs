@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.3
+:last-updated: 4.2.2
 
 .. _engine-config:
 
@@ -1067,7 +1067,7 @@ Here's a sample urlrewrite.xml file (click on the triangle on the left to expand
    <details>
    <summary><a>Sample "urlrewrite.xml"</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-urlrewrite.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-urlrewrite.xml
    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/urlrewrite.xml*
    :language: xml
    :linenos:
@@ -1195,7 +1195,7 @@ Here's a sample Proxy Configuration file (click on the triangle on the left to e
    <details>
    <summary><a>Sample "proxy-config.xml"</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-proxy-config.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-proxy-config.xml
     :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/asset-processing/proxy-config.xml*
     :language: xml
     :linenos:
