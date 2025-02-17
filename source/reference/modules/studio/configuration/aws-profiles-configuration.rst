@@ -25,7 +25,7 @@ Here's a sample AWS Profiles Configuration file (click on the triangle on the le
    <details>
    <summary><a>Sample "aws.xml"</a></summary>
 
-.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-aws.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-aws.xml
    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/aws/aws.xml*
    :language: xml
    :linenos:
