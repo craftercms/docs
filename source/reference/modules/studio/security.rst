@@ -1037,24 +1037,7 @@ the ``crafterPreview`` cookie. This API must be called whenever the ``crafterSit
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Groovy Sandbox Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-When a Groovy script is executed all code is validated against a blacklist of insecure expressions to prevent code that could
-compromise the system. When you try to execute a script that contains insecure expressions you will see an error
-similar to this:
-
-.. code-block:: none
-    :caption: *Error message encountered for scripts containing insecure expressions*
-
-    UnsupportedOperationException: Insecure call staticMethod java.lang.Runtime getRuntime ...
-
-|
-
-It is recommended to keep the default configuration if possible. However, if access to one or more of the blacklisted expressions
-is required, it is possible to override the blacklist configuration. Configuration is global and affects all scripts on the server.
-
-.. warning:: When you allow a script to make an insecure call you should make sure it can only be executed with known
-             arguments and **never** with unverified user input.
-
-|
+.. include:: /includes/groovy-sandbox-configuration.rst
 
 """""""""""""""""""""""""
 Groovy Sandbox Properties
@@ -1062,7 +1045,7 @@ Groovy Sandbox Properties
 The following allows you to configure the Groovy sandbox.
 The Groovy sandbox is enabled by default and can be disabled by changing the property ``studio.scripting.sandbox.enable`` to ``false``.
 
-.. code-block:: properties
+.. code-block:: yaml
     :linenos:
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
@@ -1091,7 +1074,7 @@ To use a custom blacklist follow these steps:
 #. Remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
 #. Update the ``studio-config-override.yaml`` configuration file to load the custom blacklist:
 
-    .. code-block:: none
+    .. code-block:: yaml
         :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
         # The location of the default blacklist to use (this will have no effect if the sandbox is disabled)
@@ -1101,17 +1084,27 @@ To use a custom blacklist follow these steps:
 
 Now you can execute the same script without any issues.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 Disabling the Sandbox Blacklist
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 It is possible to disable the blacklist to allow the execution of most expressions, in case you need to use a
 considerable number of the expression included in the blacklist while keeping some basic restrictions. To disable
 the blacklist for all projects/sites update the ``studio-config-override.yaml`` configuration file:
 
-.. code-block:: none
+.. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
     # Indicates if the blacklist should be enabled (this will have no effect if the sandbox is disabled)
     studio.scripting.sandbox.blacklist.enable: false
 
+|
 
+"""""""""""""""""""
+Grape Configuration
+"""""""""""""""""""
+.. include:: /includes/groovy-grape-configuration.rst
+
+"""""""""""""""
+Important Notes
+"""""""""""""""
+.. include:: /includes/groovy-sandbox-important-notes.rst
