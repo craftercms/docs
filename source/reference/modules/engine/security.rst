@@ -166,7 +166,7 @@ secured page and then automatically return to your project in Crafter Engine.
   If you are configuring SAML2 authentication in an authoring environment, you need to make sure that your IDP is
   configured to allow the login to be displayed in an ``iframe`` element by setting the right values for the
   ``Content-Security-Policy`` header. You can find more information
-  `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy>`_.
+  `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy>`__.
 
 .. TODO The following section can be put back in if we go back to supporting different SAML2 per project
     .. _saml2-multi-environment-support:
@@ -1283,6 +1283,88 @@ and :javadoc_base_url:`AccessRestrictionExpressionRoot.java <profile/org/crafter
         </restriction>
       </urlRestrictions>
     </security>
+
+|hr|
+
+.. _groovy-sandbox-configuration:
+
+----------------------------
+Groovy Sandbox Configuration
+----------------------------
+.. include:: /includes/groovy-sandbox-configuration.rst
+
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Groovy Sandbox Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^
+The following allows you to configure the Groovy sandbox.
+The Groovy sandbox is enabled by default and can be disabled by changing the property ``crafter.engine.groovy.sandbox.enable`` to ``false``.
+
+.. code-block:: properties
+   :linenos:
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # Indicates if the sandbox should be enabled for all sites
+   crafter.engine.groovy.sandbox.enable=true
+   # Indicates if the blacklist should be enabled for all sites (this will have no effect if the sandbox is disabled)
+   crafter.engine.groovy.sandbox.blacklist.enable=true
+   # The location of the default blacklist to use for all sites (this will have no effect if the sandbox is disabled)
+   crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/groovy/blacklist
+
+|
+
+^^^^^^^^^^^^^^^^^^^^^^^^
+Using a Custom Blacklist
+^^^^^^^^^^^^^^^^^^^^^^^^
+Crafter Engine includes a default blacklist that you can find
+`here <https://github.com/craftercms/engine/blob/support/4.x/src/main/resources/crafter/engine/groovy/blacklist>`__. Make sure you review the branch/tag you're using.
+
+To use a custom blacklist follow these steps:
+
+#. Copy the default blacklist file to your classpath, for example:
+
+    ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/groovy/blacklist``
+
+#. Remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
+#. Update the :ref:`server-config.properties <engine-configuration-files>` configuration file to load the custom blacklist:
+
+    .. code-block:: properties
+      :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
+
+      # The location of the blacklist to use for all sites (this will have no effect if the sandbox is disabled)
+      crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/extension/groovy/blacklist
+
+    .. note::
+      In CrafterCMS v3.1.14 and prior, the name of the property is ``crafter.engine.groovy.sandbox.blacklist``
+
+#. Restart CrafterCMS
+
+Now you can execute the same script without any issues.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Disabling the Sandbox Blacklist
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+It is possible to disable the blacklist to allow the execution of most expressions, in
+case you need to use a considerable number of the expression included in the blacklist while keeping some basic
+restrictions. To disable the blacklist for all projects/sites update the server configuration file
+:ref:`server-config.properties <engine-configuration-files>`:
+
+.. code-block:: properties
+  :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+  # Indicates if the blacklist should be enabled for all sites (this will have no effect if the sandbox is disabled)
+  crafter.engine.groovy.sandbox.blacklist.enable=false
+
+|
+
+^^^^^^^^^^^^^^^^^^^
+Grape Configuration
+^^^^^^^^^^^^^^^^^^^
+.. include:: /includes/groovy-grape-configuration.rst
+
+^^^^^^^^^^^^^^^
+Important Notes
+^^^^^^^^^^^^^^^
+.. include:: /includes/groovy-sandbox-important-notes.rst
 
 |hr|
 

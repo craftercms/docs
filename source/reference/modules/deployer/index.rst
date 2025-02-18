@@ -664,6 +664,122 @@ To change the webhook templates location, simply set the ``webhook.templates.ove
 
 |hr|
 
+.. _crafter-deployer-security:
+
+--------
+Security
+--------
+
+.. _deployer-groovy-sandbox-configuration:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Groovy Sandbox Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. include:: /includes/groovy-sandbox-configuration.rst
+
+"""""""""""""""""""""""""
+Groovy Sandbox Properties
+"""""""""""""""""""""""""
+The following allows you to configure the Groovy sandbox.
+The Groovy sandbox is enabled by default and can be disabled by changing the property ``deployer.main.scripting.sandbox.enabled`` to ``false``.
+
+.. code-block:: yaml
+    :linenos:
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
+
+    deployer:
+      main:
+        scripting:
+          sandbox:
+            # Indicates if the sandbox should be enabled for all targets
+            enabled: true
+            blacklist:
+              # Indicates if the blacklist should be enabled for all targets
+              # (this will have no effect if the sandbox is disabled)
+              enabled: true
+              # The location of the blacklist to use for all targets
+              # (this will have no effect if the sandbox is disabled)
+              path: 'classpath:groovy/blacklist'
+
+|
+
+""""""""""""""""""""""""
+Using a Custom Blacklist
+""""""""""""""""""""""""
+Crafter Deployer includes a default blacklist that you can find
+`here <https://github.com/craftercms/deployer/blob/support/4.x/src/main/resources/groovy/blacklist>`__. Make sure you review the branch/tag you're using.
+
+To use a custom blacklist follow these steps:
+
+#. Copy the default blacklist file to your classpath, for example:
+
+    ``CRAFTER_HOME/bin/crafter-deployer/groovy/extension/blacklist``
+
+#. Remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
+#. Update the ``application.yaml`` configuration file to load the custom blacklist:
+
+    .. code-block:: yaml
+        :caption: ``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml``
+
+        sandbox:
+          blacklist:
+            # The location of the blacklist to use for all targets
+            # (this will have no effect if the sandbox is disabled)
+            path: 'file:groovy/extension/blacklist'
+
+#. Restart CrafterCMS
+
+Now you can execute the same script without any issues.
+
+"""""""""""""""""""""""""""""""
+Disabling the Sandbox Blacklist
+"""""""""""""""""""""""""""""""
+It is possible to disable the blacklist to allow the execution of most expressions, in
+case you need to use a considerable number of the expression included in the blacklist while keeping some basic
+restrictions. To disable the blacklist for all targets update the ``application.yaml`` configuration file:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
+
+    sandbox:
+      blacklist:
+        # Indicates if the blacklist should be enabled for all targets
+        # (this will have no effect if the sandbox is disabled)
+        enabled: false
+
+|
+
+"""""""""""""""""""
+Grape Configuration
+"""""""""""""""""""
+.. include:: /includes/groovy-grape-configuration.rst
+
+"""""""""""""""
+Important Notes
+"""""""""""""""
+.. include:: /includes/groovy-sandbox-important-notes.rst
+
+^^^^^^^^^^^^^^^^^^^^
+Cipher Configuration
+^^^^^^^^^^^^^^^^^^^^
+.. code-block:: yaml
+    :linenos:
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
+
+    deployer:
+      main:
+        security:
+          encryption:
+            # The key used for encryption of configuration properties
+            key: ${CRAFTER_ENCRYPTION_KEY}
+            # The salt used for encryption of configuration properties
+            salt: ${CRAFTER_ENCRYPTION_SALT}
+          ssh:
+            # The path of the folder used for the SSH configuration
+            config: ${CRAFTER_SSH_CONFIG}
+
+|hr|
+
 .. _crafter-deployer-administration:
 
 --------------
