@@ -537,10 +537,10 @@ To upgrade 3.1.0 Docker/Kuber deployments to 3.1.3:
 
 .. _upgrade-to-3-1-0:
 
-----------------------------------------------------------------------------
-Instructions for Upgrading to CrafterCMS 3.1.0 from a previous 3.0.x version
-----------------------------------------------------------------------------
-This section details how to upgrade your CrafterCMS installation to version 3.1.0
+--------------------------------------------------------------------------
+Instructions for Upgrading to CrafterCMS 3.1 from a previous 3.0.x version
+--------------------------------------------------------------------------
+This section details how to upgrade your CrafterCMS installation to version 3.1 from a previous 3.0.x version
 
 ^^^^^^^^^^^^^^^^
 Before Upgrading
@@ -666,7 +666,7 @@ Upgrade CrafterCMS
 #. Review the release notes for the version you are upgrading to, which contains specific information on the changes
    that have been made and how it may affect you when upgrading to that specific version.
 #. Backup your CrafterCMS 3.0.x install
-#. Download the CrafterCMS 3.1.0 binary archive version and extract the files
+#. Download the CrafterCMS 3.1.x binary archive version and extract the files
 #. In your CrafterCMS 3.0.x install, copy/paste or move the data folder ``CRAFTER_3.0.x_INSTALLATION/data`` to your new ``CRAFTER_3.1.0_INSTALLATION`` install folder
 #. Migrate sites to Elasticsearch (recommended) by following this guide: :ref:`migrate-site-to-elasticsearch`.
    You can continue using Crafter Search and Solr as the search engine, by following :ref:`using-crafter-search-and-solr`
