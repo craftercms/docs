@@ -7,7 +7,7 @@ Release Notes
 =============
 
 This section contains release notes for CrafterCMS 3.1.x.  For other release notes, please visit your release's release
-notes page here in the :docs_base_url:`CrafterCMS Documentation <current>`
+notes page here in the `CrafterCMS Documentation <https://craftercms.com/docs>`
 
 .. include:: /release-notes/3-1-31.rst
 
