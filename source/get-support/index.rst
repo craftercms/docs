@@ -19,7 +19,7 @@ If you have any questions, please look in the following:
 	* `Q&A at StackOverflow <https://stackoverflow.com/questions/tagged/crafter-cms>`_
 	* `IRC <https://webchat.freenode.net/#craftercms>`_ or point your IRC client to ``irc.freenode.net`` channel ``#craftercms``
 
-For additional resources, please visit the `CrafterCMS developer community <http://craftercms.org>`_.
+For additional resources, please visit the `CrafterCMS developer community <https://craftercms.com/resources>`_.
 
 Enterprise Support
 ------------------
@@ -32,5 +32,5 @@ For production and other services support including:
     * Access to a system integration partner ecosystem
     * Author and developer training
 
-visit `CrafterCMS <http://craftercms.com>`_ or email our team at `sales@craftercms.com <mailto:sales@craftercms.com>`_ with your inquiries.
+visit `CrafterCMS <https://craftercms.com>`_ or email our team at `sales@craftercms.com <mailto:sales@craftercms.com>`_ with your inquiries.
 

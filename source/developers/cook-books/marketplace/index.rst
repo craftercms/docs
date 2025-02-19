@@ -17,4 +17,4 @@ CrafterCMS marketplace provides a home for the Crafter community to contribute, 
 
    create-plugins
 
-For more information on the CrafterCMS Marketplace, see https://marketplace.craftercms.org
+For more information on the CrafterCMS Marketplace, see https://craftercms.com/marketplace
