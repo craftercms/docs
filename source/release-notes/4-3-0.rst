@@ -4,7 +4,7 @@
 CrafterCMS 4.3.0
 ----------------
 
-Released *TBD*
+Released *February 21, 2025*
 
 .. important::
 
