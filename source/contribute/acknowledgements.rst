@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.2
+:last-updated: 4.3.0
 
 .. index:: Open Source Acknowledgements
 
@@ -9,10 +9,8 @@
 Open Source Acknowledgements
 ============================
 CrafterCMS acknowledges the following Open Source Software used in this product:
-
-`cglib:cglib <https://mvnrepository.com/artifact/cglib/cglib>`_
 |br|
-`com.box:box-java-sdk <https://mvnrepository.com/artifact/com.box/box-java-sdk>`_
+`cglib:cglib <https://mvnrepository.com/artifact/cglib/cglib>`_
 |br|
 `com.drewnoakes:metadata-extractor <https://mvnrepository.com/artifact/com.drewnoakes/metadata-extractor>`_
 |br|
@@ -49,12 +47,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `com.graphql-java:graphql-java <https://mvnrepository.com/artifact/com.graphql-java/graphql-java>`_
 |br|
 `com.jayway.jsonpath:json-path-assert <https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path-assert>`_
-|br|
-`com.squareup.okhttp3:okhttp <https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp>`_
-|br|
-`com.squareup.okio:okio-jvm <https://mvnrepository.com/artifact/com.squareup.okio/okio-jvm>`_
-|br|
-`com.squareup.okio:okio <https://mvnrepository.com/artifact/com.squareup.okio/okio>`_
 |br|
 `com.thoughtworks.xstream:xstream <https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream>`_
 |br|
@@ -113,6 +105,8 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `org.apache.cxf:cxf-rt-transports-http <https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-transports-http>`_
 |br|
 `org.apache.cxf:cxf-rt-ws-policy <https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-ws-policy>`_
+|br|
+`org.apache.groovy:groovy-all <https://mvnrepository.com/artifact/org.apache.groovy/groovy-all>`_
 |br|
 `org.apache.groovy:groovy-all <https://mvnrepository.com/artifact/org.apache.groovy/groovy-all>`_
 |br|
@@ -291,6 +285,10 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `software.amazon.awssdk:s3-transfer-manager <https://mvnrepository.com/artifact/software.amazon.awssdk/s3-transfer-manager>`_
 |br|
 `software.amazon.awssdk:s3 <https://mvnrepository.com/artifact/software.amazon.awssdk/s3>`_
+|br|
+`software.amazon.awssdk:sso <https://mvnrepository.com/artifact/software.amazon.awssdk/sso>`_
+|br|
+`software.amazon.awssdk:ssooidc <https://mvnrepository.com/artifact/software.amazon.awssdk/ssooidc>`_
 |br|
 `software.amazon.awssdk:sts <https://mvnrepository.com/artifact/software.amazon.awssdk/sts>`_
 |br|
