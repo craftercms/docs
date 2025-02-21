@@ -1,9 +1,9 @@
 :is-up-to-date: True
 :last-updated: 4.2.2
 
-###########################################
-CrafterCMS |version| (latest) Documentation
-###########################################
+####################################
+CrafterCMS Documentation (|version|)
+####################################
 
 .. default-domain:: craftercms
 

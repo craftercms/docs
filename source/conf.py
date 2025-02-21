@@ -27,7 +27,7 @@ copyright = u"%s, Crafter Software Corporation"% str(date.today().year)
 author = u'CrafterCMS'
 
 # The short X.Y version.
-version = u'4'
+version = u'current'
 # The full version, including alpha/beta/rc tags.
 release = u'4.3.0'
 
@@ -139,7 +139,7 @@ html_favicon = "_static/images/favicon.ico"
 
 # Add versions for the bottom menu
 html_context = {
-    'versions': ['4', '4.1', '4.0', '3.1'],
+    'versions': ['current', '4.1', '4.0', '3.1'],
     'docsUrl': '/docs'
 }
 
