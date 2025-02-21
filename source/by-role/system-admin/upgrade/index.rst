@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.1
+:last-updated: 4.3.0
 
 .. _upgrading-craftercms:
 
@@ -7,18 +7,37 @@
 Upgrading CrafterCMS
 ====================
 This section details the steps required to upgrade your CrafterCMS install.
+The following CrafterCMS versions are able to upgrade to the latest release:
+
+.. list-table::
+
+    * - **4.2**
+      - **4.1**
+      - **4.0**
+      - **3.1**
+    * - All
+      - All
+      - All
+      - ``3.1.9``
+    * -
+      -
+      -
+      - ``3.1.12``
+    * -
+      -
+      -
+      - ``3.1.13``
+    * -
+      -
+      -
+      - ``3.1.17`` and onward
+
+If you are upgrading from a CrafterCMS 3.1.x version other than the ones listed above, you will need to upgrade to one of the above listed supported 3.1.x upgrade paths release version first before upgrading. See the Upgrading CrafterCMS page for 3.1 here: :docs_base_url:`Upgrading CrafterCMS <3.1/system-administrators/upgrade/index.html>` for more information.
+
+|
 
 .. WARNING::
-   * This guide assumes that you're trying to upgrade from a stock 3.1.x or 4.x Studio and with some slight Studio configuration changes. If your project/site configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
-
-   * The following release versions are able to upgrade to 4.x.
-
-     - 3.1.9
-     - 3.1.12
-     - 3.1.13
-     - 3.1.17 and later versions
-
-     If you are upgrading from a version other than the ones listed above, you will need to upgrade to one of the above listed supported upgrade paths release version first before upgrading to 4. See the Upgrading CrafterCMS page for 3.1 here: :docs_base_url:`Upgrading CrafterCMS <3.1/system-administrators/upgrade/index.html>`
+   * This guide assumes that you're trying to upgrade from a stock Crafter Studio version with some slight Studio configuration changes. If your project/site configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
 
 |
 
