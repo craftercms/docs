@@ -33,7 +33,7 @@ The project level permissions are defined in the file ``permission-mappings-conf
     * - remove_remote
       - User is permitted to remove remote repository from project content repository |br|
         Required for using the :ref:`Git project tool <project-tools-git>` to remove remote repository from project in the UI via
-        the API :base_url:`Remove remote repository <../../../_static/api/studio.html#tag/repository/operation/removeRemoteRepository>`
+        the API :base_url:`Remove remote repository <_static/api/studio.html#tag/repository/operation/removeRemoteRepository>`
     * - repair_repository
       - User is permitted to repair the repository
     * - cancel_publish
@@ -46,6 +46,9 @@ The project level permissions are defined in the file ``permission-mappings-conf
     * - publish_status
       - User is permitted to get the publishing status from the :ref:`UI <publishing-and-status>`
         or via the API :base_url:`Get publishing status <_static/api/studio.html#tag/publishing/operation/getPublishingStatus>`
+    * - publish_by_commits
+      - User is permitted to publish commits from sandbox repository by commit id from the :ref:`UI <publishing-and-status>`
+        or via the API :base_url:`Publish commits <_static/api/studio.html#tag/publishing/operation/publishCommits>`
     * - start_stop_publisher
       - User is permitted to start/stop the publisher from the :ref:`UI <publishing-and-status>`
     * - view_logs

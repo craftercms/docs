@@ -1,25 +1,37 @@
 :is-up-to-date: True
-:last-updated: 4.2.2
+:last-updated: 4.3.0
 :orphan:
 
-.. _breaking-changes-4-2-x:
+.. _breaking-changes-4-x:
 
-====================================
-Breaking Changes in CrafterCMS 4.2.x
-====================================
+================================
+Breaking Changes in CrafterCMS 4
+================================
 This section covers changes that might affect your CrafterCMS projects, as well as other considerations
 before upgrading. Please review the following and apply changes as required:
 
-- CrafterCMS 4.2.x requires Java 21. |br| See :ref:`Requirements <requirements_supported_platforms>` for more
+- CrafterCMS requires Java 21. |br| See :ref:`Requirements <requirements_supported_platforms>` for more
   information on CrafterCMS requirements.
 
-- CrafterCMS 4.2.x now uses Jakarta EE. |br| The ``jakarta.*`` namespace is now used instead of ``javax.*``.
+- CrafterCMS now uses Jakarta EE. |br| The ``jakarta.*`` namespace is now used instead of ``javax.*``.
   To update your project, find and replace ``javax`` with ``jakarta`` in your Groovy code or Java if you are
   bringing in jars with Grab.
 
-- CrafterCMS 4.2.x has upgraded the AWS client library to version 2. |br| This may contain breaking changes that impact custom Java and
+- CrafterCMS has upgraded the AWS client library to version 2. |br| This may contain breaking changes that impact custom Java and
   Groovy code. See https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/migration.html for more information
   on the changes in the library that may affect your project/s.
+
+|hr|
+
+------------------------------------
+Breaking Changes in CrafterCMS 4.3.0
+------------------------------------
+- CrafterCMS 4.3.0 has removed Box support. |br|
+  See https://github.com/craftercms/craftercms/issues/7728 for more information.
+
+- The following APIs are removed from CrafterCMS 4.3.0:
+
+  ``/api/1/services/api/1/repo/sync-from-repo.json``
 
 |hr|
 

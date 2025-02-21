@@ -8,11 +8,10 @@ Released *November 13, 2024*
 
 .. important::
 
-    Please see :ref:`Breaking changes <breaking-changes-4-2-x>` for breaking changes and other
+    Please see :ref:`Breaking changes <breaking-changes-4-x>` for breaking changes and other
     things to consider before upgrading
 
-    For instructions on how to update your CrafterCMS install to 4.2.x,
-    please see :ref:`upgrading-craftercms`
+    For instructions on how to update your CrafterCMS install, please see :ref:`upgrading-craftercms`
 
 ^^^^^^^^^^^^
 New Features

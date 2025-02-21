@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.1
+:last-updated: 4.3.0
 :orphan:
 
 .. _box-profile-configuration:
@@ -7,6 +7,10 @@
 ==========================
 Box Profiles Configuration
 ==========================
+.. version_tag::
+    :label: Until
+    :version: 4.2
+
 The Box Profiles configuration file allows you to configure Box profiles with the information
 required by Box services.
 To modify the Box Profiles configuration, click on |projectTools| from the bottom of the *Sidebar*,
