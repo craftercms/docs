@@ -24,7 +24,7 @@ release's release notes page :ref:`below <other-release-notes>`
 
 .. _other-release-notes:
 
-For CrafterCMS version 4.2 release notes, see :docs_base_url:`4.2 Release Notes <4.2/release-notes/index.html>`
+For CrafterCMS version 4.2 release notes, see :docs_base_url:`4.2 Release Notes <current/release-notes/index.html>`
 
 |hr|
 
