@@ -22,4 +22,4 @@ release's release notes page :ref:`below <other-release-notes>`
 
 .. _other-release-notes:
 
-For CrafterCMS version 3.1 release notes, see :docs_base_url:`3.1 Release Notes <3.1/release-notes/index.html>`
+For CrafterCMS version 3.1 release notes, see `3.1 Release Notes <https://craftercms.com/docs/3.1/release-notes/index.html>`__
