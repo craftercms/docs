@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.1
+:last-updated: 4.2.2
 
 .. index:: Support
 
@@ -21,10 +21,15 @@ What's Supported?
       - Commercial Support
       - Latest
 
+    * - 4.3
+      - February 21, 2025
+      - :green:`Active`
+      - :green:`Active`
+      - 4.3.0 (February 21, 2025)
     * - 4.2
       - November 13, 2024
-      - :green:`Active`
-      - :green:`Active`
+      - :maroon:`Ended on February 21, 2025`
+      - :orange:`August 31, 2025`
       - 4.2.2 (January 15, 2025)
     * - 4.1
       - June 17, 2023
