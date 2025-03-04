@@ -1794,6 +1794,122 @@ you can find more detailed information in the :ref:`engine-multi-environment-sup
     Example
     """""""
 
+|hr|
+
+.. _engine-custom-properties:
+
+------------------------
+Engine Custom Properties
+------------------------
+Crafter Engine supports adding custom properties via the Engine Project Configuration file (``site-config.xml``).
+To create a custom Engine property for use in your project, open the file in Studio by opening the Sidebar, then click
+on |projectTools|, then ``Configuration``, then finally click on ``Engine Project Configuration``.
+
+To add custom properties, simply add tags in the ``site-config.xml`` file using the name you want for your properties, as
+shown below:
+
+.. code-block:: xml
+    :caption: */config/engine/site-config.xml*
+    :emphasize-lines: 3-6
+
+    <site>
+      <version>4.0.1</version>
+      <custom-properties>
+        <custom-property-1>some_value</custom-property-1>
+        <custom-property-2>some-other-value</custom-property-2>
+      </custom-properties>
+    </site>
+
+All custom properties created in the Engine project configuration file are available in :ref:`Freemarker templates <templating-api>`
+and :ref:`Groovy scripts <groovy-java-api>` using the ``siteConfig`` variable. The ``siteConfig`` variable is an instance of the
+`XMLConfiguration <https://commons.apache.org/proper/commons-configuration/apidocs/org/apache/commons/configuration2/XMLConfiguration.html>`__
+class.
+
+The main interface ``ImmutableConfiguration`` is used for accessing the custom property you created in a read-only fashion.
+See https://commons.apache.org/proper/commons-configuration/apidocs/org/apache/commons/configuration2/ImmutableConfiguration.html
+for more information.
+
+You can also access the custom property you created in the Engine Project Application Context (``application-context.xml``)
+file like below, where ``myvalue`` is the custom property you created in the ``site-config.xml`` file:
+
+.. code-block:: xml
+    :caption: *config/engine/application-context.xml*
+    :emphasize-lines: 7-9
+
+    <beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" parent="crafter.properties"/>
+
+        <bean id="greeting" class="mypackage.MyClass">
+            <property name="myproperty" value="${myvalue}"/>
+        </bean>
+
+    </beans>
+
+|
+
+Let's take a look at an example of creating some custom properties and how to use them in a Groovy script.
+We'll create the following properties in the Engine project configuration file ``site-config.xml``
+
+- ``db.enabled`` a boolean
+- ``db.url`` a string
+- ``db.dbNames`` a list
+- ``db.port`` an integer
+
+.. code-block:: xml
+    :caption: */config/engine/site-config.xml*
+
+    <site>
+      <version>4.0.1</version>
+        <db>
+          <enabled>true</enabled>
+          <url>http://localhost:8080</url>
+          <port>8080</port>
+          <dbNames>db1,db2,db3</dbNames>
+        </db>
+    </site>
+
+We'll now use the ``siteConfig`` variable to access the properties we created above using Groovy. We'll use a REST script
+for our example, ``custom-properties.get.groovy``.
+
+To get a string, use the ``getString`` method, which we'll use to get the value for ``db.url``:
+
+.. code-block:: groovy
+    :caption: *custom-properties.get.groovy - getString*
+
+    return siteConfig.getString("db.url")
+
+|
+
+To get a list of strings, use the ``getStringArray`` method, which we'll use to get the value for ``db.dbNames``:
+
+.. code-block:: groovy
+    :caption: *custom-properties.get.groovy - getStringArray*
+
+    return siteConfig.getStringArray("db.dbNames")
+
+|
+
+To get an integer, use the ``getInt`` method, which we'll use to get the value for ``db.port``:
+
+.. code-block:: groovy
+    :caption: *custom-properties.get.groovy - getInt*
+
+    return siteConfig.getInt("db.port")
+
+|
+
+To get a boolean, use the ``getBoolean`` method, which we'll use to get the value for ``db.enabled``:
+
+.. code-block:: groovy
+    :caption: *custom-properties.get.groovy - getBoolean*
+
+    return siteConfig.getBoolean("db.enabled")
+
+|
+
 .. _engine-multi-environment-support:
 
 --------------------------------
