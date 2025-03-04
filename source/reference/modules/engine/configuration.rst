@@ -1783,25 +1783,14 @@ you can find more detailed information in the :ref:`engine-multi-environment-sup
 
 |hr|
 
-
-.. TODO: Add a section to show how to include your own properties
-    .. _adding-custom-properties:
-    ^^^^^^^^^^^^^^^^^^^^^^^^
-    Adding Custom Properties
-    ^^^^^^^^^^^^^^^^^^^^^^^^
-    Crafter Engine allows developers to add custom properties to the ``/config/engine/site-config.xml`` file. This is useful when you want to add properties that are specific to your project.
-    """""""
-    Example
-    """""""
-
-|hr|
-
 .. _engine-custom-properties:
 
 ------------------------
 Engine Custom Properties
 ------------------------
 Crafter Engine supports adding custom properties via the Engine Project Configuration file (``site-config.xml``).
+This is useful when you want to add properties that are specific to your project.
+
 To create a custom Engine property for use in your project, open the file in Studio by opening the Sidebar, then click
 on |projectTools|, then ``Configuration``, then finally click on ``Engine Project Configuration``.
 
