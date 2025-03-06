@@ -146,7 +146,35 @@ For MacOS users, the following applies:
 
    |
 
-#. Docker is used to run OpenSearch and needs to be installed. Follow the instructions `here <https://docs.docker.com/install/>`__ to install Docker.
+#. Docker is used to run OpenSearch and needs to be installed.
+   Follow the instructions `here <https://docs.docker.com/install/>`__ to install Docker. |br| (MacOS is not supported by
+   OpenSearch so Docker is used to run OpenSearch. See <https://opensearch.org/docs/latest/install-and-configure/os-comp/>
+   for more information.)
+
+   When starting up CrafterCMS on MacOS, the following message is displayed:
+
+   .. code-block:: bash
+
+       Preflight check.
+       Operating system is Mac, must use Docker to run OpenSearch.
+       Running in this mode is for development purposes only.
+
+        ██████╗ ██████╗   █████╗  ███████╗ ████████╗ ███████╗ ██████╗   ██████╗ ███╗   ███╗ ███████╗
+       ██╔════╝ ██╔══██╗ ██╔══██╗ ██╔════╝ ╚══██╔══╝ ██╔════╝ ██╔══██╗ ██╔════╝ ████╗ ████║ ██╔════╝
+       ██║      ██████╔╝ ███████║ █████╗      ██║    █████╗   ██████╔╝ ██║      ██╔████╔██║ ███████╗
+       ██║      ██╔══██╗ ██╔══██║ ██╔══╝      ██║    ██╔══╝   ██╔══██╗ ██║      ██║╚██╔╝██║ ╚════██║
+       ╚██████╗ ██║  ██║ ██║  ██║ ██║         ██║    ███████╗ ██║  ██║ ╚██████╗ ██║ ╚═╝ ██║ ███████║
+        ╚═════╝ ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═╝         ╚═╝    ╚══════╝ ╚═╝  ╚═╝  ╚═════╝ ╚═╝     ╚═╝ ╚══════╝
+
+   |
+
+   Depending on the environment started, an ``authoring-search`` or ``delivery-search`` container using the OpenSearch
+   Docker image will be running. In the screenshot below, an authoring and delivery CrafterCMS environment is running:
+
+   .. image:: /_static/images/system-admin/opensearch-docker-image-running-on-macos.webp
+       :width: 80 %
+       :align: center
+       :alt: OpenSearch Docker container started on CrafterCMS startup
 
 """"""""""""""""""
 Linux Prerequisite
