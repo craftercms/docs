@@ -1,0 +1,36 @@
+.. index:: CrafterCMS 5.0.0 Release Notes
+
+----------------
+CrafterCMS 5.0.0
+----------------
+
+Released *TBD*
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-5-x>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install, please see :ref:`upgrading-craftercms`
+
+^^^^^^^^^^^^
+Enhancements
+^^^^^^^^^^^^
+* `Improved Studio cluster sync failure notifications and monitoring <https://github.com/craftercms/craftercms/issues/7618>`__ |br|
+
+* `Improved Git clean up task <https://github.com/craftercms/craftercms/issues/7534>`__ |br|
+
+* `Groovy classes are now accessible to Content Type controllers <https://github.com/craftercms/craftercms/issues/6546>`__ |br|
+
+^^^^^^^^^
+Bug Fixes
+^^^^^^^^^
+* `Fixed issue with dependency extraction failing in Javascript on escaped quotes <https://github.com/craftercms/craftercms/issues/7773>`__ |br|
+
+For a complete list of community tickets, please visit: `GitHub 5.0.0 <https://github.com/orgs/craftercms/projects/17/views/1>`_
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+|hr|
+
+
