@@ -482,7 +482,7 @@ The referrer policy header is set to ``NO_REFERRER`` (Never send the Referer hea
     # Possible values are defined in org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter.ReferrerPolicy
     studio.security.headers.referrerPolicy.value: NO_REFERRER
 
-.. note:: Possible values are defined in `org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter.ReferrerPolicy <https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/header/writers/ReferrerPolicyHeaderWriter.ReferrerPolicy.html>`__
+.. note:: Possible referrer policy values are defined in `org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter.ReferrerPolicy <https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/header/writers/ReferrerPolicyHeaderWriter.ReferrerPolicy.html>`__
 
 |hr|
 
