@@ -1,0 +1,32 @@
+.. index:: CrafterCMS 4.3.1 Release Notes
+
+----------------
+CrafterCMS 4.3.1
+----------------
+
+Released *TBD*
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-x>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install, please see :ref:`upgrading-craftercms`
+
+^^^^^^^^^^^^
+Enhancements
+^^^^^^^^^^^^
+* New configuration property for Studio referrer policy header |br|
+  See ``Referrer Policy`` under :ref:`Policy Headers <studio-policy-headers>` for more information
+
+^^^^^^^^^
+Bug Fixes
+^^^^^^^^^
+
+
+For a complete list of community tickets, please visit: `GitHub 4.3.1 <https://github.com/orgs/craftercms/projects/27/views/1>`_
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+|hr|
+
