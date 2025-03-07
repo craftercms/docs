@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.3.0
+:last-updated: 4.3.1
 
 .. Grammar Checked 2023-10-06
 
@@ -462,8 +462,25 @@ The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow an
     # Value for the X-PERMITTED-CROSS-DOMAIN-POLICIES header
     studio.security.headers.permittedCrossDomainPolicies.value: none
 
-
 |
+
+"""""""""""""""
+Referrer Policy
+"""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.3.1
+
+The following allows you to limit the information available in the Referer header or to not send the Referer header.
+The referrer policy header is set to ``NO_REFERRER`` (Never send the Referer header) by default.
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :linenos:
+
+    # Value for Referrer-Policy header.
+    # Possible values are defined in org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter.ReferrerPolicy
+    studio.security.headers.referrerPolicy.value: NO_REFERRER
 
 |hr|
 
