@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.3.0
+:last-updated: 4.3.1
 
 .. Grammar Checked 2023-10-06
 
@@ -192,6 +192,11 @@ The following section of Studio's configuration overrides allows you to set CORS
 The CORS origins accept regex patterns. Values are split using ``,``. Remember that commas inside
 patterns need to be escaped with a ``\`` like:
 ``studio.cors.origins: 'http://localhost:[8000\,3000],http://*.other.domain'``
+
+Remember to configure the proper value for the :ref:`referrer policy <studio-referrer-policy>` based on what you
+configure for CORS. For example, if ``studio.cors.origins`` has the value set to anything other than ``*``, then the
+referrer policy should be set to ``ORIGIN`` or whatever policy is in place for your install (anything other than
+``NO_REFERRER``).
 
 |
 
@@ -462,8 +467,29 @@ The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow an
     # Value for the X-PERMITTED-CROSS-DOMAIN-POLICIES header
     studio.security.headers.permittedCrossDomainPolicies.value: none
 
-
 |
+
+.. _studio-referrer-policy:
+
+"""""""""""""""
+Referrer Policy
+"""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.3.1
+
+The following allows you to limit the information available in the Referer header or to not send the Referer header.
+The referrer policy header is set to ``NO_REFERRER`` (Never send the Referer header) by default.
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :linenos:
+
+    # Value for Referrer-Policy header.
+    # Possible values are defined in org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter.ReferrerPolicy
+    studio.security.headers.referrerPolicy.value: NO_REFERRER
+
+.. note:: Possible referrer policy values are defined in `org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter.ReferrerPolicy <https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/header/writers/ReferrerPolicyHeaderWriter.ReferrerPolicy.html>`__
 
 |hr|
 
