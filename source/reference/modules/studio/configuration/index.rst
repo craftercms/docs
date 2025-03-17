@@ -193,6 +193,11 @@ The CORS origins accept regex patterns. Values are split using ``,``. Remember t
 patterns need to be escaped with a ``\`` like:
 ``studio.cors.origins: 'http://localhost:[8000\,3000],http://*.other.domain'``
 
+Remember to configure the proper value for the :ref:`referrer policy <studio-referrer-policy>` based on what you
+configure for CORS. For example, if ``studio.cors.origins`` has the value set to anything other than ``*``, then the
+referrer policy should be set to ``ORIGIN`` or whatever policy is in place for your install (anything other than
+``NO_REFERRER``).
+
 |
 
 |hr|
@@ -463,6 +468,8 @@ The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow an
     studio.security.headers.permittedCrossDomainPolicies.value: none
 
 |
+
+.. _studio-referrer-policy:
 
 """""""""""""""
 Referrer Policy
