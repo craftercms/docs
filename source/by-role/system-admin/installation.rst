@@ -177,10 +177,13 @@ For MacOS users, the following applies:
        :alt: OpenSearch Docker container started on CrafterCMS startup
 
    .. warning::
-       The OpenSearch container created when starting CrafterCMS, by default, maps your host ``CRAFTER_HOME/data/indexes``
-       directory to ``/usr/share/opensearch/data/`` of the OpenSearch container. If you would like the OpenSearch indexes
-       to persist across restarts, you'll need to make sure that the directory ``CRAFTER_HOME/data/indexes`` on the host is
-       a shared drive in Docker's settings, by clicking on Docker Desktop ``Settings`` -> ``Resources`` -> ``File Sharing``
+       Search indexes does not persist across restarts by default. If you would like the OpenSearch indexes to persist
+       across restarts, you'll need to use bind mounts with Docker volumes.
+
+       The OpenSearch container created when starting CrafterCMS, by default, creates the bind mounts for you.
+       Your host ``CRAFTER_HOME/data/indexes`` directory is bind mounted to ``/usr/share/opensearch/data/`` of the
+       OpenSearch container. You'll just need to make sure that the directory ``CRAFTER_HOME/data/indexes`` on the host
+       is a shared drive in Docker's settings, by clicking on Docker Desktop ``Settings`` -> ``Resources`` -> ``File Sharing``
 
        .. image:: /_static/images/developer/docker/docker-desktop-file-sharing.webp
            :alt: Docker Desktop - File Sharing
