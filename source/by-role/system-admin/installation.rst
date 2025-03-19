@@ -148,7 +148,7 @@ For MacOS users, the following applies:
 
 #. Docker is used to run OpenSearch and needs to be installed.
    Follow the instructions `here <https://docs.docker.com/install/>`__ to install Docker. |br| (MacOS is not supported by
-   OpenSearch so Docker is used to run OpenSearch. See <https://opensearch.org/docs/latest/install-and-configure/os-comp/>
+   OpenSearch so Docker is used to run OpenSearch. See https://opensearch.org/docs/latest/install-and-configure/os-comp/
    for more information.)
 
    When starting up CrafterCMS on MacOS, the following message is displayed:
@@ -175,6 +175,26 @@ For MacOS users, the following applies:
        :width: 80 %
        :align: center
        :alt: OpenSearch Docker container started on CrafterCMS startup
+
+   .. warning::
+       By default, search indexes do not persist across restarts. If you want the OpenSearch indexes to persist
+       across restarts, you must use bind mounts with Docker volumes.
+
+       By default, the OpenSearch container created when starting CrafterCMS creates the bind mounts for you.
+       Your host ``CRAFTER_HOME/data/indexes`` directory is bind mounted to ``/usr/share/opensearch/data/`` of the
+       OpenSearch container. You'll just need to make sure that the directory ``CRAFTER_HOME/data/indexes`` on the host
+       is a shared drive in Docker's settings by clicking on Docker Desktop ``Settings`` -> ``Resources`` -> ``File Sharing``
+
+       .. image:: /_static/images/developer/docker/docker-desktop-file-sharing.webp
+           :alt: Docker Desktop - File Sharing
+           :width: 85 %
+           :align: center
+
+       |
+
+       If the directory ``CRAFTER_HOME/data/indexes`` is not under an already shared parent level in Docker Desktop, simply
+       input your path in ``Virtual file shares`` by clicking on ``Browse`` then navigate to the desired folder, then
+       click on the ``+`` button, and finally the ``Apply & restart`` button to add it.
 
 """"""""""""""""""
 Linux Prerequisite
