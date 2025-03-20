@@ -152,7 +152,7 @@ Creating a Project in CrafterCMS Based on an Existing GitHub Project
 
 Let’s consider for a moment that you’re a new developer joining the team. The topology above is already set up and you just want to get a local environment up and going. Simple. Follow these instructions.
 
-1. Install Crafter Studio locally (`Binaries download <https://craftercms.com/downloads>`_ or `Source build <https://github.com/craftercms/craftercms>`_)
+1. Install Crafter Studio locally (`Binaries download <https://craftercms.com/download>`_ or `Source build <https://github.com/craftercms/craftercms>`_)
 2. Login as Admin
 3. Click Create Site
 
