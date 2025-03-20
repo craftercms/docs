@@ -42,20 +42,20 @@ release = u'4.3.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.doctest',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.todo',
-    'sphinx.ext.coverage',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.ifconfig',
-    'edit_on_github',
-    'sphinx.ext.extlinks',
-    'version_tag',
-    'sphinx_copybutton',
-    'sphinxext.remoteliteralinclude',
-    'sphinx_tabs.tabs',
-    'open_iframe_modal_button'
+	'sphinx.ext.autodoc',
+	'sphinx.ext.doctest',
+	'sphinx.ext.intersphinx',
+	'sphinx.ext.todo',
+	'sphinx.ext.coverage',
+	'sphinx.ext.mathjax',
+	'sphinx.ext.ifconfig',
+	'edit_on_github',
+	'sphinx.ext.extlinks',
+	'version_tag',
+	'sphinx_copybutton',
+	'sphinxext.remoteliteralinclude',
+	'sphinx_tabs.tabs',
+	'open_iframe_modal_button'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -102,24 +102,24 @@ html_theme_path = ["_themes", ]
 # further.  For a list of options available for each theme, see the
 # documentation. https://pradyunsg.me/furo/customisation/#
 html_theme_options = {
-  "sidebar_hide_name": True,
-  "top_of_page_buttons": ["view", "edit"],
-  "light_css_variables": {
-    "font-stack": "Source Sans Pro,ui-sans-serif,system-ui,sans-serif",
-    "font-stack--headings": "Source Sans Pro,ui-sans-serif,system-ui,sans-serif",
-    "color-brand-primary": "#007AFF",
-    "color-brand-content": "#007AFF",
-    "color-link": "#409CFF",
-  },
-  "dark_css_variables": {
-    "font-stack": "Source Sans Pro,ui-sans-serif,system-ui,sans-serif",
-    "font-stack--headings": "Source Sans Pro,ui-sans-serif,system-ui,sans-serif",
-    "color-brand-primary": "#409CFF",
-    "color-brand-content": "#409CFF",
-    "color-link": "#007AFF",
-  },
-  "light_logo": "theme/logo-on-white.png",
-  "dark_logo": "theme/logo.svg",
+	"sidebar_hide_name": True,
+	"top_of_page_buttons": ["view", "edit"],
+	"light_css_variables": {
+		"font-stack": "Source Sans Pro,ui-sans-serif,system-ui,sans-serif",
+		"font-stack--headings": "Source Sans Pro,ui-sans-serif,system-ui,sans-serif",
+		"color-brand-primary": "#007AFF",
+		"color-brand-content": "#007AFF",
+		"color-link": "#409CFF",
+	},
+	"dark_css_variables": {
+		"font-stack": "Source Sans Pro,ui-sans-serif,system-ui,sans-serif",
+		"font-stack--headings": "Source Sans Pro,ui-sans-serif,system-ui,sans-serif",
+		"color-brand-primary": "#409CFF",
+		"color-brand-content": "#409CFF",
+		"color-link": "#007AFF",
+	},
+	"light_logo": "theme/logo-on-white.png",
+	"dark_logo": "theme/logo.svg",
 }
 html_css_files = ['theme/custom.css']
 html_js_files = ['js/custom.js']

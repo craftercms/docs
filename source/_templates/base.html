@@ -1,89 +1,90 @@
 <!doctype html>
-<html class="no-js"{% if language is not none %} lang="{{ language }}"{% endif %} data-content_root="{{ content_root }}">
+<html class="no-js" {% if language is not none %} lang="{{ language }}" {% endif %}
+			data-content_root="{{ content_root }}">
 <head>
-    {%- block site_meta -%}
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark">
+	{%- block site_meta -%}
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<meta name="color-scheme" content="light dark">
 
-    {%- if metatags %}{{ metatags }}{% endif -%}
+	{%- if metatags %}{{ metatags }}{% endif -%}
 
-    {%- block linktags %}
-    {%- if hasdoc('about') -%}
-    <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
-    {%- endif -%}
-    {%- if hasdoc('genindex') -%}
-    <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
-    {%- endif -%}
-    {%- if hasdoc('search') -%}
-    <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
-    {%- endif -%}
-    {%- if hasdoc('copyright') -%}
-    <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
-    {%- endif -%}
-    {%- if next -%}
-    <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
-    {%- endif -%}
-    {%- if prev -%}
-    <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
-    {%- endif -%}
-    {#- rel="canonical" (set by html_baseurl) -#}
-    {%- if pageurl %}
-    <link rel="canonical" href="{{ pageurl|e }}" />
-    {%- endif %}
-    {%- endblock linktags %}
+	{%- block linktags %}
+	{%- if hasdoc('about') -%}
+	<link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}"/>
+	{%- endif -%}
+	{%- if hasdoc('genindex') -%}
+	<link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}"/>
+	{%- endif -%}
+	{%- if hasdoc('search') -%}
+	<link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}"/>
+	{%- endif -%}
+	{%- if hasdoc('copyright') -%}
+	<link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}"/>
+	{%- endif -%}
+	{%- if next -%}
+	<link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}"/>
+	{%- endif -%}
+	{%- if prev -%}
+	<link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}"/>
+	{%- endif -%}
+	{#- rel="canonical" (set by html_baseurl) -#}
+	{%- if pageurl %}
+	<link rel="canonical" href="{{ pageurl|e }}"/>
+	{%- endif %}
+	{%- endblock linktags %}
 
-    {# Favicon #}
-    {%- if favicon_url -%}
-    <link rel="shortcut icon" href="{{ favicon_url }}"/>
-    {%- endif -%}
+	{# Favicon #}
+	{%- if favicon_url -%}
+	<link rel="shortcut icon" href="{{ favicon_url }}"/>
+	{%- endif -%}
 
-    <!-- Generated with Sphinx {{ sphinx_version }} and Furo {{ furo_version }} -->
+	<!-- Generated with Sphinx {{ sphinx_version }} and Furo {{ furo_version }} -->
 
-    {%- endblock site_meta -%}
+	{%- endblock site_meta -%}
 
-    {#- Site title -#}
-    {%- block htmltitle -%}
-    {% if not docstitle %}
-    <title>{{ title|striptags|e }}</title>
-    {% elif pagename == master_doc %}
-    <title>{{ docstitle|striptags|e }}</title>
-    {% else %}
-    <title>{{ title|striptags|e }} - {{ docstitle|striptags|e }}</title>
-    {% endif %}
-    {%- endblock -%}
+	{#- Site title -#}
+	{%- block htmltitle -%}
+	{% if not docstitle %}
+	<title>{{ title|striptags|e }}</title>
+	{% elif pagename == master_doc %}
+	<title>{{ docstitle|striptags|e }}</title>
+	{% else %}
+	<title>{{ title|striptags|e }} - {{ docstitle|striptags|e }}</title>
+	{% endif %}
+	{%- endblock -%}
 
-    {%- block styles -%}
+	{%- block styles -%}
 
-    {# Custom stylesheets #}
-    {%- block regular_styles -%}
-    {%- for css in css_files -%}
-    {% if css|attr("filename") -%}
-    {{ css_tag(css) }}
-    {%- else -%}
-    <link rel="stylesheet" href="{{ pathto(css, 1)|e }}" type="text/css" />
-    {%- endif %}
-    {% endfor -%}
-    {%- endblock regular_styles -%}
+	{# Custom stylesheets #}
+	{%- block regular_styles -%}
+	{%- for css in css_files -%}
+	{% if css|attr("filename") -%}
+	{{ css_tag(css) }}
+	{%- else -%}
+	<link rel="stylesheet" href="{{ pathto(css, 1)|e }}" type="text/css"/>
+	{%- endif %}
+	{% endfor -%}
+	{%- endblock regular_styles -%}
 
-    {#- Theme-related stylesheets -#}
-    {%- block theme_styles %}
-    {% include "partials/_head_css_variables.html" with context %}
-    {%- endblock -%}
+	{#- Theme-related stylesheets -#}
+	{%- block theme_styles %}
+	{% include "partials/_head_css_variables.html" with context %}
+	{%- endblock -%}
 
-    {%- block extra_styles %}
-    {%- endblock -%}
+	{%- block extra_styles %}
+	{%- endblock -%}
 
-    {%- endblock styles -%}
+	{%- endblock styles -%}
 
-    {#- Custom front matter #}
-    {%- block extrahead -%}{%- endblock -%}
+	{#- Custom front matter #}
+	{%- block extrahead -%}{%- endblock -%}
 </head>
 <body>
 
 {% block body %}
 <script>
-  document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+	document.body.dataset.theme = localStorage.getItem("theme") || "auto";
 </script>
 {% endblock %}
 
@@ -96,11 +97,19 @@
 {% endfor -%}
 <script src="{{ pathto('_static/jquery.js', 1) }}"></script>
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P9XQZ7X');</script>
+<script>(function (w, d, s, l, i) {
+	w[l] = w[l] || [];
+	w[l].push({
+		'gtm.start':
+			new Date().getTime(), event: 'gtm.js'
+	});
+	var f = d.getElementsByTagName(s)[0],
+		j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+	j.async = true;
+	j.src =
+		'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+	f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-P9XQZ7X');</script>
 <!-- End Google Tag Manager -->
 
 <script async src="{{ pathto('_static/bootstrap/bootstrap.min.js', 1) }}"></script>
