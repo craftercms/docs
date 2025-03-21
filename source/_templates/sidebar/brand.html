@@ -33,12 +33,23 @@ Hope your day's going well. :)
 <div class="version-selector">
 	<div class="dropdown">
 		<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-			{{ release }}
+			v{{ release }}
 		</button>
 		<ul class="dropdown-menu">
 			{%- if versions %}
-			{%- for version in versions %}
-			<li><a class="dropdown-item" href="{{ docsUrl }}/{{ version }}/index.html">{{ version }}</a></li>
+			{%- for version_option in versions %}
+			<li>
+			{% if version_option == version %}
+			<a class="dropdown-item selected" href="{{ docsUrl }}/{{ version_option }}/index.html">
+				v{{ release }} {% if version_option == 'current' %} (latest){% endif %}
+				<i class="fa-solid fa-check check-mark" style="float: right;"></i>
+			</a>
+
+			{% else %}
+			<a class="dropdown-item" href="{{ docsUrl }}/{{ version_option }}/index.html">{% if version_option != 'current' %}v{% endif %}{{ version_option }}</a>
+			{% endif %}
+			</li>
+
 			{%- endfor %}
 			{%- endif %}
 		</ul>
