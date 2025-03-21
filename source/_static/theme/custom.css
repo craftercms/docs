@@ -1171,6 +1171,10 @@ body[data-theme="dark"] .dropdown .dropdown-menu li .dropdown-item:hover {
 	background-color: var(--gray-medium);
 }
 
+body[data-theme="dark"] .sidebar-search {
+	border: 1px solid var(--gray-medium);
+}
+
 @media (prefers-color-scheme: dark) {
 	body:not([data-theme="light"]) .dropdown .dropdown-toggle, body:not([data-theme="light"]) .dropdown .dropdown-menu {
 		background-color: var(--gray-dark);
@@ -1188,6 +1192,10 @@ body[data-theme="dark"] .dropdown .dropdown-menu li .dropdown-item:hover {
 
 	body:not([data-theme="light"]) .dropdown .dropdown-menu li .dropdown-item:hover {
 		background-color: var(--gray-medium);
+	}
+
+	body:not([data-theme="light"]) .sidebar-search {
+		border: 1px solid var(--gray-medium);
 	}
 }
 
