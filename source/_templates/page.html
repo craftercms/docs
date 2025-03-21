@@ -86,7 +86,7 @@
 		</div>
 		<div class="header-center">
 			<a href="{{ pathto(master_doc) }}">
-				<div class="brand">{{ docstitle if docstitle else project }}</div>
+				<div class="brand">{{ project }} v{{ release}}</div>
 			</a>
 		</div>
 		<div class="header-right">
@@ -130,6 +130,7 @@
 	</aside>
 	<div class="main">
 		<div class="content">
+			{% include "breadcrumbs.html" %}
 			<div class="right-nav" align="right">
 				<ul>
 					<li id="google_translate_element"></li>
