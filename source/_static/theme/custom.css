@@ -4,6 +4,17 @@
 	--gray-light: #EBEBF0;
 }
 
+body {
+	/* Google translate sets a style of top: 40px to fit the translate bar, this resets the position since we're
+	 manually hiding it. */
+	top: 0 !important;
+}
+
+/* Hide google translate top bar, leaving only the language dropdown */
+.skiptranslate {
+	display: none;
+}
+
 /* region font */
 @font-face {
 	font-family: Source Sans Pro;
@@ -680,8 +691,14 @@
 /* endregion */
 
 /* region Side bar*/
+
+.sidebar-brand {
+	display: flex;
+	align-items: center;
+}
+
 .sidebar-logo-container {
-	width: 160px;
+	width: 150px;
 }
 
 .sidebar-search-container {
@@ -1059,7 +1076,69 @@ body[data-theme="dark"] button[data-bs-toggle="modal"] {
 
 /* endregion */
 
-/* region rst-versions */
+/* region Version Selector */
+
+.version-selector {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+.dropdown .dropdown-toggle {
+	padding: 0.575rem 2.25rem .575rem .75rem;
+	color: black;
+	background-color: var(--gray-light);
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+	background-repeat: no-repeat;
+	background-position: right .75rem center;
+	background-size: 10px 10px;
+	border: none;
+	width: fit-content;
+	border-radius: 4px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.dropdown .dropdown-menu {
+	z-index: 1000;
+	min-width: 10rem;
+	padding: 6px;
+	border-radius: 12px;
+	position: absolute;
+	display: none;
+	border: 1px solid var(--gray-light);
+	background-color: white;
+}
+
+.dropdown .dropdown-menu.show {
+	display: block;
+}
+
+.dropdown .dropdown-menu li {
+	list-style: none;
+}
+
+.dropdown .dropdown-menu li .dropdown-item {
+	display: block;
+	padding: 8px;
+	color: black;
+	text-decoration: none;
+	border-radius: 8px;
+	font-size: 14px;
+}
+
+.dropdown .dropdown-menu li .dropdown-item.selected {
+	background-color: #daecff;
+	color: #003a75;
+}
+
+.dropdown .dropdown-menu li .dropdown-item:hover {
+	background-color: #e5eaf2;
+	color: black;
+}
+
 
 @media screen and (min-width: 1100px) {
 	.wy-nav-content-wrap {

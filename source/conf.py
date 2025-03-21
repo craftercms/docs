@@ -103,7 +103,7 @@ html_theme_path = ["_themes", ]
 # documentation. https://pradyunsg.me/furo/customisation/#
 html_theme_options = {
 	"sidebar_hide_name": True,
-	"top_of_page_buttons": ["view", "edit"],
+	"top_of_page_buttons": ["edit"],
 	"light_css_variables": {
 		"font-stack": "Source Sans Pro,ui-sans-serif,system-ui,sans-serif",
 		"font-stack--headings": "Source Sans Pro,ui-sans-serif,system-ui,sans-serif",
@@ -119,7 +119,7 @@ html_theme_options = {
 		"color-link": "#007AFF",
 	},
 	"light_logo": "theme/logo-on-white.png",
-	"dark_logo": "theme/logo.svg",
+	"dark_logo": "theme/logo.svg"
 }
 html_css_files = ['theme/custom.css']
 html_js_files = ['js/custom.js']
