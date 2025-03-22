@@ -121,7 +121,7 @@ html_theme_options = {
 	"light_logo": "theme/logo-on-white.png",
 	"dark_logo": "theme/logo.svg"
 }
-html_css_files = ['theme/custom.css', 'fontawesome/css/fontawesome.min.css', 'fontawesome/css/solid.min.css']
+html_css_files = ['theme/custom.css']
 html_js_files = ['js/custom.js']
 templates_path = ["_templates"]
 

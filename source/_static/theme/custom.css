@@ -1136,10 +1136,11 @@ body[data-theme="dark"] button[data-bs-toggle="modal"] {
 	color: var(--blue-main);
 }
 
-.dropdown .dropdown-menu li .dropdown-item.selected .check-mark {
-	float: right;
-	font-size: 12px;
+.dropdown .dropdown-menu li .dropdown-item.selected svg {
 	margin-top: 2px;
+	width: 12px;
+	float: right;
+	fill: var(--blue-main);
 }
 
 .dropdown .dropdown-menu li .dropdown-item:hover {
@@ -1153,6 +1154,39 @@ body[data-theme="dark"] button[data-bs-toggle="modal"] {
 	}
 }
 
+/* endregion */
+
+/* region breadcrumbs */
+
+.wy-breadcrumbs {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	list-style-image: none;
+	padding: 20px 0;
+}
+
+.wy-breadcrumbs>li {
+	display: inline-block;
+	padding-top: 5px;
+	font-size: 16px;
+}
+
+.wy-breadcrumbs>li.home svg {
+	width: 12px;
+	fill: var(--blue-tint);
+}
+
+.wy-breadcrumbs>li a {
+	text-decoration: none;
+	font-size: 16px;
+}
+
+.wy-breadcrumbs>li a.fa-solid {
+	font-size: 13px;
+}
+
+/* region dark-mode styles */
 body[data-theme="dark"] .dropdown .dropdown-toggle, body[data-theme="dark"] .dropdown .dropdown-menu {
 	background-color: var(--gray-dark);
 	color: white;
@@ -1173,6 +1207,10 @@ body[data-theme="dark"] .dropdown .dropdown-menu li .dropdown-item:hover {
 
 body[data-theme="dark"] .sidebar-search {
 	border: 1px solid var(--gray-medium);
+}
+
+body[data-theme="dark"] .wy-breadcrumbs>li.home svg {
+	fill: var(--blue-main);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1197,31 +1235,9 @@ body[data-theme="dark"] .sidebar-search {
 	body:not([data-theme="light"]) .sidebar-search {
 		border: 1px solid var(--gray-medium);
 	}
-}
 
+	body:not([data-theme="light"]) body[data-theme="dark"] .wy-breadcrumbs>li.home svg {
+		fill: var(--blue-main);
+	}
+}
 /* endregion */
-
-/* region breadcrumbs */
-
-.wy-breadcrumbs {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	list-style-image: none;
-	padding: 20px 0;
-}
-
-.wy-breadcrumbs>li {
-	display: inline-block;
-	padding-top: 5px;
-	font-size: 16px;
-}
-
-.wy-breadcrumbs>li a {
-	text-decoration: none;
-	font-size: 16px;
-}
-
-.wy-breadcrumbs>li a.fa-solid {
-	font-size: 13px;
-}
