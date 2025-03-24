@@ -51,9 +51,9 @@ Install the following required extensions
   pip3 install sphinxext-remoteliteralinclude
   ```
 
-- [Sphinx read the docs theme](https://pypi.org/project/sphinx-rtd-theme/)
+- [Furo theme](https://pradyunsg.me/furo/quickstart/)
   ```
-  pip install sphinx_rtd_theme
+  pip install furo
   ```
 
 ## Building CrafterCMS documentation
