@@ -20,7 +20,7 @@ hr {
 }
 
 /* Hide google translate top bar, leaving only the language dropdown */
-.skiptranslate {
+.skiptranslate:not(.goog-te-gadget) {
 	display: none;
 }
 
