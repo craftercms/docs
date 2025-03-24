@@ -720,6 +720,11 @@ hr {
 	padding-left: 25px;
 }
 
+.sidebar-search:focus {
+	border-color: var(--blue-tint);
+	outline: 1px solid var(--blue-tint);
+}
+
 /* endregion */
 
 /* region List of tags / google translation */
@@ -1209,6 +1214,11 @@ body[data-theme="dark"] .sidebar-search {
 	border: 1px solid var(--gray-medium);
 }
 
+body[data-theme="dark"] .sidebar-search:focus {
+	border-color: var(--blue-main);
+	outline: 1px solid var(--blue-main);
+}
+
 body[data-theme="dark"] .wy-breadcrumbs>li.home svg {
 	fill: var(--blue-main);
 }
@@ -1234,6 +1244,11 @@ body[data-theme="dark"] .wy-breadcrumbs>li.home svg {
 
 	body:not([data-theme="light"]) .sidebar-search {
 		border: 1px solid var(--gray-medium);
+	}
+
+	body:not([data-theme="light"]) .sidebar-search:focus {
+		border-color: var(--blue-main);
+		outline: 1px solid var(--blue-main);
 	}
 
 	body:not([data-theme="light"]) body[data-theme="dark"] .wy-breadcrumbs>li.home svg {
