@@ -32,7 +32,7 @@ Hope your day's going well. :)
 
 <div class="version-selector">
 	<div class="dropdown">
-		<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+		<button class="btn btn-secondary dropdown-toggle {% if version == 'current' %}current{% endif %}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 			{% if version != 'current' %}v{% endif %}{{ version }}
 		</button>
 		<ul class="dropdown-menu">
@@ -40,14 +40,13 @@ Hope your day's going well. :)
 			{%- for version_option in versions %}
 			<li>
 			{% if version_option == version %}
-			<a class="dropdown-item selected" href="{{ docsUrl }}/{{ version_option }}/index.html">
-<!--				v{{ release }} {% if version_option == 'current' %} (latest){% endif %}-->
+			<a class="dropdown-item selected {% if version_option == 'current' %}current{% endif %}" href="{{ docsUrl }}/{{ version_option }}/index.html">
 				{% if version_option != 'current' %}v{% endif %}{{ version_option }}
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 			</a>
 
 			{% else %}
-			<a class="dropdown-item" href="{{ docsUrl }}/{{ version_option }}/index.html">{% if version_option != 'current' %}v{% endif %}{{ version_option }}</a>
+			<a class="dropdown-item {% if version_option == 'current' %}current{% endif %}" href="{{ docsUrl }}/{{ version_option }}/index.html">{% if version_option != 'current' %}v{% endif %}{{ version_option }}</a>
 			{% endif %}
 			</li>
 

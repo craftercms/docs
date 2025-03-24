@@ -711,7 +711,11 @@ hr {
 }
 
 .sidebar-search-container {
-	padding: 0 10px;
+	margin: 0 10px;
+}
+
+.sidebar-search-container:before {
+	left: 6px;
 }
 
 .sidebar-search {
@@ -1089,6 +1093,10 @@ body[data-theme="dark"] button[data-bs-toggle="modal"] {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 10px;
+}
+
+.version-selector .current {
+	text-transform: capitalize;
 }
 
 .dropdown .dropdown-toggle {
