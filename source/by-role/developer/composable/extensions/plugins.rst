@@ -535,7 +535,8 @@ See :ref:`here <plugins-authoring-guides>` for examples of plugins auto-wired in
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Passing Parameters to Project via Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Some parameters may need to be passed to the project instead of left in the plugin, say, AWS credentials, Box credentials, CommerceTools credentials, etc. CrafterCMS supports passing parameters to projects from plugins.
+Some parameters may need to be passed to the project instead of left in the plugin, say, AWS credentials,
+CommerceTools credentials, etc. CrafterCMS supports passing parameters to projects from plugins.
 
 To add parameters to be passed to projects via a plugin, simply add the following to the ``craftercms-plugin.yaml`` file
 
