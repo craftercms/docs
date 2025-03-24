@@ -6,8 +6,6 @@
 ===================
 Security (Delivery)
 ===================
-.. contents::
-
 Securing CrafterCMS projects/site is a very important aspect of the platform. CrafterCMS provides a number of security features that can be used to secure a project/site. This section will cover the following topics:
 
 - Authentication Mechanics

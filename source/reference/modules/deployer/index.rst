@@ -14,10 +14,6 @@ Crafter Deployer
    :width: 75%
    :align: center
 
-.. contents::
-    :local:
-    :depth: 2
-
 Crafter Deployer is the deployment agent for CrafterCMS.
 
 .. TODO: We need a bigger/better description of this.
