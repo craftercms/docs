@@ -365,7 +365,8 @@ Here are some things to note in the descriptor file:
 """"""""""""""""""""""""""""""""""""""""
 Passing Parameters to Project Blueprints
 """"""""""""""""""""""""""""""""""""""""
-Some parameters may need to be passed to the blueprint instead of left in the blueprint, say, AWS credentials, Box credentials, CommerceTools credentials, etc. CrafterCMS supports passing parameters to blueprints during creation.
+Some parameters may need to be passed to the blueprint instead of left in the blueprint, say, AWS credentials,
+CommerceTools credentials, etc. CrafterCMS supports passing parameters to blueprints during creation.
 
 To add parameters to be passed to blueprints, simply add the following to the ``craftercms-plugin.yaml`` file
 

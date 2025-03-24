@@ -303,6 +303,10 @@ See :ref:`here <use-s3-to-store-assets>` for more information
 ~~~
 Box
 ~~~
+.. version_tag::
+    :label: Until
+    :version: 4.2
+
 Box is a good option when you need to store media and documents that are quite large.
 See :ref:`here <box-asset-access>` for more information
 
