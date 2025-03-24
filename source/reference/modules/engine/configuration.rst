@@ -6,10 +6,6 @@
 ====================
 Engine Configuration
 ====================
-.. contents::
-    :local:
-    :depth: 1
-
 .. _setup-project-for-delivery:
 
 ---------------------------------

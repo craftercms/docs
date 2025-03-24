@@ -1,17 +1,13 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
-.. index:: Static Assets, Static Content Access, S3, Transcode, Transcode Video, Box, WebDAV, Transform, Transform Image, Renditions
+.. index:: Static Assets, Static Content Access, S3, Transcode, Transcode Video, WebDAV, Transform, Transform Image, Renditions
 
 .. _static-content-access:
 
 =====================
 Static Content Access
 =====================
-.. contents::
-    :local:
-    :depth: 2
-
 Static content comprises text and binary assets not part of the actual content, templates and scripts. These include:
 - Rich media assets, like images, videos, and documents (PDFs, Word, Excel, etc.)
 - CSS, JavaScript, and HTML files
@@ -214,6 +210,10 @@ but also the ``article.ftl`` and the ``aws.xml`` files too.
 ^^^^^^^^^^^^^^^^
 Box Asset Access
 ^^^^^^^^^^^^^^^^
+.. version_tag::
+    :label: Until
+    :version: 4.2
+
 Box is a good option when you need to store media and documents that are quite large. The following guide explains how to:
 
 * Configure Studio to use Box.

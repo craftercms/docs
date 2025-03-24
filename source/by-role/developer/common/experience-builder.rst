@@ -12,9 +12,6 @@ Experience Builder (XB)
    :label: Since
    :version: 4.0.0
 
-.. contents::
-    :local:
-
 CrafterCMS' Experience Builder (XB) provides a UI layer on top of your applications that enables authors
 with in-context editing (ICE) for all the model fields defined in the content types of pages and components.
 CrafterCMS developers must integrate their applications with XB, essentially telling XB what field of the

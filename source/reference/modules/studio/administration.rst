@@ -10,10 +10,6 @@
 =====================
 Studio Administration
 =====================
-.. contents::
-    :local:
-    :depth: 2
-
 Much of the administration of Crafter Studio can be done via the UI. This section describes how to perform these basic tasks.
 
 .. _navigating-main-menu:
