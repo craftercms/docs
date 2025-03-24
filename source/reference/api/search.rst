@@ -8,19 +8,11 @@
 ======
 Search
 ======
-.. contents::
-    :local:
-
 ----------
 Search API
 ----------
 To perform content queries, you need to use the client provided by Crafter Engine; the bean name is
 ``searchClient`` and can be used in any Groovy script.
-
-.. Remove the following note in 4.3.0
-
-.. Note::
-    The old client ``searchService`` is now deprecated, and ``searchClient`` should be used.
 
 You can find the interface for this service :javadoc_base_url:`in the JavaDoc <search/org/craftercms/search/opensearch/client/OpenSearchClientWrapper.html>`.
 
