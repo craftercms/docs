@@ -9,10 +9,6 @@
 =======
 Plugins
 =======
-.. contents::
-   :local:
-   :depth: 2
-
 -----------------
 What are plugins?
 -----------------

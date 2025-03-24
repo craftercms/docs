@@ -6,10 +6,6 @@
 ============
 Installation
 ============
-.. contents::
-    :local:
-    :depth: 2
-
 This section describes the various ways of installing CrafterCMS.
 
 First we'll take a look at the requirements and supported platform for installing and setting up CrafterCMS.

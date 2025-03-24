@@ -8,10 +8,6 @@
 ========
 Security
 ========
-.. contents::
-   :local:
-   :depth: 1
-
 .. _change-the-defaults:
 
 -------------------

@@ -6,8 +6,6 @@
 =========
 Targeting
 =========
-.. contents::
-
 Targeting is a CrafterCMS feature that allows delivering the right experience, with the right
 content, to the right people at the right time. CrafterCMS provides the ability to render content
 adapted to specific users, depending on different aspects like geographical location, language,

@@ -6,10 +6,6 @@
 ===============
 Engine Security
 ===============
-.. contents::
-    :local:
-    :depth: 2
-
 .. _engine-saml2-configuration:
 
 -------------------------------------------

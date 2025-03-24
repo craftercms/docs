@@ -6,10 +6,6 @@
 ==========
 Architects
 ==========
-.. contents::
-    :local:
-    :depth: 2
-
 This section details key concepts for CrafterCMS experience architects
 
 .. _general-architecture:

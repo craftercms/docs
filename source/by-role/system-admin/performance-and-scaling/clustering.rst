@@ -8,10 +8,6 @@
 ==================================
 Studio Clustering |enterpriseOnly|
 ==================================
-.. contents::
-    :local:
-    :depth: 2
-
 Crafter Studio can be clustered for high-availability.
 
 Here's an overview of a serverless Studio Enterprise cluster:

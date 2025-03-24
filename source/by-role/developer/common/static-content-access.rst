@@ -8,10 +8,6 @@
 =====================
 Static Content Access
 =====================
-.. contents::
-    :local:
-    :depth: 2
-
 Static content comprises text and binary assets not part of the actual content, templates and scripts. These include:
 - Rich media assets, like images, videos, and documents (PDFs, Word, Excel, etc.)
 - CSS, JavaScript, and HTML files
