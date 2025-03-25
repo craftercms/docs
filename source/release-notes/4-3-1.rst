@@ -22,6 +22,13 @@ Enhancements
 ^^^^^^^^^
 Bug Fixes
 ^^^^^^^^^
+* `Fixed issue with the missing Select All option in the Browse dialog <https://github.com/craftercms/craftercms/issues/7558>`__
+
+* `Fixed issue with inconsistent encoding of backslash in page URLs <https://github.com/craftercms/craftercms/issues/7766>`__
+
+* Groovy script engine is now site-aware.
+
+* Fixed the missing ``Cluster`` tool in the global menu.
 
 
 For a complete list of community tickets, please visit: `GitHub 4.3.1 <https://github.com/orgs/craftercms/projects/27/views/1>`_
