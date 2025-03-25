@@ -24,6 +24,39 @@ body > .skiptranslate > iframe.skiptranslate {
   display: none;
 }
 
+#google_translate_element .skiptranslate .goog-te-combo {
+  padding: 6px 10px;
+  color: black;
+  margin: 0 0 5px;
+  background-color: white;
+  border-color: #d1d5db;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#google_translate_element .skiptranslate .goog-te-combo:focus {
+  outline: none;
+}
+
+#google_translate_element .skiptranslate .goog-te-combo::-webkit-scrollbar {
+  width: 10px;
+}
+
+#google_translate_element .skiptranslate .goog-te-combo::-webkit-scrollbar-track {
+  background: white;
+}
+
+#google_translate_element .skiptranslate .goog-te-combo::-webkit-scrollbar-thumb {
+  background: var(--gray-medium);
+  border-radius: 6px;
+}
+
 /* region font */
 @font-face {
   font-family: Source Sans Pro;
@@ -1231,6 +1264,16 @@ body[data-theme="dark"] .wy-breadcrumbs>li.home svg {
   fill: var(--blue-main);
 }
 
+body[data-theme="dark"] #google_translate_element .skiptranslate .goog-te-combo {
+  color: white;
+  background-color: var(--gray-dark);
+  border-color: var(--gray-medium);
+}
+
+body[data-theme="dark"] #google_translate_element .skiptranslate .goog-te-combo::-webkit-scrollbar-track {
+  background: var(--gray-dark);
+}
+
 @media (prefers-color-scheme: dark) {
   body:not([data-theme="light"]) .dropdown .dropdown-toggle, body:not([data-theme="light"]) .dropdown .dropdown-menu {
     background-color: var(--gray-dark);
@@ -1261,6 +1304,16 @@ body[data-theme="dark"] .wy-breadcrumbs>li.home svg {
 
   body:not([data-theme="light"]) body[data-theme="dark"] .wy-breadcrumbs>li.home svg {
     fill: var(--blue-main);
+  }
+
+  body:not([data-theme="light"]) #google_translate_element .skiptranslate .goog-te-combo {
+    color: white;
+    background-color: var(--gray-dark);
+    border-color: var(--gray-medium);
+  }
+
+  body:not([data-theme="light"]) #google_translate_element .skiptranslate .goog-te-combo::-webkit-scrollbar-track {
+    background: var(--gray-dark);
   }
 }
 /* endregion */
