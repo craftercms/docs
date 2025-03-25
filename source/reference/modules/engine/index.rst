@@ -11,11 +11,6 @@ Crafter Engine
     :width: 75%
     :align: center
 
-.. contents::
-    :local:
-    :depth: 1
-    :backlinks: none
-
 Engine provides content delivery services to power any type of Web or mobile application. It consumes content published from Studio via the Deployer and provides developers with APIs to consume the content (content, search, GraphQL, etc.).
 
 .. include:: /includes/content-retrieval-apis.rst

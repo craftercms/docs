@@ -11,10 +11,6 @@ Crafter Profile
     :width: 75%
     :align: center
 
-.. contents::
-    :local:
-    :depth: 3
-
 |
 
 Crafter Profile is a multi-tenant, platform independent, highly secure and scalable profile and attribute store. It allows web developers to easily add user login and user profile management to website applications. The module enables web developers to create secure login features and gather user profile information for use in targeting and personalization.

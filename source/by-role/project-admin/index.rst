@@ -9,10 +9,6 @@
 =============================
 Project (Site) Administration
 =============================
-.. contents::
-    :local:
-    :depth: 2
-
 This section details activities related to project administration in CrafterCMS. The content is oriented towards CrafterCMS administration primarily through Crafter Studio.
 
 Most configuration files can be accessed through Crafter Studio through the **Sidebar ->** |projectTools| **-> Configuration**. but can also be modified by accessing the configuration files directly. Please note that it is recommended that changes to configuration files be done through the Crafter Studio UI.
@@ -303,6 +299,10 @@ See :ref:`here <use-s3-to-store-assets>` for more information
 ~~~
 Box
 ~~~
+.. version_tag::
+    :label: Until
+    :version: 4.2
+
 Box is a good option when you need to store media and documents that are quite large.
 See :ref:`here <box-asset-access>` for more information
 

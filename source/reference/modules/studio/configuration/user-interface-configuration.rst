@@ -6,9 +6,6 @@
 ============================
 User Interface Configuration
 ============================
-.. contents::
-   :local:
-
 The user interface configuration file defines the widgets shown in the user interface. It allows the user to configure
 the items available for interaction in Studio.
 
