@@ -1,13 +1,13 @@
 :is-up-to-date: True
-:last-updated: 4.2.2
+:last-updated: 4.3.0
 
-####################################
-CrafterCMS Documentation (|version|)
-####################################
+########################
+CrafterCMS Documentation
+########################
 
 .. default-domain:: craftercms
 
-This documentation introduces key concepts in CrafterCMS |version|, details the decoupled authoring and development systems, and provides operational and administrative considerations and procedures as well as a comprehensive reference section.
+This documentation introduces key concepts in CrafterCMS, details the decoupled authoring and development systems, and provides operational and administrative considerations and procedures as well as a comprehensive reference section.
 
 ==================
 What is CrafterCMS
