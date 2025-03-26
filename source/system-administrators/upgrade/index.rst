@@ -15,7 +15,7 @@ This section details the steps required to upgrade your CrafterCMS install.
 
    * If you are upgrading to 3.1.x from a previous 3.0.x version, the automatic upgrade scripts are not enabled and you will need to follow :ref:`these instructions<upgrade-to-3-1-0>` to upgrade manually.
 
-   * If you are upgrading from an earlier release (2.5.x), you would need to upgrade to 3.0.x first before performing the upgrade steps here.  See the 3.0 release’s Upgrading CrafterCMS page here: https://craftercms.com/docs/current/index.html
+   * If you are upgrading from an earlier release (2.5.x), you would need to upgrade to 3.0.x first before performing the upgrade steps here.
 
 |
 
