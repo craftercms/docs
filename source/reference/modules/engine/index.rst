@@ -29,14 +29,14 @@ Engine provides content delivery services to power any type of Web or mobile app
    ``X-Crafter-Site`` for changing the current site. This is very useful when Crafter Engine is used
    together with CDNs that can send headers, like AWS CloudFront
 
-     .. WARNING::
+   .. WARNING::
        Using this configuration you need to be sure that the first request specifies the site name by
        including the ``crafterSite`` parameter (or the ``X-Crafter-Site`` header) so that the site value
        is set in the cookie for the next requests.
 
    |
 
-     .. note::
+   .. note::
          Crafter Engine identifies which project to render by the mechanisms (in this order of precedence):
             - Headers (``X-Crafter-Site={site}``)
             - QSA (Query String Parameters: ``crafterSite={site}``)

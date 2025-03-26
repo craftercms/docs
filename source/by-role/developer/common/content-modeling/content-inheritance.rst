@@ -110,8 +110,8 @@ means that when the page renders, the model will automatically contain the meta-
 **level descriptor**. In our example above, the page will automatically inherit the meta-data fields
 ``cssGroup``, ``defaultHeader``, and ``defaultFooter``.
 
-  .. note:: When an element is defined by the **level descriptor** and then subsequently defined by a child,
-     the child's definition overrides the **level descriptor**.
+.. note:: When an element is defined by the **level descriptor** and then subsequently defined by a child,
+    the child's definition overrides the **level descriptor**.
 
 This mechanism allows you to define meta-data that flows down the information architecture of the project
 such that an entire project can have defaults and those defaults can be overwritten by sections individual
@@ -124,8 +124,8 @@ page. Some examples of real-life use of inheritance:
 
 |
 
-  .. note:: The ``inherit-levels`` mechanism allows you to set **level descriptors** at various levels of
-            the information architecture with lower levels overriding upper levels.
+.. note:: The ``inherit-levels`` mechanism allows you to set **level descriptors** at various levels of
+          the information architecture with lower levels overriding upper levels.
 
 What we discussed thus far is a single inheritance strategy implementation, ``inherit-levels``, the code
 to which is available here: `InheritLevelsMergeStrategy.java <https://github.com/craftercms/core/blob/master/src/main/java/org/craftercms/core/xml/mergers/impl/strategies/InheritLevelsMergeStrategy.java>`_. There are more inheritance strategies implemented out of the box with CrafterCMS and you can build your own to suit your needs.
@@ -187,8 +187,8 @@ left (left-rail)side of the page.
 |
 
 The top part of the page is the header and the left side is the left-rail. As shown above, the
-    two pages we previewed uses the same information for the header, while the left-rail uses the
-    same information on the top part of it, but different information on the bottom part.
+two pages we previewed uses the same information for the header, while the left-rail uses the
+same information on the top part of it, but different information on the bottom part.
 
 .. image:: /_static/images/developer/content-inheritance/header-leftrail.webp
     :width: 75%

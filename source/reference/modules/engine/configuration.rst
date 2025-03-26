@@ -1022,8 +1022,8 @@ Here's a sample Proxy Configuration file (click on the triangle on the left to e
 |
 |
 
-   .. note::
-      Deleting the config file (*proxy-config.xml*) from the repo completely disables the proxy feature.
+.. note::
+    Deleting the config file (*proxy-config.xml*) from the repo completely disables the proxy feature.
 
 .. _using-the-proxy-configuration:
 
