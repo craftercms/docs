@@ -25,7 +25,6 @@ Crafter Studio provides all the content management services and integrates with 
 -------------
 Configuration
 -------------
-
 Crafter Studio is primarily configured via a single configuration file, ``studio-config.yaml``, and 2 override files that can be used to override the settings in the core configuration file.
 
 The core configuration file for Crafter Studio ``studio-config.yaml`` is located under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio`` and contains pre-configured settings.
@@ -50,9 +49,9 @@ You'll note that the first override file from the ``CRAFTER_HOME/bin/apache-tomc
 .. note:: Changing the configuration files requires a restart of Crafter Studio for the changes to take effect.
 .. note:: Environment variables can be used to override any property defined as ``${env:ENVIRONMENT_VARIABLE}`` in the configuration files. This allows you to inject these properties into a vanilla installation without modifying any actual files, which is especially useful when using Docker or Kubernetes. See :ref:`here <environment-variables>` for a list of environment variables used by CrafterCMS.
 
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Studio Configuration Properties
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In this section, we will highlight some of the more commonly used properties in the configuration of Crafter Studio. For a complete list of all the properties, see the ``studio-config.yaml`` file.
 
 .. list-table:: Configuration Properties
@@ -137,9 +136,9 @@ In this section, we will highlight some of the more commonly used properties in 
 
 .. _studio-smtp-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 SMTP Configuration (Email)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 This section allows the user to set up a mail client by configuring the SMTP server to send emails from Crafter Studio, such as when authors request to publish content or when a request to publish has been approved.
 
 .. code-block:: yaml
@@ -174,9 +173,9 @@ This section allows the user to set up a mail client by configuring the SMTP ser
 
 .. _studio-cors:
 
-^^^^
+""""
 CORS
-^^^^
+""""
 The following section of Studio's configuration overrides allows you to set CORS
 
 .. code-block:: yaml
@@ -211,16 +210,16 @@ patterns need to be escaped with a ``\`` like:
 
 |hr|
 
-^^^^^^^^^^^
+"""""""""""
 Blob Stores
-^^^^^^^^^^^
+"""""""""""
 Configure internally managed static asset stores to handle very large files using the Blob Stores configuration. To learn more, read the article :ref:`blob-stores`.
 
 |hr|
 
-^^^^^^^^^^^^^^
+""""""""""""""
 Project Policy
-^^^^^^^^^^^^^^
+""""""""""""""
 The project policy configuration file allows the administrator to configure conditions for adding content to the project.
 (via uploads), such as filename constraints, minimum/maximum size of files, permitted content types or file types (MIME-types), etc.
 
@@ -231,9 +230,9 @@ Learn more about project policy in the article :ref:`project-policy-configuratio
 
 .. _editable-mime-types:
 
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Editable Mime Types
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Here's the default list of MIME-types editable in Studio:
 
 .. code-block:: yaml
@@ -257,17 +256,17 @@ These can be updated as needed by overriding the property in one of the override
 
 .. _studio-project-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 Project/Site Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 Crafter Studio allows to configure many aspects of a project/site. Learn more about project/site configuration in the article :ref:`project-configuration`.
 
 
 |hr|
 
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 UI Configuration
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 Crafter Studio's UI is highly configurable and allows you to customize the look and feel of the UI per project to suit your needs. Learn more about Studio UI configuration in the article :ref:`user-interface-configuration`.
 
 
@@ -275,9 +274,9 @@ Crafter Studio's UI is highly configurable and allows you to customize the look 
 
 .. _studio-rte-config:
 
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 RTE Configuration
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 RTEs are more effective/productive for authors when they are configured properly for the specific type of content the author is managing. A properly and effectively configured RTE has the right styles, menu options and so on.
 Learn more about configuring Studio's default RTE in the article :ref:`rte-configuration`.
 
@@ -285,9 +284,9 @@ Learn more about configuring Studio's default RTE in the article :ref:`rte-confi
 
 .. _studio-preview-deployer-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""
 Preview Deployer Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""
 The following section of Studio's configuration overrides allows you to setup your deployer URLs
 
 .. code-block:: yaml
@@ -313,9 +312,9 @@ The following section of Studio's configuration overrides allows you to setup yo
 
 .. _studio-preview-search-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 Preview Search Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 The following section of Studio's configuration overrides allows you to set URLs for search in preview.
 
 .. code-block:: yaml
@@ -335,9 +334,9 @@ The following section of Studio's configuration overrides allows you to set URLs
 
 .. _studio-search:
 
-^^^^^^
+""""""
 Search
-^^^^^^
+""""""
 The following section of Studio's configuration overrides allows you to setup the url for search
 
 .. code-block:: yaml
@@ -368,9 +367,9 @@ The following section of Studio's configuration overrides allows you to setup th
 
 .. _cache-settings:
 
-^^^^^^^^^^^^^^
+""""""""""""""
 Cache Settings
-^^^^^^^^^^^^^^
+""""""""""""""
 Here are the cache control settings for templates and assets:
 
 .. code-block:: yaml
@@ -390,9 +389,9 @@ Here are the cache control settings for templates and assets:
 
 .. _studio-forwarded-headers:
 
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 Forwarded Headers
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 The following section of Studio's configuration overrides allows you to configure forwarded headers to resolve the actual hostname and protocol when it is behind a load balancer or reverse proxy. This is especially useful when setting up Studio behind a load balancer in AWS.
 
 .. code-block:: yaml
@@ -412,12 +411,12 @@ The following section of Studio's configuration overrides allows you to configur
 
 .. _studio-policy-headers:
 
-^^^^^^^^^^^^^^
+""""""""""""""
 Policy Headers
-^^^^^^^^^^^^^^
-"""""""""""""""""""""""
+""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 Content Security Policy
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 .. version_tag::
 	:label: Since
 	:version: 4.1.2
@@ -437,9 +436,9 @@ and the URLs that they can be loaded from.
 To block offending requests, set ``studio.security.headers.contentSecurityPolicy.reportOnly`` to ``false``.
 This property is set to ``true`` by default
 
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 X-Permitted-Cross-Domain-Policies
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The following allows you to configure what other domains you want to allow access to your domain.
 The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow any embedding) by default.
 
@@ -457,9 +456,9 @@ The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow an
 
 .. _studio-crafterSite-cookie-domain:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""
 crafterSite Cookie Domain
-^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.0.1
@@ -479,9 +478,9 @@ The following section of Studio's configuration overrides allows you to set the 
 
 .. _studio-deployer-http-request-timeout:
 
-^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 Deployer HTTP Requests
-^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.2.0
@@ -502,9 +501,9 @@ The default timeout is 5 minutes.
 
 .. _studio-serverless-delivery-targets:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 Serverless Delivery Targets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 The following section of Studio's configuration overrides allows you to set up serverless delivery.
 
 .. code-block:: yaml
@@ -563,9 +562,9 @@ The following section of Studio's configuration overrides allows you to set up s
 
 .. _studio-cloudformation-capabilities:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 CloudFormation Capabilities
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.2.0
@@ -600,27 +599,21 @@ capabilities:
 |
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""
 Workflow Notifications Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""
 Crafter Studio provides a simple workflow option that includes submission, review, approve or reject, and
 publish immediately or publish on a schedule.
 
 Learn more about Crafter Studio's workflow in the article :ref:`notifications-configuration`.
 
-.. toctree::
-    :hidden:
-
-    notification-configuration
-
-
 |hr|
 
 .. _studio-validations-regex:
 
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 Validations Regex
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.0.3
@@ -658,9 +651,9 @@ The following section of Studio's configuration overrides allows you to configur
 
 .. _studio-commit-message:
 
-^^^^^^^^^^^^^^
+""""""""""""""
 Commit Message
-^^^^^^^^^^^^^^
+""""""""""""""
 Here are the default commit messages when someone makes content changes and can be customized by overriding them
 using one of the override files.
 
@@ -702,9 +695,9 @@ using one of the override files.
 
 .. _studio-audit-log:
 
-^^^^^^^^^
+"""""""""
 Audit Log
-^^^^^^^^^
+"""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.1.3
@@ -725,9 +718,9 @@ To disable populating the audit log, set the ``studio.clockJob.task.auditLogProc
 
 .. _publishing-blacklist:
 
-^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""
 Publishing Blacklist
-^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""
 CrafterCMS allows the creation of a publishing blacklist to prevent certain unwanted items from being published.
 
 A comma-separated list of regexes is used to configure items that should not be published.
@@ -747,13 +740,13 @@ Add the following lines with the regex for the item you wish not to be published
 
 Items in the publishing blacklist will not be published but will instead be marked as published and logged (debug level) in the tomcat log, why the item was not published.
 
-   .. code-block:: text
+.. code-block:: text
 
-      [DEBUG] 2021-04-22T08:16:01,023 [studio.clockTaskExecutor-42] [deployment.PublishingManagerImpl] | File /static-assets/css/.keep of the site mysite will not be published because it matches the configured publishing blacklist regex patterns.
+    [DEBUG] 2021-04-22T08:16:01,023 [studio.clockTaskExecutor-42] [deployment.PublishingManagerImpl] | File /static-assets/css/.keep of the site mysite will not be published because it matches the configured publishing blacklist regex patterns.
 
-"""""""
+~~~~~~~
 Example
-"""""""
+~~~~~~~
 Let's take a look at an example.
 
 Create a site using the website editorial blueprint, then create the folder ``mytempimages`` under ``/static-assets/images``.
@@ -804,9 +797,9 @@ Let's take a look at the tomcat log, notice that it was logged that the file we 
 
 .. _configuration-files-maximum:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 Configuration Files Maximum
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.1.4
@@ -825,117 +818,76 @@ To set the maximum size of a project/site configuration file for the `write_conf
 
 .. _content-type-editor-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 Content Type Editor Config
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 The Content Type Editor Config configuration file defines what tools are available in the Content Type Editor. Learn more about Content Type Editor configuration in the article :ref:`content-type-editor-config`.
-
-.. toctree::
-    :hidden:
-
-    content-type-editor-config
-
 
 |hr|
 
 .. _dependency-resolver-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""
 Dependency Resolver Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""
 Crafter Studio extracts and tracks dependencies between content items to assist authors with publishing, workflow, and core content operations like copy and delete. Learn more about configuring the dependency resolver in the article :ref:`dependency-resolver-config`.
-
-.. toctree::
-    :hidden:
-
-    dependency-resolver
-
 
 |hr|
 
 .. _project-tools-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 Project Tools Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 Studio's Project Tools can be configured to list/de-list configuration files. Learn more about this in the article :ref:`project-tools-configuration`.
-
-.. toctree::
-    :hidden:
-
-    configurations
-
 
 |hr|
 
 .. _asset-processing-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""
 Asset Processing Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""
 Asset processing allows you to define transformations for static assets (currently only images), through a series of processor pipelines that are executed when the assets are uploaded to Studio. Learn more about asset processing configuration in the article :ref:`asset-processing-configuration`.
-
-.. toctree::
-    :hidden:
-
-    asset-processing-config
-
 
 |hr|
 
 .. _aws-profile-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 AWS Profiles Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 CrafterCMS has many integrations with AWS. Learn how to configure AWS Profiles in the article :ref:`aws-profile-configuration`.
-
-.. toctree::
-    :hidden:
-
-    aws-profiles-configuration
-
 
 |hr|
 
 .. _box-profile-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 Box Profiles Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 .. version_tag::
 	:label: Until
 	:version: 4.2
 
 CrafterCMS integrates with Box. Learn how to configure Box Profiles in the article :ref:`box-profile-configuration`.
 
-.. toctree::
-    :hidden:
-
-    box-profiles-configuration
-
-
 |hr|
 
 .. _webdav-profiles-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""
 WebDAV Profiles Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""
 CrafterCMS integrates with WebDAV. Learn how to configure WebDAV Profiles in the article :ref:`webdav-profiles-configuration`.
-
-.. toctree::
-    :hidden:
-
-    webdav-profiles-configuration
 
 |hr|
 
 .. _studio-multi-environment-support:
 
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Studio Multi-environment Support
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To set up a Studio environment, do the following:
 
 #. Create a folder under ``CRAFTER_HOME/data/repos/sites/${site}/sandbox/config/studio`` called ``env``
@@ -959,71 +911,70 @@ To set up a Studio environment, do the following:
 .. note::
     All configuration files under ``CRAFTER_HOME/data/repos/sites/${site}/sandbox/config/studio`` can be overridden by environment, except for the Project Policy Configuration (site-policy-config.xml) and Content Types (items under the ``content-types`` folder).
 
-^^^^^^^
+"""""""
 Example
-^^^^^^^
-
+"""""""
 Let's take a look at an example of creating a new environment, called ``mycustomenv`` with the ``rte-setup-tinymce5.xml`` file overridden in the new environment:
 
 #. We'll create a folder called ``env`` under ``CRAFTER_HOME/data/repos/site/my-awesome-editorial/sandbox/config/studio``
 
-      .. code-block:: text
-         :linenos:
-         :emphasize-lines: 12
+   .. code-block:: text
+       :linenos:
+       :emphasize-lines: 12
 
-         data/
-           repos/
-             sites/
-               my-awesome-editorial/
-                 sandbox/
-                   config/
-                     studio/
-                       administration/
-                       content-types/
-                       data-sources/
-                       dependency/
-                       env/
-                       permission-mappings-config.xml
-                       role-mappings-config.xml
-                       site-config.xml
-                       studio_version.xml
-                       translation-config.xml
-                       ui.xml
-                       workflow/
+       data/
+         repos/
+           sites/
+             my-awesome-editorial/
+               sandbox/
+                 config/
+                   studio/
+                     administration/
+                     content-types/
+                     data-sources/
+                     dependency/
+                     env/
+                     permission-mappings-config.xml
+                     role-mappings-config.xml
+                     site-config.xml
+                     studio_version.xml
+                     translation-config.xml
+                     ui.xml
+                     workflow/
 
-      |
+   |
 
 #. Inside the ``env`` folder, create a directory called ``mycustomenv``
 #. We will now copy the configuration file for the ``ui.xml`` that we want to override in the new environment we are setting up, inside our ``mycustomenv`` folder, following the folder structure under ``config/studio``. For our example, the ``ui.xml`` file is under ``config/studio/``:
 
-      .. code-block:: text
-         :emphasize-lines: 3
+   .. code-block:: text
+       :emphasize-lines: 3
 
-         env/
-           mycustomenv/
-             ui.xml
+       env/
+         mycustomenv/
+           ui.xml
 
-      |
+   |
 
 #. Remember to commit the files copied so Studio will pick it up.
 
-      .. code-block:: bash
+   .. code-block:: bash
 
-         ➜  sandbox git:(master) ✗ git add .
-         ➜  sandbox git:(master) ✗ git commit -m "Add updated ui.xml file for mycustomenv"
+       ➜  sandbox git:(master) ✗ git add .
+       ➜  sandbox git:(master) ✗ git commit -m "Add updated ui.xml file for mycustomenv"
 
-      |
+   |
 
 #. Open the ``crafter-setenv.sh`` file in ``TOMCAT/bin`` and set the value of ``CRAFTER_ENVIRONMENT`` to the
    environment we setup above to make it the active environment:
 
-      .. code-block:: bash
-         :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+   .. code-block:: bash
+       :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
 
-         # -------------------- Configuration variables --------------------
-         export CRAFTER_ENVIRONMENT=${CRAFTER_ENVIRONMENT:=mycustomenv}
+       # -------------------- Configuration variables --------------------
+       export CRAFTER_ENVIRONMENT=${CRAFTER_ENVIRONMENT:=mycustomenv}
 
-      |
+   |
 
 #. Restart Studio. To verify our newly setup environment, open the ``Sidebar`` and click on |projectTools|, then select ``Configuration``. Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations list:
 
@@ -1033,17 +984,17 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
 .. _studio-access-and-permissions:
 
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 Access and Permissions
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 To configure access to Crafter Studio beyond adding groups and users, you'll need to configure the system-wide configuration files:
 
 .. _global-role-mappings-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 Global Role Mappings Config
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 The global role mappings configuration file maps user :ref:`groups <groups-management>` to one or more roles and serves
 as the base for every project in your CrafterCMS installation. All role mappings configured here are in addition to what
 is configured in the project role mappings.
@@ -1072,9 +1023,9 @@ Here's the default global role mappings configuration (click on the triangle on 
 
 |
 
-"""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~
 Default Global Role
-"""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~
 CrafterCMS comes with a predefined global role ``system_admin`` out of the box.
 
 Users with the ``system_admin`` role have access to everything in the CMS such as all the modules in the Main Menu for managing users, groups, etc., all the sites and configuration files, creating/editing layouts, templates, taxonomies, content types, scripts, etc. in addition to creating and editing content, as well as the ability to approve and reject workflow.
@@ -1087,9 +1038,9 @@ See :ref:`global-permission-mappings-config` for more information on all items a
 
 .. _global-permission-mappings-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""
 Global Permission Mappings Config
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""
 The global permission mappings configuration file lets you configure the permissions to a role globally for the entire application.
 
 Permissions per project are managed within Crafter Studio's UI. See :ref:`permission-mappings` for more information on project permissions.
@@ -1113,16 +1064,16 @@ Here's the default global permissions configuration (click on the triangle on th
 
 |
 
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 Permission Descriptions
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 .. include:: /includes/available-permissions-system-scope.rst
 
 .. _global-menu-config:
 
-------------------
+^^^^^^^^^^^^^^^^^^
 Global Menu Config
-------------------
+^^^^^^^^^^^^^^^^^^
 The Global Menu Config configuration file defines what modules are available for administration use when clicking on the ``Navigation Menu`` from the top bar.
 
 To see the default modules available from the ``Navigation Menu``, see :ref:`navigating-main-menu`
@@ -1154,10 +1105,9 @@ open the file ``global-menu-config.xml``. Remember to restart Crafter so your ch
 --------
 Security
 --------
-
---------------
+^^^^^^^^^^^^^^
 Authentication
---------------
+^^^^^^^^^^^^^^
 Users are authenticated by Studio through the internal database by default. CrafterCMS can be configured so that users are authenticated using an external authentication protocol such as Lightweight Directory Access Protocol (LDAP), Security Assertion Markup Language (SAML), or integrate with any Single-Sign-On (SSO) solution that can provide headers to Studio to indicate successful authentication.
 
 Here's a list of security providers supported by CrafterCMS for accessing the repository:
@@ -1173,9 +1123,9 @@ When using an external authentication method, user accounts are automatically cr
 
 .. _configure-authentication-chain:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""
 Configure Authentication Chain
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""
 CrafterCMS supports multiple security providers and allows configuration of multiple authentication providers in a chain that are then iterated through until either the user is authenticated and granted access or authentication fails and an HTTP 401 Unauthorized is returned to the user. This allows Studio to support multiple security providers that appears like a single authentication module to users.
 
 The following authentication providers can be configured in a chain:
@@ -1195,91 +1145,91 @@ Below is a sample configuration for the authentication chain. There are four aut
 .. code-block:: yaml
     :linenos:
 
-      # Studio authentication chain configuration
-      studio.authentication.chain:
-      # Authentication provider type
-      - provider: HEADERS
-      # Authentication via headers enabled
-        enabled: true
-        # Authentication header for secure key
-        secureKeyHeader: secure_key
-        # Authentication headers secure key that is expected to match secure key value from headers
-        # Typically this is placed in the header by the authentication agent
-        secureKeyHeaderValue: secure
-        # Authentication header for username
-        usernameHeader: username
-        # Authentication header for first name
-        firstNameHeader: firstname
-        # Authentication header for last name
-        lastNameHeader: lastname
-        # Authentication header for email
-        emailHeader: email
-        # Authentication header for groups: comma separated list of groups
-        #   Example:
-        #   site_author,site_xyz_developer
-        groupsHeader: groups
-        # Enable/disable logout for headers authenticated users (SSO)
-        # logoutEnabled: false
-        # If logout is enabled for headers authenticated users (SSO), set the endpoint of the SP or IdP logout, which should
-        # be called after local logout. The {baseUrl} macro is provided so that the browser is redirected back to Studio
-        # after logout (https://STUDIO_SERVER:STUDIO_PORT/studio)
-        # logoutUrl: /YOUR_DOMAIN/logout?ReturnTo={baseUrl}
-      # Authentication provider type
-      - provider: LDAP
-        # Authentication via LDAP enabled
-        enabled: false
-        # LDAP Server url
-        ldapUrl: ldap://localhost:389
-        # LDAP bind DN (user)
-        ldapUsername: cn=Manager,dc=my-domain,dc=com
-        # LDAP bind password
-        ldapPassword: secret
-        # LDAP base context (directory root)
-        ldapBaseContext: dc=my-domain,dc=com
-        # LDAP username attribute
-        usernameLdapAttribute: uid
-        # LDAP first name attribute
-        firstNameLdapAttribute: cn
-        # LDAP last name attribute
-        lastNameLdapAttribute: sn
-        # Authentication header for email
-        emailLdapAttribute: mail
-        # LDAP groups attribute
-        groupNameLdapAttribute: crafterGroup
-        # LDAP groups attribute name regex
-        groupNameLdapAttributeRegex: .*
-        # LDAP groups attribute match index
-        groupNameLdapAttributeMatchIndex: 0
-      # Authentication provider type
-      - provider: LDAP
-        # Authentication via LDAP enabled
-        enabled: false
-        # LDAP Server url
-        ldapUrl: ldap://localhost:390
-        # LDAP bind DN (user)
-        ldapUsername: cn=Manager,dc=my-domain,dc=com
-        # LDAP bind password
-        ldapPassword: secret
-        # LDAP base context (directory root)
-        ldapBaseContext: dc=my-domain,dc=com
-        # LDAP username attribute
-        usernameLdapAttribute: uid
-        # LDAP first name attribute
-        firstNameLdapAttribute: cn
-        # LDAP last name attribute
-        lastNameLdapAttribute: sn
-        # Authentication header for email
-        emailLdapAttribute: mail
-        # LDAP groups attribute
-        groupNameLdapAttribute: crafterGroup
-        # LDAP groups attribute name regex
-        groupNameLdapAttributeRegex: .*
-        # LDAP groups attribute match index
-        groupNameLdapAttributeMatchIndex: 0
-      # Authentication provider type
-      - provider: DB
-        # Authentication via DB enabled
-        enabled: true
+    # Studio authentication chain configuration
+    studio.authentication.chain:
+    # Authentication provider type
+    - provider: HEADERS
+    # Authentication via headers enabled
+      enabled: true
+      # Authentication header for secure key
+      secureKeyHeader: secure_key
+      # Authentication headers secure key that is expected to match secure key value from headers
+      # Typically this is placed in the header by the authentication agent
+      secureKeyHeaderValue: secure
+      # Authentication header for username
+      usernameHeader: username
+      # Authentication header for first name
+      firstNameHeader: firstname
+      # Authentication header for last name
+      lastNameHeader: lastname
+      # Authentication header for email
+      emailHeader: email
+      # Authentication header for groups: comma separated list of groups
+      #   Example:
+      #   site_author,site_xyz_developer
+      groupsHeader: groups
+      # Enable/disable logout for headers authenticated users (SSO)
+      # logoutEnabled: false
+      # If logout is enabled for headers authenticated users (SSO), set the endpoint of the SP or IdP logout, which should
+      # be called after local logout. The {baseUrl} macro is provided so that the browser is redirected back to Studio
+      # after logout (https://STUDIO_SERVER:STUDIO_PORT/studio)
+      # logoutUrl: /YOUR_DOMAIN/logout?ReturnTo={baseUrl}
+    # Authentication provider type
+    - provider: LDAP
+      # Authentication via LDAP enabled
+      enabled: false
+      # LDAP Server url
+      ldapUrl: ldap://localhost:389
+      # LDAP bind DN (user)
+      ldapUsername: cn=Manager,dc=my-domain,dc=com
+      # LDAP bind password
+      ldapPassword: secret
+      # LDAP base context (directory root)
+      ldapBaseContext: dc=my-domain,dc=com
+      # LDAP username attribute
+      usernameLdapAttribute: uid
+      # LDAP first name attribute
+      firstNameLdapAttribute: cn
+      # LDAP last name attribute
+      lastNameLdapAttribute: sn
+      # Authentication header for email
+      emailLdapAttribute: mail
+      # LDAP groups attribute
+      groupNameLdapAttribute: crafterGroup
+      # LDAP groups attribute name regex
+      groupNameLdapAttributeRegex: .*
+      # LDAP groups attribute match index
+      groupNameLdapAttributeMatchIndex: 0
+    # Authentication provider type
+    - provider: LDAP
+      # Authentication via LDAP enabled
+      enabled: false
+      # LDAP Server url
+      ldapUrl: ldap://localhost:390
+      # LDAP bind DN (user)
+      ldapUsername: cn=Manager,dc=my-domain,dc=com
+      # LDAP bind password
+      ldapPassword: secret
+      # LDAP base context (directory root)
+      ldapBaseContext: dc=my-domain,dc=com
+      # LDAP username attribute
+      usernameLdapAttribute: uid
+      # LDAP first name attribute
+      firstNameLdapAttribute: cn
+      # LDAP last name attribute
+      lastNameLdapAttribute: sn
+      # Authentication header for email
+      emailLdapAttribute: mail
+      # LDAP groups attribute
+      groupNameLdapAttribute: crafterGroup
+      # LDAP groups attribute name regex
+      groupNameLdapAttributeRegex: .*
+      # LDAP groups attribute match index
+      groupNameLdapAttributeMatchIndex: 0
+    # Authentication provider type
+    - provider: DB
+      # Authentication via DB enabled
+      enabled: true
 
 |
 
@@ -1292,9 +1242,9 @@ In the configuration above, when a user tries to authenticate, the user's creden
 
 .. _crafter-studio-configure-studio-saml:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""
 Studio SAML2 Configuration |enterpriseOnly|
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.0.3
@@ -1305,9 +1255,9 @@ Crafter Studio can be configured to support SAML2 SSO out of the box without usi
    *This document only applies to* **CrafterCMS version 4.0.3 and later** |br|
    *Please see* :ref:`here <crafter-studio-configure-studio-saml-up-to-4-0-2>` *for version 4.0.2 and earlier.*
 
-""""""""""""
+~~~~~~~~~~~~
 Requirements
-""""""""""""
+~~~~~~~~~~~~
 #. A SAML2-compatible Identity Provider (IdP) properly configured; this configuration will not be covered here
 #. A private key and certificate. This can be generated like so:
 
@@ -1321,9 +1271,9 @@ Requirements
 .. note::
    ``IdP`` is the asserting party and ``SP`` is the relying party (Studio)
 
-"""""""""
+~~~~~~~~~
 Configure
-"""""""""
+~~~~~~~~~
 To configure Studio SAML2, in your Authoring installation, we need to enable SAML security then we'll setup the required SAML configuration properties.
 
 To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file, and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter.studio.samlSecurity``:
@@ -1414,10 +1364,10 @@ where
 - ``studio.security.saml.enabled``: Indicates if SAML2 is enabled or not
 - The following are attributes that Studio expects from the Identity Provider:
 
-     - ``studio.security.saml.attributeName.email``
-     - ``studio.security.saml.attributeName.firstName``
-     - ``studio.security.saml.attributeName.lastName``
-     - ``studio.security.saml.attributeName.group``
+  - ``studio.security.saml.attributeName.email``
+  - ``studio.security.saml.attributeName.firstName``
+  - ``studio.security.saml.attributeName.lastName``
+  - ``studio.security.saml.attributeName.group``
 
 - ``studio.security.saml.rp.privateKey.location``: The path of the relying party (SP) private key in the classpath
 - ``studio.security.saml.rp.certificate.location``: The path of the relying party (SP) certificate in the classpath
@@ -1444,14 +1394,14 @@ Restart your Authoring installation after configuring the above.
 
 .. _crafter-studio-configure-header-based-auth:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Configure Header-Based Authentication |enterpriseOnly|
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Crafter Studio can integrate with any authentication system that sends custom HTTP headers containing information that will be used to authenticate the user in Studio. This section details how to set up Studio for header-based authentication.
 
-""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Configure Studio for Header-Based Authentication
-""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Configuring Studio for header-based authentication is very simple: in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: properties
@@ -1502,9 +1452,9 @@ Upon matching the ``secure_key`` header, Studio will then look for the principal
 
 Depending on your authentication agent, configure Studio to look for either the loose attributes or JWT.
 
-~~~~~~~~~~~~~~~~~~
+''''''''''''''''''
 Configuring Logout
-~~~~~~~~~~~~~~~~~~
+''''''''''''''''''
 The **Sign out** button link is disabled/hidden by default when header-based authentication is enabled.
 
 To enable **Sign out** for users signed in using header-based authentication, change the following lines (as described from the above configuration) in your ``studio-config-override.yaml`` file (of course, make any appropriate configuration changes according to your system):
@@ -1524,9 +1474,9 @@ To enable **Sign out** for users signed in using header-based authentication, ch
 
 .. _crafter-studio-configure-ldap:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""
 Configure LDAP Authentication |enterpriseOnly|
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""
 To configure LDAP authentication, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and uncomment the
 following lines to the ``studio-config-override.yaml`` file.
 
@@ -1604,14 +1554,14 @@ For an example of setting up LDAP, see :ref:`setting-up-simple-ldap-server`
 
 |hr|
 
--------------
+^^^^^^^^^^^^^
 Authorization
--------------
+^^^^^^^^^^^^^
 .. _project-role-mappings:
 
-^^^^^^^^^^^^^
+"""""""""""""
 Role Mappings
-^^^^^^^^^^^^^
+"""""""""""""
 Users are allowed to perform actions on the items that they have been granted access to based on the permissions granted
 to the role they have been assigned to. Note that site members have read permission to the entire project/site
 regardless of the role that they are assigned.
@@ -1628,9 +1578,9 @@ and select **Role Mappings** from the list.
 
 To configure the role mappings for groups created in CrafterCMS that need global permissions see :ref:`global-role-mappings-config`
 
-""""""
+~~~~~~
 Sample
-""""""
+~~~~~~
 Here's a sample Role Mappings Configuration file (click on the triangle on the left to expand/collapse):
 
 .. raw:: html
@@ -1649,18 +1599,18 @@ Here's a sample Role Mappings Configuration file (click on the triangle on the l
 
 |
 
-"""""""""""
+~~~~~~~~~~~
 Description
-"""""""""""
+~~~~~~~~~~~
     ``/role-mappings/groups/group@name``
         Name of the user group
 
     ``/role-mappings/groups/role``
         Name of authoring role that the group will map to
 
-"""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~
 Default Project Roles
-"""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~
 CrafterCMS comes with predefined roles out of the box for projects.
 Here's a list of predefined roles for projects:
 
@@ -1680,9 +1630,9 @@ See :ref:`permission-mappings` for more information on all items accessible for 
 
 .. _permission-mappings:
 
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Permission Mappings
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 The permission mappings configuration file allows you to assign permissions to folders and objects in a project/site giving specific Roles rights to the object. The permission mappings config file contains the permissions mappings for the roles defined in the role mappings config file. When applying permissions to Roles, rights are granted by adding permissions inside the tag ``<allowed-permissions>``. The absence of permissions means the permission is denied. Rules have a regex expression that governs the scope of the permissions assigned. A list of available permissions that can be granted to Roles is available after the sample configuration file.
 
 Permissions are defined per:
@@ -1731,9 +1681,9 @@ Note that permissions assigned is a union, so a user can perform the action as l
 
 To configure the permissions to a role globally for the entire application, see :ref:`global-permission-mappings-config`.
 
-""""""
+~~~~~~
 Sample
-""""""
+~~~~~~
 Here's a sample Permission Mappings Configuration file (click on the triangle on the left to expand/collapse):
 
 .. raw:: html
@@ -1761,31 +1711,31 @@ where:
 - ``/permissions/site/role/rule/allowed-permissions/permission``
   Allowed permission for role and rule (possible values given in the table above)
 
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 System (Global) Scope Permissions
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. include:: /includes/available-permissions-system-scope.rst
 
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Project Scope Permissions
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 .. include:: /includes/available-permissions-project-scope.rst
 
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 Path Scope Permissions
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 .. include:: /includes/available-permissions-path-scope.rst
 
 |hr|
 
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Other Security Configuration
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. _studio-password-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""
 Configure Studio Password Requirements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""
 Password requirements validation allows the admin to setup rules that ensures users create passwords based on an organization’s password security policy.
 
 Crafter Studio uses `zxcvbn <https://github.com/dropbox/zxcvbn>`__ for password strength management.
@@ -1874,9 +1824,9 @@ Below, are some of the messages displayed as a user is inputting a new password:
 
 .. _randomize-admin-password:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Randomize Authoring's "admin" Password for CrafterCMS Fresh Install
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 CrafterCMS gives you the option to randomize the **admin** password on a fresh install. To randomize the **admin** password, before starting CrafterCMS for the very first time, in your Authoring installation, go to  the following folder: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/`` and add the following to the ``studio-config-override.yaml`` file:
 
 .. code-block:: yaml
@@ -1907,14 +1857,14 @@ You can now log in as the user **admin** using the randomly generated password l
 
 .. _studio-timeout:
 
-^^^^^^^^^^^^^^^
+"""""""""""""""
 Studio Timeouts
-^^^^^^^^^^^^^^^
+"""""""""""""""
 .. _changing-session-timeout:
 
-""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Changing the Session Timeout
-""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 CrafterCMS has configurable timeouts for session lifetime and session inactivity.
 
 Session lifetime timeout is the amount of time a session is valid before requiring the user to re-authenticate.
@@ -1960,9 +1910,9 @@ Here's a summary of the session timeouts available in CrafterCMS:
        This value must be greater than or equal to ``inactivityTimeout`` since that timeout can and does kick in |br|
        before this one.
 
-"""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Change Session Lifetime Timeout
-"""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 To change the session lifetime timeout, in your
 ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``,
 change the value for ``studio.security.sessionTimeout`` to desired amount of time the session is valid
@@ -1977,9 +1927,9 @@ in minutes for users.
 
 Make sure to stop and **restart Studio** after making your changes.
 
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Change Session Inactivity Timeout
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 There are two timeouts you can configure for the session inactivity timeout as described in the above table.
 
 - ``session-timeout`` in the Tomcat ``web.xml`` file
@@ -2025,9 +1975,9 @@ You can also change the Studio session timeouts from the |mainMenu| **Main Menu*
 
 .. _studio-cipher-configuration:
 
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 Cipher Configuration
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
     :linenos:
@@ -2062,9 +2012,9 @@ Cipher Configuration
 
 .. _studio-access-tokens:
 
-^^^^^^^^^^^^^
+"""""""""""""
 Access Tokens
-^^^^^^^^^^^^^
+"""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.0.0
@@ -2134,9 +2084,9 @@ For information on creating access tokens in Studio, see :ref:`here <access-toke
 
 .. _studio-preview-cookie:
 
-^^^^^^^^^^^^^^
+""""""""""""""
 Preview Cookie
-^^^^^^^^^^^^^^
+""""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.2.0
@@ -2177,14 +2127,14 @@ the ``crafterPreview`` cookie. This API must be called whenever the ``crafterSit
 
 .. _studio-groovy-sandbox-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 Groovy Sandbox Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 .. include:: /includes/groovy-sandbox-configuration.rst
 
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Groovy Sandbox Properties
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 The following allows you to configure the Groovy sandbox.
 The Groovy sandbox is enabled by default and can be disabled by changing the property ``studio.scripting.sandbox.enable`` to ``false``.
 
@@ -2201,9 +2151,9 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
 
 |
 
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~
 Using a Custom Blacklist
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~
 Crafter Studio includes a default blacklist that you can find
 `here <https://github.com/craftercms/studio/blob/support/4.x/src/main/resources/crafter/studio/groovy/blacklist>`_.
 Make sure you review the branch/tag you're using.
@@ -2227,9 +2177,9 @@ To use a custom blacklist follow these steps:
 
 Now you can execute the same script without any issues.
 
-"""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Disabling the Sandbox Blacklist
-"""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 It is possible to disable the blacklist to allow the execution of most expressions, in case you need to use a
 considerable number of the expression included in the blacklist while keeping some basic restrictions. To disable
 the blacklist for all projects/sites update the ``studio-config-override.yaml`` configuration file:
@@ -2242,14 +2192,14 @@ the blacklist for all projects/sites update the ``studio-config-override.yaml`` 
 
 |
 
-"""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~
 Grape Configuration
-"""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~
 .. include:: /includes/groovy-grape-configuration.rst
 
-"""""""""""""""
+~~~~~~~~~~~~~~~
 Important Notes
-"""""""""""""""
+~~~~~~~~~~~~~~~
 .. include:: /includes/groovy-sandbox-important-notes.rst
 
 
@@ -2265,9 +2215,9 @@ Much of the administration of Crafter Studio can be done via the UI. This sectio
 
 .. _navigating-main-menu:
 
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Navigating the Navigation Menu
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In this section, we discuss the Navigation Menu tools available in Studio. To access, click the ``Navigation Menu`` icon from the top right of the browser
 
 .. image:: /_static/images/system-admin/main-menu/open-main-menu.webp
@@ -2296,9 +2246,9 @@ The tools available in the Navigation Menu is configured similar to how the Proj
 
 .. _main-menu-tool-projects:
 
-^^^^^^^^
+""""""""
 Projects
-^^^^^^^^
+""""""""
 ``Projects`` contains a list of all the projects the logged in user has access to. The section :ref:`author-screens` in ``Content Authors`` contains descriptions on some of the actions that can be performed from the Projects screen.  This also allows users with the system admin role to create new projects either from a :ref:`blueprint <your-first-editorial-project>`, a :ref:`remote repository <create-project-with-link-to-remote-repo>` or an :ref:`existing project <duplicate-project>`.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-sites.webp
@@ -2310,17 +2260,17 @@ Projects
 
 .. _users-management:
 
-^^^^^
+"""""
 Users
-^^^^^
+"""""
 A user is anybody who uses CrafterCMS. The ``Users`` management console lets the administrator manage who has access to
 Crafter Studio.
 
 For information on managing users and groups, see :ref:`user-group-management`.
 
-"""""""""""
+~~~~~~~~~~~
 Description
-"""""""""""
+~~~~~~~~~~~
 The ``Users`` management console allows you to control and set up who can access and manage the sites. All users are listed on
 this console.
 
@@ -2345,14 +2295,14 @@ To find the ``Users`` management console follow the next instructions:
 
    |
 
-"""""""
+~~~~~~~
 Actions
-"""""""
+~~~~~~~
 You can list, search, add or delete users, as well as view specific information.
 
-~~~~~~~~~~~~~
+'''''''''''''
 Listing Users
-~~~~~~~~~~~~~
+'''''''''''''
 To see a list of all existing users, make sure that there are no search terms entered in the search bar. You can also change the number of users listed per page by selecting a different number in the dropdown box at the bottom right of the screen
 
 .. image:: /_static/images/users/users-list-all.webp
@@ -2378,9 +2328,9 @@ In the following example we typed "jane", we obtained only one related user: "Ja
 
 .. _creating-a-user:
 
-~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''
 Creating a New User
-~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''
 To create a new user, please click on the "Create User" button at the top of the page.
 
 .. image:: /_static/images/users/users-add-new.webp
@@ -2410,9 +2360,9 @@ A notification will appear on the screen for a few seconds on successful creatio
 
 .. _editing-a-user:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''
 Viewing and Editing an Existing User
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''
 To view/edit a specific user, please click on the row of the name you want to edit:
 
 .. image:: /_static/images/users/users-view-btn.webp
@@ -2519,17 +2469,17 @@ A notification will appear on the screen for a few seconds on successful deletio
 
 .. _groups-management:
 
-^^^^^^
+""""""
 Groups
-^^^^^^
+""""""
 A group consists of a collection of users. The ``Groups`` management console lets the administrator manage groups,
 members belonging to a group, etc.
 
 For information on managing users and groups, see :ref:`user-group-management`.
 
-"""""""""""
+~~~~~~~~~~~
 Description
-"""""""""""
+~~~~~~~~~~~
 The ``Groups`` management console allows you to administrate the groups created on CrafterCMS. You can add, remove,
 edit, and manage the users that will belong to the groups and you can also add and remove groups.
 
@@ -2567,9 +2517,9 @@ To find this section through studio follow the next instructions:
 
 |
 
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 Searching Groups
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 You can search for groups by their properties (Display Name, Description), simply enter your search term
 into the search bar by clicking on the magnifying glass icon on the top right and it will show results
 that match your search term.
@@ -2583,9 +2533,9 @@ that match your search term.
 
 .. _create-a-new-group:
 
-""""""""""""""""""
+~~~~~~~~~~~~~~~~~~
 Adding a New Group
-""""""""""""""""""
+~~~~~~~~~~~~~~~~~~
 To create a new group, you just need to click on the "**Create Group**" button,
 
 .. image:: /_static/images/groups/groups-new-btn.webp
@@ -2617,9 +2567,9 @@ A notification of successful group creation will pop up for a few seconds after 
 
 .. _deleting-a-group:
 
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 Removing a Group
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 To remove a group, select a group from the list which will open a dialog for the selected group.
 Click on the trash can icon on the top right of the group dialog.
 
@@ -2642,9 +2592,9 @@ On successful removal of the group, a notification will appear for a few seconds
 
 |
 
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Editing an Existing Group
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 To edit a group, select a group from the list which will open a dialog for the selected group.
 In this dialog, you can modify the group description, just click on the **Save** button after making your
 changes. You can also add/remove users from the group. Finally, you'll see a list of all users that belong to the group. To return to the list of all groups in your project, click on the **X** at the top right of the dialog.
@@ -2658,9 +2608,9 @@ changes. You can also add/remove users from the group. Finally, you'll see a lis
 
 .. _adding-users-to-a-group:
 
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 Adding Users to a Group
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 To add a user to a group, click on the group you want to add users. In the ``Users`` column found on the left
 in the ``Edit Group Members`` section, you can click on the search box then type in the name, username or
 email of the user you want to add to the group.
@@ -2692,9 +2642,9 @@ It will then give you a notification that the user(s) has been successfully adde
 
 |
 
-"""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Removing Users from a Group
-"""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 To remove a user from a group, click on the group you want to remove users. In the ``Members`` column
 found on the right in the ``Edit Group Members`` section, you can click on the search box then type in
 the name, username or email of the user you want to remove from the group. Select the user you want to
@@ -2720,9 +2670,9 @@ It will then give you a notification that the user(s) has been successfully dele
 
 .. _main-menu-tool-cluster:
 
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 Cluster |enterpriseOnly|
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 ``Cluster`` lets the administrator manage Studio clusters. See :ref:`studio-clustering` for more information on how to setup clustering and available actions from ``Cluster`` from the Main Menu
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-cluster.webp
@@ -2734,15 +2684,15 @@ Cluster |enterpriseOnly|
 
 .. _nav-menu-audit:
 
-^^^^^
+"""""
 Audit
-^^^^^
+"""""
 Audit logs displays the date, time, user and action performed to content in all the projects available as well as actions
 performed in Studio such as logins/logouts, user removal, group addition, etc.
 
-"""""""""""
+~~~~~~~~~~~
 Description
-"""""""""""
+~~~~~~~~~~~
 CrafterCMS tracks the date, time, user and action performed to content and the system through an audit log.
 
 To view the audit logs, from the top right of your browser, click on the ``Navigation Menu`` icon, then click on ``Audit``.
@@ -2756,9 +2706,9 @@ To view the audit logs, from the top right of your browser, click on the ``Navig
 
 You can filter the logs displayed based on the following:
 
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Audit Logs Project Filter
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 ``Project`` filters the log by project . Clicking on ``Project`` gives you a list of all the projects in Studio and the option to see system logs or logs for all the projects.
 
 .. image:: /_static/images/system-admin/main-menu/audit-site-filter.webp
@@ -2768,9 +2718,9 @@ Audit Logs Project Filter
 
 |
 
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 Audit Logs User Filter
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 ``Username`` filters the log by username. Clicking on ``Username`` gives you a list of all the users in Studio and the option to see logs for all users.
 
 .. image:: /_static/images/system-admin/main-menu/audit-user-filter.webp
@@ -2780,9 +2730,9 @@ Audit Logs User Filter
 
 |
 
-""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Audit Logs Operations Filter
-""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``Operation`` filters the log by operations. Clicking on ``Operation`` gives you a list of all operations logged.
 
 .. image:: /_static/images/system-admin/main-menu/audit-operations-filter.webp
@@ -2792,9 +2742,9 @@ Audit Logs Operations Filter
 
 |
 
-"""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Audit Logs Timestamp Filter
-"""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``Timestamp`` filters the log based on date range
 
 .. image:: /_static/images/system-admin/main-menu/audit-options-filter.webp
@@ -2806,9 +2756,9 @@ Audit Logs Timestamp Filter
 
 .. _main-menu-tool-logging-levels:
 
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 Logging Levels
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 There are 6 log levels defined in CrafterCMS. These levels determine what messages will be logged and displayed in the **Logging Console**.
 
 .. image:: /_static/images/site-admin/logs-logging-levels.webp
@@ -2822,9 +2772,9 @@ For more information on logging levels, see :ref:`override-logging-levels`
 
 .. _main-menu-tool-log-console:
 
-^^^^^^^^^^^
+~~~~~~~~~~~
 Log Console
-^^^^^^^^^^^
+~~~~~~~~~~~
 The ``Log Console`` allows the user to view messages depending on what log levels and what Java packages have been set for tracking.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-log-console.webp
@@ -2840,9 +2790,9 @@ The ``Log Console`` here in the Main Menu is similar to a project ``Log Console`
 
 .. _nav-menu-global-config:
 
-^^^^^^^^^^^^^
+"""""""""""""
 Global Config
-^^^^^^^^^^^^^
+"""""""""""""
 CrafterCMS allows the user to edit the system settings for Studio without access to the physical server through ``Global Config`` under the ``Navigation Menu`` in Studio.
 This global configuration file overrides the core configuration of Crafter Studio, ``studio-config.yaml``,  found in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio``, and the Studio configuration override file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` in your Authoring installation (for more information on this file, see :ref:`studio-config`.
 
@@ -2862,9 +2812,9 @@ To find out more on what you can configure from the Global Config, see :ref:`stu
 
 .. _main-menu-tool-encryption-tool:
 
-^^^^^^^^^^^^^^^
+"""""""""""""""
 Encryption Tool
-^^^^^^^^^^^^^^^
+"""""""""""""""
 The ``Encryption Tool`` allows the user to encrypt sensitive data such as access keys and passwords, that shouldn't be publicly available to anyone but developers and administrators
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool.webp
@@ -2878,9 +2828,9 @@ For more information on how to use the encryption tool, see :ref:`studio-encrypt
 
 .. _nav-menu-token-management:
 
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 Token Management
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 The ``Token Management Tool`` allows the user to manage access tokens used to make API requests on behalf of the user and
 create tokens for accessing a project/site in Preview.
 
@@ -2891,9 +2841,9 @@ create tokens for accessing a project/site in Preview.
 
 |
 
-"""""""""
+~~~~~~~~~
 API Token
-"""""""""
+~~~~~~~~~
 API tokens authorize the user to access APIs as a particular user with a particular role.
 
 To create a new API access token, click on ``Token Management`` from the Main Menu, then click on the ``API Token`` button.
@@ -2962,9 +2912,9 @@ For an example of how to use the generated API token, see :ref:`crafter-cli`.
 
 .. _preview-token:
 
-"""""""""""""
+~~~~~~~~~~~~~
 Preview Token
-"""""""""""""
+~~~~~~~~~~~~~
 .. version_tag::
 	:label: Since
 	:version: 4.2.0
@@ -3018,9 +2968,9 @@ Here's an example of using the token with Curl, where ``{Generated-Preview-Token
 
 The dialog above that shows the preview token generated also shows other examples on how to use the preview token.
 
-^^^^^^^
+"""""""
 Account
-^^^^^^^
+"""""""
 The ``Account Tool`` allows the user to change the user's personal Crafter Studio settings like language or to change the user's password or to clear your Studio UI preferences from the browser cache.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-account.webp
@@ -3036,9 +2986,9 @@ For more information on how to use the Account tool, see :ref:`account-managemen
 
 .. _user-group-management:
 
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 User/Group Management
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 This section describes managing user accounts and groups.
 
 A user is anybody who uses CrafterCMS. A user account holds a user name and password. A group consists of a collection of users. Users can be assigned to a group for a project/site. Through the groups, roles are assigned to users to certain areas of the site (access rights/ permissions). Each role represents a set of activities allowed. Groups are  used to simplify management as changes made to the rights of the group applies to all the users belonging to that group.
@@ -3048,9 +2998,9 @@ When you work in Crafter Studio, you need to login as a user. Your CrafterCMS ad
 
 .. _roles-and-permissions:
 
-^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""
 Roles and Permissions
-^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""
 To access CrafterCMS, a user must be allowed access rights to certain areas of the project (access rights/ permissions). For example, if a user wants to create, edit or submit content, the user needs to have those specific permissions. Here, we see that the user requires multiple permissions. For simplicity, permissions are grouped together into **roles**. A role is a set of allowed actions/activities. An **author** role, for example, has access to create, edit and submit content.
 
 To define permissions for users, they need to be a member of a group. A group is a collection of users with a role assigned. Groups are used to simplify management as changes made to the rights of the group applies to all the users belonging to that group. For our example above of a user that wants to create, edit or submit content, the user should be assigned to a group with the **author** role.
@@ -3072,18 +3022,18 @@ Permissions and roles can be setup for each project, and for the entire applicat
 
 See :ref:`groups-management` for more information on administrating groups.
 
-""""""""
+~~~~~~~~
 Projects
-""""""""
+~~~~~~~~
 To edit permissions for a project role, in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *Permission Mapping*. See :ref:`permission-mappings` for more information on permissions and the default permissions assigned to roles.
 
 To add/edit a role for a project, in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *Role Mapping*. See :ref:`project-role-mappings` for more information.
 
 The items for interaction/tools available from the **Sidebar** depending on the user role can be configured in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *User Interface Configuration*. See :ref:`user-interface-configuration` for more information.
 
-""""""
+~~~~~~
 Global
-""""""
+~~~~~~
 To add/edit a global role/group, see :ref:`global-role-mappings-config` for more information.
 
 To add/edit global permissions for a role, see :ref:`global-permission-mappings-config` for more information.
@@ -3092,9 +3042,9 @@ The items for interaction/tools available from the |mainMenu| *Main Menu* depend
 
 .. _putting-it-all-together:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Putting it all together - Users, Groups, Roles and Permissions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 In this section, we'll see how users, groups, roles and permissions work together in giving users access to
 certain folders in a project.
 
@@ -3107,9 +3057,9 @@ Enter *news* in the **Folder Name** field. We will be using the **news** folder 
 permissions to folders based on roles. Users assigned to the **newseditor** role will then have access to
 publish and add/edit content in the **news** folder.
 
-""""""""""""""""""
+~~~~~~~~~~~~~~~~~~
 Create a new group
-""""""""""""""""""
+~~~~~~~~~~~~~~~~~~
 Let's begin by creating a new group.
 
 #. To create a new group, click on |mainMenu| **Navigation Menu** from the top right, then click on **Groups**.
@@ -3129,9 +3079,9 @@ Below are the information used to create a new group:
 
 For more information on adding a new group to a project, please see :ref:`create-a-new-group`
 
-"""""""""""""""""
+~~~~~~~~~~~~~~~~~
 Create a new role
-"""""""""""""""""
+~~~~~~~~~~~~~~~~~
 We'll now create a new role for the new group we just created.
 
 #. To create a new role, click on |projectTools| from the **Sidebar**, then click on **Configuration**.
@@ -3169,18 +3119,18 @@ We'll now create a new role for the new group we just created.
 
 For more information about role mappings, please see: :ref:`project-role-mappings`
 
-""""""""""""""""""
+~~~~~~~~~~~~~~~~~~
 Adding permissions
-""""""""""""""""""
+~~~~~~~~~~~~~~~~~~
 #. To add permissions to the new role we just created, click on |projectTools| from the **Sidebar**, then click on **Configuration**.
 #. From the dropdown box, select **Permissions Mappings**
 #. Add in the permissions that you would like to give to the new role that we just created. For our example below, we are giving the role **newseditor** permission to publish from the dashboard and the following permissions for the **news** folder and **assets** folder:
 
-      - read
-      - write
-      - create content
-      - create folder
-      - publish
+   - read
+   - write
+   - create content
+   - create folder
+   - publish
 
    .. code-block:: xml
       :linenos:
@@ -3210,9 +3160,9 @@ Adding permissions
 
 For more information about permission mappings, please see: :ref:`permission-mappings`
 
-""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~
 Adding users to the role
-""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~
 We can now add users to the role by adding the users to the group mapped to the role. In the role mappings configuration file, we mapped the role **newseditor** to the group NewsEditor. To add users to the group NewsEditor,
 
 #. Click on |mainMenu| from the top right of Studio, then select **Groups** on the left hand side
@@ -3225,12 +3175,12 @@ Your new role with users and permissions assigned are now ready!
 
 .. _user-passwords:
 
-^^^^^^^^^^^^^^
+""""""""""""""
 User passwords
-^^^^^^^^^^^^^^
-""""""""""""""""""""""
+""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 Changing Your Password
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 Every user logged in to CrafterCMS can change their own password.
 
 #. To change your own password, click on the **Navigation Menu** |mainMenu| option at the top right of Studio,
@@ -3265,9 +3215,9 @@ Every user logged in to CrafterCMS can change their own password.
 
 After changing your password, you will be logged out of the system and will have to log back in using the new password you set before continuing your work in Studio.
 
-""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~
 Changing a User Password
-""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~
 The Crafter admin can change passwords for other users.
 
 #. To change a user's password, login as crafter admin in Studio.
@@ -3278,18 +3228,18 @@ The Crafter admin can change passwords for other users.
 
 For more information on editing a user, see :ref:`editing-a-user`
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''''
 Setting a User's Initial Password
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''''
 The Crafter admin must set an initial password when creating a new user. To create a new user, please see :ref:`creating-a-user`
 
 |hr|
 
 .. _create-project-with-link-to-remote-repo:
 
------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Project Creation with Remote Repositories
------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Crafter Studio supports project creation with remote repositories and provides two options:
 
 - Create project based on remote Git repository
@@ -3322,9 +3272,9 @@ Let's take a look at the fields where the remote repository details needs to be 
 
 .. _create-project-based-on-a-blueprint-then-add-a-remote-bare-git-repository:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Create project based on a blueprint then add a remote bare Git repository
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 To create a project based on a blueprint then add a remote bare git repository, click on **Create Project** from
 **Projects**, then select the blueprint you would like to use
 
@@ -3367,9 +3317,9 @@ Your project should now have a remote repository listed in the **Remote Reposito
 
 Remember that the remote repository needs to be a bare git repository, since we are pushing our newly created project to the remote repository. To push our newly create project to the remote repository, click on the ``Push`` button (button with the up arrow) next to the remote repository
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""
 Create project based on a remote Git repository
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""
 Creating a project based on a remote Git repository is basically exporting a project from one Studio and importing it into another one.
 
 To create a project based on remote Git repository, after clicking on **Create Project**, Click on **Remote Git Repository** in the create project screen
@@ -3434,9 +3384,9 @@ After a short while, your project will be imported.
 
 .. _duplicate-project:
 
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 Duplicating a Project
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 Crafter Studio supports creating a new project by duplicating an existing project.
 To duplicate a project, from ``Projects``, click on the ``Create Project`` button.
 
@@ -3467,11 +3417,6 @@ configuration updated if separate S3 buckets from the source project are require
 Clustering
 ----------
 Learn about clustering Crafter Studio in the :ref:`Crafter Studio Clustering Guide <studio-clustering>`.
-
-.. toctree::
-   :hidden:
-
-   /by-role/system-admin/performance-and-scaling/clustering
 
 |hr|
 
