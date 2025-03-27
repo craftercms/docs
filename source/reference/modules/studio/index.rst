@@ -70,7 +70,7 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure constraints for content being added to the project
     * - :ref:`Editable Mime Types <editable-mime-types>`
       - Configure the MIME-types that are editable directly in Crafter Studio
-    * - :ref:`Project/Site Configuration <studio-project-config>`
+    * - :ref:`Project/Site Configuration <project-configuration>`
       - Configure your project/site configuration
     * - :ref:`UI Configuration <user-interface-configuration>`
       - Configure the Studio UI
@@ -108,9 +108,9 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure the publishing blacklist
     * - :ref:`Configuration Files Maximum <configuration-files-maximum>`
       - Configure the maximum length of configuration content
-    * - :ref:`Content Type Editor Configuration <content-type-editor-config>`
+    * - :ref:`Content Type Editor Configuration <content-type-editor-configuration>`
       - Configure the content types
-    * - :ref:`Dependency Resolver Configuration <dependency-resolver-config>`
+    * - :ref:`Dependency Resolver Configuration <dependency-resolver-configuration>`
       - Configure the dependency resolver
     * - :ref:`Project Tools Configuration <project-tools-configuration>`
       - Configure the project tools
@@ -210,20 +210,561 @@ patterns need to be escaped with a ``\`` like:
 
 |hr|
 
+.. _blob-stores:
+
 """""""""""
 Blob Stores
 """""""""""
-Configure internally managed static asset stores to handle very large files using the Blob Stores configuration. To learn more, read the article :ref:`blob-stores`.
+Blob Stores allow you to host internally managed static asset stores to handle very large files. The Blob Stores configuration file allows you to configure stores for assets with the corresponding information required by the store being used.
+To modify the Blob Stores configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Blob Stores** from the list.
+
+.. image:: /_static/images/site-admin/config-open-blob-stores.webp
+    :alt: Configurations - Open Blob Stores Configuration
+    :width: 45%
+    :align: center
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample Blob Stores Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "blob-stores-config.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-blob-stores-config.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/blob-stores-config.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+
+where:
+
+- The environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file. See :ref:`here <env-var-serverless-deployments>` for more information on environment variables used in serverless deployments
+
+Remember to encrypt your credentials. For more information on how to manage/encode your secrets such as AWS credentials,
+please see :ref:`managing-secrets`
+
+For better security and control, we recommend setting an AWS profile via the ``crafter-setenv.sh`` file instead of
+configuring the encrypted credentials in the blob stores configuration file. This allows you to have an IAM user
+per developer, which is a better approach than a single user whose credentials are included (encrypted) in the
+configuration file. In this way, if you need to rotate or remove the credentials of a single user, the access of
+other users won't be affected.
+
+To set an AWS profile, using your favorite editor, open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and add the following:
+
+.. code-block:: bash
+
+   export AWS_PROFILE=YOUR_AWS_PROFILE
+
+|
+
+*where* ``YOUR_AWS_PROFILE`` is the AWS profile you wish to use for the blob store. See :ref:`here <aws-profile-configuration>`
+for more information on configuring AWS profiles.
+
+When using an AWS profile, you can now remove the ``<credentials />`` section in your blob stores configuration file.
+
+Remember to restart your CrafterCMS install for the changes you made to take effect.
+
+~~~~~~~~~~~~~~~~~~~~~~~
+Using AWS Service Roles
+~~~~~~~~~~~~~~~~~~~~~~~
+CrafterCMS supports AWS access without using access/secret keys, by setting AWS service roles on your machine
+
+Simply follow the instructions here for attaching an IAM role to your instance:
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role
+
+Remember to remove the ``<credentials />`` section in your blob stores configuration file.
+
+.. _publishing-assets-from-blob-stores:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Publishing Assets from the Blob Stores
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CrafterCMS supports managing assets in external storage through workflow and publishing mechanics.
+This allows uploading assets to an external storage for preview, that can then be published to either a live or a staging
+(depending on if staging is setup for your Crafter install) external storage, thus making the external assets available
+to delivery only after the assets have been published to the live external storage.
+
+The external storage could be in the cloud, such as AWS S3 or some other storage solution that is outside of where CrafterCMS is installed.
+
+''''''''''''''''''''''''''''''''
+Configuring the External Storage
+''''''''''''''''''''''''''''''''
+First we'll need to setup the external storage to be used by CrafterCMS.
+To setup an external storage for assets, open the **Sidebar**, then click on |projectTools| -> *Configurations*. Select ``Blob Stores`` from the dropdown and fill in the required information.
+
+.. code-block:: xml
+
+   <blobStore>
+     <id/>
+     <type/>
+     <pattern/>
+     <mappings>
+       <mapping>
+         <publishingTarget/>
+         <storeTarget/>
+         <prefix/>
+       </mapping>
+     </mappings>
+     <configuration/>
+   </blobStore>
+
+|
+
+To see more information on the Blob Stores configuration, see :ref:`above <blob-stores>`
+
+After setting up the ``Blob Stores`` configuration, you may now use the external storage for uploading using the various upload methods provided by Crafter Studio, and publishing to live or staging if it's setup.
+
+'''''''
+Example
+'''''''
+Let's take a look at an example of setting up an external storage for preview, staging and live and then uploading and finally publishing assets to the external storage we setup. In the example, we will use AWS S3 as the external storage and the Website Editorial blueprint in Crafter Studio to create our project.
+
+**Prerequisites:**
+
+#. Project created using the Website Editorial blueprint.
+#. AWS S3 bucket/s. A single bucket can be used as long as all the ``publishingTarget`` uses a unique ``prefix``, or a separate bucket can be created for each ``publishingTarget``, or a combination of both.
+
+   For our example, we will be using two buckets. One for authoring and another for delivery. The following buckets were setup in AWS S3: *my-authoring-bucket* for authoring (used by publishing target ``preview`` with the prefix *sandbox* and publishing target ``staging`` with the prefix *staging*) and *my-deli-bucket* for delivery.
+
+**Here are the steps:**
+
+#. Enable staging (optional)
+#. Setup the blob store
+#. Upload files
+#. Publish the files to staging (if setup)
+#. Publish the files into live
+
+Let's begin:
+
+1. Enable Staging (optional)
+''''''''''''''''''''''''''''
+This step is optional but for our example, we wanted to be able to publish to staging, so in this step, we will first enable staging. In your Studio, click on |projectTools| -> *Configuration* -> *Project Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
+
+  .. code-block:: xml
+     :emphasize-lines: 2
+
+     <published-repository>
+         <enable-staging-environment>true</enable-staging-environment>
+         <staging-environment>staging</staging-environment>
+         <live-environment>live</live-environment>
+     </published-repository>
+
+  |
+
+For more information on staging, see :ref:`staging-env`
+
+
+2. Setup Blob Store
+'''''''''''''''''''
+In your Studio, click on |projectTools| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 buckets for the preview, staging and live.
+
+   .. code-block:: xml
+      :caption: *CRAFTER_HOME/data/repos/sites/sandbox/SITENAME/sandbox/config/studio/blob-stores-config.xml*
+      :linenos:
+      :emphasize-lines: 5,9,14,19,24,25,27
+
+      <blobStores>
+        <blobStore>
+          <id>s3-default</id>
+          <type>s3BlobStore</type>
+          <pattern>/static-assets/item/.*</pattern>
+          <mappings>
+            <mapping>
+              <publishingTarget>preview</publishingTarget>
+              <storeTarget>my-authoring-bucket</storeTarget>
+              <prefix>sandbox</prefix>
+            </mapping>
+            <mapping>
+              <publishingTarget>staging</publishingTarget>
+              <storeTarget>my-authoring-bucket</storeTarget>
+              <prefix>staging</prefix>
+            </mapping>
+            <mapping>
+              <publishingTarget>live</publishingTarget>
+              <storeTarget>my-delivery-bucket</storeTarget>
+            </mapping>
+          </mappings>
+          <configuration>
+            <credentials>
+              <accessKey>xxxxxxxxx</accessKey>
+              <secretKey>xxxxxxxxx</secretKey>
+            </credentials>
+            <region>us-west-1</region>
+            <pathStyleAccess>true</pathStyleAccess>
+          </configuration>
+        </blobStore>
+      </blobStores>
+
+   |
+
+**where the highlighted items above refers to:**
+
+* **pattern:** the regex to match file paths (the path in Studio that when used will access the external storage, ``/static-assets/item/.*`` for our example above)
+* **mappings.mapping.storeTarget:** the name of the storeTarget inside the store (AWS S3 buckets, ``my-authoring-bucket`` and ``my-deli-bucket`` for our example above)
+* **configuration:** configuration specific for the store type (For AWS S3, it requires credentials to access the buckets)
+
+Remember to encrypt your credentials. For more information on how to manage/encode your secrets such as AWS credentials,
+please see :ref:`managing-secrets`
+
+To see more information on the Blob Stores configuration, see :ref:`above <blob-stores>`
+
+
+3. Upload files
+'''''''''''''''
+There are various ways to upload files in Crafter Studio. Here's a few ways we can upload to the external storage:
+
+#. Upload through a picker with corresponding data source setup in a content type
+#. Upload using the ``Bulk Upload`` or ``Upload`` right-click option
+
+Let's take a closer look:
+
+#. One way of uploading files is through the use of a picker (image, video, item selector) with its corresponding data source with the ``Repository Path`` property set to the ``pattern`` we defined in the ``Blob Stores`` configuration file.
+
+   For our example, open the **Page - Article** content type by opening the **Sidebar**, then click on |projectTools| -> *Content Types*, then choose the template name ``Page - Article``.
+
+   In the **Page - Article** content type, notice that the ``Repository Path`` property of the ``Upload Image`` data source is set to: ``/static-assets/item/images/{yyyy}/{mm}/{dd}/``, which falls into the file path pattern ``/static-assets/item/.*`` we setup in the ``Blob Stores`` configuration file
+
+   .. image:: /_static/images/site-admin/ext-storage/setup-datasource.webp
+      :align: center
+      :alt: Setup data source to use the file path pattern in Blob Stores
+      :width: 95%
+
+   Let's change the image used in one of the articles in the project.
+
+   From the **Sidebar**, navigate to ``/articles/2016/6`` then right click on ``Coffee is Good for Your Health`` then select ``Edit``.
+
+   Scroll down to the ``Content`` section, then click on the ``Replace`` button next to the **Image** field, then select ``Upload Images``. Select the file you want to upload. In our example, the file ``new1.png`` will be uploaded to ``static-assets/item/images/2020/03/27``.
+
+   .. image:: /_static/images/site-admin/ext-storage/upload-image-with-picker.webp
+      :align: center
+      :alt: Upload image using an image picker
+      :width: 95%
+
+   |
+
+   After uploading the file, we should see it in the AWS S3 bucket for authoring ``my-authoring-bucket`` in the sandbox:
+
+   .. image:: /_static/images/site-admin/ext-storage/picker-uploaded-img-in-bucket.webp
+      :align: center
+      :alt: Image uploaded using the image picker is now in the S3 bucket
+      :width: 95%
+
+#. Next we'll try uploading using the ``Upload`` right-click option.
+
+   Open the **Sidebar** and navigate to ``static-assets/item``. Create a folder named ``docs`` under ``item``. Right click on the newly created folder and select ``Upload`` to upload a single file, or ``Bulk Upload`` to upload multiple files
+
+   In the example below, two files were uploaded to the ``docs`` folder.
+
+   .. image:: /_static/images/site-admin/ext-storage/uploaded-files-to-s3.webp
+       :align: center
+       :alt: "s3" folder created under "static-assets"
+       :width: 35%
+
+   |
+
+   When you upload files to the ``docs`` folder, the files get uploaded to the ``sandbox`` of the ``my-authoring-bucket`` previously setup.
+
+   .. image:: /_static/images/site-admin/ext-storage/s3-preview-bucket.webp
+       :align: center
+       :alt: Files in preview in "s3" my-authoring-bucket
+       :width: 85%
+
+|
+
+
+5. Publish the files to staging
+'''''''''''''''''''''''''''''''
+The next step in our example is to publish the files to ``staging``. To publish a file to ``staging``, navigate to the file in the ``Sidebar`` then right click on the file, and select ``Publish`` or open the ``Dashboard`` and select the file/s you want to publish to ``staging`` in the ``Unpublished Work`` widget and click on ``Publish`` from the context nav.
+
+The ``Publish`` dialog will come up. Remember to select ``staging`` for the ``Publishing Target``
+
+.. image:: /_static/images/site-admin/ext-storage/publish-to-staging.webp
+    :align: center
+    :alt: Publish file to staging in Studio
+    :width: 65%
+
+|
+
+When the file/s are published to ``staging``, the files get published to the ``staging`` branch of the ``my-authoring-bucket`` in s3.
+
+.. image:: /_static/images/site-admin/ext-storage/s3-staging-bucket.webp
+    :align: center
+    :alt: Published files to staging in "s3" my-authoring-bucket
+    :width: 85%
+
+|
+
+6. Publish the files to delivery
+''''''''''''''''''''''''''''''''
+Finally, we'll publish the file/s to ``live``. To publish a file to ``live``, navigate to the file in the ``Sidebar`` then right click on the file, and select ``Publish`` or open the ``Dashboard`` and select the file/s you want to publish to ``live`` in the ``Unpublished Work`` widget and click on ``Approve & Publish`` from the context nav.
+
+The ``Publish`` dialog will come up. Remember to select ``live`` for the ``Publishing Target``
+
+.. image:: /_static/images/site-admin/ext-storage/publish-to-live.webp
+    :align: center
+    :alt: Publish file to live in Studio
+    :width: 65%
+
+|
+
+When the file/s are published to ``live``, the file/s get published to the ``my-deli-bucket`` in s3.
+
+.. image:: /_static/images/site-admin/ext-storage/s3-delivery-bucket.webp
+    :align: center
+    :alt: Published file/s to live in "s3" my-delivery-bucket
+    :width: 85%
+
+|
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Setting up Staging for Existing Projects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+When adding the ``staging`` publishing target to an established project that uses external storage, Studio does not clone the assets in external storage for ``live`` into ``staging``. Performing a bulk publish to ``staging`` also does not work at this time. This is because Studio does not publish to ``staging``, assets in a LIVE, UNEDITED state.
+
+To sync the external storage for ``staging`` with ``live``, you must copy the assets in the ``live`` external storage to the ``staging`` external storage.
+
+Let's take a look at an example of adding ``staging`` to an existing project.
+
+**Prerequisites:**
+
+#. Project created using the Website Editorial blueprint with external storage setup for ``live`` and assets already published to ``live`` (See example above for setting up external storage for a project. Remember to not setup ``staging`` as we will be doing it in this example)
+#. AWS S3 bucket to be used by the ``staging`` publishing target. For our example, we will be using the bucket ``my-staging`` setup in AWS S3.
+
+**Here are the steps:**
+
+#. Enable staging in Studio
+#. Setup the blob store in Studio
+#. Copy assets in live to staging in external storage
+
+Let's begin:
+
+#. **Enable staging**
+
+   In your Studio, click on |projectTools| -> *Configuration* -> *Project Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
+
+     .. code-block:: xml
+        :emphasize-lines: 2
+
+        <published-repository>
+          <enable-staging-environment>true</enable-staging-environment>
+          <staging-environment>staging</staging-environment>
+          <live-environment>live</live-environment>
+        </published-repository>
+
+     |
+
+   For more information on staging, see :ref:`staging-env`
+
+2. **Setup Blob Store**
+
+   Setup ``staging`` in the Blob Store by adding the following to your ``Blob Stores`` configuration. In your Studio, click on |projectTools| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 bucket for staging.
+
+     .. code-block:: xml
+
+        <mapping>
+          <publishingTarget>staging</publishingTarget>
+          <storeTarget>my-staging</storeTarget>
+        </mapping>
+
+     |
+
+
+   To see more information on the Blob Stores configuration, see :ref:`above <blob-stores>`
+
+#. **Copy assets in** ``live`` **to** ``staging`` **in external storage**
+
+   In your AWS console, copy the contents of your delivery bucket
+
+   .. image:: /_static/images/site-admin/ext-storage/s3-copy-delivery.webp
+      :align: center
+      :alt: Copy assets in the delivery bucket
+      :width: 85%
+
+   |
+
+   Paste the copied content into the staging bucket ``my-staging``
+
+   .. image:: /_static/images/site-admin/ext-storage/s3-staging-bucket-content.webp
+      :align: center
+      :alt: Assets copied from delivery bucket to staging bucket
+      :width: 85%
+
+   |
+
+   The ``live`` and ``staging`` external storage is now synced.
 
 |hr|
+
+.. _project-policy-configuration:
 
 """"""""""""""
 Project Policy
 """"""""""""""
-The project policy configuration file allows the administrator to configure conditions for adding content to the project.
+.. version_tag::
+    :label: Since
+    :version: 4.0.0
+
+TThe project policy configuration file allows the administrator to configure constraints for content being added to the project
 (via uploads), such as filename constraints, minimum/maximum size of files, permitted content types or file types (MIME-types), etc.
 
-Learn more about project policy in the article :ref:`project-policy-configuration`.
+*Note that the project policy does not apply to content created directly on disk via the Git or APIs.*
+
+CrafterCMS supports the following project policies:
+
+- Filename allowed patterns and automatic renaming rules
+- File size limits
+- MIME-type limits
+- Content-type limits
+
+.. note::
+    .. version_tag::
+        :label: Since
+        :version: 4.1.4
+
+    The default policy for filenames and automatic renaming rules is to lowercase everything except items under: ``/scripts``, ``/templates``, and ``/static-assets/app``
+
+
+To modify the project policy configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration** and
+select **Project Policy Configuration** from the list.
+
+.. image:: /_static/images/site-admin/config-open-project-policy-config.webp
+   :alt: Configurations - Open Project Policy Configuration
+   :width: 45 %
+   :align: center
+
+.. note::
+
+   The Project Policy Configuration file (site-policy-config.xml) is not overridden by environment.
+   Learn more about Studio multi-environment support in :ref:`studio-multi-environment-support`.
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample Project Policy Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample project policy configuration</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-site-policy-config.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/site-policy-config.xml*
+    :language: xml
+    :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+.. raw:: html
+
+   <hr>
+
+~~~~~~~~
+Examples
+~~~~~~~~
+Let's take a look at some example project policy configurations.
+
+''''''''''
+Mime Types
+''''''''''
+The example configuration below (as seen in the default project policy configuration) disallows svg image
+file uploads:
+
+.. code-block:: xml
+   :emphasize-lines: 7-9
+
+      <!-- disable svg files -->
+      <statement>
+        <target-path-pattern>/.*</target-path-pattern>
+        <permitted>
+          <mime-types>*/*</mime-types>
+        </permitted>
+        <denied>
+          <mime-types>image/svg+xml</mime-types>
+        </denied>
+      </statement>
+
+Whenever a user tries to upload an svg image, the user will see a message on the screen informing them that
+it doesn't comply with the project policies and can’t be uploaded like below:
+
+.. image:: /_static/images/site-admin/project-policy-cannot-upload.webp
+   :alt: Project Policy Configuration - Do not allow svg file uploads
+   :width: 55 %
+   :align: center
+
+|
+
+''''''''''''''''
+File Size Limits
+''''''''''''''''
+Limiting file size of uploads is supported. Simply add ``<minimum-file-size/>`` and/or <maximum-file-size/>
+under ``<permitted>`` where the minimum and maximum file sizes are in bytes
+
+The example configuration below limits image uploads to less than 1MB in folder ``/static-assets/images/``.
+
+.. code-block:: xml
+
+   <!-- Example: only allow images of less than 1 MB -->
+   <statement>
+     <target-path-pattern>/static-assets/images/.*</target-path-pattern>
+     <permitted>
+       <maximum-file-size>1000000</maximum-file-size>
+       <mime-types>image/*</mime-types>
+     </permitted>
+   </statement>
+
+Whenever a user tries to upload an image that is larger than 1 MB in the ``/static-assets/images/`` folder, the user
+will see a message on the screen informing them that it doesn’t comply with project policies and can’t be uploaded like below:
+
+.. image:: /_static/images/site-admin/project-policy-img-too-big.webp
+   :alt: Project Policy Configuration - Do not allow images greater than 1 MB
+   :width: 55 %
+   :align: center
+
+|
+
+''''''''''''''''''''
+Transform File Names
+''''''''''''''''''''
+CrafterCMS supports transforming filenames of uploaded files and convert the filenames to lower case or upper case.
+Simply set **caseTransform** to either ``lowercase`` or ``uppercase`` in ``target-regex`` to convert to your required case.
+
+The example configuration below (as seen in the default project policy configuration) converts
+parenthesis ( ``(`` and ``)`` ) and spaces in filenames to a dash ( ``-`` )
+and lower cases all the letters in filenames for files uploaded to the ``/static-assets/`` folder .
+
+.. code-block:: xml
+
+   <statement>
+     <target-path-pattern>/static-assets/.*</target-path-pattern>
+     <permitted>
+       <path>
+         <source-regex>[\(\)\s]</source-regex>
+         <target-regex caseTransform="lowercase">-</target-regex>
+       </path>
+     </permitted>
+   </statement>
+
+Whenever a user uploads a file with upper case letters or spaces and parenthesis in the filename, in the
+``/static-assets/`` folder, the user will see a message on the screen informing them that it doesn’t comply
+with project policies and will be asked if they would like to continue upload with the suggested name like below:
+
+.. image:: /_static/images/site-admin/project-policy-convert-to-lower-case.webp
+   :alt: Project Policy Configuration - Convert filenames to lower case
+   :width: 55 %
+   :align: center
 
 
 |hr|
@@ -254,13 +795,206 @@ These can be updated as needed by overriding the property in one of the override
 
 |hr|
 
-.. _studio-project-config:
+.. _project-configuration:
 
 """"""""""""""""""""""""""
 Project/Site Configuration
 """"""""""""""""""""""""""
-Crafter Studio allows to configure many aspects of a project/site. Learn more about project/site configuration in the article :ref:`project-configuration`.
+Crafter Studio allows to configure many aspects of a project/site.
+The project configuration file contains the primary configuration for Crafter Studio's behavior. Each project has
+its own project configuration file that controls its behavior independently of other projects.
 
+To modify the project configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration**
+and select **Project Configuration** from the list.
+
+.. image:: /_static/images/site-admin/config-open-project-config.webp
+    :alt: Configurations - Open Project Configuration
+    :width: 45%
+    :align: center
+
+|
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample Project Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample Project Configuration</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-site-config.xml
+     :language: xml
+     :linenos:
+
+
+.. raw:: html
+
+   </details>
+
+|
+
+~~~~~~~~~~~~~~~~
+Enabling Staging
+~~~~~~~~~~~~~~~~
+The ``staging`` publishing target is an intermediate publishing target where the project can be fully exercised.
+To enable the ``staging`` publishing target, set the following to ``true``:
+
+.. code-block:: xml
+
+   <published-repository>
+     <enable-staging-environment>false</enable-staging-environment>
+   </published-repository>
+
+|
+
+See :ref:`staging-env` for more information on how to setup the ``staging`` publishing target
+
+~~~~~~~~~~~~~~~~~~~~~~~
+Escaping Content Fields
+~~~~~~~~~~~~~~~~~~~~~~~
+To add/remove escaped content fields, modify the following:
+
+.. code-block:: xml
+
+   <!--
+   Specifies the regular expression patterns to match content type field
+   names that require CDATA escaping.
+   -->
+   <cdata-escaped-field-patterns>
+     <pattern>(_html|_t|_s|_smv|mvs)$</pattern>
+     <pattern>internal-name</pattern>
+   </cdata-escaped-field-patterns>
+
+|
+
+For more information on escaping content fields, see the notes under :ref:`Variable Names and Search Indexing <variable-names-search-indexing>`
+
+~~~~~~~~~~~~~~~~~~~
+Publishing Comments
+~~~~~~~~~~~~~~~~~~~
+To make comments mandatory for different publishing methods, simply set to ``true`` any applicable methods the
+site administrators want to require comments when publishing.
+
+.. code-block:: xml
+
+   <publishing>
+     <comments>
+       <!-- Global setting would apply to all -->
+       <required>false</required>
+       <!-- Additional (also optional) specific overrides -->
+       <!-- <delete-required/> -->
+       <!-- <bulk-publish-required/> -->
+       <!-- <publish-by-commit-required/> -->
+       <!-- <publish-required/> -->
+     </comments>
+   </publishing>
+
+|
+
+See :ref:`publishing-and-status` for more information on the different publishing methods available from ``Project Tools``
+
+.. _project-config-require-peer-review:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Requiring Peer Review for Publishing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. version_tag::
+    :label: Since
+    :version: 4.0.0
+
+A publisher review workflow option is available to make approval of a publish request mandatory for users with
+publish permission. To enable the publisher review workflow option, set ``requirePeerReview`` to ``true``.
+
+.. code-block:: xml
+
+   <!--
+        This workflow parameter disallows users with _Publish_ permission from publishing their own work.
+        Work performed by a user must be approved by a different reviewer before it can be published.
+        Set the value to true to enable this feature.
+   -->
+   <workflow>
+     <publisher>
+       <requirePeerReview>true</requirePeerReview>
+     </publisher>
+   </workflow>
+
+.. TODO: Is this the best place for content monitoring or project admin? It's now in both to some extent with project admin having the full article and this links to it.
+
+~~~~~~~~~~~~~~~~~~
+Content Monitoring
+~~~~~~~~~~~~~~~~~~
+Content monitoring allows you to configure watches and notifications on your project. To add content monitors, add the following:
+
+.. code-block:: xml
+
+   <contentMonitoring>
+     <monitor>
+       <name>Content Expiring Tomorrow</name>
+       <query>expired_dt:[now+1d/d TO now+2d/d]</query>
+       <paths>
+         <path>
+           <name>All Site</name>
+           <pattern>/site/.*</pattern>
+           <emailTemplate>contentExpiringSoon</emailTemplate>
+           <emails>admin@example.com</emails>
+           <locale>en</locale>
+         </path>
+       </paths>
+     </monitor>
+   </contentMonitoring>
+
+|
+
+See :ref:`content-monitoring` for more information on configuring content monitoring.
+
+.. _project-config-protected-folders:
+
+~~~~~~~~~~~~~~~~~
+Protected Folders
+~~~~~~~~~~~~~~~~~
+The protected folders settings allows you to configure paths that can't be deleted, renamed or moved in addition to
+the following paths that are protected by default:
+
+- ``/site/website/index.xml``
+- ``/site/components``
+- ``/site/taxonomy``
+- ``/static-assets``
+- ``/templates``
+- ``/scripts``
+- ``/sources``
+
+To add protected folder/s in your project, add your folder path/s like below:
+
+.. code-block:: xml
+
+   <protected-folders-patterns>
+     <pattern>/YOUR/FOLDER/PATH/PATTERN</pattern>
+     <pattern>/MORE/FOLDER/PATH/PATTERN</pattern>
+     ...
+   </protected-folders-patterns>
+
+|
+
+Remember to replace ``/YOUR/FOLDER/PATH/PATTERN`` and ``/MORE/FOLDER/PATH/PATTERN`` with the actual folder path
+pattern/s that you would like to be protected.
+
+To see an example of configured protected folders, create a project using the ``Video Center`` blueprint from the
+Public Marketplace in the ``Create Project`` dialog then open the
+``Sidebar`` -> |projectTools| -> ``Configuration`` -> ``Project Configuration``. Scroll down to the
+``<protected-folders-patterns>`` tag:
+
+.. code-block:: xml
+
+   <!--
+   Prevent deleting, renaming or cutting root folders of sidebar
+   -->
+   <protected-folders-patterns>
+     <pattern>/site/streams</pattern>
+     <pattern>/site/videos</pattern>
+     <pattern>/site/origins</pattern>
+   </protected-folders-patterns>
 
 |hr|
 
@@ -598,14 +1332,315 @@ capabilities:
 
 |
 
+.. _notifications-configuration:
 
 """"""""""""""""""""""""""""""""""""
 Workflow Notifications Configuration
 """"""""""""""""""""""""""""""""""""
-Crafter Studio provides a simple workflow option that includes submission, review, approve or reject, and
-publish immediately or publish on a schedule.
+Crafter Studio provides a simple workflow option that includes submission, review/reject and approve and
+publish immediate / publish on a schedule options. This document covers the configuration of the HTML notifications
+that can be sent at each point in the workflow. To setup your email server, please see :ref:`studio-smtp-config`
 
-Learn more about Crafter Studio's workflow in the article :ref:`notifications-configuration`.
+~~~~~~
+Basics
+~~~~~~
+All configuration for the notification system is done by a site admin (on a per site basis) in the following configuration file:
+
+'''''
+Where
+'''''
+.. code-block:: xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notifications.xml*
+
+    <notificationConfig>
+        ...
+    </notificationConfig>
+
+This can be modified/accessed through Crafter Studio, by going to the **Sidebar**, then clicking on |projectTools| -> **Configuration** -> **Notification Configuration**
+
+.. image:: /_static/images/site-admin/notification-config-open.webp
+    :align: center
+    :width: 50%
+    :alt: Configuration - Open Notification Configuration
+
+'''''''''
+Templates
+'''''''''
+Templates are used for the email messages sent for workflow states in the configuration file mentioned above. The template used is Freemarker (also known as FTL).
+Variables are referenced in the template like `${VARIABLE}` or as part of a Freemarker statement like `<#list files as file>...</#list>`
+Dates can be formatted like so: `scheduleDate?string["MMMMM dd, yyyy 'at' hh:mm a"]}`
+
+A full guide to FTL can be found here: http://freemarker.org/
+
+~~~~~~~~~~~~~~~~~~
+Template Variables
+~~~~~~~~~~~~~~~~~~
+Here are some template variables used in CrafterCMS:
+
+''''''''''''''''
+Common Variables
+''''''''''''''''
++-----------------------------+-----------------------------------------------------------+
+|| Variable Name              || Description                                              |
++=============================+===========================================================+
+|| date                       || Date for submission                                      |
++-----------------------------+-----------------------------------------------------------+
+|| files                      || Collection of file objects in submission.                |
+||                            || Usually iterated over `<#list files as file>...</#list>` |
++-----------------------------+-----------------------------------------------------------+
+|| `file`.name                || File name including full repository path                 |
++-----------------------------+-----------------------------------------------------------+
+|| `file`.internalName        || File internal CMS label                                  |
++-----------------------------+-----------------------------------------------------------+
+|| submitter                  || Content submitter object, has sub properties             |
++-----------------------------+-----------------------------------------------------------+
+|| submitter.firstName        || First name                                               |
++-----------------------------+-----------------------------------------------------------+
+|| submitter.lastName         || Last Name                                                |
++-----------------------------+-----------------------------------------------------------+
+|| submitter.username         || Authoring User Name / ID                                 |
++-----------------------------+-----------------------------------------------------------+
+|| submissionComments         || String containing submission comments                    |
++-----------------------------+-----------------------------------------------------------+
+|| scheduleDate               || Date content is scheduled for                            |
++-----------------------------+-----------------------------------------------------------+
+|| siteName                   || ID of the site                                           |
++-----------------------------+-----------------------------------------------------------+
+|| liveUrl                    || Live Server URL base                                     |
++-----------------------------+-----------------------------------------------------------+
+|| authoringUrl               || Authoring Server URL base                                |
++-----------------------------+-----------------------------------------------------------+
+
+
+''''''''''''''''''''''''''''''''
+Deployment Error Notice Variable
+''''''''''''''''''''''''''''''''
++-----------------------------+---------------------------------------------------------+
+|| Variable Name              || Description                                            |
++=============================+=========================================================+
+|| deploymentError            || Error message on deployment. Currently must be         |
+||                            || addressed as ${deploymentError.toString()}             |
++-----------------------------+---------------------------------------------------------+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configure Who Gets Notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configure who gets notifications by entering the email addresses of the people you want to send notifications to, in between the tags ``<deploymentFailureNotification>`` and/or ``<approverEmails>``
+
+.. code-block:: xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notifications.xml*
+    :linenos:
+
+    <notificationConfig>
+      <lang name="en">
+        <deploymentFailureNotification>
+          <email>EMAIL ADDRESS TO NOTIFY ON FAILURE</email>
+        </deploymentFailureNotification>
+        <approverEmails>
+          <email>EMAIL ADDRESS TO NOTIFY SUBMISSION</email>
+          <email>EMAIL ADDRESS TO NOTIFY SUBMISSION</email>
+        </approverEmails>
+
+            ...
+      </lang>
+    </notificationConfig>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configure Studio Workflow Dialog Messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Below is a sample of Studio workflow dialog messages defined in our notifications configuration file.
+
+.. code-block:: xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notifications.xml*
+    :linenos:
+
+        <notificationConfig>
+          <lang name="en">
+            ...
+
+            <generalMessages>
+              <content key="scheduling-policy"><![CDATA[The {siteName} processes all publishing requests each business day, between 4PM EST and 6PM EST, unless a specific date/time is requested.<br/><br/>All requests received after 4PM EST may not be processed until the next business day.<br/><br/>If you have any questions about this policy or need a publish request processed immediately, please email the administrator.]]>
+              </content>
+            </generalMessages>
+
+            <cannedMessages>
+              <content  title="Not Approved" key="NotApproved"><![CDATA[Please make the following revisions and resubmit.]]></content>
+              <content  title="Typos" key="Typos"><![CDATA[This content has multiple misspellings and/or grammatical errors. Please correct and re-submit.]]></content>
+              <content  title="Incorrect Branding" key="IB"><![CDATA[This content uses incorrect or outdated terms, images, and/or colors. Please correct and re-submit.]]></content>
+              <content  title="Broken Links" key="BrokenLinks"><![CDATA[This content has non-working links that may be due to incomplete and/or misspelled URLs. Any links directing users to websites without the Acme.com primary navigation, or directing users to a document must open in a new browser window. Please correct and re-submit.]]></content>
+              <content  title="Needs Section Owner's Approval" key="NSOA"><![CDATA[This content needs the approval of its section&apos;s owner to insure there is no negative impact on other pages/areas of section, etc. Once you have their approval please email the Web Marketing Operations Team and re-submit this publish request.]]></content>
+            </cannedMessages>
+
+            <completeMessages>
+              <content key="submitToGoLive"><![CDATA[An email notification has been sent to the team. Your content will be reviewed and (if approved) pushed live between 4PM EST and 6PM EST of the business day that the request was received. If this request is sent after business hours, it will be reviewed and (if approved) pushed live as soon as possible, the next business day.<br/><br/>If you need to make further revisions to this item, please re-submit this publish request after making them.<br/><br/>If this request needs immediate attention, please email the administrator.]]></content>
+              <content key="delete">
+                Item(s) has been pushed for delete. It will be deleted shortly.
+              </content>
+              <content key="go-live">Item(s) has been pushed live. It will be visible on the live site shortly.</content>
+              <content key="schedule-to-go-live">The scheduled item(s) will go live on: ${date}.&lt;br/&gt;&lt;br/&gt;</content>
+              <content key="reject">Rejection has been sent. Item(s) have NOT been pushed live and have returned to draft state.</content>
+              <content key="delete">Item(s) has been pushed for delete. It will be deleted shortly.</content>
+              <content key="schedule-to-go-live">Item(s) have been scheduled to go live.</content>
+            </completeMessages>
+
+              ...
+          </lang>
+        </notificationConfig>
+
+~~~~~~~~~~~~~~~~~~~
+Configure Templates
+~~~~~~~~~~~~~~~~~~~
+Below is an example of a configured email messages for each point in the workflow, found in between the tag <emailTemplates> in the notifications configuration file.
+
+.. code-block:: xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notifications.xml*
+    :linenos:
+
+    <notificationConfig>
+      <lang name="en">
+        ...
+        <emailTemplates>
+          <emailTemplate key="deploymentError">
+            <subject>Deployment error on site ${siteName}</subject>
+            <body><![CDATA[
+                    <html>
+                      <head>
+                        <meta charset="utf-8"/>
+                      </head>
+                      <body style=" font-size: 12pt;">
+                        <p>
+                          The following content was unable to deploy:
+                          <ul>
+                            <#list files as file>
+                              <li>${file.internalName!file.name}</li>
+                            </#list>
+                          </ul>
+                          Error:<br/>
+                          ${deploymentError.toString()}
+                          <br/><br/>
+                          <a href="${liveUrl}" >
+                            <img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" />
+                          </a>
+                        </p>
+                      </body>
+                    </html>
+            ]]></body>
+          </emailTemplate>
+
+          <emailTemplate key="contentApproval">
+            <subject><![CDATA[<#if scheduleDate??>Content Scheduled <#else>Content Approved</#if>]]></subject>
+            <!-- Timezone can/is being overwritten in the following template -->
+            <body><![CDATA[
+                     <#setting time_zone='EST'>
+                     <html>
+                       <head>
+                         <meta charset="utf-8"/>
+                       </head>
+                       <body style=" font-size: 12pt;">
+                         <p>
+                           <#if scheduleDate??>
+                             The following content has been scheduled for publishing on ${scheduleDate?string["MMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
+                           <#else>
+                             The following content has been reviewed and approved by ${approver.firstName!approver.username} ${approver.lastName!""}:
+                           </#if>
+                           <ul>
+                             <#list files as file>
+                               <#if file.page>
+                                 <a href="${liveUrl}/${file.browserUri!""}">
+                               </#if>
+                               <li>${file.internalName!file.name}</li>
+                                 <#if file.page>
+                                   </a>
+                                 </#if>
+                             </#list>
+                           </ul><br/>
+                           <#if scheduleDate??>
+                             <a href="${liveUrl}">Click Here to View Your Published Content</a>
+                             <br/>
+                           </#if>
+                           <a href="${authoringUrl}/site-dashboard" >
+                             <img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" />
+                           </a>
+                         </p>
+                       </body>
+                     </html>
+                     ]]></body>
+          </emailTemplate>
+
+          <emailTemplate key="submitToApproval">
+            <subject>Content Review</subject>
+            <body><![CDATA[
+                     <#setting time_zone='EST'>
+                     <html>
+                       <head>
+                         <meta charset="utf-8"/>
+                       </head>
+                       <body style=" font-size: 12pt">
+                         <p>
+                           ${submitter.firstName!submitter.username} ${submitter.lastName} has submitted items for your review:
+                           <ul>
+                             <#list files as file>
+                               <#if file.page>
+                                 <a href="${authoringUrl}/preview/#/?page=${file.browserUri!""}&site=${siteName}">
+                               </#if>
+                               <li>${file.internalName!file.name}</li>
+                               <#if file.page>
+   	                             </a>
+                               </#if>
+                             </#list>
+                           </ul>
+                           <#if submissionComments?has_content>
+                             Comments:<br/>
+                             ${submissionComments!""}
+                             <br/>
+                           </#if><br/>
+                           <a href="${previewUrl}/site-dashboard">Click Here to View Content Waiting for Approval</a>
+                           <br/><br/>
+                           <a href="${liveUrl}" >
+                             <img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" />
+                           </a>
+                         </p>
+                       </body>
+                     </html>
+                     ]]></body>
+          </emailTemplate>
+
+          <emailTemplate key="contentRejected">
+            <subject>Content Requires Revision</subject>
+            <body><![CDATA[
+   			         <#setting time_zone='EST'>
+                     <html>
+                       <head>
+                         <meta charset="utf-8"/>
+                       </head>
+                       <body style=" font-size: 12pt;">
+                         <p>
+                           The following content has been reviewed and requires some revision before it can be approved:
+                           <ul>
+                             <#list files as file>
+                               <#if file.page>
+                                 <a href="${authoringUrl}/preview/#/?page=${file.browserUri!""}&site=${siteName}">
+                               </#if>
+                               <li>${file.internalName!file.name}</li>
+                               <#if file.page>
+                                 </a>
+                               </#if>
+                             </#list>
+                           </ul>
+                           Reason:<br/>
+                           ${rejectionReason!""}
+                           <br/><br/>
+                           <a href="${authoringUrl}/site-dashboard" >
+                             <img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" />
+                           </a>
+                         </p>
+                       </body>
+                     </html>
+                     ]]></body>
+          </emailTemplate>
+        </emailTemplates>
+      </lang>
+    </notificationConfig>
 
 |hr|
 
@@ -821,7 +1856,80 @@ To set the maximum size of a project/site configuration file for the `write_conf
 """"""""""""""""""""""""""
 Content Type Editor Config
 """"""""""""""""""""""""""
-The Content Type Editor Config configuration file defines what tools are available in the Content Type Editor. Learn more about Content Type Editor configuration in the article :ref:`content-type-editor-config`.
+The Content Type Editor Config configuration file defines what tools are available in the Content Type Editor.
+This configuration is unique in that a configuration file exists in the following location of
+each project: ``SITENAME/config/studio/administration/site-config-tools.xml``
+
+.. image:: /_static/images/site-admin/configuration-tool-config.webp
+    :align: center
+    :width: 25%
+    :alt: Content Type Editor Config
+
+|
+
+To modify the Content Type Editor Config configuration, click on |projectTools| from the bottom of the *Sidebar*,
+then click on **Configuration** and select **Content Type Editor Config** from the list.
+
+.. image:: /_static/images/site-admin/config-open-content-type-editor-config.webp
+    :alt: Configurations - Open Content Type Editor Config Tools
+    :width: 65 %
+    :align: center
+
+|
+
+~~~~~~
+Sample
+~~~~~~
+Here is a sample Content Type Editor Config configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample Content Type Editor Config configuration file</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-site-config-tools.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/administration/site-config-tools.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+~~~~~~~~~~~
+Description
+~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''''''
+Content Type Specific tool configuration
+''''''''''''''''''''''''''''''''''''''''
+
+    ``/config/tools/tool/controls``
+        List of available content type form controls
+    ``/config/tools/tool/controls/control``
+        Control name (JavaScript control module name)
+    ``/config/tools/tool/datasources``
+        List of available datasources for content type form controls
+    ``/config/tools/tool/datasources/datasource``
+        Datasource name (JavaScript datasource module name)
+    ``/config/tools/tool/objectTypes``
+        List of available object types
+    ``/config/tools/tool/objectTypes/type``
+        Type configuration (Page or Component) - name, label, properties
+
+''''''''''''''''''''''''''''''''''''''''''''
+List of available content type form controls
+''''''''''''''''''''''''''''''''''''''''''''
+
+.. include:: /includes/form-controls/list-form-controls.rst
+
+'''''''''''''''''''''''''''''''''''''''''''
+List of available content type data sources
+'''''''''''''''''''''''''''''''''''''''''''
+
+.. include:: /includes/form-sources/list-form-sources.rst
 
 |hr|
 
@@ -830,38 +1938,226 @@ The Content Type Editor Config configuration file defines what tools are availab
 """""""""""""""""""""""""""""""""
 Dependency Resolver Configuration
 """""""""""""""""""""""""""""""""
-Crafter Studio extracts and tracks dependencies between content items to assist authors with publishing, workflow, and core content operations like copy and delete. Learn more about configuring the dependency resolver in the article :ref:`dependency-resolver-config`.
+Crafter Studio extracts and tracks dependencies between content items to assist authors with publishing, workflow and
+core content operations like copy and delete. This file configures what file paths Crafter considers a dependency and
+how they should be extracted.
+
+To modify the Dependency Resolver configuration, click on |projectTools| from the bottom of the Sidebar, then click on **Configuration** and select **Dependency Resolver** from the list.
+
+.. image:: /_static/images/site-admin/config-open-dependency-config.webp
+    :alt: Configurations - Open Dependency Resolver Configuration
+    :width: 45%
+    :align: center
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample Dependency Resolver Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample dependency resolver configuration</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-resolver-config.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/dependency/resolver-config.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Soft Dependencies Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. version_tag::
+    :label: Since
+    :version: 4.2.0
+
+Soft dependencies are referenced items that are in a modified state and are optional. When calculating soft
+dependencies, CrafterCMS follows dependencies recursively. To set the depth of soft dependencies calculated, configure
+the maximum recursion iterations property ``studio.db.maxRecursiveIterations`` with a value between 0 and 20.
+The default value is 10.
+
+.. code-block:: yaml
+    :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+    # DB max_recursive_iterations value. This property should be set to a value between 0 and 20 (hard limit)
+    studio.db.maxRecursiveIterations: 10
+
 
 |hr|
 
-.. _project-tools-config:
+.. _project-tools-configuration:
 
 """""""""""""""""""""""""""
 Project Tools Configuration
 """""""""""""""""""""""""""
-Studio's Project Tools can be configured to list/de-list configuration files. Learn more about this in the article :ref:`project-tools-configuration`.
+Studio's Project Tools can be configured to list/de-list configuration files.
+The ``Configurations`` configuration file allows you to specify which items can be accessed from the list in
+**Project Tools** -> **Configuration**.
+
+To find this configuration XML through Studio follow the next instructions:
+
+#. Click on |projectTools| located in the Sidebar.
+#. Choose **Configuration** from the menu.
+#. Select **Configurations**.
+
+.. image:: /_static/images/site-admin/configuration.webp
+    :alt: Configurations - Open Configurations
+    :width: 45%
+    :align: center
+
+|
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample ``config-list.xml`` file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "config-list.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-config-list.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/administration/config-list.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+~~~~~~~~~~~
+Description
+~~~~~~~~~~~
+List of available configuration tags
+
++-----------------+-------------------------------------------------------------------------------+
+|| Tag            || Description                                                                  |
++=================+===============================================================================+
+|| files          || This tag contains each  file.                                                |
++-----------------+-------------------------------------------------------------------------------+
+|| file           || This tag contains the configuration of each file.                            |
++-----------------+-------------------------------------------------------------------------------+
+|| module         || CrafterCMS module                                                            |
++-----------------+-------------------------------------------------------------------------------+
+|| path           || Path where the system will find the specific xml file                        |
++-----------------+-------------------------------------------------------------------------------+
+|| title          || This tag refers to file title. It will be shown in the configuration         |
+||                || list on the left side of the page. See #1 in the image above                 |
++-----------------+-------------------------------------------------------------------------------+
+|| description    || This tag refers to file description. It will be shown to explain the file    |
+||                || functionality. See #2 in the image above                                     |
++-----------------+-------------------------------------------------------------------------------+
+|| samplePath     || Path where the system will find an example of the specific xml.              |
++-----------------+-------------------------------------------------------------------------------+
+
+~~~~~~~~~~~
+Sample File
+~~~~~~~~~~~
+You can click on the **View Sample** button to see a configuration file example.
+
+.. image:: /_static/images/site-admin/basic-configuration-sample.webp
+    :align: center
+    :alt: Basic Configuration Sample
 
 |hr|
 
-.. _asset-processing-config:
+.. _asset-processing-configuration:
 
 """"""""""""""""""""""""""""""
 Asset Processing Configuration
 """"""""""""""""""""""""""""""
-Asset processing allows you to define transformations for static assets (currently only images), through a series of processor pipelines that are executed when the assets are uploaded to Studio. Learn more about asset processing configuration in the article :ref:`asset-processing-configuration`.
+Asset processing allows you to define transformations for static assets (currently only images), through a series of processor pipelines that are executed when the assets are uploaded to Studio.
+
+To modify the Asset Processing configuration, click on |projectTools| from the bottom of the Sidebar, then click on **Configuration** and select **Asset Processing** from the dropdown list.
+
+.. image:: /_static/images/site-admin/config-open-asset-proc-config.webp
+    :alt: Configurations - Open Asset Processing Configuration
+    :width: 65 %
+    :align: center
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample Asset Processing Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "asset-processing-config.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-asset-processing-config.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/asset-processing/asset-processing-config.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+For more details on asset processing, see :ref:`asset-processing`
+
 
 |hr|
 
-.. _aws-profile-config:
+.. _aws-profile-configuration:
 
 """"""""""""""""""""""""""
 AWS Profiles Configuration
 """"""""""""""""""""""""""
-CrafterCMS has many integrations with AWS. Learn how to configure AWS Profiles in the article :ref:`aws-profile-configuration`.
+The AWS Profiles configuration file allows you to configure 0 or more AWS profiles with the information required by AWS services.
+To modify the AWS Profiles configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **AWS Profiles** from the dropdown list.
+
+.. image:: /_static/images/site-admin/config-open-aws-config.webp
+    :alt: Configurations - Open AWS Profiles Configuration
+    :width: 65 %
+    :align: center
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample AWS Profiles Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "aws.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-aws.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/aws/aws.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+
+For more information on Amazon S3, please see: https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html
+
+For more information on the AWS elastic transcoder, please see: https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/introduction.html
+
+For more information on the AWS mediaconvert, please see: https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
 
 |hr|
 
-.. _box-profile-config:
+.. _box-profile-configuration:
 
 """"""""""""""""""""""""""
 Box Profiles Configuration
@@ -870,16 +2166,96 @@ Box Profiles Configuration
 	:label: Until
 	:version: 4.2
 
-CrafterCMS integrates with Box. Learn how to configure Box Profiles in the article :ref:`box-profile-configuration`.
+CrafterCMS integrates with Box. The Box Profiles configuration file allows you to configure Box profiles with the
+information required by Box services. To modify the Box Profiles configuration, click on |projectTools| from the bottom
+of the *Sidebar*, then click on **Configuration** and select **Box Profiles** from the list.
+
+.. image:: /_static/images/site-admin/config-open-box-config.webp
+    :alt: Configurations - Open Box Profiles Configuration
+    :width: 45%
+    :align: center
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample Box Profiles Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "box.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.1.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-box.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/box/box.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+~~~~~~~~~~~~~~~~~
+Box Configuration
+~~~~~~~~~~~~~~~~~
+To obtain the clientId, clientSecret, enterpriseId, publicKeyId, privateKey and privateKeyPassword
+you need to use a Box Developer Account to create a new App and configure it to use OAuth 2.0 with
+JWT.
+
+For more details you can follow the `official documentation <https://developer.box.com/docs/authentication-with-jwt>`_.
+
+.. note::
+  If you are using a JRE older than ``1.8.0_151`` you need to install the JCE Unlimited Strength
+  Jurisdiction Policy Files. For newer versions you only need to enable the unlimited strength setting.
+
+For more information on how to manage/encode your secrets such as your Box credentials, please see :ref:`managing-secrets`
+
+'''''''
+Example
+'''''''
+For an example of configuring Studio to use Box, see :ref:`box-asset-access`
 
 |hr|
 
-.. _webdav-profiles-config:
+.. _webdav-profiles-configuration:
 
 """""""""""""""""""""""""""""
 WebDAV Profiles Configuration
 """""""""""""""""""""""""""""
-CrafterCMS integrates with WebDAV. Learn how to configure WebDAV Profiles in the article :ref:`webdav-profiles-configuration`.
+CrafterCMS integrates with WebDAV. The WebDAV Profiles configuration file allows you to configure profiles with the
+information required to connect to a WebDAV server. To modify the WebDAV Profiles configuration, click on |projectTools|
+from the bottom of the *Sidebar*, then click on **Configuration** and select **WebDAV Profiles** from the dropdown list.
+
+.. image:: /_static/images/site-admin/config-open-webdav-config.webp
+    :alt: Configurations - Open WebDAV Profiles Configuration
+    :width: 45%
+    :align: center
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample WebDAV Profiles Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample WebDAV profiles configuration</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-webdav.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/webdav/webdav.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+.. note:: Preemptive authentication may be needed if network timeouts are happening during uploads. To enable preemptive authentication, simply set the option ``preemptiveAuth`` to ``true`` in the configuration file.
 
 |hr|
 

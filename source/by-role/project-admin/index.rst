@@ -110,13 +110,13 @@ Here are the settings that can be configured through Crafter Studio:
       - - :ref:`Role Mappings Configuration <project-role-mappings>`
     * - Content Type Editor Config (``config/studio/administration/site-config-tools.xml``)
       - Defines controls, data sources, and content types for content authoring
-      - - :ref:`Content Type Editor Configuration <content-type-editor-config>`
+      - - :ref:`Content Type Editor Configuration <content-type-editor-configuration>`
     * - Configurations (``config/studio/administration/config-list.xml``)
       - Configure this list of configuration files
       - - :ref:`Configuring the Project Tools Configuration List <project-tools-configuration>`
     * - Dependency Resolver Configuration (``config/studio/dependency/resolver-config.xml``)
       - Configures the dependency resolver
-      - - :ref:`dependency-resolver-config`
+      - - :ref:`dependency-resolver-configuration`
     * - AWS Profiles (``config/studio/aws/aws.xml``)
       - Configures the project's AWS profiles
       - - :ref:`aws-profile-configuration`
@@ -320,7 +320,7 @@ Images
 ~~~~~~
 CrafterCMS supports automatic image processing that allows you to upload just one image that gets converted to the
 different sizes or formats required by your project for various display sizes.
-See :ref:`here <asset-processing-config>` for more information
+See :ref:`here <asset-processing-configuration>` for more information
 
 ~~~~~~~~~~~~~~~~~~~
 Video (transcoding)
