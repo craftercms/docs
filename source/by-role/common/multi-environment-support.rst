@@ -8,10 +8,6 @@
 =========================
 Multi-environment Support
 =========================
-.. contents::
-    :local:
-    :depth: 1
-
 ----------------------------------
 What is Multi-environment Support?
 ----------------------------------

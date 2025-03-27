@@ -31,7 +31,7 @@ Once the backup is done, start up the Replica. This doesn't result in any downti
 In some instances, you may want to backup all the nodes (Primary and Replicas) in case restoration of all nodes
 is necessary. In this case, you will need to shutdown the cluster first to perform the backup of all the nodes.
 
-.. WARNING::
+.. warning::
 
    Performing a backup while CrafterCMS is running is technically possible, but the resulting backup may not be viable.
 
@@ -94,7 +94,7 @@ Enter ``yes`` if you want to proceed with the restore, otherwise, enter ``no``.
 
 If you're restoring the authoring environment, Studio will be started by the restore process. If you're restoring the delivery environment, you will need to start the delivery environment after the restore process is done.
 
-   .. important::
+.. important::
       **When restoring the authoring environment, to avoid conflicts, please make sure you do one of the following for the delivery environment:**
 
       * Restore the delivery environment by following the steps listed above

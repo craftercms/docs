@@ -140,9 +140,9 @@ Let's begin:
 
    .. note::
 
-     Not all users have the required permission ``manage_access_token`` to create access tokens.
-     If the ``Token Management`` tool is not shown in the global menu you will need to request the permission or an
-     access token from a system administrator.
+       Not all users have the required permission ``manage_access_token`` to create access tokens.
+       If the ``Token Management`` tool is not shown in the global menu you will need to request the permission or an
+       access token from a system administrator.
 
    |
 

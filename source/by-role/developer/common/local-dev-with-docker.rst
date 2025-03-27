@@ -11,21 +11,21 @@ Local Development with Docker
 =============================
 While local development is best done with a CrafterCMS bundle (:ref:`install-craftercms-via-binary-bundles`), sometimes Docker is the path of least resistance. To persist across Docker container restarts, you'll need to have the Authoring project/site repositories in your docker container available in the host filesystem, specially if you want to update the files from your IDE. To support access to your projects via a local IDE, we need to mount the Authoring project repositories directory to a host directory.
 
-   .. note::
-       Performance may be slow when using WSL2 (Windows Subsystem for Linux 2) and a mounted Authoring project repositories directory to a host directory.
+.. note::
+    Performance may be slow when using WSL2 (Windows Subsystem for Linux 2) and a mounted Authoring project repositories directory to a host directory.
 
 This section describes how to configure CrafterCMS on Docker for local development tools.
 
 Here are the steps:
 
-   .. NOTE::
-      This will only work on an Authoring install with no existing data. To clear the current data, run the same command you've been using to start up the environment, but replace the ``up`` part for ``down -v``, e.g.
+.. note::
+    This will only work on an Authoring install with no existing data. To clear the current data, run the same command you've been using to start up the environment, but replace the ``up`` part for ``down -v``, e.g.
 
-      .. code-block:: bash
+    .. code-block:: bash
 
-         docker-compose down -v
+        docker-compose down -v
 
-      |
+    |
 
 #. Check the project directory is a shared drive
 

@@ -8,10 +8,6 @@ Getting Started
 ===============
 This section lets you get started quickly on using CrafterCMS.
 
-.. contents::
-    :local:
-    :depth: 2
-
 --------------
 Run CrafterCMS
 --------------

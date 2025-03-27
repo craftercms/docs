@@ -10,9 +10,9 @@ Update Actions
 
 Updates the given action name with the Roles.
 
-.. WARNING::
-  Notice that this is not a partial update of roles, this will replace the current action
-  Roles with the new ones
+.. warning::
+    Notice that this is not a partial update of roles, this will replace the current action
+    Roles with the new ones
 
 --------------------
 Resource Information

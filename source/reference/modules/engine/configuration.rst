@@ -6,10 +6,6 @@
 ====================
 Engine Configuration
 ====================
-.. contents::
-    :local:
-    :depth: 1
-
 .. _setup-project-for-delivery:
 
 ---------------------------------
@@ -148,7 +144,7 @@ Aside from the ``crafterSite`` parameter, a header can be sent to specify the si
 ``X-Crafter-Site`` for changing the current site. This is very useful when Crafter Engine is used
 together with CDNs that can send headers, like AWS CloudFront
 
-.. WARNING::
+.. warning::
    Using this configuration you need to be sure that the first request specifies the site name by
    including the ``crafterSite`` parameter (or the ``X-Crafter-Site`` header) so that the site value
    is set in the cookie for the next requests.
@@ -910,18 +906,18 @@ To use a custom blacklist follow these steps:
 
 #. Copy the default blacklist file to your classpath, for example:
 
-    ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/groovy/blacklist``
+   ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/groovy/blacklist``
 
 #. Remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
 #. Update the :ref:`server-config.properties <engine-configuration-files>` configuration file to load the custom blacklist:
 
-    .. code-block:: none
+   .. code-block:: none
       :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
 
       # The location of the blacklist to use for all sites (this will have no effect if the sandbox is disabled)
       crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/extension/groovy/blacklist
 
-    .. note::
+   .. note::
       In CrafterCMS v3.1.14 and prior, the name of the property is ``crafter.engine.groovy.sandbox.blacklist``
 
 #. Restart CrafterCMS
@@ -1189,8 +1185,8 @@ Here's a sample Proxy Configuration file (click on the triangle on the left to e
 |
 |
 
-   .. note::
-      Deleting the config file (*proxy-config.xml*) from the repo completely disables the proxy feature.
+.. note::
+    Deleting the config file (*proxy-config.xml*) from the repo completely disables the proxy feature.
 
 .. _using-the-proxy-configuration:
 
