@@ -6,10 +6,6 @@
 ============
 Installation
 ============
-.. contents::
-    :local:
-    :depth: 2
-
 This section describes the various ways of installing CrafterCMS.
 
 First we'll take a look at the requirements and supported platform for installing and setting up CrafterCMS.
@@ -594,7 +590,7 @@ If Authoring is running with the Git HTTPS server container:
 
 * Run ``kubectl exec -n craftercms -it delivery-0 --container deployer -- gosu crafter ./bin/init-site.sh -u crafter -p crafter SITE_NAME https://authoring-svc-headless/repos/sites/SITE_NAME/published``
 
-   .. code-block:: bash
+  .. code-block:: bash
 
       ➜ kubectl exec -n craftercms -it delivery-0 --container deployer -- gosu crafter ./bin/init-site.sh -u crafter -p crafter mysite https://authoring-svc-headless/repos/sites/mysite/published
       Creating Deployer Target...
@@ -603,24 +599,24 @@ If Authoring is running with the Git HTTPS server container:
       SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
       Target created successfully
 
-   .. important::
+  .. important::
       The example configuration files include the Git HTTPS credentials in plain text, for simplicity. If setting up Delivery in production, make sure to properly create the credentials as Secrets.
 
 After a minute or two, the Deployer should have pulled the project content from Authoring (you can check it by getting the Delivery Deployer log: ``kubectl logs -n craftercms -c deployer delivery-0``).
 
 You can now access the project in Delivery, by forwarding a local port to port 8080 of the pod, with the ``kubectl port-forward`` command:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      kubectl port-forward -n craftercms pods/POD_NAME LOCAL_PORT:POD_PORT
+    kubectl port-forward -n craftercms pods/POD_NAME LOCAL_PORT:POD_PORT
 
 Here's an example of forwarding local port 9080 to the 8080 port of the ``delivery-0`` pod:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      ➜  kubectl port-forward -n craftercms pods/delivery-0 9080:8080
-      Forwarding from 127.0.0.1:9080 -> 8080
-      Forwarding from [::1]:9080 -> 8080
+    ➜  kubectl port-forward -n craftercms pods/delivery-0 9080:8080
+    Forwarding from 127.0.0.1:9080 -> 8080
+    Forwarding from [::1]:9080 -> 8080
 
 We can now view the project in Delivery from the pod by entering ``localhost:9080?crafterSite=mysite`` in your browser.
 
@@ -657,9 +653,9 @@ https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinit
 
 Remember to have the following ports open:
 
-  - ``8080`` for http
-  - ``3306`` for the DB
-  - ``5701`` for hazelcast
+- ``8080`` for http
+- ``3306`` for the DB
+- ``5701`` for hazelcast
 
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Setup Kubernetes Secrets
@@ -691,30 +687,30 @@ This should deploy all necessary resources in Kubernetes. You can monitor the st
 
 Each Pod has 4 containers, and initially only some of those containers will appear as ready:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      ➜  ~ kubectl get -n craftercms pods
-      NAME          READY   STATUS    RESTARTS   AGE
-      authoring-0   1/4     Running   0          21s
-      authoring-1   1/4     Running   0          21s
+    ➜  ~ kubectl get -n craftercms pods
+    NAME          READY   STATUS    RESTARTS   AGE
+    authoring-0   1/4     Running   0          21s
+    authoring-1   1/4     Running   0          21s
 
 When all containers show as ready (both Pods show ```READY 4/4``), then the cluster is fully initialized:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      ➜  ~ kubectl get -n craftercms pods
-      NAME          READY   STATUS    RESTARTS   AGE
-      authoring-0   4/4     Running   0          8m43s
-      authoring-1   4/4     Running   0          8m43s
+    ➜  ~ kubectl get -n craftercms pods
+    NAME          READY   STATUS    RESTARTS   AGE
+    authoring-0   4/4     Running   0          8m43s
+    authoring-1   4/4     Running   0          8m43s
 
 Another way to monitor the Pods is by tailing the Tomcat container log with the ``kubectl logs -n craftercms -f tomcat authoring-0`` command and look for the ``Server startup in [XXXXX] milliseconds`` message:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      [INFO] 2022-10-17T19:59:31,135 [main] [cluster.StudioPrimaryReplicaUtils] | This server is a replica node in a cluster, it will not perform any write                                                                                                                                                                                                                            │
-      17-Oct-2022 19:59:31.152 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/usr/local/tomcat/webapps/studio.war] has finished in [139,582] ms                                                                                                                                                                                  │
-      17-Oct-2022 19:59:31.157 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]                                                                                                                                                                                                                                                         │
-      17-Oct-2022 19:59:31.170 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [168732] milliseconds
+    [INFO] 2022-10-17T19:59:31,135 [main] [cluster.StudioPrimaryReplicaUtils] | This server is a replica node in a cluster, it will not perform any write                                                                                                                                                                                                                            │
+    17-Oct-2022 19:59:31.152 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/usr/local/tomcat/webapps/studio.war] has finished in [139,582] ms                                                                                                                                                                                  │
+    17-Oct-2022 19:59:31.157 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]                                                                                                                                                                                                                                                         │
+    17-Oct-2022 19:59:31.170 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [168732] milliseconds
 
 ~~~~~~~~~~~~~
 Access Studio
@@ -763,11 +759,11 @@ You can use the Delivery Simple example under https://github.com/craftercms/kube
 #. In the ``kubernetes-deployments/authoring/cluster/authoring-deployment.yaml`` file, uncomment the commented lines under the ``authoring-git-https-ingress`` configuration, and fill the value of ``alb.ingress.kubernetes.io/certificate-arn`` with the
    ARN of the certificate just created. After that, run ``kubectl apply -k .`` in the folder to apply the changes.
 
-.. code-block:: yaml
+   .. code-block:: yaml
 
-   # alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
-   # alb.ingress.kubernetes.io/ssl-redirect: '443'
-   # alb.ingress.kubernetes.io/certificate-arn: ''
+       # alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+       # alb.ingress.kubernetes.io/ssl-redirect: '443'
+       # alb.ingress.kubernetes.io/certificate-arn: ''
 
 #. Create a project in Authoring and make sure it's fully published
 #. Run ``kubectl apply -k .`` in ``kubernetes-deployments/delivery/simple``. Monitor the Pods coming up with ``kubectl get -n craftercms pods``. There should only be one Delivery Pod.
@@ -1305,17 +1301,17 @@ Extract the contents in the desired directory.
 
 |
 
-   The extracted files should look like this:
+The extracted files should look like this:
 
-   .. code-block:: none
+.. code-block:: none
 
-      {target-unzip-directory}
-      |--crafter/
-         |--LICENSE
-         |--README.txt
-         |--bin/
+    {target-unzip-directory}
+    |--crafter/
+       |--LICENSE
+       |--README.txt
+       |--bin/
 
-   |
+|
 
 You can then do the same for the delivery bundle.
 

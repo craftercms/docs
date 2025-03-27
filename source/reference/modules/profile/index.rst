@@ -11,10 +11,6 @@ Crafter Profile
     :width: 75%
     :align: center
 
-.. contents::
-    :local:
-    :depth: 3
-
 |
 
 Crafter Profile is a multi-tenant, platform independent, highly secure and scalable profile and attribute store. It allows web developers to easily add user login and user profile management to website applications. The module enables web developers to create secure login features and gather user profile information for use in targeting and personalization.
@@ -369,9 +365,9 @@ To view all existing Access Tokens you can click the ``List Access Tokens`` link
 
 From this page you can view the general information about the tokens and delete them if needed.
 
-.. WARNING::
-  When you delete an Access Token all applications that are configured to use it will be unable to
-  access the API immediately.
+.. warning::
+    When you delete an Access Token all applications that are configured to use it will be unable to
+    access the API immediately.
 
 ~~~~~~~~~~~~
 View Details
@@ -455,9 +451,9 @@ To view all existing tenants you can click the ``List Tenants`` link in the left
 
 In this page you can see the names of the tenants and delete them if needed.
 
-.. WARNING::
-  When you delete a tenant, all profiles created under it will be also deleted and there is no
-  way to recover the data.
+.. warning::
+    When you delete a tenant, all profiles created under it will be also deleted and there is no
+    way to recover the data.
 
 ~~~~~~~~~~~~~~~~~
 Create New Tenant
@@ -585,9 +581,9 @@ From the list page you can click the name of a tenant to open the update page:
 
 All fields can be changed except for the name.
 
-.. WARNING::
-  Changes for the roles and attribute definitions will only affect new profiles, existing ones
-  will not be updated automatically.
+.. warning::
+    Changes for the roles and attribute definitions will only affect new profiles, existing ones
+    will not be updated automatically.
 
 .. _profile-admin-profiles:
 

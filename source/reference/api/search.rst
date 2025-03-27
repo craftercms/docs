@@ -8,9 +8,6 @@
 ======
 Search
 ======
-.. contents::
-    :local:
-
 ----------
 Search API
 ----------

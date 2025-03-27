@@ -14,10 +14,6 @@ Crafter Deployer
    :width: 75%
    :align: center
 
-.. contents::
-    :local:
-    :depth: 2
-
 Crafter Deployer is the deployment agent for CrafterCMS.
 
 .. TODO: We need a bigger/better description of this.
@@ -1460,7 +1456,7 @@ A custom Groovy processor that can process published content.
 |scriptPath  ||checkmark||                               |The relative path of the script to execute                  |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
 
-  .. note::  The default path scripts are loaded from is ``$CRAFTER_HOME/bin/crafter-deployer/processors/scripts``
+.. note::  The default path scripts are loaded from is ``$CRAFTER_HOME/bin/crafter-deployer/processors/scripts``
 
 **Example**
 

@@ -8,10 +8,6 @@
 =====================
 Static Content Access
 =====================
-.. contents::
-    :local:
-    :depth: 2
-
 Static content comprises text and binary assets not part of the actual content, templates and scripts. These include:
 - Rich media assets, like images, videos, and documents (PDFs, Word, Excel, etc.)
 - CSS, JavaScript, and HTML files
@@ -699,17 +695,17 @@ For our example, we'll add the Video Transcoding from S3 datasource and a Transc
    |
 
 
-  .. note::
+.. note::
 
-     If you're using FreeMarker as your view layer, follow the steps below after adding the data source and control for uploading video to AWS for transcoding, to the content type:
+    If you're using FreeMarker as your view layer, follow the steps below after adding the data source and control for uploading video to AWS for transcoding, to the content type:
 
 
-     We need to add the FreeMarker code that will render the URLs. In the example below, we will display one of the transcoded videos.
+    We need to add the FreeMarker code that will render the URLs. In the example below, we will display one of the transcoded videos.
 
-     In the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lines after the
-     ``<section><header class="main" <@studio.iceAttr iceGroup="subject"/>>...</#section>`` lines:
+    In the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lines after the
+    ``<section><header class="main" <@studio.iceAttr iceGroup="subject"/>>...</#section>`` lines:
 
-     .. code-block:: html
+    .. code-block:: html
         :force:
         :linenos:
 
@@ -722,7 +718,7 @@ For our example, we'll add the Video Transcoding from S3 datasource and a Transc
            </video>
         </section>
 
-     |
+    |
 
 """""""""""""""""""""""""""""""""""""""""""
 Step 3: Upload a video and test the changes

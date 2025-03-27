@@ -6,10 +6,6 @@
 ======
 Author
 ======
-.. contents::
-    :local:
-    :depth: 1
-
 Authors create, edit and submit content for experiences. CrafterCMS's Crafter Studio provides the author an easy to use
 authoring system for the development and optimization of content-rich experiences.
 

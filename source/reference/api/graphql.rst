@@ -484,7 +484,7 @@ The following example shows how to customize the schema to integrate a service w
 
 #. Add the Groovy class for the service:
 
-    .. code-block:: groovy
+   .. code-block:: groovy
       :caption: ``/scripts/classes/org/craftercms/movies/omdb/OmdbService.groovy``
       :linenos:
 
@@ -524,10 +524,10 @@ The following example shows how to customize the schema to integrate a service w
 
       }
 
-    .. note::
-      Notice that the service is not performing any mapping or transformation to the values returned by the API. It
-      will only parse the response from JSON into Groovy map instances. This means that the GraphQL schema needs to
-      match the field names returned by the API.
+   .. note::
+       Notice that the service is not performing any mapping or transformation to the values returned by the API. It
+       will only parse the response from JSON into Groovy map instances. This means that the GraphQL schema needs to
+       match the field names returned by the API.
 
 #. Define the GraphQL schema to use:
 

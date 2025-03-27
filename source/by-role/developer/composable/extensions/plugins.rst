@@ -9,10 +9,6 @@
 =======
 Plugins
 =======
-.. contents::
-   :local:
-   :depth: 2
-
 -----------------
 What are plugins?
 -----------------
@@ -889,12 +885,12 @@ Install a plugin from the Crafter Marketplace
 Once a plugin is published to the Crafter Marketplace it can be installed using the Crafter Studio user interface
 or the REST API:
 
-   .. note::
-      To access the Plugin Management tool or use the install plugin REST API your user needs to have the following
-      permissions:
+.. note::
+    To access the Plugin Management tool or use the install plugin REST API your user needs to have the following
+    permissions:
 
-      - ``list_plugins``
-      - ``install_plugins``
+    - ``list_plugins``
+    - ``install_plugins``
 
 
 For more information on installing plugins from the Crafter Marketplace using Crafter Studio, see :ref:`plugin-management`

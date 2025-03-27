@@ -12,11 +12,6 @@ Crafter Studio
     :width: 75%
     :align: center
 
-
-.. contents::
-    :local:
-    :depth: 2
-
 |
 
 Crafter Studio provides all the content management services and integrates with repositories like Git, Alfresco and other CMIS based platforms to enable authoring, management, and publishing of all content.

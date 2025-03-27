@@ -8,10 +8,6 @@
 ===============
 Studio Security
 ===============
-.. contents::
-    :local:
-    :depth: 2
-
 --------------
 Authentication
 --------------

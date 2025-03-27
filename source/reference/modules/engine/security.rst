@@ -6,10 +6,6 @@
 ===============
 Engine Security
 ===============
-.. contents::
-    :local:
-    :depth: 2
-
 .. _engine-saml2-configuration:
 
 -------------------------------------------
@@ -20,11 +16,11 @@ Engine SAML2 Configuration |enterpriseOnly|
     :version: 4.0.3
 
 .. important::
-   *This document only applies to* **CrafterCMS version 4.0.3 and later** |br|
-   *Please see* :ref:`here <engine-saml2-configuration-up-to-4-0-2>` *for version 4.0.2 and earlier.*
+    *This document only applies to* **CrafterCMS version 4.0.3 and later** |br|
+    *Please see* :ref:`here <engine-saml2-configuration-up-to-4-0-2>` *for version 4.0.2 and earlier.*
 
 .. note:: This guide includes SAML2 specific configuration only, for a general guide see
-   :ref:`engine-project-security-guide`
+    :ref:`engine-project-security-guide`
 
 |
 
@@ -324,46 +320,46 @@ It is also possible to change the prefix and names for the headers:
 
 |
 
-   .. note::
-      For CrafterCMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` and can't be changed via project configuration
+.. note::
+    For CrafterCMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` and can't be changed via project configuration
 
 
 The default value of the token is ``my_secure_token``. Remember to replace the default value by setting
 ``security.headers.token`` to secure your installation. In the example below, the token is now set to
 ``CHANGE_MY_TOKEN_VALUE``
 
-   .. code-block:: xml
-      :caption: *Engine Project Configuration  - Change the default value of the token*
-      :emphasize-lines: 4
+.. code-block:: xml
+    :caption: *Engine Project Configuration  - Change the default value of the token*
+    :emphasize-lines: 4
 
-      <security>
-      ...
-        <headers>
-          <token>CHANGE_MY_TOKEN_VALUE</token>
-        </headers>
-      </security>
+    <security>
+    ...
+      <headers>
+        <token>CHANGE_MY_TOKEN_VALUE</token>
+      </headers>
+    </security>
 
 ^^^^^^^^^^^^^^^^^^^^^^
 Optional Role Mappings
 ^^^^^^^^^^^^^^^^^^^^^^
 To add optional role mappings, add the following inside the ``<headers>`` tag:
 
-   .. code-block:: xml
-      :caption: *Engine Project Configuration  - setup optional role mappings in header*
-      :emphasize-lines: 5-8
+.. code-block:: xml
+    :caption: *Engine Project Configuration  - setup optional role mappings in header*
+    :emphasize-lines: 5-8
 
-      <security>
-        <headers>
-          ...
-          <groups>
-            <group>
-              <name>APP_GROUP_NAME</name>    <!-- The name of the group in the header -->
-              <role>ROLE_name_of_role</role> <!-- The name of the role in the authentication object -->
-            </group>
-          </groups>
-          ...
-        </headers>
-      </security>
+    <security>
+      <headers>
+        ...
+        <groups>
+          <group>
+            <name>APP_GROUP_NAME</name>    <!-- The name of the group in the header -->
+            <role>ROLE_name_of_role</role> <!-- The name of the role in the authentication object -->
+          </group>
+        </groups>
+        ...
+      </headers>
+    </security>
 
 
 *where:*
@@ -378,24 +374,24 @@ Optional Attributes
 ^^^^^^^^^^^^^^^^^^^
 To add optional attributes, add the following inside the ``<headers>`` tag:
 
-   .. code-block:: xml
-      :caption: *Engine Project Configuration  - setup optional attributes in header*
-      :linenos:
-      :emphasize-lines: 5-10
+.. code-block:: xml
+    :caption: *Engine Project Configuration  - setup optional attributes in header*
+    :linenos:
+    :emphasize-lines: 5-10
 
-      <security>
-        <headers>
-          ...
-          <!-- Optional attribute mappings, allows to expose attributes from the external auth -->
-          <attributes>
-            <attribute>
-              <name>APP_ATTRIBUTE_NAME</name>   <!-- The name of the attribute in the header, excluding the prefix -->
-              <field>name</field>               <!-- The name of the attribute in the authentication object -->
-            </attribute>
-          </attributes>
-          ...
-        </headers>
-      </security>
+    <security>
+      <headers>
+        ...
+        <!-- Optional attribute mappings, allows to expose attributes from the external auth -->
+        <attributes>
+          <attribute>
+            <name>APP_ATTRIBUTE_NAME</name>   <!-- The name of the attribute in the header, excluding the prefix -->
+            <field>name</field>               <!-- The name of the attribute in the authentication object -->
+          </attribute>
+        </attributes>
+        ...
+      </headers>
+    </security>
 
 
 *where:*
@@ -426,25 +422,25 @@ You can also access the ``site-config.xml`` using your favorite editor under
 Add the following, where we are enabling Engine headers authentication and requiring authentication for all URLs in the
 project in addition to changing the default value for the token to ``my_updated_token``. :
 
-   .. code-block:: xml
-      :caption: *Engine Project Configuration  - Example enabling headers authentication*
+.. code-block:: xml
+    :caption: *Engine Project Configuration  - Example enabling headers authentication*
 
-      <?xml version="1.0" encoding="UTF-8"?>
-      <site>
-        <version>2</version>
-        <security>
-          <urlRestrictions>
-            <restriction>
-              <url>/**</url>
-              <expression>isAuthenticated()</expression>
-            </restriction>
-          </urlRestrictions>
-          <headers>
-            <standalone>true</standalone>
-            <token>my_updated_token</token>
-          </headers>
-        </security>
-      </site>
+    <?xml version="1.0" encoding="UTF-8"?>
+    <site>
+      <version>2</version>
+      <security>
+        <urlRestrictions>
+          <restriction>
+            <url>/**</url>
+            <expression>isAuthenticated()</expression>
+          </restriction>
+        </urlRestrictions>
+        <headers>
+          <standalone>true</standalone>
+          <token>my_updated_token</token>
+        </headers>
+      </security>
+    </site>
 
 Save your changes and remember to publish the file ``/config/engine/site-config.xml`` to see the Engine headers
 authentication in action in delivery.
@@ -490,45 +486,45 @@ Open the Engine ``site-config.xml`` file in Studio, by navigating from the ``Sid
 
 Add the following to setup the ``admin`` and ``user`` role, and the attribute ``APP_FULL_NAME``:
 
-   .. code-block:: xml
-      :caption: *Engine Project Configuration  - Example Engine headers authentication with optional role mappings and attribute*
-      :linenos:
-      :emphasize-lines: 5, 13-22, 24-29
+.. code-block:: xml
+    :caption: *Engine Project Configuration  - Example Engine headers authentication with optional role mappings and attribute*
+    :linenos:
+    :emphasize-lines: 5, 13-22, 24-29
 
-      <security>
-        <urlRestrictions>
-          <restriction>
-            <url>/articles/**</url>
-            <expression>hasAnyRole('user'\,'admin')</expression>
-          </restriction>
-        </urlRestrictions>
-        <headers>
-          <standalone>true</standalone>
-          <token>my_updated_token</token>
-          <!-- Optional role mappings, allows to map names from the external auth to simple role names to use in the page or url restrictions -->
-          <!-- The APP_ prefix is just an example, the values can be anything -->
-          <!-- The ROLE_ prefix is is required for the name of the role -->
-          <groups>
-            <group>
-              <name>APP_ADMIN</name> <!-- The name of the group in the header -->
-              <role>ROLE_admin</role>     <!-- The name of the role in the authentication object -->
-            </group>
-            <group>
-              <name>APP_USER</name> <!-- The name of the group in the header -->
-              <role>ROLE_user</role>     <!-- The name of the role in the authentication object -->
-            </group>
-          </groups>
-          <!-- Optional attribute mappings, allows to expose attributes from the external auth -->
-          <attributes>
-            <attribute>
-              <name>APP_FULL_NAME</name> <!-- The name of the attribute in the header -->
-              <field>name</field>        <!-- The name of the attribute in the authentication object -->
-            </attribute>
-          </attributes>
-        </headers>
-      </security>
+    <security>
+      <urlRestrictions>
+        <restriction>
+          <url>/articles/**</url>
+          <expression>hasAnyRole('user'\,'admin')</expression>
+        </restriction>
+      </urlRestrictions>
+      <headers>
+        <standalone>true</standalone>
+        <token>my_updated_token</token>
+        <!-- Optional role mappings, allows to map names from the external auth to simple role names to use in the page or url restrictions -->
+        <!-- The APP_ prefix is just an example, the values can be anything -->
+        <!-- The ROLE_ prefix is is required for the name of the role -->
+        <groups>
+          <group>
+            <name>APP_ADMIN</name> <!-- The name of the group in the header -->
+            <role>ROLE_admin</role>     <!-- The name of the role in the authentication object -->
+          </group>
+          <group>
+            <name>APP_USER</name> <!-- The name of the group in the header -->
+            <role>ROLE_user</role>     <!-- The name of the role in the authentication object -->
+          </group>
+        </groups>
+        <!-- Optional attribute mappings, allows to expose attributes from the external auth -->
+        <attributes>
+          <attribute>
+            <name>APP_FULL_NAME</name> <!-- The name of the attribute in the header -->
+            <field>name</field>        <!-- The name of the attribute in the authentication object -->
+          </attribute>
+        </attributes>
+      </headers>
+    </security>
 
-   |
+|
 
 For the ``expression`` in the URL restriction, remember to escape the comma as shown above
 ``<expression>hasAnyRole('user'\,'admin')</expression>``
@@ -574,25 +570,25 @@ header. You can take a look at the ``header.ftl`` file on how the attribute is d
 Studio, then navigate to ``/templates/web/components/`` then right click on ``header.ftl`` and select ``Edit``.
 The ``authToken.principal.attributes.name`` contains the value passed for ``APP_FULL_NAME`` in the header
 
-   .. code-block:: text
-      :emphasize-lines: 5-6
-      :caption: */templates/web/components/header.ftl*
-      :linenos:
+.. code-block:: text
+    :emphasize-lines: 5-6
+    :caption: */templates/web/components/header.ftl*
+    :linenos:
 
-      <#import "/templates/system/common/cstudio-support.ftl" as studio />
-      <header id="header" <@studio.componentAttr component=contentModel ice=true iceGroup="header"/>>
-        <a href="/" class="logo"><img border="0" alt="${contentModel.logo_text_t!""}" src="${contentModel.logo_s!""}">
-          <#if (authToken.principal)??>
-            <#assign name = authToken.principal.attributes.name!"stranger" />
-          <#else>
-            <#assign name = "stranger" />
-          </#if>
+    <#import "/templates/system/common/cstudio-support.ftl" as studio />
+    <header id="header" <@studio.componentAttr component=contentModel ice=true iceGroup="header"/>>
+      <a href="/" class="logo"><img border="0" alt="${contentModel.logo_text_t!""}" src="${contentModel.logo_s!""}">
+        <#if (authToken.principal)??>
+          <#assign name = authToken.principal.attributes.name!"stranger" />
+        <#else>
+          <#assign name = "stranger" />
+        </#if>
 
-          Howdy, ${name}
+        Howdy, ${name}
 
-         </a>
-         ...
-      </header>
+       </a>
+       ...
+    </header>
 
 |
 
@@ -731,7 +727,7 @@ To add a login page:
 
 #. In Crafter Studio, create a Home > Login page.
 #. The page template should contain a form that POSTs to /crafter-security-login, sending the ``username``,
-    ``password`` and ``rememberMe`` parameters, like in the following snippet:
+   ``password`` and ``rememberMe`` parameters, like in the following snippet:
 
    .. code-block:: html
      :linenos:
@@ -754,9 +750,9 @@ Add Logout
 To add logout, just add a link in the global header that points to /crafter-security-logout:
 
 .. code-block:: html
- :linenos:
+    :linenos:
 
- <a href="/crafter-security-logout">Log Out</a>
+    <a href="/crafter-security-logout">Log Out</a>
 
 ^^^^^^^^^^^^^^^^^
 Add Authorization
@@ -774,25 +770,25 @@ the next steps to create in the page content type a Repeating Group with a text 
 #. On Controls, select the Repeating Group and add it to any Form Section (you can even create an Authorization section just for these fields).
 #. In the Repeating Group properties, set the **Title** field to "Authorized Roles" and the **Name / Variable Name** field to "authorizedRoles."
 
-    .. image:: /_static/images/site-admin/authorized_roles_properties.webp
-        :alt: Engine Project Security Guide - Authorized Roles Properties
+   .. image:: /_static/images/site-admin/authorized_roles_properties.webp
+       :alt: Engine Project Security Guide - Authorized Roles Properties
 
-    |
+   |
 
-       .. warning::
-           The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
+   .. warning::
+       The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
-           The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
+       The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
 #. Add an Input control inside the Repeating Group, with the **Title** field set to "Role" and the **Name / Variable Name** field set to "role". Make this Input required by checking the checkbox under **Constraints** in the **Required** field in the **Properties Explorer**.
 
-    .. image:: /_static/images/site-admin/role_properties.webp
-        :alt: Engine Project Security Guide - Role Properties
+   .. image:: /_static/images/site-admin/role_properties.webp
+       :alt: Engine Project Security Guide - Role Properties
 
-    |
+   |
 
-       .. warning::
-           The UI autofills the **Name / Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
+   .. warning::
+       The UI autofills the **Name / Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
 
 #. Save the changes. The added fields should look like this:
@@ -887,13 +883,12 @@ you will need to replace all uses of the ``profile`` and ``authentication`` vari
 In templates and scripts you can replace all uses of ``profile`` with ``authToken`` and ``profile.attributes`` with
 ``authToken.principal.attributes``.
 
-   .. note:: Some advanced uses like custom security filters will need to be updated to integrate with Spring Security
-
+.. note:: Some advanced uses like custom security filters will need to be updated to integrate with Spring Security
 
 |
 
-   .. important::
-      **The variables** ``profile`` **and** ``authentication`` **will be null in most cases and should not be used anymore**
+.. important::
+    **The variables** ``profile`` **and** ``authentication`` **will be null in most cases and should not be used anymore**
 
 
 .. |CustomUser| replace:: :javadoc_base_url:`CustomUser <engine/org/craftercms/engine/util/spring/security/CustomUser.html>`

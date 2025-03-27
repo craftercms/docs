@@ -10,10 +10,6 @@
 =====================
 Studio Administration
 =====================
-.. contents::
-    :local:
-    :depth: 2
-
 Much of the administration of Crafter Studio can be done via the UI. This section describes how to perform these basic tasks.
 
 .. _navigating-main-menu:
@@ -512,16 +508,16 @@ A notification will appear on the screen for a few seconds on successful deletio
 |
 
 .. important::
-   When a user is deleted, the deleted user cannot be re-created. Instead of deleting a user,
-   we recommend disabling the user, which prevents them from connecting to the system.
+    When a user is deleted, the deleted user cannot be re-created. Instead of deleting a user,
+    we recommend disabling the user, which prevents them from connecting to the system.
 
-   To disable a user, simply click the ``Enabled`` slider to turn it off and a notification snack
-   bar at the bottom will appear informing you that the user has been disabled successfully.
+    To disable a user, simply click the ``Enabled`` slider to turn it off and a notification snack
+    bar at the bottom will appear informing you that the user has been disabled successfully.
 
-   .. image:: /_static/images/users/user-disabled-notification.webp
-      :alt: Users - Deleted Notification
-      :width: 25%
-      :align: center
+    .. image:: /_static/images/users/user-disabled-notification.webp
+        :alt: Users - Deleted Notification
+        :width: 25%
+        :align: center
 
    |
 

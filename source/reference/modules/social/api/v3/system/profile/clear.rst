@@ -33,9 +33,9 @@ Parameters
 || profileIds         || String     ||              || List of IDs to be removed from the Cache  |
 +---------------------+-------------+---------------+--------------------------------------------+
 
-.. WARNING::
-  If the ``profileIds`` parameter is empty or not included in the request, all profiles in the
-  cache will be cleared.
+.. warning::
+    If the ``profileIds`` parameter is empty or not included in the request, all profiles in the
+    cache will be cleared.
 
 -------
 Example

@@ -8,10 +8,6 @@
 =============
 Configuration
 =============
-.. contents::
-    :local:
-    :depth: 3
-
 This section describes how to configure CrafterCMS.
 
 ---------------------

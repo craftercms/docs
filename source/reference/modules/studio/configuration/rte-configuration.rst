@@ -296,14 +296,14 @@ Let's take a look at an example of adding ``<script />`` to the allowable elemen
 
    Please note that TinyMCE gives this warning when allowing script elements (<script />):
 
-      .. Warning:: Allowing script elements (<script>) in TinyMCE exposes users to cross-site scripting (XSS) attacks.
+      .. warning:: Allowing script elements (<script>) in TinyMCE exposes users to cross-site scripting (XSS) attacks.
 
 """""""""""""""""""""""""""""""""
 Example allowing a custom element
 """""""""""""""""""""""""""""""""
 You can also add custom elements to the rule set and can be done by simply adding the custom tag to ``extended_valid_elements``. Let's take a look at an example of adding the tag  ``mycustomtag`` to the rule set.
 
-   .. note:: Case sensitive custom elements are not supported in TinyMCE 5. Remember to **use only lowercase for custom elements** (e.g. ``myattr`` is supported but *myAttr* is not supported).
+.. note:: Case sensitive custom elements are not supported in TinyMCE 5. Remember to **use only lowercase for custom elements** (e.g. ``myattr`` is supported but *myAttr* is not supported).
 
 1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *User Interface Configuration* then scroll down to the ``craftercms.components.TinyMCE`` widget section
 

@@ -10,10 +10,6 @@ Reference
 =========
 This section is a reference to the modules, APIs, complementary projects, and other detailed material.
 
-.. contents::
-    :local:
-    :depth: 1
-
 -------
 Modules
 -------

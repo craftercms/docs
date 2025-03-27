@@ -9,9 +9,6 @@
 ==========
 Blueprints
 ==========
-.. contents::
-    :local:
-
 --------------------
 What are Blueprints?
 --------------------

@@ -9,10 +9,6 @@
 =============================
 Project (Site) Administration
 =============================
-.. contents::
-    :local:
-    :depth: 2
-
 This section details activities related to project administration in CrafterCMS. The content is oriented towards CrafterCMS administration primarily through Crafter Studio.
 
 Most configuration files can be accessed through Crafter Studio through the **Sidebar ->** |projectTools| **-> Configuration**. but can also be modified by accessing the configuration files directly. Please note that it is recommended that changes to configuration files be done through the Crafter Studio UI.

@@ -60,7 +60,7 @@ Testing Raw Performance
    		     READ: io=3071.7MB, aggrb=485624KB/s, minb=485624KB/s, maxb=485624KB/s, mint=6477msec, maxt=6477msec
   		     WRITE: io=1024.4MB, aggrb=161944KB/s, minb=161944KB/s, maxb=161944KB/s, mint=6477msec, maxt=6477msec
 
-      .. Note:: Notice the ``IOPS`` for READ and WRITE
+      .. note:: Notice the ``IOPS`` for READ and WRITE
 
 * Test latency with ``ioping`` https://github.com/koct9i/ioping
 
@@ -187,7 +187,7 @@ where
 
 For more information on types, other items, etc. that you can configure, see your OS man page for ``limits.conf`` (e.g. ``man limits.conf`` or  visit the online man page for your OS if available:: http://manpages.ubuntu.com/manpages/focal/en/man5/limits.conf.5.html )
 
-  .. note::
+.. note::
 
-     * On RHEL/CentOS: For the ``nproc`` setting, please use ``/etc/security/limits.d/90-nproc.conf``. More information can be found `here <https://access.redhat.com/solutions/61334>`_
-     * On Ubuntu: The *limits.conf* file is ignored for processes started by *init.d* . To apply the settings in *limits.conf* for processes started by *init.d*, open ``/etc/pam.d/su`` and uncomment the following: ``session required pam_limits.so``
+    * On RHEL/CentOS: For the ``nproc`` setting, please use ``/etc/security/limits.d/90-nproc.conf``. More information can be found `here <https://access.redhat.com/solutions/61334>`_
+    * On Ubuntu: The *limits.conf* file is ignored for processes started by *init.d* . To apply the settings in *limits.conf* for processes started by *init.d*, open ``/etc/pam.d/su`` and uncomment the following: ``session required pam_limits.so``

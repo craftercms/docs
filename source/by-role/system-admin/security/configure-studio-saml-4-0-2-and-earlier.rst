@@ -26,8 +26,8 @@ Requirements
 
     ``keytool -genkey -alias CREDENTIAL_NAME -keystore keystore.jks -storepass STORE_PASSWORD``
 
-       .. note:: Some versions of the Keytool support a different password for the keystore and the key generated, you
-          will be prompted for one or you can add the ``-keypass KEY_PASSWORD`` parameter.
+    .. note:: Some versions of the Keytool support a different password for the keystore and the key generated, you
+        will be prompted for one or you can add the ``-keypass KEY_PASSWORD`` parameter.
 
     Take note of the values of the following options used to generate your keystore that will be used later for configuring Studio:
 
