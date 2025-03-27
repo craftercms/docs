@@ -320,8 +320,8 @@ It is also possible to change the prefix and names for the headers:
 
 |
 
-   .. note::
-      For CrafterCMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` and can't be changed via project configuration
+.. note::
+    For CrafterCMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` and can't be changed via project configuration
 
 
 The default value of the token is ``my_secure_token``. Remember to replace the default value by setting
@@ -775,10 +775,10 @@ the next steps to create in the page content type a Repeating Group with a text 
 
     |
 
-       .. warning::
-           The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
+    .. warning::
+        The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
-           The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
+        The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
 #. Add an Input control inside the Repeating Group, with the **Title** field set to "Role" and the **Name / Variable Name** field set to "role". Make this Input required by checking the checkbox under **Constraints** in the **Required** field in the **Properties Explorer**.
 
@@ -787,8 +787,8 @@ the next steps to create in the page content type a Repeating Group with a text 
 
     |
 
-       .. warning::
-           The UI autofills the **Name / Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
+    .. warning::
+        The UI autofills the **Name / Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
 
 #. Save the changes. The added fields should look like this:
@@ -883,13 +883,13 @@ you will need to replace all uses of the ``profile`` and ``authentication`` vari
 In templates and scripts you can replace all uses of ``profile`` with ``authToken`` and ``profile.attributes`` with
 ``authToken.principal.attributes``.
 
-   .. note:: Some advanced uses like custom security filters will need to be updated to integrate with Spring Security
+.. note:: Some advanced uses like custom security filters will need to be updated to integrate with Spring Security
 
 
 |
 
-   .. important::
-      **The variables** ``profile`` **and** ``authentication`` **will be null in most cases and should not be used anymore**
+.. important::
+    **The variables** ``profile`` **and** ``authentication`` **will be null in most cases and should not be used anymore**
 
 
 .. |CustomUser| replace:: :javadoc_base_url:`CustomUser <engine/org/craftercms/engine/util/spring/security/CustomUser.html>`
@@ -1101,8 +1101,8 @@ next steps to create one:
     Crafter Profile tenant, when a new user needs to be created. So the configuration above will cause the Security
     Provider to create a user with firstName, lastName and displayName attributes.
 
-       .. note::
-          For CrafterCMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` instead of ``CRAFTER_`` and can't be changed via project configuration.
+    .. note::
+        For CrafterCMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` instead of ``CRAFTER_`` and can't be changed via project configuration.
 
     ~~~~~~~~~~~~~~~~~~
     Add Facebook Login
@@ -1323,14 +1323,14 @@ To use a custom blacklist follow these steps:
 #. Remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
 #. Update the :ref:`server-config.properties <engine-configuration-files>` configuration file to load the custom blacklist:
 
-    .. code-block:: properties
-      :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
+   .. code-block:: properties
+       :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
 
-      # The location of the blacklist to use for all sites (this will have no effect if the sandbox is disabled)
-      crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/extension/groovy/blacklist
+       # The location of the blacklist to use for all sites (this will have no effect if the sandbox is disabled)
+       crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/extension/groovy/blacklist
 
-    .. note::
-      In CrafterCMS v3.1.14 and prior, the name of the property is ``crafter.engine.groovy.sandbox.blacklist``
+   .. note::
+       In CrafterCMS v3.1.14 and prior, the name of the property is ``crafter.engine.groovy.sandbox.blacklist``
 
 #. Restart CrafterCMS
 

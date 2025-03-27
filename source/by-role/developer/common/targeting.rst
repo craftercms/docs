@@ -559,10 +559,10 @@ In the ``Repeating Group`` properties, set the Title field to “Authorized Role
 
 |
 
-   .. warning::
-      The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
+.. warning::
+    The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
-      The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
+    The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
 Add an Input control inside the Repeating Group, with the **Title** field set to "Role" and the **Name / Variable
 Name** field set to "role". Make this Input required by checking the checkbox under **Constraints** in the
@@ -573,8 +573,8 @@ Name** field set to "role". Make this Input required by checking the checkbox un
 
 |
 
-    .. warning::
-       The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_s``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
+.. warning::
+    The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_s``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
 
 ^^^^^^^^^^^^^^^^^^

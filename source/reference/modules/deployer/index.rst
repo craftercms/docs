@@ -1705,7 +1705,7 @@ A custom Groovy processor that can process published content.
 |scriptPath  ||checkmark||                               |The relative path of the script to execute                  |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
 
-  .. note::  The default path scripts are loaded from is ``$CRAFTER_HOME/bin/crafter-deployer/processors/scripts``
+.. note::  The default path scripts are loaded from is ``$CRAFTER_HOME/bin/crafter-deployer/processors/scripts``
 
 **Example**
 

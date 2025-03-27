@@ -25,33 +25,33 @@ Requirements
 ------------
 #. A SAML2 compatible Identity Provider properly configured, this configuration will not be covered here
 #. A Java KeyStore file containing all needed keys & certificates, this can be generated with the Java Keytool or any 
-    other compatible tool. For example:
+   other compatible tool. For example:
     
-    ``keytool -genkey -alias CREDENTIAL_NAME -keystore keystore.jks -storepass STORE_PASSWORD``
+   ``keytool -genkey -alias CREDENTIAL_NAME -keystore keystore.jks -storepass STORE_PASSWORD``
     
-    .. note:: Some versions of the Keytool support a different password for the keystore and the key generated, you
+   .. note:: Some versions of the Keytool support a different password for the keystore and the key generated, you
               will be prompted for one or you can add the ``-keypass KEY_PASSWORD`` parameter.
 
-    Take note of the values of the following options used to generate your keystore that will be used later for 
-    configuring Engine:
+   Take note of the values of the following options used to generate your keystore that will be used later for
+   configuring Engine:
 
-    * **alias**: The value used for this option wil be used in the ``keystore.defaultCredential`` and 
-      ``keystore.credentials.credential.name`` properties
-    * **storepass**: The value used for this option will be used in the ``keystore.password`` property
-    * **keypass**: The value used for this option will be used in the ``keystore.credentials.credential.password`` 
-      property
+   * **alias**: The value used for this option wil be used in the ``keystore.defaultCredential`` and
+     ``keystore.credentials.credential.name`` properties
+   * **storepass**: The value used for this option will be used in the ``keystore.password`` property
+   * **keypass**: The value used for this option will be used in the ``keystore.credentials.credential.password``
+     property
     
 #. XML descriptors for the Identity Provider and the Service Provider (Crafter Engine). The descriptor for Crafter
-    Engine can be generated following these steps:
+   Engine can be generated following these steps:
     
-    #. Export the X509 certificate from the key store file:
+   #. Export the X509 certificate from the key store file:
     
-        ``keytool -export -alias CREDENTIAL_NAME -keystore keystore.jks -rfc -file CREDENTIAL_NAME.cer``
+      ``keytool -export -alias CREDENTIAL_NAME -keystore keystore.jks -rfc -file CREDENTIAL_NAME.cer``
     
-    #. Create the XML descriptor, either using a `third party tool <https://www.samltool.com/sp_metadata.php>`_ or
-        manually. The descriptor should look like this:
+   #. Create the XML descriptor, either using a `third party tool <https://www.samltool.com/sp_metadata.php>`_ or
+      manually. The descriptor should look like this:
        
-        .. code-block:: xml
+      .. code-block:: xml
           :caption: Example SAML 2.0 Service Provider Metadata
           :emphasize-lines: 2,3,7,14,18,20
        
@@ -78,18 +78,18 @@ Requirements
             </md:SPSSODescriptor>
           </md:EntityDescriptor>
         
-        Replacing the following values:
+      Replacing the following values:
         
-        - **Entity ID**: Unique identifier for the service provider
-        - **AuthnRequestsSigned**: indicates if the service provider will sign authentication requests
-        - **WantAssertionsSigned**: indicates if the service provider requires signed assertions
-        - **Certificate**: The content of the certificate obtained in the previous step
-        - **Logout URL**: The full URL for the service provider logout endpoint (``ENGINE_URL/saml/logout``)
-        - **SAML URL**: The full URL for the service provider SSO processing endpoint (``ENGINE_URL/saml/SSO``)
+      - **Entity ID**: Unique identifier for the service provider
+      - **AuthnRequestsSigned**: indicates if the service provider will sign authentication requests
+      - **WantAssertionsSigned**: indicates if the service provider requires signed assertions
+      - **Certificate**: The content of the certificate obtained in the previous step
+      - **Logout URL**: The full URL for the service provider logout endpoint (``ENGINE_URL/saml/logout``)
+      - **SAML URL**: The full URL for the service provider SSO processing endpoint (``ENGINE_URL/saml/SSO``)
 
 .. note::
-  If Crafter Engine will be behind a load balancer or proxy server, the XML Service Provider descriptor needs to use
-  the public URL for the Identity Provider to be able to communicate
+    If Crafter Engine will be behind a load balancer or proxy server, the XML Service Provider descriptor needs to use
+    the public URL for the Identity Provider to be able to communicate
 
 --------------------------------
 Update the Project Configuration

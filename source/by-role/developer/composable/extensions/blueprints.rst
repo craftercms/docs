@@ -96,15 +96,15 @@ Here are some best practices to help you:
        * Bear in mind that you can't have nested repeating groups, so only the innermost repetition can be a repeating group.
     * You can set up folders for specific content types, and you can enforce them by using ``<paths>`` in your types' config.xml. Use ``includes`` whenever you want to *whitelist* some paths, and use ``excludes`` to *blacklist* some paths, but do not mix them. For more examples, see :ref:`content-creation-permissions-section`
 
-        .. code-block:: xml
+      .. code-block:: xml
 
-            <paths>
-                <includes> <pattern>REG_EXP_HERE</pattern> </includes>
-                OR
-                <excludes> <pattern>REG_EXP_HERE</pattern> </excludes>
-            </paths>
+          <paths>
+              <includes> <pattern>REG_EXP_HERE</pattern> </includes>
+              OR
+              <excludes> <pattern>REG_EXP_HERE</pattern> </excludes>
+          </paths>
 
-       * You can also use this to enforce single page blueprints by using ``<excludes> <pattern>^/.*</pattern> </excludes>`` in your page type's config.xml, effectively forbidding from creating a new page.
+      * You can also use this to enforce single page blueprints by using ``<excludes> <pattern>^/.*</pattern> </excludes>`` in your page type's config.xml, effectively forbidding from creating a new page.
     * Ensure your blueprint supports experience builder. For more information on experience builder, see :ref:`experience-builder`.
 
 Above all, blueprints should be usable and simple.
