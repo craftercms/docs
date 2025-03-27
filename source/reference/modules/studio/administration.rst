@@ -57,283 +57,23 @@ Projects
 
 |
 
-.. _main-menu-tool-users:
+.. _users-management:
 
 ^^^^^
 Users
 ^^^^^
-A user is anybody who uses CrafterCMS. ``Users`` lets the administrator manage who has access to Crafter Studio. See :ref:`users-management` for more information on ``Users``
+A user is anybody who uses CrafterCMS. The ``Users`` management console lets the administrator manage who has access to
+Crafter Studio.
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-users.webp
-    :alt: System Administrator - Navigation Menu Users
-    :align: center
-    :width: 85%
+For information on managing users and groups, see :ref:`user-group-management`.
 
-|
-
-:ref:`user-group-management` contains more information on managing users and groups.
-
-.. _main-menu-tool-groups:
-
-^^^^^^
-Groups
-^^^^^^
-A group consists of a collection of users. ``Groups`` lets the administrator manage groups, members belonging to a group, etc. For more information on groups, see :ref:`groups-management`
-
-.. image:: /_static/images/system-admin/main-menu/main-menu-groups.webp
-    :alt: System Administrator - Navigation Menu Groups
-    :align: center
-    :width: 85%
-
-|
-
-:ref:`user-group-management` contains more information on managing users and groups.
-
-.. _main-menu-tool-cluster:
-
-^^^^^^^^^^^^^^^^^^^^^^^^
-Cluster |enterpriseOnly|
-^^^^^^^^^^^^^^^^^^^^^^^^
-``Cluster`` lets the administrator manage Studio clusters. See :ref:`studio-clustering` for more information on how to setup clustering and available actions from ``Cluster`` from the Main Menu
-
-.. image:: /_static/images/system-admin/main-menu/main-menu-cluster.webp
-    :alt: System Administrator - Navigation Menu Cluster
-    :align: center
-    :width: 85%
-
-|
-
-.. _main-menu-tool-audit:
-
-^^^^^
-Audit
-^^^^^
-Audit logs displays the date, time, user and action performed to content in all the projects available as well as actions performed in Studio such as logins/logouts, user removal, group addition, etc.
-
-.. image:: /_static/images/system-admin/main-menu/main-menu-audit.webp
-    :alt: System Administrator - Navigation Menu Audit
-    :align: center
-    :width: 85%
-
-|
-
-See :ref:`nav-menu-audit` for more details on the audit logs
-
-.. _main-menu-tool-logging-levels:
-
-^^^^^^^^^^^^^^
-Logging Levels
-^^^^^^^^^^^^^^
-There are 6 log levels defined in CrafterCMS. These levels determine what messages will be logged and displayed in the **Logging Console**.
-
-.. image:: /_static/images/site-admin/logs-logging-levels.webp
-    :alt: System Administrator - Navigation Menu Logging Levels
-    :align: center
-    :width: 85%
-
-|
-
-For more information on logging levels, see :ref:`override-logging-levels`
-
-.. _main-menu-tool-log-console:
-
-^^^^^^^^^^^
-Log Console
-^^^^^^^^^^^
-The ``Log Console`` allows the user to view messages depending on what log levels and what Java packages have been set for tracking.
-
-.. image:: /_static/images/system-admin/main-menu/main-menu-log-console.webp
-    :alt: System Administrator - Navigation Menu Log Console
-    :align: center
-    :width: 85%
-
-|
-
-:ref:`override-logging-levels` contains more information on how to track Java packages with the corresponding log levels desired.
-
-The ``Log Console`` here in the Main Menu is similar to a project ``Log Console`` described :ref:`here <studio-log-console>`. The difference is the ``Log Console`` from the Main Menu can display logs for all the projects inside Studio, not just one project.
-
-.. _main-menu-tool-global-config:
-
-^^^^^^^^^^^^^
-Global Config
-^^^^^^^^^^^^^
-The ``Global Config`` allows the user to edit the system settings for Studio without access to the physical server.
-
-.. image:: /_static/images/system-admin/main-menu/main-menu-global-config.webp
-    :alt: System Administrator - Navigation Menu Global Config
-    :align: center
-    :width: 100%
-
-|
-
-When making changes here, not all changes can/will take effect without a restart, so expect to have to **restart Studio** for most changes to take effect
-
-For more information on what you can configure from the ``Global Config``, see :ref:`nav-menu-global-config`
-
-.. _main-menu-tool-encryption-tool:
-
-^^^^^^^^^^^^^^^
-Encryption Tool
-^^^^^^^^^^^^^^^
-The ``Encryption Tool`` allows the user to encrypt sensitive data such as access keys and passwords, that shouldn't be publicly available to anyone but developers and administrators
-
-.. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool.webp
-    :alt: System Administrator - Navigation Menu Encryption Tool
-    :align: center
-    :width: 100%
-
-|
-
-For more information on how to use the encryption tool, see :ref:`studio-encryption-tool`.
-
-.. _main-menu-tool-token-management:
-
-^^^^^^^^^^^^^^^^
-Token Management
-^^^^^^^^^^^^^^^^
-The ``Token Management Tool`` allows the user to manage access tokens used to make API requests on behalf of the user and
-create tokens for accessing a project/site in Preview.
-
-.. image:: /_static/images/system-admin/main-menu/main-menu-token-management.webp
-    :alt: System Administrator - Navigation Menu Token Management Tool
-    :align: center
-    :width: 100%
-
-|
-
-For more information on the token management tool, see :ref:`nav-menu-token-management`
-
-^^^^^^^
-Account
-^^^^^^^
-The ``Account Tool`` allows the user to change the user's personal Crafter Studio settings like language or to change the user's password or to clear your Studio UI preferences from the browser cache.
-
-.. image:: /_static/images/system-admin/main-menu/main-menu-account.webp
-    :alt: System Administrator - Navigation Menu Account Tool
-    :align: center
-    :width: 100%
-
-|
-
-For more information on how to use the Account tool, see :ref:`account-management`.
-
-|hr|
-
-.. _nav-menu-global-config:
-
------------------------------
-Navigation Menu Global Config
------------------------------
-CrafterCMS allows the user to edit the system settings for Studio without access to the physical server through ``Global Config`` under the ``Navigation Menu`` in Studio.
-This global configuration file overrides the core configuration of Crafter Studio, ``studio-config.yaml``,  found in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio``, and the Studio configuration override file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` in your Authoring installation (for more information on this file, see :ref:`studio-config`.
-
-Changes made to this file will spread to all nodes in a Studio cluster automatically. Please note that not all changes to this file can/will take effect without a restart, so expect to have to **restart Studio for most changes to take effect**. If in a cluster, you'll need a rolling restart for all nodes to pick up the changes.
-
-To access the Global Config, click on the ``Navigation Menu`` icon at the top right corner, then click on ``Global Config`` in the Global panel
-
-.. image:: /_static/images/system-admin/main-menu/main-menu-global-config.webp
-    :alt: System Administrator - Navigation Menu Global Config
-    :align: center
-    :width: 100%
-
-|
-
-To find out more on what you can configure from the Global Config, see :ref:`studio-config`.
-
-|hr|
-
-.. _nav-menu-audit:
-
----------------------
-Navigation Menu Audit
----------------------
-CrafterCMS tracks the date, time, user and action performed to content and the system through an audit log.
-
-To view the audit logs, from the top right of your browser, click on the ``Navigation Menu`` icon, then click on ``Audit``.
-
-.. image:: /_static/images/system-admin/main-menu/main-menu-audit.webp
-    :alt: System Administrator - Main Menu Audit
-    :align: center
-    :width: 85%
-
-|
-
-You can filter the logs displayed based on the following:
-
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Audit Logs Project Filter
-^^^^^^^^^^^^^^^^^^^^^^^^^
-``Project`` filters the log by project . Clicking on ``Project`` gives you a list of all the projects in Studio and the option to see system logs or logs for all the projects.
-
-.. image:: /_static/images/system-admin/main-menu/audit-site-filter.webp
-    :alt: System Administrator - Main Menu Audit Project Filter
-    :align: center
-    :width: 65%
-
-|
-
-^^^^^^^^^^^^^^^^^^^^^^
-Audit Logs User Filter
-^^^^^^^^^^^^^^^^^^^^^^
-``Username`` filters the log by username. Clicking on ``Username`` gives you a list of all the users in Studio and the option to see logs for all users.
-
-.. image:: /_static/images/system-admin/main-menu/audit-user-filter.webp
-    :alt: System Administrator - Main Menu Audit User Filter
-    :align: center
-    :width: 65%
-
-|
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Audit Logs Operations Filter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-``Operation`` filters the log by operations. Clicking on ``Operation`` gives you a list of all operations logged.
-
-.. image:: /_static/images/system-admin/main-menu/audit-operations-filter.webp
-    :alt: System Administrator - Main Menu Audit Operations Filter
-    :align: center
-    :width: 65%
-
-|
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Audit Logs Timestamp Filter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-``Timestamp`` filters the log based on date range
-
-.. image:: /_static/images/system-admin/main-menu/audit-options-filter.webp
-    :alt: System Administrator - Main Menu Audit Timestamp Filter
-    :align: center
-    :width: 65%
-
-|
-
-|hr|
-
-.. _user-group-management:
-
----------------------
-User/Group Management
----------------------
-This section describes managing user accounts and groups.
-
-A user is anybody who uses CrafterCMS. A user account holds a user name and password. A group consists of a collection of users. Users can be assigned to a group for a project/site. Through the groups, roles are assigned to users to certain areas of the site (access rights/ permissions). Each role represents a set of activities allowed. Groups are  used to simplify management as changes made to the rights of the group applies to all the users belonging to that group.
-
-When you work in Crafter Studio, you need to login as a user. Your CrafterCMS administrator sets up user accounts, group memberships, roles and permissions. The sections below goes into more detail on how users, groups, permissions and roles are administered/setup.
-
-.. _users-management:
-
-^^^^^^^^^^^^^^^^
-Users Management
-^^^^^^^^^^^^^^^^
 """""""""""
 Description
 """""""""""
-User Management allows you to control and set up who can access and manage the sites. All users are listed on
-the User Management page.
+The ``Users`` management console allows you to control and set up who can access and manage the sites. All users are listed on
+this console.
 
-To find the Users Management console follow the next instructions:
+To find the ``Users`` management console follow the next instructions:
 
 1. Click on the **Navigation Menu** |mainMenu| option located at the top right of the browser, then click on
    **Users** in the sidebar located on the left side of the browser:
@@ -528,10 +268,18 @@ A notification will appear on the screen for a few seconds on successful deletio
 
 .. _groups-management:
 
-^^^^^^^^^^^^^^^^^
-Groups Management
-^^^^^^^^^^^^^^^^^
-Groups Management allows you to administrate the groups created on CrafterCMS. You can add, remove,
+^^^^^^
+Groups
+^^^^^^
+A group consists of a collection of users. The ``Groups`` management console lets the administrator manage groups,
+members belonging to a group, etc.
+
+For information on managing users and groups, see :ref:`user-group-management`.
+
+"""""""""""
+Description
+"""""""""""
+The ``Groups`` management console allows you to administrate the groups created on CrafterCMS. You can add, remove,
 edit, and manage the users that will belong to the groups and you can also add and remove groups.
 
 Here's a list of predefined groups and roles in CrafterCMS:
@@ -718,6 +466,334 @@ It will then give you a notification that the user(s) has been successfully dele
     :align: center
 
 |
+
+.. _main-menu-tool-cluster:
+
+^^^^^^^^^^^^^^^^^^^^^^^^
+Cluster |enterpriseOnly|
+^^^^^^^^^^^^^^^^^^^^^^^^
+``Cluster`` lets the administrator manage Studio clusters. See :ref:`studio-clustering` for more information on how to setup clustering and available actions from ``Cluster`` from the Main Menu
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-cluster.webp
+    :alt: System Administrator - Navigation Menu Cluster
+    :align: center
+    :width: 85%
+
+|
+
+.. _nav-menu-audit:
+
+^^^^^
+Audit
+^^^^^
+Audit logs displays the date, time, user and action performed to content in all the projects available as well as actions
+performed in Studio such as logins/logouts, user removal, group addition, etc.
+
+"""""""""""
+Description
+"""""""""""
+CrafterCMS tracks the date, time, user and action performed to content and the system through an audit log.
+
+To view the audit logs, from the top right of your browser, click on the ``Navigation Menu`` icon, then click on ``Audit``.
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-audit.webp
+    :alt: System Administrator - Main Menu Audit
+    :align: center
+    :width: 85%
+
+|
+
+You can filter the logs displayed based on the following:
+
+"""""""""""""""""""""""""
+Audit Logs Project Filter
+"""""""""""""""""""""""""
+``Project`` filters the log by project . Clicking on ``Project`` gives you a list of all the projects in Studio and the option to see system logs or logs for all the projects.
+
+.. image:: /_static/images/system-admin/main-menu/audit-site-filter.webp
+    :alt: System Administrator - Main Menu Audit Project Filter
+    :align: center
+    :width: 65%
+
+|
+
+""""""""""""""""""""""
+Audit Logs User Filter
+""""""""""""""""""""""
+``Username`` filters the log by username. Clicking on ``Username`` gives you a list of all the users in Studio and the option to see logs for all users.
+
+.. image:: /_static/images/system-admin/main-menu/audit-user-filter.webp
+    :alt: System Administrator - Main Menu Audit User Filter
+    :align: center
+    :width: 65%
+
+|
+
+""""""""""""""""""""""""""""
+Audit Logs Operations Filter
+""""""""""""""""""""""""""""
+``Operation`` filters the log by operations. Clicking on ``Operation`` gives you a list of all operations logged.
+
+.. image:: /_static/images/system-admin/main-menu/audit-operations-filter.webp
+    :alt: System Administrator - Main Menu Audit Operations Filter
+    :align: center
+    :width: 65%
+
+|
+
+"""""""""""""""""""""""""""
+Audit Logs Timestamp Filter
+"""""""""""""""""""""""""""
+``Timestamp`` filters the log based on date range
+
+.. image:: /_static/images/system-admin/main-menu/audit-options-filter.webp
+    :alt: System Administrator - Main Menu Audit Timestamp Filter
+    :align: center
+    :width: 65%
+
+|
+
+.. _main-menu-tool-logging-levels:
+
+^^^^^^^^^^^^^^
+Logging Levels
+^^^^^^^^^^^^^^
+There are 6 log levels defined in CrafterCMS. These levels determine what messages will be logged and displayed in the **Logging Console**.
+
+.. image:: /_static/images/site-admin/logs-logging-levels.webp
+    :alt: System Administrator - Navigation Menu Logging Levels
+    :align: center
+    :width: 85%
+
+|
+
+For more information on logging levels, see :ref:`override-logging-levels`
+
+.. _main-menu-tool-log-console:
+
+^^^^^^^^^^^
+Log Console
+^^^^^^^^^^^
+The ``Log Console`` allows the user to view messages depending on what log levels and what Java packages have been set for tracking.
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-log-console.webp
+    :alt: System Administrator - Navigation Menu Log Console
+    :align: center
+    :width: 85%
+
+|
+
+:ref:`override-logging-levels` contains more information on how to track Java packages with the corresponding log levels desired.
+
+The ``Log Console`` here in the Main Menu is similar to a project ``Log Console`` described :ref:`here <studio-log-console>`. The difference is the ``Log Console`` from the Main Menu can display logs for all the projects inside Studio, not just one project.
+
+.. _nav-menu-global-config:
+
+^^^^^^^^^^^^^
+Global Config
+^^^^^^^^^^^^^
+CrafterCMS allows the user to edit the system settings for Studio without access to the physical server through ``Global Config`` under the ``Navigation Menu`` in Studio.
+This global configuration file overrides the core configuration of Crafter Studio, ``studio-config.yaml``,  found in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio``, and the Studio configuration override file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` in your Authoring installation (for more information on this file, see :ref:`studio-config`.
+
+Changes made to this file will spread to all nodes in a Studio cluster automatically. Please note that not all changes to this file can/will take effect without a restart, so expect to have to **restart Studio for most changes to take effect**. If in a cluster, you'll need a rolling restart for all nodes to pick up the changes.
+
+To access the Global Config, click on the ``Navigation Menu`` icon at the top right corner, then click on ``Global Config`` in the Global panel
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-global-config.webp
+    :alt: System Administrator - Navigation Menu Global Config
+    :align: center
+    :width: 100%
+
+|
+
+To find out more on what you can configure from the Global Config, see :ref:`studio-config`.
+
+
+.. _main-menu-tool-encryption-tool:
+
+^^^^^^^^^^^^^^^
+Encryption Tool
+^^^^^^^^^^^^^^^
+The ``Encryption Tool`` allows the user to encrypt sensitive data such as access keys and passwords, that shouldn't be publicly available to anyone but developers and administrators
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool.webp
+    :alt: System Administrator - Navigation Menu Encryption Tool
+    :align: center
+    :width: 100%
+
+|
+
+For more information on how to use the encryption tool, see :ref:`studio-encryption-tool`.
+
+.. _nav-menu-token-management:
+
+^^^^^^^^^^^^^^^^
+Token Management
+^^^^^^^^^^^^^^^^
+The ``Token Management Tool`` allows the user to manage access tokens used to make API requests on behalf of the user and
+create tokens for accessing a project/site in Preview.
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-token-management.webp
+    :alt: System Administrator - Navigation Menu Token Management Tool
+    :align: center
+    :width: 70%
+
+|
+
+"""""""""
+API Token
+"""""""""
+API tokens authorize the user to access APIs as a particular user with a particular role.
+
+To create a new API access token, click on ``Token Management`` from the Main Menu, then click on the ``API Token`` button.
+The only required field for the access token is the label to identify it, however, it is also recommended to set
+an expiration date to minimize the risk of lost or stolen tokens being used without being noticed.
+
+.. figure:: /_static/images/jwt/create-token.webp
+    :width: 70%
+    :alt: Crafter Studio - Create API Access Token
+    :align: center
+
+|
+
+Once the expiration date is reached the access token will stop working automatically. Click on the ``Submit`` button to
+create the token.
+
+.. figure:: /_static/images/jwt/create-token-2.webp
+    :width: 70%
+    :alt: Crafter Studio - Access Token Expiration
+    :align: center
+
+|
+
+The next step is to copy the value of the access token. The value of the access token will not be stored on the server,
+so it needs to be stored by the user in a safe place as it is impossible to recover it after it is created.
+
+.. figure:: /_static/images/system-admin/main-menu/access-token-created.webp
+    :width: 70%
+    :alt: Crafter Studio - Access Token Created
+    :align: center
+
+|
+
+If an access token is lost or exposed in any way it should be disabled or completely deleted to avoid any
+possible use. To delete a token, simply click on the trash can icon to the right of the token you want to delete.
+
+.. figure:: /_static/images/system-admin/main-menu/delete-token-1.webp
+    :width: 70%
+    :alt: Crafter Studio - Delete a Token
+    :align: center
+
+|
+
+You can also delete multiple tokens at once by placing a checkmark on the tokens you want to delete, then clicking on
+``Delete Selected``.
+
+.. figure:: /_static/images/system-admin/main-menu/delete-token-2.webp
+    :width: 70%
+    :alt: Crafter Studio - Delete Multiple Tokens
+    :align: center
+
+|
+
+To disable/enable a token, simply click on the slider on the right side of the token next to the trash can icon.
+
+.. figure:: /_static/images/system-admin/main-menu/token-disable.webp
+    :width: 70%
+    :alt: Crafter Studio - Disable/Enable Token
+    :align: center
+
+|
+
+For an example of how to use the generated API token, see :ref:`crafter-cli`.
+
+.. note:: Users needs the ``manage_access_token`` permission to create access tokens
+
+.. _preview-token:
+
+"""""""""""""
+Preview Token
+"""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.2.0
+
+Preview tokens allow preview applications to access delivery APIs in preview mode from within the authoring environment.
+This extra layer of security is required in authoring because the environment contains unpublished projects and content.
+
+To create a Preview Token, click on ``Token Management`` from the Main Menu, then click on the ``Preview Token`` button.
+
+.. figure:: /_static/images/system-admin/main-menu/create-preview-token.webp
+    :width: 70%
+    :alt: Crafter Studio - Create Preview Access Token
+    :align: center
+
+|
+
+The only required fields for the preview token is the dropdown for selecting projects to grant preview access, and the
+date/time fields to set an expiration date for the token, which is pre-populated to a date in the near future. The expiration
+date is set to minimize the risk of lost or stolen tokens being used without being noticed. Click on the ``Generate``
+button to create the token.
+
+.. figure:: /_static/images/system-admin/main-menu/create-preview-token-2.webp
+    :width: 70%
+    :alt: Crafter Studio - Create Preview Access Token
+    :align: center
+
+|
+
+The next step is to copy the value of the preview token. The value of the preview token is not stored on the server,
+so it needs to be stored by the user in a safe place as it is impossible to recover it after it is created.
+
+.. figure:: /_static/images/system-admin/main-menu/preview-token-created.webp
+    :width: 70%
+    :alt: Crafter Studio - Create Preview Access Token
+    :align: center
+
+|
+
+You can now use the preview token in one of the following ways:
+
+- Set a header with the name X-Crafter-Preview, or
+- Add a query string argument with the name crafterPreview, or
+- Set a cookie with the name crafterPreview
+
+Here's an example of using the token with Curl, where ``{Generated-Preview-Token}`` is the token just created:
+
+.. code-block:: bash
+
+    curl --header "cookie: crafterPreview={Generated-Preview-Token};" "http://localhost:8080/api/1/site/content_store/item.json?url=/site/website/index.xml&crafterSite=ed"
+
+
+The dialog above that shows the preview token generated also shows other examples on how to use the preview token.
+
+^^^^^^^
+Account
+^^^^^^^
+The ``Account Tool`` allows the user to change the user's personal Crafter Studio settings like language or to change the user's password or to clear your Studio UI preferences from the browser cache.
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-account.webp
+    :alt: System Administrator - Navigation Menu Account Tool
+    :align: center
+    :width: 100%
+
+|
+
+For more information on how to use the Account tool, see :ref:`account-management`.
+
+|hr|
+
+.. _user-group-management:
+
+---------------------
+User/Group Management
+---------------------
+This section describes managing user accounts and groups.
+
+A user is anybody who uses CrafterCMS. A user account holds a user name and password. A group consists of a collection of users. Users can be assigned to a group for a project/site. Through the groups, roles are assigned to users to certain areas of the site (access rights/ permissions). Each role represents a set of activities allowed. Groups are  used to simplify management as changes made to the rights of the group applies to all the users belonging to that group.
+
+When you work in Crafter Studio, you need to login as a user. Your CrafterCMS administrator sets up user accounts, group memberships, roles and permissions. The sections below goes into more detail on how users, groups, permissions and roles are administered/setup.
+
 
 .. _roles-and-permissions:
 
@@ -985,10 +1061,10 @@ Let's take a look at the fields where the remote repository details needs to be 
 
    CrafterCMS supports the following authentication types to use to access remote repository:
 
-    - **Authentication not required (Public URL)** - no credentials needed to access remote repository
-    - **Username & Password** - for this method, you will be asked for a **Remote Git Repository Username** and a **Remote Git Repository Password**. Supply your username and password
-    - **Token** - for this method, you will be asked for a **Remote Git Repository Username** (if required) and a **Remote Git Repository Token**. This method is usually used when two-factor authentication is configured on the remote repository to be accessed. Supply your username if required and token.
-    - **Private Key** - for this method, you will be asked for a **Remote Git Repository Private Key**. This method is a key-based authentication. Supply your private key.
+   - **Authentication not required (Public URL)** - no credentials needed to access remote repository
+   - **Username & Password** - for this method, you will be asked for a **Remote Git Repository Username** and a **Remote Git Repository Password**. Supply your username and password
+   - **Token** - for this method, you will be asked for a **Remote Git Repository Username** (if required) and a **Remote Git Repository Token**. This method is usually used when two-factor authentication is configured on the remote repository to be accessed. Supply your username if required and token.
+   - **Private Key** - for this method, you will be asked for a **Remote Git Repository Private Key**. This method is a key-based authentication. Supply your private key.
 
 #. In the **Git Branch** field, you can supply a branch name, but can be left blank, which in turn would default to the ``master`` branch.
 #. In the **Git Remote Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
@@ -1136,144 +1212,3 @@ configuration updated if separate S3 buckets from the source project are require
 
 |hr|
 
-.. _nav-menu-token-management:
-
---------------------------------
-Navigation Menu Token Management
---------------------------------
-Crafter Studio supports managing tokens for making API requests on behalf of the user and generating tokens for accessing
-a project/site in Preview.
-
-.. image:: /_static/images/system-admin/main-menu/main-menu-token-management.webp
-    :alt: System Administrator - Navigation Menu Token Management Tool
-    :align: center
-    :width: 70%
-
-|
-
-^^^^^^^^^
-API Token
-^^^^^^^^^
-API tokens authorize the user to access APIs as a particular user with a particular role.
-
-To create a new API access token, click on ``Token Management`` from the Main Menu, then click on the ``API Token`` button.
-The only required field for the access token is the label to identify it, however, it is also recommended to set
-an expiration date to minimize the risk of lost or stolen tokens being used without being noticed.
-
-.. figure:: /_static/images/jwt/create-token.webp
-    :width: 70%
-    :alt: Crafter Studio - Create API Access Token
-    :align: center
-
-|
-
-Once the expiration date is reached the access token will stop working automatically. Click on the ``Submit`` button to
-create the token.
-
-.. figure:: /_static/images/jwt/create-token-2.webp
-    :width: 70%
-    :alt: Crafter Studio - Access Token Expiration
-    :align: center
-
-|
-
-The next step is to copy the value of the access token. The value of the access token will not be stored on the server,
-so it needs to be stored by the user in a safe place as it is impossible to recover it after it is created.
-
-.. figure:: /_static/images/system-admin/main-menu/access-token-created.webp
-    :width: 70%
-    :alt: Crafter Studio - Access Token Created
-    :align: center
-
-|
-
-If an access token is lost or exposed in any way it should be disabled or completely deleted to avoid any
-possible use. To delete a token, simply click on the trash can icon to the right of the token you want to delete.
-
-.. figure:: /_static/images/system-admin/main-menu/delete-token-1.webp
-    :width: 70%
-    :alt: Crafter Studio - Delete a Token
-    :align: center
-
-|
-
-You can also delete multiple tokens at once by placing a checkmark on the tokens you want to delete, then clicking on
-``Delete Selected``.
-
-.. figure:: /_static/images/system-admin/main-menu/delete-token-2.webp
-    :width: 70%
-    :alt: Crafter Studio - Delete Multiple Tokens
-    :align: center
-
-|
-
-To disable/enable a token, simply click on the slider on the right side of the token next to the trash can icon.
-
-.. figure:: /_static/images/system-admin/main-menu/token-disable.webp
-    :width: 70%
-    :alt: Crafter Studio - Disable/Enable Token
-    :align: center
-
-|
-
-For an example of how to use the generated API token, see :ref:`crafter-cli`.
-
-.. note:: Users needs the ``manage_access_token`` permission to create access tokens
-
-.. _preview-token:
-
-^^^^^^^^^^^^^
-Preview Token
-^^^^^^^^^^^^^
-.. version_tag::
-    :label: Since
-    :version: 4.2.0
-
-Preview tokens allow preview applications to access delivery APIs in preview mode from within the authoring environment.
-This extra layer of security is required in authoring because the environment contains unpublished projects and content.
-
-To create a Preview Token, click on ``Token Management`` from the Main Menu, then click on the ``Preview Token`` button.
-
-.. figure:: /_static/images/system-admin/main-menu/create-preview-token.webp
-    :width: 70%
-    :alt: Crafter Studio - Create Preview Access Token
-    :align: center
-
-|
-
-The only required fields for the preview token is the dropdown for selecting projects to grant preview access, and the
-date/time fields to set an expiration date for the token, which is pre-populated to a date in the near future. The expiration
-date is set to minimize the risk of lost or stolen tokens being used without being noticed. Click on the ``Generate``
-button to create the token.
-
-.. figure:: /_static/images/system-admin/main-menu/create-preview-token-2.webp
-    :width: 70%
-    :alt: Crafter Studio - Create Preview Access Token
-    :align: center
-
-|
-
-The next step is to copy the value of the preview token. The value of the preview token is not stored on the server,
-so it needs to be stored by the user in a safe place as it is impossible to recover it after it is created.
-
-.. figure:: /_static/images/system-admin/main-menu/preview-token-created.webp
-    :width: 70%
-    :alt: Crafter Studio - Create Preview Access Token
-    :align: center
-
-|
-
-You can now use the preview token in one of the following ways:
-
-- Set a header with the name X-Crafter-Preview, or
-- Add a query string argument with the name crafterPreview, or
-- Set a cookie with the name crafterPreview
-
-Here's an example of using the token with Curl, where ``{Generated-Preview-Token}`` is the token just created:
-
-.. code-block:: bash
-
-    curl --header "cookie: crafterPreview={Generated-Preview-Token};" "http://localhost:8080/api/1/site/content_store/item.json?url=/site/website/index.xml&crafterSite=ed"
-
-
-The dialog above that shows the preview token generated also shows other examples on how to use the preview token.
