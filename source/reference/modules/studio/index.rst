@@ -25,7 +25,6 @@ Crafter Studio provides all the content management services and integrates with 
 -------------
 Configuration
 -------------
-
 Crafter Studio is primarily configured via a single configuration file, ``studio-config.yaml``, and 2 override files that can be used to override the settings in the core configuration file.
 
 The core configuration file for Crafter Studio ``studio-config.yaml`` is located under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio`` and contains pre-configured settings.
@@ -50,9 +49,9 @@ You'll note that the first override file from the ``CRAFTER_HOME/bin/apache-tomc
 .. note:: Changing the configuration files requires a restart of Crafter Studio for the changes to take effect.
 .. note:: Environment variables can be used to override any property defined as ``${env:ENVIRONMENT_VARIABLE}`` in the configuration files. This allows you to inject these properties into a vanilla installation without modifying any actual files, which is especially useful when using Docker or Kubernetes. See :ref:`here <environment-variables>` for a list of environment variables used by CrafterCMS.
 
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Studio Configuration Properties
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In this section, we will highlight some of the more commonly used properties in the configuration of Crafter Studio. For a complete list of all the properties, see the ``studio-config.yaml`` file.
 
 .. list-table:: Configuration Properties
@@ -71,7 +70,7 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure constraints for content being added to the project
     * - :ref:`Editable Mime Types <editable-mime-types>`
       - Configure the MIME-types that are editable directly in Crafter Studio
-    * - :ref:`Project/Site Configuration <studio-project-config>`
+    * - :ref:`Project/Site Configuration <project-configuration>`
       - Configure your project/site configuration
     * - :ref:`UI Configuration <user-interface-configuration>`
       - Configure the Studio UI
@@ -109,9 +108,9 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure the publishing blacklist
     * - :ref:`Configuration Files Maximum <configuration-files-maximum>`
       - Configure the maximum length of configuration content
-    * - :ref:`Content Type Editor Configuration <content-type-editor-config>`
+    * - :ref:`Content Type Editor Configuration <content-type-editor-configuration>`
       - Configure the content types
-    * - :ref:`Dependency Resolver Configuration <dependency-resolver-config>`
+    * - :ref:`Dependency Resolver Configuration <dependency-resolver-configuration>`
       - Configure the dependency resolver
     * - :ref:`Project Tools Configuration <project-tools-configuration>`
       - Configure the project tools
@@ -137,9 +136,9 @@ In this section, we will highlight some of the more commonly used properties in 
 
 .. _studio-smtp-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 SMTP Configuration (Email)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 This section allows the user to set up a mail client by configuring the SMTP server to send emails from Crafter Studio, such as when authors request to publish content or when a request to publish has been approved.
 
 .. code-block:: yaml
@@ -174,9 +173,9 @@ This section allows the user to set up a mail client by configuring the SMTP ser
 
 .. _studio-cors:
 
-^^^^
+""""
 CORS
-^^^^
+""""
 The following section of Studio's configuration overrides allows you to set CORS
 
 .. code-block:: yaml
@@ -211,29 +210,570 @@ patterns need to be escaped with a ``\`` like:
 
 |hr|
 
-^^^^^^^^^^^
+.. _blob-stores:
+
+"""""""""""
 Blob Stores
-^^^^^^^^^^^
-Configure internally managed static asset stores to handle very large files using the Blob Stores configuration. To learn more, read the article :ref:`blob-stores`.
+"""""""""""
+Blob Stores allow you to host internally managed static asset stores to handle very large files. The Blob Stores configuration file allows you to configure stores for assets with the corresponding information required by the store being used.
+To modify the Blob Stores configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Blob Stores** from the list.
+
+.. image:: /_static/images/site-admin/config-open-blob-stores.webp
+    :alt: Configurations - Open Blob Stores Configuration
+    :width: 45%
+    :align: center
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample Blob Stores Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "blob-stores-config.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-blob-stores-config.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/blob-stores-config.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+
+where:
+
+- The environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file. See :ref:`here <env-var-serverless-deployments>` for more information on environment variables used in serverless deployments
+
+Remember to encrypt your credentials. For more information on how to manage/encode your secrets such as AWS credentials,
+please see :ref:`managing-secrets`
+
+For better security and control, we recommend setting an AWS profile via the ``crafter-setenv.sh`` file instead of
+configuring the encrypted credentials in the blob stores configuration file. This allows you to have an IAM user
+per developer, which is a better approach than a single user whose credentials are included (encrypted) in the
+configuration file. In this way, if you need to rotate or remove the credentials of a single user, the access of
+other users won't be affected.
+
+To set an AWS profile, using your favorite editor, open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and add the following:
+
+.. code-block:: bash
+
+   export AWS_PROFILE=YOUR_AWS_PROFILE
+
+|
+
+*where* ``YOUR_AWS_PROFILE`` is the AWS profile you wish to use for the blob store. See :ref:`here <aws-profile-configuration>`
+for more information on configuring AWS profiles.
+
+When using an AWS profile, you can now remove the ``<credentials />`` section in your blob stores configuration file.
+
+Remember to restart your CrafterCMS install for the changes you made to take effect.
+
+~~~~~~~~~~~~~~~~~~~~~~~
+Using AWS Service Roles
+~~~~~~~~~~~~~~~~~~~~~~~
+CrafterCMS supports AWS access without using access/secret keys, by setting AWS service roles on your machine
+
+Simply follow the instructions here for attaching an IAM role to your instance:
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role
+
+Remember to remove the ``<credentials />`` section in your blob stores configuration file.
+
+.. _publishing-assets-from-blob-stores:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Publishing Assets from the Blob Stores
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CrafterCMS supports managing assets in external storage through workflow and publishing mechanics.
+This allows uploading assets to an external storage for preview, that can then be published to either a live or a staging
+(depending on if staging is setup for your Crafter install) external storage, thus making the external assets available
+to delivery only after the assets have been published to the live external storage.
+
+The external storage could be in the cloud, such as AWS S3 or some other storage solution that is outside of where CrafterCMS is installed.
+
+''''''''''''''''''''''''''''''''
+Configuring the External Storage
+''''''''''''''''''''''''''''''''
+First we'll need to setup the external storage to be used by CrafterCMS.
+To setup an external storage for assets, open the **Sidebar**, then click on |projectTools| -> *Configurations*. Select ``Blob Stores`` from the dropdown and fill in the required information.
+
+.. code-block:: xml
+
+   <blobStore>
+     <id/>
+     <type/>
+     <pattern/>
+     <mappings>
+       <mapping>
+         <publishingTarget/>
+         <storeTarget/>
+         <prefix/>
+       </mapping>
+     </mappings>
+     <configuration/>
+   </blobStore>
+
+|
+
+To see more information on the Blob Stores configuration, see :ref:`above <blob-stores>`
+
+After setting up the ``Blob Stores`` configuration, you may now use the external storage for uploading using the various upload methods provided by Crafter Studio, and publishing to live or staging if it's setup.
+
+'''''''
+Example
+'''''''
+Let's take a look at an example of setting up an external storage for preview, staging and live and then uploading and finally publishing assets to the external storage we setup. In the example, we will use AWS S3 as the external storage and the Website Editorial blueprint in Crafter Studio to create our project.
+
+**Prerequisites:**
+
+#. Project created using the Website Editorial blueprint.
+#. AWS S3 bucket/s. A single bucket can be used as long as all the ``publishingTarget`` uses a unique ``prefix``, or a separate bucket can be created for each ``publishingTarget``, or a combination of both.
+
+   For our example, we will be using two buckets. One for authoring and another for delivery. The following buckets were setup in AWS S3: *my-authoring-bucket* for authoring (used by publishing target ``preview`` with the prefix *sandbox* and publishing target ``staging`` with the prefix *staging*) and *my-deli-bucket* for delivery.
+
+**Here are the steps:**
+
+#. Enable staging (optional)
+#. Setup the blob store
+#. Upload files
+#. Publish the files to staging (if setup)
+#. Publish the files into live
+
+Let's begin:
+
+1. Enable Staging (optional)
+''''''''''''''''''''''''''''
+This step is optional but for our example, we wanted to be able to publish to staging, so in this step, we will first enable staging. In your Studio, click on |projectTools| -> *Configuration* -> *Project Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
+
+  .. code-block:: xml
+     :emphasize-lines: 2
+
+     <published-repository>
+         <enable-staging-environment>true</enable-staging-environment>
+         <staging-environment>staging</staging-environment>
+         <live-environment>live</live-environment>
+     </published-repository>
+
+  |
+
+For more information on staging, see :ref:`staging-env`
+
+
+2. Setup Blob Store
+'''''''''''''''''''
+In your Studio, click on |projectTools| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 buckets for the preview, staging and live.
+
+   .. code-block:: xml
+      :caption: *CRAFTER_HOME/data/repos/sites/sandbox/SITENAME/sandbox/config/studio/blob-stores-config.xml*
+      :linenos:
+      :emphasize-lines: 5,9,14,19,24,25,27
+
+      <blobStores>
+        <blobStore>
+          <id>s3-default</id>
+          <type>s3BlobStore</type>
+          <pattern>/static-assets/item/.*</pattern>
+          <mappings>
+            <mapping>
+              <publishingTarget>preview</publishingTarget>
+              <storeTarget>my-authoring-bucket</storeTarget>
+              <prefix>sandbox</prefix>
+            </mapping>
+            <mapping>
+              <publishingTarget>staging</publishingTarget>
+              <storeTarget>my-authoring-bucket</storeTarget>
+              <prefix>staging</prefix>
+            </mapping>
+            <mapping>
+              <publishingTarget>live</publishingTarget>
+              <storeTarget>my-delivery-bucket</storeTarget>
+            </mapping>
+          </mappings>
+          <configuration>
+            <credentials>
+              <accessKey>xxxxxxxxx</accessKey>
+              <secretKey>xxxxxxxxx</secretKey>
+            </credentials>
+            <region>us-west-1</region>
+            <pathStyleAccess>true</pathStyleAccess>
+          </configuration>
+        </blobStore>
+      </blobStores>
+
+   |
+
+**where the highlighted items above refers to:**
+
+* **pattern:** the regex to match file paths (the path in Studio that when used will access the external storage, ``/static-assets/item/.*`` for our example above)
+* **mappings.mapping.storeTarget:** the name of the storeTarget inside the store (AWS S3 buckets, ``my-authoring-bucket`` and ``my-deli-bucket`` for our example above)
+* **configuration:** configuration specific for the store type (For AWS S3, it requires credentials to access the buckets)
+
+Remember to encrypt your credentials. For more information on how to manage/encode your secrets such as AWS credentials,
+please see :ref:`managing-secrets`
+
+To see more information on the Blob Stores configuration, see :ref:`above <blob-stores>`
+
+
+3. Upload files
+'''''''''''''''
+There are various ways to upload files in Crafter Studio. Here's a few ways we can upload to the external storage:
+
+#. Upload through a picker with corresponding data source setup in a content type
+#. Upload using the ``Bulk Upload`` or ``Upload`` right-click option
+
+Let's take a closer look:
+
+#. One way of uploading files is through the use of a picker (image, video, item selector) with its corresponding data source with the ``Repository Path`` property set to the ``pattern`` we defined in the ``Blob Stores`` configuration file.
+
+   For our example, open the **Page - Article** content type by opening the **Sidebar**, then click on |projectTools| -> *Content Types*, then choose the template name ``Page - Article``.
+
+   In the **Page - Article** content type, notice that the ``Repository Path`` property of the ``Upload Image`` data source is set to: ``/static-assets/item/images/{yyyy}/{mm}/{dd}/``, which falls into the file path pattern ``/static-assets/item/.*`` we setup in the ``Blob Stores`` configuration file
+
+   .. image:: /_static/images/site-admin/ext-storage/setup-datasource.webp
+      :align: center
+      :alt: Setup data source to use the file path pattern in Blob Stores
+      :width: 95%
+
+   Let's change the image used in one of the articles in the project.
+
+   From the **Sidebar**, navigate to ``/articles/2016/6`` then right click on ``Coffee is Good for Your Health`` then select ``Edit``.
+
+   Scroll down to the ``Content`` section, then click on the ``Replace`` button next to the **Image** field, then select ``Upload Images``. Select the file you want to upload. In our example, the file ``new1.png`` will be uploaded to ``static-assets/item/images/2020/03/27``.
+
+   .. image:: /_static/images/site-admin/ext-storage/upload-image-with-picker.webp
+      :align: center
+      :alt: Upload image using an image picker
+      :width: 95%
+
+   |
+
+   After uploading the file, we should see it in the AWS S3 bucket for authoring ``my-authoring-bucket`` in the sandbox:
+
+   .. image:: /_static/images/site-admin/ext-storage/picker-uploaded-img-in-bucket.webp
+      :align: center
+      :alt: Image uploaded using the image picker is now in the S3 bucket
+      :width: 95%
+
+#. Next we'll try uploading using the ``Upload`` right-click option.
+
+   Open the **Sidebar** and navigate to ``static-assets/item``. Create a folder named ``docs`` under ``item``. Right click on the newly created folder and select ``Upload`` to upload a single file, or ``Bulk Upload`` to upload multiple files
+
+   In the example below, two files were uploaded to the ``docs`` folder.
+
+   .. image:: /_static/images/site-admin/ext-storage/uploaded-files-to-s3.webp
+       :align: center
+       :alt: "s3" folder created under "static-assets"
+       :width: 35%
+
+   |
+
+   When you upload files to the ``docs`` folder, the files get uploaded to the ``sandbox`` of the ``my-authoring-bucket`` previously setup.
+
+   .. image:: /_static/images/site-admin/ext-storage/s3-preview-bucket.webp
+       :align: center
+       :alt: Files in preview in "s3" my-authoring-bucket
+       :width: 85%
+
+|
+
+
+5. Publish the files to staging
+'''''''''''''''''''''''''''''''
+The next step in our example is to publish the files to ``staging``. To publish a file to ``staging``, navigate to the file in the ``Sidebar`` then right click on the file, and select ``Publish`` or open the ``Dashboard`` and select the file/s you want to publish to ``staging`` in the ``Unpublished Work`` widget and click on ``Publish`` from the context nav.
+
+The ``Publish`` dialog will come up. Remember to select ``staging`` for the ``Publishing Target``
+
+.. image:: /_static/images/site-admin/ext-storage/publish-to-staging.webp
+    :align: center
+    :alt: Publish file to staging in Studio
+    :width: 65%
+
+|
+
+When the file/s are published to ``staging``, the files get published to the ``staging`` branch of the ``my-authoring-bucket`` in s3.
+
+.. image:: /_static/images/site-admin/ext-storage/s3-staging-bucket.webp
+    :align: center
+    :alt: Published files to staging in "s3" my-authoring-bucket
+    :width: 85%
+
+|
+
+6. Publish the files to delivery
+''''''''''''''''''''''''''''''''
+Finally, we'll publish the file/s to ``live``. To publish a file to ``live``, navigate to the file in the ``Sidebar`` then right click on the file, and select ``Publish`` or open the ``Dashboard`` and select the file/s you want to publish to ``live`` in the ``Unpublished Work`` widget and click on ``Approve & Publish`` from the context nav.
+
+The ``Publish`` dialog will come up. Remember to select ``live`` for the ``Publishing Target``
+
+.. image:: /_static/images/site-admin/ext-storage/publish-to-live.webp
+    :align: center
+    :alt: Publish file to live in Studio
+    :width: 65%
+
+|
+
+When the file/s are published to ``live``, the file/s get published to the ``my-deli-bucket`` in s3.
+
+.. image:: /_static/images/site-admin/ext-storage/s3-delivery-bucket.webp
+    :align: center
+    :alt: Published file/s to live in "s3" my-delivery-bucket
+    :width: 85%
+
+|
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Setting up Staging for Existing Projects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+When adding the ``staging`` publishing target to an established project that uses external storage, Studio does not clone the assets in external storage for ``live`` into ``staging``. Performing a bulk publish to ``staging`` also does not work at this time. This is because Studio does not publish to ``staging``, assets in a LIVE, UNEDITED state.
+
+To sync the external storage for ``staging`` with ``live``, you must copy the assets in the ``live`` external storage to the ``staging`` external storage.
+
+Let's take a look at an example of adding ``staging`` to an existing project.
+
+**Prerequisites:**
+
+#. Project created using the Website Editorial blueprint with external storage setup for ``live`` and assets already published to ``live`` (See example above for setting up external storage for a project. Remember to not setup ``staging`` as we will be doing it in this example)
+#. AWS S3 bucket to be used by the ``staging`` publishing target. For our example, we will be using the bucket ``my-staging`` setup in AWS S3.
+
+**Here are the steps:**
+
+#. Enable staging in Studio
+#. Setup the blob store in Studio
+#. Copy assets in live to staging in external storage
+
+Let's begin:
+
+#. **Enable staging**
+
+   In your Studio, click on |projectTools| -> *Configuration* -> *Project Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
+
+     .. code-block:: xml
+        :emphasize-lines: 2
+
+        <published-repository>
+          <enable-staging-environment>true</enable-staging-environment>
+          <staging-environment>staging</staging-environment>
+          <live-environment>live</live-environment>
+        </published-repository>
+
+     |
+
+   For more information on staging, see :ref:`staging-env`
+
+2. **Setup Blob Store**
+
+   Setup ``staging`` in the Blob Store by adding the following to your ``Blob Stores`` configuration. In your Studio, click on |projectTools| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 bucket for staging.
+
+     .. code-block:: xml
+
+        <mapping>
+          <publishingTarget>staging</publishingTarget>
+          <storeTarget>my-staging</storeTarget>
+        </mapping>
+
+     |
+
+
+   To see more information on the Blob Stores configuration, see :ref:`above <blob-stores>`
+
+#. **Copy assets in** ``live`` **to** ``staging`` **in external storage**
+
+   In your AWS console, copy the contents of your delivery bucket
+
+   .. image:: /_static/images/site-admin/ext-storage/s3-copy-delivery.webp
+      :align: center
+      :alt: Copy assets in the delivery bucket
+      :width: 85%
+
+   |
+
+   Paste the copied content into the staging bucket ``my-staging``
+
+   .. image:: /_static/images/site-admin/ext-storage/s3-staging-bucket-content.webp
+      :align: center
+      :alt: Assets copied from delivery bucket to staging bucket
+      :width: 85%
+
+   |
+
+   The ``live`` and ``staging`` external storage is now synced.
 
 |hr|
 
-^^^^^^^^^^^^^^
+.. _project-policy-configuration:
+
+""""""""""""""
 Project Policy
-^^^^^^^^^^^^^^
-The project policy configuration file allows the administrator to configure conditions for adding content to the project.
+""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.0.0
+
+TThe project policy configuration file allows the administrator to configure constraints for content being added to the project
 (via uploads), such as filename constraints, minimum/maximum size of files, permitted content types or file types (MIME-types), etc.
 
-Learn more about project policy in the article :ref:`project-policy-configuration`.
+*Note that the project policy does not apply to content created directly on disk via the Git or APIs.*
+
+CrafterCMS supports the following project policies:
+
+- Filename allowed patterns and automatic renaming rules
+- File size limits
+- MIME-type limits
+- Content-type limits
+
+.. note::
+    .. version_tag::
+        :label: Since
+        :version: 4.1.4
+
+    The default policy for filenames and automatic renaming rules is to lowercase everything except items under: ``/scripts``, ``/templates``, and ``/static-assets/app``
+
+
+To modify the project policy configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration** and
+select **Project Policy Configuration** from the list.
+
+.. image:: /_static/images/site-admin/config-open-project-policy-config.webp
+   :alt: Configurations - Open Project Policy Configuration
+   :width: 45 %
+   :align: center
+
+.. note::
+
+   The Project Policy Configuration file (site-policy-config.xml) is not overridden by environment.
+   Learn more about Studio multi-environment support in :ref:`studio-multi-environment-support`.
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample Project Policy Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample project policy configuration</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-site-policy-config.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/site-policy-config.xml*
+    :language: xml
+    :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+.. raw:: html
+
+   <hr>
+
+~~~~~~~~
+Examples
+~~~~~~~~
+Let's take a look at some example project policy configurations.
+
+''''''''''
+Mime Types
+''''''''''
+The example configuration below (as seen in the default project policy configuration) disallows svg image
+file uploads:
+
+.. code-block:: xml
+   :emphasize-lines: 7-9
+
+      <!-- disable svg files -->
+      <statement>
+        <target-path-pattern>/.*</target-path-pattern>
+        <permitted>
+          <mime-types>*/*</mime-types>
+        </permitted>
+        <denied>
+          <mime-types>image/svg+xml</mime-types>
+        </denied>
+      </statement>
+
+Whenever a user tries to upload an svg image, the user will see a message on the screen informing them that
+it doesn't comply with the project policies and can’t be uploaded like below:
+
+.. image:: /_static/images/site-admin/project-policy-cannot-upload.webp
+   :alt: Project Policy Configuration - Do not allow svg file uploads
+   :width: 55 %
+   :align: center
+
+|
+
+''''''''''''''''
+File Size Limits
+''''''''''''''''
+Limiting file size of uploads is supported. Simply add ``<minimum-file-size/>`` and/or <maximum-file-size/>
+under ``<permitted>`` where the minimum and maximum file sizes are in bytes
+
+The example configuration below limits image uploads to less than 1MB in folder ``/static-assets/images/``.
+
+.. code-block:: xml
+
+   <!-- Example: only allow images of less than 1 MB -->
+   <statement>
+     <target-path-pattern>/static-assets/images/.*</target-path-pattern>
+     <permitted>
+       <maximum-file-size>1000000</maximum-file-size>
+       <mime-types>image/*</mime-types>
+     </permitted>
+   </statement>
+
+Whenever a user tries to upload an image that is larger than 1 MB in the ``/static-assets/images/`` folder, the user
+will see a message on the screen informing them that it doesn’t comply with project policies and can’t be uploaded like below:
+
+.. image:: /_static/images/site-admin/project-policy-img-too-big.webp
+   :alt: Project Policy Configuration - Do not allow images greater than 1 MB
+   :width: 55 %
+   :align: center
+
+|
+
+''''''''''''''''''''
+Transform File Names
+''''''''''''''''''''
+CrafterCMS supports transforming filenames of uploaded files and convert the filenames to lower case or upper case.
+Simply set **caseTransform** to either ``lowercase`` or ``uppercase`` in ``target-regex`` to convert to your required case.
+
+The example configuration below (as seen in the default project policy configuration) converts
+parenthesis ( ``(`` and ``)`` ) and spaces in filenames to a dash ( ``-`` )
+and lower cases all the letters in filenames for files uploaded to the ``/static-assets/`` folder .
+
+.. code-block:: xml
+
+   <statement>
+     <target-path-pattern>/static-assets/.*</target-path-pattern>
+     <permitted>
+       <path>
+         <source-regex>[\(\)\s]</source-regex>
+         <target-regex caseTransform="lowercase">-</target-regex>
+       </path>
+     </permitted>
+   </statement>
+
+Whenever a user uploads a file with upper case letters or spaces and parenthesis in the filename, in the
+``/static-assets/`` folder, the user will see a message on the screen informing them that it doesn’t comply
+with project policies and will be asked if they would like to continue upload with the suggested name like below:
+
+.. image:: /_static/images/site-admin/project-policy-convert-to-lower-case.webp
+   :alt: Project Policy Configuration - Convert filenames to lower case
+   :width: 55 %
+   :align: center
 
 
 |hr|
 
 .. _editable-mime-types:
 
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Editable Mime Types
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Here's the default list of MIME-types editable in Studio:
 
 .. code-block:: yaml
@@ -255,19 +795,212 @@ These can be updated as needed by overriding the property in one of the override
 
 |hr|
 
-.. _studio-project-config:
+.. _project-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 Project/Site Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-Crafter Studio allows to configure many aspects of a project/site. Learn more about project/site configuration in the article :ref:`project-configuration`.
+""""""""""""""""""""""""""
+Crafter Studio allows to configure many aspects of a project/site.
+The project configuration file contains the primary configuration for Crafter Studio's behavior. Each project has
+its own project configuration file that controls its behavior independently of other projects.
 
+To modify the project configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration**
+and select **Project Configuration** from the list.
+
+.. image:: /_static/images/site-admin/config-open-project-config.webp
+    :alt: Configurations - Open Project Configuration
+    :width: 45%
+    :align: center
+
+|
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample Project Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample Project Configuration</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-site-config.xml
+     :language: xml
+     :linenos:
+
+
+.. raw:: html
+
+   </details>
+
+|
+
+~~~~~~~~~~~~~~~~
+Enabling Staging
+~~~~~~~~~~~~~~~~
+The ``staging`` publishing target is an intermediate publishing target where the project can be fully exercised.
+To enable the ``staging`` publishing target, set the following to ``true``:
+
+.. code-block:: xml
+
+   <published-repository>
+     <enable-staging-environment>false</enable-staging-environment>
+   </published-repository>
+
+|
+
+See :ref:`staging-env` for more information on how to setup the ``staging`` publishing target
+
+~~~~~~~~~~~~~~~~~~~~~~~
+Escaping Content Fields
+~~~~~~~~~~~~~~~~~~~~~~~
+To add/remove escaped content fields, modify the following:
+
+.. code-block:: xml
+
+   <!--
+   Specifies the regular expression patterns to match content type field
+   names that require CDATA escaping.
+   -->
+   <cdata-escaped-field-patterns>
+     <pattern>(_html|_t|_s|_smv|mvs)$</pattern>
+     <pattern>internal-name</pattern>
+   </cdata-escaped-field-patterns>
+
+|
+
+For more information on escaping content fields, see the notes under :ref:`Variable Names and Search Indexing <variable-names-search-indexing>`
+
+~~~~~~~~~~~~~~~~~~~
+Publishing Comments
+~~~~~~~~~~~~~~~~~~~
+To make comments mandatory for different publishing methods, simply set to ``true`` any applicable methods the
+site administrators want to require comments when publishing.
+
+.. code-block:: xml
+
+   <publishing>
+     <comments>
+       <!-- Global setting would apply to all -->
+       <required>false</required>
+       <!-- Additional (also optional) specific overrides -->
+       <!-- <delete-required/> -->
+       <!-- <bulk-publish-required/> -->
+       <!-- <publish-by-commit-required/> -->
+       <!-- <publish-required/> -->
+     </comments>
+   </publishing>
+
+|
+
+See :ref:`publishing-and-status` for more information on the different publishing methods available from ``Project Tools``
+
+.. _project-config-require-peer-review:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Requiring Peer Review for Publishing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. version_tag::
+    :label: Since
+    :version: 4.0.0
+
+A publisher review workflow option is available to make approval of a publish request mandatory for users with
+publish permission. To enable the publisher review workflow option, set ``requirePeerReview`` to ``true``.
+
+.. code-block:: xml
+
+   <!--
+        This workflow parameter disallows users with _Publish_ permission from publishing their own work.
+        Work performed by a user must be approved by a different reviewer before it can be published.
+        Set the value to true to enable this feature.
+   -->
+   <workflow>
+     <publisher>
+       <requirePeerReview>true</requirePeerReview>
+     </publisher>
+   </workflow>
+
+.. TODO: Is this the best place for content monitoring or project admin? It's now in both to some extent with project admin having the full article and this links to it.
+
+~~~~~~~~~~~~~~~~~~
+Content Monitoring
+~~~~~~~~~~~~~~~~~~
+Content monitoring allows you to configure watches and notifications on your project. To add content monitors, add the following:
+
+.. code-block:: xml
+
+   <contentMonitoring>
+     <monitor>
+       <name>Content Expiring Tomorrow</name>
+       <query>expired_dt:[now+1d/d TO now+2d/d]</query>
+       <paths>
+         <path>
+           <name>All Site</name>
+           <pattern>/site/.*</pattern>
+           <emailTemplate>contentExpiringSoon</emailTemplate>
+           <emails>admin@example.com</emails>
+           <locale>en</locale>
+         </path>
+       </paths>
+     </monitor>
+   </contentMonitoring>
+
+|
+
+See :ref:`content-monitoring` for more information on configuring content monitoring.
+
+.. _project-config-protected-folders:
+
+~~~~~~~~~~~~~~~~~
+Protected Folders
+~~~~~~~~~~~~~~~~~
+The protected folders settings allows you to configure paths that can't be deleted, renamed or moved in addition to
+the following paths that are protected by default:
+
+- ``/site/website/index.xml``
+- ``/site/components``
+- ``/site/taxonomy``
+- ``/static-assets``
+- ``/templates``
+- ``/scripts``
+- ``/sources``
+
+To add protected folder/s in your project, add your folder path/s like below:
+
+.. code-block:: xml
+
+   <protected-folders-patterns>
+     <pattern>/YOUR/FOLDER/PATH/PATTERN</pattern>
+     <pattern>/MORE/FOLDER/PATH/PATTERN</pattern>
+     ...
+   </protected-folders-patterns>
+
+|
+
+Remember to replace ``/YOUR/FOLDER/PATH/PATTERN`` and ``/MORE/FOLDER/PATH/PATTERN`` with the actual folder path
+pattern/s that you would like to be protected.
+
+To see an example of configured protected folders, create a project using the ``Video Center`` blueprint from the
+Public Marketplace in the ``Create Project`` dialog then open the
+``Sidebar`` -> |projectTools| -> ``Configuration`` -> ``Project Configuration``. Scroll down to the
+``<protected-folders-patterns>`` tag:
+
+.. code-block:: xml
+
+   <!--
+   Prevent deleting, renaming or cutting root folders of sidebar
+   -->
+   <protected-folders-patterns>
+     <pattern>/site/streams</pattern>
+     <pattern>/site/videos</pattern>
+     <pattern>/site/origins</pattern>
+   </protected-folders-patterns>
 
 |hr|
 
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 UI Configuration
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 Crafter Studio's UI is highly configurable and allows you to customize the look and feel of the UI per project to suit your needs. Learn more about Studio UI configuration in the article :ref:`user-interface-configuration`.
 
 
@@ -275,9 +1008,9 @@ Crafter Studio's UI is highly configurable and allows you to customize the look 
 
 .. _studio-rte-config:
 
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 RTE Configuration
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 RTEs are more effective/productive for authors when they are configured properly for the specific type of content the author is managing. A properly and effectively configured RTE has the right styles, menu options and so on.
 Learn more about configuring Studio's default RTE in the article :ref:`rte-configuration`.
 
@@ -285,9 +1018,9 @@ Learn more about configuring Studio's default RTE in the article :ref:`rte-confi
 
 .. _studio-preview-deployer-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""
 Preview Deployer Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""
 The following section of Studio's configuration overrides allows you to setup your deployer URLs
 
 .. code-block:: yaml
@@ -313,9 +1046,9 @@ The following section of Studio's configuration overrides allows you to setup yo
 
 .. _studio-preview-search-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 Preview Search Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 The following section of Studio's configuration overrides allows you to set URLs for search in preview.
 
 .. code-block:: yaml
@@ -335,9 +1068,9 @@ The following section of Studio's configuration overrides allows you to set URLs
 
 .. _studio-search:
 
-^^^^^^
+""""""
 Search
-^^^^^^
+""""""
 The following section of Studio's configuration overrides allows you to setup the url for search
 
 .. code-block:: yaml
@@ -368,9 +1101,9 @@ The following section of Studio's configuration overrides allows you to setup th
 
 .. _cache-settings:
 
-^^^^^^^^^^^^^^
+""""""""""""""
 Cache Settings
-^^^^^^^^^^^^^^
+""""""""""""""
 Here are the cache control settings for templates and assets:
 
 .. code-block:: yaml
@@ -390,9 +1123,9 @@ Here are the cache control settings for templates and assets:
 
 .. _studio-forwarded-headers:
 
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 Forwarded Headers
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 The following section of Studio's configuration overrides allows you to configure forwarded headers to resolve the actual hostname and protocol when it is behind a load balancer or reverse proxy. This is especially useful when setting up Studio behind a load balancer in AWS.
 
 .. code-block:: yaml
@@ -412,12 +1145,12 @@ The following section of Studio's configuration overrides allows you to configur
 
 .. _studio-policy-headers:
 
-^^^^^^^^^^^^^^
+""""""""""""""
 Policy Headers
-^^^^^^^^^^^^^^
-"""""""""""""""""""""""
+""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 Content Security Policy
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 .. version_tag::
 	:label: Since
 	:version: 4.1.2
@@ -437,9 +1170,9 @@ and the URLs that they can be loaded from.
 To block offending requests, set ``studio.security.headers.contentSecurityPolicy.reportOnly`` to ``false``.
 This property is set to ``true`` by default
 
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 X-Permitted-Cross-Domain-Policies
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The following allows you to configure what other domains you want to allow access to your domain.
 The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow any embedding) by default.
 
@@ -457,9 +1190,9 @@ The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow an
 
 .. _studio-crafterSite-cookie-domain:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""
 crafterSite Cookie Domain
-^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.0.1
@@ -479,9 +1212,9 @@ The following section of Studio's configuration overrides allows you to set the 
 
 .. _studio-deployer-http-request-timeout:
 
-^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 Deployer HTTP Requests
-^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.2.0
@@ -502,9 +1235,9 @@ The default timeout is 5 minutes.
 
 .. _studio-serverless-delivery-targets:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 Serverless Delivery Targets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 The following section of Studio's configuration overrides allows you to set up serverless delivery.
 
 .. code-block:: yaml
@@ -563,9 +1296,9 @@ The following section of Studio's configuration overrides allows you to set up s
 
 .. _studio-cloudformation-capabilities:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 CloudFormation Capabilities
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.2.0
@@ -599,28 +1332,323 @@ capabilities:
 
 |
 
+.. _notifications-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""
 Workflow Notifications Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Crafter Studio provides a simple workflow option that includes submission, review, approve or reject, and
-publish immediately or publish on a schedule.
+""""""""""""""""""""""""""""""""""""
+Crafter Studio provides a simple workflow option that includes submission, review/reject and approve and
+publish immediate / publish on a schedule options. This document covers the configuration of the HTML notifications
+that can be sent at each point in the workflow. To setup your email server, please see :ref:`studio-smtp-config`
 
-Learn more about Crafter Studio's workflow in the article :ref:`notifications-configuration`.
+~~~~~~
+Basics
+~~~~~~
+All configuration for the notification system is done by a site admin (on a per site basis) in the following configuration file:
 
-.. toctree::
-    :hidden:
+'''''
+Where
+'''''
+.. code-block:: xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notifications.xml*
 
-    notification-configuration
+    <notificationConfig>
+        ...
+    </notificationConfig>
 
+This can be modified/accessed through Crafter Studio, by going to the **Sidebar**, then clicking on |projectTools| -> **Configuration** -> **Notification Configuration**
+
+.. image:: /_static/images/site-admin/notification-config-open.webp
+    :align: center
+    :width: 50%
+    :alt: Configuration - Open Notification Configuration
+
+'''''''''
+Templates
+'''''''''
+Templates are used for the email messages sent for workflow states in the configuration file mentioned above. The template used is Freemarker (also known as FTL).
+Variables are referenced in the template like `${VARIABLE}` or as part of a Freemarker statement like `<#list files as file>...</#list>`
+Dates can be formatted like so: `scheduleDate?string["MMMMM dd, yyyy 'at' hh:mm a"]}`
+
+A full guide to FTL can be found here: http://freemarker.org/
+
+~~~~~~~~~~~~~~~~~~
+Template Variables
+~~~~~~~~~~~~~~~~~~
+Here are some template variables used in CrafterCMS:
+
+''''''''''''''''
+Common Variables
+''''''''''''''''
++-----------------------------+-----------------------------------------------------------+
+|| Variable Name              || Description                                              |
++=============================+===========================================================+
+|| date                       || Date for submission                                      |
++-----------------------------+-----------------------------------------------------------+
+|| files                      || Collection of file objects in submission.                |
+||                            || Usually iterated over `<#list files as file>...</#list>` |
++-----------------------------+-----------------------------------------------------------+
+|| `file`.name                || File name including full repository path                 |
++-----------------------------+-----------------------------------------------------------+
+|| `file`.internalName        || File internal CMS label                                  |
++-----------------------------+-----------------------------------------------------------+
+|| submitter                  || Content submitter object, has sub properties             |
++-----------------------------+-----------------------------------------------------------+
+|| submitter.firstName        || First name                                               |
++-----------------------------+-----------------------------------------------------------+
+|| submitter.lastName         || Last Name                                                |
++-----------------------------+-----------------------------------------------------------+
+|| submitter.username         || Authoring User Name / ID                                 |
++-----------------------------+-----------------------------------------------------------+
+|| submissionComments         || String containing submission comments                    |
++-----------------------------+-----------------------------------------------------------+
+|| scheduleDate               || Date content is scheduled for                            |
++-----------------------------+-----------------------------------------------------------+
+|| siteName                   || ID of the site                                           |
++-----------------------------+-----------------------------------------------------------+
+|| liveUrl                    || Live Server URL base                                     |
++-----------------------------+-----------------------------------------------------------+
+|| authoringUrl               || Authoring Server URL base                                |
++-----------------------------+-----------------------------------------------------------+
+
+
+''''''''''''''''''''''''''''''''
+Deployment Error Notice Variable
+''''''''''''''''''''''''''''''''
++-----------------------------+---------------------------------------------------------+
+|| Variable Name              || Description                                            |
++=============================+=========================================================+
+|| deploymentError            || Error message on deployment. Currently must be         |
+||                            || addressed as ${deploymentError.toString()}             |
++-----------------------------+---------------------------------------------------------+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configure Who Gets Notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configure who gets notifications by entering the email addresses of the people you want to send notifications to, in between the tags ``<deploymentFailureNotification>`` and/or ``<approverEmails>``
+
+.. code-block:: xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notifications.xml*
+    :linenos:
+
+    <notificationConfig>
+      <lang name="en">
+        <deploymentFailureNotification>
+          <email>EMAIL ADDRESS TO NOTIFY ON FAILURE</email>
+        </deploymentFailureNotification>
+        <approverEmails>
+          <email>EMAIL ADDRESS TO NOTIFY SUBMISSION</email>
+          <email>EMAIL ADDRESS TO NOTIFY SUBMISSION</email>
+        </approverEmails>
+
+            ...
+      </lang>
+    </notificationConfig>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configure Studio Workflow Dialog Messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Below is a sample of Studio workflow dialog messages defined in our notifications configuration file.
+
+.. code-block:: xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notifications.xml*
+    :linenos:
+
+        <notificationConfig>
+          <lang name="en">
+            ...
+
+            <generalMessages>
+              <content key="scheduling-policy"><![CDATA[The {siteName} processes all publishing requests each business day, between 4PM EST and 6PM EST, unless a specific date/time is requested.<br/><br/>All requests received after 4PM EST may not be processed until the next business day.<br/><br/>If you have any questions about this policy or need a publish request processed immediately, please email the administrator.]]>
+              </content>
+            </generalMessages>
+
+            <cannedMessages>
+              <content  title="Not Approved" key="NotApproved"><![CDATA[Please make the following revisions and resubmit.]]></content>
+              <content  title="Typos" key="Typos"><![CDATA[This content has multiple misspellings and/or grammatical errors. Please correct and re-submit.]]></content>
+              <content  title="Incorrect Branding" key="IB"><![CDATA[This content uses incorrect or outdated terms, images, and/or colors. Please correct and re-submit.]]></content>
+              <content  title="Broken Links" key="BrokenLinks"><![CDATA[This content has non-working links that may be due to incomplete and/or misspelled URLs. Any links directing users to websites without the Acme.com primary navigation, or directing users to a document must open in a new browser window. Please correct and re-submit.]]></content>
+              <content  title="Needs Section Owner's Approval" key="NSOA"><![CDATA[This content needs the approval of its section&apos;s owner to insure there is no negative impact on other pages/areas of section, etc. Once you have their approval please email the Web Marketing Operations Team and re-submit this publish request.]]></content>
+            </cannedMessages>
+
+            <completeMessages>
+              <content key="submitToGoLive"><![CDATA[An email notification has been sent to the team. Your content will be reviewed and (if approved) pushed live between 4PM EST and 6PM EST of the business day that the request was received. If this request is sent after business hours, it will be reviewed and (if approved) pushed live as soon as possible, the next business day.<br/><br/>If you need to make further revisions to this item, please re-submit this publish request after making them.<br/><br/>If this request needs immediate attention, please email the administrator.]]></content>
+              <content key="delete">
+                Item(s) has been pushed for delete. It will be deleted shortly.
+              </content>
+              <content key="go-live">Item(s) has been pushed live. It will be visible on the live site shortly.</content>
+              <content key="schedule-to-go-live">The scheduled item(s) will go live on: ${date}.&lt;br/&gt;&lt;br/&gt;</content>
+              <content key="reject">Rejection has been sent. Item(s) have NOT been pushed live and have returned to draft state.</content>
+              <content key="delete">Item(s) has been pushed for delete. It will be deleted shortly.</content>
+              <content key="schedule-to-go-live">Item(s) have been scheduled to go live.</content>
+            </completeMessages>
+
+              ...
+          </lang>
+        </notificationConfig>
+
+~~~~~~~~~~~~~~~~~~~
+Configure Templates
+~~~~~~~~~~~~~~~~~~~
+Below is an example of a configured email messages for each point in the workflow, found in between the tag <emailTemplates> in the notifications configuration file.
+
+.. code-block:: xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notifications.xml*
+    :linenos:
+
+    <notificationConfig>
+      <lang name="en">
+        ...
+        <emailTemplates>
+          <emailTemplate key="deploymentError">
+            <subject>Deployment error on site ${siteName}</subject>
+            <body><![CDATA[
+                    <html>
+                      <head>
+                        <meta charset="utf-8"/>
+                      </head>
+                      <body style=" font-size: 12pt;">
+                        <p>
+                          The following content was unable to deploy:
+                          <ul>
+                            <#list files as file>
+                              <li>${file.internalName!file.name}</li>
+                            </#list>
+                          </ul>
+                          Error:<br/>
+                          ${deploymentError.toString()}
+                          <br/><br/>
+                          <a href="${liveUrl}" >
+                            <img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" />
+                          </a>
+                        </p>
+                      </body>
+                    </html>
+            ]]></body>
+          </emailTemplate>
+
+          <emailTemplate key="contentApproval">
+            <subject><![CDATA[<#if scheduleDate??>Content Scheduled <#else>Content Approved</#if>]]></subject>
+            <!-- Timezone can/is being overwritten in the following template -->
+            <body><![CDATA[
+                     <#setting time_zone='EST'>
+                     <html>
+                       <head>
+                         <meta charset="utf-8"/>
+                       </head>
+                       <body style=" font-size: 12pt;">
+                         <p>
+                           <#if scheduleDate??>
+                             The following content has been scheduled for publishing on ${scheduleDate?string["MMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
+                           <#else>
+                             The following content has been reviewed and approved by ${approver.firstName!approver.username} ${approver.lastName!""}:
+                           </#if>
+                           <ul>
+                             <#list files as file>
+                               <#if file.page>
+                                 <a href="${liveUrl}/${file.browserUri!""}">
+                               </#if>
+                               <li>${file.internalName!file.name}</li>
+                                 <#if file.page>
+                                   </a>
+                                 </#if>
+                             </#list>
+                           </ul><br/>
+                           <#if scheduleDate??>
+                             <a href="${liveUrl}">Click Here to View Your Published Content</a>
+                             <br/>
+                           </#if>
+                           <a href="${authoringUrl}/site-dashboard" >
+                             <img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" />
+                           </a>
+                         </p>
+                       </body>
+                     </html>
+                     ]]></body>
+          </emailTemplate>
+
+          <emailTemplate key="submitToApproval">
+            <subject>Content Review</subject>
+            <body><![CDATA[
+                     <#setting time_zone='EST'>
+                     <html>
+                       <head>
+                         <meta charset="utf-8"/>
+                       </head>
+                       <body style=" font-size: 12pt">
+                         <p>
+                           ${submitter.firstName!submitter.username} ${submitter.lastName} has submitted items for your review:
+                           <ul>
+                             <#list files as file>
+                               <#if file.page>
+                                 <a href="${authoringUrl}/preview/#/?page=${file.browserUri!""}&site=${siteName}">
+                               </#if>
+                               <li>${file.internalName!file.name}</li>
+                               <#if file.page>
+   	                             </a>
+                               </#if>
+                             </#list>
+                           </ul>
+                           <#if submissionComments?has_content>
+                             Comments:<br/>
+                             ${submissionComments!""}
+                             <br/>
+                           </#if><br/>
+                           <a href="${previewUrl}/site-dashboard">Click Here to View Content Waiting for Approval</a>
+                           <br/><br/>
+                           <a href="${liveUrl}" >
+                             <img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" />
+                           </a>
+                         </p>
+                       </body>
+                     </html>
+                     ]]></body>
+          </emailTemplate>
+
+          <emailTemplate key="contentRejected">
+            <subject>Content Requires Revision</subject>
+            <body><![CDATA[
+   			         <#setting time_zone='EST'>
+                     <html>
+                       <head>
+                         <meta charset="utf-8"/>
+                       </head>
+                       <body style=" font-size: 12pt;">
+                         <p>
+                           The following content has been reviewed and requires some revision before it can be approved:
+                           <ul>
+                             <#list files as file>
+                               <#if file.page>
+                                 <a href="${authoringUrl}/preview/#/?page=${file.browserUri!""}&site=${siteName}">
+                               </#if>
+                               <li>${file.internalName!file.name}</li>
+                               <#if file.page>
+                                 </a>
+                               </#if>
+                             </#list>
+                           </ul>
+                           Reason:<br/>
+                           ${rejectionReason!""}
+                           <br/><br/>
+                           <a href="${authoringUrl}/site-dashboard" >
+                             <img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" />
+                           </a>
+                         </p>
+                       </body>
+                     </html>
+                     ]]></body>
+          </emailTemplate>
+        </emailTemplates>
+      </lang>
+    </notificationConfig>
 
 |hr|
 
 .. _studio-validations-regex:
 
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 Validations Regex
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.0.3
@@ -658,9 +1686,9 @@ The following section of Studio's configuration overrides allows you to configur
 
 .. _studio-commit-message:
 
-^^^^^^^^^^^^^^
+""""""""""""""
 Commit Message
-^^^^^^^^^^^^^^
+""""""""""""""
 Here are the default commit messages when someone makes content changes and can be customized by overriding them
 using one of the override files.
 
@@ -702,9 +1730,9 @@ using one of the override files.
 
 .. _studio-audit-log:
 
-^^^^^^^^^
+"""""""""
 Audit Log
-^^^^^^^^^
+"""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.1.3
@@ -725,9 +1753,9 @@ To disable populating the audit log, set the ``studio.clockJob.task.auditLogProc
 
 .. _publishing-blacklist:
 
-^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""
 Publishing Blacklist
-^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""
 CrafterCMS allows the creation of a publishing blacklist to prevent certain unwanted items from being published.
 
 A comma-separated list of regexes is used to configure items that should not be published.
@@ -747,13 +1775,13 @@ Add the following lines with the regex for the item you wish not to be published
 
 Items in the publishing blacklist will not be published but will instead be marked as published and logged (debug level) in the tomcat log, why the item was not published.
 
-   .. code-block:: text
+.. code-block:: text
 
-      [DEBUG] 2021-04-22T08:16:01,023 [studio.clockTaskExecutor-42] [deployment.PublishingManagerImpl] | File /static-assets/css/.keep of the site mysite will not be published because it matches the configured publishing blacklist regex patterns.
+    [DEBUG] 2021-04-22T08:16:01,023 [studio.clockTaskExecutor-42] [deployment.PublishingManagerImpl] | File /static-assets/css/.keep of the site mysite will not be published because it matches the configured publishing blacklist regex patterns.
 
-"""""""
+~~~~~~~
 Example
-"""""""
+~~~~~~~
 Let's take a look at an example.
 
 Create a site using the website editorial blueprint, then create the folder ``mytempimages`` under ``/static-assets/images``.
@@ -804,9 +1832,9 @@ Let's take a look at the tomcat log, notice that it was logged that the file we 
 
 .. _configuration-files-maximum:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 Configuration Files Maximum
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.1.4
@@ -825,117 +1853,417 @@ To set the maximum size of a project/site configuration file for the `write_conf
 
 .. _content-type-editor-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 Content Type Editor Config
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-The Content Type Editor Config configuration file defines what tools are available in the Content Type Editor. Learn more about Content Type Editor configuration in the article :ref:`content-type-editor-config`.
+""""""""""""""""""""""""""
+The Content Type Editor Config configuration file defines what tools are available in the Content Type Editor.
+This configuration is unique in that a configuration file exists in the following location of
+each project: ``SITENAME/config/studio/administration/site-config-tools.xml``
 
-.. toctree::
-    :hidden:
+.. image:: /_static/images/site-admin/configuration-tool-config.webp
+    :align: center
+    :width: 25%
+    :alt: Content Type Editor Config
 
-    content-type-editor-config
+|
 
+To modify the Content Type Editor Config configuration, click on |projectTools| from the bottom of the *Sidebar*,
+then click on **Configuration** and select **Content Type Editor Config** from the list.
+
+.. image:: /_static/images/site-admin/config-open-content-type-editor-config.webp
+    :alt: Configurations - Open Content Type Editor Config Tools
+    :width: 65 %
+    :align: center
+
+|
+
+~~~~~~
+Sample
+~~~~~~
+Here is a sample Content Type Editor Config configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample Content Type Editor Config configuration file</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-site-config-tools.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/administration/site-config-tools.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+~~~~~~~~~~~
+Description
+~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''''''
+Content Type Specific tool configuration
+''''''''''''''''''''''''''''''''''''''''
+
+    ``/config/tools/tool/controls``
+        List of available content type form controls
+    ``/config/tools/tool/controls/control``
+        Control name (JavaScript control module name)
+    ``/config/tools/tool/datasources``
+        List of available datasources for content type form controls
+    ``/config/tools/tool/datasources/datasource``
+        Datasource name (JavaScript datasource module name)
+    ``/config/tools/tool/objectTypes``
+        List of available object types
+    ``/config/tools/tool/objectTypes/type``
+        Type configuration (Page or Component) - name, label, properties
+
+''''''''''''''''''''''''''''''''''''''''''''
+List of available content type form controls
+''''''''''''''''''''''''''''''''''''''''''''
+
+.. include:: /includes/form-controls/list-form-controls.rst
+
+'''''''''''''''''''''''''''''''''''''''''''
+List of available content type data sources
+'''''''''''''''''''''''''''''''''''''''''''
+
+.. include:: /includes/form-sources/list-form-sources.rst
 
 |hr|
 
 .. _dependency-resolver-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""
 Dependency Resolver Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Crafter Studio extracts and tracks dependencies between content items to assist authors with publishing, workflow, and core content operations like copy and delete. Learn more about configuring the dependency resolver in the article :ref:`dependency-resolver-config`.
+"""""""""""""""""""""""""""""""""
+Crafter Studio extracts and tracks dependencies between content items to assist authors with publishing, workflow and
+core content operations like copy and delete. This file configures what file paths Crafter considers a dependency and
+how they should be extracted.
 
-.. toctree::
-    :hidden:
+To modify the Dependency Resolver configuration, click on |projectTools| from the bottom of the Sidebar, then click on **Configuration** and select **Dependency Resolver** from the list.
 
-    dependency-resolver
+.. image:: /_static/images/site-admin/config-open-dependency-config.webp
+    :alt: Configurations - Open Dependency Resolver Configuration
+    :width: 45%
+    :align: center
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample Dependency Resolver Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample dependency resolver configuration</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-resolver-config.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/dependency/resolver-config.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Soft Dependencies Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. version_tag::
+    :label: Since
+    :version: 4.2.0
+
+Soft dependencies are referenced items that are in a modified state and are optional. When calculating soft
+dependencies, CrafterCMS follows dependencies recursively. To set the depth of soft dependencies calculated, configure
+the maximum recursion iterations property ``studio.db.maxRecursiveIterations`` with a value between 0 and 20.
+The default value is 10.
+
+.. code-block:: yaml
+    :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+    # DB max_recursive_iterations value. This property should be set to a value between 0 and 20 (hard limit)
+    studio.db.maxRecursiveIterations: 10
 
 
 |hr|
 
-.. _project-tools-config:
+.. _project-tools-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 Project Tools Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Studio's Project Tools can be configured to list/de-list configuration files. Learn more about this in the article :ref:`project-tools-configuration`.
+"""""""""""""""""""""""""""
+Studio's Project Tools can be configured to list/de-list configuration files.
+The ``Configurations`` configuration file allows you to specify which items can be accessed from the list in
+**Project Tools** -> **Configuration**.
 
-.. toctree::
-    :hidden:
+To find this configuration XML through Studio follow the next instructions:
 
-    configurations
+#. Click on |projectTools| located in the Sidebar.
+#. Choose **Configuration** from the menu.
+#. Select **Configurations**.
 
+.. image:: /_static/images/site-admin/configuration.webp
+    :alt: Configurations - Open Configurations
+    :width: 45%
+    :align: center
+
+|
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample ``config-list.xml`` file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "config-list.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-config-list.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/administration/config-list.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+~~~~~~~~~~~
+Description
+~~~~~~~~~~~
+List of available configuration tags
+
++-----------------+-------------------------------------------------------------------------------+
+|| Tag            || Description                                                                  |
++=================+===============================================================================+
+|| files          || This tag contains each  file.                                                |
++-----------------+-------------------------------------------------------------------------------+
+|| file           || This tag contains the configuration of each file.                            |
++-----------------+-------------------------------------------------------------------------------+
+|| module         || CrafterCMS module                                                            |
++-----------------+-------------------------------------------------------------------------------+
+|| path           || Path where the system will find the specific xml file                        |
++-----------------+-------------------------------------------------------------------------------+
+|| title          || This tag refers to file title. It will be shown in the configuration         |
+||                || list on the left side of the page. See #1 in the image above                 |
++-----------------+-------------------------------------------------------------------------------+
+|| description    || This tag refers to file description. It will be shown to explain the file    |
+||                || functionality. See #2 in the image above                                     |
++-----------------+-------------------------------------------------------------------------------+
+|| samplePath     || Path where the system will find an example of the specific xml.              |
++-----------------+-------------------------------------------------------------------------------+
+
+~~~~~~~~~~~
+Sample File
+~~~~~~~~~~~
+You can click on the **View Sample** button to see a configuration file example.
+
+.. image:: /_static/images/site-admin/basic-configuration-sample.webp
+    :align: center
+    :alt: Basic Configuration Sample
 
 |hr|
 
-.. _asset-processing-config:
+.. _asset-processing-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""
 Asset Processing Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Asset processing allows you to define transformations for static assets (currently only images), through a series of processor pipelines that are executed when the assets are uploaded to Studio. Learn more about asset processing configuration in the article :ref:`asset-processing-configuration`.
+""""""""""""""""""""""""""""""
+Asset processing allows you to define transformations for static assets (currently only images), through a series of processor pipelines that are executed when the assets are uploaded to Studio.
 
-.. toctree::
-    :hidden:
+To modify the Asset Processing configuration, click on |projectTools| from the bottom of the Sidebar, then click on **Configuration** and select **Asset Processing** from the dropdown list.
 
-    asset-processing-config
+.. image:: /_static/images/site-admin/config-open-asset-proc-config.webp
+    :alt: Configurations - Open Asset Processing Configuration
+    :width: 65 %
+    :align: center
+
+~~~~~~
+Sample
+~~~~~~
+Here's a sample Asset Processing Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "asset-processing-config.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-asset-processing-config.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/asset-processing/asset-processing-config.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+For more details on asset processing, see :ref:`asset-processing`
 
 
 |hr|
 
-.. _aws-profile-config:
+.. _aws-profile-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 AWS Profiles Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-CrafterCMS has many integrations with AWS. Learn how to configure AWS Profiles in the article :ref:`aws-profile-configuration`.
+""""""""""""""""""""""""""
+The AWS Profiles configuration file allows you to configure 0 or more AWS profiles with the information required by AWS services.
+To modify the AWS Profiles configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **AWS Profiles** from the dropdown list.
 
-.. toctree::
-    :hidden:
+.. image:: /_static/images/site-admin/config-open-aws-config.webp
+    :alt: Configurations - Open AWS Profiles Configuration
+    :width: 65 %
+    :align: center
 
-    aws-profiles-configuration
+~~~~~~
+Sample
+~~~~~~
+Here's a sample AWS Profiles Configuration file (click on the triangle on the left to expand/collapse):
 
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "aws.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-aws.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/aws/aws.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+
+For more information on Amazon S3, please see: https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html
+
+For more information on the AWS elastic transcoder, please see: https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/introduction.html
+
+For more information on the AWS mediaconvert, please see: https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
 
 |hr|
 
-.. _box-profile-config:
+.. _box-profile-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 Box Profiles Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 .. version_tag::
 	:label: Until
 	:version: 4.2
 
-CrafterCMS integrates with Box. Learn how to configure Box Profiles in the article :ref:`box-profile-configuration`.
+CrafterCMS integrates with Box. The Box Profiles configuration file allows you to configure Box profiles with the
+information required by Box services. To modify the Box Profiles configuration, click on |projectTools| from the bottom
+of the *Sidebar*, then click on **Configuration** and select **Box Profiles** from the list.
 
-.. toctree::
-    :hidden:
+.. image:: /_static/images/site-admin/config-open-box-config.webp
+    :alt: Configurations - Open Box Profiles Configuration
+    :width: 45%
+    :align: center
 
-    box-profiles-configuration
+~~~~~~
+Sample
+~~~~~~
+Here's a sample Box Profiles Configuration file (click on the triangle on the left to expand/collapse):
 
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "box.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.1.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-box.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/box/box.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+~~~~~~~~~~~~~~~~~
+Box Configuration
+~~~~~~~~~~~~~~~~~
+To obtain the clientId, clientSecret, enterpriseId, publicKeyId, privateKey and privateKeyPassword
+you need to use a Box Developer Account to create a new App and configure it to use OAuth 2.0 with
+JWT.
+
+For more details you can follow the `official documentation <https://developer.box.com/docs/authentication-with-jwt>`_.
+
+.. note::
+  If you are using a JRE older than ``1.8.0_151`` you need to install the JCE Unlimited Strength
+  Jurisdiction Policy Files. For newer versions you only need to enable the unlimited strength setting.
+
+For more information on how to manage/encode your secrets such as your Box credentials, please see :ref:`managing-secrets`
+
+'''''''
+Example
+'''''''
+For an example of configuring Studio to use Box, see :ref:`box-asset-access`
 
 |hr|
 
-.. _webdav-profiles-config:
+.. _webdav-profiles-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""
 WebDAV Profiles Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-CrafterCMS integrates with WebDAV. Learn how to configure WebDAV Profiles in the article :ref:`webdav-profiles-configuration`.
+"""""""""""""""""""""""""""""
+CrafterCMS integrates with WebDAV. The WebDAV Profiles configuration file allows you to configure profiles with the
+information required to connect to a WebDAV server. To modify the WebDAV Profiles configuration, click on |projectTools|
+from the bottom of the *Sidebar*, then click on **Configuration** and select **WebDAV Profiles** from the dropdown list.
 
-.. toctree::
-    :hidden:
+.. image:: /_static/images/site-admin/config-open-webdav-config.webp
+    :alt: Configurations - Open WebDAV Profiles Configuration
+    :width: 45%
+    :align: center
 
-    webdav-profiles-configuration
+~~~~~~
+Sample
+~~~~~~
+Here's a sample WebDAV Profiles Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample WebDAV profiles configuration</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/support/4.x/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-webdav.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/webdav/webdav.xml*
+   :language: xml
+   :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+.. note:: Preemptive authentication may be needed if network timeouts are happening during uploads. To enable preemptive authentication, simply set the option ``preemptiveAuth`` to ``true`` in the configuration file.
 
 |hr|
 
 .. _studio-multi-environment-support:
 
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Studio Multi-environment Support
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To set up a Studio environment, do the following:
 
 #. Create a folder under ``CRAFTER_HOME/data/repos/sites/${site}/sandbox/config/studio`` called ``env``
@@ -959,71 +2287,70 @@ To set up a Studio environment, do the following:
 .. note::
     All configuration files under ``CRAFTER_HOME/data/repos/sites/${site}/sandbox/config/studio`` can be overridden by environment, except for the Project Policy Configuration (site-policy-config.xml) and Content Types (items under the ``content-types`` folder).
 
-^^^^^^^
+"""""""
 Example
-^^^^^^^
-
+"""""""
 Let's take a look at an example of creating a new environment, called ``mycustomenv`` with the ``rte-setup-tinymce5.xml`` file overridden in the new environment:
 
 #. We'll create a folder called ``env`` under ``CRAFTER_HOME/data/repos/site/my-awesome-editorial/sandbox/config/studio``
 
-      .. code-block:: text
-         :linenos:
-         :emphasize-lines: 12
+   .. code-block:: text
+       :linenos:
+       :emphasize-lines: 12
 
-         data/
-           repos/
-             sites/
-               my-awesome-editorial/
-                 sandbox/
-                   config/
-                     studio/
-                       administration/
-                       content-types/
-                       data-sources/
-                       dependency/
-                       env/
-                       permission-mappings-config.xml
-                       role-mappings-config.xml
-                       site-config.xml
-                       studio_version.xml
-                       translation-config.xml
-                       ui.xml
-                       workflow/
+       data/
+         repos/
+           sites/
+             my-awesome-editorial/
+               sandbox/
+                 config/
+                   studio/
+                     administration/
+                     content-types/
+                     data-sources/
+                     dependency/
+                     env/
+                     permission-mappings-config.xml
+                     role-mappings-config.xml
+                     site-config.xml
+                     studio_version.xml
+                     translation-config.xml
+                     ui.xml
+                     workflow/
 
-      |
+   |
 
 #. Inside the ``env`` folder, create a directory called ``mycustomenv``
 #. We will now copy the configuration file for the ``ui.xml`` that we want to override in the new environment we are setting up, inside our ``mycustomenv`` folder, following the folder structure under ``config/studio``. For our example, the ``ui.xml`` file is under ``config/studio/``:
 
-      .. code-block:: text
-         :emphasize-lines: 3
+   .. code-block:: text
+       :emphasize-lines: 3
 
-         env/
-           mycustomenv/
-             ui.xml
+       env/
+         mycustomenv/
+           ui.xml
 
-      |
+   |
 
 #. Remember to commit the files copied so Studio will pick it up.
 
-      .. code-block:: bash
+   .. code-block:: bash
 
-         ➜  sandbox git:(master) ✗ git add .
-         ➜  sandbox git:(master) ✗ git commit -m "Add updated ui.xml file for mycustomenv"
+       ➜  sandbox git:(master) ✗ git add .
+       ➜  sandbox git:(master) ✗ git commit -m "Add updated ui.xml file for mycustomenv"
 
-      |
+   |
 
 #. Open the ``crafter-setenv.sh`` file in ``TOMCAT/bin`` and set the value of ``CRAFTER_ENVIRONMENT`` to the
    environment we setup above to make it the active environment:
 
-      .. code-block:: bash
-         :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+   .. code-block:: bash
+       :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
 
-         # -------------------- Configuration variables --------------------
-         export CRAFTER_ENVIRONMENT=${CRAFTER_ENVIRONMENT:=mycustomenv}
+       # -------------------- Configuration variables --------------------
+       export CRAFTER_ENVIRONMENT=${CRAFTER_ENVIRONMENT:=mycustomenv}
 
-      |
+   |
 
 #. Restart Studio. To verify our newly setup environment, open the ``Sidebar`` and click on |projectTools|, then select ``Configuration``. Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations list:
 
@@ -1033,17 +2360,17 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
 .. _studio-access-and-permissions:
 
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 Access and Permissions
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 To configure access to Crafter Studio beyond adding groups and users, you'll need to configure the system-wide configuration files:
 
 .. _global-role-mappings-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 Global Role Mappings Config
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 The global role mappings configuration file maps user :ref:`groups <groups-management>` to one or more roles and serves
 as the base for every project in your CrafterCMS installation. All role mappings configured here are in addition to what
 is configured in the project role mappings.
@@ -1072,9 +2399,9 @@ Here's the default global role mappings configuration (click on the triangle on 
 
 |
 
-"""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~
 Default Global Role
-"""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~
 CrafterCMS comes with a predefined global role ``system_admin`` out of the box.
 
 Users with the ``system_admin`` role have access to everything in the CMS such as all the modules in the Main Menu for managing users, groups, etc., all the sites and configuration files, creating/editing layouts, templates, taxonomies, content types, scripts, etc. in addition to creating and editing content, as well as the ability to approve and reject workflow.
@@ -1087,9 +2414,9 @@ See :ref:`global-permission-mappings-config` for more information on all items a
 
 .. _global-permission-mappings-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""
 Global Permission Mappings Config
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""
 The global permission mappings configuration file lets you configure the permissions to a role globally for the entire application.
 
 Permissions per project are managed within Crafter Studio's UI. See :ref:`permission-mappings` for more information on project permissions.
@@ -1113,16 +2440,16 @@ Here's the default global permissions configuration (click on the triangle on th
 
 |
 
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 Permission Descriptions
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 .. include:: /includes/available-permissions-system-scope.rst
 
 .. _global-menu-config:
 
-------------------
+^^^^^^^^^^^^^^^^^^
 Global Menu Config
-------------------
+^^^^^^^^^^^^^^^^^^
 The Global Menu Config configuration file defines what modules are available for administration use when clicking on the ``Navigation Menu`` from the top bar.
 
 To see the default modules available from the ``Navigation Menu``, see :ref:`navigating-main-menu`
@@ -1154,10 +2481,9 @@ open the file ``global-menu-config.xml``. Remember to restart Crafter so your ch
 --------
 Security
 --------
-
---------------
+^^^^^^^^^^^^^^
 Authentication
---------------
+^^^^^^^^^^^^^^
 Users are authenticated by Studio through the internal database by default. CrafterCMS can be configured so that users are authenticated using an external authentication protocol such as Lightweight Directory Access Protocol (LDAP), Security Assertion Markup Language (SAML), or integrate with any Single-Sign-On (SSO) solution that can provide headers to Studio to indicate successful authentication.
 
 Here's a list of security providers supported by CrafterCMS for accessing the repository:
@@ -1173,9 +2499,9 @@ When using an external authentication method, user accounts are automatically cr
 
 .. _configure-authentication-chain:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""
 Configure Authentication Chain
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""
 CrafterCMS supports multiple security providers and allows configuration of multiple authentication providers in a chain that are then iterated through until either the user is authenticated and granted access or authentication fails and an HTTP 401 Unauthorized is returned to the user. This allows Studio to support multiple security providers that appears like a single authentication module to users.
 
 The following authentication providers can be configured in a chain:
@@ -1195,91 +2521,91 @@ Below is a sample configuration for the authentication chain. There are four aut
 .. code-block:: yaml
     :linenos:
 
-      # Studio authentication chain configuration
-      studio.authentication.chain:
-      # Authentication provider type
-      - provider: HEADERS
-      # Authentication via headers enabled
-        enabled: true
-        # Authentication header for secure key
-        secureKeyHeader: secure_key
-        # Authentication headers secure key that is expected to match secure key value from headers
-        # Typically this is placed in the header by the authentication agent
-        secureKeyHeaderValue: secure
-        # Authentication header for username
-        usernameHeader: username
-        # Authentication header for first name
-        firstNameHeader: firstname
-        # Authentication header for last name
-        lastNameHeader: lastname
-        # Authentication header for email
-        emailHeader: email
-        # Authentication header for groups: comma separated list of groups
-        #   Example:
-        #   site_author,site_xyz_developer
-        groupsHeader: groups
-        # Enable/disable logout for headers authenticated users (SSO)
-        # logoutEnabled: false
-        # If logout is enabled for headers authenticated users (SSO), set the endpoint of the SP or IdP logout, which should
-        # be called after local logout. The {baseUrl} macro is provided so that the browser is redirected back to Studio
-        # after logout (https://STUDIO_SERVER:STUDIO_PORT/studio)
-        # logoutUrl: /YOUR_DOMAIN/logout?ReturnTo={baseUrl}
-      # Authentication provider type
-      - provider: LDAP
-        # Authentication via LDAP enabled
-        enabled: false
-        # LDAP Server url
-        ldapUrl: ldap://localhost:389
-        # LDAP bind DN (user)
-        ldapUsername: cn=Manager,dc=my-domain,dc=com
-        # LDAP bind password
-        ldapPassword: secret
-        # LDAP base context (directory root)
-        ldapBaseContext: dc=my-domain,dc=com
-        # LDAP username attribute
-        usernameLdapAttribute: uid
-        # LDAP first name attribute
-        firstNameLdapAttribute: cn
-        # LDAP last name attribute
-        lastNameLdapAttribute: sn
-        # Authentication header for email
-        emailLdapAttribute: mail
-        # LDAP groups attribute
-        groupNameLdapAttribute: crafterGroup
-        # LDAP groups attribute name regex
-        groupNameLdapAttributeRegex: .*
-        # LDAP groups attribute match index
-        groupNameLdapAttributeMatchIndex: 0
-      # Authentication provider type
-      - provider: LDAP
-        # Authentication via LDAP enabled
-        enabled: false
-        # LDAP Server url
-        ldapUrl: ldap://localhost:390
-        # LDAP bind DN (user)
-        ldapUsername: cn=Manager,dc=my-domain,dc=com
-        # LDAP bind password
-        ldapPassword: secret
-        # LDAP base context (directory root)
-        ldapBaseContext: dc=my-domain,dc=com
-        # LDAP username attribute
-        usernameLdapAttribute: uid
-        # LDAP first name attribute
-        firstNameLdapAttribute: cn
-        # LDAP last name attribute
-        lastNameLdapAttribute: sn
-        # Authentication header for email
-        emailLdapAttribute: mail
-        # LDAP groups attribute
-        groupNameLdapAttribute: crafterGroup
-        # LDAP groups attribute name regex
-        groupNameLdapAttributeRegex: .*
-        # LDAP groups attribute match index
-        groupNameLdapAttributeMatchIndex: 0
-      # Authentication provider type
-      - provider: DB
-        # Authentication via DB enabled
-        enabled: true
+    # Studio authentication chain configuration
+    studio.authentication.chain:
+    # Authentication provider type
+    - provider: HEADERS
+    # Authentication via headers enabled
+      enabled: true
+      # Authentication header for secure key
+      secureKeyHeader: secure_key
+      # Authentication headers secure key that is expected to match secure key value from headers
+      # Typically this is placed in the header by the authentication agent
+      secureKeyHeaderValue: secure
+      # Authentication header for username
+      usernameHeader: username
+      # Authentication header for first name
+      firstNameHeader: firstname
+      # Authentication header for last name
+      lastNameHeader: lastname
+      # Authentication header for email
+      emailHeader: email
+      # Authentication header for groups: comma separated list of groups
+      #   Example:
+      #   site_author,site_xyz_developer
+      groupsHeader: groups
+      # Enable/disable logout for headers authenticated users (SSO)
+      # logoutEnabled: false
+      # If logout is enabled for headers authenticated users (SSO), set the endpoint of the SP or IdP logout, which should
+      # be called after local logout. The {baseUrl} macro is provided so that the browser is redirected back to Studio
+      # after logout (https://STUDIO_SERVER:STUDIO_PORT/studio)
+      # logoutUrl: /YOUR_DOMAIN/logout?ReturnTo={baseUrl}
+    # Authentication provider type
+    - provider: LDAP
+      # Authentication via LDAP enabled
+      enabled: false
+      # LDAP Server url
+      ldapUrl: ldap://localhost:389
+      # LDAP bind DN (user)
+      ldapUsername: cn=Manager,dc=my-domain,dc=com
+      # LDAP bind password
+      ldapPassword: secret
+      # LDAP base context (directory root)
+      ldapBaseContext: dc=my-domain,dc=com
+      # LDAP username attribute
+      usernameLdapAttribute: uid
+      # LDAP first name attribute
+      firstNameLdapAttribute: cn
+      # LDAP last name attribute
+      lastNameLdapAttribute: sn
+      # Authentication header for email
+      emailLdapAttribute: mail
+      # LDAP groups attribute
+      groupNameLdapAttribute: crafterGroup
+      # LDAP groups attribute name regex
+      groupNameLdapAttributeRegex: .*
+      # LDAP groups attribute match index
+      groupNameLdapAttributeMatchIndex: 0
+    # Authentication provider type
+    - provider: LDAP
+      # Authentication via LDAP enabled
+      enabled: false
+      # LDAP Server url
+      ldapUrl: ldap://localhost:390
+      # LDAP bind DN (user)
+      ldapUsername: cn=Manager,dc=my-domain,dc=com
+      # LDAP bind password
+      ldapPassword: secret
+      # LDAP base context (directory root)
+      ldapBaseContext: dc=my-domain,dc=com
+      # LDAP username attribute
+      usernameLdapAttribute: uid
+      # LDAP first name attribute
+      firstNameLdapAttribute: cn
+      # LDAP last name attribute
+      lastNameLdapAttribute: sn
+      # Authentication header for email
+      emailLdapAttribute: mail
+      # LDAP groups attribute
+      groupNameLdapAttribute: crafterGroup
+      # LDAP groups attribute name regex
+      groupNameLdapAttributeRegex: .*
+      # LDAP groups attribute match index
+      groupNameLdapAttributeMatchIndex: 0
+    # Authentication provider type
+    - provider: DB
+      # Authentication via DB enabled
+      enabled: true
 
 |
 
@@ -1292,9 +2618,9 @@ In the configuration above, when a user tries to authenticate, the user's creden
 
 .. _crafter-studio-configure-studio-saml:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""
 Studio SAML2 Configuration |enterpriseOnly|
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.0.3
@@ -1305,9 +2631,9 @@ Crafter Studio can be configured to support SAML2 SSO out of the box without usi
    *This document only applies to* **CrafterCMS version 4.0.3 and later** |br|
    *Please see* :ref:`here <crafter-studio-configure-studio-saml-up-to-4-0-2>` *for version 4.0.2 and earlier.*
 
-""""""""""""
+~~~~~~~~~~~~
 Requirements
-""""""""""""
+~~~~~~~~~~~~
 #. A SAML2-compatible Identity Provider (IdP) properly configured; this configuration will not be covered here
 #. A private key and certificate. This can be generated like so:
 
@@ -1321,9 +2647,9 @@ Requirements
 .. note::
    ``IdP`` is the asserting party and ``SP`` is the relying party (Studio)
 
-"""""""""
+~~~~~~~~~
 Configure
-"""""""""
+~~~~~~~~~
 To configure Studio SAML2, in your Authoring installation, we need to enable SAML security then we'll setup the required SAML configuration properties.
 
 To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file, and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter.studio.samlSecurity``:
@@ -1414,10 +2740,10 @@ where
 - ``studio.security.saml.enabled``: Indicates if SAML2 is enabled or not
 - The following are attributes that Studio expects from the Identity Provider:
 
-     - ``studio.security.saml.attributeName.email``
-     - ``studio.security.saml.attributeName.firstName``
-     - ``studio.security.saml.attributeName.lastName``
-     - ``studio.security.saml.attributeName.group``
+  - ``studio.security.saml.attributeName.email``
+  - ``studio.security.saml.attributeName.firstName``
+  - ``studio.security.saml.attributeName.lastName``
+  - ``studio.security.saml.attributeName.group``
 
 - ``studio.security.saml.rp.privateKey.location``: The path of the relying party (SP) private key in the classpath
 - ``studio.security.saml.rp.certificate.location``: The path of the relying party (SP) certificate in the classpath
@@ -1444,14 +2770,14 @@ Restart your Authoring installation after configuring the above.
 
 .. _crafter-studio-configure-header-based-auth:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Configure Header-Based Authentication |enterpriseOnly|
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Crafter Studio can integrate with any authentication system that sends custom HTTP headers containing information that will be used to authenticate the user in Studio. This section details how to set up Studio for header-based authentication.
 
-""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Configure Studio for Header-Based Authentication
-""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Configuring Studio for header-based authentication is very simple: in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: properties
@@ -1502,9 +2828,9 @@ Upon matching the ``secure_key`` header, Studio will then look for the principal
 
 Depending on your authentication agent, configure Studio to look for either the loose attributes or JWT.
 
-~~~~~~~~~~~~~~~~~~
+''''''''''''''''''
 Configuring Logout
-~~~~~~~~~~~~~~~~~~
+''''''''''''''''''
 The **Sign out** button link is disabled/hidden by default when header-based authentication is enabled.
 
 To enable **Sign out** for users signed in using header-based authentication, change the following lines (as described from the above configuration) in your ``studio-config-override.yaml`` file (of course, make any appropriate configuration changes according to your system):
@@ -1524,9 +2850,9 @@ To enable **Sign out** for users signed in using header-based authentication, ch
 
 .. _crafter-studio-configure-ldap:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""
 Configure LDAP Authentication |enterpriseOnly|
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""
 To configure LDAP authentication, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and uncomment the
 following lines to the ``studio-config-override.yaml`` file.
 
@@ -1604,14 +2930,14 @@ For an example of setting up LDAP, see :ref:`setting-up-simple-ldap-server`
 
 |hr|
 
--------------
+^^^^^^^^^^^^^
 Authorization
--------------
+^^^^^^^^^^^^^
 .. _project-role-mappings:
 
-^^^^^^^^^^^^^
+"""""""""""""
 Role Mappings
-^^^^^^^^^^^^^
+"""""""""""""
 Users are allowed to perform actions on the items that they have been granted access to based on the permissions granted
 to the role they have been assigned to. Note that site members have read permission to the entire project/site
 regardless of the role that they are assigned.
@@ -1628,9 +2954,9 @@ and select **Role Mappings** from the list.
 
 To configure the role mappings for groups created in CrafterCMS that need global permissions see :ref:`global-role-mappings-config`
 
-""""""
+~~~~~~
 Sample
-""""""
+~~~~~~
 Here's a sample Role Mappings Configuration file (click on the triangle on the left to expand/collapse):
 
 .. raw:: html
@@ -1649,18 +2975,18 @@ Here's a sample Role Mappings Configuration file (click on the triangle on the l
 
 |
 
-"""""""""""
+~~~~~~~~~~~
 Description
-"""""""""""
+~~~~~~~~~~~
     ``/role-mappings/groups/group@name``
         Name of the user group
 
     ``/role-mappings/groups/role``
         Name of authoring role that the group will map to
 
-"""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~
 Default Project Roles
-"""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~
 CrafterCMS comes with predefined roles out of the box for projects.
 Here's a list of predefined roles for projects:
 
@@ -1680,9 +3006,9 @@ See :ref:`permission-mappings` for more information on all items accessible for 
 
 .. _permission-mappings:
 
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Permission Mappings
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 The permission mappings configuration file allows you to assign permissions to folders and objects in a project/site giving specific Roles rights to the object. The permission mappings config file contains the permissions mappings for the roles defined in the role mappings config file. When applying permissions to Roles, rights are granted by adding permissions inside the tag ``<allowed-permissions>``. The absence of permissions means the permission is denied. Rules have a regex expression that governs the scope of the permissions assigned. A list of available permissions that can be granted to Roles is available after the sample configuration file.
 
 Permissions are defined per:
@@ -1731,9 +3057,9 @@ Note that permissions assigned is a union, so a user can perform the action as l
 
 To configure the permissions to a role globally for the entire application, see :ref:`global-permission-mappings-config`.
 
-""""""
+~~~~~~
 Sample
-""""""
+~~~~~~
 Here's a sample Permission Mappings Configuration file (click on the triangle on the left to expand/collapse):
 
 .. raw:: html
@@ -1761,31 +3087,31 @@ where:
 - ``/permissions/site/role/rule/allowed-permissions/permission``
   Allowed permission for role and rule (possible values given in the table above)
 
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 System (Global) Scope Permissions
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. include:: /includes/available-permissions-system-scope.rst
 
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Project Scope Permissions
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 .. include:: /includes/available-permissions-project-scope.rst
 
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 Path Scope Permissions
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 .. include:: /includes/available-permissions-path-scope.rst
 
 |hr|
 
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Other Security Configuration
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. _studio-password-config:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""
 Configure Studio Password Requirements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""
 Password requirements validation allows the admin to setup rules that ensures users create passwords based on an organization’s password security policy.
 
 Crafter Studio uses `zxcvbn <https://github.com/dropbox/zxcvbn>`__ for password strength management.
@@ -1874,9 +3200,9 @@ Below, are some of the messages displayed as a user is inputting a new password:
 
 .. _randomize-admin-password:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Randomize Authoring's "admin" Password for CrafterCMS Fresh Install
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 CrafterCMS gives you the option to randomize the **admin** password on a fresh install. To randomize the **admin** password, before starting CrafterCMS for the very first time, in your Authoring installation, go to  the following folder: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/`` and add the following to the ``studio-config-override.yaml`` file:
 
 .. code-block:: yaml
@@ -1907,14 +3233,14 @@ You can now log in as the user **admin** using the randomly generated password l
 
 .. _studio-timeout:
 
-^^^^^^^^^^^^^^^
+"""""""""""""""
 Studio Timeouts
-^^^^^^^^^^^^^^^
+"""""""""""""""
 .. _changing-session-timeout:
 
-""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Changing the Session Timeout
-""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 CrafterCMS has configurable timeouts for session lifetime and session inactivity.
 
 Session lifetime timeout is the amount of time a session is valid before requiring the user to re-authenticate.
@@ -1960,9 +3286,9 @@ Here's a summary of the session timeouts available in CrafterCMS:
        This value must be greater than or equal to ``inactivityTimeout`` since that timeout can and does kick in |br|
        before this one.
 
-"""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Change Session Lifetime Timeout
-"""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 To change the session lifetime timeout, in your
 ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``,
 change the value for ``studio.security.sessionTimeout`` to desired amount of time the session is valid
@@ -1977,9 +3303,9 @@ in minutes for users.
 
 Make sure to stop and **restart Studio** after making your changes.
 
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Change Session Inactivity Timeout
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 There are two timeouts you can configure for the session inactivity timeout as described in the above table.
 
 - ``session-timeout`` in the Tomcat ``web.xml`` file
@@ -2025,9 +3351,9 @@ You can also change the Studio session timeouts from the |mainMenu| **Main Menu*
 
 .. _studio-cipher-configuration:
 
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 Cipher Configuration
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
     :linenos:
@@ -2062,9 +3388,9 @@ Cipher Configuration
 
 .. _studio-access-tokens:
 
-^^^^^^^^^^^^^
+"""""""""""""
 Access Tokens
-^^^^^^^^^^^^^
+"""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.0.0
@@ -2134,9 +3460,9 @@ For information on creating access tokens in Studio, see :ref:`here <access-toke
 
 .. _studio-preview-cookie:
 
-^^^^^^^^^^^^^^
+""""""""""""""
 Preview Cookie
-^^^^^^^^^^^^^^
+""""""""""""""
 .. version_tag::
 	:label: Since
 	:version: 4.2.0
@@ -2177,14 +3503,14 @@ the ``crafterPreview`` cookie. This API must be called whenever the ``crafterSit
 
 .. _studio-groovy-sandbox-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 Groovy Sandbox Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 .. include:: /includes/groovy-sandbox-configuration.rst
 
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Groovy Sandbox Properties
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 The following allows you to configure the Groovy sandbox.
 The Groovy sandbox is enabled by default and can be disabled by changing the property ``studio.scripting.sandbox.enable`` to ``false``.
 
@@ -2201,9 +3527,9 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
 
 |
 
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~
 Using a Custom Blacklist
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~
 Crafter Studio includes a default blacklist that you can find
 `here <https://github.com/craftercms/studio/blob/support/4.x/src/main/resources/crafter/studio/groovy/blacklist>`_.
 Make sure you review the branch/tag you're using.
@@ -2227,9 +3553,9 @@ To use a custom blacklist follow these steps:
 
 Now you can execute the same script without any issues.
 
-"""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Disabling the Sandbox Blacklist
-"""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 It is possible to disable the blacklist to allow the execution of most expressions, in case you need to use a
 considerable number of the expression included in the blacklist while keeping some basic restrictions. To disable
 the blacklist for all projects/sites update the ``studio-config-override.yaml`` configuration file:
@@ -2242,14 +3568,14 @@ the blacklist for all projects/sites update the ``studio-config-override.yaml`` 
 
 |
 
-"""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~
 Grape Configuration
-"""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~
 .. include:: /includes/groovy-grape-configuration.rst
 
-"""""""""""""""
+~~~~~~~~~~~~~~~
 Important Notes
-"""""""""""""""
+~~~~~~~~~~~~~~~
 .. include:: /includes/groovy-sandbox-important-notes.rst
 
 
@@ -2265,9 +3591,9 @@ Much of the administration of Crafter Studio can be done via the UI. This sectio
 
 .. _navigating-main-menu:
 
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Navigating the Navigation Menu
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In this section, we discuss the Navigation Menu tools available in Studio. To access, click the ``Navigation Menu`` icon from the top right of the browser
 
 .. image:: /_static/images/system-admin/main-menu/open-main-menu.webp
@@ -2296,9 +3622,9 @@ The tools available in the Navigation Menu is configured similar to how the Proj
 
 .. _main-menu-tool-projects:
 
-^^^^^^^^
+""""""""
 Projects
-^^^^^^^^
+""""""""
 ``Projects`` contains a list of all the projects the logged in user has access to. The section :ref:`author-screens` in ``Content Authors`` contains descriptions on some of the actions that can be performed from the Projects screen.  This also allows users with the system admin role to create new projects either from a :ref:`blueprint <your-first-editorial-project>`, a :ref:`remote repository <create-project-with-link-to-remote-repo>` or an :ref:`existing project <duplicate-project>`.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-sites.webp
@@ -2310,17 +3636,17 @@ Projects
 
 .. _users-management:
 
-^^^^^
+"""""
 Users
-^^^^^
+"""""
 A user is anybody who uses CrafterCMS. The ``Users`` management console lets the administrator manage who has access to
 Crafter Studio.
 
 For information on managing users and groups, see :ref:`user-group-management`.
 
-"""""""""""
+~~~~~~~~~~~
 Description
-"""""""""""
+~~~~~~~~~~~
 The ``Users`` management console allows you to control and set up who can access and manage the sites. All users are listed on
 this console.
 
@@ -2345,14 +3671,14 @@ To find the ``Users`` management console follow the next instructions:
 
    |
 
-"""""""
+~~~~~~~
 Actions
-"""""""
+~~~~~~~
 You can list, search, add or delete users, as well as view specific information.
 
-~~~~~~~~~~~~~
+'''''''''''''
 Listing Users
-~~~~~~~~~~~~~
+'''''''''''''
 To see a list of all existing users, make sure that there are no search terms entered in the search bar. You can also change the number of users listed per page by selecting a different number in the dropdown box at the bottom right of the screen
 
 .. image:: /_static/images/users/users-list-all.webp
@@ -2378,9 +3704,9 @@ In the following example we typed "jane", we obtained only one related user: "Ja
 
 .. _creating-a-user:
 
-~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''
 Creating a New User
-~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''
 To create a new user, please click on the "Create User" button at the top of the page.
 
 .. image:: /_static/images/users/users-add-new.webp
@@ -2410,9 +3736,9 @@ A notification will appear on the screen for a few seconds on successful creatio
 
 .. _editing-a-user:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''
 Viewing and Editing an Existing User
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''
 To view/edit a specific user, please click on the row of the name you want to edit:
 
 .. image:: /_static/images/users/users-view-btn.webp
@@ -2519,17 +3845,17 @@ A notification will appear on the screen for a few seconds on successful deletio
 
 .. _groups-management:
 
-^^^^^^
+""""""
 Groups
-^^^^^^
+""""""
 A group consists of a collection of users. The ``Groups`` management console lets the administrator manage groups,
 members belonging to a group, etc.
 
 For information on managing users and groups, see :ref:`user-group-management`.
 
-"""""""""""
+~~~~~~~~~~~
 Description
-"""""""""""
+~~~~~~~~~~~
 The ``Groups`` management console allows you to administrate the groups created on CrafterCMS. You can add, remove,
 edit, and manage the users that will belong to the groups and you can also add and remove groups.
 
@@ -2567,9 +3893,9 @@ To find this section through studio follow the next instructions:
 
 |
 
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 Searching Groups
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 You can search for groups by their properties (Display Name, Description), simply enter your search term
 into the search bar by clicking on the magnifying glass icon on the top right and it will show results
 that match your search term.
@@ -2583,9 +3909,9 @@ that match your search term.
 
 .. _create-a-new-group:
 
-""""""""""""""""""
+~~~~~~~~~~~~~~~~~~
 Adding a New Group
-""""""""""""""""""
+~~~~~~~~~~~~~~~~~~
 To create a new group, you just need to click on the "**Create Group**" button,
 
 .. image:: /_static/images/groups/groups-new-btn.webp
@@ -2617,9 +3943,9 @@ A notification of successful group creation will pop up for a few seconds after 
 
 .. _deleting-a-group:
 
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 Removing a Group
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 To remove a group, select a group from the list which will open a dialog for the selected group.
 Click on the trash can icon on the top right of the group dialog.
 
@@ -2642,9 +3968,9 @@ On successful removal of the group, a notification will appear for a few seconds
 
 |
 
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Editing an Existing Group
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 To edit a group, select a group from the list which will open a dialog for the selected group.
 In this dialog, you can modify the group description, just click on the **Save** button after making your
 changes. You can also add/remove users from the group. Finally, you'll see a list of all users that belong to the group. To return to the list of all groups in your project, click on the **X** at the top right of the dialog.
@@ -2658,9 +3984,9 @@ changes. You can also add/remove users from the group. Finally, you'll see a lis
 
 .. _adding-users-to-a-group:
 
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 Adding Users to a Group
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 To add a user to a group, click on the group you want to add users. In the ``Users`` column found on the left
 in the ``Edit Group Members`` section, you can click on the search box then type in the name, username or
 email of the user you want to add to the group.
@@ -2692,9 +4018,9 @@ It will then give you a notification that the user(s) has been successfully adde
 
 |
 
-"""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Removing Users from a Group
-"""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 To remove a user from a group, click on the group you want to remove users. In the ``Members`` column
 found on the right in the ``Edit Group Members`` section, you can click on the search box then type in
 the name, username or email of the user you want to remove from the group. Select the user you want to
@@ -2720,9 +4046,9 @@ It will then give you a notification that the user(s) has been successfully dele
 
 .. _main-menu-tool-cluster:
 
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 Cluster |enterpriseOnly|
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 ``Cluster`` lets the administrator manage Studio clusters. See :ref:`studio-clustering` for more information on how to setup clustering and available actions from ``Cluster`` from the Main Menu
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-cluster.webp
@@ -2734,15 +4060,15 @@ Cluster |enterpriseOnly|
 
 .. _nav-menu-audit:
 
-^^^^^
+"""""
 Audit
-^^^^^
+"""""
 Audit logs displays the date, time, user and action performed to content in all the projects available as well as actions
 performed in Studio such as logins/logouts, user removal, group addition, etc.
 
-"""""""""""
+~~~~~~~~~~~
 Description
-"""""""""""
+~~~~~~~~~~~
 CrafterCMS tracks the date, time, user and action performed to content and the system through an audit log.
 
 To view the audit logs, from the top right of your browser, click on the ``Navigation Menu`` icon, then click on ``Audit``.
@@ -2756,9 +4082,9 @@ To view the audit logs, from the top right of your browser, click on the ``Navig
 
 You can filter the logs displayed based on the following:
 
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Audit Logs Project Filter
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 ``Project`` filters the log by project . Clicking on ``Project`` gives you a list of all the projects in Studio and the option to see system logs or logs for all the projects.
 
 .. image:: /_static/images/system-admin/main-menu/audit-site-filter.webp
@@ -2768,9 +4094,9 @@ Audit Logs Project Filter
 
 |
 
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 Audit Logs User Filter
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 ``Username`` filters the log by username. Clicking on ``Username`` gives you a list of all the users in Studio and the option to see logs for all users.
 
 .. image:: /_static/images/system-admin/main-menu/audit-user-filter.webp
@@ -2780,9 +4106,9 @@ Audit Logs User Filter
 
 |
 
-""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Audit Logs Operations Filter
-""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``Operation`` filters the log by operations. Clicking on ``Operation`` gives you a list of all operations logged.
 
 .. image:: /_static/images/system-admin/main-menu/audit-operations-filter.webp
@@ -2792,9 +4118,9 @@ Audit Logs Operations Filter
 
 |
 
-"""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Audit Logs Timestamp Filter
-"""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``Timestamp`` filters the log based on date range
 
 .. image:: /_static/images/system-admin/main-menu/audit-options-filter.webp
@@ -2806,9 +4132,9 @@ Audit Logs Timestamp Filter
 
 .. _main-menu-tool-logging-levels:
 
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 Logging Levels
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 There are 6 log levels defined in CrafterCMS. These levels determine what messages will be logged and displayed in the **Logging Console**.
 
 .. image:: /_static/images/site-admin/logs-logging-levels.webp
@@ -2822,9 +4148,9 @@ For more information on logging levels, see :ref:`override-logging-levels`
 
 .. _main-menu-tool-log-console:
 
-^^^^^^^^^^^
+~~~~~~~~~~~
 Log Console
-^^^^^^^^^^^
+~~~~~~~~~~~
 The ``Log Console`` allows the user to view messages depending on what log levels and what Java packages have been set for tracking.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-log-console.webp
@@ -2840,9 +4166,9 @@ The ``Log Console`` here in the Main Menu is similar to a project ``Log Console`
 
 .. _nav-menu-global-config:
 
-^^^^^^^^^^^^^
+"""""""""""""
 Global Config
-^^^^^^^^^^^^^
+"""""""""""""
 CrafterCMS allows the user to edit the system settings for Studio without access to the physical server through ``Global Config`` under the ``Navigation Menu`` in Studio.
 This global configuration file overrides the core configuration of Crafter Studio, ``studio-config.yaml``,  found in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio``, and the Studio configuration override file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` in your Authoring installation (for more information on this file, see :ref:`studio-config`.
 
@@ -2862,9 +4188,9 @@ To find out more on what you can configure from the Global Config, see :ref:`stu
 
 .. _main-menu-tool-encryption-tool:
 
-^^^^^^^^^^^^^^^
+"""""""""""""""
 Encryption Tool
-^^^^^^^^^^^^^^^
+"""""""""""""""
 The ``Encryption Tool`` allows the user to encrypt sensitive data such as access keys and passwords, that shouldn't be publicly available to anyone but developers and administrators
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool.webp
@@ -2878,9 +4204,9 @@ For more information on how to use the encryption tool, see :ref:`studio-encrypt
 
 .. _nav-menu-token-management:
 
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 Token Management
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 The ``Token Management Tool`` allows the user to manage access tokens used to make API requests on behalf of the user and
 create tokens for accessing a project/site in Preview.
 
@@ -2891,9 +4217,9 @@ create tokens for accessing a project/site in Preview.
 
 |
 
-"""""""""
+~~~~~~~~~
 API Token
-"""""""""
+~~~~~~~~~
 API tokens authorize the user to access APIs as a particular user with a particular role.
 
 To create a new API access token, click on ``Token Management`` from the Main Menu, then click on the ``API Token`` button.
@@ -2962,9 +4288,9 @@ For an example of how to use the generated API token, see :ref:`crafter-cli`.
 
 .. _preview-token:
 
-"""""""""""""
+~~~~~~~~~~~~~
 Preview Token
-"""""""""""""
+~~~~~~~~~~~~~
 .. version_tag::
 	:label: Since
 	:version: 4.2.0
@@ -3018,9 +4344,9 @@ Here's an example of using the token with Curl, where ``{Generated-Preview-Token
 
 The dialog above that shows the preview token generated also shows other examples on how to use the preview token.
 
-^^^^^^^
+"""""""
 Account
-^^^^^^^
+"""""""
 The ``Account Tool`` allows the user to change the user's personal Crafter Studio settings like language or to change the user's password or to clear your Studio UI preferences from the browser cache.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-account.webp
@@ -3036,9 +4362,9 @@ For more information on how to use the Account tool, see :ref:`account-managemen
 
 .. _user-group-management:
 
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 User/Group Management
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 This section describes managing user accounts and groups.
 
 A user is anybody who uses CrafterCMS. A user account holds a user name and password. A group consists of a collection of users. Users can be assigned to a group for a project/site. Through the groups, roles are assigned to users to certain areas of the site (access rights/ permissions). Each role represents a set of activities allowed. Groups are  used to simplify management as changes made to the rights of the group applies to all the users belonging to that group.
@@ -3048,9 +4374,9 @@ When you work in Crafter Studio, you need to login as a user. Your CrafterCMS ad
 
 .. _roles-and-permissions:
 
-^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""
 Roles and Permissions
-^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""
 To access CrafterCMS, a user must be allowed access rights to certain areas of the project (access rights/ permissions). For example, if a user wants to create, edit or submit content, the user needs to have those specific permissions. Here, we see that the user requires multiple permissions. For simplicity, permissions are grouped together into **roles**. A role is a set of allowed actions/activities. An **author** role, for example, has access to create, edit and submit content.
 
 To define permissions for users, they need to be a member of a group. A group is a collection of users with a role assigned. Groups are used to simplify management as changes made to the rights of the group applies to all the users belonging to that group. For our example above of a user that wants to create, edit or submit content, the user should be assigned to a group with the **author** role.
@@ -3072,18 +4398,18 @@ Permissions and roles can be setup for each project, and for the entire applicat
 
 See :ref:`groups-management` for more information on administrating groups.
 
-""""""""
+~~~~~~~~
 Projects
-""""""""
+~~~~~~~~
 To edit permissions for a project role, in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *Permission Mapping*. See :ref:`permission-mappings` for more information on permissions and the default permissions assigned to roles.
 
 To add/edit a role for a project, in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *Role Mapping*. See :ref:`project-role-mappings` for more information.
 
 The items for interaction/tools available from the **Sidebar** depending on the user role can be configured in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *User Interface Configuration*. See :ref:`user-interface-configuration` for more information.
 
-""""""
+~~~~~~
 Global
-""""""
+~~~~~~
 To add/edit a global role/group, see :ref:`global-role-mappings-config` for more information.
 
 To add/edit global permissions for a role, see :ref:`global-permission-mappings-config` for more information.
@@ -3092,9 +4418,9 @@ The items for interaction/tools available from the |mainMenu| *Main Menu* depend
 
 .. _putting-it-all-together:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Putting it all together - Users, Groups, Roles and Permissions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 In this section, we'll see how users, groups, roles and permissions work together in giving users access to
 certain folders in a project.
 
@@ -3107,9 +4433,9 @@ Enter *news* in the **Folder Name** field. We will be using the **news** folder 
 permissions to folders based on roles. Users assigned to the **newseditor** role will then have access to
 publish and add/edit content in the **news** folder.
 
-""""""""""""""""""
+~~~~~~~~~~~~~~~~~~
 Create a new group
-""""""""""""""""""
+~~~~~~~~~~~~~~~~~~
 Let's begin by creating a new group.
 
 #. To create a new group, click on |mainMenu| **Navigation Menu** from the top right, then click on **Groups**.
@@ -3129,9 +4455,9 @@ Below are the information used to create a new group:
 
 For more information on adding a new group to a project, please see :ref:`create-a-new-group`
 
-"""""""""""""""""
+~~~~~~~~~~~~~~~~~
 Create a new role
-"""""""""""""""""
+~~~~~~~~~~~~~~~~~
 We'll now create a new role for the new group we just created.
 
 #. To create a new role, click on |projectTools| from the **Sidebar**, then click on **Configuration**.
@@ -3169,18 +4495,18 @@ We'll now create a new role for the new group we just created.
 
 For more information about role mappings, please see: :ref:`project-role-mappings`
 
-""""""""""""""""""
+~~~~~~~~~~~~~~~~~~
 Adding permissions
-""""""""""""""""""
+~~~~~~~~~~~~~~~~~~
 #. To add permissions to the new role we just created, click on |projectTools| from the **Sidebar**, then click on **Configuration**.
 #. From the dropdown box, select **Permissions Mappings**
 #. Add in the permissions that you would like to give to the new role that we just created. For our example below, we are giving the role **newseditor** permission to publish from the dashboard and the following permissions for the **news** folder and **assets** folder:
 
-      - read
-      - write
-      - create content
-      - create folder
-      - publish
+   - read
+   - write
+   - create content
+   - create folder
+   - publish
 
    .. code-block:: xml
       :linenos:
@@ -3210,9 +4536,9 @@ Adding permissions
 
 For more information about permission mappings, please see: :ref:`permission-mappings`
 
-""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~
 Adding users to the role
-""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~
 We can now add users to the role by adding the users to the group mapped to the role. In the role mappings configuration file, we mapped the role **newseditor** to the group NewsEditor. To add users to the group NewsEditor,
 
 #. Click on |mainMenu| from the top right of Studio, then select **Groups** on the left hand side
@@ -3225,12 +4551,12 @@ Your new role with users and permissions assigned are now ready!
 
 .. _user-passwords:
 
-^^^^^^^^^^^^^^
+""""""""""""""
 User passwords
-^^^^^^^^^^^^^^
-""""""""""""""""""""""
+""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 Changing Your Password
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 Every user logged in to CrafterCMS can change their own password.
 
 #. To change your own password, click on the **Navigation Menu** |mainMenu| option at the top right of Studio,
@@ -3265,9 +4591,9 @@ Every user logged in to CrafterCMS can change their own password.
 
 After changing your password, you will be logged out of the system and will have to log back in using the new password you set before continuing your work in Studio.
 
-""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~
 Changing a User Password
-""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~
 The Crafter admin can change passwords for other users.
 
 #. To change a user's password, login as crafter admin in Studio.
@@ -3278,18 +4604,18 @@ The Crafter admin can change passwords for other users.
 
 For more information on editing a user, see :ref:`editing-a-user`
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''''
 Setting a User's Initial Password
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''''
 The Crafter admin must set an initial password when creating a new user. To create a new user, please see :ref:`creating-a-user`
 
 |hr|
 
 .. _create-project-with-link-to-remote-repo:
 
------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Project Creation with Remote Repositories
------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Crafter Studio supports project creation with remote repositories and provides two options:
 
 - Create project based on remote Git repository
@@ -3322,9 +4648,9 @@ Let's take a look at the fields where the remote repository details needs to be 
 
 .. _create-project-based-on-a-blueprint-then-add-a-remote-bare-git-repository:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Create project based on a blueprint then add a remote bare Git repository
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 To create a project based on a blueprint then add a remote bare git repository, click on **Create Project** from
 **Projects**, then select the blueprint you would like to use
 
@@ -3367,9 +4693,9 @@ Your project should now have a remote repository listed in the **Remote Reposito
 
 Remember that the remote repository needs to be a bare git repository, since we are pushing our newly created project to the remote repository. To push our newly create project to the remote repository, click on the ``Push`` button (button with the up arrow) next to the remote repository
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""
 Create project based on a remote Git repository
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""
 Creating a project based on a remote Git repository is basically exporting a project from one Studio and importing it into another one.
 
 To create a project based on remote Git repository, after clicking on **Create Project**, Click on **Remote Git Repository** in the create project screen
@@ -3434,9 +4760,9 @@ After a short while, your project will be imported.
 
 .. _duplicate-project:
 
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 Duplicating a Project
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 Crafter Studio supports creating a new project by duplicating an existing project.
 To duplicate a project, from ``Projects``, click on the ``Create Project`` button.
 
@@ -3467,11 +4793,6 @@ configuration updated if separate S3 buckets from the source project are require
 Clustering
 ----------
 Learn about clustering Crafter Studio in the :ref:`Crafter Studio Clustering Guide <studio-clustering>`.
-
-.. toctree::
-   :hidden:
-
-   /by-role/system-admin/performance-and-scaling/clustering
 
 |hr|
 
