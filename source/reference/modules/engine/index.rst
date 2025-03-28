@@ -54,17 +54,17 @@ Configuration
 -------------
 .. _setup-project-for-delivery:
 
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Setup Engine to Deliver a Project
----------------------------------
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""
 Server-based Delivery
-^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""
 In this section, we will be working in the delivery environment of CrafterCMS and describing how to setup your project for a delivery environment.
 
-"""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Setup Crafter Deployer Target
-"""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 CrafterCMS out of the box has a script to help you create your deployer target for the delivery environment.
 
 In the ``bin`` folder in your CrafterCMS delivery environment, we will use the script ``init-site.sh`` to help us create the deployer target.
@@ -144,9 +144,9 @@ Here is an example project's published repo Git url when using a local repositor
     To get the location of Git, run the following command: ``which git-upload-pack``
   * You can limit SSH access by using Git Shell, see https://git-scm.com/docs/git-shell for more information.
 
-"""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Viewing your Site for Testing
-"""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 To test viewing your project, open a browser and type in the URL of your project.
 
 If you have multiple projects setup, to view a certain project, in your browser, enter the following:
@@ -206,9 +206,9 @@ together with CDNs that can send headers, like AWS CloudFront
 
 .. _setup-serverless-delivery:
 
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Serverless Delivery
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 CrafterCMS can be configured to serve sites directly from AWS services, following this guide you will:
 
 - Create a AWS OpenSearch domain (optional)
@@ -216,16 +216,16 @@ CrafterCMS can be configured to serve sites directly from AWS services, followin
   with a CloudFront and S3 bucket for each site
 - Configure a Crafter Engine in a delivery environment to read files from the S3 bucket and query to AWS OpenSearch (optional)
 
-"""""""""""""
+~~~~~~~~~~~~~
 Prerequisites
-"""""""""""""
+~~~~~~~~~~~~~
 - An AWS account
 - A CrafterCMS authoring environment
 - A CrafterCMS delivery environment
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Step 1: Create an OpenSearch Domain for Delivery (optional)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Since serverless delivery requires a single OpenSearch endpoint readable by all Engine instances, we recommend you
 create an AWS OpenSearch domain for delivery. If you don't want to use an AWS OpenSearch domain then you should
 create and maintain your own OpenSearch cluster.
@@ -273,9 +273,9 @@ To create an AWS OpenSearch domain please do the following:
 
 #. Wait until the domain has been created, then copy the ``Domain Endpoint``.
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Step 2: Configure the Delivery for Serverless Mode
-""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #. Edit the services override file to enable the Serverless S3 mode
    (``DELIVERY_INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/engine/extension/services-context.xml``):
 
@@ -371,9 +371,9 @@ Step 2: Configure the Delivery for Serverless Mode
 
    |
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Step 3: Configure Authoring for Serverless Deployment
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Instead of having one Crafter Deployer per node in delivery, for serverless you just need a single Deployer uploading
 files to S3. The authoring preview Deployer thus can also be used for serverless deployment.
 
@@ -573,9 +573,9 @@ name requirements is the following:
 
 |
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Step 4: Create the Site in the Authoring Environment
-""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #. Login to the Crafter Studio in the authoring environment from your browser.
 #. Click the ``Create Site`` button
 #. Choose the ``Editorial`` blueprint, enter the ``Site Id`` (e.g. ``editorial``), and then review and create.
@@ -629,9 +629,9 @@ Step 4: Create the Site in the Authoring Environment
 
    |
 
-""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Step 5: Test the Delivery Site
-""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Open a browser and go to ``https://DOMAIN_OF_YOUR_CLOUDFRONT``. You should be able to see your Editorial site!
 
 .. image:: /_static/images/system-admin/serverless/editorial-screenshot.webp
@@ -658,16 +658,16 @@ Open a browser and go to ``https://DOMAIN_OF_YOUR_CLOUDFRONT``. You should be ab
 
 .. _engine-configuration-files:
 
--------------------
+^^^^^^^^^^^^^^^^^^^
 Configuration Files
--------------------
+^^^^^^^^^^^^^^^^^^^
 Crafter Engine can be configured at the project/site level or at the instance level.
 
 .. _engine-site-configuration-files:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""
 Project-level/Site-level Configuration Files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""
 Crafter Engine provides a flexible configuration system that allows site administrators to change
 the behavior of the project without the need to modify any code. Some properties are used by Crafter
 Engine itself, but developers can also add any custom property they need for their code.
@@ -699,9 +699,9 @@ The configuration file ``site-config.xml`` has some additional considerations. T
 
 .. _engine-instance-configuration-files:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 Instance-level Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 The main files for configuring Crafter Engine at the instance level are:
 
 .. list-table:: Engine Instance Level Configuration Files
@@ -724,9 +724,9 @@ The files can be accessed by opening the files using a text editor. Any changes 
 
 |hr|
 
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Engine Configuration Properties
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In this section we will highlight some of the more commonly used properties in the configuration of Crafter Engine. For most properties, please see the  ``server-config.properties`` file, and for additional configuration files and properties, see :ref:`engine-configuration-files`.
 
 .. list-table:: Common Configuration Properties
@@ -786,9 +786,9 @@ In this section we will highlight some of the more commonly used properties in t
 
 .. _engine-root-folder:
 
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""""
 Engine Root Folder
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""""
 Crafter Engine requires a root folder path to be configured if the defaults are not used.
 
 The default root folder path has the pattern: ``crafter.engine.site.default.rootFolder.path=file:${CRAFTER_DATA_DIR}/repos/sites/{siteName}/`` This relies on the ``CRAFTER_DATA_DIR`` environment variable being set. Crafter Engine will then resolve the ``{siteName}`` variable to the name of the site being requested.
@@ -806,9 +806,9 @@ To change the root folder path, you can either set the ``CRAFTER_DATA_DIR`` envi
 
 .. _engine-turn-off-show-error:
 
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Turn Off Show Error
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Templates in CrafterCMS will display the errors in line with content as they encounter them to help the template developer during the coding process. On production environments, you do not want the errors to show up because it will highlight site issues and expose information that may be a security concern. To turn off showing errors in line with content, do the following:
 
 #. Place the following property and value in the ``server-config.properties`` file
@@ -829,9 +829,9 @@ Templates in CrafterCMS will display the errors in line with content as they enc
 
 .. _engine-http-response-headers:
 
-^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""
 HTTP Response Headers
-^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""
 CrafterCMS supports adding headers to responses when there are matched configuration patterns in
 the Engine Project Configuration file |br|
 
@@ -857,9 +857,9 @@ To setup HTTP response headers, do the following:
 
 .. _engine-cache-headers:
 
-"""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~
 Setting Cache Headers
-"""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~
 Cache headers allows specifying caching policies such as how an item is cached, maximum age before expiring, etc.
 These headers are extremely useful for indicating cache TTLs to CDNs and browsers on certain requests.
 
@@ -899,9 +899,9 @@ Please note that the ``Cache-Control`` header inserted to responses by default i
 
 .. _engine-url-rewrite-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""
 Engine URL Rewrite Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""
 URL rewriting turns hard to remember, long and complicated URLs into easier to remember URLs.
 
 CrafterCMS comes with the Tuckey URLRewrite filter, a Java Web Filter with functionality like Apache's mod_rewrite,
@@ -917,9 +917,9 @@ then select **Engine URL Rewrite Configuration (XML Style)**.
 
 |
 
-""""""
+~~~~~~
 Sample
-""""""
+~~~~~~
 Here's a sample urlrewrite.xml file (click on the triangle on the left to expand/collapse):
 
 .. raw:: html
@@ -956,9 +956,9 @@ For more information on the UrlRewriteFilter, see http://tuckey.org/urlrewrite/
 
 .. _engine-single-page-application:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""
 Single Page Application (SPA)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""
 The following section allows you to configure Single Page Application (SPA) mode and view name.
 
 
@@ -977,9 +977,9 @@ The following section allows you to configure Single Page Application (SPA) mode
 
 .. _engine-cors:
 
-^^^^
+""""
 CORS
-^^^^
+""""
 The following section allows you to configure CORS headers in REST API responses when not in preview mode.
 
 .. code-block:: xml
@@ -1034,9 +1034,9 @@ Here's an example of using patterns in ``accessControlAllowOrigin``:
 
 .. _proxy-configuration:
 
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Proxy Configuration
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 CrafterCMS supports a proxy system to proxy GraphQL, Engine, NodeJS or other application delivery systems. Whenever Crafter Engine receives a request, it is matched against the patterns of each server and the first match would then get the request sent to the server with the matching pattern. In some systems, multiple servers are used for search, Studio, etc. Using the proxy helps simplify the system.
 
 One of the benefits of using the proxy in CrafterCMS is that it can connect to any remote server as the preview server, which allows for easier authoring of projects built with other programming languages and technology, React, Angular, or Vue for example.
@@ -1073,9 +1073,9 @@ Here's a sample Proxy Configuration file (click on the triangle on the left to e
 
 .. _using-the-proxy-configuration:
 
-""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~
 Proxy Example: React
-""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~
 For example, you would like to work on a React application within Studio. What is normally included inside Studio is the build output of the React application, so that a user making edits to the React code would need to build the React code then copy it into Studio in order to preview the changes. This becomes cumbersome when developing, as many edits are normally done before reaching the final version of the React app. Using the proxy, the user can preview the React app in Studio and is able to work on both the React app and CrafterCMS.
 
 Let's take a look at an example of setting up the proxy for a React application.
@@ -1224,9 +1224,9 @@ Let's begin:
 
      |
 
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 Proxy Example: Next.js
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 Let’s take a look at another example of setting up the proxy, this time for a Next.js application.
 
 We’ll look at the Next.js Blueprint, a Next.js application available from the public marketplace, that runs on localhost:3000, then setup the Studio proxy so we can preview the Next.js application inside Studio. Finally, we’ll make some changes in the Next.js application and view the changes made inside Studio.
@@ -1323,16 +1323,16 @@ We’ll look at the Next.js Blueprint, a Next.js application available from the 
 
 .. _engine-cache:
 
-^^^^^
+"""""
 Cache
-^^^^^
+"""""
 Crafter Engine sports a built-in cache engine with an LRU (least recently used) cache eviction policy. The cache is used to store an active set to help render content from memory whenever possible.
 
 .. note:: When running in Preview Mode (inside Studio for preview purposes), Crafter Engine's cache is disabled to help authors see their changes immediately.
 
-"""""""""
+~~~~~~~~~
 Max Items
-"""""""""
+~~~~~~~~~
 The following allows you to configure the maximum number of objects in Engine's cache:
 
 .. code-block:: properties
@@ -1341,9 +1341,9 @@ The following allows you to configure the maximum number of objects in Engine's 
     # The max number of items that each site cache can have
     crafter.engine.site.default.cache.maxAllowedItems=250000
 
-"""""""""""""
+~~~~~~~~~~~~~
 Cache Warming
-"""""""""""""
+~~~~~~~~~~~~~
 The following allows you to configure items to be warmed up (preloaded) in the cache:
 
 .. code-block:: properties
@@ -1373,9 +1373,9 @@ where:
 
 For all projects, the cache is preloaded using the above configuration. CrafterCMS warms up the cache on every publish and startup. Note also that what's cache warmed will be warmed on every publish and startup and will live as long as nothing kicks it out of the cache due to least recently used (LRU) cache.
 
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 URL Transformations Cache
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 The following allows you to configure whether the URL transformation performed by the view resolver will be cached:
 
 .. code-block:: properties
@@ -1386,9 +1386,9 @@ The following allows you to configure whether the URL transformation performed b
 
 .. _s3-object-caching:
 
-"""""""""
+~~~~~~~~~
 S3 Object
-"""""""""
+~~~~~~~~~
 .. version_tag::
     :label: Since
     :version: 4.1.0
@@ -1418,9 +1418,9 @@ The following allows you to configure a white list of paths for caching in memor
 
 .. _request-filtering-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 Request Filtering Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 .. version_tag::
     :label: Since
     :version: 4.1.0
@@ -1438,9 +1438,9 @@ The following allows you to setup a filter to deny access to any request matchin
 
 .. _engine-forwarded-headers:
 
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 Forwarded Headers
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 The following section allows you to configure forwarded headers to resolve the actual hostname and protocol when it is behind a load balancer or reverse proxy. Forwarded headers are disabled by default.
 
 .. code-block:: properties
@@ -1457,16 +1457,16 @@ The following section allows you to configure forwarded headers to resolve the a
 
 .. _engine-policy-headers:
 
-^^^^^^^^^^^^^^
+""""""""""""""
 Policy Headers
-^^^^^^^^^^^^^^
+""""""""""""""
 .. version_tag::
     :label: Since
     :version: 4.1.2
 
-""""""""""""""
+~~~~~~~~~~~~~~
 Referer Policy
-""""""""""""""
+~~~~~~~~~~~~~~
 The following allows you to configure what information is made available in the Referer header in a request.
 This can be set to a different value as needed.
 
@@ -1479,9 +1479,9 @@ This can be set to a different value as needed.
     # origin-when-cross-origin, strict-origin-when-cross-origin, unsafe-url
     crafter.security.headers.referrerPolicy.value=no-referrer
 
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 Content Security Policy
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 The following allows you to configure which resources can be loaded (e.g. JavaScript, CSS, Images, etc.)
 and the URLs that they can be loaded from. This should be tuned to the specific requirements of each project.
 
@@ -1497,9 +1497,9 @@ and the URLs that they can be loaded from. This should be tuned to the specific 
 To block offending requests, set ``crafter.security.headers.contentSecurityPolicy.reportOnly`` to ``false``.
 This property is set to ``true`` by default.
 
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 X-Permitted-Cross-Domain-Policies
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The following allows you to configure what other domains you want to allow access to your domain.
 The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow any embedding) by default.
 
@@ -1516,9 +1516,9 @@ The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow an
 
 .. _engine-custom-healthcheck:
 
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Custom Health Check
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Each project can be configured to provide a custom health check script.  By default, Engine will look for a file
 ``/scripts/health-check.groovy`` containing your custom script for a health check in your project that will run
 when `status <../../../_static/api/engine.html#tag/monitoring/operation/status>`_ is checked for the project. The
@@ -1536,9 +1536,9 @@ location of your health check custom script, is configured in your project's ``s
 
 .. _engine-navigation:
 
-^^^^^^^^^^
+""""""""""
 Navigation
-^^^^^^^^^^
+""""""""""
 The following section allows you to configure additional fields for dynamic navigation items
 
 .. code-block:: xml
@@ -1555,9 +1555,9 @@ The following section allows you to configure additional fields for dynamic navi
 
 .. _engine-search-timeouts:
 
-^^^^^^^^^^^^^^^
+"""""""""""""""
 Search Timeouts
-^^^^^^^^^^^^^^^
+"""""""""""""""
 The following allows you to configure the search client connection timeout, socket timeout and number of threads.
 
 .. code-block:: properties
@@ -1577,9 +1577,9 @@ The following allows you to configure the search client connection timeout, sock
 
 .. _engine-content-length-headers:
 
-^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 Content-Length Headers
-^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 The following allows you to configure the content-length header sent for responses.
 The content-length header is sent for all responses by default.
 
@@ -1598,9 +1598,9 @@ The content-length header is sent for all responses by default.
 
 .. _engine-static-methods-in-freemarker-templates:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""
 Static Methods in Freemarker Templates
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""
 The following allows you to configure access to static methods in Freemarker templates.
 Access to static methods in Freemarker templates is disabled by default.
 
@@ -1617,9 +1617,9 @@ Access to static methods in Freemarker templates is disabled by default.
 
 .. _engine-spring-expression-language:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 Spring Expression Language
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 The following allows you to configure SpEL expressions for custom app contexts.
 SpEL expressions support is disabled by default.
 
@@ -1640,9 +1640,9 @@ SpEL expressions support is disabled by default.
 
 .. _engine-project-spring-configuration:
 
-^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""
 Spring Configuration
-^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""
 Each project can have it's own Spring application context. Just as with ``site-config.xml``, beans
 can be overwritten using the following locations:
 
@@ -1651,7 +1651,7 @@ Spring Configuration Files
    through the out-of-the-box blueprints, by navigating from the Studio sidebar to ``Project Tools``
    > ``Configuration``, and finally picking up the ``Engine Project Application Context`` option from the dropdown).
 
-	 .. image:: /_static/images/site-admin/engine-project-application-context.webp
+   .. image:: /_static/images/site-admin/engine-project-application-context.webp
 			 :alt: Engine Project Application Context
 
  - ``/config/engine/env/{envName}/application-context.xml``
@@ -1663,21 +1663,21 @@ As an example, assuming you have defined a Groovy class under ``/scripts/classes
 you can define a bean like this:
 
 .. code-block:: xml
-  :caption: */config/engine/application-context.xml*
-  :linenos:
+    :caption: */config/engine/application-context.xml*
+    :linenos:
 
-	<?xml version="1.0" encoding="UTF-8"?>
-	<beans xmlns="http://www.springframework.org/schema/beans"
-	       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <?xml version="1.0" encoding="UTF-8"?>
+    <beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" parent="crafter.properties"/>
+        <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" parent="crafter.properties"/>
 
-    <bean id="greeting" class="mypackage.MyClass">
-      <property name="myproperty" value="${myvalue}"/>
-    </bean>
+        <bean id="greeting" class="mypackage.MyClass">
+            <property name="myproperty" value="${myvalue}"/>
+        </bean>
 
-  </beans>
+    </beans>
 
 A ``org.springframework.context.support.PropertySourcesPlaceholderConfigurer`` (like above) can be
 specified in the context so that the properties of ``site-config.xml`` can be used as placeholders,
@@ -1694,16 +1694,16 @@ also have access to Engine's global properties (like ``crafter.engine.preview``)
 
 .. _engine-mongodb-configuration:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 Configure Engine to use MongoDB
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 There are times when you may need access to MongoDB. This section details how you can access MongoDB by configuring Engine.
 
 Here are the steps for configuring Engine to use mongoDB:
 
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Configure the MongoDB URI
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 To define the connection between MongoDB and Engine, add the URI in the config file `/config/engine/site-config.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio sidebar to Project Tools > Configuration, and finally picking up the **Engine Project Configuration** option from the dropdown).
 
 .. code-block:: xml
@@ -1722,9 +1722,9 @@ where:
 
 For more details on the Connection String URI format, see https://docs.mongodb.com/manual/reference/connection-string/
 
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 Create a GMongo Client
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 To access Mongo from Groovy, we'll use a GMongo client. We'll need to add some beans in `/config/engine/application-context.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio sidebar to Project Tools > Configuration, and finally picking up the **Engine Site Application Context** option from the dropdown).
 
 .. code-block:: xml
@@ -1747,9 +1747,9 @@ To access Mongo from Groovy, we'll use a GMongo client. We'll need to add some b
 
     </beans>
 
-"""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Use the Client From a Groovy Script
-"""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We can now use the client from a Groovy script. Here's a simple script that runs a query:
 
 .. code-block:: groovy
@@ -1769,9 +1769,9 @@ where:
     * {collection} - collection name
     * {some id} - id you're searching for depending on your database
 
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Publish Configuration to Delivery
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Until this point all changes have been made from Crafter Studio so they will only affect immediately
 the authoring environment, for a delivery environment you will need to publish the changed files.
 
@@ -1815,9 +1815,9 @@ This can be done from the Studio project dashboard with the following steps:
 Once the files are deployed to the delivery node and the project context is reloaded the new
 Configuration will take effect.
 
-""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Delivery Specific Configurations
-""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If you need to manage different values for the configuration files depending on the environment
 you can find more detailed information in the :ref:`engine-multi-environment-support` section.
 
@@ -1827,9 +1827,9 @@ you can find more detailed information in the :ref:`engine-multi-environment-sup
 
 .. _engine-custom-properties:
 
-------------------------
+""""""""""""""""""""""""
 Engine Custom Properties
-------------------------
+""""""""""""""""""""""""
 Crafter Engine supports adding custom properties via the Engine Project Configuration file (``site-config.xml``).
 This is useful when you want to add properties that are specific to your project.
 
@@ -1943,9 +1943,9 @@ To get a boolean, use the ``getBoolean`` method, which we'll use to get the valu
 
 .. _engine-multi-environment-support:
 
---------------------------------
+""""""""""""""""""""""""""""""""
 Engine Multi-Environment Support
---------------------------------
+""""""""""""""""""""""""""""""""
 The following engine configuration files can be setup for different environments:
 
 * ``site-config.xml``
@@ -1971,13 +1971,13 @@ To setup an environment for engine configuration files, do the following:
 
 #. Restart Crafter
 
-^^^^^^^^
+~~~~~~~~
 Examples
-^^^^^^^^
+~~~~~~~~
 
-"""""""""""""""""""""""""""""""""""""
+'''''''''''''''''''''''''''''''''''''
 Creating a Custom Environment Example
-"""""""""""""""""""""""""""""""""""""
+'''''''''''''''''''''''''''''''''''''
 Let's take a look at an example of creating a new environment, called ``mycustomenv`` with the ``urlrewrite.xml``
 file overridden in the new environment for a project created using the Website Editorial blueprint.  This example
 is very similar to the example shown above for Studio except for the location of the custom configuration file:
@@ -2002,30 +2002,30 @@ is very similar to the example shown above for Studio except for the location of
 #. Inside the ``env`` folder, create a directory called ``mycustomenv``
 #. We will now create the configuration file for the ``urlrewrite.xml`` that we want to override in the new environment we are setting up, inside our ``mycustomenv`` folder:
 
-      .. code-block:: text
-         :emphasize-lines: 3
+   .. code-block:: text
+       :emphasize-lines: 3
 
-             env/
-               mycustomenv/
-                 urlrewrite.xml
+       env/
+         mycustomenv/
+           urlrewrite.xml
 
-     |
+   |
 
    We will redirect the page to ``/articles/2021/12/Top Books For Young Women`` when the page ``/articles/2020/12/Top Books For Young Women`` is previewed. Copy the following inside the ``urlrewrite.xml`` file.
 
-     .. code-block:: xml
-        :linenos:
-        :caption: *Urlrewrite.xml file for environment mycustomenv*
+   .. code-block:: xml
+       :linenos:
+       :caption: *Urlrewrite.xml file for environment mycustomenv*
 
-        <?xml version="1.0" encoding="utf-8"?>
-        <urlrewrite>
-          <rule>
-            <from>/articles/2020/12/(.*)$</from>
-            <to type="redirect">/articles/2021/12/$1</to>
-          </rule>
-        </urlrewrite>
+       <?xml version="1.0" encoding="utf-8"?>
+       <urlrewrite>
+         <rule>
+           <from>/articles/2020/12/(.*)$</from>
+           <to type="redirect">/articles/2021/12/$1</to>
+         </rule>
+       </urlrewrite>
 
-     |
+   |
 
    For our example, the folder ``articles/2020/12`` was copied to ``articles/2021`` with the page under ``articles/2021/12``, modified to display the title as a dupe. This was done so when we click on the page under ``articles/2020/12``, we can easily tell that it's being redirected to the page under ``articles/2021/12``. Of course, you can also just look at the url of the page previewed to verify that it was redirected to the right page.
 
@@ -2054,23 +2054,23 @@ is very similar to the example shown above for Studio except for the location of
 
 #. Remember to commit the files copied so Studio will pick it up.
 
-      .. code-block:: bash
+   .. code-block:: bash
 
-         ➜  sandbox git:(master) ✗ git add .
-         ➜  sandbox git:(master) ✗ git commit -m "Add urlrewrite.xml file for mycustomenv"
+       ➜  sandbox git:(master) ✗ git add .
+       ➜  sandbox git:(master) ✗ git commit -m "Add urlrewrite.xml file for mycustomenv"
 
-      |
+   |
 
 #. Open the ``crafter-setenv.sh`` file in ``TOMCAT/bin`` and set the value of ``CRAFTER_ENVIRONMENT`` to the
    environment we setup above (*myenv*) to make it the active environment:
 
-      .. code-block:: bash
-         :caption: *bin/crafter-setenv.sh*
+   .. code-block:: bash
+       :caption: *bin/crafter-setenv.sh*
 
-         # -------------------- Configuration variables --------------------
-         export CRAFTER_ENVIRONMENT=${CRAFTER_ENVIRONMENT:=mycustomenv}
+       # -------------------- Configuration variables --------------------
+       export CRAFTER_ENVIRONMENT=${CRAFTER_ENVIRONMENT:=mycustomenv}
 
-      |
+   |
 
 #. Restart Crafter. To verify our newly setup environment, open the ``Sidebar`` and click on |projectTools|, then select ``Configuration``. Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations drop-down box and when you select the *Engine URL Rewrite Configuration (XML Style)*, it should display the file we created in one of the previous step:
 
@@ -2090,9 +2090,9 @@ is very similar to the example shown above for Studio except for the location of
 
    The preview page should take you to */articles/2021/12/Top Books For Young Women*
 
-"""""""""""""""""""""""""""""""""""""""""""
+'''''''''''''''''''''''''''''''''''''''''''
 Environment Specific Configurations Example
-"""""""""""""""""""""""""""""""""""""""""""
+'''''''''''''''''''''''''''''''''''''''''''
 Environments are useful for managing values such as paths or database connections without the need to
 change any code directly in the servers.
 
@@ -2170,9 +2170,9 @@ where the project is deployed. We will have three environments ``dev``, ``auth``
 
 .. _engine-multi-target-configurations:
 
----------------------------
+"""""""""""""""""""""""""""
 Engine Multi-target Support
----------------------------
+"""""""""""""""""""""""""""
 There are some cases where the Engine configuration files need to have different values per publishing target. Say for a production environment where you have **staging** to test out your project and **live** , the project to be used by end users, you may need different SAML authentication mechanics or different URL rewrites.
 
 The :ref:`engine-multi-environment-support` section detailed how to setup Engine configuration files per environment. CrafterCMS
@@ -2191,9 +2191,9 @@ Here are the available publishing targets for the configuration files listed abo
 * staging
 * live
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Overriding Engine Configuration Files per Publishing Target
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 To override a configuration file in any of the publishing targets
 
 #. Add the new configuration file/s for overriding to **Configurations** under |projectTools| -> **Configuration**
@@ -2215,19 +2215,19 @@ To override a configuration file in any of the publishing targets
 
    Say, to add a ``urlrewrite.xml`` file override for **staging**, add the following in the **Configurations**
 
-     .. code-block:: xml
-        :caption: *Configurations* - *SITENAME/config/studio/administration/config-list.xml*
-        :emphasize-lines: 3
+   .. code-block:: xml
+       :caption: *Configurations* - *SITENAME/config/studio/administration/config-list.xml*
+       :emphasize-lines: 3
 
-        <file>
-          <module>engine</module>
-          <path>urlrewrite.staging.xml</path>
-          <title>Engine URL Rewrite (XML Style) Staging</title>
-          <description>Engine URL Rewrite (XML Style) Staging</description>
-          <samplePath>sample-urlrewrite.xml</samplePath>
-        </file>
+       <file>
+         <module>engine</module>
+         <path>urlrewrite.staging.xml</path>
+         <title>Engine URL Rewrite (XML Style) Staging</title>
+         <description>Engine URL Rewrite (XML Style) Staging</description>
+         <samplePath>sample-urlrewrite.xml</samplePath>
+       </file>
 
-     |
+   |
 
    For more information on **Configurations** config file, see :ref:`project-tools-configuration`
 
@@ -2242,9 +2242,9 @@ To override a configuration file in any of the publishing targets
 
 #. If the configuration file to be overridden is not for preview, publish the configuration file to the intended publishing target, **staging** or **live**
 
-"""""""
+'''''''
 Example
-"""""""
+'''''''
 
 Let's take a look at an example of overriding the Project Configuration used by Engine ``site-config.xml`` for the **staging** and **live** publishing targets so that each target has a different SAML authentication mechanics (different identity provider in ``staging`` and ``live``). In our example, we will use a project created using the Website Editorial blueprint named **mysite**
 
@@ -2360,15 +2360,15 @@ Let's take a look at an example of overriding the Project Configuration used by 
 
 .. _configure-custom-services:
 
--------------------------
+"""""""""""""""""""""""""
 Configure Custom Services
--------------------------
+"""""""""""""""""""""""""
 When developing templates or scripts only a small list of services are available to use. You can expose other
 services with the following steps.
 
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 CrafterCMS Services
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 If your project/site includes a custom application context with services, you can make them available by adding them to the
 comma-separated list in the :ref:`server-config.properties <engine-configuration-files>` configuration file:
 
@@ -2381,9 +2381,9 @@ comma-separated list in the :ref:`server-config.properties <engine-configuration
 .. note:: The value from the configuration is used as a regular expression, if the value contains special
           characters you will need to escape them with backslashes ``\\``.
 
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 System Services
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 .. warning:: This setting will disable restrictions for all projects/sites
 
 |
@@ -2400,9 +2400,9 @@ the following configuration in the :ref:`server-config.properties <engine-config
 |hr|
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Adding Dependencies with Grape
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If your Groovy code need to use external dependencies you can use Grapes, however, when the Groovy sandbox is enabled
 dependencies can only be downloaded during the initial compilation and not during runtime. For this reason it is
 required to add an extra parameter ``initClass=false`` in the annotations to prevent them to be copied to the classes:
@@ -2423,9 +2423,9 @@ Security
 
 .. _engine-saml2-configuration:
 
--------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Engine SAML2 Configuration |enterpriseOnly|
--------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. version_tag::
     :label: Since
     :version: 4.0.3
@@ -2437,9 +2437,9 @@ Engine SAML2 Configuration |enterpriseOnly|
 
 Crafter Engine can be configured to support SAML2 SSO out of the box without using any additional plugin.
 
-^^^^^^^^^^^^
+""""""""""""
 Requirements
-^^^^^^^^^^^^
+""""""""""""
 #. A SAML2 compatible Identity Provider properly configured, this configuration will not be covered here
 #. A private key and certificate. This can be generated like so:
 
@@ -2451,9 +2451,9 @@ Requirements
     * **keyout**: The value used for this option wil be used in the ``crafter.security.saml.rp.privateKey.location`` property
     * **out**: The value used for this option will be used in the ``crafter.security.saml.rp.certificate.location`` property
 
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 Update the Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 To configure Engine SAML2, in your Delivery installation, we need to enable SAML security then we'll setup the required SAML configuration properties.
 
 To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter.engine.samlSecurity``:
@@ -2637,9 +2637,9 @@ secured page and then automatically return to your project in Crafter Engine.
 
 .. _engine-headers-authentication:
 
--------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Configure Headers Based Authentication |enterpriseOnly|
--------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Crafter Engine is able to integrate with any authentication system that sends custom HTTP headers containing
 information that will be used to authenticate the user in Engine. This section details how to setup Engine for
 headers based authentication.
@@ -2750,9 +2750,9 @@ The default value of the token is ``my_secure_token``. Remember to replace the d
         </headers>
       </security>
 
-^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 Optional Role Mappings
-^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 To add optional role mappings, add the following inside the ``<headers>`` tag:
 
    .. code-block:: xml
@@ -2780,9 +2780,9 @@ To add optional role mappings, add the following inside the ``<headers>`` tag:
 * **role**: The name of the role in the authentication object. Remember to add **ROLE_** to the name of the role in
   the authentication object. So, if mapping the role ``user``, it will be ``<role>ROLE_user</role>``
 
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Optional Attributes
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 To add optional attributes, add the following inside the ``<headers>`` tag:
 
    .. code-block:: xml
@@ -2814,16 +2814,16 @@ To add optional attributes, add the following inside the ``<headers>`` tag:
 To get the value of the attribute passed in the header, use the following ``authToken.principal.attributes.name``,
  where ``name`` is the name of the attribute in the authentication object.
 
-^^^^^^^
+"""""""
 Example
-^^^^^^^
+"""""""
 Let's take a look at an example of setting up Engine headers authentication using a project created using the Website
 Editorial blueprint named ``My Editorial``. We will also change the default value for the token header. We'll then take a
 look at an example of setting up Engine headers authentication with optional role mappings and attribute.
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Simple Example Setting Up Engine Headers Authentication
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Open the Engine ``site-config.xml`` file in Studio, by navigating from the ``Sidebar`` to
 ``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project Configuration`` option from the list.
 
@@ -2883,9 +2883,9 @@ You should now see the Home page displayed
 
 See :ref:`engine-config` for more information on how to access the ``site-config.xml`` file.
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Example Setting Up Engine Headers Authentication with Optional Role Mappings and Attributes
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We'll now take a look at another example where we setup optional role mappings and attributes.
 
 We'll setup the ``admin`` and the ``user`` roles and add the attribute ``APP_FULL_NAME``. We'll try to restrict
@@ -2897,45 +2897,45 @@ Open the Engine ``site-config.xml`` file in Studio, by navigating from the ``Sid
 
 Add the following to setup the ``admin`` and ``user`` role, and the attribute ``APP_FULL_NAME``:
 
-   .. code-block:: xml
-      :caption: *Engine Project Configuration  - Example Engine headers authentication with optional role mappings and attribute*
-      :linenos:
-      :emphasize-lines: 5, 13-22, 24-29
+.. code-block:: xml
+    :caption: *Engine Project Configuration  - Example Engine headers authentication with optional role mappings and attribute*
+    :linenos:
+    :emphasize-lines: 5, 13-22, 24-29
 
-      <security>
-        <urlRestrictions>
-          <restriction>
-            <url>/articles/**</url>
-            <expression>hasAnyRole('user'\,'admin')</expression>
-          </restriction>
-        </urlRestrictions>
-        <headers>
-          <standalone>true</standalone>
-          <token>my_updated_token</token>
-          <!-- Optional role mappings, allows to map names from the external auth to simple role names to use in the page or url restrictions -->
-          <!-- The APP_ prefix is just an example, the values can be anything -->
-          <!-- The ROLE_ prefix is is required for the name of the role -->
-          <groups>
-            <group>
-              <name>APP_ADMIN</name> <!-- The name of the group in the header -->
-              <role>ROLE_admin</role>     <!-- The name of the role in the authentication object -->
-            </group>
-            <group>
-              <name>APP_USER</name> <!-- The name of the group in the header -->
-              <role>ROLE_user</role>     <!-- The name of the role in the authentication object -->
-            </group>
-          </groups>
-          <!-- Optional attribute mappings, allows to expose attributes from the external auth -->
-          <attributes>
-            <attribute>
-              <name>APP_FULL_NAME</name> <!-- The name of the attribute in the header -->
-              <field>name</field>        <!-- The name of the attribute in the authentication object -->
-            </attribute>
-          </attributes>
-        </headers>
-      </security>
+    <security>
+      <urlRestrictions>
+        <restriction>
+          <url>/articles/**</url>
+          <expression>hasAnyRole('user'\,'admin')</expression>
+        </restriction>
+      </urlRestrictions>
+      <headers>
+        <standalone>true</standalone>
+        <token>my_updated_token</token>
+        <!-- Optional role mappings, allows to map names from the external auth to simple role names to use in the page or url restrictions -->
+        <!-- The APP_ prefix is just an example, the values can be anything -->
+        <!-- The ROLE_ prefix is is required for the name of the role -->
+        <groups>
+          <group>
+            <name>APP_ADMIN</name> <!-- The name of the group in the header -->
+            <role>ROLE_admin</role>     <!-- The name of the role in the authentication object -->
+          </group>
+          <group>
+            <name>APP_USER</name> <!-- The name of the group in the header -->
+            <role>ROLE_user</role>     <!-- The name of the role in the authentication object -->
+          </group>
+        </groups>
+        <!-- Optional attribute mappings, allows to expose attributes from the external auth -->
+        <attributes>
+          <attribute>
+            <name>APP_FULL_NAME</name> <!-- The name of the attribute in the header -->
+            <field>name</field>        <!-- The name of the attribute in the authentication object -->
+          </attribute>
+        </attributes>
+      </headers>
+    </security>
 
-   |
+|
 
 For the ``expression`` in the URL restriction, remember to escape the comma as shown above
 ``<expression>hasAnyRole('user'\,'admin')</expression>``
@@ -2981,25 +2981,25 @@ header. You can take a look at the ``header.ftl`` file on how the attribute is d
 Studio, then navigate to ``/templates/web/components/`` then right click on ``header.ftl`` and select ``Edit``.
 The ``authToken.principal.attributes.name`` contains the value passed for ``APP_FULL_NAME`` in the header
 
-   .. code-block:: text
-      :emphasize-lines: 5-6
-      :caption: */templates/web/components/header.ftl*
-      :linenos:
+.. code-block:: text
+    :emphasize-lines: 5-6
+    :caption: */templates/web/components/header.ftl*
+    :linenos:
 
-      <#import "/templates/system/common/cstudio-support.ftl" as studio />
-      <header id="header" <@studio.componentAttr component=contentModel ice=true iceGroup="header"/>>
-        <a href="/" class="logo"><img border="0" alt="${contentModel.logo_text_t!""}" src="${contentModel.logo_s!""}">
-          <#if (authToken.principal)??>
-            <#assign name = authToken.principal.attributes.name!"stranger" />
-          <#else>
-            <#assign name = "stranger" />
-          </#if>
+    <#import "/templates/system/common/cstudio-support.ftl" as studio />
+    <header id="header" <@studio.componentAttr component=contentModel ice=true iceGroup="header"/>>
+      <a href="/" class="logo"><img border="0" alt="${contentModel.logo_text_t!""}" src="${contentModel.logo_s!""}">
+        <#if (authToken.principal)??>
+          <#assign name = authToken.principal.attributes.name!"stranger" />
+        <#else>
+          <#assign name = "stranger" />
+        </#if>
 
-          Howdy, ${name}
+        Howdy, ${name}
 
-         </a>
-         ...
-      </header>
+       </a>
+       ...
+    </header>
 
 |
 
@@ -3026,9 +3026,9 @@ When we preview a page, the value in the custom header is displayed:
 
 .. _setup-cloudfront-signed-cookies-in-crafter:
 
-------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Setup CloudFront Signed Cookies in CrafterCMS Delivery
-------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 One way to provide access to restricted content through AWS CloudFront is to use signed cookies.
 This section details how to setup CloudFront signed cookies for CrafterCMS with SSO.
 
@@ -3110,9 +3110,9 @@ Here are the steps:
 
 .. _engine-project-security-guide:
 
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Engine Project Security Guide
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The following guide will help you configure Crafter Engine to:
 
 #. Add authentication for your project.
@@ -3128,12 +3128,12 @@ Crafter Engine is able to integrate with multiple authentication providers:
 
    To configure Crafter Profile, follow the instructions: :ref:`engine-crafter-profile-configuration`
 
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""""
 Add Authentication
-^^^^^^^^^^^^^^^^^^
-"""""""""
+""""""""""""""""""
+~~~~~~~~~
 Add Login
-"""""""""
+~~~~~~~~~
 To add a login page:
 
 #. In Crafter Studio, create a Home > Login page.
@@ -3155,9 +3155,9 @@ To add a login page:
          <button type="submit">Sign in</button>
      </form>
 
-""""""""""
+~~~~~~~~~~
 Add Logout
-""""""""""
+~~~~~~~~~~
 To add logout, just add a link in the global header that points to /crafter-security-logout:
 
 .. code-block:: html
@@ -3165,14 +3165,14 @@ To add logout, just add a link in the global header that points to /crafter-secu
 
  <a href="/crafter-security-logout">Log Out</a>
 
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 Add Authorization
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 Adding authorization allows restricted access to certain pages and URLs of your project depending on what is setup.
 
-""""""""""""""
+~~~~~~~~~~~~~~
 Restrict Pages
-""""""""""""""
+~~~~~~~~~~~~~~
 You can restrict pages based on whether a user is authenticated or has a certain role. To do this, you need to follow
 the next steps to create in the page content type a Repeating Group with a text Input for the roles:
 
@@ -3181,33 +3181,33 @@ the next steps to create in the page content type a Repeating Group with a text 
 #. On Controls, select the Repeating Group and add it to any Form Section (you can even create an Authorization section just for these fields).
 #. In the Repeating Group properties, set the **Title** field to "Authorized Roles" and the **Name / Variable Name** field to "authorizedRoles."
 
-    .. image:: /_static/images/site-admin/authorized_roles_properties.webp
-        :alt: Engine Project Security Guide - Authorized Roles Properties
+   .. image:: /_static/images/site-admin/authorized_roles_properties.webp
+       :alt: Engine Project Security Guide - Authorized Roles Properties
 
-    |
+   |
 
-    .. warning::
-        The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
+   .. warning::
+       The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
-        The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
+       The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
 #. Add an Input control inside the Repeating Group, with the **Title** field set to "Role" and the **Name / Variable Name** field set to "role". Make this Input required by checking the checkbox under **Constraints** in the **Required** field in the **Properties Explorer**.
 
-    .. image:: /_static/images/site-admin/role_properties.webp
-        :alt: Engine Project Security Guide - Role Properties
+   .. image:: /_static/images/site-admin/role_properties.webp
+       :alt: Engine Project Security Guide - Role Properties
 
-    |
+   |
 
-    .. warning::
-        The UI autofills the **Name / Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
+   .. warning::
+       The UI autofills the **Name / Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
 
 #. Save the changes. The added fields should look like this:
 
-    .. image:: /_static/images/site-admin/authorization_section.webp
-        :alt: Engine Project Security Guide - Authorization Section
+   .. image:: /_static/images/site-admin/authorization_section.webp
+       :alt: Engine Project Security Guide - Authorization Section
 
-    |
+   |
 
 With these changes, now you or any other content author can go to any page of this content type and add the roles that
 are required to access the page. Two special roles which indicate authentication state can be used besides the roles
@@ -3221,9 +3221,9 @@ by Crafter Engine is described below:
 
 .. _engine-project-security-guide-restrict-urls:
 
-"""""""""""""
+~~~~~~~~~~~~~
 Restrict URLs
-"""""""""""""
+~~~~~~~~~~~~~
 Sometimes it is not enough to restrict a single page. Sometimes you need to restrict an entire project subtree, or
 restrict several static assets. For this, CrafterCMS provides configuration parameters that allow you to restrict
 access based on URL patterns. You just need to add configuration similar to the following in Config > Engine Project Configuration:
@@ -3263,9 +3263,9 @@ be used:
 
 .. _engine-security-access-attributes:
 
-^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 Access User Attributes
-^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 Once the authentication and authorization configurations are completed you can use the ``authToken`` object in
 templates and scripts to access the current user attributes. The class of the object will change depending of the
 authentication provider used, but you can always obtain an instance of |CustomUser| using the ``principal`` property.
@@ -3283,9 +3283,9 @@ authentication provider used, but you can always obtain an instance of |CustomUs
 
 |
 
-""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Migrating from Crafter Profile
-""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Prior to version ``3.1.5`` Crafter Profile was the only security provider available, all projects created in previous
 versions will continue to work without any changes, however if you need to migrate to a different provider like SAML2
 you will need to replace all uses of the ``profile`` and ``authentication`` variables, both have been replaced with
@@ -3309,9 +3309,9 @@ In templates and scripts you can replace all uses of ``profile`` with ``authToke
 
 .. _engine-crafter-profile-configuration:
 
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Engine Crafter Profile Configuration
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. note:: This guide includes Crafter Profile specific configuration only, for a general guide see
           :ref:`engine-project-security-guide`
 
@@ -3591,9 +3591,9 @@ next steps to create one:
 
           return "/templates/web/fb-login-done.ftl"
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""
 Accessing Crafter Profile REST API
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""
 The following property allows you to configure the access token required to call Profile REST APIs:
 
 * ``profile.api.accessToken``: The access token to use for the Profile REST calls.
@@ -3607,12 +3607,12 @@ The following property allows you to configure the access token required to call
     * **security.saml.groups:** Contains any number of ``<group>`` elements. Each ``<group>`` element contains a ``<name>`` element (The name of the group from the request header) and a ``<role>`` element (The value to use for the role in the profile).
     * **security.saml.attributes:** Contains any number of ``<attribute>`` elements. Each ``<attribute>`` element contains a ``<name>`` element (The name of the request header for the attribute) and a ``<field>`` element (The name of the field to use in the profile).
 
-----
+^^^^
 URLs
-----
-^^^^^
+^^^^
+"""""
 Login
-^^^^^
+"""""
 The following properties allows you to configure various Login URLs:
 
 * The ``security.login.formUrl`` property allows you to configure the URL of the login form page. The default is ``/login``.
@@ -3636,9 +3636,9 @@ The following properties allows you to configure various Login URLs:
     </security>
 
 
-^^^^^^
+""""""
 Logout
-^^^^^^
+""""""
 The ``security.logout.successUrl`` property allows you to configure the URL to redirect to after a successful logout.
 The default is ``/``.
 
@@ -3651,9 +3651,9 @@ The default is ``/``.
       </logout>
     </security>
 
-^^^^^^^^^^^^^
+"""""""""""""
 Access Denied
-^^^^^^^^^^^^^
+"""""""""""""
 The ``security.accessDenied.errorPageUrl`` property allows you to configure the URL of the page to show when
 access has been denied to a user to a certain resource. The default is ``/access-denied``.
 
@@ -3666,9 +3666,9 @@ access has been denied to a user to a certain resource. The default is ``/access
       </accessDenied>
     </security>
 
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 URL Restrictions
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 The **security.urlRestrictions:** property allows you to configure URL restrictions. It contains any number of
 restriction elements. Each restriction is formed by an Ant-style path pattern (``<url>``) and a Spring EL
 expression (``<expression>``) executed against the current profile. If a request matches the URL, and the
@@ -3695,14 +3695,14 @@ and :javadoc_base_url:`AccessRestrictionExpressionRoot.java <profile/org/crafter
 
 .. _groovy-sandbox-configuration:
 
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Groovy Sandbox Configuration
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. include:: /includes/groovy-sandbox-configuration.rst
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""
 Groovy Sandbox Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""
 The following allows you to configure the Groovy sandbox.
 The Groovy sandbox is enabled by default and can be disabled by changing the property ``crafter.engine.groovy.sandbox.enable`` to ``false``.
 
@@ -3719,9 +3719,9 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 Using a Custom Blacklist
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 Crafter Engine includes a default blacklist that you can find
 `here <https://github.com/craftercms/engine/blob/support/4.x/src/main/resources/crafter/engine/groovy/blacklist>`__. Make sure you review the branch/tag you're using.
 
@@ -3747,9 +3747,9 @@ To use a custom blacklist follow these steps:
 
 Now you can execute the same script without any issues.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 Disabling the Sandbox Blacklist
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 It is possible to disable the blacklist to allow the execution of most expressions, in
 case you need to use a considerable number of the expression included in the blacklist while keeping some basic
 restrictions. To disable the blacklist for all projects/sites update the server configuration file
@@ -3763,26 +3763,26 @@ restrictions. To disable the blacklist for all projects/sites update the server 
 
 |
 
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Grape Configuration
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 .. include:: /includes/groovy-grape-configuration.rst
 
-^^^^^^^^^^^^^^^
+"""""""""""""""
 Important Notes
-^^^^^^^^^^^^^^^
+"""""""""""""""
 .. include:: /includes/groovy-sandbox-important-notes.rst
 
 |hr|
 
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Other Security Configuration
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. _engine-security-preview-mode:
 
-^^^^^^^^^^^^
+""""""""""""
 Preview Mode
-^^^^^^^^^^^^
+""""""""""""
 .. version_tag::
     :label: Since
     :version: 4.2.0
@@ -3824,9 +3824,9 @@ between Studio and Engine) and admins will need to update the default configurat
 
 .. _engine-configuration-properties-encryption:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""
 Configuration Properties Encryption
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""
 .. code-block:: properties
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
@@ -3834,6 +3834,10 @@ Configuration Properties Encryption
     crafter.security.encryption.key=${CRAFTER_ENCRYPTION_KEY}
     # The salt used for encryption of configuration properties
     crafter.security.encryption.salt=${CRAFTER_ENCRYPTION_SALT}
+
+|
+
+|hr|
 
 .. _crafter-engine-api:
 
