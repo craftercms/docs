@@ -1839,7 +1839,7 @@ Configuration Files Maximum
 	:label: Since
 	:version: 4.1.4
 
-To set the maximum size of a project/site configuration file for the `write_configuration <../../../../_static/api/studio.html#tag/configuration/operation/writeConfiguration>`__ API, set the following property:
+To set the maximum size of a project/site configuration file for the :base_url:`write_configuration <_static/api/studio.html#tag/configuration/operation/writeConfiguration>` API, set the following property:
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
