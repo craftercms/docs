@@ -638,7 +638,7 @@ If Authoring is running with the Git HTTPS server container:
 
 * Run ``kubectl exec -n craftercms -it delivery-0 --container deployer -- gosu crafter ./bin/init-site.sh -u crafter -p crafter SITE_NAME https://authoring-svc-headless/repos/sites/SITE_NAME/published``
 
-   .. code-block:: bash
+  .. code-block:: bash
 
       ➜ kubectl exec -n craftercms -it delivery-0 --container deployer -- gosu crafter ./bin/init-site.sh -u crafter -p crafter mysite https://authoring-svc-headless/repos/sites/mysite/published
       Creating Deployer Target...
@@ -647,7 +647,7 @@ If Authoring is running with the Git HTTPS server container:
       SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
       Target created successfully
 
-   .. important::
+  .. important::
       The example configuration files include the Git HTTPS credentials in plain text, for simplicity. If setting up Delivery in production, make sure to properly create the credentials as Secrets.
 
 After a minute or two, the Deployer should have pulled the project content from Authoring (you can check it by getting the Delivery Deployer log: ``kubectl logs -n craftercms -c deployer delivery-0``).
