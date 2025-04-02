@@ -39,12 +39,14 @@ Bug Fixes
 
 * Fixed the missing ``Cluster`` tool in the global menu.
 
+* `Fixed issue when dissociating the last item in an item selector control from XB <https://github.com/craftercms/craftercms/issues/7890>`__
+
 ^^^^^^^^^^^^^^^^^^
 Dependency Updates
 ^^^^^^^^^^^^^^^^^^
 * Noteworthy dependency updates:
 
-  - OpenSearch to version 2.19
+  - OpenSearch to version 2.19.1
 
 For a complete list of community tickets, please visit: `GitHub 4.3.1 <https://github.com/orgs/craftercms/projects/27/views/1>`_
 
