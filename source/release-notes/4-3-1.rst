@@ -14,6 +14,12 @@ Released *TBD*
     For instructions on how to update your CrafterCMS install, please see :ref:`upgrading-craftercms`
 
 ^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+* `Engine now has multiple caches <https://github.com/craftercms/craftercms/issues/7558>`__
+  See :ref:`engine-cache` for more information.
+
+^^^^^^^^^^^^
 Enhancements
 ^^^^^^^^^^^^
 * New configuration property for Studio referrer policy header |br|
