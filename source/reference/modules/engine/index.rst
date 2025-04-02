@@ -1330,6 +1330,14 @@ Crafter Engine sports a built-in cache engine with an LRU (least recently used) 
 
 .. note:: When running in Preview Mode (inside Studio for preview purposes), Crafter Engine's cache is disabled to help authors see their changes immediately.
 
+Engine has multiple caches:
+
+- **user** cache for objects cached by Groovy code.
+  This cache is cleared manually by calling the :base_url:`cacheClear <_static/api/engine.html#tag/cache/operation/cacheClear>` API.
+  Active cache is only used on the user cache.
+- **system** cache for objects cached by Engine itself.
+  This cache is cleared when publishing occurs.
+
 ~~~~~~~~~
 Max Items
 ~~~~~~~~~
