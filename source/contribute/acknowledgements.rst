@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.3.0
+:last-updated: 4.3.1
 
 .. index:: Open Source Acknowledgements
 
@@ -105,8 +105,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `org.apache.cxf:cxf-rt-transports-http <https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-transports-http>`_
 |br|
 `org.apache.cxf:cxf-rt-ws-policy <https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-ws-policy>`_
-|br|
-`org.apache.groovy:groovy-all <https://mvnrepository.com/artifact/org.apache.groovy/groovy-all>`_
 |br|
 `org.apache.groovy:groovy-all <https://mvnrepository.com/artifact/org.apache.groovy/groovy-all>`_
 |br|
