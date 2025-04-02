@@ -25,7 +25,7 @@ What's Supported?
       - February 21, 2025
       - :green:`Active`
       - :green:`Active`
-      - 4.3.1 (TBD)
+      - 4.3.1 (April 2, 2025)
     * - 4.2
       - November 13, 2024
       - :maroon:`Ended on February 21,2025`
