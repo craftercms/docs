@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.1
+:last-updated: 4.3.1
 
 .. _crafter-engine:
 
@@ -1331,6 +1331,10 @@ Crafter Engine sports a built-in cache engine with an LRU (least recently used) 
 .. note:: When running in Preview Mode (inside Studio for preview purposes), Crafter Engine's cache is disabled to help authors see their changes immediately.
 
 Engine has multiple caches:
+
+.. version_tag::
+    :label: Since
+    :version: 4.3.1
 
 - **user** cache for objects cached by Groovy code.
   This cache is cleared manually by calling the :base_url:`cacheClear <_static/api/engine.html#tag/cache/operation/cacheClear>` API.
