@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#   
+#
 # Configuration file for the Sphinx documentation builder.
 #
 # This file does only contain a selection of the most common options. For a
@@ -42,20 +42,20 @@ release = u'4.3.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.doctest',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.todo',
-    'sphinx.ext.coverage',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.ifconfig',
-    'edit_on_github',
-    'sphinx.ext.extlinks',
-    'version_tag',
-    'sphinx_copybutton',
-    'sphinxext.remoteliteralinclude',
-    'sphinx_tabs.tabs',
-    'open_iframe_modal_button'
+	'sphinx.ext.autodoc',
+	'sphinx.ext.doctest',
+	'sphinx.ext.intersphinx',
+	'sphinx.ext.todo',
+	'sphinx.ext.coverage',
+	'sphinx.ext.mathjax',
+	'sphinx.ext.ifconfig',
+	'edit_on_github',
+	'sphinx.ext.extlinks',
+	'version_tag',
+	'sphinx_copybutton',
+	'sphinxext.remoteliteralinclude',
+	'sphinx_tabs.tabs',
+	'open_iframe_modal_button'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -82,7 +82,7 @@ master_doc = 'index'
 exclude_patterns = ['includes/*.rst']
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = None
+pygments_style = "default"
 
 # If true, keep warnings as "system message" paragraphs in the built documents.
 #keep_warnings = False
@@ -95,20 +95,35 @@ todo_include_todos = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
+html_theme = "furo"
 html_theme_path = ["_themes", ]
-html_theme_options = {
-    'logo_only': True,
-    'style_nav_header_background': '#D70015',
-    "navigation_depth": -1
-}
-html_css_files = ['theme/custom.css']
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
-# documentation.
-#
-# html_theme_options = {}
+# documentation. https://pradyunsg.me/furo/customisation/#
+html_theme_options = {
+	"sidebar_hide_name": True,
+	"top_of_page_buttons": ["edit"],
+	"light_css_variables": {
+		"font-stack": "Source Sans Pro,ui-sans-serif,system-ui,sans-serif",
+		"font-stack--headings": "Source Sans Pro,ui-sans-serif,system-ui,sans-serif",
+		"color-brand-primary": "#007AFF",
+		"color-brand-content": "#007AFF",
+		"color-link": "#409CFF",
+	},
+	"dark_css_variables": {
+		"font-stack": "Source Sans Pro,ui-sans-serif,system-ui,sans-serif",
+		"font-stack--headings": "Source Sans Pro,ui-sans-serif,system-ui,sans-serif",
+		"color-brand-primary": "#409CFF",
+		"color-brand-content": "#409CFF",
+		"color-link": "#007AFF",
+	},
+	"light_logo": "theme/logo-on-white.png",
+	"dark_logo": "theme/logo.svg"
+}
+html_css_files = ['theme/custom.css']
+html_js_files = ['js/custom.js']
+templates_path = ["_templates"]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -130,8 +145,6 @@ html_static_path = ['_static']
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'CrafterCMSdoc'
-
-html_logo = '_static/theme/logo.svg'
 
 html_scaled_image_link = False
 
@@ -320,4 +333,3 @@ class PatchedHTMLTranslator(HTMLTranslator):
 
 def setup(app):
     app.set_translator('html', PatchedHTMLTranslator)
-

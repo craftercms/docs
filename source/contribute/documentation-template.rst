@@ -8,9 +8,6 @@
 =======================
 Documentation Standards
 =======================
-.. contents::
-    :local:
-
 Please view the source of this document to view and follow the template.
 
 ----

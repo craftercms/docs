@@ -8,10 +8,6 @@
 ==================================
 Studio Clustering |enterpriseOnly|
 ==================================
-.. contents::
-    :local:
-    :depth: 2
-
 Crafter Studio can be clustered for high-availability.
 
 Here's an overview of a serverless Studio Enterprise cluster:
@@ -45,10 +41,10 @@ with each other over the network and contains the majority of the nodes. There's
 up a cluster, hence the need of the first node to bootstrap the Component. The other nodes will then look for the
 existing Primary Component to join.
 
-   .. note::
-      Studio nodes use an in-memory distributed data store to orchestrate the bootstrapping of the Primary Component, so
-      you don't need to do it. When the cluster is started, the nodes synchronize through the data store to
-      decide which one does the bootstrapping, and then the rest join the Primary Component.
+.. note::
+    Studio nodes use an in-memory distributed data store to orchestrate the bootstrapping of the Primary Component, so
+    you don't need to do it. When the cluster is started, the nodes synchronize through the data store to
+    decide which one does the bootstrapping, and then the rest join the Primary Component.
 
 Once the cluster is up, one node in the cluster is elected to be the primary and the rest of the node(s) as replica(s).
 Deployment processors can be configured when Studio Clustering is setup.
@@ -188,17 +184,17 @@ Configuring Nodes in the Cluster
 
    |
 
-      .. note::
-         You can use the node's default SSH keys, located in ``~/.ssh/id_rsa`` and ``~/.ssh/id_rsa.pub``, if you set
-         the ``authenticationType`` to ``none``. You can also use ``~/.ssh/config`` if you need to configure certain
-         aspects of SSH authentication, like ``StrictHostKeyChecking``. For example, you can disable
-         ``StrictHostKeyChecking`` for hostnames with ``*.hostnamespace`` so that you don't need to validate the SSH host
-         keys before running Studio:
+   .. note::
+       You can use the node's default SSH keys, located in ``~/.ssh/id_rsa`` and ``~/.ssh/id_rsa.pub``, if you set
+       the ``authenticationType`` to ``none``. You can also use ``~/.ssh/config`` if you need to configure certain
+       aspects of SSH authentication, like ``StrictHostKeyChecking``. For example, you can disable
+       ``StrictHostKeyChecking`` for hostnames with ``*.hostnamespace`` so that you don't need to validate the SSH host
+       keys before running Studio:
 
-         .. code-block:: none
+       .. code-block:: none
 
-            Host *.hostnamespace
-                StrictHostKeyChecking no
+          Host *.hostnamespace
+              StrictHostKeyChecking no
 
    |
    |
@@ -357,10 +353,10 @@ Configuring Nodes in the Cluster
 
    |
 
-      .. note::
-         Please apply the ``rbac.yaml`` mentioned in the
-         `Kubernetes Hazelcast Plugin  <https://github.com/hazelcast/hazelcast-kubernetes>`_ documentation
-         in your Kubernetes cluster, before even starting any Studio pods.
+   .. note::
+       Please apply the ``rbac.yaml`` mentioned in the
+       `Kubernetes Hazelcast Plugin  <https://github.com/hazelcast/hazelcast-kubernetes>`_ documentation
+       in your Kubernetes cluster, before even starting any Studio pods.
 
 """""""""""""""""""""""""""""""""
 Starting the Nodes in the Cluster

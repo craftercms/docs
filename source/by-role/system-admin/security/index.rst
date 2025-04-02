@@ -8,10 +8,6 @@
 ========
 Security
 ========
-.. contents::
-   :local:
-   :depth: 1
-
 .. _change-the-defaults:
 
 -------------------
@@ -525,6 +521,11 @@ Examples of project configuration files where encryption would make sense includ
  - Engine Project Configuration (``/config/engine/site-config.xml``)
  - Studio AWS Profiles (``/config/studio/aws/aws.xml``)
  - Studio Box Profiles (``/config/studio/box/box.xml``)
+
+   .. version_tag::
+       :label: Until
+       :version: 4.2
+
  - Studio WebDAV Profiles (``/config/studio/webdav/webdav.xml``)
 
 '''''''''''''''''''''''''''''''''''''''''

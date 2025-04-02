@@ -9,9 +9,6 @@
 =======
 Logging
 =======
-.. contents::
-   :local:
-
 Log files from several sources are created when running CrafterCMS. These log files are useful for
 checking the status of CrafterCMS, for example, the success of actions/requests, warnings and error
 messages. These logs can be used to provide more information about potential issues in the system

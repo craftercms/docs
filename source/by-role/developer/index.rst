@@ -6,10 +6,6 @@
 =========
 Developer
 =========
-.. contents::
-   :local:
-   :depth: 1
-
 This section focuses on how to build content rich applications backed by CrafterCMS. It covers
 the basic topics you need to define a content type and render that content as part of a page,
 component or service. It also covers topics like building queries, accessing services and extending
