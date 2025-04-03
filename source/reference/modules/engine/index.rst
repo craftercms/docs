@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.1
+:last-updated: 4.3.1
 
 .. _crafter-engine:
 
@@ -1329,6 +1329,36 @@ Cache
 Crafter Engine sports a built-in cache engine with an LRU (least recently used) cache eviction policy. The cache is used to store an active set to help render content from memory whenever possible.
 
 .. note:: When running in Preview Mode (inside Studio for preview purposes), Crafter Engine's cache is disabled to help authors see their changes immediately.
+
+Engine has multiple caches:
+
+.. version_tag::
+    :label: Since
+    :version: 4.3.1
+
+- **application** cache for objects cached by Groovy code.
+  It's enabled by specifying the value ``crafter.core.applicationCache`` in the ``SPRING_PROFILES_ACTIVE`` env variable
+  in the ``CRAFTER_HOME/bin/crafter-setenv.sh`` file
+
+  .. code-block:: sh
+      :caption: *Example setting SPRING_PROFILES_ACTIVE in CRAFTER_HOME/bin/crafter-setenv.sh*
+
+      # -------------------- Spring Profiles --------------------
+      ...
+      # Uncomment to enable application cache
+      export SPRING_PROFILES_ACTIVE=crafter.core.applicationCache
+      # For multiple active spring profiles, create comma separated list
+
+  Active cache is only used in the application cache when the cache is enabled, if not enabled Engine behaves like in
+  previous versions, with active cache running in the system cache.
+- **system** cache for objects cached by Engine itself.
+  The system cache is cleared by the Deployer on publish calling the API, when the Deployer runs alongside Engine.
+  When Engine runs in serverless mode and detects a change in the ``deployment-events.properties`` file in S3, a new
+  version of the system cache is built and the swapped with the old system cache version.
+
+The ``system`` and ``application`` cache uses the same API to :base_url:`clear <_static/api/engine.html#tag/cache/operation/cacheClear>`
+and to get :base_url:`statistics <_static/api/engine.html#tag/cache/operation/cacheStatistics>`, simply pass the parameter
+``cacheType`` with either ``system`` or ``application`` value, depending on which cache you wish to clear or get statistics.
 
 ~~~~~~~~~
 Max Items
