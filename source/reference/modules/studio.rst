@@ -1612,17 +1612,20 @@ See :ref:`targeting` for more information on configuring the targeting system of
 
 |hr|
 
-.. _rte-config:
-
-~~~~~~~~~~~~~~~~~
-RTE Configuration
-~~~~~~~~~~~~~~~~~
+~~~
+RTE
+~~~
+Rich Text Editors (RTEs) allow the users to edit, arrange and style content however they like, without needing to know HTML.
 There are two ways of editing content in Studio: (1) form-based editing and (2) In-context editing (ICE). Form-based editing is done by clicking on ``Options`` (three dots next to the preview address bar at the top of the page, or the three dots next to the page in the Sidebar), then selecting ``Edit``. In-context editing is done by enabling the ``Edit mode`` by clicking on the pencil at the top right of the page (which turns green when enabled), then clicking on the section of the page you want to edit.
 
 To configure the RTE, add/edit the widget ``craftercms.components.TinyMCE``:
 
+.. raw:: html
+
+   <details>
+   <summary><a>Example RTE configuration</a></summary>
+
 .. code-block:: xml
-   :caption: *Example RTE configuration*
    :linenos:
 
    <widget id="craftercms.components.TinyMCE">
@@ -1663,6 +1666,11 @@ To configure the RTE, add/edit the widget ``craftercms.components.TinyMCE``:
      </configuration>
    </widget>
 
+.. raw:: html
+
+   </details>
+
+|
 |
 
 Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.
@@ -1761,7 +1769,7 @@ To configure defaults for Preview edit mode, set the following attributes of the
 """""""""""""""""
 RTE Configuration
 """""""""""""""""
-RTEs are more effective/productive for authors when they are configured properly for the specific type of content the
+Rich Text Editors (RTEs) are more effective/productive for authors when they are configured properly for the specific type of content the
 author is managing. A properly and effectively configured RTE has the right styles, menu options and so on.
 Every RTE in the system can have a different look and feel, different editing/menu options, available styles, components
 and other configurations. You can also SHARE setups between similar RTEs in your project.
@@ -4972,7 +4980,7 @@ where:
   this from the cookies in the browser while logging in with Studio.
 
 For more information on JWT tokens in general, see https://jwt.io/introduction.
-For information on creating access tokens in Studio, see :ref:`here <access-tokens>`.
+For information on creating access tokens in Studio, see :ref:`here <api-token>`.
 
 .. _studio-preview-cookie:
 
@@ -5733,10 +5741,12 @@ create tokens for accessing a project/site in Preview.
 
 |
 
+.. _api-token:
+
 ~~~~~~~~~
 API Token
 ~~~~~~~~~
-API tokens authorize the user to access APIs as a particular user with a particular role.
+JWT authentication using API access tokens allows the user to access Studio APIs as a particular user with a particular role.
 
 To create a new API access token, click on ``Token Management`` from the Main Menu, then click on the ``API Token`` button.
 The only required field for the access token is the label to identify it, however, it is also recommended to set
@@ -5769,6 +5779,9 @@ so it needs to be stored by the user in a safe place as it is impossible to reco
 
 |
 
+The access token created from the tool is used for JWT authentication to be able to interact with Crafter Studio APIs.
+For an example of how to use the generated access token, see :ref:`crafter-cli`.
+
 If an access token is lost or exposed in any way it should be disabled or completely deleted to avoid any
 possible use. To delete a token, simply click on the trash can icon to the right of the token you want to delete.
 
@@ -5797,8 +5810,6 @@ To disable/enable a token, simply click on the slider on the right side of the t
     :align: center
 
 |
-
-For an example of how to use the generated API token, see :ref:`crafter-cli`.
 
 .. note:: Users needs the ``manage_access_token`` permission to create access tokens
 
