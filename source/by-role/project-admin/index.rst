@@ -183,7 +183,7 @@ Authentication with JWT
 """""""""""""""""""""""
 JWT authentication allows access to Studio APIs.
 
-See :ref:`JWT Authentication<access-tokens>` for more information on creating and using a token.
+See :ref:`JWT Authentication<jwt-authentication>` for more information on creating and using a token.
 
 """"""""""""""""""""""""""""""""""""
 Additional Authentication Mechanisms
@@ -334,7 +334,7 @@ Rich Text Editor (RTE)
 """"""""""""""""""""""
 The RTE (Rich Text Editor) provides an in-context editing experience from within a form
 (and through preview via the XB) that allows authors to arrange and style content without needing to know HTML
-For more information on configuring the RTE, see :ref:`here <rte-config>`
+For more information on configuring the RTE, see :ref:`here <rte-configuration>`
 
 ^^^^^^^
 Preview
