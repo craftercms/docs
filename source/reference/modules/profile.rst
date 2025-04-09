@@ -697,12 +697,12 @@ To view the Crafter Profile REST APIs:
 
 .. open_iframe_modal_button::
    :label: Open here
-   :url: ../../../_static/api/profile.html
+   :url: ../../_static/api/profile.html
    :title: Profile API
 
 .. raw:: html
 
-   or <a href="../../../_static/api/profile.html" target="_blank">in a new tab</a>
+   or <a href="../../_static/api/profile.html" target="_blank">in a new tab</a>
 
 |
 

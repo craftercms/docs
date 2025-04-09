@@ -767,12 +767,12 @@ To view the Crafter Social REST APIs:
 
 .. open_iframe_modal_button::
     :label: Open here
-    :url: ../../../_static/api/social.html
+    :url: ../../_static/api/social.html
     :title: Social API
 
 .. raw:: html
 
-    or <a href="../../../_static/api/social.html" target="_blank">in a new tab</a>
+    or <a href="../../_static/api/social.html" target="_blank">in a new tab</a>
 
 |
 
