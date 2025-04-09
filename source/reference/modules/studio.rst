@@ -6332,12 +6332,12 @@ To view the Crafter Studio REST APIs:
 
 .. open_iframe_modal_button::
    :label: Open here
-   :url: ../../../_static/api/studio.html
+   :url: ../../_static/api/studio.html
    :title: Studio API
 
 .. raw:: html
 
-    or <a href="../../../_static/api/studio.html" target="_blank">in a new tab</a>
+    or <a href="../../_static/api/studio.html" target="_blank">in a new tab</a>
 
 
 |hr|
