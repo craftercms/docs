@@ -796,7 +796,7 @@ Create a Target
 """""""""""""""
 There are two different ways in which a target configuration file can be created:
 
-* By calling the API endpoint `createTarget <../../../_static/api/deployer.html#tag/target/operation/createTarget>`_, which creates a new target based on a template. The Deployer comes out
+* By calling the API endpoint `createTarget <../../_static/api/deployer.html#tag/target/operation/createTarget>`_, which creates a new target based on a template. The Deployer comes out
   of the box with two templates: one for local repositories (useful for authoring environments) and one for remote repositories (useful for
   delivery environments). You can also specify your templates under ``./config/templates/targets``, and use the same API endpoint to create
   targets based on those templates.

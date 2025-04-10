@@ -1551,7 +1551,7 @@ Custom Health Check
 """""""""""""""""""
 Each project can be configured to provide a custom health check script.  By default, Engine will look for a file
 ``/scripts/health-check.groovy`` containing your custom script for a health check in your project that will run
-when `status <../../../_static/api/engine.html#tag/monitoring/operation/status>`_ is checked for the project. The
+when `status <../../_static/api/engine.html#tag/monitoring/operation/status>`_ is checked for the project. The
 location of your health check custom script, is configured in your project's ``site-config.xml`` file as seen below:
 
 .. code-block::
