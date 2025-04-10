@@ -796,7 +796,7 @@ Create a Target
 """""""""""""""
 There are two different ways in which a target configuration file can be created:
 
-* By calling the API endpoint `createTarget <../../_static/api/deployer.html#tag/target/operation/createTarget>`_, which creates a new target based on a template. The Deployer comes out
+* By calling the API endpoint :base_url:`createTarget <_static/api/deployer.html#tag/target/operation/createTarget>`, which creates a new target based on a template. The Deployer comes out
   of the box with two templates: one for local repositories (useful for authoring environments) and one for remote repositories (useful for
   delivery environments). You can also specify your templates under ``./config/templates/targets``, and use the same API endpoint to create
   targets based on those templates.
@@ -817,7 +817,7 @@ Delete a Target
 """""""""""""""
 There are two options for deleting a target:
 
-* Call the API endpoint `deleteTarget <../../../_static/api/deployer.html#tag/target/operation/deleteTarget>`_.
+* Call the API endpoint :base_url:`deleteTarget <_static/api/deployer.html#tag/target/operation/deleteTarget>`.
 
 * Delete the target configuration file in the filesystem.
 
@@ -1071,8 +1071,8 @@ This target will:
 Run Deployments
 ^^^^^^^^^^^^^^^
 Crafter Deployer has an option of running scheduled deployments for a target (``deployment.scheduling.enabled``), which is enabled by default, but if you
-want to manually trigger a deployment, you just need to call the API endpoint `deployTarget <../../../_static/api/deployer.html#tag/target/operation/deployTarget>`_ (or
-`deployAllTargets <../../../_static/api/deployer.html#tag/target/operation/deployAllTargets>`_). This will start the deployment if the request is correct. To watch the progress of a scheduled or manually
+want to manually trigger a deployment, you just need to call the API endpoint :base_url:`deployTarget <_static/api/deployer.html#tag/target/operation/deployTarget>` (or
+:base_url:`deployAllTargets <_static/api/deployer.html#tag/target/operation/deployAllTargets>`). This will start the deployment if the request is correct. To watch the progress of a scheduled or manually
 triggered deployment, check the Deployer log. When the deployment has finished, and the target has a ``fileOutputProcessor`` in the deployment pipeline, a
 CSV file with the final result of that particular deployment will be written under ``./logs`` (or ``CRAFTER_HOME/logs/deployer``).
 
