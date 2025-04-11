@@ -211,7 +211,7 @@ If HTTP Basic authentication is already enabled you can skip step 1 and start us
 Get a List of Projects Under Management
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We'll get a list of sites the user is authorized to work with using the API
-`getCurrentUserSites <../../_static/api/studio.html#tag/users/operation/getCurrentUserSites>`__
+:base_url:`getCurrentUserSites <_static/api/studio.html#tag/users/operation/getCurrentUserSites>`
 
 .. code-block:: bash
 
@@ -260,7 +260,7 @@ Write Content to a Project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We'll now write content to the Editorial com Project using the API
-`writeContent <../../_static/api/studio.html#tag/content/operation/writeContent>`__
+:base_url:`writeContent <_static/api/studio.html#tag/content/operation/writeContent>`
 
 .. code-block:: bash
 

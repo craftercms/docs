@@ -704,7 +704,7 @@ We have a monitor for content expiring tomorrow as shown above. We'll set one of
 
 |
 
-The monitoring process of Studio runs everyday at noon (based on the server time zone). To test right away if the monitors are working as expected, we can call the `monitorContent <../../_static/api/studio.html#tag/sites/operation/monitorContent>`__ API.
+The monitoring process of Studio runs everyday at noon (based on the server time zone). To test right away if the monitors are working as expected, we can call the :base_url:`monitorContent <_static/api/studio.html#tag/sites/operation/monitorContent>` API.
 
 Enter the following in your browser: ``http://localhost:8080/studio/api/1/services/api/1/site/monitor-content.json``
 

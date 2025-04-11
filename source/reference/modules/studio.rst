@@ -4920,7 +4920,7 @@ Access Tokens
 	:version: 4.0.0
 
 The following section of Studio's configuration overrides allows you to configure settings for the Studio access tokens.
-Access tokens can then be used to invoke `Crafter Studio's REST APIs <../../../_static/api/studio.html>`_ from the out
+Access tokens can then be used to invoke :base_url:`Crafter Studio's REST APIs <_static/api/studio.html>` from the out
 of the box UI as well as any customized JavaScript, CURL commands, or used in :ref:`crafter-cli` to perform operations on Studio.
 
 Studio access tokens uses JWT tokens for authentication. The following environment variables are used to customize the
@@ -5020,7 +5020,7 @@ The Preview cookie  ``crafterPreview`` is encrypted using the encryption option 
 shared between Studio and Engine) and admins will need to update the default configurations for the encryption key and
 salt in :ref:`Studio <studio-cipher-configuration>` and in :ref:`Engine <engine-configuration-properties-encryption>`.
 
-Use the API `switchPreviewSite <../../../_static/api/studio.html#tag/users/operation/getCurrentUserSites>`__ to refresh
+Use the API :base_url:`switchPreviewSite <_static/api/studio.html#tag/users/operation/getCurrentUserSites>` to refresh
 the ``crafterPreview`` cookie. This API must be called whenever the ``crafterSite`` cookie value is updated
 
 |hr|
