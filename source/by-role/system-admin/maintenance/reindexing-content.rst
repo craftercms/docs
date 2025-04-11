@@ -133,7 +133,7 @@ After sending the CURL command, you will get a response like this:
    {"message":"OK"}
 
 
-See the  `deployTarget API <../../../_static/api/deployer.html#tag/target/operation/deployTarget>`__ for more information on the API.
+See the  :base_url:`deployTarget API <_static/api/deployer.html#tag/target/operation/deployTarget>` for more information on the API.
 
 -------------------------
 Step 3: Wait for indexing

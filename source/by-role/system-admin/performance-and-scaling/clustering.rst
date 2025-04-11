@@ -371,7 +371,7 @@ under the property ``studio.db.cluster.nodes.startup.wait.timeout``).
 Authoring Load Balancer
 """""""""""""""""""""""
 To configure the authoring load balancer to detect which node is the Primary and send traffic to it, we should review the health-check API.
-The health-check endpoint is at `/studio/api/2/monitoring/status?token={your management token} <../../../_static/api/studio.html#tag/monitoring/operation/getStatus>`__
+The health-check endpoint is at :base_url:`/studio/api/2/monitoring/status?token={your management token} <_static/api/studio.html#tag/monitoring/operation/getStatus>`
 which returns the current status of a node, including the role (primary or replica) and status for accepting traffic
 when clustering is enabled. Note that the Primary node is the only node that returns HTTP Code ``200``, while the Replicas
 return HTTP Code ``202``. This can be used as the main mechanism for the LB to know where to route traffic.
@@ -437,7 +437,7 @@ Configuring the Deployer for Studio Clustering
     :label: Since
     :version: 4.1.1
 
-The deployer is cluster aware and is able to run deployment processors based on the value set in the deployment processor property ``runInClusterMode`` (described :ref:`here <crafter-deployer-administration>`) and the value returned by the Studio `clusterMode <../../../_static/api/studio.html#tag/cluster/operation/getClusterMode>`__ API.
+The deployer is cluster aware and is able to run deployment processors based on the value set in the deployment processor property ``runInClusterMode`` (described :ref:`here <crafter-deployer-administration>`) and the value returned by the Studio :base_url:`clusterMode <_static/api/studio.html#tag/cluster/operation/getClusterMode>` API.
 
 The ``runInClusterMode`` property can be configured for any processor in the deployer target context xml, e.g:
 
@@ -468,7 +468,7 @@ Or in the target yaml configuration:
 
 |
 
-Remember that the `clusterMode <../../../_static/api/studio.html#tag/cluster/operation/getClusterMode>`__ API needs the ``studioManagementToken`` configured in the target like below:
+Remember that the :base_url:`clusterMode <_static/api/studio.html#tag/cluster/operation/getClusterMode>` API needs the ``studioManagementToken`` configured in the target like below:
 
 .. code-block:: yaml
     :caption: *Sample STUDIO configuration in the base-target.yaml*

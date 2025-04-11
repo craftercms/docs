@@ -26,7 +26,7 @@ To simplify recreating an index of a site, CrafterCMS provides an API that recre
 
 Simply call the API above with the required parameters to recreate your site index.
 
-See the `recreateIndex API <../../../_static/api/deployer.html#tag/target/operation/recreateIndex>`__ for more information on the API.
+See the :base_url:`recreateIndex API <_static/api/deployer.html#tag/target/operation/recreateIndex>` for more information on the API.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Step 3: Unfreeze Content
