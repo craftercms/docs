@@ -352,6 +352,8 @@ then performs the required transactions. Proxies forwards web requests, act as a
 shared network connections, and cache data to speed up common requests. It helps to simplify/control the
 complexity of the request, and can provide additional benefits such as load balancing, privacy or security.
 
+.. include:: /includes/proxy-note.rst
+
 See :ref:`here <using-the-proxy-configuration>` for an example of setting up the proxy for a React application
 
 .. todo: should we just dump the article here or leave the article in a separate file somewhere?

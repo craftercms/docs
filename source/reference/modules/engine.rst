@@ -11,7 +11,8 @@ Crafter Engine
     :width: 75%
     :align: center
 
-Engine provides content delivery services to power any type of Web or mobile application. It consumes content published from Studio via the Deployer and provides developers with APIs to consume the content (content, search, GraphQL, etc.).
+Engine provides content delivery services to power any type of Web or mobile application. It consumes content published
+from Studio via the Deployer and provides developers with APIs to consume the content (content, search, GraphQL, etc.).
 
 .. include:: /includes/content-retrieval-apis.rst
 
@@ -724,6 +725,8 @@ The files can be accessed by opening the files using a text editor. Any changes 
 
 |hr|
 
+.. _engine-configuration-properties:
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Engine Configuration Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1037,12 +1040,19 @@ Here's an example of using patterns in ``accessControlAllowOrigin``:
 """""""""""""""""""
 Proxy Configuration
 """""""""""""""""""
-CrafterCMS supports a proxy system to proxy GraphQL, Engine, NodeJS or other application delivery systems. Whenever Crafter Engine receives a request, it is matched against the patterns of each server and the first match would then get the request sent to the server with the matching pattern. In some systems, multiple servers are used for search, Studio, etc. Using the proxy helps simplify the system.
+CrafterCMS supports a proxy system to proxy GraphQL, Engine, NodeJS or other application delivery systems.
+Whenever Crafter Engine receives a request, it is matched against the patterns of each server and the first match would
+then get the request sent to the server with the matching pattern. In some systems, multiple servers are used for search,
+Studio, etc. Using the proxy helps simplify the system.
 
-One of the benefits of using the proxy in CrafterCMS is that it can connect to any remote server as the preview server, which allows for easier authoring of projects built with other programming languages and technology, React, Angular, or Vue for example.
+.. include:: /includes/proxy-note.rst
+
+One of the benefits of using the proxy in CrafterCMS is that it can connect to any remote server as the preview server,
+which allows for easier authoring of projects built with other programming languages and technology, React, Angular, or Vue for example.
 
 The proxy configuration file contains configuration for the preview proxy servers.
-To modify the proxy configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Proxy Config** from the dropdown list.
+To modify the proxy configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration**
+and select **Proxy Config** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-proxy-config.webp
     :alt: Configurations - Open Proxy Configuration
