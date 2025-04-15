@@ -8,6 +8,8 @@ Delivery Environment Performance Tuning
 =======================================
 This section describes ways on how to enhance a traditional delivery environment setup (non-serverless) performance by tuning delivery environment settings and recommendations for hardware configurations.
 
+.. _delivery-server-requirements:
+
 -------------------
 Server Requirements
 -------------------

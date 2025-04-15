@@ -15,15 +15,17 @@ First we'll take a look at the requirements and supported platform for installin
 ------------
 Requirements
 ------------
+- Java 21
+- 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
+- Git 2.20.1 and later
+- Docker (if running in Docker or macOS)
 
-To run CrafterCMS, the following are required:
+Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic
+experiences. MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide external
+(non-author) user management and social features.
 
-    - Java 21
-    - 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
-    - Git 2.20.1 and later
-    - Docker (if running in Docker or MacOS)
-
-Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic experiences. MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide external (non-author) user management and social features.
+For more information on sizing your machines, see :ref:`authoring server requirements <authoring-server-requirements>`
+and :ref:`delivery server requirements <delivery-server-requirements>`
 
 ^^^^^^^^^^^^^^^^^^^
 Supported Platforms
@@ -81,40 +83,35 @@ To check the value set for JAVA_HOME, enter the following command at the command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 How to set the JAVA_HOME environment variable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**To set JAVA_HOME**
+.. tabs::
+    .. tab:: Korn and bash shells:
 
-- Korn and bash shells:
+        .. code-block:: bash
 
-  .. code-block:: bash
+            export JAVA_HOME=jdk-install-dir
+            export PATH=$JAVA_HOME/bin:$PATH
 
-      export JAVA_HOME=jdk-install-dir
-      export PATH=$JAVA_HOME/bin:$PATH
+    .. tab:: Bourne shell:
 
-  |
+        .. code-block:: sh
 
-- Bourne shell:
+            JAVA_HOME=jdk-install-dir
+            export JAVA_HOME
+            PATH=$JAVA_HOME/bin:$PATH
+            export PATH
 
-  .. code-block:: sh
+    .. tab:: C shell:
 
-      JAVA_HOME=jdk-install-dir
-      export JAVA_HOME
-      PATH=$JAVA_HOME/bin:$PATH
-      export PATH
+        .. code-block:: csh
 
-  |
+            setenv JAVA_HOME jdk-install-dir
+            export JAVA_HOME
+            PATH=$JAVA_HOME/bin:$PATH
+            export PATH
+            setenv PATH $JAVA_HOME/bin:$PATH
+            export PATH=$JAVA_HOME/bin:$PATH
 
-- C shell:
-
-  .. code-block:: csh
-
-     setenv JAVA_HOME jdk-install-dir
-     export JAVA_HOME
-     PATH=$JAVA_HOME/bin:$PATH
-     export PATH
-     setenv PATH $JAVA_HOME/bin:$PATH
-     export PATH=$JAVA_HOME/bin:$PATH
-
-  |
+|
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Browsers (Crafter Studio & Crafter Social/Profile Admin Consoles)
@@ -125,138 +122,137 @@ The following browsers are supported:
     - Firefox
     - MS Edge
 
+|
+
+|hr|
 
 ^^^^^^^^^^^^^
 Prerequisites
 ^^^^^^^^^^^^^
-""""""""""""""""""
-MacOS Prerequisite
-""""""""""""""""""
-For MacOS users, the following applies:
+.. tabs::
+    .. tab:: macOS
+        For macOS users, the following applies:
 
-#. The latest ``openssl`` formula needs to be installed via homebrew:
+        #. The latest ``openssl`` formula needs to be installed via homebrew:
 
-   .. code-block:: sh
+           .. code-block:: sh
 
-       brew install openssl
+               brew install openssl
 
-   |
+        #. Docker is used to run OpenSearch and needs to be installed.
+           Follow the instructions `here <https://docs.docker.com/install/>`__ to install Docker. |br| (macOS is not supported by
+           OpenSearch so Docker is used to run OpenSearch. See https://opensearch.org/docs/latest/install-and-configure/os-comp/
+           for more information.)
 
-#. Docker is used to run OpenSearch and needs to be installed.
-   Follow the instructions `here <https://docs.docker.com/install/>`__ to install Docker. |br| (MacOS is not supported by
-   OpenSearch so Docker is used to run OpenSearch. See https://opensearch.org/docs/latest/install-and-configure/os-comp/
-   for more information.)
+           When starting up CrafterCMS on macOS, the following message is displayed:
 
-   When starting up CrafterCMS on MacOS, the following message is displayed:
+           .. code-block:: bash
 
-   .. code-block:: bash
+               Preflight check.
+               Operating system is Mac, must use Docker to run OpenSearch.
+               Running in this mode is for development purposes only.
 
-       Preflight check.
-       Operating system is Mac, must use Docker to run OpenSearch.
-       Running in this mode is for development purposes only.
+                ██████╗ ██████╗   █████╗  ███████╗ ████████╗ ███████╗ ██████╗   ██████╗ ███╗   ███╗ ███████╗
+               ██╔════╝ ██╔══██╗ ██╔══██╗ ██╔════╝ ╚══██╔══╝ ██╔════╝ ██╔══██╗ ██╔════╝ ████╗ ████║ ██╔════╝
+               ██║      ██████╔╝ ███████║ █████╗      ██║    █████╗   ██████╔╝ ██║      ██╔████╔██║ ███████╗
+               ██║      ██╔══██╗ ██╔══██║ ██╔══╝      ██║    ██╔══╝   ██╔══██╗ ██║      ██║╚██╔╝██║ ╚════██║
+               ╚██████╗ ██║  ██║ ██║  ██║ ██║         ██║    ███████╗ ██║  ██║ ╚██████╗ ██║ ╚═╝ ██║ ███████║
+                ╚═════╝ ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═╝         ╚═╝    ╚══════╝ ╚═╝  ╚═╝  ╚═════╝ ╚═╝     ╚═╝ ╚══════╝
 
-        ██████╗ ██████╗   █████╗  ███████╗ ████████╗ ███████╗ ██████╗   ██████╗ ███╗   ███╗ ███████╗
-       ██╔════╝ ██╔══██╗ ██╔══██╗ ██╔════╝ ╚══██╔══╝ ██╔════╝ ██╔══██╗ ██╔════╝ ████╗ ████║ ██╔════╝
-       ██║      ██████╔╝ ███████║ █████╗      ██║    █████╗   ██████╔╝ ██║      ██╔████╔██║ ███████╗
-       ██║      ██╔══██╗ ██╔══██║ ██╔══╝      ██║    ██╔══╝   ██╔══██╗ ██║      ██║╚██╔╝██║ ╚════██║
-       ╚██████╗ ██║  ██║ ██║  ██║ ██║         ██║    ███████╗ ██║  ██║ ╚██████╗ ██║ ╚═╝ ██║ ███████║
-        ╚═════╝ ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═╝         ╚═╝    ╚══════╝ ╚═╝  ╚═╝  ╚═════╝ ╚═╝     ╚═╝ ╚══════╝
+           |
 
-   |
+           Depending on the environment started, an ``authoring-search`` or ``delivery-search`` container using the OpenSearch
+           Docker image will be running. In the screenshot below, an authoring and delivery CrafterCMS environment is running:
 
-   Depending on the environment started, an ``authoring-search`` or ``delivery-search`` container using the OpenSearch
-   Docker image will be running. In the screenshot below, an authoring and delivery CrafterCMS environment is running:
+           .. image:: /_static/images/system-admin/opensearch-docker-image-running-on-macos.webp
+               :width: 100 %
+               :align: center
+               :alt: OpenSearch Docker container started on CrafterCMS startup
 
-   .. image:: /_static/images/system-admin/opensearch-docker-image-running-on-macos.webp
-       :width: 80 %
-       :align: center
-       :alt: OpenSearch Docker container started on CrafterCMS startup
+           .. warning::
+               By default, search indexes do not persist across restarts. If you want the OpenSearch indexes to persist
+               across restarts, you must use bind mounts with Docker volumes.
 
-   .. warning::
-       By default, search indexes do not persist across restarts. If you want the OpenSearch indexes to persist
-       across restarts, you must use bind mounts with Docker volumes.
+               By default, the OpenSearch container created when starting CrafterCMS creates the bind mounts for you.
+               Your host ``CRAFTER_HOME/data/indexes`` directory is bind mounted to ``/usr/share/opensearch/data/`` of the
+               OpenSearch container. You'll just need to make sure that the directory ``CRAFTER_HOME/data/indexes`` on the host
+               is a shared drive in Docker's settings by clicking on Docker Desktop ``Settings`` -> ``Resources`` -> ``File Sharing``
 
-       By default, the OpenSearch container created when starting CrafterCMS creates the bind mounts for you.
-       Your host ``CRAFTER_HOME/data/indexes`` directory is bind mounted to ``/usr/share/opensearch/data/`` of the
-       OpenSearch container. You'll just need to make sure that the directory ``CRAFTER_HOME/data/indexes`` on the host
-       is a shared drive in Docker's settings by clicking on Docker Desktop ``Settings`` -> ``Resources`` -> ``File Sharing``
+               .. image:: /_static/images/developer/docker/docker-desktop-file-sharing.webp
+                   :alt: Docker Desktop - File Sharing
+                   :width: 85 %
+                   :align: center
 
-       .. image:: /_static/images/developer/docker/docker-desktop-file-sharing.webp
-           :alt: Docker Desktop - File Sharing
-           :width: 85 %
-           :align: center
+               |
 
-       |
+               If the directory ``CRAFTER_HOME/data/indexes`` is not under an already shared parent level in Docker Desktop, simply
+               input your path in ``Virtual file shares`` by clicking on ``Browse`` then navigate to the desired folder, then
+               click on the ``+`` button, and finally the ``Apply & restart`` button to add it.
 
-       If the directory ``CRAFTER_HOME/data/indexes`` is not under an already shared parent level in Docker Desktop, simply
-       input your path in ``Virtual file shares`` by clicking on ``Browse`` then navigate to the desired folder, then
-       click on the ``+`` button, and finally the ``Apply & restart`` button to add it.
 
-""""""""""""""""""
-Linux Prerequisite
-""""""""""""""""""
-#. The library ``libaio`` is required by the Authoring install. Please note that some Linux distributions does not install the library ``libaio`` by default and so, may need to be installed. You may get the following error when starting up Studio:
+    .. tab:: Linux
+        #. The library ``libaio`` is required by the Authoring install. Please note that some Linux distributions does not install the library ``libaio`` by default and so, may need to be installed. You may get the following error when starting up Studio:
 
-   **error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory**
+           **error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory**
 
-   To install ``libaio`` for Debian-based Linux distros: ``sudo apt install libaio1t64`` then ``sudo ln -sf /lib/x86_64-linux-gnu/libaio.so.1t64 /usr/lib/libaio.so.1``
+           To install ``libaio`` for Debian-based Linux distros: ``sudo apt install libaio1t64`` then ``sudo ln -sf /lib/x86_64-linux-gnu/libaio.so.1t64 /usr/lib/libaio.so.1``
 
-   To install ``libaio`` for RedHat-based Linux distros: ``yum install libaio``
+           To install ``libaio`` for RedHat-based Linux distros: ``yum install libaio``
 
-#. For Linux users, some of the scripts uses ``lsof``. Please note that some Linux distributions does not come with ``lsof`` pre-installed and so, may need to be installed.
+        #. For Linux users, some of the scripts uses ``lsof``. Please note that some Linux distributions does not come with ``lsof`` pre-installed and so, may need to be installed.
 
-   To install ``lsof`` for Debian-based Linux distros: ``apt-get install lsof``
+           To install ``lsof`` for Debian-based Linux distros: ``apt-get install lsof``
 
-   To install ``lsof`` for RedHat-based Linux distros: ``yum install lsof``
+           To install ``lsof`` for RedHat-based Linux distros: ``yum install lsof``
 
-#. The library ``libncurses5`` is required by the Authoring install due to the embedded MariaDB. You may get the following error when running an Authoring install or the restore script without the ``libncurses5`` library installed:
+        #. The library ``libncurses5`` is required by the Authoring install due to the embedded MariaDB. You may get the following error when running an Authoring install or the restore script without the ``libncurses5`` library installed:
 
-   .. code-block:: text
+           .. code-block:: text
 
-       error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory
+               error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory
 
-   To install the library ``libncurses5``, use the following commands:
+           To install the library ``libncurses5``, use the following commands:
 
-   **On Debian-based Linux distros:**
+           **On Debian-based Linux distros:**
 
-   - For Ubuntu 24.04 and later versions, ``libncurses5`` was removed starting in version 24.04. To install ``libncurses5``,
-     we need to add the ``focal-security`` distribution main and universe repository to the sources list before installing.
-     This will bring the 22.04 APT repository to 24.04 and will then allow us to install ``libncurses5`` within the system.
+           - For Ubuntu 24.04 and later versions, ``libncurses5`` was removed starting in version 24.04. To install ``libncurses5``,
+             we need to add the ``focal-security`` distribution main and universe repository to the sources list before installing.
+             This will bring the 22.04 APT repository to 24.04 and will then allow us to install ``libncurses5`` within the system.
 
-     Before following the commands below, check if ``ubuntu-focal-sources.list`` exists under ``/etc/apt/sources.list.d``.
-     If the file does not exist, create the file first, then run the commands below to install ``libncurses5``
+             Before following the commands below, check if ``ubuntu-focal-sources.list`` exists under ``/etc/apt/sources.list.d``.
+             If the file does not exist, create the file first, then run the commands below to install ``libncurses5``
 
-     .. code-block:: bash
+             .. code-block:: bash
 
-         sudo sh -c 'echo "deb http://security.ubuntu.com/ubuntu focal-security main universe" >> /etc/apt/sources.list.d/ubuntu-focal-sources.list'
+                 sudo sh -c 'echo "deb http://security.ubuntu.com/ubuntu focal-security main universe" >> /etc/apt/sources.list.d/ubuntu-focal-sources.list'
 
-         sudo apt update
+                 sudo apt update
 
-         sudo apt install libncurses5
+                 sudo apt install libncurses5
 
-   - All other versions of Debian-based linux distro: ``sudo apt install libncurses5``
+           - All other versions of Debian-based linux distro: ``sudo apt install libncurses5``
 
-   **On RHEL, CentOS:**
+           **On RHEL, CentOS:**
 
-   - For versions 8 and later, the EPEL repository needs to be added in order to install the ``ncurses-compat-libs``.
-     To add the EPEL repository, do the following:
+           - For versions 8 and later, the EPEL repository needs to be added in order to install the ``ncurses-compat-libs``.
+             To add the EPEL repository, do the following:
 
-     - Enable the CodeReady Linux Builder repository |br|
-       CentOS: ``sudo dnf config-manager --set-enabled crb`` |br|
-       RHEL: ``sudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms``
-     - Next, install the EPEL RPM: ``sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm``
-     - Finally, we can now install ``ncurses-compat-libs``: ``sudo dnf install ncurses-compat-libs``
+             - Enable the CodeReady Linux Builder repository |br|
+               CentOS: ``sudo dnf config-manager --set-enabled crb`` |br|
+               RHEL: ``sudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms``
+             - Next, install the EPEL RPM: ``sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm``
+             - Finally, we can now install ``ncurses-compat-libs``: ``sudo dnf install ncurses-compat-libs``
 
-   - All other versions of RHEL, CentOS: ``sudo yum install ncurses-compat-libs``
+           - All other versions of RHEL, CentOS: ``sudo yum install ncurses-compat-libs``
 
-   **On Fedora 22 and newer version:** ``sudo dnf install ncurses-compat-libs``
+           **On Fedora 22 and newer version:** ``sudo dnf install ncurses-compat-libs``
 
-""""""""""""""""""""
-Windows Prerequisite
-""""""""""""""""""""
-For Windows users, WSL 2 needs to be installed. All CrafterCMS scripts/commands to be executed and items that needs to be downloaded and installed needs to be in WSL 2.
+    .. tab:: Windows
+        For Windows users, WSL 2 needs to be installed. All CrafterCMS scripts/commands to be executed and items that needs to be downloaded and installed needs to be in WSL 2.
 
-Follow the instructions `here <https://docs.microsoft.com/en-us/windows/wsl/install>`__ to install WSL 2.
+        Follow the instructions `here <https://docs.microsoft.com/en-us/windows/wsl/install>`__ to install WSL 2.
+
+|
 
 |hr|
 
@@ -308,7 +304,7 @@ To run CrafterCMS in a set of Docker containers using Docker Compose, make sure 
 * Docker Compose (https://docs.docker.com/compose/install/)
 * Git 2.20.1 or later
 
-**For Windows and Mac, we recommend you give Docker Desktop at least 12GB of RAM (6GB of RAM per environment) and 4 CPUs. To do this, go to Docker Desktop's Preferences > Resources > Advanced, and then change the resource limits.**
+**For Windows and macOS, we recommend you give Docker Desktop at least 12GB of RAM (6GB of RAM per environment) and 4 CPUs. To do this, go to Docker Desktop's Preferences > Resources > Advanced, and then change the resource limits.**
 
 .. image:: /_static/images/quick-start/docker-advanced-settings.webp
     :alt: Docker Desktop Advanced Settings

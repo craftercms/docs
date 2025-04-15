@@ -8,6 +8,8 @@ Authoring Environment Performance Tuning
 ========================================
 This section describes ways on how to enhance the authoring environment performance by tuning authoring environment settings and recommendations for hardware configurations.
 
+.. _authoring-server-requirements:
+
 -------------------
 Server Requirements
 -------------------
