@@ -1,14 +1,456 @@
 :is-up-to-date: True
-:last-updated: 4.1.7
+:last-updated: 4.1.2
 
-.. index:: Studio Clustering, Clustering
+.. index:: Performance and Scaling, Optimization, Clustering, CDN, Multi-region, Global Delivery
+
+=======================
+Performance and Scaling
+=======================
+Thanks to its architecture, CrafterCMS can be scaled to accommodate any size traffic load. CrafterCMS can also be geographically distributed allowing for local delivery of personalized content.
+
+Here are things to consider for your CrafterCMS install to optimize the overall performance of your sites.
+
+.. _delivery-env-performance-tuning:
+
+--------
+Delivery
+--------
+CrafterCMS's delivery tier is designed to be perfectly horizontally scalable. The delivery tier is a shared-nothing architecture, meaning that each node in the delivery tier is independent of the other nodes. This allows for the delivery tier to be scaled horizontally by simply adding more nodes to the delivery tier. The delivery tier can also be scaled vertically by adding more resources.
+
+Therefore, there is never a need to build traditional clusters for the delivery tier.
+
+Global distribution of delivery nodes is then a matter of deploying Crafter Engine nodes in different regions, and using a DNS service to route traffic to the region closest to the user. Crafter Deployer is capable of deploying content to multiple regions, and enabling region specific search engines to be used as well to completely decentralize the delivery tier.
+
+Finally, a Content Delivery Network (CDN) can be used to front the delivery tier. CDNs mostly help with static content delivery, and mitigation of DDOS attacks.
+
+.. note:: Crafter Engine's cache headers can help provide the right caching behavior for CDNs. See :ref:`engine-cache-headers` for more.
+
+It's critical to performance tune CrafterCMS for real production. This section describes ways on how to enhance a traditional delivery environment setup (non-serverless) performance by tuning delivery environment settings and recommendations for hardware configurations.
+
+.. _delivery-server-requirements:
+
+^^^^^^^^^^^^^^^^^^^
+Server Requirements
+^^^^^^^^^^^^^^^^^^^
+Minimum Installation
+
+	* 8GB of RAM + 8GB Swap Space or Virtual Memory
+	* 4GB JVM Memory (-Xms 1G -Xmx 4G)
+	* 4 CPU Cores
+
+Medium Installations
+
+	* 16GB+ of RAM + 16GB Swap Space or Virtual Memory
+	* 8GB+ JVM Memory (-Xms 2G -Xmx 8G)
+	* 8+ CPU Cores
+
+Large Installations
+
+	* 32GB+ of RAM + 16GB Swap Space or Virtual Memory
+	* 16GB+ of JVM Memory (-Xms 4G -Xmx 16G)
+	* 16+ CPU Cores
+
+Horizontal scaling can be very effective in scaling out delivery of content.
+
+|hr|
+
+.. _engine-performance-tuning:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Engine Performance Tuning
+^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""
+JVM Level
+"""""""""
+To configure the heap size, etc for the JVM, open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and update the environment
+variable ``CATALINA_OPTS`` to desired value like below:
+
+.. code-block:: bash
+    :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+
+    export CATALINA_OPTS=${CATALINA_OPTS:="-server -Xss1024K -Xms1G -Xmx2G -Dlog4j2.formatMsgNoLookups=true"}
+
+|hr|
+
+|
+
+.. _authoring-env-performance-tuning:
+
+---------
+Authoring
+---------
+The authoring tier is used by the few to create and workflow content to be consumed by the many. Therefore, the content
+authoring tier scales vertically (by adding more resources to the authoring node), can be sharded (more nodes added to
+serve different projects), and clustered for high-availability.
+
+The authoring tier must be tuned carefully to get the most out of the infrastructure and for Crafter Studio to perform
+well. This section describes ways on how to enhance the authoring environment performance by tuning authoring environment
+settings and recommendations for hardware configurations.
+
+.. _authoring-server-requirements:
+
+^^^^^^^^^^^^^^^^^^^
+Server Requirements
+^^^^^^^^^^^^^^^^^^^
+Minimum Installation (~1-10 concurrent users, ~10 sites)
+
+	* 16GB of RAM + 16GB Swap Space or Virtual Memory
+	* 8GB JVM Memory (-Xms 1G -Xmx 8G)
+	* 4 CPU Cores
+
+Medium Installations (~11-25 concurrent users, ~25 sites)
+
+	* 32GB+ of RAM + 32GB Swap Space or Virtual Memory
+	* 16GB+ JVM Memory (-Xms 2G -Xmx 16G)
+	* 8+ CPU Cores
+
+Larger Installations (~26-50 concurrent user, ~50 sites)
+
+	* 64GB+ of RAM + 64GB Swap Space or Virtual Memory
+	* 32GB+ of JVM Memory (-Xms 4G -Xmx 32G)
+	* 16+ CPU Cores
+
+Vertical scaling can be very effective in scaling out Crafter Studio.
+
+|hr|
+
+.. _studio-performance-tuning:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Studio Performance Tuning
+^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""
+JVM Level
+"""""""""
+To configure the heap size, etc for the JVM, open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and update the environment
+variable ``CATALINA_OPTS`` to desired value like below:
+
+.. code-block:: bash
+    :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+
+    export CATALINA_OPTS=${CATALINA_OPTS:="-server -Xss1024K -Xms1G -Xmx4G -Dlog4j2.formatMsgNoLookups=true"}
+
+|
+
+""""""""""""""""""""""""""""""""
+Crafter Studio Application Level
+""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~
+DB Connection Pool
+~~~~~~~~~~~~~~~~~~
+To configure the DB connection pool, override the properties listed below as needed in the ``studio-config-oveeride.yaml`` file in the ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/`` folder, or via the ``GlobaL Config`` in the Studio |mainMenu| Navigation Menu
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+    # Defines initial number of database connections in database connection pool
+    studio.db.pool.initialConnections: 10
+    # Defines maximum number of active database connections in database connection pool
+    studio.db.pool.maxActiveConnections: 100
+    # Defines maximum number of idle database connections to retain in database connection pool.
+    studio.db.pool.maxIdleConnections: 30
+    # Defines minimum number of idle database connections to retain in database connection pool.
+    studio.db.pool.minIdleConnections: 10
+
+|hr|
+
+|
+
+.. _high-level-performance-considerations:
+
+-------------------------------------
+High-level Performance Considerations
+-------------------------------------
+The majority of CrafterCMS operations are I/O intensive. Optimizing your installation for better I/O performance will typically pay the biggest dividends in performance gains early on. These general guidelines help address these considerations:
+
+* Fast raw storage performance (fast concurrent reads and writes)
+* Different storage devices are used for different concerns (logging, Git, search index, swap etc.)
+* Data organization on disk (using different devices for each repos, indexes, etc)
+* Leave half the RAM for the OS and non-JVM processes
+
+|hr|
+
+|
+
+.. _server-performance-tuning:
+
+-------------------------
+Server Performance Tuning
+-------------------------
+^^^^^^^^^^^^^^^^^^^^^
+Server/Hardware Level
+^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""
+Disk/Storage Devices
+""""""""""""""""""""
+Crafter Studio’s job is to manage content. A high volume of concurrent reads and writes should be expected. The faster the disk type and connection to the computer, the better the performance you will observe.
+
+~~~~~~~~~~~~~~~~~~~~~~~
+Testing Raw Performance
+~~~~~~~~~~~~~~~~~~~~~~~
+* Non-concurrent quick test or the raw device performance can be achieved with ``sudo hdparm -tT /dev/{device}``
+
+	* Example
+
+      .. code-block:: none
+          :linenos:
+
+          Timing cached reads:   24486 MB in  1.99 seconds = 12284.28 MB/sec
+          Timing buffered disk reads: 3104 MB in  3.00 seconds = 1033.84 MB/sec
+
+|
+
+* Test IOPS using ``fio`` https://github.com/axboe/fio
+
+	* Example
+
+      .. code-block:: bash
+         :linenos:
+
+         $ fio --randrepeat=1 --ioengine=libaio --gtod_reduce=1 --name=test --filename=test --bs=4k --iodepth=64 --size=4G --readwrite=randrw --rwmixread=75
+	     test: (g=0): rw=randrw, bs=4K-4K/4K-4K/4K-4K, ioengine=libaio, iodepth=64
+	     fio-2.2.10
+	     Starting 1 process
+	     Jobs: 1 (f=1): [m(1)] [100.0% done] [495.2MB/164.7MB/0KB /s] [127K/42.2K/0 iops] [eta 00m:00s]
+	     test: (groupid=0, jobs=1): err= 0: pid=9071: Mon Apr 23 10:49:08 2018
+  		 read : io=3071.7MB, bw=485624KB/s, iops=121406, runt=  6477msec
+  		 write: io=1024.4MB, bw=161945KB/s, iops=40486, runt=  6477msec
+  		 cpu          : usr=12.04%, sys=87.77%, ctx=32, majf=0, minf=8
+  		 IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     	 submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     	 complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     	 issued    : total=r=786347/w=262229/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     	 latency   : target=0, window=0, percentile=100.00%, depth=64
+
+	     Run status group 0 (all jobs):
+   		     READ: io=3071.7MB, aggrb=485624KB/s, minb=485624KB/s, maxb=485624KB/s, mint=6477msec, maxt=6477msec
+  		     WRITE: io=1024.4MB, aggrb=161944KB/s, minb=161944KB/s, maxb=161944KB/s, mint=6477msec, maxt=6477msec
+
+      .. Note:: Notice the ``IOPS`` for READ and WRITE
+
+* Test latency with ``ioping`` https://github.com/koct9i/ioping
+
+	* Example
+
+      .. code-block:: bash
+         :linenos:
+
+	     $ ioping -c 10 .
+	     4 KiB from . (ext4 /dev/nvme0n1p3): request=1 time=179 us
+	     4 KiB from . (ext4 /dev/nvme0n1p3): request=2 time=602 us
+	     4 KiB from . (ext4 /dev/nvme0n1p3): request=3 time=704 us
+	     4 KiB from . (ext4 /dev/nvme0n1p3): request=4 time=600 us
+	     4 KiB from . (ext4 /dev/nvme0n1p3): request=5 time=597 us
+	     4 KiB from . (ext4 /dev/nvme0n1p3): request=6 time=612 us
+	     4 KiB from . (ext4 /dev/nvme0n1p3): request=7 time=599 us
+	     4 KiB from . (ext4 /dev/nvme0n1p3): request=8 time=659 us
+	     4 KiB from . (ext4 /dev/nvme0n1p3): request=9 time=652 us
+	     4 KiB from . (ext4 /dev/nvme0n1p3): request=10 time=742 us
+
+	     --- . (ext4 /dev/nvme0n1p3) ioping statistics ---
+	     10 requests completed in 9.01 s, 1.68 k iops, 6.57 MiB/s
+	     min/avg/max/mdev = 179 us / 594 us / 742 us / 146 us
+
+~~~~~~~~~~~~~~~
+Recommendations
+~~~~~~~~~~~~~~~
+**Prefer multiple devices to a single device**
+
+Crafter must update content, metadata about the content, search indexes and more on every write. By storing each kind of data on its own storage device, you better enable these activities to occur concurrently and hence vastly improve performance.
+
+**Prefer faster disk**
+
+Not all storage devices are created equal. The fast the read/write speeds and the more concurrency and lower latency the device supports, the better the performance will be. As a general rule of thumb, use the highest IOPS devices for the most demanding storage concerns, by order of importance:
+
+    .. code-block:: text
+
+        {CRAFTER_HOME}/data/repos (high-concurrency, important)
+        {CRAFTER_HOME}/data/db (high-concurrency, important)
+        {CRAFTER_HOME}/data/indexes
+        {CRAFTER_HOME}/data/logs
+        {CRAFTER_HOME}/data/mongodb (if in use)
+
+|
+
+**Avoid high latency connections to disk**
+
+High latency connectivity such as Network-Attached Storage (NAS) will typically lead to performance problems. Local disk or Storage Array Network will yield much better performance.
+NFS or similar protocols will increase latency and cause performance issues.
+
+**Use a device for each storage concern when possible**
+
+One optimization to raise effective IOPS of a system without buying very expensive storage devices is to distribute the load across many devices. CrafterCMS performs multiple reads/writes to disk from various concerns such as the database, the repository, logs, etc. with very different I/O patterns. For optimal performance, the server should have different storage systems (disks) mounted for different concerns, for example:
+
+    .. code-block:: text
+
+        /dev/{dev0} -> /
+        /dev/{dev1} -> /opt/crafter/data/db
+        /dev/{dev2} -> /opt/crafter/data/repos
+        /dev/{dev3} -> /opt/crafter/data/indexes
+        /dev/{dev4} -> /opt/crafter/logs
+        /dev/{dev5} -> /opt/crafter/data/mongodb
+        /dev/{dev6} -> /var
+        /dev/{dev7} -> /home
+        /dev/{dev8} -> /usr
+
+|
+
+^^^^^^^^
+OS Level
+^^^^^^^^
+""""""""""""
+Linux Ulimit
+""""""""""""
+CrafterCMS includes many subsystems that require additional file-handles be available at the operating system level.
+
+Our limits are:
+
+.. code-block:: none
+    :linenos:
+
+    [Service]
+    # Other directives omitted
+    # (file size)
+    LimitFSIZE=infinity
+    # (cpu time)
+    LimitCPU=infinity
+    # (virtual memory size)
+    LimitAS=infinity
+    # (locked-in-memory size)
+    LimitMEMLOCK=infinity
+    # (open files)
+    LimitNOFILE=65535
+    # (processes/threads)
+    LimitNPROC=65535
+
+|
+
+    The values listed above can be persistently set in the **limits.conf** file located at ``/etc/security/``
+
+Here's an example of how the items listed above will look like in a **limits.conf** file:
+
+  .. code-block:: text
+     :caption: */etc/security/limits.conf*
+
+     #[domain]        [type]  [item]   [value]
+     ...
+
+     *                -       fsize    infinity
+     *                -       cpu      infinity
+     *                -       as       infinity
+     *                -       memlock  infinity
+     *                -       nofile   65535
+     *                -       nproc    65535
+
+     ...
+
+  |
+
+where
+ * **domain:** can be a username, a group name, or a wildcard entry.
+ * **type:** can be *soft*, *hard* or *-*
+ * **item:** the resource to set the limit for
+
+For more information on types, other items, etc. that you can configure, see your OS man page for ``limits.conf`` (e.g. ``man limits.conf`` or  visit the online man page for your OS if available:: http://manpages.ubuntu.com/manpages/focal/en/man5/limits.conf.5.html )
+
+.. note::
+
+    * On RHEL/CentOS: For the ``nproc`` setting, please use ``/etc/security/limits.d/90-nproc.conf``. More information can be found `here <https://access.redhat.com/solutions/61334>`_
+    * On Ubuntu: The *limits.conf* file is ignored for processes started by *init.d* . To apply the settings in *limits.conf* for processes started by *init.d*, open ``/etc/pam.d/su`` and uncomment the following: ``session required pam_limits.so``
+
+|hr|
+
+|
+
+-------------------------------
+Tomcat Application Server Level
+-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^
+Connector Thread Count
+^^^^^^^^^^^^^^^^^^^^^^
+Update the Tomcat Connector thread count to correlate to the number of CPU cores available on the server. This will ensure that the server is able to handle the maximum number of concurrent requests.
+
+To configure the maximum number of active threads and minimum number of threads (idle and active) alive, open the
+file ``CRAFTER_HOME/bin/apache-tomcat/conf/server.xml`` and set the following in the connector:
+
+- maxThreads="<DESIRED_MAX_THREADS>"
+- minSpareThreads="<DESIRED_MIN_SPARETHREADS>">
+
+In the configuration below, we set ``maxThreads`` to 600 and ``minSpareThreads`` to 100. For more information on Tomcat thread pools, see https://tomcat.apache.org/tomcat-9.0-doc/config/executor.html
+
+.. code-block:: xml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/conf/server.xml*
+    :emphasize-lines: 5-6
+
+    <Connector port="${tomcat.http.port}" protocol="HTTP/1.1" URIEncoding="UTF-8"
+               connectionTimeout="20000"
+               redirectPort="${tomcat.https.port}"
+               maxParameterCount="1000"
+               maxThreads="600"
+               minSpareThreads="100"
+               />
+
+|
+
+|hr|
+
+.. _deployer-performance-tuning:
+
+---------------------------
+Deployer Performance Tuning
+---------------------------
+Crafter Deployer is responsible for many operations including publishing content, updating search indexes, updating metadata about content and more. The faster the disk type, network connectivity, and available memory, the better the performance you will observe.
+For larger installations with a lot to index, the Deployer can run out of resources or be too slow for smooth operation of the system.
+
+To configure the heap size, etc for the JVM, open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and update the environment
+variable ``DEPLOYER_JAVA_OPTS`` to desired value like below:
+
+.. code-block:: bash
+    :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+
+    export DEPLOYER_JAVA_OPTS=${DEPLOYER_JAVA_OPTS:="-server -Xss1024K -Xmx1G -Dlog4j2.formatMsgNoLookups=true"}
+
+|hr|
+
+|
+
+--------------------------------
+Anti Patterns (Things NOT to do)
+--------------------------------
+Here are some things we recommend **NOT TO DO** when setting up/configuring your authoring environment:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Slow Network Based Storage
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Simple network storage such as NAS connected over copper network to compute is known to produce slow performance due to latency across many small operations. Avoid NAS storage.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Use of NFS as a Mounting Protocol
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NFS is a particularly slow and unreliable network storage protocol, especially when mounts are configured with default settings.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Putting All Data on the Same Disk
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Studio stores content in Git, Metadata about workflow and content in an embedded database and indexes in OpenSearch. All of these stores are updated on each write. Putting them on the same disk can lead to slower access times due to contention in high throughput scenarios.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Using Default Settings for Larger Installations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Installations are pre-configured with settings that assume an average/smaller sized machines. Further OS defaults are not managed by Crafter. To get the best performance you should consider and adjust for your specific environment, hardware, business needs and best practices.
+
+|hr|
+
+|
 
 .. _studio-clustering:
 
-==================================
-Studio Clustering |enterpriseOnly|
-==================================
-Crafter Studio can be clustered for high-availability.
+---------------------------
+Clustering |enterpriseOnly|
+---------------------------
+If the authoring environment goes down, content management cannot happen. While that's not going to stop the end-users from using the delivery tier and consuming content, it will stop the content authors from creating and managing content. Therefore, it's often critical to cluster the authoring tier for high-availability.
+
+In this section, we elaborate on how to cluster Crafter Studio and achieve high-availability in the authoring tier.
 
 Here's an overview of a serverless Studio Enterprise cluster:
 
@@ -76,26 +518,26 @@ The ``Cluster`` tool provides the following information on the nodes in the clus
 
 |hr|
 
-------------
+^^^^^^^^^^^^
 Requirements
-------------
+^^^^^^^^^^^^
 Before we begin configuring Studio for clustering, the following must be setup:
 
 * A load balancer or DNS server directing traffic to the primary node, and can failover to the replica node if the primary is not healthy
 
 |hr|
 
--------------
+^^^^^^^^^^^^^
 Configuration
--------------
+^^^^^^^^^^^^^
 We'll take a look at an example of :ref:`how to setup a two node cluster with Studio <setup-a-two-node-cluster-with-studio>`
 step by step here. Afterwards, you can then take a look at an example of :ref:`setting up Studio clustering using a Kubernetes deployment <setup-studio-clustering-with-kubernetes-deployment>`
 
 .. _setup-a-two-node-cluster-with-studio:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""
 Setup a Two Node Cluster with Studio
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""
 In this section, we'll look at an example of how to setup a two node cluster with Studio.
 
 To setup a two node cluster with Studio we'll need to do the following:
@@ -103,9 +545,9 @@ To setup a two node cluster with Studio we'll need to do the following:
 #. Configure Nodes in the Cluster
 #. Start the Nodes in the Cluster
 
-""""""""""""
+~~~~~~~~~~~~
 Requirements
-""""""""""""
+~~~~~~~~~~~~
 * At least 2 servers running Linux (Remember that Studio's cluster runs only in Linux) with the following ports open:
 
   - ``8080`` for http
@@ -116,10 +558,9 @@ Requirements
 * Studio's clustering requires the ``libssl1.0.0`` (or ``libssl1.0.2``) shared library.
   Some Linux distros does not come with the library pre-installed and may need to be installed.
 
-
-""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Configuring Nodes in the Cluster
-""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #. Install the Enterprise version of CrafterCMS on all the nodes
 #. Configure the Git **repository clustering** for all nodes by configuring the following settings in the
    ``studio-config-override.yaml`` file.
@@ -358,18 +799,18 @@ Configuring Nodes in the Cluster
        `Kubernetes Hazelcast Plugin  <https://github.com/hazelcast/hazelcast-kubernetes>`_ documentation
        in your Kubernetes cluster, before even starting any Studio pods.
 
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Starting the Nodes in the Cluster
-"""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 After finishing the node configurations, we are now ready to start the cluster. Please start the cluster nodes
 in close succession, one after the other. If you take more than 5 minutes to start all the cluster nodes then
 the nodes already running will timeout while trying to synchronize for bootstrapping (you can configure this
 timeout in the ``bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml`` file,
 under the property ``studio.db.cluster.nodes.startup.wait.timeout``).
 
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 Authoring Load Balancer
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 To configure the authoring load balancer to detect which node is the Primary and send traffic to it, we should review the health-check API.
 The health-check endpoint is at :base_url:`/studio/api/2/monitoring/status?token={your management token} <_static/api/studio.html#tag/monitoring/operation/getStatus>`
 which returns the current status of a node, including the role (primary or replica) and status for accepting traffic
@@ -430,9 +871,9 @@ For information on errors you may encounter in your cluster, see :ref:`authoring
 
 .. _configuring-the-deployer-for-studio-clustering:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""
 Configuring the Deployer for Studio Clustering
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""
 .. version_tag::
     :label: Since
     :version: 4.1.1
@@ -490,9 +931,9 @@ The deployment processor configured above runs whenever the ``clusterMode`` retu
 
 |hr|
 
---------
+^^^^^^^^
 Failover
---------
+^^^^^^^^
 Studio clustering is based on Primary/Replica clustering mechanics. Failure scenarios:
 
 - Replica node(s) failure: In case of one or more replicas failing, the cluster will continue to work normally. New replicas can join and catch up.
@@ -507,9 +948,9 @@ Crafter Studio provides a health check endpoint at ``/studio/api/2/monitoring/st
 
 .. _cluster-multi-region-considerations:
 
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Multi-Region Considerations
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 For clusters with nodes in multi-regions utilizing S3 buckets, AWS provides solutions for handling multi-region
 deployments of S3 buckets.
 
@@ -528,9 +969,9 @@ Here's some more information on S3 replication: https://aws.amazon.com/about-aws
 
 |hr|
 
-------------------
+^^^^^^^^^^^^^^^^^^
 Backup and Restore
-------------------
+^^^^^^^^^^^^^^^^^^
 CrafterCMS comes with a script to backup and restore your environment, as described :ref:`here <backup-and-restore>`
 
 There are a couple of ways to backup and restore your cluster:
@@ -545,12 +986,12 @@ There are a couple of ways to backup and restore your cluster:
 
 .. _authoring-cluster-troubleshooting:
 
----------------
+^^^^^^^^^^^^^^^
 Troubleshooting
----------------
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 Check if the Cluster is Running
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 There are a few ways to check that the cluster is running.
 
 - via logs
@@ -558,9 +999,9 @@ There are a few ways to check that the cluster is running.
 - via the Global Transaction ID
 - via the ``Cluster`` tool in Studio UI
 
-""""""""
+~~~~~~~~
 Via Logs
-""""""""
+~~~~~~~~
 To check that the cluster is up, you can inspect the ``$CRAFTER_HOME/logs/tomcat/catalina.out`` of the nodes for
 the following entries:
 
@@ -604,9 +1045,9 @@ the following entries:
 
   |
 
-""""""""""""""
+~~~~~~~~~~~~~~
 Via the Status
-""""""""""""""
+~~~~~~~~~~~~~~
 You can also check that the cluster is working by logging into MariaDB with the ``mysql`` client from the
 primary or the replica and checking the status:
 
@@ -658,9 +1099,9 @@ primary or the replica and checking the status:
 
    |
 
-"""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Via the Global Transaction ID
-"""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 On a primary server, all database updates are written into the binary log as binlog events. A replica server
 connects to the primary and reads the binlog events, then applies the events locally to replicate
 the changes in the primary. For each event group (transaction) in the binlog, a unique id is attached
@@ -715,9 +1156,9 @@ To check the ``gtid_current_pos`` and ``gtid_slave_pos`` system variables, log i
       +-------------------------+
       1 row in set (0.000 sec)
 
-"""""""""""""
+~~~~~~~~~~~~~
 Via Studio UI
-"""""""""""""
+~~~~~~~~~~~~~
 Crafter Studio provides a tool for checking on the status of your cluster. To open the tool, click the |mainMenu| Navigation Menu
 icon from the top right of the browser, then click on ``Cluster`` from the Sidebar.
 
@@ -731,9 +1172,9 @@ information on the items displayed in the tool.
 
 |hr|
 
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Git/DB Sync Failure
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Whenever your authoring cluster has a Git or DB sync failure, the following logs may appear:
 
 .. _authoring-cluster-troubleshooting-git-sync-fail-log:
@@ -773,16 +1214,16 @@ startup failure in the authoring cluster.
 
 This section discusses how to fix the sync failure in your authoring cluster.
 
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 Fixing the Sync Failure
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 The first thing to do when a sync failure happens is to figure out whether the sync failure is in the DB or Git.
 The email sent to configured recipients when the sync failure happened will indicate whether it's a DB or a Git
 sync failure. From the logs, you can also determine if it was a DB or a Git sync failure.
 
-~~~~~~~~~~~~~~~
+'''''''''''''''
 DB sync failure
-~~~~~~~~~~~~~~~
+'''''''''''''''
 For a DB sync failure, the logs will contain a message like below:
 
 .. code-block:: text
@@ -874,9 +1315,9 @@ If an admin reviews the node states and thinks everything is fine but still rece
 may decide if MariaDB should ignore those errors and continue. To ignore the errors, a manual intervention is
 required and may be done by following the instructions `here <https://mariadb.com/kb/en/set-global-sql_slave_skip_counter/>`__
 
-~~~~~~~~~~~~~~~~
+''''''''''''''''
 Git sync failure
-~~~~~~~~~~~~~~~~
+''''''''''''''''
 For a Git sync failure, the logs will contain a message like below:
 
 .. code-block:: text
@@ -904,9 +1345,9 @@ After reviewing the logs (tomcat logs and git log), there are a few ways to go a
 
 .. _changing-the-cluster-git-url:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 Changing the Cluster Git URL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 When the cluster Git URL for syncing members is changed after a cluster has been setup and started, the nodes on the disk may contain the old URL format when starting up. The following error appears in the log when switching the URL from SSH to HTTPS:
 
    .. code-block:: text
@@ -983,4 +1424,3 @@ To recreate a remote:
 
 #. Start the cluster.
    Once the cluster is started, the remotes will be recreated. Verify that the URL format displayed in ``Cluster`` in the Studio global menu is the desired URL format.
-
