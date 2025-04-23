@@ -287,7 +287,7 @@ Docker
 """"""""""""""""""""""""""""""""""""
 Quick Start for Evaluation in Docker
 """"""""""""""""""""""""""""""""""""
-For a quick start to evaluate CrafterCMS, you follow these simple instructions. If you have `Docker <https://www.docker.com/>`_ installed, you can get started with CrafterCMS in a few minutes. Simply run the following command:
+For a quick start to evaluate CrafterCMS, follow these simple instructions. If you have `Docker <https://www.docker.com/>`_ installed, you can get started with CrafterCMS in a few minutes. Simply run the following command:
 
 .. code-block:: bash
 
@@ -311,6 +311,8 @@ To run CrafterCMS in a set of Docker containers using Docker Compose, make sure 
     :width: 80%
     :align: center
 
+|
+
 #. Clone the CrafterCMS Docker Compose repo from GitHub
 
    .. code-block:: bash
@@ -321,30 +323,77 @@ To run CrafterCMS in a set of Docker containers using Docker Compose, make sure 
 
 #. If you are a developer and want to use your local IDE and other tools, follow :ref:`this <local-dev-with-docker>` documentation to configure your docker container to support access to your projects via local IDE.
 
-#. Go into the authoring folder, then start the container by running ``docker-compose up``
+#. Go into the authoring folder, then start the container by running ``docker-compose up``. This starts the authoring
+   environment, which enables authoring, management, and publishing of all content.
 
    .. code-block:: bash
-      :caption: *Console output when starting the container*
+      :caption: *Console output when starting the authoring container*
       :emphasize-lines: 2
 
-          ➜  docker-compose git:(master) cd authoring
-          ➜  authoring git:(master) docker-compose up
-          [+] Running 9/9
-           ✔ Network authoring_default               Created                                                                                                                          0.1s
-           ✔ Volume "crafter_authoring_temp"         Created                                                                                                                          0.0s
-           ✔ Volume "crafter_authoring_data_search"  Created                                                                                                                          0.0s
-           ✔ Volume "crafter_authoring_logs_search"  Created                                                                                                                          0.0s
-           ✔ Volume "crafter_authoring_data"         Created                                                                                                                          0.0s
-           ✔ Volume "crafter_authoring_logs"         Created                                                                                                                          0.0s
-           ✔ Container authoring-search-1            Created                                                                                                                          0.1s
-           ✔ Container authoring-deployer-1          Created                                                                                                                          0.1s
-           ✔ Container authoring-tomcat-1            Created                                                                                                                          0.1s
-          Attaching to authoring-deployer-1, authoring-search-1, authoring-tomcat-1
-          ...
-          authoring-tomcat-1    | 11-Aug-2023 11:28:25.535 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
-          authoring-tomcat-1    | 11-Aug-2023 11:28:25.579 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [68028] milliseconds
+      ➜  docker-compose git:(master) cd authoring
+      ➜  authoring git:(master) docker-compose up
+      [+] Running 9/9
+      ✔ Network authoring_default               Created                                                        0.1s
+      ✔ Volume "crafter_authoring_temp"         Created                                                        0.0s
+      ✔ Volume "crafter_authoring_data_search"  Created                                                        0.0s
+      ✔ Volume "crafter_authoring_logs_search"  Created                                                        0.0s
+      ✔ Volume "crafter_authoring_data"         Created                                                        0.0s
+      ✔ Volume "crafter_authoring_logs"         Created                                                        0.0s
+      ✔ Container authoring-search-1            Created                                                        0.1s
+      ✔ Container authoring-deployer-1          Created                                                        0.1s
+      ✔ Container authoring-tomcat-1            Created                                                        0.1s
+      Attaching to deployer-1, search-1, tomcat-1
+      ...
+      tomcat-1    | 11-Aug-2024 11:28:25.535 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+      tomcat-1    | 11-Aug-2024 11:28:25.579 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [68028] milliseconds
 
-You may now login to Crafter Studio at ``http://localhost:8080/studio``. The default username is ``admin`` and the default password is ``admin``.
+   You may now login to Crafter Studio at ``http://localhost:8080/studio``. The default username is ``admin`` and the default password is ``admin``.
+
+If you want to view your published project, follow the instructions below to start CrafterCMS delivery and setup your
+project for delivery. CrafterCMS delivery is what users will be accessing from their browsers to view all the content
+that have been published. Remember to publish your project before setting up your project for delivery.
+
+#. Go into the delivery folder, then start the container by running ``docker-compose up``. This starts the delivery
+   environment, which is what users will be accessing from their browsers to view all the content that have been published.
+
+   .. code-block:: bash
+       :caption: *Console output when starting the delivery container*
+       :emphasize-lines: 2
+
+       ➜  docker-compose git:(master) cd delivery
+       ➜  delivery git:(master) docker-compose up
+       [+] Running 9/9
+       ✔ Network delivery_default               Created                                                        0.1s
+       ✔ Volume "crafter_delivery_temp"         Created                                                        0.0s
+       ✔ Volume "crafter_delivery_data_search"  Created                                                        0.0s
+       ✔ Volume "crafter_delivery_logs_search"  Created                                                        0.0s
+       ✔ Volume "crafter_delivery_data"         Created                                                        0.0s
+       ✔ Volume "crafter_delivery_logs"         Created                                                        0.0s
+       ✔ Container delivery-search-1            Created                                                        0.2s
+       ✔ Container delivery-deployer-1          Created                                                        0.1s
+       ✔ Container delivery-tomcat-1            Created                                                        0.3s
+       Attaching to deployer-1, search-1, tomcat-1
+       ...
+       tomcat-1    | 18-Apr-2025 21:39:29.709 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+       tomcat-1    | 18-Apr-2025 21:39:29.756 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [25618] milliseconds
+
+#. To view your published project, we'll first setup your project for delivery by running the init-site script. Go into
+   the scripts folder and run the ``init-site.sh`` script. Remember to replace <SITENAME> below with the actual project name.
+
+   .. code-block:: bash
+       :caption: *Setup Project for Delivery*
+
+       ➜  docker-compose git:(master) cd scripts
+       ➜  scripts git:(master) ./init-site.sh <SITENAME>
+       /path/to/docker-compose/delivery /path/to/docker-compose/scripts
+       Creating Deployer Target...
+       Target created successfully
+       /path/to/docker-compose/scripts
+
+   Once you've setup your project for delivery, to access your published project, open a browser and type in the URL of
+   your project, ``localhost:9080``.
+
+   For more information on setting up your project for delivery, see :ref:`setup-project-for-delivery`.
 
 The console output when you start the container (as shown above) contains useful information that you can use to debug or monitor the status of CrafterCMS. To view more of the logs, the Docker Desktop Dashboard provides a runtime view of all your containers and applications, including logs for monitoring/debugging CrafterCMS. To access the Docker Desktop Dashboard, from the **Docker menu**, select **Dashboard**.
 
@@ -1061,6 +1110,8 @@ You can find the IP address and/or DNS name in several locations on your AWS adm
     :align: center
     :alt: CrafterCMS AWS AMI Delivery IP DNS
 
+.. _configure-crafter-engine-to-deliver-published-projects:
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Step 3: Configure Crafter Engine to deliver published projects
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1332,7 +1383,11 @@ Download the Bundle
 """""""""""""""""""
 Download CrafterCMS binary bundle from https://craftercms.com/download
 
-Select your operating system then click on the ``Download`` link next to ``Authoring`` or ``Delivery`` depending on your needs.  For the authoring, the file downloaded will be ``crafter-cms-authoring-*.tar.gz``  and ``crafter-cms-delivery*.tar.gz`` for delivery. The ``.tar.gz`` file will install a fully functional authoring/delivery instance. Out of the box, the authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set up for local development.
+Select your operating system then click on the ``Download`` link next to ``Authoring`` or ``Delivery`` depending on your
+needs.  For the authoring, the file downloaded will be ``crafter-cms-authoring-*.tar.gz``  and ``crafter-cms-delivery*.tar.gz``
+for delivery. The ``.tar.gz`` file will install a fully functional authoring/delivery instance. Out of the box, the
+authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set
+up for local development.
 
 """""""""""""""""""""""""""""""
 Extract the CrafterCMS binaries
@@ -1397,7 +1452,7 @@ To access Crafter Studio, In your browser, go to
   http://SERVER:PORT/studio
 
 .. note::
-    For local deployments, the URL is ``http://localhost:8000/studio``
+    For local deployments, the URL is ``http://localhost:8080/studio``
 
 * Login with the following:
 
@@ -1406,6 +1461,29 @@ To access Crafter Studio, In your browser, go to
 
 
 After logging in, you should be redirected to the ``Projects`` screen, and you're now ready to create your first experience!
+
+"""""""""""""""""""""""""""""""""""""""""
+Viewing Your Published Project (optional)
+"""""""""""""""""""""""""""""""""""""""""
+To view your published project, we'll need to start the CrafterCMS delivery instance and setup your project for delivery.
+CrafterCMS delivery is what users will be accessing from their browsers to view all the content that have been published.
+Remember to publish your project before setting up your project for delivery.
+
+To start your delivery instance, follow the instructions above for downloading the delivery bundle and starting the
+CrafterCMS delivery instance. Once delivery is running, we can now setup our published project in authoring for delivery.
+
+In your CrafterCMS delivery, go to the ``bin`` folder and run the ``init-site.sh`` script. Remember to replace <SITENAME>
+below with the actual published project name.
+
+.. code-block:: sh
+
+    cd CRAFTER_HOME/bin
+    ./init-site <SITE_NAME> /absolute/path/to/authoring/published/repo
+
+Once you've setup your project for delivery, to access your published project, open a browser and type in the URL of
+your project, for local deployments, the URL is ``localhost:9080``.
+
+For more information on setting up your project for delivery, see :ref:`setup-project-for-delivery`.
 
 |hr|
 
