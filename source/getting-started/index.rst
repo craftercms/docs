@@ -11,11 +11,9 @@ This section lets you get started quickly on using CrafterCMS.
 --------------
 Run CrafterCMS
 --------------
-
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Try CrafterCMS in Docker
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
 If you have `Docker <https://www.docker.com/>`_ installed, you can start exploring CrafterCMS in a few minutes. Simply run the following command:
 
 .. code-block:: bash
@@ -31,7 +29,6 @@ If you are ready to start development, consult the :ref:`documentation for devel
 ^^^^^^^^^^^^^^^^^^^^^
 Run CrafterCMS on AWS
 ^^^^^^^^^^^^^^^^^^^^^
-
 You can use a `prebuilt AMI <https://aws.amazon.com/marketplace/seller-profile?id=6d75ffca-9630-44bd-90b4-ac0e99058995>`_ from the AWS marketplace.
 
 |hr|
@@ -39,7 +36,6 @@ You can use a `prebuilt AMI <https://aws.amazon.com/marketplace/seller-profile?i
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Run CrafterCMS SaaS in the Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 You can sign up for `Crafter Cloud <https://craftercms.com/products/crafter-cloud>`_.
 
 |hr|
@@ -49,7 +45,6 @@ For more ways to install, please see the article :ref:`system-admin-installation
 -------------------------------
 Start Crafting Your Experiences
 -------------------------------
-
 CrafterCMS is an API-first CMS, and as such, it can be used as a headless CMS or a templated (traditional) CMS. The following sections will help you get started with both.
 
 .. toctree::

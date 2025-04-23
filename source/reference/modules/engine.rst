@@ -58,10 +58,15 @@ Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Setup Engine to Deliver a Project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In order to deliver content, the deployer must be configured to monitor a published repository for one or more projects.
+A delivery engine is multi-tenant and can deliver many projects. Each project must be configured or "initialized" such
+that the deployer monitors a Git repository for published updates.
+
 """""""""""""""""""""
 Server-based Delivery
 """""""""""""""""""""
-In this section, we will be working in the delivery environment of CrafterCMS and describing how to setup your project for a delivery environment.
+In this section, we will be working in the delivery environment of CrafterCMS and describing how to setup your project
+for a delivery environment.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Setup Crafter Deployer Target
