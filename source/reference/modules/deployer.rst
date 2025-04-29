@@ -2355,13 +2355,13 @@ folder:
 """"""""""""""""""""""""""""""""""""""
 Step 3: Configure the custom processor
 """"""""""""""""""""""""""""""""""""""
-Once the custom processor is placed in the classpath, the only remaining step is to create o update a target to use it.
+Once the custom processor is placed in the classpath, the only remaining step is to create or update a target to use it.
 All configuration files for targets will be placed in the following folder:
 
   ``INSTALL_DIR/data/deployer/targets``
 
 First you need to create or update a context file to define all beans required by the custom processor, the file should
-be have the name ``{site}-{env}-context.xml``:
+have the name ``{site}-{env}-context.xml``:
 
 .. code-block:: xml
 
@@ -2400,6 +2400,37 @@ Once the bean has been defined it can be added to the target's pipeline in the y
 
 Any change in the classpath will require a restart of Crafter Deployer, changes in configuration files will be
 applied when the target is reloaded.
+
+.. _custom-configuration-parameters:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Custom Configuration Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Crafter Deployer supports adding custom configuration parameters in deployment target configuration files.
+This is useful when you want to get target level configuration within a deployment processor.
+
+To create a custom configuration parameter for use in your deployment processors, open the YAML configuration file of the
+deployment target you want to add the custom parameter using your favorite editor. Add your custom parameter under
+``target`` as shown below:
+
+.. code-block:: yaml
+    :caption: *Defining a custom configuration parameter in a deployment target configuration file editorial-preview.yaml*
+    :emphasize-lines: 5-6
+
+    target:
+      env: preview
+      siteName: editorial
+
+      myCustomParams:
+        myParam: "a value"
+
+To get the custom configuration parameter values defined in a deployment target configuration file:
+
+.. code-block:: yaml
+    :caption: *Retrieving a custom value defined in a deployment target configuration file*
+
+    def someTargetValue = applicationContext.getEnvironment().getProperty('target.myCustomParams.myParam')
+
 
 |hr|
 
