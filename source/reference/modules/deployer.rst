@@ -2424,7 +2424,8 @@ deployment target you want to add the custom parameter using your favorite edito
       myCustomParams:
         myParam: "a value"
 
-To get the custom configuration parameter values defined in a deployment target configuration file:
+To get the custom configuration parameter values defined in a deployment target configuration file for use in a
+deployment processor:
 
 .. code-block:: yaml
     :caption: *Retrieving a custom value defined in a deployment target configuration file*
