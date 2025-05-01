@@ -52,7 +52,7 @@ Configuration
 .. |imgFromS3| replace:: :ref:`Image From S3 Repository <form-source-s3-image-repo>`
 .. |imgUploadToS3| replace:: :ref:`Image Uploaded to S3 Repository <form-source-s3-image-upload>`
 
-Setting the ``Width`` and/or the ``Height`` properties of this control will automatically open the
+Setting the width and/or the height properties of this control will automatically open the
 image cropper dialog ``Crop Image`` when the image being uploaded does not meet the requirements set.
 
 .. image:: /_static/images/page/crop-image-dialog.webp
