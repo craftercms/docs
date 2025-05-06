@@ -422,28 +422,107 @@ The following is the default list of MIME types with full-text-search indexing e
             - application/vnd.ms-powerpoint
             - application/vnd.openxmlformats-officedocument.presentationml.presentation
 
-To add other MIME types to the list of MIME types with full-text-search indexing enabled, simply edit the override file
-``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml`` and add to the list.
+~~~~~~~~~~~~~~~~~~~~~~~~
+Custom MIME type support
+~~~~~~~~~~~~~~~~~~~~~~~~
+When authors try to link or embed files using Studio’s file picker, only indexed content appears. By default,
+CrafterCMS indexes a predefined set of MIME types as shown above. If a file type isn’t listed in this set, it won’t
+appear, even if it exists in your ``/static-assets`` folder or has been uploaded to S3.
 
-Say we want to add bitmaps to the supported MIME types, we'll add the MIME type ``image/bmp`` to the list above under
-``target.search.binary.supportedMimeTypes``:
+To add other MIME types to the list of MIME types with full-text-search indexing enabled, so those files will appear
+using Studio's file picker, simply edit the override file ``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml``
+and add your desired MIME type to the list under ``target.search.indexing.binary.authoring.supportedMimeTypes``.
+
+If you're unsure about the MIME type of a file, you can check it using a tool like ``file --mime-type`` on Unix-based
+systems. You can also review the following listing of all possible supported mimetypes here:
+https://github.com/craftercms/deployer/blob/develop/src/main/resources/META-INF/mime.types
+
+For a list of common MIME types, see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types.
+
+After updating the configuration, you must restart your environment and reindex your project for changes to take effect.
+See the following documentation on initiating a re-index: :ref:`start-reindexing-reprocessing`.
+
+Finally, you can verify in Studio that your custom MIME type is now indexed by navigating to a content form or RTE
+where you use the "Select an item" dialog. You should now see your previously missing file types (e.g., .csv) in the
+file selection modal.
+
+**Example**
+
+Let's take a look at an example of extending the supported MIME types. We'll use a project created using the website
+editorial blueprint. Upload a ``.csv`` file to ``/static-assets/files``, and modify the content type ``Article`` to add
+an ``Item Selector`` control and a ``File Browse`` datasource with the ``Repository Path`` set to ``/static-assets``
+and bind your newly created datasource to the control you just added as shown below:
+
+.. image:: /_static/images/system-admin/setup-sample-adding-mime-type.webp
+    :width: 80%
+    :alt: Setup for example adding MIME type in Deployer
+    :align: center
+
+|
+
+Edit an article via form by right-clicking an article on the Sidebar, then selecting ``Edit``, then scroll down to the
+Item Selector control we added ``Attachment``, click on ``Add +`` then ``Browse for Existing - File Browse``. Once the
+``Select an item`` dialog opens, browse to the path under ``static-assets`` where you uploaded the ``.csv`` files.
+Notice when you try to browse for ``.csv`` files that none are listed.
+
+.. image:: /_static/images/system-admin/sample-adding-mime-type-no-csv.webp
+    :width: 60%
+    :alt: Example adding MIME type in Deployer - ".csv" files are not available
+    :align: center
+
+|
+
+Note that ``.csv`` (Comma Separated Values) files are not indexed by default. For our example, we'll add
+``.csv`` files to the supported MIME types.
+
+First, we'll add the MIME type ``text/csv`` to the list in the ``base-target.yaml`` file under
+``target.search.indexing.binary.authoring.supportedMimeTypes``:
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
     :linenos:
-    :emphasize-lines: 7-8
+    :emphasize-lines: 9-10,25
 
     target:
     ...
       search:
         openSearch:
         ...
-        binary:
-          # The list of binary file mime types that should be indexed
-          supportedMimeTypes:
-            - image/bmp
+        indexing:
+          binary:
+            # Setting specific for authoring indexes
+            authoring:
+              supportedMimeTypes:
+                - application/pdf
+                - application/msword
+                - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+                - application/vnd.ms-excel
+                - application/vnd.ms-powerpoint
+                - application/vnd.openxmlformats-officedocument.presentationml.presentation
+                - application/x-subrip
+                - image/*
+                - video/*
+                - audio/*
+                - text/x-freemarker
+                - text/x-groovy
+                - text/javascript
+                - text/css
+                - text/csv
 
-For a list of common MIME types, see https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types.
+We'll save our changes then restart the environment and trigger a reindex of our project by running this curl command:
+
+.. code-block:: xml
+
+  curl "http://localhost:9191/api/1/target/deploy/authoring/editorial" -X POST -H "Content-Type: application/json" -d '{ "reprocess_all_files": true }'
+
+Finally, we can verify in Studio that ``.csv`` files are now supported.
+
+.. image:: /_static/images/system-admin/sample-adding-mime-type.webp
+    :width: 60%
+    :alt: Example adding MIME type in Deployer - ".csv" files are now available
+    :align: center
+
+|
 
 .. _deployer-indexing-remote-documents-path-pattern:
 
