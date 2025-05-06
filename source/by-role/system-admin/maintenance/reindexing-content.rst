@@ -90,6 +90,7 @@ After sending the CURL command, you will then get a response like this:
     "failures":[]
   }
 
+.. _start-reindexing-reprocessing:
 
 -------------------------------
 Step 2: Invoke the reprocessing
