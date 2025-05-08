@@ -20,13 +20,13 @@ Crafter Deployer performs indexing and runs scheduled deployments to perform tas
 created/edited in Crafter Studio to an external service, executing actions every time a deployment succeeds or fails,
 sending out deployment notifications, etc. It is an independent process in the CrafterCMS suite of components.
 
-In the diagram above, it shows a stateless delivery where a single deployer is putting content into a file system or
+In the diagram above, it shows a stateless delivery where a single Deployer is putting content into a file system or
 bucket that is reachable by a Crafter Engine. As you can see, Crafter Engine in delivery does not need to know anything
-about the deployment, it just reads the sources. It can be implemented with more deployers if you're deploying to a
-file system on a remote machine. The number of deployers that you have and where they sit depends on the deployment
+about the deployment, it just reads the sources. It can be implemented with more Deployers if you're deploying to a
+file system on a remote machine. The number of Deployers that you have and where they sit depends on the deployment
 topology that you have.
 
-How a deployer works is it has targets for each project, so it has context. For each context, it pulls from a (remote)
+How a Deployer works is it has targets for each project, so it has context. For each context, it pulls from a (remote)
 repository and when it receives updates from that repository on that duty cycle it then performs a set of actions
 through deployment processors. There's a set of out-of-the-box processors as described :ref:`below <crafter-deployer-processors-guide>`,
 but you may also create your own :ref:`custom processors <custom-processors>`.
@@ -2398,6 +2398,8 @@ The following example shows how the deployment processors work together to deliv
         - author@example.com
       status: ON_ANY_FAILURE
 
+|
+
 |hr|
 
 .. _custom-processors:
@@ -2653,14 +2655,14 @@ it in the authoring target ``ed-authoring.yaml`` like below:
     version: 4.1.3.0
     target:
     env: preview
-    siteName: t1
-    localRepoPath: CRAFTER_HOME/data/repos/sites/t1/sandbox
+    siteName: ed
+    localRepoPath: CRAFTER_HOME/data/repos/sites/ed/sandbox
 
     myCustomParams:
         myParam: "a value"
 
     search:
-        indexIdFormat: '%s-preview'
+        indexIdFormat: '%s-authoring'
     deployment:
         scheduling:
         enabled: false
@@ -2718,6 +2720,8 @@ We'll now test our custom deployment processor by logging in to Studio and uploa
     2025-05-07 10:48:03.395  INFO 72679 --- [deployment-3] ocessors.AbstractSearchIndexingProcessor : Performing search indexing...
     2025-05-07 10:48:03.395  INFO 72679 --- [deployment-3] ocessors.AbstractSearchIndexingProcessor : Ensuring that index ed-authoring exists
     ...
+
+|
 
 .. _custom-configuration-parameters:
 
