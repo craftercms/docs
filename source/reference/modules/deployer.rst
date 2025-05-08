@@ -2493,7 +2493,8 @@ applied when the target is reloaded.
 Example
 """""""
 Let's take a look at an example of creating and configuring your own script deployment processor that lists the
-approximate number of bytes for created and updated files.
+approximate number of bytes for created and updated files. We'll use a site created using the website editorial
+blueprint named ``ed``
 
 First, we'll create our custom deployment processor. We'll then look at how to configure our custom deployment processor
 in a target.
@@ -2525,7 +2526,7 @@ to retrieve static assets and display the number of bytes for created and update
 .. code-block:: groovy
     :linenos:
     :caption: *CRAFTER_HOME/bin/crafter-deployer/ContentAccessExample.groovy*
-    :emphasize-lines: 1-3, 7, 76
+    :emphasize-lines: 1-3, 7, 18, 35, 76
 
     def contextFactory = applicationContext.getBean("contextFactory")
     def contentStoreService = applicationContext.getBean("crafter.contentStoreService")
@@ -2535,7 +2536,7 @@ to retrieve static assets and display the number of bytes for created and update
 
     def someTargValue = applicationContext.getEnvironment().getProperty('target.myCustomParams.myParam')
 
-    logger.info("invoking example deployer processor")
+    logger.info("Invoking example deployer processor")
     logger.info("Target value: {}", someTargValue)
 
     for(path : originalChangeSet.getCreatedFiles()) {
@@ -2573,7 +2574,7 @@ to retrieve static assets and display the number of bytes for created and update
     // for(path : originalChangeSet.getDeletedFiles()) {
     // }
 
-    logger.info("invoking example deployer processor complete")
+    logger.info("Invoking example deployer processor complete")
 
 
     /**
@@ -2636,7 +2637,8 @@ to retrieve static assets and display the number of bytes for created and update
 
    </details>
 
-Finally, to use the custom processor above, we'll need to configure it in a target, like below:
+Finally, to use the custom processor above, we'll need to configure it in a target. For our example, we'll configure
+it in the authoring target ``ed-authoring.yaml`` like below:
 
 .. raw:: html
 
@@ -2646,6 +2648,7 @@ Finally, to use the custom processor above, we'll need to configure it in a targ
 .. code-block:: yaml
     :linenos:
     :emphasize-lines: 17-22
+    :caption: *CRAFTER_HOME/data/deployer/targets/ed-authoring.yaml*
 
     version: 4.1.3.0
     target:
@@ -2686,6 +2689,35 @@ Finally, to use the custom processor above, we'll need to configure it in a targ
 .. raw:: html
 
    </details>
+
+After configuring our custom deployment processor, remember to restart your install for the changes to take effect.
+We'll now test our custom deployment processor by logging in to Studio and uploading an image under
+``/static-assets/images``. To check that our custom processor ran, open the deployer log under
+``CRAFTER_HOME/logs/deployer/crafter-deployer.out`` and look for the lines we log in our custom processor:
+
+.. code-block:: text
+    :linenos:
+    :emphasize-lines: 9-14
+    :caption: *Crafter Deployer log - CRAFTER_HOME/logs/deployer/crafter-deployer.out*
+
+    2025-05-07 10:48:01.473  INFO 72679 --- [deployment-3] org.craftercms.deployer.impl.TargetImpl  : ============================================================
+    2025-05-07 10:48:01.475  INFO 72679 --- [deployment-3] org.craftercms.deployer.impl.TargetImpl  : Deployment for ed-authoring started
+    2025-05-07 10:48:01.476  INFO 72679 --- [deployment-3] org.craftercms.deployer.impl.TargetImpl  : ============================================================
+    2025-05-07 10:48:01.477  INFO 72679 --- [deployment-3] l.processors.AbstractDeploymentProcessor : ----- < gitDiffProcessor @ ed-authoring > -----
+    ...
+    2025-05-07 10:48:02.777  INFO 72679 --- [deployment-5] org.craftercms.deployer.impl.TargetImpl  : ============================================================
+    2025-05-07 10:48:02.777  INFO 72679 --- [deployment-5] org.craftercms.deployer.impl.TargetImpl  : Deployment for ed-preview finished in 0.003 secs
+    2025-05-07 10:48:02.777  INFO 72679 --- [deployment-5] org.craftercms.deployer.impl.TargetImpl  : ============================================================
+    2025-05-07 10:48:03.308  INFO 72679 --- [deployment-3] deployer.impl.processors.ScriptProcessor : Invoking example deployer processor
+    2025-05-07 10:48:03.311  INFO 72679 --- [deployment-3] deployer.impl.processors.ScriptProcessor : Target value: null
+    2025-05-07 10:48:03.389  INFO 72679 --- [deployment-3] deployer.impl.processors.ScriptProcessor : CREATE w bytes: /static-assets/images/15905722779_2901cdeefd_o.jpg 2160375
+    2025-05-07 10:48:03.394  INFO 72679 --- [deployment-3] deployer.impl.processors.ScriptProcessor : Invoking example deployer processor complete
+    2025-05-07 10:48:03.394  INFO 72679 --- [deployment-3] deployer.impl.processors.ScriptProcessor : Completed execution of script /Users/home/crafter-authoring/bin/crafter-deployer/ContentAccessExample.groovy
+    2025-05-07 10:48:03.394  INFO 72679 --- [deployment-3] l.processors.AbstractDeploymentProcessor : ----- </ scriptProcessor @ ed-authoring > -----
+    2025-05-07 10:48:03.394  INFO 72679 --- [deployment-3] l.processors.AbstractDeploymentProcessor : ----- < authoringSearchIndexingProcessor @ ed-authoring > -----
+    2025-05-07 10:48:03.395  INFO 72679 --- [deployment-3] ocessors.AbstractSearchIndexingProcessor : Performing search indexing...
+    2025-05-07 10:48:03.395  INFO 72679 --- [deployment-3] ocessors.AbstractSearchIndexingProcessor : Ensuring that index ed-authoring exists
+    ...
 
 .. _custom-configuration-parameters:
 
