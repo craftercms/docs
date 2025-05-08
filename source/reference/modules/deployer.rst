@@ -16,11 +16,20 @@ Crafter Deployer
 
 Crafter Deployer is the deployment agent for CrafterCMS.
 
-.. TODO: We need a bigger/better description of this.
-
 Crafter Deployer performs indexing and runs scheduled deployments to perform tasks like pushing/pulling content
 created/edited in Crafter Studio to an external service, executing actions every time a deployment succeeds or fails,
-sending out deployment notifications, etc.
+sending out deployment notifications, etc. It is an independent process in the CrafterCMS suite of components.
+
+In the diagram above, it shows a stateless delivery where a single deployer is putting content into a file system or
+bucket that is reachable by a Crafter Engine. As you can see, Crafter Engine in delivery does not need to know anything
+about the deployment, it just reads the sources. It can be implemented with more deployers if you're deploying to a
+file system on a remote machine. The number of deployers that you have and where they sit depends on the deployment
+topology that you have.
+
+How a deployer works is it has targets for each project, so it has context. For each context, it pulls from a (remote)
+repository and when it receives updates from that repository on that duty cycle it then performs a set of actions
+through deployment processors. There's a set of out-of-the-box processors as described :ref:`below <crafter-deployer-processors-guide>`,
+but you may also create your own :ref:`custom processors <custom-processors>`.
 
 |hr|
 
@@ -2479,6 +2488,204 @@ Once the bean has been defined it can be added to the target's pipeline in the y
 
 Any change in the classpath will require a restart of Crafter Deployer, changes in configuration files will be
 applied when the target is reloaded.
+
+"""""""
+Example
+"""""""
+Let's take a look at an example of creating and configuring your own script deployment processor that lists the
+approximate number of bytes for created and updated files.
+
+First, we'll create our custom deployment processor. We'll then look at how to configure our custom deployment processor
+in a target.
+
+For this example, to be able to access the number of bytes of the files being created and updated, we'll need a way to
+access those files securely since the scripting sandbox does not give you direct access to files on the operating system.
+Note also that files may be deployed in various ways in CrafterCMS. It could be on the file system, or it could be
+"blobs", an xml file that points to where the actual content is, such as a S3 bucket.
+
+There's an out-of-the-box service that does everything that we just mentioned called the content store service that we
+can use. To get the content store service in our deployer processor, we'll perform the following actions against Spring:
+
+.. code-block:: groovy
+    :caption: *To get access to the out-of-the-box content store service, add the following:*
+
+    def contextFactory = applicationContext.getBean("contextFactory")
+    def contentStoreService = applicationContext.getBean("crafter.contentStoreService")
+    def context = contextFactory.getObject()
+
+
+Here's our custom deployment processor ``ContentAccessExample.groovy`` showing you how to use the content store service
+to retrieve static assets and display the number of bytes for created and updated files:
+
+.. raw:: html
+
+    <details>
+    <summary><a>Custom Processor Example</a></summary>
+
+.. code-block:: groovy
+    :linenos:
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/ContentAccessExample.groovy*
+    :emphasize-lines: 1-3, 7, 76
+
+    def contextFactory = applicationContext.getBean("contextFactory")
+    def contentStoreService = applicationContext.getBean("crafter.contentStoreService")
+    def context = contextFactory.getObject()
+
+    def contentAccessHelper = new ContentAccessHelper(contentStoreService, context)
+
+    def someTargValue = applicationContext.getEnvironment().getProperty('target.myCustomParams.myParam')
+
+    logger.info("invoking example deployer processor")
+    logger.info("Target value: {}", someTargValue)
+
+    for(path : originalChangeSet.getCreatedFiles()) {
+        if(contentAccessHelper.isAsset(path)) {
+            def is
+
+            try {
+                is = contentAccessHelper.retrieveStaticAsset(path)
+                logger.info("CREATE w bytes: {} {}", path, is.available())
+            }
+            finally {
+                if(is) is.close()
+            }
+        }
+    }
+
+    for(path : originalChangeSet.getUpdatedFiles()) {
+        // Note: Update is only called if the file is different.
+        // The deployer ignores repeated deployments of the same file
+
+        if(contentAccessHelper.isAsset(path)) {
+            def is
+
+            try {
+                is = contentAccessHelper.retrieveStaticAsset(path)
+                logger.info("UPDATE w bytes: {} {}", path, is.available())
+            }
+            finally {
+                if(is) is.close()
+            }
+        }
+    }
+
+    // don't do anything with deleted files
+    // for(path : originalChangeSet.getDeletedFiles()) {
+    // }
+
+    logger.info("invoking example deployer processor complete")
+
+
+    /**
+     * Helper class for dealing with assets
+     */
+    protected class ContentAccessHelper {
+        def contentStoreService
+        def context
+        def remoteAssetPattern = ""
+
+        def ContentAccessHelper(contentStoreService, context) {
+            this.contentStoreService = contentStoreService
+            this.context = context
+        }
+
+        /**
+         * get the input stream of an asset
+         *  This service should be used to get asset input streams for the following 3 reasosns:
+         * 1. This code works with blob store and without
+         * 2. This code does not assume direct access to system resources (which is
+         * disabled for scripting)
+          * 3. This code future proofs your code for other repository updates
+         */
+        def retrieveStaticAsset(binaryPath)
+        throws Exception {
+
+            if(!isRemoteAsset(binaryPath)) {
+                // item is in our repository
+                def binaryContent = contentStoreService.findContent(this.context, binaryPath)
+
+                if(binaryContent != null) {
+                    return binaryContent.getInputStream()
+                }
+                else {
+                    throw new Exception("Content at path returned null via findContent {}", binaryPath)
+                }
+            }
+            else {
+                // item is remote
+                throw new Exception("Remote assets not supported by processor at this time {}", binaryPath)
+            }
+        }
+
+        /**
+         * @return true if asset is a remote asset
+         */
+        def isRemoteAsset(path) {
+            return false
+        }
+
+        /**
+         * @return true if path is an asset
+         */
+        def isAsset(contentPath) {
+            return (contentPath) ? contentPath.startsWith("/static-assets") : false
+        }
+    }
+
+.. raw:: html
+
+   </details>
+
+Finally, to use the custom processor above, we'll need to configure it in a target, like below:
+
+.. raw:: html
+
+    <details>
+    <summary><a>Configuring your custom processor in a target</a></summary>
+
+.. code-block:: yaml
+    :linenos:
+    :emphasize-lines: 17-22
+
+    version: 4.1.3.0
+    target:
+    env: preview
+    siteName: t1
+    localRepoPath: CRAFTER_HOME/data/repos/sites/t1/sandbox
+
+    myCustomParams:
+        myParam: "a value"
+
+    search:
+        indexIdFormat: '%s-preview'
+    deployment:
+        scheduling:
+        enabled: false
+        pipeline:
+        - processorName: gitDiffProcessor
+        - processorName: scriptProcessor
+          scriptPath: 'CRAFTER_HOME/bin/crafter-deployer/ContentAccessExample.groovy'
+          excludeFiles:
+          - ^/.*\.keep$
+          includeFiles: ["^/site/website/.*$", "^/static-assets/.*$"]
+          failDeploymentOnFailure: true
+        - processorName: searchIndexingProcessor
+          excludeFiles:
+          - ^/sources/.*$
+        - processorName: httpMethodCallProcessor
+          method: GET
+          url: ${target.engineUrl}/api/1/site/cache/clear.json?crafterSite=${target.siteName}&token=${target.engineManagementToken}
+        - processorName: httpMethodCallProcessor
+          includeFiles:
+          - ^/?config/studio/content-types.*$
+          method: GET
+          url: ${target.engineUrl}/api/1/site/context/graphql/rebuild.json?crafterSite=${target.siteName}&token=${target.engineManagementToken}
+        - processorName: fileOutputProcessor
+          processorLabel: fileOutputProcessor
+
+.. raw:: html
+
+   </details>
 
 .. _custom-configuration-parameters:
 
