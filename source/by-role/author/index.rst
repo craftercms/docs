@@ -1938,7 +1938,7 @@ submission, review/reject and approve and publish immediate / publish on a sched
 provided by default. Workflow options are available to specific content, such as pages or static assets,
 etc. The available workflow options for users depends on the Role the users are assigned with. As the
 content goes through the workflow options, notification emails are sent out to corresponding users based
-on the workflow option. To setup the email addresses, please see the section **Site Administrators**,
+on the workflow option. To setup the email addresses, please see the section **Project (Site) Administrators**,
 :ref:`notifications-configuration` and  :ref:`user-group-management`. Below is a diagram showing
 the default workflow steps.
 
@@ -1962,7 +1962,6 @@ is a sample dialog:
 """""""""""""""""""""""""""""""
 Submitting Content for Approval
 """""""""""""""""""""""""""""""
-
 After creating/editing content, a request to publish content can be done by clicking on **Publish**.
 A **Publish** submission can be initiated from a preview screen through the toolbar by clicking on
 the three dots next to the address bar or by clicking on the three dots next to the article in the
@@ -2012,7 +2011,7 @@ Initiate Publish by clicking on the three dots next to the content from the Side
 When sending the request for publish, you have the option of requesting to publish your content now,
 or to schedule publishing of your content at a later time and date.
 
-.. image:: /_static/images/page/page-workflows-request-publish-now.webp
+.. image:: /_static/images/page/page-workflows.webp
     :width: 65 %
     :align: center
     :alt: Workflow - Request publish now dialog
@@ -2036,8 +2035,8 @@ by checking the ``Request approval`` checkbox in the Publish dialog
 
 |
 
-To make approval mandatory for publish requests for users with publish permission,
-see :ref:`here <project-config-require-peer-review>`.
+To make approval mandatory for publish requests for users with publish permission, such that even if you are a publisher,
+you are not able to publish your own edits, see :ref:`project-config-require-peer-review`.
 
 After clicking on the **Submit** or **Schedule** button (depending on the option selected for publishing
 now or later), a notification email will be sent to the project's approvers. Notice also, that the
