@@ -8,7 +8,12 @@ Installation
 ============
 This section describes the various ways of installing CrafterCMS.
 
-First we'll take a look at the requirements and supported platform for installing and setting up CrafterCMS.
+CrafterCMS consists of the authoring and delivery systems. The authoring enables writing, managing, and publishing
+of all content, and delivery is what users will be accessing from their devices/browsers to view all the content that
+have been published. The installation steps for both the authoring and delivery is similar unless otherwise noted in
+the instructions below.
+
+First we'll take a look at the requirements and supported platforms for installing and setting up CrafterCMS.
 
 .. _requirements_supported_platforms:
 
