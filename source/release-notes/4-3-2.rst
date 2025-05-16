@@ -1,0 +1,43 @@
+.. index:: CrafterCMS 4.3.2 Release Notes
+
+----------------
+CrafterCMS 4.3.2
+----------------
+
+Released *TBD, 2025*
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-x>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install, please see :ref:`upgrading-craftercms`
+
+^^^^^^^^^^^^
+Enhancements
+^^^^^^^^^^^^
+* `Improved Docker images <https://github.com/craftercms/craftercms/issues/7913>`__
+
+* Requests with a site ID and preview token QSA now sets the site ID and preview token as cookies for the URL |br|
+
+
+^^^^^^^^^
+Bug Fixes
+^^^^^^^^^
+* `Fixed issue with docker compose deployments <https://github.com/craftercms/craftercms/issues/7939>`__
+
+^^^^^^^^^^^^^^^^^^
+Dependency Updates
+^^^^^^^^^^^^^^^^^^
+* Noteworthy dependency updates:
+
+  - GraphQL to version 23.0
+  - OpenSearch to version 2.19.2
+  - JSP to version 4.0.0
+
+For a complete list of community tickets, please visit: `GitHub 4.3.2 <https://github.com/orgs/craftercms/projects/28/views/1>`_
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+|hr|
+
