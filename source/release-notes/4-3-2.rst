@@ -36,6 +36,8 @@ Dependency Updates
   - GraphQL to version 23.0
   - OpenSearch to version 2.19.2
   - JSP to version 4.0.0
+  - Tomcat to version 10.1.41
+  - MariaDb4j to version 3.1.0.4
 
 For a complete list of community tickets, please visit: `GitHub 4.3.2 <https://github.com/orgs/craftercms/projects/28/views/1>`_
 
