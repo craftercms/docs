@@ -18,8 +18,9 @@ Enhancements
 ^^^^^^^^^^^^
 * `Improved Docker images <https://github.com/craftercms/craftercms/issues/7913>`__
 
-* Requests with the preview token query string argument (QSA) now sets the site ID and preview token as cookies in the URL.
-  This allows subsequent requests to automatically reuse the token and site context without needing to resend them in the URL. |br|
+* Requests with the preview token query string argument (QSA) now has the preview Engine set the site ID and preview
+  token as cookies in the URL. This allows subsequent requests to automatically reuse the token and site context
+  without needing to resend them in the URL. |br|
   For more information on configuring the behavior of the cookies, see :ref:`engine-preview-cookie`.
 
 ^^^^^^^^^
