@@ -3867,6 +3867,32 @@ Enabling the security filter in Preview Mode requires the configuration encrypti
 between Studio and Engine) and admins will need to update the default configurations for the encryption key and salt in
 :ref:`Studio <studio-cipher-configuration>` and in :ref:`Engine <engine-configuration-properties-encryption>`.
 
+.. _engine-preview-cookie:
+
+"""""""""""""""
+Preview Cookies
+"""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.3.2
+
+When a request is sent with a ``previewToken`` query string argument (QSA), the preview Engine stores both the
+``previewToken`` and the associated ``crafterSite`` (site ID) QSA values in cookies. This allows subsequent requests
+to automatically reuse the token and site context without needing to resend them in the URL.
+
+To configure the behavior of the cookies, edit the following in the ``server-config.properties`` file:
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+    # Path attribute for preview cookies
+    crafter.security.preview.cookie.path=/
+    # HttpOnly flag for preview cookies
+    crafter.security.preview.cookie.httpOnly=true
+    # SameSite attribute for preview cookies (Possible values: None, Lax, Strict)
+    # Note: SameSite=None requires HTTPS
+    crafter.security.preview.cookie.sameSite=Strict
+
 .. _engine-configuration-properties-encryption:
 
 """""""""""""""""""""""""""""""""""
