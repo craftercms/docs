@@ -16,7 +16,7 @@ Released *April 2, 2025*
 ^^^^^^^^^^^^
 New Features
 ^^^^^^^^^^^^
-* `Engine now has multiple caches <https://github.com/craftercms/craftercms/issues/7558>`__
+* `Engine now has multiple caches <https://github.com/craftercms/craftercms/issues/7860>`__
   See :ref:`engine-cache` for more information.
 
 ^^^^^^^^^^^^
