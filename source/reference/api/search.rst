@@ -8,19 +8,11 @@
 ======
 Search
 ======
-.. contents::
-    :local:
-
 ----------
 Search API
 ----------
 To perform content queries, you need to use the client provided by Crafter Engine; the bean name is
 ``searchClient`` and can be used in any Groovy script.
-
-.. Remove the following note in 4.3.0
-
-.. Note::
-    The old client ``searchService`` is now deprecated, and ``searchClient`` should be used.
 
 You can find the interface for this service :javadoc_base_url:`in the JavaDoc <search/org/craftercms/search/opensearch/client/OpenSearchClientWrapper.html>`.
 
@@ -44,7 +36,7 @@ To this end, indexing of documents in authoring and indexing of documents in del
 
 The default behavior when a document cannot be indexed is that the Deployer logs the error and moves on. :ref:`Processed commits <deployer-processed-commits>`
 files are updated, and the Deployer never revisits the indexing unless a future publish requires it to, or, a
-re-process API is called, such as the `deployTarget <../../_static/api/studio.html#tag/target/operation/deployTarget>`__ API
+re-process API is called, such as the :base_url:`deployTarget <_static/api/studio.html#tag/target/operation/deployTarget>` API
 
 If the deployment as a whole cannot be completed due to a catastrophic exception, then all content including documents
 will be re-processed until the deployment succeeds. By default the Git Diff process is configured to update the processed
@@ -383,7 +375,7 @@ Here's how the query will look like for the above image of a multi-index query f
 
 |
 
-See `here <../../_static/api/engine.html#tag/search/operation/search>`_ for more information on the Crafter Engine API ``search``.
+See :base_url:`here <_static/api/engine.html#tag/search/operation/search>` for more information on the Crafter Engine API ``search``.
 
 CrafterCMS supports the following search query parameters:
 

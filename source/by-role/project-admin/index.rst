@@ -9,10 +9,6 @@
 =============================
 Project (Site) Administration
 =============================
-.. contents::
-    :local:
-    :depth: 2
-
 This section details activities related to project administration in CrafterCMS. The content is oriented towards CrafterCMS administration primarily through Crafter Studio.
 
 Most configuration files can be accessed through Crafter Studio through the **Sidebar ->** |projectTools| **-> Configuration**. but can also be modified by accessing the configuration files directly. Please note that it is recommended that changes to configuration files be done through the Crafter Studio UI.
@@ -114,13 +110,13 @@ Here are the settings that can be configured through Crafter Studio:
       - - :ref:`Role Mappings Configuration <project-role-mappings>`
     * - Content Type Editor Config (``config/studio/administration/site-config-tools.xml``)
       - Defines controls, data sources, and content types for content authoring
-      - - :ref:`Content Type Editor Configuration <content-type-editor-config>`
+      - - :ref:`Content Type Editor Configuration <content-type-editor-configuration>`
     * - Configurations (``config/studio/administration/config-list.xml``)
       - Configure this list of configuration files
       - - :ref:`Configuring the Project Tools Configuration List <project-tools-configuration>`
     * - Dependency Resolver Configuration (``config/studio/dependency/resolver-config.xml``)
       - Configures the dependency resolver
-      - - :ref:`dependency-resolver-config`
+      - - :ref:`dependency-resolver-configuration`
     * - AWS Profiles (``config/studio/aws/aws.xml``)
       - Configures the project's AWS profiles
       - - :ref:`aws-profile-configuration`
@@ -187,7 +183,7 @@ Authentication with JWT
 """""""""""""""""""""""
 JWT authentication allows access to Studio APIs.
 
-See :ref:`JWT Authentication<access-tokens>` for more information on creating and using a token.
+See :ref:`JWT Authentication<jwt-authentication>` for more information on creating and using a token.
 
 """"""""""""""""""""""""""""""""""""
 Additional Authentication Mechanisms
@@ -303,6 +299,10 @@ See :ref:`here <use-s3-to-store-assets>` for more information
 ~~~
 Box
 ~~~
+.. version_tag::
+    :label: Until
+    :version: 4.2
+
 Box is a good option when you need to store media and documents that are quite large.
 See :ref:`here <box-asset-access>` for more information
 
@@ -320,7 +320,7 @@ Images
 ~~~~~~
 CrafterCMS supports automatic image processing that allows you to upload just one image that gets converted to the
 different sizes or formats required by your project for various display sizes.
-See :ref:`here <asset-processing-config>` for more information
+See :ref:`here <asset-processing-configuration>` for more information
 
 ~~~~~~~~~~~~~~~~~~~
 Video (transcoding)
@@ -334,7 +334,7 @@ Rich Text Editor (RTE)
 """"""""""""""""""""""
 The RTE (Rich Text Editor) provides an in-context editing experience from within a form
 (and through preview via the XB) that allows authors to arrange and style content without needing to know HTML
-For more information on configuring the RTE, see :ref:`here <rte-config>`
+For more information on configuring the RTE, see :ref:`here <rte-configuration>`
 
 ^^^^^^^
 Preview
@@ -351,6 +351,8 @@ Whenever a request is made by a client, the request gets sent to the proxy that 
 then performs the required transactions. Proxies forwards web requests, act as a firewall and web filter, provide
 shared network connections, and cache data to speed up common requests. It helps to simplify/control the
 complexity of the request, and can provide additional benefits such as load balancing, privacy or security.
+
+.. include:: /includes/proxy-note.rst
 
 See :ref:`here <using-the-proxy-configuration>` for an example of setting up the proxy for a React application
 
@@ -704,7 +706,7 @@ We have a monitor for content expiring tomorrow as shown above. We'll set one of
 
 |
 
-The monitoring process of Studio runs everyday at noon (based on the server time zone). To test right away if the monitors are working as expected, we can call the `monitorContent <../../_static/api/studio.html#tag/sites/operation/monitorContent>`__ API.
+The monitoring process of Studio runs everyday at noon (based on the server time zone). To test right away if the monitors are working as expected, we can call the :base_url:`monitorContent <_static/api/studio.html#tag/sites/operation/monitorContent>` API.
 
 Enter the following in your browser: ``http://localhost:8080/studio/api/1/services/api/1/site/monitor-content.json``
 

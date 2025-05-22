@@ -8,15 +8,16 @@
 ==============================
 Your First Project (templated)
 ==============================
-
 In this section, we will create a project using an out-of-the-box blueprint called "Website Editorial" and show you:
 
 - how to add a new page to your project,
 - how to update the contact section on the left-rail
 - how to edit a section in the project
 - how to publish the page we created above
+- how to view the published project via web browser (optional, if you installed the delivery system)
 
-It is assumed that you have followed the steps in the :ref:`Getting Started <getting-started>` to install CrafterCMS and login.
+It is assumed that you have followed the steps in the :ref:`Getting Started <getting-started>` to install CrafterCMS and
+login to the authoring system via Crafter Studio.
 
 Let's get started building your first editorial website!
 
@@ -189,7 +190,6 @@ You can also use the address bar at the top to search for pages that you'd like 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Updating the Contact Us Section in the Sidebar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Another thing that we may want to modify from the blueprint, is the left rail. For this example,
 we are going to modify the **Contact Us** section in the left rail (contact widget). To edit
 items in the left rail, toggle the ``Edit Mode`` switch on the top right of your screen to the
@@ -257,7 +257,6 @@ methods describe above. Modify the fields that you want to change.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Editing the Features Section
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 We will now edit the features section in our blueprint. The features in this section has been configured as components, as you will see in the images below. There are multiple ways of editing the features section in the blueprint.
 
 .. image:: /_static/images/first-project/first-project-add-features-drag-n-drop.webp
@@ -409,6 +408,7 @@ Your project is not yet published after creating the project from the Website_Ed
 |
 
    You will then be prompted whether you want to publish the page now (**Now**), or publish the page at a later date and time (**Later**).
+   If this is the first time your project is being published, the dialog will let you know that the entire project will be published.
 
 .. image:: /_static/images/first-project/first-project-publish-option.webp
    :width: 65 %
@@ -419,3 +419,30 @@ Your project is not yet published after creating the project from the Website_Ed
 
 For more information on content authoring, please see the documentation section: :ref:`Content Authoring <author>`
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Viewing Your Published Website (optional)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In this section, we'll talk about how to view your published website if you have installed CrafterCMS delivery.
+CrafterCMS delivery is what users will be accessing from their browsers to view all the content that have been published.
+
+First, we'll need to setup the project in delivery. You will need to run the ``init-site.sh`` script from the delivery
+instance. From your command line, navigate to your ``{Crafter-CMS-delivery-environment-directory}/bin/`` , and execute
+the init-site script.
+
+For example, assuming you installed your CrafterCMS via the binary downloads on your local computer:
+
+.. code-block:: sh
+
+    ./init-site my-awesome-editorial /absolute/path/to/authoring/published/repo
+
+For more information on setting up delivery, see :ref:`setup-project-for-delivery`.
+
+Once you've setup your project in delivery, to access your published project, open a browser and type in the URL of your
+project. For our example of CrafterCMS installed installed on your local computer, the URL is ``localhost:9080``.
+
+.. image:: /_static/images/first-project/first-project-published-page.webp
+   :width: 65 %
+   :align: center
+   :alt: Your First Website - Published!
+
+|

@@ -17,7 +17,7 @@ they need to install and maintain CrafterCMS.
     installation
     configuration
     security/index
-    performance-and-scaling/index
+    performance-and-scaling
     maintenance/index
     upgrade/index
     disaster-recovery

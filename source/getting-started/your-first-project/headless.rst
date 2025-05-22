@@ -158,9 +158,9 @@ For more information on content authoring, please see the documentation section:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Retrieving a Product from the Project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-We'll now try to retrieve a product from the project using one of the  content retrieval APIs available `here <../../_static/api/engine.html>`_.
+We'll now try to retrieve a product from the project using one of the  content retrieval APIs available :base_url:`here <_static/api/engine.html>`.
 
-For our example, let's say we're not sure of the urls for a certain product, so we'll use the `Get Children <../../_static/api/engine.html#tag/content/operation/getChildren>`_ to get a list of the products under ``/site/items/products``. Our project id is ``my-store``, which will be used by the ``crafterSite`` parameter to set a project value.
+For our example, let's say we're not sure of the urls for a certain product, so we'll use the :base_url:`Get Children <_static/api/engine.html#tag/content/operation/getChildren>` to get a list of the products under ``/site/items/products``. Our project id is ``my-store``, which will be used by the ``crafterSite`` parameter to set a project value.
 
 Here's the request that we'll be sending:
 
@@ -486,7 +486,7 @@ Here's how the response will look like:
      }
    ]
 
-To retrieve just one product, use `Get Item <../../_static/api/engine.html#tag/content/operation/getItem>`_ to get an item from the content store. Remember to set the ``crafterSite`` parameter when sending your request:
+To retrieve just one product, use :base_url:`Get Item <_static/api/engine.html#tag/content/operation/getItem>` to get an item from the content store. Remember to set the ``crafterSite`` parameter when sending your request:
 
 .. code-block:: text
    :caption: *Get Item request to get a product from the store*

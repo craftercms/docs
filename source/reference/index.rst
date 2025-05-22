@@ -10,10 +10,6 @@ Reference
 =========
 This section is a reference to the modules, APIs, complementary projects, and other detailed material.
 
-.. contents::
-    :local:
-    :depth: 1
-
 -------
 Modules
 -------
@@ -36,6 +32,8 @@ CrafterCMS comprises a set of modules that work together.
       - Engine provides content delivery services to power any type of Web or mobile application.
     * - :ref:`Deployer<crafter-deployer>`
       - The content deployment system which moves content from Studio to Engine and Search.
+    * - :ref:`Crafter CLI <crafter-cli>`
+      - Crafter CLI allows you to authenticate with CrafterCMS and exercise its APIs via a Unix, Mac, or Windows command line interface.
     * - :ref:`Profile<crafter-profile>`
       - Profile and attribute store
     * - :ref:`Social<crafter-Social>`
@@ -44,11 +42,13 @@ CrafterCMS comprises a set of modules that work together.
 .. toctree::
     :hidden:
 
-    modules/studio/index
-    modules/engine/index
-    modules/deployer/index
-    modules/profile/index
-    modules/social/index
+    modules/studio
+    modules/engine
+    modules/deployer
+    modules/crafter-cli
+    modules/profile
+    modules/social
+
 
 |hr|
 

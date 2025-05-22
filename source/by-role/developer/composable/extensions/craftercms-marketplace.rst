@@ -49,11 +49,11 @@ Types of extensions
 Submit an extension
 ^^^^^^^^^^^^^^^^^^^
 
-    .. note:: At this moment there is only one method for submitting plugins, but others will be added in the future
+.. note:: At this moment there is only one method for submitting plugins, but others will be added in the future
 
-
+""""""""""
 GitHub App
-^^^^^^^^^^
+""""""""""
 
 The Crafter Marketplace provides a very simple way of publishing plugins from a GitHub repository, once your extension
 is ready to be submitted you can follow these steps:

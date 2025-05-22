@@ -6,28 +6,31 @@
 ============
 Installation
 ============
-.. contents::
-    :local:
-    :depth: 2
-
 This section describes the various ways of installing CrafterCMS.
 
-First we'll take a look at the requirements and supported platform for installing and setting up CrafterCMS.
+CrafterCMS consists of the authoring and delivery systems. The authoring enables writing, managing, and publishing
+of all content, and delivery is what users will be accessing from their devices/browsers to view all the content that
+have been published. The installation steps for both the authoring and delivery is similar unless otherwise noted in
+the instructions below.
+
+First we'll take a look at the requirements and supported platforms for installing and setting up CrafterCMS.
 
 .. _requirements_supported_platforms:
 
 ------------
 Requirements
 ------------
+- Java 21
+- 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
+- Git 2.20.1 and later
+- Docker (if running in Docker or macOS)
 
-To run CrafterCMS, the following are required:
+Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic
+experiences. MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide external
+(non-author) user management and social features.
 
-    - Java 21
-    - 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
-    - Git 2.20.1 and later
-    - Docker (if running in Docker or MacOS)
-
-Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic experiences. MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide external (non-author) user management and social features.
+For more information on sizing your machines, see :ref:`authoring server requirements <authoring-server-requirements>`
+and :ref:`delivery server requirements <delivery-server-requirements>`
 
 ^^^^^^^^^^^^^^^^^^^
 Supported Platforms
@@ -85,40 +88,35 @@ To check the value set for JAVA_HOME, enter the following command at the command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 How to set the JAVA_HOME environment variable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**To set JAVA_HOME**
+.. tabs::
+    .. tab:: Korn and bash shells:
 
-- Korn and bash shells:
+        .. code-block:: bash
 
-  .. code-block:: bash
+            export JAVA_HOME=jdk-install-dir
+            export PATH=$JAVA_HOME/bin:$PATH
 
-      export JAVA_HOME=jdk-install-dir
-      export PATH=$JAVA_HOME/bin:$PATH
+    .. tab:: Bourne shell:
 
-  |
+        .. code-block:: sh
 
-- Bourne shell:
+            JAVA_HOME=jdk-install-dir
+            export JAVA_HOME
+            PATH=$JAVA_HOME/bin:$PATH
+            export PATH
 
-  .. code-block:: sh
+    .. tab:: C shell:
 
-      JAVA_HOME=jdk-install-dir
-      export JAVA_HOME
-      PATH=$JAVA_HOME/bin:$PATH
-      export PATH
+        .. code-block:: csh
 
-  |
+            setenv JAVA_HOME jdk-install-dir
+            export JAVA_HOME
+            PATH=$JAVA_HOME/bin:$PATH
+            export PATH
+            setenv PATH $JAVA_HOME/bin:$PATH
+            export PATH=$JAVA_HOME/bin:$PATH
 
-- C shell:
-
-  .. code-block:: csh
-
-     setenv JAVA_HOME jdk-install-dir
-     export JAVA_HOME
-     PATH=$JAVA_HOME/bin:$PATH
-     export PATH
-     setenv PATH $JAVA_HOME/bin:$PATH
-     export PATH=$JAVA_HOME/bin:$PATH
-
-  |
+|
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Browsers (Crafter Studio & Crafter Social/Profile Admin Consoles)
@@ -129,90 +127,137 @@ The following browsers are supported:
     - Firefox
     - MS Edge
 
+|
+
+|hr|
 
 ^^^^^^^^^^^^^
 Prerequisites
 ^^^^^^^^^^^^^
-""""""""""""""""""
-MacOS Prerequisite
-""""""""""""""""""
-For MacOS users, the following applies:
+.. tabs::
+    .. tab:: macOS
+        For macOS users, the following applies:
 
-#. The latest ``openssl`` formula needs to be installed via homebrew:
+        #. The latest ``openssl`` formula needs to be installed via homebrew:
 
-   .. code-block:: sh
+           .. code-block:: sh
 
-       brew install openssl
+               brew install openssl
 
-   |
+        #. Docker is used to run OpenSearch and needs to be installed.
+           Follow the instructions `here <https://docs.docker.com/install/>`__ to install Docker. |br| (macOS is not supported by
+           OpenSearch so Docker is used to run OpenSearch. See https://opensearch.org/docs/latest/install-and-configure/os-comp/
+           for more information.)
 
-#. Docker is used to run OpenSearch and needs to be installed. Follow the instructions `here <https://docs.docker.com/install/>`__ to install Docker.
+           When starting up CrafterCMS on macOS, the following message is displayed:
 
-""""""""""""""""""
-Linux Prerequisite
-""""""""""""""""""
-#. The library ``libaio`` is required by the Authoring install. Please note that some Linux distributions does not install the library ``libaio`` by default and so, may need to be installed. You may get the following error when starting up Studio:
+           .. code-block:: bash
 
-   **error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory**
+               Preflight check.
+               Operating system is Mac, must use Docker to run OpenSearch.
+               Running in this mode is for development purposes only.
 
-   To install ``libaio`` for Debian-based Linux distros: ``sudo apt install libaio1t64`` then ``sudo ln -sf /lib/x86_64-linux-gnu/libaio.so.1t64 /usr/lib/libaio.so.1``
+                ██████╗ ██████╗   █████╗  ███████╗ ████████╗ ███████╗ ██████╗   ██████╗ ███╗   ███╗ ███████╗
+               ██╔════╝ ██╔══██╗ ██╔══██╗ ██╔════╝ ╚══██╔══╝ ██╔════╝ ██╔══██╗ ██╔════╝ ████╗ ████║ ██╔════╝
+               ██║      ██████╔╝ ███████║ █████╗      ██║    █████╗   ██████╔╝ ██║      ██╔████╔██║ ███████╗
+               ██║      ██╔══██╗ ██╔══██║ ██╔══╝      ██║    ██╔══╝   ██╔══██╗ ██║      ██║╚██╔╝██║ ╚════██║
+               ╚██████╗ ██║  ██║ ██║  ██║ ██║         ██║    ███████╗ ██║  ██║ ╚██████╗ ██║ ╚═╝ ██║ ███████║
+                ╚═════╝ ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═╝         ╚═╝    ╚══════╝ ╚═╝  ╚═╝  ╚═════╝ ╚═╝     ╚═╝ ╚══════╝
 
-   To install ``libaio`` for RedHat-based Linux distros: ``yum install libaio``
+           |
 
-#. For Linux users, some of the scripts uses ``lsof``. Please note that some Linux distributions does not come with ``lsof`` pre-installed and so, may need to be installed.
+           Depending on the environment started, an ``authoring-search`` or ``delivery-search`` container using the OpenSearch
+           Docker image will be running. In the screenshot below, an authoring and delivery CrafterCMS environment is running:
 
-   To install ``lsof`` for Debian-based Linux distros: ``apt-get install lsof``
+           .. image:: /_static/images/system-admin/opensearch-docker-image-running-on-macos.webp
+               :width: 100 %
+               :align: center
+               :alt: OpenSearch Docker container started on CrafterCMS startup
 
-   To install ``lsof`` for RedHat-based Linux distros: ``yum install lsof``
+           .. warning::
+               By default, search indexes do not persist across restarts. If you want the OpenSearch indexes to persist
+               across restarts, you must use bind mounts with Docker volumes.
 
-#. The library ``libncurses5`` is required by the Authoring install due to the embedded MariaDB. You may get the following error when running an Authoring install or the restore script without the ``libncurses5`` library installed:
+               By default, the OpenSearch container created when starting CrafterCMS creates the bind mounts for you.
+               Your host ``CRAFTER_HOME/data/indexes`` directory is bind mounted to ``/usr/share/opensearch/data/`` of the
+               OpenSearch container. You'll just need to make sure that the directory ``CRAFTER_HOME/data/indexes`` on the host
+               is a shared drive in Docker's settings by clicking on Docker Desktop ``Settings`` -> ``Resources`` -> ``File Sharing``
 
-   .. code-block:: text
+               .. image:: /_static/images/developer/docker/docker-desktop-file-sharing.webp
+                   :alt: Docker Desktop - File Sharing
+                   :width: 85 %
+                   :align: center
 
-       error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory
+               |
 
-   To install the library ``libncurses5``, use the following commands:
+               If the directory ``CRAFTER_HOME/data/indexes`` is not under an already shared parent level in Docker Desktop, simply
+               input your path in ``Virtual file shares`` by clicking on ``Browse`` then navigate to the desired folder, then
+               click on the ``+`` button, and finally the ``Apply & restart`` button to add it.
 
-   **On Debian-based Linux distros:**
 
-   - For Ubuntu 24.04 and later versions, ``libncurses5`` was removed starting in version 24.04. To install ``libncurses5``,
-     we need to add the ``focal-security`` distribution main and universe repository to the sources list before installing.
-     This will bring the 22.04 APT repository to 24.04 and will then allow us to install ``libncurses5`` within the system.
+    .. tab:: Linux
+        #. The library ``libaio`` is required by the Authoring install. Please note that some Linux distributions does not install the library ``libaio`` by default and so, may need to be installed. You may get the following error when starting up Studio:
 
-     Before following the commands below, check if ``ubuntu-focal-sources.list`` exists under ``/etc/apt/sources.list.d``.
-     If the file does not exist, create the file first, then run the commands below to install ``libncurses5``
+           **error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory**
 
-     .. code-block:: bash
+           To install ``libaio`` for Debian-based Linux distros: ``sudo apt install libaio1t64`` then ``sudo ln -sf /lib/x86_64-linux-gnu/libaio.so.1t64 /usr/lib/libaio.so.1``
 
-         sudo sh -c 'echo "deb http://security.ubuntu.com/ubuntu focal-security main universe" >> /etc/apt/sources.list.d/ubuntu-focal-sources.list'
+           To install ``libaio`` for RedHat-based Linux distros: ``yum install libaio``
 
-         sudo apt update
+        #. For Linux users, some of the scripts uses ``lsof``. Please note that some Linux distributions does not come with ``lsof`` pre-installed and so, may need to be installed.
 
-         sudo apt install libncurses5
+           To install ``lsof`` for Debian-based Linux distros: ``apt-get install lsof``
 
-   - All other versions of Debian-based linux distro: ``sudo apt install libncurses5``
+           To install ``lsof`` for RedHat-based Linux distros: ``yum install lsof``
 
-   **On RHEL, CentOS:**
+        #. The library ``libncurses5`` is required by the Authoring install due to the embedded MariaDB. You may get the following error when running an Authoring install or the restore script without the ``libncurses5`` library installed:
 
-   - For versions 8 and later, the EPEL repository needs to be added in order to install the ``ncurses-compat-libs``.
-     To add the EPEL repository, do the following:
+           .. code-block:: text
 
-     - Enable the CodeReady Linux Builder repository |br|
-       CentOS: ``sudo dnf config-manager --set-enabled crb`` |br|
-       RHEL: ``sudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms``
-     - Next, install the EPEL RPM: ``sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm``
-     - Finally, we can now install ``ncurses-compat-libs``: ``sudo dnf install ncurses-compat-libs``
+               error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory
 
-   - All other versions of RHEL, CentOS: ``sudo yum install ncurses-compat-libs``
+           To install the library ``libncurses5``, use the following commands:
 
-   **On Fedora 22 and newer version:** ``sudo dnf install ncurses-compat-libs``
+           **On Debian-based Linux distros:**
 
-""""""""""""""""""""
-Windows Prerequisite
-""""""""""""""""""""
-For Windows users, WSL 2 needs to be installed. All CrafterCMS scripts/commands to be executed and items that needs to be downloaded and installed needs to be in WSL 2.
+           - For Ubuntu 24.04 and later versions, ``libncurses5`` was removed starting in version 24.04. To install ``libncurses5``,
+             we need to add the ``focal-security`` distribution main and universe repository to the sources list before installing.
+             This will bring the 22.04 APT repository to 24.04 and will then allow us to install ``libncurses5`` within the system.
 
-Follow the instructions `here <https://docs.microsoft.com/en-us/windows/wsl/install>`__ to install WSL 2.
+             Before following the commands below, check if ``ubuntu-focal-sources.list`` exists under ``/etc/apt/sources.list.d``.
+             If the file does not exist, create the file first, then run the commands below to install ``libncurses5``
+
+             .. code-block:: bash
+
+                 sudo sh -c 'echo "deb http://security.ubuntu.com/ubuntu focal-security main universe" >> /etc/apt/sources.list.d/ubuntu-focal-sources.list'
+
+                 sudo apt update
+
+                 sudo apt install libncurses5
+
+           - All other versions of Debian-based linux distro: ``sudo apt install libncurses5``
+
+           **On RHEL, CentOS:**
+
+           - For versions 8 and later, the EPEL repository needs to be added in order to install the ``ncurses-compat-libs``.
+             To add the EPEL repository, do the following:
+
+             - Enable the CodeReady Linux Builder repository |br|
+               CentOS: ``sudo dnf config-manager --set-enabled crb`` |br|
+               RHEL: ``sudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms``
+             - Next, install the EPEL RPM: ``sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm``
+             - Finally, we can now install ``ncurses-compat-libs``: ``sudo dnf install ncurses-compat-libs``
+
+           - All other versions of RHEL, CentOS: ``sudo yum install ncurses-compat-libs``
+
+           **On Fedora 22 and newer version:** ``sudo dnf install ncurses-compat-libs``
+
+    .. tab:: Windows
+        For Windows users, WSL 2 needs to be installed. All CrafterCMS scripts/commands to be executed and items that needs to be downloaded and installed needs to be in WSL 2.
+
+        Follow the instructions `here <https://docs.microsoft.com/en-us/windows/wsl/install>`__ to install WSL 2.
+
+|
 
 |hr|
 
@@ -247,7 +292,7 @@ Docker
 """"""""""""""""""""""""""""""""""""
 Quick Start for Evaluation in Docker
 """"""""""""""""""""""""""""""""""""
-For a quick start to evaluate CrafterCMS, you follow these simple instructions. If you have `Docker <https://www.docker.com/>`_ installed, you can get started with CrafterCMS in a few minutes. Simply run the following command:
+For a quick start to evaluate CrafterCMS, follow these simple instructions. If you have `Docker <https://www.docker.com/>`_ installed, you can get started with CrafterCMS in a few minutes. Simply run the following command:
 
 .. code-block:: bash
 
@@ -264,12 +309,14 @@ To run CrafterCMS in a set of Docker containers using Docker Compose, make sure 
 * Docker Compose (https://docs.docker.com/compose/install/)
 * Git 2.20.1 or later
 
-**For Windows and Mac, we recommend you give Docker Desktop at least 12GB of RAM (6GB of RAM per environment) and 4 CPUs. To do this, go to Docker Desktop's Preferences > Resources > Advanced, and then change the resource limits.**
+**For Windows and macOS, we recommend you give Docker Desktop at least 12GB of RAM (6GB of RAM per environment) and 4 CPUs. To do this, go to Docker Desktop's Preferences > Resources > Advanced, and then change the resource limits.**
 
 .. image:: /_static/images/quick-start/docker-advanced-settings.webp
     :alt: Docker Desktop Advanced Settings
     :width: 80%
     :align: center
+
+|
 
 #. Clone the CrafterCMS Docker Compose repo from GitHub
 
@@ -281,30 +328,77 @@ To run CrafterCMS in a set of Docker containers using Docker Compose, make sure 
 
 #. If you are a developer and want to use your local IDE and other tools, follow :ref:`this <local-dev-with-docker>` documentation to configure your docker container to support access to your projects via local IDE.
 
-#. Go into the authoring folder, then start the container by running ``docker-compose up``
+#. Go into the authoring folder, then start the container by running ``docker-compose up``. This starts the authoring
+   environment, which enables authoring, management, and publishing of all content.
 
    .. code-block:: bash
-      :caption: *Console output when starting the container*
+      :caption: *Console output when starting the authoring container*
       :emphasize-lines: 2
 
-          ➜  docker-compose git:(master) cd authoring
-          ➜  authoring git:(master) docker-compose up
-          [+] Running 9/9
-           ✔ Network authoring_default               Created                                                                                                                          0.1s
-           ✔ Volume "crafter_authoring_temp"         Created                                                                                                                          0.0s
-           ✔ Volume "crafter_authoring_data_search"  Created                                                                                                                          0.0s
-           ✔ Volume "crafter_authoring_logs_search"  Created                                                                                                                          0.0s
-           ✔ Volume "crafter_authoring_data"         Created                                                                                                                          0.0s
-           ✔ Volume "crafter_authoring_logs"         Created                                                                                                                          0.0s
-           ✔ Container authoring-search-1            Created                                                                                                                          0.1s
-           ✔ Container authoring-deployer-1          Created                                                                                                                          0.1s
-           ✔ Container authoring-tomcat-1            Created                                                                                                                          0.1s
-          Attaching to authoring-deployer-1, authoring-search-1, authoring-tomcat-1
-          ...
-          authoring-tomcat-1    | 11-Aug-2023 11:28:25.535 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
-          authoring-tomcat-1    | 11-Aug-2023 11:28:25.579 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [68028] milliseconds
+      ➜  docker-compose git:(master) cd authoring
+      ➜  authoring git:(master) docker-compose up
+      [+] Running 9/9
+      ✔ Network authoring_default               Created                                                        0.1s
+      ✔ Volume "crafter_authoring_temp"         Created                                                        0.0s
+      ✔ Volume "crafter_authoring_data_search"  Created                                                        0.0s
+      ✔ Volume "crafter_authoring_logs_search"  Created                                                        0.0s
+      ✔ Volume "crafter_authoring_data"         Created                                                        0.0s
+      ✔ Volume "crafter_authoring_logs"         Created                                                        0.0s
+      ✔ Container authoring-search-1            Created                                                        0.1s
+      ✔ Container authoring-deployer-1          Created                                                        0.1s
+      ✔ Container authoring-tomcat-1            Created                                                        0.1s
+      Attaching to deployer-1, search-1, tomcat-1
+      ...
+      tomcat-1    | 11-Aug-2024 11:28:25.535 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+      tomcat-1    | 11-Aug-2024 11:28:25.579 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [68028] milliseconds
 
-You may now login to Crafter Studio at ``http://localhost:8080/studio``. The default username is ``admin`` and the default password is ``admin``.
+   You may now login to Crafter Studio at ``http://localhost:8080/studio``. The default username is ``admin`` and the default password is ``admin``.
+
+If you want to view your published project, follow the instructions below to start CrafterCMS delivery and setup your
+project for delivery. CrafterCMS delivery is what users will be accessing from their browsers to view all the content
+that have been published. Remember to publish your project before setting up your project for delivery.
+
+#. Go into the delivery folder, then start the container by running ``docker-compose up``. This starts the delivery
+   environment, which is what users will be accessing from their browsers to view all the content that have been published.
+
+   .. code-block:: bash
+       :caption: *Console output when starting the delivery container*
+       :emphasize-lines: 2
+
+       ➜  docker-compose git:(master) cd delivery
+       ➜  delivery git:(master) docker-compose up
+       [+] Running 9/9
+       ✔ Network delivery_default               Created                                                        0.1s
+       ✔ Volume "crafter_delivery_temp"         Created                                                        0.0s
+       ✔ Volume "crafter_delivery_data_search"  Created                                                        0.0s
+       ✔ Volume "crafter_delivery_logs_search"  Created                                                        0.0s
+       ✔ Volume "crafter_delivery_data"         Created                                                        0.0s
+       ✔ Volume "crafter_delivery_logs"         Created                                                        0.0s
+       ✔ Container delivery-search-1            Created                                                        0.2s
+       ✔ Container delivery-deployer-1          Created                                                        0.1s
+       ✔ Container delivery-tomcat-1            Created                                                        0.3s
+       Attaching to deployer-1, search-1, tomcat-1
+       ...
+       tomcat-1    | 18-Apr-2025 21:39:29.709 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+       tomcat-1    | 18-Apr-2025 21:39:29.756 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [25618] milliseconds
+
+#. To view your published project, we'll first setup your project for delivery by running the init-site script. Go into
+   the scripts folder and run the ``init-site.sh`` script. Remember to replace <SITENAME> below with the actual project name.
+
+   .. code-block:: bash
+       :caption: *Setup Project for Delivery*
+
+       ➜  docker-compose git:(master) cd scripts
+       ➜  scripts git:(master) ./init-site.sh <SITENAME>
+       /path/to/docker-compose/delivery /path/to/docker-compose/scripts
+       Creating Deployer Target...
+       Target created successfully
+       /path/to/docker-compose/scripts
+
+   Once you've setup your project for delivery, to access your published project, open a browser and type in the URL of
+   your project, ``localhost:9080``.
+
+   For more information on setting up your project for delivery, see :ref:`setup-project-for-delivery`.
 
 The console output when you start the container (as shown above) contains useful information that you can use to debug or monitor the status of CrafterCMS. To view more of the logs, the Docker Desktop Dashboard provides a runtime view of all your containers and applications, including logs for monitoring/debugging CrafterCMS. To access the Docker Desktop Dashboard, from the **Docker menu**, select **Dashboard**.
 
@@ -594,7 +688,7 @@ If Authoring is running with the Git HTTPS server container:
 
 * Run ``kubectl exec -n craftercms -it delivery-0 --container deployer -- gosu crafter ./bin/init-site.sh -u crafter -p crafter SITE_NAME https://authoring-svc-headless/repos/sites/SITE_NAME/published``
 
-   .. code-block:: bash
+  .. code-block:: bash
 
       ➜ kubectl exec -n craftercms -it delivery-0 --container deployer -- gosu crafter ./bin/init-site.sh -u crafter -p crafter mysite https://authoring-svc-headless/repos/sites/mysite/published
       Creating Deployer Target...
@@ -603,7 +697,7 @@ If Authoring is running with the Git HTTPS server container:
       SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
       Target created successfully
 
-   .. important::
+  .. important::
       The example configuration files include the Git HTTPS credentials in plain text, for simplicity. If setting up Delivery in production, make sure to properly create the credentials as Secrets.
 
 After a minute or two, the Deployer should have pulled the project content from Authoring (you can check it by getting the Delivery Deployer log: ``kubectl logs -n craftercms -c deployer delivery-0``).
@@ -1021,6 +1115,8 @@ You can find the IP address and/or DNS name in several locations on your AWS adm
     :align: center
     :alt: CrafterCMS AWS AMI Delivery IP DNS
 
+.. _configure-crafter-engine-to-deliver-published-projects:
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Step 3: Configure Crafter Engine to deliver published projects
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1292,7 +1388,11 @@ Download the Bundle
 """""""""""""""""""
 Download CrafterCMS binary bundle from https://craftercms.com/download
 
-Select your operating system then click on the ``Download`` link next to ``Authoring`` or ``Delivery`` depending on your needs.  For the authoring, the file downloaded will be ``crafter-cms-authoring-*.tar.gz``  and ``crafter-cms-delivery*.tar.gz`` for delivery. The ``.tar.gz`` file will install a fully functional authoring/delivery instance. Out of the box, the authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set up for local development.
+Select your operating system then click on the ``Download`` link next to ``Authoring`` or ``Delivery`` depending on your
+needs.  For the authoring, the file downloaded will be ``crafter-cms-authoring-*.tar.gz``  and ``crafter-cms-delivery*.tar.gz``
+for delivery. The ``.tar.gz`` file will install a fully functional authoring/delivery instance. Out of the box, the
+authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set
+up for local development.
 
 """""""""""""""""""""""""""""""
 Extract the CrafterCMS binaries
@@ -1357,7 +1457,7 @@ To access Crafter Studio, In your browser, go to
   http://SERVER:PORT/studio
 
 .. note::
-    For local deployments, the URL is ``http://localhost:8000/studio``
+    For local deployments, the URL is ``http://localhost:8080/studio``
 
 * Login with the following:
 
@@ -1366,6 +1466,29 @@ To access Crafter Studio, In your browser, go to
 
 
 After logging in, you should be redirected to the ``Projects`` screen, and you're now ready to create your first experience!
+
+"""""""""""""""""""""""""""""""""""""""""
+Viewing Your Published Project (optional)
+"""""""""""""""""""""""""""""""""""""""""
+To view your published project, we'll need to start the CrafterCMS delivery instance and setup your project for delivery.
+CrafterCMS delivery is what users will be accessing from their browsers to view all the content that have been published.
+Remember to publish your project before setting up your project for delivery.
+
+To start your delivery instance, follow the instructions above for downloading the delivery bundle and starting the
+CrafterCMS delivery instance. Once delivery is running, we can now setup our published project in authoring for delivery.
+
+In your CrafterCMS delivery, go to the ``bin`` folder and run the ``init-site.sh`` script. Remember to replace <SITENAME>
+below with the actual published project name.
+
+.. code-block:: sh
+
+    cd CRAFTER_HOME/bin
+    ./init-site <SITE_NAME> /absolute/path/to/authoring/published/repo
+
+Once you've setup your project for delivery, to access your published project, open a browser and type in the URL of
+your project, for local deployments, the URL is ``localhost:9080``.
+
+For more information on setting up your project for delivery, see :ref:`setup-project-for-delivery`.
 
 |hr|
 

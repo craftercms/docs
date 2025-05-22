@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.3.0
+:last-updated: 4.3.2
 
 .. index:: Open Source Acknowledgements
 
@@ -108,8 +108,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `org.apache.groovy:groovy-all <https://mvnrepository.com/artifact/org.apache.groovy/groovy-all>`_
 |br|
-`org.apache.groovy:groovy-all <https://mvnrepository.com/artifact/org.apache.groovy/groovy-all>`_
-|br|
 `org.apache.httpcomponents.client5:httpclient5 <https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5>`_
 |br|
 `org.apache.ibatis:ibatis-sqlmap <https://mvnrepository.com/artifact/org.apache.ibatis/ibatis-sqlmap>`_
@@ -130,9 +128,9 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `org.apache.tika:tika-parsers-standard-package <https://mvnrepository.com/artifact/org.apache.tika/tika-parsers-standard-package>`_
 |br|
-`org.apache.tomcat.embed:tomcat-embed-websocket <https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-websocket>`_
-|br|
 `org.apache.tomcat:tomcat-jasper-el <https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper-el>`_
+|br|
+`org.apache.tomcat.embed:tomcat-embed-websocket <https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-websocket>`_
 |br|
 `org.aspectj:aspectjrt <https://mvnrepository.com/artifact/org.aspectj/aspectjrt>`_
 |br|
@@ -158,13 +156,13 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `org.eclipse.angus:angus-mail <https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail>`_
 |br|
+`org.eclipse.jgit:org.eclipse.jgit <https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit>`_
+|br|
 `org.eclipse.jgit:org.eclipse.jgit.archive <https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.archive>`_
 |br|
 `org.eclipse.jgit:org.eclipse.jgit.junit <https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.junit>`_
 |br|
 `org.eclipse.jgit:org.eclipse.jgit.ssh.apache <https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.ssh.apache>`_
-|br|
-`org.eclipse.jgit:org.eclipse.jgit <https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit>`_
 |br|
 `org.freemarker:freemarker <https://mvnrepository.com/artifact/org.freemarker/freemarker>`_
 |br|
@@ -218,26 +216,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `org.slf4j:slf4j-simple <https://mvnrepository.com/artifact/org.slf4j/slf4j-simple>`_
 |br|
-`org.springframework.boot:spring-boot-starter-log4j2 <https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2>`_
-|br|
-`org.springframework.boot:spring-boot-starter-test <https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test>`_
-|br|
-`org.springframework.boot:spring-boot-starter-web <https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web>`_
-|br|
-`org.springframework.data:spring-data-commons <https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons>`_
-|br|
-`org.springframework.ldap:spring-ldap-core <https://mvnrepository.com/artifact/org.springframework.ldap/spring-ldap-core>`_
-|br|
-`org.springframework.security:spring-security-config <https://mvnrepository.com/artifact/org.springframework.security/spring-security-config>`_
-|br|
-`org.springframework.security:spring-security-core <https://mvnrepository.com/artifact/org.springframework.security/spring-security-core>`_
-|br|
-`org.springframework.security:spring-security-ldap <https://mvnrepository.com/artifact/org.springframework.security/spring-security-ldap>`_
-|br|
-`org.springframework.security:spring-security-messaging <https://mvnrepository.com/artifact/org.springframework.security/spring-security-messaging>`_
-|br|
-`org.springframework.security:spring-security-web <https://mvnrepository.com/artifact/org.springframework.security/spring-security-web>`_
-|br|
 `org.springframework:spring-aop <https://mvnrepository.com/artifact/org.springframework/spring-aop>`_
 |br|
 `org.springframework:spring-beans <https://mvnrepository.com/artifact/org.springframework/spring-beans>`_
@@ -265,6 +243,26 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `org.springframework:spring-webmvc <https://mvnrepository.com/artifact/org.springframework/spring-webmvc>`_
 |br|
 `org.springframework:spring-websocket <https://mvnrepository.com/artifact/org.springframework/spring-websocket>`_
+|br|
+`org.springframework.boot:spring-boot-starter-log4j2 <https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2>`_
+|br|
+`org.springframework.boot:spring-boot-starter-test <https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test>`_
+|br|
+`org.springframework.boot:spring-boot-starter-web <https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web>`_
+|br|
+`org.springframework.data:spring-data-commons <https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons>`_
+|br|
+`org.springframework.ldap:spring-ldap-core <https://mvnrepository.com/artifact/org.springframework.ldap/spring-ldap-core>`_
+|br|
+`org.springframework.security:spring-security-config <https://mvnrepository.com/artifact/org.springframework.security/spring-security-config>`_
+|br|
+`org.springframework.security:spring-security-core <https://mvnrepository.com/artifact/org.springframework.security/spring-security-core>`_
+|br|
+`org.springframework.security:spring-security-ldap <https://mvnrepository.com/artifact/org.springframework.security/spring-security-ldap>`_
+|br|
+`org.springframework.security:spring-security-messaging <https://mvnrepository.com/artifact/org.springframework.security/spring-security-messaging>`_
+|br|
+`org.springframework.security:spring-security-web <https://mvnrepository.com/artifact/org.springframework.security/spring-security-web>`_
 |br|
 `org.testng:testng <https://mvnrepository.com/artifact/org.testng/testng>`_
 |br|

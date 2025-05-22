@@ -9,10 +9,6 @@
 =======
 Plugins
 =======
-.. contents::
-   :local:
-   :depth: 2
-
 -----------------
 What are plugins?
 -----------------
@@ -535,7 +531,8 @@ See :ref:`here <plugins-authoring-guides>` for examples of plugins auto-wired in
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Passing Parameters to Project via Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Some parameters may need to be passed to the project instead of left in the plugin, say, AWS credentials, Box credentials, CommerceTools credentials, etc. CrafterCMS supports passing parameters to projects from plugins.
+Some parameters may need to be passed to the project instead of left in the plugin, say, AWS credentials,
+CommerceTools credentials, etc. CrafterCMS supports passing parameters to projects from plugins.
 
 To add parameters to be passed to projects via a plugin, simply add the following to the ``craftercms-plugin.yaml`` file
 
@@ -889,12 +886,12 @@ Install a plugin from the Crafter Marketplace
 Once a plugin is published to the Crafter Marketplace it can be installed using the Crafter Studio user interface
 or the REST API:
 
-   .. note::
-      To access the Plugin Management tool or use the install plugin REST API your user needs to have the following
-      permissions:
+.. note::
+    To access the Plugin Management tool or use the install plugin REST API your user needs to have the following
+    permissions:
 
-      - ``list_plugins``
-      - ``install_plugins``
+    - ``list_plugins``
+    - ``install_plugins``
 
 
 For more information on installing plugins from the Crafter Marketplace using Crafter Studio, see :ref:`plugin-management`

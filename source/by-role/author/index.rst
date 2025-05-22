@@ -6,10 +6,6 @@
 ======
 Author
 ======
-.. contents::
-    :local:
-    :depth: 1
-
 Authors create, edit and submit content for experiences. CrafterCMS's Crafter Studio provides the author an easy to use
 authoring system for the development and optimization of content-rich experiences.
 
@@ -1251,36 +1247,36 @@ Here are some controls that authors may encounter while editing content:
 * Dropdowns - Allows the user to select an item from the list. When not selecting an item from the
   dropdown, the selected item is shown on the box.
 
-.. image:: /_static/images/page/form-control-dropdown-expand.webp
-   :width: 40 %
-   :align: center
-   :alt: Content Author - Form Control Dropdown Expanded
+  .. image:: /_static/images/page/form-control-dropdown-expand.webp
+     :width: 40 %
+     :align: center
+     :alt: Content Author - Form Control Dropdown Expanded
 
-.. image:: /_static/images/page/form-controls-dropdown.webp
-   :width: 40 %
-   :align: center
-   :alt: Content Author - Form Controls Dropdown
+  .. image:: /_static/images/page/form-controls-dropdown.webp
+     :width: 40 %
+     :align: center
+     :alt: Content Author - Form Controls Dropdown
 
-|
+  |
 
 * Text areas - Allows the user to enter text up to the character limit indicated at the bottom of the
   text area input box.
 
-.. image:: /_static/images/page/form-control-text-area.webp
-   :width: 50 %
-   :align: center
-   :alt: Content Author - Form Control Text Area
+  .. image:: /_static/images/page/form-control-text-area.webp
+     :width: 50 %
+     :align: center
+     :alt: Content Author - Form Control Text Area
 
-|
+  |
 
 * Checkbox - Allows the user to make a choice, depending on what was setup.
 
-.. image:: /_static/images/page/form-control-checkbox.webp
-   :width: 15 %
-   :align: center
-   :alt: Content Author - Form Control Checkbox
+  .. image:: /_static/images/page/form-control-checkbox.webp
+     :width: 15 %
+     :align: center
+     :alt: Content Author - Form Control Checkbox
 
-|
+  |
 
 * Group checkboxes - Allows users to select one or more items in a group
 * Input boxes - Simple text input control allows users to input text up to the character limit
@@ -1294,30 +1290,40 @@ Here are some controls that authors may encounter while editing content:
   clicking on **Add Another**. If there are two or more instances, "Move Up" and "Move Down" links
   will be available which will move the group up or down in relation to the other group instances.
 
-.. image:: /_static/images/page/form-controls.webp
-   :width: 45 %
-   :align: center
-   :alt: Content Author - Form Controls
+  .. image:: /_static/images/page/form-controls.webp
+     :width: 45 %
+     :align: center
+     :alt: Content Author - Form Controls
 
-|
+  |
 
-.. image:: /_static/images/page/form-controls-2.webp
-   :width: 45 %
-   :align: center
-   :alt: Content Author - Form Controls Repeating Group and RTE
+  .. image:: /_static/images/page/form-controls-2.webp
+     :width: 45 %
+     :align: center
+     :alt: Content Author - Form Controls Repeating Group and RTE
 
-|
+  |
 
 * Image pickers - Allows the user to select an image from whatever source is allowed, such as Upload
   Image or Existing Image (asset uploaded to the system). To select an image, click on **Add**
-  (when there's no image selected yet) or **Replace** to change the selected image
+  (when there's no image selected yet) or **Replace** to change the selected image.
 
-.. image:: /_static/images/page/form-control-image-picker.webp
-   :width: 50 %
-   :align: center
-   :alt: Content Author - Form Control Image Picker
+  .. image:: /_static/images/page/form-control-image-picker.webp
+     :width: 50 %
+     :align: center
+     :alt: Content Author - Form Control Image Picker
 
-|
+  |
+
+  A ``Crop Image`` dialog will appear when dimension requirements are set and the image selected is bigger than the
+  requirements. See :ref:`form-image` for more information on setting dimensions.
+
+  .. image:: /_static/images/page/crop-image-dialog.webp
+     :width: 50 %
+     :align: center
+     :alt: Content Author - Crop Image Dialog
+
+  |
 
 * Video pickers - Allows the user to select a video from whatever source is allowed, such as Upload Video (video to be uploaded) or Existing Video (asset uploaded to the system). To select a video, click on **Add** (when there's no video selected yet) or **Replace** to change the selected video.
 
@@ -1932,7 +1938,7 @@ submission, review/reject and approve and publish immediate / publish on a sched
 provided by default. Workflow options are available to specific content, such as pages or static assets,
 etc. The available workflow options for users depends on the Role the users are assigned with. As the
 content goes through the workflow options, notification emails are sent out to corresponding users based
-on the workflow option. To setup the email addresses, please see the section **Site Administrators**,
+on the workflow option. To setup the email addresses, please see the section **Project (Site) Administrators**,
 :ref:`notifications-configuration` and  :ref:`user-group-management`. Below is a diagram showing
 the default workflow steps.
 
@@ -1956,7 +1962,6 @@ is a sample dialog:
 """""""""""""""""""""""""""""""
 Submitting Content for Approval
 """""""""""""""""""""""""""""""
-
 After creating/editing content, a request to publish content can be done by clicking on **Publish**.
 A **Publish** submission can be initiated from a preview screen through the toolbar by clicking on
 the three dots next to the address bar or by clicking on the three dots next to the article in the
@@ -2006,7 +2011,7 @@ Initiate Publish by clicking on the three dots next to the content from the Side
 When sending the request for publish, you have the option of requesting to publish your content now,
 or to schedule publishing of your content at a later time and date.
 
-.. image:: /_static/images/page/page-workflows-request-publish-now.webp
+.. image:: /_static/images/page/page-workflows.webp
     :width: 65 %
     :align: center
     :alt: Workflow - Request publish now dialog
@@ -2030,8 +2035,8 @@ by checking the ``Request approval`` checkbox in the Publish dialog
 
 |
 
-To make approval mandatory for publish requests for users with publish permission,
-see :ref:`here <project-config-require-peer-review>`.
+To make approval mandatory for publish requests for users with publish permission, such that even if you are a publisher,
+you are not able to publish your own edits, see :ref:`project-config-require-peer-review`.
 
 After clicking on the **Submit** or **Schedule** button (depending on the option selected for publishing
 now or later), a notification email will be sent to the project's approvers. Notice also, that the

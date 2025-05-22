@@ -67,7 +67,7 @@ For delivery environments:
     }'
 
 .. note::
-  For a detailed list of parameters see `createTarget <../../../_static/api/deployer.html#tag/target/operation/createTarget>`_
+  For a detailed list of parameters see :base_url:`createTarget <_static/api/deployer.html#tag/target/operation/createTarget>`
 
 |
 
