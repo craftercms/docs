@@ -16,6 +16,10 @@ Released *TBD*
 ^^^^^^^^^^^^
 Enhancements
 ^^^^^^^^^^^^
+* `Git CLI is now always enabled in Studio <https://github.com/craftercms/craftercms/issues/7704>`__ |br|
+  The Git CLI enabled config has been removed from the Studio configuration file.
+  Crafter Studio now requires Git 2.20.1 and later installed.
+
 * `Improved Studio cluster sync failure notifications and monitoring <https://github.com/craftercms/craftercms/issues/7618>`__ |br|
 
 * `Improved Git clean up task <https://github.com/craftercms/craftercms/issues/7534>`__ |br|
