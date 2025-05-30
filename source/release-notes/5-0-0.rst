@@ -14,6 +14,11 @@ Released *TBD*
     For instructions on how to update your CrafterCMS install, please see :ref:`upgrading-craftercms`
 
 ^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+* **New publishing system**
+
+^^^^^^^^^^^^
 Enhancements
 ^^^^^^^^^^^^
 * `Git CLI is now always enabled in Studio <https://github.com/craftercms/craftercms/issues/7704>`__ |br|
@@ -25,6 +30,53 @@ Enhancements
 * `Improved Git clean up task <https://github.com/craftercms/craftercms/issues/7534>`__ |br|
 
 * `Groovy classes are now accessible to Content Type controllers <https://github.com/craftercms/craftercms/issues/6546>`__ |br|
+
+* `Improved notification message models <https://github.com/craftercms/craftercms/issues/7557>`__ |br|
+
+  - The following new variables are now used in the ``notification-config.xml`` notification configuration file:
+
+    - ``publishPackage``: PublishPackage object
+
+      .. raw:: html
+
+          <details>
+          <summary><a>PublishPackage object</a></summary>
+
+      .. code-block:: java
+
+          long id;
+          long siteId;
+          Site site;
+          String target;
+          Instant schedule;
+          ApprovalState approvalState;
+          long packageState;
+          int liveError;
+          int stagingError;
+          long submitterId;
+          String submitterComment;
+          Instant submittedOn;
+          Long reviewerId;
+          String reviewerComment;
+          Instant reviewedOn;
+          Instant publishedOn;
+          PackageType packageType;
+          String commitId;
+          String publishedStagingCommitId;
+          String publishedLiveCommitId;
+
+      .. raw:: html
+
+          </details>
+
+    - ``reviewer``: the reviewer user |br|
+      The ``reviewer`` user replaces the ``approver`` and ``userThatRejects`` users in your notification configuration files
+
+  - The maximum number of items to include in the workflow notification messages can now be configured via the property
+    ``studio.workflow.notification.maxItemCount``.
+
+  See the :ref:`notifications-configuration` for more information
+
 
 ^^^^^^^^^
 Bug Fixes
