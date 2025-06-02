@@ -2874,7 +2874,7 @@ All configuration for the notification system is done by a site admin (on a per 
 Where
 '''''
 .. code-block:: xml
-    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notifications.xml*
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notification-config.xml*
 
     <notificationConfig>
         ...
@@ -2952,7 +2952,7 @@ Configure Who Gets Notifications
 Configure who gets notifications by entering the email addresses of the people you want to send notifications to, in between the tags ``<deploymentFailureNotification>`` and/or ``<approverEmails>``
 
 .. code-block:: xml
-    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notifications.xml*
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notification-config.xml*
     :linenos:
 
     <notificationConfig>
@@ -2975,7 +2975,7 @@ Configure Studio Workflow Dialog Messages
 Below is a sample of Studio workflow dialog messages defined in our notifications configuration file.
 
 .. code-block:: xml
-    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notifications.xml*
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notification-config.xml*
     :linenos:
 
         <notificationConfig>
@@ -3014,10 +3014,16 @@ Below is a sample of Studio workflow dialog messages defined in our notification
 ~~~~~~~~~~~~~~~~~~~
 Configure Templates
 ~~~~~~~~~~~~~~~~~~~
-Below is an example of a configured email messages for each point in the workflow, found in between the tag <emailTemplates> in the notifications configuration file.
+Below is an example of a configured email messages for each point in the workflow, found in between the tag
+``<emailTemplates>`` in the notifications configuration file.
+
+.. raw:: html
+
+    <details>
+    <summary><a>Configured email messages in the notifications configuration file</a></summary>
 
 .. code-block:: xml
-    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notifications.xml*
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notification-config.xml*
     :linenos:
 
     <notificationConfig>
@@ -3036,15 +3042,15 @@ Below is an example of a configured email messages for each point in the workflo
                           The following content was unable to deploy:
                           <ul>
                             <#list files as file>
-                              <li>${file.internalName!file.name}</li>
+                              <li>${file.action}: ${file.path} from package ${file.packageId}.
+                              <#if file.liveError != 0>Live error: ${file.liveError?c}</#if><#if file.stagingError != 0>Stage error: ${file.stagingError?c}</#if></li>
                             </#list>
                           </ul>
-                          Error:<br/>
-                          ${deploymentError.toString()}
+                          <#if deploymentError?has_content>
+                            Error:<br/>
+                            <pre>${deploymentError}</pre>
+                          </#if>
                           <br/><br/>
-                          <a href="${liveUrl}" >
-                            <img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" />
-                          </a>
                         </p>
                       </body>
                     </html>
@@ -3052,7 +3058,7 @@ Below is an example of a configured email messages for each point in the workflo
           </emailTemplate>
 
           <emailTemplate key="contentApproval">
-            <subject><![CDATA[<#if scheduleDate??>Content Scheduled <#else>Content Approved</#if>]]></subject>
+            <subject><![CDATA[<#if publishPackage.schedule??>Content Scheduled <#else>Content Approved</#if>]]></subject>
             <!-- Timezone can/is being overwritten in the following template -->
             <body><![CDATA[
                      <#setting time_zone='EST'>
@@ -3062,29 +3068,37 @@ Below is an example of a configured email messages for each point in the workflo
                        </head>
                        <body style=" font-size: 12pt;">
                          <p>
-                           <#if scheduleDate??>
-                             The following content has been scheduled for publishing on ${scheduleDate?string["MMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
+                           <#if publishPackage.packageType == 'INITIAL_PUBLISH'>
+                             ${reviewer.first_name!submitter.username} ${reviewer.last_name} has approved your initial publish request.
+                           <#elseif publishPackage.packageType == 'PUBLISH_ALL'>
+                             ${reviewer.first_name!submitter.username} ${reviewer.last_name} has approved your publish all request.
                            <#else>
                              The following content has been reviewed and approved by ${approver.firstName!approver.username} ${approver.lastName!""}:
                            </#if>
                            <ul>
                              <#list files as file>
-                               <#if file.page>
-                                 <a href="${liveUrl}/${file.browserUri!""}">
-                               </#if>
-                               <li>${file.internalName!file.name}</li>
+                               <li>
+                                 <#if file.page>
+                                   <a href="${liveUrl}/${file.browserUri!""}">
+                                 </#if>
+                                 ${file.internalName!file.name}
                                  <#if file.page>
                                    </a>
                                  </#if>
+                               </li>
                              </#list>
                            </ul><br/>
+                           Site: ${siteName}
+                           <br />
                            <#if scheduleDate??>
-                             <a href="${liveUrl}">Click Here to View Your Published Content</a>
-                             <br/>
+                             Scheduled date: ${publishPackage.schedule?datetime.iso?string["MMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
+                             <br />
                            </#if>
-                           <a href="${authoringUrl}/site-dashboard" >
-                             <img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" />
-                           </a>
+                           Target: ${publishPackage.target}
+                           <br/>
+                           Reviewer comment:<br/>
+                           ${publishPackage.reviewerComment!""}
+                           <br/>
                          </p>
                        </body>
                      </html>
@@ -3101,28 +3115,44 @@ Below is an example of a configured email messages for each point in the workflo
                        </head>
                        <body style=" font-size: 12pt">
                          <p>
-                           ${submitter.firstName!submitter.username} ${submitter.lastName} has submitted items for your review:
-                           <ul>
-                             <#list files as file>
-                               <#if file.page>
-                                 <a href="${authoringUrl}/preview/#/?page=${file.browserUri!""}&site=${siteName}">
-                               </#if>
-                               <li>${file.internalName!file.name}</li>
-                               <#if file.page>
-   	                             </a>
-                               </#if>
-                             </#list>
-                           </ul>
-                           <#if submissionComments?has_content>
+                           <#if publishPackage.packageType == 'PUBLISH_ALL'>
+                             ${submitter.first_name!submitter.username} ${submitter.last_name} has submitted a 'publish all' request for your review.
+                           <#elseif publishPackage.packageType == 'INITIAL_PUBLISH'>
+                             ${submitter.first_name!submitter.username} ${submitter.last_name} has submitted an 'initial publish' request for your review.
+                           <#else>
+                             ${submitter.first_name!submitter.username} ${submitter.last_name} has submitted items for your review:
+                           </#if>
+                           <#if files?? &amp;&amp; files?size gt 0>
+                             <ul>
+                               <#list files as file>
+                                 <li>
+                                   <#if file.page>
+                                     <a href="${authoringUrl}/studio/preview/#/?page=${file.browserUri!""}&site=${siteName}">
+                                   </#if>
+                                   ${file.internalName!file.name}
+                                   <#if file.page>
+                                     </a>
+                                   </#if>
+                                 </li>
+                               </#list>
+                             </ul>
+                           </#if>
+                           <br />
+                           Site: ${siteName}
+                           <br />
+                           <#if publishPackage.submitterComment?has_content>
                              Comments:<br/>
-                             ${submissionComments!""}
+                             ${publishPackage.submitterComment!""}
                              <br/>
-                           </#if><br/>
-                           <a href="${previewUrl}/site-dashboard">Click Here to View Content Waiting for Approval</a>
+                           </#if>
+                           <#if publishPackage.schedule??>
+                             Scheduled date: ${publishPackage.schedule?datetime.iso?string["MMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
+                             <br/>
+                           </#if>
+                           Target: ${publishPackage.target}
+                           <br/>
+                           <a href="${authoringUrl}/studio/site-dashboard">Click Here to View Content Waiting for Approval</a>
                            <br/><br/>
-                           <a href="${liveUrl}" >
-                             <img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" />
-                           </a>
                          </p>
                        </body>
                      </html>
@@ -3139,24 +3169,40 @@ Below is an example of a configured email messages for each point in the workflo
                        </head>
                        <body style=" font-size: 12pt;">
                          <p>
-                           The following content has been reviewed and requires some revision before it can be approved:
-                           <ul>
-                             <#list files as file>
-                               <#if file.page>
-                                 <a href="${authoringUrl}/preview/#/?page=${file.browserUri!""}&site=${siteName}">
-                               </#if>
-                               <li>${file.internalName!file.name}</li>
-                               <#if file.page>
-                                 </a>
-                               </#if>
-                             </#list>
-                           </ul>
+                           <#if publishPackage.packageType == 'INITIAL_PUBLISH'>
+                             ${reviewer.first_name!submitter.username} ${reviewer.last_name} has reviewed your initial publish request and it requires some revision before it can be approved:
+                           <#elseif publishPackage.packageType == 'PUBLISH_ALL'>
+                             ${reviewer.first_name!submitter.username} ${reviewer.last_name} has reviewed your publish all request and it requires some revision before it can be approved:
+                           <#else>
+                             ${reviewer.first_name!submitter.username} ${reviewer.last_name} has reviewed the following content that requires some revision before it can be approved:
+                           </#if>
+                           <#if files?? &amp;&amp; files?size gt 0>
+                             <ul>
+                               <#list files as file>
+                                 <li>
+                                   <#if file.page>
+                                     <a href="${authoringUrl}/studio/preview/#/?page=${file.browserUri!""}&site=${siteName}">
+                                   </#if>
+                                   ${file.internalName!file.name}
+                                   <#if file.page>
+                                     </a>
+                                   </#if>
+                                 </li>
+                               </#list>
+                             </ul>
+                           </#if>
+                           <br />
+                           Site: ${siteName}
+                           <br />
+                           <#if publishPackage.schedule??>
+                             Scheduled date: ${publishPackage.schedule?datetime.iso?string["MMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
+                             <br/>
+                           </#if>
+                           Target: ${publishPackage.target}
+                           <br/>
                            Reason:<br/>
-                           ${rejectionReason!""}
-                           <br/><br/>
-                           <a href="${authoringUrl}/site-dashboard" >
-                             <img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" />
-                           </a>
+                           ${publishPackage.reviewerComment!""}
+                           <br/>
                          </p>
                        </body>
                      </html>
@@ -3165,6 +3211,10 @@ Below is an example of a configured email messages for each point in the workflo
         </emailTemplates>
       </lang>
     </notificationConfig>
+
+.. raw:: html
+
+    </details>
 
 |hr|
 
