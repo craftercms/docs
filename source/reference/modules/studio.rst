@@ -97,8 +97,10 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure capabilities for CloudFormation stack
     * - :ref:`Validations Regex <studio-validations-regex>`
       - Configure the regex used for validating various inputs
+    * - :ref:`Notification Service Configuration <notification-service-configuration>`
+      - Configure the notification service for workflow
     * - :ref:`Workflow Notification Configuration <notifications-configuration>`
-      - Configure the workflow notifications
+      - Configure the HTML notifications sent at each point in the workflow
     * - :ref:`Commit Message <studio-commit-message>`
       - Configure the commit messages used by Crafter Studio
     * - :ref:`Audit Log <studio-audit-log>`
@@ -3255,6 +3257,59 @@ The following section of Studio's configuration overrides allows you to configur
     # studio.validation.regex.CONFIGURATION_PATH: "^([a-z0-9\\-_/]+([.]*[a-z0-9\\-_])+)*(\\.[\w]+)?/?$"
 
 |
+
+|hr|
+
+.. _notification-service-configuration:
+
+""""""""""""""""""""""""""""""""""
+Notification Service Configuration
+""""""""""""""""""""""""""""""""""
+CrafterCMS can send out notification emails on each point of the workflow.
+The following allows you to configure the notification service:
+
+.. list-table:: Notification Service Properties
+    :header-rows: 1
+
+    * - Property
+      - Description
+    * - studio.workflow.notification.maxItemCount
+
+        .. version_tag::
+            :label: Since
+            :version: 5.0.0
+
+      - The maximum number of items included in the notification messages
+
+    * - studio.workflow.notification.enabled
+      - Enables/disables notification messages on workflow events
+    * - studio.notification.configurationFile
+      - The location of the workflow notifications configuration file
+    * - studio.notification.timezone
+      - The timezone used in the notification emails
+
+|
+
+The notification service properties listed above can be customized by overriding them using one of the override
+files. Here are the default values configured:
+
+.. code-block:: yaml
+
+    ##############################################################
+    ##                   Notification Service                   ##
+    ##############################################################
+    # Maximum number of items to include in the workflow notification messages
+    studio.workflow.notification.maxItemCount: 10
+    # Enable/disable notification messages on workflow events
+    studio.workflow.notification.enabled: true
+    # Path where the notification configuration is located
+    studio.notification.configurationFile: workflow/notification-config.xml
+    # Timezone for the email template engine (which determines how FreeMarker interprets `now` etc.)
+    studio.notification.timezone: UTC
+
+To learn more on configuring the workflow notification emails being sent, see
+:ref:`Workflow Notification Configuration <notifications-configuration>`.
+
 
 |hr|
 
