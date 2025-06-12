@@ -23,6 +23,38 @@ before upgrading. Please review the following and apply changes as required:
 
 |hr|
 
+.. _breaking-changes-in-craftercms-4-4-0:
+
+------------------------------------
+Breaking Changes in CrafterCMS 4.4.0
+------------------------------------
+Spring Boot 3.5 has updated the profile naming rules. Only dash( `-` ), underscore( `_` ), letters and digits are allowed now.
+We are updating spring profile names across CrafterCMS to comply with the new rules. So far only Deployer
+(the one using spring boot) would be affected. However, for consistency, we are updating all profiles even if not
+related to the Deployer
+
+Here's the list of updated spring profile names:
+
+.. list-table::
+    :header-rows: 1
+
+    * - Old Profile Name
+      - New Profile Name
+    * - crafter.studio.dbClusterPrimaryReplica
+      - crafter_studio_dbClusterPrimaryReplica
+    * - crafter.studio.externalDb
+      - crafter_studio_externalDb
+    * - crafter.studio.samlSecurity
+      - crafter_studio_samlSecurity
+    * - crafter.engine.samlSecurity
+      - crafter_engine_samlSecurity
+
+If you are using any of the old profile names listed above, admins will need to update the configuration overrides
+to use the new profile names. These are usually configured in the ``crafter-setenv.sh`` file located under the
+``CRAFTER_HOME/bin/`` folder.
+
+|hr|
+
 ------------------------------------
 Breaking Changes in CrafterCMS 4.3.0
 ------------------------------------

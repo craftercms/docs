@@ -30,6 +30,8 @@ Dependency Updates
 
   - Tomcat to version 11.0.8
   - Spring Security to version 6.5.0
+  - Spring Boot to version 3.5.0 |br|
+    Please see :ref:`breaking-changes-in-craftercms-4-4-0` for breaking changes related to Spring Boot version 3.5.0
   - Apache HttpClient to version 5.5
   - Jakarta Server Pages API to version 4.0.0
   - Tika to version 3.2.0
