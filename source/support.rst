@@ -22,13 +22,13 @@ What's Supported?
       - Latest
 
     * - 4.4
-      - June TBD, 2025
+      - June 13, 2025
       - :green:`Active`
       - :green:`Active`
-      - 4.4.0 (June TBD, 2025)
+      - 4.4.0 (June 13, 2025)
     * - 4.3
       - February 21, 2025
-      - :maroon:`Ended on June TBD,2025`
+      - :maroon:`Ended on June 13, 2025`
       - :orange:`December 31, 2025`
       - 4.3.2 (May 20, 2025)
     * - 4.2
