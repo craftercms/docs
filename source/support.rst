@@ -21,6 +21,11 @@ What's Supported?
       - Commercial Support
       - Latest
 
+    * - 5.0
+      - TBD
+      - :green:`Active`
+      - :green:`Active`
+      - 5.0.0 (TBD)
     * - 4.4
       - June 13, 2025
       - :green:`Active`
