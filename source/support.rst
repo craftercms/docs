@@ -15,13 +15,13 @@ What's Supported?
 .. list-table::
     :header-rows: 1
 
-    * - Release
+    * - Version
       - Released
       - Open Source Support
       - Commercial Support
       - Latest
 
-    * - 4.4
+    * - `4.4 <https://craftercms.com/download>`__
       - June 13, 2025
       - :green:`Active`
       - :green:`Active`

@@ -6,8 +6,8 @@
 =============
 Release Notes
 =============
-This section contains release notes for CrafterCMS 4. For other release notes, please visit your
-release's release notes page :ref:`below <other-release-notes>`
+This section contains release notes for CrafterCMS version 4. For other version release notes, please visit your
+version release's release notes page :ref:`below <other-release-notes>`
 
 .. note:: CrafterCMS requires Java 21
 
