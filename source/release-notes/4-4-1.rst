@@ -27,7 +27,7 @@ Dependency Updates
 ^^^^^^^^^^^^^^^^^^
 * Noteworthy dependency updates:
 
-  - Apache Commons FileUpload Core to version 2.0.0-M4
+  - Apache Commons FileUpload Jakarta Servlet 6 to version 2.0.0-M4
 
 For a complete list of community tickets, please visit: `GitHub 4.4.1 <https://github.com/orgs/craftercms/projects/30/views/1>`_
 
