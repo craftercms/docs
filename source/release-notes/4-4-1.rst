@@ -4,7 +4,7 @@
 CrafterCMS Version 4.4.1
 ------------------------
 
-Released *June TBD, 2025*
+Released *June 19, 2025*
 
 This release includes fixes for issues with the release version 4.4.0
 
