@@ -1318,3 +1318,32 @@ body[data-theme="dark"] #google_translate_element .skiptranslate .goog-te-combo:
 	}
 }
 /* endregion */
+
+.bottom-of-page {
+	flex-wrap: wrap;
+}
+
+.bottom-of-page .product-links-container, .bottom-of-page .left-details {
+	flex: 1 1 100%;
+	text-align: center;
+}
+
+.product-links {
+	margin: 15px 0 20px;
+	display: flex;
+	justify-content: center;
+	column-gap: 20px;
+	font-size: 16px
+}
+
+.product-links a {
+	text-decoration: none;
+}
+
+.product-links a:visited {
+	color: var(--blue-tint);
+}
+
+.product-links a:visited:hover {
+	color: var(--blue-main);
+}
