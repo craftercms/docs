@@ -153,7 +153,25 @@ html_favicon = "_static/images/favicon.ico"
 # Add versions for the bottom menu
 html_context = {
     'versions': ['current', '4.1', '4.0', '3.1'],
-    'docsUrl': '/docs'
+    'docsUrl': '/docs',
+    'productLinks': [
+			{
+				'label': 'Main Site',
+				'url': 'https://craftercms.com/'
+			},
+			{
+				'label': 'Blog',
+				'url': 'https://craftercms.com/blog'
+			},
+			{
+				'label': 'Crafter Cloud',
+				'url': 'https://craftercms.com/products/crafter-cloud'
+			},
+			{
+				'label': 'Contact',
+				'url': 'https://craftercms.com/about/contact'
+			}
+		]
 }
 
 # -- Options for LaTeX output ------------------------------------------------
