@@ -1236,6 +1236,12 @@ body[data-theme="dark"] button[data-bs-toggle="modal"] {
 	flex-wrap: wrap;
 }
 
+@media (max-width: 46em) {
+	.bottom-of-page {
+		flex-direction: row;
+	}
+}
+
 .bottom-of-page .product-links-container, .bottom-of-page .left-details {
 	flex: 1 1 100%;
 	text-align: center;
@@ -1246,7 +1252,8 @@ body[data-theme="dark"] button[data-bs-toggle="modal"] {
 	display: flex;
 	justify-content: center;
 	column-gap: 20px;
-	font-size: 16px
+	font-size: 16px;
+	flex-wrap: wrap;
 }
 
 .product-links a {
