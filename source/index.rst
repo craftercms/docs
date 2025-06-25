@@ -49,7 +49,7 @@ Who uses CrafterCMS
 CrafterCMS is used by three main constituencies:
 
 * Developers who build applications using CrafterCMS.
-* Authors who create, manage and publish content using CrafterCMS
+* Authors who create, manage and publish content using CrafterCMS.
 * DevOps who deploy and manage CrafterCMS.
 
 .. toctree::
