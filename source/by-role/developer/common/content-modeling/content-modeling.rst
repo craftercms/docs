@@ -951,6 +951,8 @@ put a check next to ``Feature``, the data source we set up earlier. Save your ch
    :width: 70%
    :align: center
 
+|
+
 We'll now use the control and data source we set up and see how the ``{parentPath}`` macro works. Recall that we setup
 the data source ``Repository Path`` to ``/site/components/{parentPath}``. From the project preview, edit one of the articles,
 say the article ``Men Styles For Winter`` under ``/articles/2021/1/men-styles-for-winter``. Scroll down to the ``Content``
@@ -963,6 +965,8 @@ created component is now stored in the ``/site/components/articles/2021/1/men-st
    :width: 90%
    :align: center
 
+|
+
 **Data Sources macro: parentPath[index]**
 
 The ``parentPath[index]`` macro provides resolution support for sub elements of a parent path in Crafter Studio.
@@ -974,12 +978,15 @@ If the parentPath is ``/en/mypage``, then to get the sub element ``en``, use **0
 
 If the parentPath is ``/products/household/cleaning`` then to get  the sub  element ``household``, use **1** as the index in the macro like so ``{parentpath[1]}``
 
+|
+
 .. note::
-      For both the ``parentPath`` and ``parentPath[index]`` macros, the path starts **without** ``/site/website`` and ``/site/components``.
+      - For both the ``parentPath`` and ``parentPath[index]`` macros, the path starts **without** ``/site/website`` and ``/site/components``.
 
-      For example, if in the repository the parent is a page, and the page URL in the repository is ``/site/website/en/about-us/index.xml``, then the parentPath is ``/en/about-us/index.xml``.
+        For example, if in the repository the parent is a page, and the page URL in the repository is ``/site/website/en/about-us/index.xml``, then the parentPath is ``/en/about-us/index.xml``.
 
-      If in the repository the parent is a component, and the component URL in the repository is ``/site/components/en/products/myproduct.xml``, then the  parentPath is ``/en/products/myproduct.xml``.
+        If in the repository the parent is a component, and the component URL in the repository is ``/site/components/en/products/myproduct.xml``, then the  parentPath is ``/en/products/myproduct.xml``.
+      - Embedded components (and nested embedded components) use the parent path of the top-level (non-embedded) item.
 
 |
 
