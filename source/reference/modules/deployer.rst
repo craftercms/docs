@@ -307,9 +307,17 @@ In this section, we will highlight some of the more commonly used properties in 
       - Purpose
     * - :ref:`deployer-thread-pool-size`
       - Allows you to configure the deployment pool |br|
+    * - :ref:`deployer-deployment-supervisor`
+
+        .. version_tag::
+            :label: Since
+            :version: 4.4.2
+
+      - Allows you to enable and configure the deployment supervisor |br|
 
 The properties listed above are configured in ``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml``.
 
+|
 
 .. list-table:: Common Target Configuration Properties
     :header-rows: 1
@@ -328,6 +336,13 @@ The properties listed above are configured in ``CRAFTER_HOME/bin/crafter-deploye
       - Allows you to configure metadata path patterns used for document indexing
     * - :ref:`deployer-notification-templates-override-location`
       - Allows you to configure override locations for notification templates
+    * - :ref:`deployer-target-runtime-threshold`
+
+        .. version_tag::
+            :label: Since
+            :version: 4.4.2
+
+      - Allows you to configure the target runtime threshold used by the deployment supervisor |br|
 
 The target properties listed above may be configured in the following locations:
 
@@ -698,6 +713,43 @@ Here's a sample *application.yaml* file with the deployment pool and task thread
    </details>
 
 |
+
+.. _deployer-deployment-supervisor:
+
+"""""""""""""""""""""
+Deployment Supervisor
+"""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.4.2
+
+The deployment supervisor when enabled and configured monitors deployment time and sends out a notification if
+the deployment time exceeds the configured threshold.
+
+Below is a sample configuration for the deployment supervisor:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml - Deployment Supervisor Configuration*
+    :linenos:
+    :emphasize-lines: 4-7
+
+    deployer:
+      main:
+        deployments:
+          # Configuration for the deployment supervisor
+          supervisor:
+              enabled: true
+              cron: '0 */10 * * * ?'
+
+where:
+
+- ``deployer.main.deployments.supervisor.enable`` - Indicates if the deployment supervisor is running
+- ``deployer.main.deployments.supervisor.cron`` - The cron expression for scheduling how often the deployment supervisor
+  checks the deployment run time against the threshold. The default is 10 minutes.
+
+The deployment supervisor runs as a cron job that wakes up every X minutes (10 minutes by default, configured via
+``deployer.main.deployments.supervisor.cron``) and if a deployment has been running longer than the configured run time
+warning threshold, it will send out the configured notification.
 
 .. _deployer-notification-templates-override-location:
 
