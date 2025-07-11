@@ -25,7 +25,7 @@ What's Supported?
       - June 13, 2025
       - :green:`Active`
       - :green:`Active`
-      - 4.4.2 (July TBD, 2025)
+      - 4.4.2 (July 11, 2025)
     * - 4.3
       - February 21, 2025
       - :maroon:`Ended on June 13, 2025`

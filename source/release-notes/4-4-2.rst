@@ -4,7 +4,7 @@
 CrafterCMS Version 4.4.2
 ------------------------
 
-Released *July TBD, 2025*
+Released *July 11, 2025*
 
 This release includes fixes for issues with the release version 4.4.1
 
@@ -18,8 +18,8 @@ This release includes fixes for issues with the release version 4.4.1
 ^^^^^^^^^^^
 New Feature
 ^^^^^^^^^^^
-* `Added a worker thread supervisor mechanism in Deployer <https://github.com/craftercms/craftercms/issues/8153>`__
-  See :ref:`` for more information
+* `New worker thread supervisor mechanism in Deployer <https://github.com/craftercms/craftercms/issues/8153>`__ |br|
+  See :ref:`deployer-deployment-supervisor` for more information
 
 ^^^^^^^^^^^^
 Enhancements
