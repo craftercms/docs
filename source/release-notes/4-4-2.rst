@@ -47,6 +47,7 @@ Dependency Updates
   - Saxon-HE to version 12.8
   - jsoup to version 1.21.1
   - okio to version 3.15.0
+  - ESAPI to version 2.7.0.0
 
 For a complete list of community tickets, please visit: `GitHub 4.4.2 <https://github.com/orgs/craftercms/projects/31/views/1>`_
 
