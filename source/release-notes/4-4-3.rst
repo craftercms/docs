@@ -1,0 +1,39 @@
+.. index:: CrafterCMS version 4.4.3 Release Notes
+
+------------------------
+CrafterCMS Version 4.4.3
+------------------------
+
+Released *TBD, 2025*
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-x>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install, please see :ref:`upgrading-craftercms`
+
+^^^^^^^^^^^
+New Feature
+^^^^^^^^^^^
+* `Smart Git in Git HTTPs server is now supported <https://github.com/craftercms/craftercms/issues/8268>`__ |br|
+
+^^^^^^^^^^^^
+Enhancements
+^^^^^^^^^^^^
+* Added new Studio git config properties |br|
+  See :ref:`git-configuration` for more information on configuring the Git options "gc.prunePackExpire" and "gc.autoPackLimit".
+
+^^^^^^^^^^^^^^^^^^
+Dependency Updates
+^^^^^^^^^^^^^^^^^^
+* Noteworthy dependency updates:
+
+  - MUI to version 7
+
+For a complete list of community tickets, please visit: `GitHub 4.4.3 <https://github.com/orgs/craftercms/projects/32/views/1>`_
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+|hr|
+
