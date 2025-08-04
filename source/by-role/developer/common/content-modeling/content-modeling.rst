@@ -692,7 +692,7 @@ Experience Builder:
   lifecycle events, such as create, update, copy, and delete. You can use these events to modify the content before
   saving or to support integrations.
 
-  .. todo You can learn about Content Lifecycle Scripting here: <add link here>
+  See the ``Controller`` field in :ref:`properties-of-content-types` for more information.
 
 - **Form Engine Controller (Client Side)**
   On occasion, you want to enforce specific rules and actions between fields in the Form Engine. For example, if the
@@ -887,8 +887,10 @@ The fields available at this level are:
 || Configuration|| Contains config.xml which holds information about the content type such as the|
 ||              || limit where content can be created, is it previewable, etc.                   |
 +---------------+--------------------------------------------------------------------------------+
-|| Controller   || Contains controller.groovy which provides an extension/hook to authoring      |
+|| Controller   || Contains ``controller.groovy`` which provides an extension/hook to authoring  |
 ||              || lifecycle events.                                                             |
+||              || See this :ref:`example-component-plugin` which contains a sample code for     |
+||              || ``controller.groovy``                                                         |
 +---------------+--------------------------------------------------------------------------------+
 || Display      || View template to use when rendering this content                              |
 || Template     ||                                                                               |
