@@ -188,7 +188,7 @@ can help prevent rework later in the process.
 
 - **SEO Optimization**
   Search Engine Optimization is extremely valuable. In addition to the content your users get, most search engines look
-  for and leverage specific types of metadata to help them understand the intent and audience fo the content. Add specific
+  for and leverage specific types of metadata to help them understand the intent and audience of the content. Add specific
   fields to support SEO directly within your models like the following:
 
   - Meta Titles and Descriptions
@@ -1676,13 +1676,13 @@ created component is now stored in the ``/site/components/articles/2021/1/men-st
 **Data Sources macro: parentPath[index]**
 
 The ``parentPath[index]`` macro provides resolution support for sub elements of a parent path in Crafter Studio.
-It pulls a single sub **/** of the parent path with the following syntax ``{parentpath[index]}``
+It pulls a single sub **/** of the parent path with the following syntax ``{parentPath[index]}``
 
 Here are some examples:
 
-If the parentPath is ``/en/mypage``, then to get the sub element ``en``, use **0** as the index in the macro like so  ``{parentpath[0]}``
+If the parentPath is ``/en/mypage``, then to get the sub element ``en``, use **0** as the index in the macro like so  ``{parentPath[0]}``
 
-If the parentPath is ``/products/household/cleaning`` then to get  the sub  element ``household``, use **1** as the index in the macro like so ``{parentpath[1]}``
+If the parentPath is ``/products/household/cleaning`` then to get  the sub  element ``household``, use **1** as the index in the macro like so ``{parentPath[1]}``
 
 |
 
