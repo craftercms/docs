@@ -16,6 +16,12 @@ Released *TBD, 2025*
 ^^^^^^^^^^^
 New Feature
 ^^^^^^^^^^^
+* `New Crafter Studio full disk monitoring <https://github.com/craftercms/craftercms/issues/8272>`__ |br|
+  Crafter Studio now watches disk utilization for the data directory and sends configurable notifications when the
+  threshold is reached. For more information on configuring the notifications and thresholds, see :ref:`studio-disk-monitoring` .
+
+  To get the disk usage statistics, use the `getDiskUsage <../_static/api/studio.html#tag/monitoring/operation/getDiskUsage>`__ API.
+
 * `Smart Git in Git HTTPs server is now supported <https://github.com/craftercms/craftercms/issues/8268>`__ |br|
 
 ^^^^^^^^^^^^
@@ -30,6 +36,7 @@ Dependency Updates
 * Noteworthy dependency updates:
 
   - MUI to version 7
+  - OkHttp to version 5.1.0
 
 For a complete list of community tickets, please visit: `GitHub 4.4.3 <https://github.com/orgs/craftercms/projects/32/views/1>`_
 
