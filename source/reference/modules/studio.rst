@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.3.1
+:last-updated: 4.4.3
 
 .. highlight:: xml
 
@@ -97,6 +97,8 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure capabilities for CloudFormation stack
     * - :ref:`Validations Regex <studio-validations-regex>`
       - Configure the regex used for validating various inputs
+    * - :ref:`Disk Monitoring <studio-disk-monitoring>`
+      - Configure the disk monitoring notifications and thresholds
     * - :ref:`Workflow Notification Configuration <notifications-configuration>`
       - Configure the workflow notifications
     * - :ref:`Commit Message <studio-commit-message>`
@@ -611,7 +613,7 @@ Project Policy
     :label: Since
     :version: 4.0.0
 
-TThe project policy configuration file allows the administrator to configure constraints for content being added to the project
+The project policy configuration file allows the administrator to configure constraints for content being added to the project
 (via uploads), such as filename constraints, minimum/maximum size of files, permitted content types or file types (MIME-types), etc.
 
 *Note that the project policy does not apply to content created directly on disk via the Git or APIs.*
@@ -3205,6 +3207,54 @@ The following section of Studio's configuration overrides allows you to configur
     # studio.validation.regex.CONFIGURATION_PATH: "^([a-z0-9\\-_/]+([.]*[a-z0-9\\-_])+)*(\\.[\w]+)?/?$"
 
 |
+
+|hr|
+
+.. _studio-disk-monitoring:
+
+"""""""""""""""
+Disk Monitoring
+"""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.4.3
+
+Crafter Studio watches disk utilization for the data directory and takes action when the threshold is reached by
+sending configurable notifications.
+
+The following section of Studio's configuration overrides allows you to configure the thresholds, notification email
+and webhook when the threshold is reached.
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+    ##################################################
+    ##               Disk monitoring                ##
+    ##################################################
+    studio.monitoring.disk.highWaterMark: 90
+    studio.monitoring.disk.lowWaterMark: 85
+    studio.monitoring.disk.cron: '0 0/15 * * * ?'
+
+    studio.monitoring.disk.notifications.encoding: UTF-8
+    studio.monitoring.disk.notifications.dateTimePattern: MM/dd/yyyy hh:mm:ss.SSS a z
+
+    # Email configs
+    studio.monitoring.disk.notifications.email.enabled: true
+    studio.monitoring.disk.notifications.email.subject: Disk space warning
+    studio.monitoring.disk.notifications.email.to: admin@example.com
+    studio.monitoring.disk.notifications.email.template: notification/templates/email/disk-monitor-alarm.ftl
+    studio.monitoring.disk.notifications.email.html: true
+    # Webhook configs
+    studio.monitoring.disk.notifications.webhook.enabled: false
+    studio.monitoring.disk.notifications.webhook.url: http://example.com/notify
+    studio.monitoring.disk.notifications.webhook.method: POST
+    studio.monitoring.disk.notifications.webhook.contentType: application/json
+    studio.monitoring.disk.notifications.webhook.template: notification/templates/webhook/disk-monitor-alarm.ftl
+
+The default built-in template for webhook notification works for slack. Customized templates can be added to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``
+
+Note also that emails are sent using the email in ``studio.mail.from.default`` as the from address.
+See :ref:`studio-smtp-config` for more information on configuring the mail client to send emails from Crafter Studio.
 
 |hr|
 
