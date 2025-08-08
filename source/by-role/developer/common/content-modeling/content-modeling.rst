@@ -210,7 +210,7 @@ can help prevent rework later in the process.
   - Properly factor models to ensure consistency of fields (e.g., a Title on one type should be the same as a title in
     other types)
   - Multi-value fields: In some cases, you want to capture values as arrays, for example, strings in a repeat group. In
-    this case, you will mark the fields post-fix with ``_mvs``
+    this case, you will mark the fields post-fix with ``_ss``
   - Tokenization: Open Search offers various tokenization options tailored to specific data types. Your tokenization
     strategy depends on how you intend to query the data. CrafterCMS automatically assigns strategies based on the postfix
     and provides additional options on field types to allow you to augment this behavior. You can learn more about
@@ -1417,35 +1417,71 @@ CrafterCMS indexes your content in the search index using your content model var
 
 To facilitate indexing, the following suffix should be appended to variable names depending on the variable data type:
 
-+------------+---------+-------------+----------------------------------------------------+
-||           || Field  || Multivalue || Description                                       |
-|| Type      || Suffix || Suffix     ||                                                   |
-||           ||        || (repeating ||                                                   |
-||           ||        || groups)    ||                                                   |
-+============+=========+=============+====================================================+
-|| integer   || _i     || _is        || a 32 bit signed integer                           |
-+------------+---------+-------------+----------------------------------------------------+
-|| string    || _s     || _ss        || String (UTF-8 encoded string or Unicode). A string|
-||           ||        ||            ||  value is indexed as a single unit.               |
-+------------+---------+-------------+----------------------------------------------------+
-|| long      || _l     || _ls        || a 64 bit signed integer                           |
-+------------+---------+-------------+----------------------------------------------------+
-|| text      || _t     || _txt       || Multiple words or tokens                          |
-+------------+---------+-------------+----------------------------------------------------+
-|| boolean   || _b     || _bs        || true or false                                     |
-+------------+---------+-------------+----------------------------------------------------+
-|| float     || _f     || _fs        || IEEE 32 bit floating point number                 |
-+------------+---------+-------------+----------------------------------------------------+
-|| double    || _d     || _ds        || IEEE 64 bit floating point number                 |
-+------------+---------+-------------+----------------------------------------------------+
-|| date      || _dt    || _dts       || A date in ISO 8601 date format                    |
-+------------+---------+-------------+----------------------------------------------------+
-|| time      || _to    || _tos       || A time in ``HH:mm:ss`` format (the value will be  |
-||           ||        ||            || set to date 1/1/1970 automatically)               |
-+------------+---------+-------------+----------------------------------------------------+
-|| text with || _html  ||            ||                                                   |
-|| html tags ||        ||            ||                                                   |
-+------------+---------+-------------+----------------------------------------------------+
+.. list-table::
+    :header-rows: 1
+    :widths: 10 10 10 10 60
+
+    * - Type
+      - Field Suffix
+      - Multivalue Suffix (repeating groups)
+      - Alternative Multivalue Suffix (for backwards compatibility)
+      - Description
+    * - integer
+      - _i
+      - _is
+      - _imv |br|
+        _mvi
+      - A 32 bit signed integer
+    * - string
+      - _s
+      - _ss
+      - _smv |br|
+        _mvs
+      - String (UTF-8 encoded string or Unicode). A string value is indexed as a single unit.
+    * - long
+      - _l
+      - _ls
+      - _lmv |br|
+        _mvl
+      - A 64 bit signed integer
+    * - text
+      - _t
+      - _txt
+      -
+      - Multiple words or tokens
+    * - boolean
+      - _b
+      - _bs
+      - _bmv |br|
+        _mvb
+      - true or false
+    * - float
+      - _f
+      - _fs
+      - _fmv |br|
+        _mvf
+      - IEEE 32 bit floating point number
+    * - double
+      - _d
+      - _ds
+      - _dmv |br|
+        _mvd
+      - IEEE 64 bit floating point number
+    * - date
+      - _dt
+      - _dts
+      -
+      - A date in ISO 8601 date format
+    * - time
+      - _to
+      - _tos
+      -
+      - A time in ``HH:mm:ss`` format (the value will be set to date 1/1/1970 automatically)
+    * - text with HTML tags
+      - _html
+      -
+      -
+      -
 
 Model fields require their respective data type postfix as listed above. The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.
 
@@ -1500,7 +1536,7 @@ This default configuration can be modified by editing the element ``<cdata-escap
      names that require CDATA escaping.
    -->
    <cdata-escaped-field-patterns>
-     <pattern>(_html|_t|_s|_smv|mvs)$</pattern>
+     <pattern>(_html|_t|_s|_smv|_mvs)$</pattern>
      <pattern>internal-name</pattern>
    </cdata-escaped-field-patterns>
 
