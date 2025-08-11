@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.4.2
+:last-updated: 4.4.3
 
 .. index:: Open Source Acknowledgements
 
@@ -153,6 +153,8 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `org.dom4j:dom4j <https://mvnrepository.com/artifact/org.dom4j/dom4j>`_
 |br|
 `org.eclipse.angus:angus-activation <https://mvnrepository.com/artifact/org.eclipse.angus/angus-activation>`_
+|br|
+`org.eclipse.angus:angus-mail <https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail>`_
 |br|
 `org.eclipse.angus:angus-mail <https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail>`_
 |br|
