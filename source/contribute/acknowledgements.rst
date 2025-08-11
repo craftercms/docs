@@ -156,8 +156,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `org.eclipse.angus:angus-mail <https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail>`_
 |br|
-`org.eclipse.angus:angus-mail <https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail>`_
-|br|
 `org.eclipse.jgit:org.eclipse.jgit.archive <https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.archive>`_
 |br|
 `org.eclipse.jgit:org.eclipse.jgit.junit <https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.junit>`_
