@@ -3219,11 +3219,10 @@ Disk Monitoring
     :label: Since
     :version: 4.4.3
 
-Crafter Studio watches disk utilization for the data directory and takes action when the threshold is reached by
-sending configurable notifications.
+Crafter Studio watches disk utilization for the data directory and takes action when a threshold is reached.
 
 The following section of Studio's configuration overrides allows you to configure the thresholds, notification email
-and webhook when the threshold is reached.
+and webhook when a threshold is reached.
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -3251,7 +3250,12 @@ and webhook when the threshold is reached.
     studio.monitoring.disk.notifications.webhook.contentType: application/json
     studio.monitoring.disk.notifications.webhook.template: notification/templates/webhook/disk-monitor-alarm.ftl
 
-The default built-in template for webhook notification works for slack. Customized templates can be added to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``
+The high watermark ``studio.monitoring.disk.highWaterMark`` and low watermark ``studio.monitoring.disk.lowWaterMark``
+values are percentages. Note that the low watermark value must be less than the high watermark value.
+
+The default built-in template for webhook notification in ``studio.monitoring.disk.notifications.webhook.template``
+works for `slack <https://slack.com>`_. If you wish to change the webhook response, simply add your customized templates
+to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``.
 
 Note also that emails are sent using the email in ``studio.mail.from.default`` as the from address.
 See :ref:`studio-smtp-config` for more information on configuring the mail client to send emails from Crafter Studio.
