@@ -138,7 +138,7 @@ Crafter Studio Application Level
 ~~~~~~~~~~~~~~~~~~
 DB Connection Pool
 ~~~~~~~~~~~~~~~~~~
-To configure the DB connection pool, override the properties listed below as needed in the ``studio-config-oveeride.yaml`` file in the ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/`` folder, or via the ``GlobaL Config`` in the Studio |mainMenu| Navigation Menu
+To configure the DB connection pool, override the properties listed below as needed in the ``studio-config-override.yaml`` file in the ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/`` folder, or via the ``Global Config`` in the Studio |mainMenu| Navigation Menu
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
