@@ -3250,15 +3250,36 @@ and webhook when a threshold is reached.
     studio.monitoring.disk.notifications.webhook.contentType: application/json
     studio.monitoring.disk.notifications.webhook.template: notification/templates/webhook/disk-monitor-alarm.ftl
 
-The high watermark ``studio.monitoring.disk.highWaterMark`` and low watermark ``studio.monitoring.disk.lowWaterMark``
-values are percentages. Note that the low watermark value must be less than the high watermark value.
+Where:
 
-The default built-in template for webhook notification in ``studio.monitoring.disk.notifications.webhook.template``
-works for `slack <https://slack.com>`_. If you wish to change the webhook response, simply add your customized templates
-to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``.
+- **studio.monitoring.disk.highWaterMark**: The disk utilization percentage level that triggers an action to perform
+  ``git gc``, then the low watermark threshold is checked after, which determines whether an alarm is set.
+- **studio.monitoring.disk.lowWaterMark**: The disk utilization percentage level that triggers the low disk space alarm.
+  Once the low disk space alarm is set, it gets cleared when the disk utilization percentage goes below the low watermark.
+  Note that the low watermark value **must be less than the high watermark value**.
+- **studio.monitoring.disk.cron**: The cron expression for scheduling how often disk utilization is checked against the
+  configured thresholds (high and low watermark).
+- **studio.monitoring.disk.notifications.webhook.method**: The webhook HTTP request method (verb), e.g. POST, PUT, GET, etc.
+- **studio.monitoring.disk.notifications.email.template**: The template used for sending the alarm state email
+  Note also that emails are sent using the email in ``studio.mail.from.default`` as the from address.
+  See :ref:`studio-smtp-config` for more information on configuring the mail client to send emails from Crafter Studio.
+- **studio.monitoring.disk.notifications.webhook.template**:
+  The default built-in template for webhook notification in ``studio.monitoring.disk.notifications.webhook.template``
+  works for `slack <https://slack.com>`_. If you wish to change the webhook response, simply add your customized templates
+  to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``.
 
-Note also that emails are sent using the email in ``studio.mail.from.default`` as the from address.
-See :ref:`studio-smtp-config` for more information on configuring the mail client to send emails from Crafter Studio.
+To change the default templates (webhook template or email template) to a custom one, simply add your customized
+templates to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``.
+
+For example, we have a custom webhook template ``my-disk-monitor-alarm.ftl`` that we will now place under
+``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/my-disk-monitor-alarm.ftl``
+that we want to use instead of the default. We'll now configure Studio to use our custom template by modifying the
+``studio.monitoring.disk.notifications.webhook.template`` value in the Studio configuration override file:
+
+.. code-block::
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+    studio.monitoring.disk.notifications.webhook.template: my-disk-monitor-alarm.ftl
 
 |hr|
 
