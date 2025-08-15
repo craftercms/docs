@@ -3219,7 +3219,7 @@ Disk Monitoring
     :label: Since
     :version: 4.4.3
 
-Crafter Studio watches disk utilization for the data directory and takes action when a threshold is reached.
+Crafter Studio watches disk utilization for the ``data/repos`` directory and takes action when a threshold is reached.
 
 The following section of Studio's configuration overrides allows you to configure the thresholds, notification email
 and webhook when a threshold is reached.
