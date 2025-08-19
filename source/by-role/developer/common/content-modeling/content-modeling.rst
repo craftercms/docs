@@ -660,7 +660,7 @@ Configuring Rich Text Editors
 '''''''''''''''''''''''''''''
 Rich Text Editors (RTEs) are very powerful content entry controls. CrafterCMS uses TinyMCE as the foundation of its Rich
 Text Editor control. An administrator can precisely control the options available to authors in each rich text editor
-field. Follow this documentation for detailed configuration instructions: :ref:`properties-of-content-types`
+field. Follow this documentation for detailed configuration instructions: :ref:`rte-configuration`
 
 Here are a couple of items to think about and configure when using Rich Text Editors:
 
@@ -687,28 +687,40 @@ use cases. There are four mechanisms for extending the Content Types and the For
 Experience Builder:
 
 - **Content Lifecycle Controller (Server Side)**
+
   Configuring a content type with a Content Lifecycle Controller introduces the ability to execute code on specific
   lifecycle events, such as create, update, copy, and delete. You can use these events to modify the content before
   saving or to support integrations.
 
+  Content lifecycle controllers are automatically wired in through their ``controller.groovy``. This file lets you:
+
+  - Inspect the content, user, path, type, and lifecycle operation (create/update/move/etc).
+  - Run logic before the save completes, such as integration calls, data checks, or transformations.
+  - Block, modify, or enhance the save process without touching the UI.
+
   See the ``Controller`` field in :ref:`properties-of-content-types` for more information.
 
 - **Form Engine Controller (Client Side)**
+
   On occasion, you want to enforce specific rules and actions between fields in the Form Engine. For example, if the
   user chooses a particular country, show fields specific to that country. Such use cases apply to the Content Authoring
   Forms (but not the Experience Builder). To support these use cases, you can introduce a Form Engine Controller,
   which provides you with specific event hooks like “On Initialization” and “On Save” where you can execute custom
   client-side code.
 
+  See the ``Configuration`` field in :ref:`properties-of-content-types` for more information.
+
   .. todo You can learn more about Form Engine Controllers here: <add link here>
 
 - **Custom Form Controls**
+
   You can create and install custom form engine controls that provide authors with new ways to enter content. For
   example, a custom slider control for picking a value in a range. Another example might be a custom asset picker with
   a platform like Cloudinary or Bynder. Custom controls are written in React and packaged and installed as plugins.
   You can learn more about custom form controls here: :ref:`building-plugins-controls`
 
 - **Custom Data Sources**
+
   Sometimes we want to use the same form control (like an image or video picker) but supply a custom backend from which
   to select the asset. As previously mentioned, this is why we have data sources in the content type system. It is
   possible to create, package, and install your own custom data sources. Custom data sources are written in React and
@@ -883,8 +895,8 @@ The fields available at this level are:
 || Preview      ||                                                                               |
 || Image        ||                                                                               |
 +---------------+--------------------------------------------------------------------------------+
-|| Configuration|| Contains config.xml which holds information about the content type such as the|
-||              || limit where content can be created, is it previewable, etc.                   |
+|| Configuration|| Contains ``config.xml`` which holds information about the content type such   |
+||              || as the limit where content can be created, is it previewable, etc.            |
 +---------------+--------------------------------------------------------------------------------+
 || Controller   || Contains ``controller.groovy`` which provides an extension/hook to authoring  |
 ||              || lifecycle events.                                                             |
@@ -1750,6 +1762,84 @@ Like the Form Section Control, Repeating Group Control is also a container that 
 The canvas allows the form-based content capture only, and is used by content authors when they're in that mode. In-Context Editing will leverage the form components, but not the canvas when authors are in that mode. Learn more about In-Context Editing configuration for projects :ref:`experience-builder` .
 
 |hr|
+
+.. _content-type-form-controllers:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Content Type Form Controllers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Form controllers are scriptable lifecycle event handlers that let you run custom logic either:
+
+- **On the client side** (in the form on load, on save and other events)
+- **On the server side** (during content write/delete operations in the backend)
+
+Form controllers are ideal for scenarios that require automation or custom validation across multiple fields, or when
+external information is needed before publishing content. Examples include:
+
+- **Synthesizing new values from existing fields** |br|
+  e.g., automatically generating a slug from a title.
+- **Tying two fields together** |br|
+  e.g., If one field changes, update another field dynamically.
+- **Validating content** |br|
+  e.g., Querying a remote system to verify a value before saving.
+- **Blocking saves** if the custom validation rule fails.
+
+You can use the client side and server side controller together to ensure that the data submitted from the client-side
+is validated and processed correctly on the server side. For instance, you might validate user input in
+``form-controller.js`` and then perform additional checks or transformations in ``controller.groovy``.
+
+.. _client-side-form-controllers:
+
+""""""""""""""""""""""""""""
+Client-Side Form Controllers
+""""""""""""""""""""""""""""
+Client-side controllers allows you to define custom logic that executes during specific events, such as when the form
+loads or before saving. For example, you might want to validate a field or dynamically update another field based on
+user input.
+
+Let's look at an example where you want to ensure the ``Internal Name`` always ends with a star (*):
+You’d write a ``form-controller.js`` script for the relevant content type.
+In the ``onBeforeSave()`` method, you’d check if the value ends with *; if not, append it.
+This all happens before the save request is sent to the server.
+The result? Users save their content normally, but your rule ensures the formatting is always correct.
+
+.. code-block:: js
+    :caption: *Example form-controller.js*
+
+    CStudioForms.FormControllers.PageHomeController = CStudioForms.FormControllers.PageHomeController ||  function() {};
+
+    YAHOO.extend(CStudioForms.FormControllers.PageHomeController, CStudioForms.FormController, {
+
+        onBeforeSave : function () {
+            var internalName = this.form.model['internal-name'];
+            if(!internalName.endsWith("*")) {
+                this.form.model['internal-name'] =  internalName + '*'
+            }
+
+            return true
+        }
+    });
+
+    CStudioAuthoring.Module.moduleLoaded("/page/entry-controller", CStudioForms.FormControllers.PageHomeController );
+
+You can enable a client-side controller via a <controller>true</controller> tag in the type’s config XML by adding the form-controller.js
+
+Note that the last line in the script informs the plugin system that the controller is loaded and associates the name of the content type (-controller) with the class.
+
+.. _server-side-form-controllers:
+
+""""""""""""""""""""""""""""
+Server-Side Form Controllers
+""""""""""""""""""""""""""""
+Server-side controllers allow you to run custom logic during content write/delete operations in the backend.
+It's automatically wired in through their ``controller.groovy``.
+
+On the backend, a ``controller.groovy`` file lets you:
+
+- Inspect the content, user, path, type, and lifecycle operation (create/update/move/etc).
+- Run logic before the save completes, such as integration calls, data checks, or transformations.
+- Block, modify, or enhance the save process without touching the UI.
+
 
 .. _content-view-templates:
 
