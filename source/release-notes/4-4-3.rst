@@ -30,6 +30,15 @@ Enhancements
 * Added new Studio git config properties |br|
   See :ref:`git-configuration` for more information on configuring the Git options "gc.prunePackExpire" and "gc.autoPackLimit".
 
+* `Item Selector now shows view options for file types with preview support <https://github.com/craftercms/craftercms/issues/8308>`__ |br|
+
+"""""""""
+Studio UI
+"""""""""
+- [utils/content]:
+
+  * Moved ``isVideo``, ``isAudio` and ``isPdfDocument`` functions from ``PathNavigator/utils.ts`` to ``utils/content.ts``.
+
 ^^^^^^^^^^^^^^^^^^
 Dependency Updates
 ^^^^^^^^^^^^^^^^^^
