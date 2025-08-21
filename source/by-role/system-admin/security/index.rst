@@ -13,7 +13,11 @@ Security
 -------------------
 Change the Defaults
 -------------------
-CrafterCMS installations are pre-configured with default passwords, tokens, keys, etc. These default values are intended for initial testing, installation and configuration. We recommend changing the default values for the following parameters to secure your CrafterCMS installation:
+CrafterCMS installations are pre-configured with default passwords, tokens, keys, etc. These default values are intended
+for initial testing, installation and configuration. Failure to change these default values creates a critical security
+vulnerability. To secure your CrafterCMS installation, **YOU MUST CHANGE THE PRE-CONFIGURED DEFAULT VALUES**.
+
+Here are the parameters which you must change the default values:
 
 * Replace default values for configuration files encryption key and salt
 
