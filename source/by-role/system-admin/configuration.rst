@@ -738,7 +738,7 @@ Here are the environment variables used to encrypt and decrypt values inside con
       - Salt used for encrypting properties
       - default_encryption_salt
 
-You must change the pre-configured default values for these environment variables to secure you installation.
+You must change the pre-configured default values for these environment variables to secure your installation.
 See the following for more information on using the configuration files encryption environment variables:
 
 - :ref:`change-the-defaults`
@@ -765,7 +765,7 @@ Here are the environment variables used to encrypt and decrypt values in the dat
       - Salt used for encrypting database values
       - \<someDefaultSaltValue\>
 
-You must change the pre-configured default values for these environment variables to secure you installation.
+You must change the pre-configured default values for these environment variables to secure your installation.
 See - :ref:`studio-cipher-configuration` for more information on using the above environment variables.
 
 .. _env-var-serverless-deployments:

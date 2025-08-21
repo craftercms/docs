@@ -15,11 +15,11 @@ Important Security Considerations
 CrafterCMS is a platform for developing content rich applications, which includes developing code and deploying
 it to servers. CrafterCMS provides for a server-side sandbox (Groovy Sandbox -- based on Jenkins'
 Groovy Sandbox: https://github.com/jenkinsci/groovy-sandbox) to limit what these server-side applications can do
-on a server. A user with access to Crafter Studio (with a sufficiently privileged role) or with access to the git
+on a server. A user with access to Crafter Studio (with a sufficiently privileged role) or with access to the Git
 repository of a *site* can develop server-side code and deploy it. The sandbox will limit and restrict what can be
 executed on a server and is configurable to allow more access as needed. Nonetheless, Enterprises should consider
-having a series of environments, typically: ``Dev`` -> ``QA`` -> ``Prod``, where code gets developed and validated
-in the lower environments before pushing up. This is fully supported by CrafterCMS, and the underlying git
+having a series of environments, typically: ``Dev`` -> ``QA`` -> ``Prod``, where code is developed and validated
+in the lower environments before pushing up. This is fully supported by CrafterCMS, and the underlying Git
 repository makes it easy.
 
 ---------------
