@@ -766,7 +766,7 @@ Here are the environment variables used to encrypt and decrypt values in the dat
       - \<someDefaultSaltValue\>
 
 You must change the pre-configured default values for these environment variables to secure your installation.
-See - :ref:`studio-cipher-configuration` for more information on using the above environment variables.
+See :ref:`studio-cipher-configuration` for more information on using the above environment variables.
 
 .. _env-var-serverless-deployments:
 
