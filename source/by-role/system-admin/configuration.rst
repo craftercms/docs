@@ -669,7 +669,7 @@ Here are the environment variables used for configuring MariaDB:
       - \$MARIADB_HOME/\$HOSTNAME.pid
 
 You must change the pre-configured default values for environment variables for passwords such as ``MARIADB_PASSWD``
-to secure your installation. See :ref:`system-admin-security` for more information on changing the password environment variables.
+to secure your installation. See :ref:`system-admin-security` for more information on changing the values.
 
 .. _env-var-git:
 
