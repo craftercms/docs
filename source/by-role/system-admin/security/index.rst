@@ -13,7 +13,11 @@ Security
 -------------------
 Change the Defaults
 -------------------
-CrafterCMS installations are pre-configured with default passwords, tokens, keys, etc. These default values are intended for initial testing, installation and configuration. We recommend changing the default values for the following parameters to secure your CrafterCMS installation:
+CrafterCMS installations are pre-configured with default passwords, tokens, keys, etc. These default values are intended
+for initial testing, installation and configuration. Failure to change these default values creates a critical security
+vulnerability. To secure your CrafterCMS installation, **YOU MUST CHANGE THE PRE-CONFIGURED DEFAULT VALUES**.
+
+Here are the parameters for which you must change the default values:
 
 * Replace default values for configuration files encryption key and salt
 
@@ -52,7 +56,7 @@ CrafterCMS installations are pre-configured with default passwords, tokens, keys
         export ENGINE_MANAGEMENT_TOKEN=${ENGINE_MANAGEMENT_TOKEN:="defaultManagementToken"}
         export DEPLOYER_MANAGEMENT_TOKEN=${DEPLOYER_MANAGEMENT_TOKEN:="defaultManagementToken"}
         export SEARCH_MANAGEMENT_TOKEN=${SEARCH_MANAGEMENT_TOKEN:="defaultManagementToken"}
-        export PROFILE_MANAGEMENT_TOKEN=${PROFILE_MANAGEMENT_TOKEN:="defaultManagementToken"}/*
+        export PROFILE_MANAGEMENT_TOKEN=${PROFILE_MANAGEMENT_TOKEN:="defaultManagementToken"}
         export SOCIAL_MANAGEMENT_TOKEN=${SOCIAL_MANAGEMENT_TOKEN:="defaultManagementToken"}
 
      |
@@ -311,13 +315,12 @@ To configure SSL/TLS for CrafterCMS authoring and delivery in a traditional depl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Configuring SSL/TLS for CrafterCMS Authoring and Delivery via a CDN
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 SSL/TLS can also be configured at the CDN, here is an example of doing that using AWS CloudFront https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https.html.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Containerized Deployment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Setting up SSL/TLS for CrafterCMS authoring and delivery in a Docker Container is similar to the steps done for CrafterCMS Authoring and Delivery installed in a server, which just a few differences.
+Setting up SSL/TLS for CrafterCMS authoring and delivery in a Docker Container is similar to the steps done for CrafterCMS Authoring and Delivery installed in a server, with just a few differences.
 
 * Step 1: Create a keystore file
 
@@ -387,10 +390,10 @@ In your ``docker-compose.yml`` file, under ``tomcat``:
 Your ``docker-compose.yml`` should look like below:
 
 .. code-block:: yaml
-   :linenos:
-   :emphasize-lines: 25, 33-35
+    :linenos:
+    :emphasize-lines: 25, 33-35
 
-   version: '3.7'
+    version: '3.7'
     services:
       search:
       image: opensearchproject/opensearch:2.8.0
@@ -499,11 +502,11 @@ for the encryption tool. To set the key and salt to desired values, in your Auth
 open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and modify the following values
 
 .. code-block:: bash
-   :caption: *CRAFTER_HOMEbin/crafter-setenv.sh*
+   :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
 
    # -------------------- Encryption variables --------------------
-   export CRAFTER_ENCRYPTION_KEY=${CRAFTER_ENCRYPTION_KEY:="default_encrytption_key"}
-   export CRAFTER_ENCRYPTION_SALT=${CRAFTER_ENCRYPTION_SALT:="default_encrytption_salt"}
+   export CRAFTER_ENCRYPTION_KEY=${CRAFTER_ENCRYPTION_KEY:="default_encryption_key"}
+   export CRAFTER_ENCRYPTION_SALT=${CRAFTER_ENCRYPTION_SALT:="default_encryption_salt"}
 
 |
 
@@ -536,10 +539,10 @@ To encrypt passwords, access keys or other sensitive information in a configurat
 '''''''
 Example
 '''''''
-Let's take a look at an example of encrypting the ``accessKey`` and ``securityKey`` for the AWS Profiles configuration.
+Let's take a look at an example of encrypting the ``accessKey`` and ``secretKey`` for the AWS Profiles configuration.
 
 * Open the ``AWS Profiles`` configuration file by clicking on |projectTools| -> ``Configuration``, then select ``AWS Profiles`` from the dropdown box
-* We will add an ``AWS S3 profile``. Notice that the ``accessKey`` and ``secureKey`` is in the clear.
+* We will add an ``AWS S3 profile``. Notice that the ``accessKey`` and ``secretKey`` are in the clear.
 
   .. code-block:: xml
      :caption: *{REPOSITORY_ROOT}/sites/SITENAME/config/studio/aws/aws.xml*
@@ -607,7 +610,7 @@ Let's take a look at an example of encrypting the ``accessKey`` and ``securityKe
 
   |
 
-* The ``accessKey`` and ``secureKey`` is now encrypted and will be decrypted by Crafter Studio as needed
+* The ``accessKey`` and ``secretKey`` are now encrypted and will be decrypted by Crafter Studio as needed
 
 |hr|
 

@@ -1,15 +1,12 @@
 :is-up-to-date: True
 :since-version: 4.0.0
 
-
 .. index:: CrafterCMS Security Processes, Security, Security Processes
 
 ==================
 Security Processes
 ==================
-
 In this section, we describe the security processes followed during the development, release, and support of CrafterCMS.
-
 
 This section is limited in scope to the following:
 
@@ -24,7 +21,6 @@ This section is limited in scope to the following:
 -----------
 Development
 -----------
-
 ^^^^^^^^^
 Code Flow
 ^^^^^^^^^
@@ -54,7 +50,6 @@ Code Flow
 -------
 Release
 -------
-
 * Full security and dependency scan and update
 * Release commit GPG signing with 2FA to Maven Central
 * MD5 and SHA512 checksums on all artifacts
@@ -67,7 +62,6 @@ Release
 -------------
 Crafter Cloud
 -------------
-
 * Crafter Cloud is based on the scanned AWS AMI
 * Penetration testing every release
 
@@ -77,7 +71,6 @@ Crafter Cloud
 --------
 OWASP 10
 --------
-
 How does CrafterCMS perform against the OWASP 2017 Top 10 security risks?
 
 ^^^^^^^^^^^^^^^^^
@@ -150,7 +143,6 @@ How does CrafterCMS help mitigate this risk?
 """"""""""""""""""""""""""""""""""""""""""""
 * CrafterCMS audits all XML reading, writing and manipulating 3rd party libraries as part of the release process. Those libraries are kept up-to-date per security advisories.
 * CrafterCMS disables XML external entity and DTD processing in all XML parsers in the application, as per the OWASP Cheat Sheet 'XXE Prevention'.
-
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A5:2017-Broken Access Control
@@ -272,4 +264,4 @@ How does CrafterCMS help mitigate this risk?
 Securing your CrafterCMS Install
 --------------------------------
 
-CrafterCMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`change-the-defaults`.
+CrafterCMS installations are pre-configured with default values. To secure your installation, you must change the pre-configured default values. For more information, see :ref:`system-admin-security`.
