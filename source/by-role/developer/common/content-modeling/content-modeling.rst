@@ -1892,9 +1892,9 @@ The next step is to write a ``form-controller.js`` script. We'll put the file un
     :linenos:
     :emphasize-lines: 5, 7
 
-    CStudioForms.FormControllers.PageHomeController = CStudioForms.FormControllers.PageHomeController ||  function() {};
+    CStudioForms.FormControllers.PageEntryController = CStudioForms.FormControllers.PageEntryController ||  function() {};
 
-    YAHOO.extend(CStudioForms.FormControllers.PageHomeController, CStudioForms.FormController, {
+    YAHOO.extend(CStudioForms.FormControllers.PageEntryController, CStudioForms.FormController, {
 
         onBeforeSave : function () {
             var internalName = this.form.model['internal-name'];
@@ -1906,7 +1906,7 @@ The next step is to write a ``form-controller.js`` script. We'll put the file un
         }
     });
 
-    CStudioAuthoring.Module.moduleLoaded("/page/entry-controller", CStudioForms.FormControllers.PageHomeController );
+    CStudioAuthoring.Module.moduleLoaded("/page/entry-controller", CStudioForms.FormControllers.PageEntryController );
 
 Note that the last line in the script informs the system that the controller is loaded and associates the name of the
 content type (-controller) with the class.
