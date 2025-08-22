@@ -283,6 +283,16 @@
 					{%- endif %}
 				</div>
 				<div class="bottom-of-page">
+					{%- if productLinks %}
+					<div class="product-links-container">
+						<nav class="product-links">
+							{%- for product in productLinks %}
+								<a href="{{ product.url }}" target="_blank" rel="noopener noreferrer">{{ product.label }}</a>
+							{%- endfor %}
+						</nav>
+					</div>
+					{%- endif %}
+
 					<div class="left-details">
 						{%- if show_copyright %}
 						<div class="copyright">

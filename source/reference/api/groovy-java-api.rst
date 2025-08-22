@@ -661,9 +661,11 @@ This method can be used from any Groovy script in Studio, this includes for exam
 content type controllers. Remember to get the ``contentService`` bean when using the method like below:
 
 .. code-block:: groovy
+    :emphasize-lines: 2-3
+    :caption: *Example retrieving contentService bean and using the writeContentAndNotify method*
 
     def documentStream = ContentUtils.convertDocumentToStream(document, "UTF-8")
-    def contentService = applicationContext.getBean("cstudioContentService")
+    def contentService = applicationContext["cstudioContentService"]
     contentService.writeContentAndNotify(site, path, documentStream)
 
 |hr|

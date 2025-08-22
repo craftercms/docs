@@ -307,9 +307,17 @@ In this section, we will highlight some of the more commonly used properties in 
       - Purpose
     * - :ref:`deployer-thread-pool-size`
       - Allows you to configure the deployment pool |br|
+    * - :ref:`deployer-deployment-supervisor`
+
+        .. version_tag::
+            :label: Since
+            :version: 4.4.2
+
+      - Allows you to enable and configure the deployment supervisor |br|
 
 The properties listed above are configured in ``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml``.
 
+|
 
 .. list-table:: Common Target Configuration Properties
     :header-rows: 1
@@ -328,6 +336,27 @@ The properties listed above are configured in ``CRAFTER_HOME/bin/crafter-deploye
       - Allows you to configure metadata path patterns used for document indexing
     * - :ref:`deployer-notification-templates-override-location`
       - Allows you to configure override locations for notification templates
+    * - :ref:`deployer-notification-webhook-timeout`
+
+        .. version_tag::
+            :label: Since
+            :version: 4.4.2
+
+      - Allows you to configure a timeout for webhook requests
+    * - :ref:`deployer-target-runtime-threshold`
+
+        .. version_tag::
+            :label: Since
+            :version: 4.4.2
+
+      - Allows you to configure the target runtime threshold used by the :ref:`deployment supervisor <deployer-deployment-supervisor>` |br|
+    * - :ref:`deployer-target-event-listeners`
+
+        .. version_tag::
+            :label: Since
+            :version: 4.4.2
+
+      - Allows you to configure event listeners for the target |br|
 
 The target properties listed above may be configured in the following locations:
 
@@ -699,6 +728,126 @@ Here's a sample *application.yaml* file with the deployment pool and task thread
 
 |
 
+.. _deployer-deployment-supervisor:
+
+"""""""""""""""""""""
+Deployment Supervisor
+"""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.4.2
+
+The deployment supervisor when enabled and configured monitors deployment time and sends out a notification if
+the deployment time exceeds the configured threshold.
+
+Below is a sample configuration for the deployment supervisor:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml - Deployment Supervisor Configuration*
+    :linenos:
+    :emphasize-lines: 4-7
+
+    deployer:
+      main:
+        deployments:
+          # Configuration for the deployment supervisor
+          supervisor:
+              enabled: true
+              cron: '0 */10 * * * ?'
+
+where:
+
+- ``deployer.main.deployments.supervisor.enable`` - Indicates if the deployment supervisor is running
+- ``deployer.main.deployments.supervisor.cron`` - The cron expression for scheduling how often the deployment supervisor
+  checks the deployment run time against the threshold. The default is 10 minutes.
+
+The deployment supervisor runs as a cron job that wakes up every X minutes (10 minutes by default, configured via
+``deployer.main.deployments.supervisor.cron``) and if a target deployment has been running longer than the configured
+:ref:`target runtime threshold <deployer-target-runtime-threshold>`, it triggers the ``deploymentRuntimeWarning`` event
+that sends out a notification. (To configure event listeners, see: :ref:`deployer-target-event-listeners`).
+
+|
+
+.. _deployer-target-runtime-threshold:
+
+""""""""""""""""""""""""
+Target Runtime Threshold
+""""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.4.2
+
+The target runtime threshold used by the :ref:`deployment supervisor <deployer-deployment-supervisor>` can be configured
+using ``target.runtimeWarningThreshold.seconds`` property, which by default is set to 1 hour.
+
+.. code-block:: yaml
+    :linenos:
+    :caption: *Default runtime warning threshold in base-target.yaml*
+
+    target:
+    runtimeWarningThreshold:
+        # The threshold in seconds to warn about long-running deployments
+        seconds: 3600
+
+|
+
+.. _deployer-target-event-listeners:
+
+""""""""""""""""""""""
+Target Event Listeners
+""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.4.2
+
+Targets have event listeners that sends out email and webhook notifications, configurable through the target as shown below:
+
+.. code-block:: yaml
+    :linenos:
+    :caption: *Example event listeners configuration in base-target.yaml*
+
+    target:
+      eventListeners:
+        -   eventName: deploymentRuntimeWarning  # This is the type of event to handle
+            listeners:
+            -   name: notificationEventListener
+                templateName: runtime-warning
+                sender: emailSender
+                to: admin@test.com
+            -   name: notificationEventListener
+                sender: webhookSender
+
+The available event listeners are as follows:
+
+- **notificationEventListener**:
+  The following properties are required by the ``notificationEventListener``:
+
+  - ``sender``: the actual message sender. Supported senders are: ``webhookSender`` or ``emailSender``
+
+  - ``templateName``: freeMarker template to render the message. Notice that the actual path of the template file will depend on the sender.
+
+    - For the ``webhookSender`` it uses **target.notifications.webhook.templates.location**
+    - For the ``emailSender`` it uses **target.notifications.mail.templates.location**
+
+  Additionally, it accepts configuration properties for the message sender, e.g.:
+
+  .. code-block:: yaml
+      :linenos:
+      :caption: *Example additional properties for the message sender in base-target.yaml*
+
+      - name: notificationEventListener
+        templateName: runtimeWarning
+        from: alerts@test.com
+        to: admin@test.com  # REQUIRED
+        subject: Runtime threshold reached
+      - name: notificationEventListener
+        templateName: runtimeWarning
+        url: <THE WEBHOOK URL>  # REQUIRED
+        method: GET
+        contentType: text/plain
+
+|
+
 .. _deployer-notification-templates-override-location:
 
 """""""""""""""""""""""""""""""""""""""""
@@ -745,6 +894,29 @@ To change the webhook templates location, simply set the ``webhook.templates.ove
           suffix: -template.ftl
 
 |
+
+.. _deployer-notification-webhook-timeout:
+
+""""""""""""""""""""""""""""
+Notification Webhook Timeout
+""""""""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.4.2
+
+The target notification webhook timeout can be configured using ``target.notifications.webhook.timeouts`` property,
+which by default is set to 30 seconds.
+
+.. code-block:: yaml
+    :linenos:
+    :caption: *Default Notifications Webhook Timeout in base-target.yaml*
+    :emphasize-lines: 5
+
+    target:
+        notifications:
+            webhook:
+                # The timeout in milliseconds for the webhook requests
+                timeout: 30000
 
 |hr|
 

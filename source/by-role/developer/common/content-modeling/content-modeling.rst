@@ -1,21 +1,731 @@
 :is-up-to-date: True
-:last-updated: 4.1.8
+:last-updated: 4.4.2
 
-.. index:: Content Modeling, Modeling, Content Model, Page Content Type, Component Content Type
-
-.. TODO Review and refresh
+.. index:: Content Modeling Guide, Modeling Guide
 
 .. _content-modeling:
 
 ================
 Content Modeling
 ================
+In this section we'll first discuss what is content modeling, its importance and best practices. We'll then go into
+details on how to create the models that best fit your requirements in Crafter Studio.
+
+----------------------
+Content Modeling Guide
+----------------------
+Content modeling is the practice of rationalizing and structuring content into an information architecture that includes
+organizational structures as well as objects, properties, and relationships (often referred to as references) with other
+content.
+
+This article will explore content modeling, its importance, and how to apply these practices with CrafterCMS.
+
+^^^^^^^^^^^
+Foundations
+^^^^^^^^^^^
+Before we get too deep into the topic of content modeling, let’s cover three foundational topics:
+
+- What is content?
+- Unstructured content vs Structured content
+- Separating content and presentation
+
+""""""""""""""""
+What is Content?
+""""""""""""""""
+Content is data, but not all data is content. What makes content different from other data is how it is used and who is
+responsible for creating and maintaining it.
+
+Examples:
+
+- A press release, the image(s) associated with the press release, and any associated taxonomy and metadata for the
+  press release are content.
+- Event details associated with a press release may be content or data. How this information is used and who maintains
+  this data need to be carefully examined. If the data is transactional, it may not be a good candidate for content.
+  However, if instead it simply supports a transaction by describing an event with details and is maintained by business
+  users, it may be a good candidate for content.
+- A user profile and its attributes are not the type of data that should be considered content.
+
+The term ``content`` refers to any data, metadata, or relationships (references) between content that drive an
+experience and need to be created and maintained by business users (authors) on a (typically) separate lifecycle from
+the experience itself.
+
+""""""""""""""""""""""""""""""""""""""""""
+Unstructured Content vs Structured Content
+""""""""""""""""""""""""""""""""""""""""""
+Unstructured content is captured and stored in a manner that is not easily machine-readable or that requires parsing or
+interpretation to be consumed. Unstructured content also tends to include presentation-level instructions for a specific
+use case. Examples include Office documents such as PDFs and Word documents. Another example is a blog article where the
+title, summary, and entire body are captured as a single rich text HTML block.
+
+By contrast, structured content is content that is broken down into entities or types, each with individual fields for
+specific content elements or relationships. Structured content also tends to separate the content from presentation or
+use-case-specific concerns.
+
+"""""""""""""""""""""""""""""""""""
+Separating Content and Presentation
+"""""""""""""""""""""""""""""""""""
+The term “presentation” refers to technology, such as markup, code, or other types of instructions, that inform a
+channel on how to render the content in a particular way for consumption.
+
+Consider the following two methods for capturing title content:
+
+- Without presentation concerns:
+
+  .. code-block:: text
+
+      This is my title
+
+- With presentation concerns:
+
+  .. code-block:: html
+
+      <H1>This is my title</H1>
+
+Capturing and storing the title without the presentation instructions (H1 markup) naturally makes it much more reusable.
+By not making assumptions about how the content will be consumed, we remove the need to pre-process the content to
+remove unwanted instructions or the side effects introduced by leaving them in place. Instead, we can simply apply the
+appropriate markup at the point of use in various locations on our sites and other channels. Supporting integrations
+that require ingesting content, such as AI and search engines, is also much easier to support when we cleanly separate
+our content from presentation-level concerns.
+
+With the exception of HTML blocks and rich documents, CrafterCMS captures all content as individual types, fields, and
+references in a way that is completely free of presentation concerns and is fully reusable. CrafterCMS also creates a
+text-only variant of HTML and rich document content for use in search-related and alternative platform and placement
+use cases. See :ref:`form-controls` for more information on capturing content.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Understanding Content Modeling
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Content modeling is the systematic process/practice of defining and structuring the various types of content that a
+organization uses to communicate with its audience.
+
+This involves identifying content types (such as articles, products, and events), their attributes (title, description,
+and date), and their relationships.
+
+""""""""""""""""""""""""""""""""""
+The Importance of Content Modeling
+""""""""""""""""""""""""""""""""""
+Effective content modeling offers numerous benefits:
+
+- **Consistency**: Proper factoring in content modeling ensures uniformity across content, enhancing user experience.
+  It improves indexing and ease of integration.
+- **Re-usability**: Structured content can be repurposed across different platforms and channels.
+- **Scalability**: Well-thought-out models facilitate the addition of new content types and attributes without disrupting
+  existing structures.
+- **Collaboration**: Content models provide a clear framework for teams to work together seamlessly.
+
+The continued adoption of new channels, integrations, advanced search use cases, and AI exponentiate the value of the
+benefits of structured content and content modeling.
+
+""""""""""""""""""""""""""""""""""""""""""""
+Content Modeling in Practice with CrafterCMS
+""""""""""""""""""""""""""""""""""""""""""""
+Now that we understand what content and content modeling are, let’s address the practice of content modeling. As you
+will learn, content modeling is a combination of information gathering, design, and implementation.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Begin with the Business & the Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Your content model and the content it describes must serve your business. Before starting, it’s essential to properly
+identify and understand the business domain, use cases, and associated stakeholders to avoid duplication and unnecessary
+refactoring.
+
+'''''''''''''''''''''''''''''''''
+Identify and Involve Stakeholders
+'''''''''''''''''''''''''''''''''
+Content must be aligned with the business and the experiences and platforms that serve it. The subject matter experts
+in these areas are the stakeholders. It’s important to identify and involve these individuals early and throughout the
+process.
+
+Common stakeholders include:
+
+- Business owners
+- Content and taxonomy specialists
+- Content authors/creators and translators
+- Designers
+- Developers
+- Marketers
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''
+Understand the Content Use Cases, Channels, Lifespan
+''''''''''''''''''''''''''''''''''''''''''''''''''''
+The next step is to examine the various use cases for the content closely to understand where and how the content will
+be used fully.
+
+Things to consider:
+
+- **Channels**: Is the content expected to be consumed by more than one channel? A website, a native model app, a
+  digital experience, and digital signage are all examples of channels.
+- **Re-use locations**: Oftentimes, even within a single channel, content is reused. Consider news articles within a
+  news site. The article and all its content and attributes are likely to be presented on the article page, and you
+  would expect the same title, summary, and main image to be displayed elsewhere in featured article promotions, search
+  results, and similar contexts.
+- **API**: Is content available via API, so both current and future channels can leverage it. It’s often helpful to
+  fully consider the dominant APIs you expect to leverage, as some APIs like GraphQL may have implications for your design.
+
+It’s also important to understand that not all content is created equal. Some content is high-value and evergreen.
+This content is often referred to as Enterprise content. Other content is entirely short-term and situational, or
+use-case specific. The more high-value the content is, the more worthy of your time as a designer it is.
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Considerations for Consumption, SEO, Search Indexing, AI, and other Integrations
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+The types of delivery platforms and the shape of our API responses, along with common integrations for SEO, Search
+Indexing, and AI, may add new requirements or impact our existing model design. Careful consideration of these topics
+can help prevent rework later in the process.
+
+- **APIs / Content Consumption Support**
+
+  Consider each API and channel you plan to use to deliver the content. Do you need any properties or instructions to
+  support the channel? The key here is to capture these values as their own field rather than embedding the information
+  in the content. In this way, the information can be ignored where it is not useful.
+
+  A few examples of this:
+
+  - Behavioral properties of a slider
+  - Dimensions of an image
+  - Geo-fence coordinates
+
+- **SEO Optimization**
+  Search Engine Optimization is extremely valuable. In addition to the content your users get, most search engines look
+  for and leverage specific types of metadata to help them understand the intent and audience of the content. Add specific
+  fields to support SEO directly within your models like the following:
+
+  - Meta Titles and Descriptions
+  - Canonical URLs
+  - Image Alt Text
+
+  These fields can be indexed, exposed via APIs, and rendered in templates to optimize for search engines.
+
+- **Advanced Search Capabilities with OpenSearch**
+  Query-driven content is a powerful capability offered out-of-the-box by CrafterCMS that powers search, personalization,
+  AI use cases, and more. To get the most out of these capabilities, you will need to fine-tune your content model,
+  We will cover specifics of these topics in detail when diving into content type modeling practices.
+
+  Areas of concern for search include:
+
+  - Ensure that mandatory fields in search queries are marked as required.
+  - Data Typing: Ensure attributes are assigned the proper data type (string, integer, float, boolean, HTML, etc) for
+    programmatic use, indexing, tokenization, and analysis.
+  - Properly factor models to ensure consistency of fields (e.g., a Title on one type should be the same as a title in
+    other types)
+  - Multi-value fields: In some cases, you want to capture values as arrays, for example, strings in a repeat group. In
+    this case, you will mark the fields post-fix with ``_ss``
+  - Tokenization: Open Search offers various tokenization options tailored to specific data types. Your tokenization
+    strategy depends on how you intend to query the data. CrafterCMS automatically assigns strategies based on the postfix
+    and provides additional options on field types to allow you to augment this behavior. You can learn more about
+    tokenization here: https://docs.opensearch.org/docs/latest/analyzers/tokenizers/index/
+  - Flattening: As authors, we often want to build up content through composition. A great example of this is when an
+    author builds a page by dragging and dropping sections onto it and then adding components, such as paragraphs, images,
+    and sliders, into the sections. This is great from an authoring perspective, but from a developer perspective, it’s
+    likely you will want all of these separate content objects “flattened” into a single object for indexing. Conversely,
+    there will be some content relationships, like references to other pages, that you do not want flattened into the
+    object. You can learn more about search index document flattening here: :ref:`content-modeling`
+  - A note about Rich Text (RTE) and Rich Documents:
+
+    - Rich documents are processed for full text indexing up to a specified number of characters. The mime types and the
+      amount of content (character count) to index are controlled by configuration. A special content field is made
+      available in the index that contains the indexed value. CrafterCMS supports a concept called `jacketing`
+      in which rich documents can be paired with a content type, allowing for the full-text indexing of a given document
+      to be associated with a specific content type in a single search entry. You can learn more about this here: :ref:`jacket`
+
+    - Rich Text/HTML: markup captured by Rich Text Editors (RTEs) is automatically indexed as both raw and plain text,
+      allowing it to be properly searchable and used with or without markup as needed.  When a field variable name ends
+      with the ``_html`` postfix, it is stored in the index as ``_html`` and ``_raw``, where:
+
+      - ``_html`` contains the content without markup
+      - ``_raw`` contains the content with markup
+
+  This can be confusing to some developers as the ``_html`` name is the only name available to developers through non search
+  based APIs and yields the content WITH markup. That said, this is because typically, when querying the search index and
+  leveraging its values, developers want the value without markup.
+
+- **AI Integration**
+  Generative AI, integration with AI backends, and AI-powered user experiences are rapidly evolving and demanding spaces
+  in terms of requirements.
+
+  You want to ensure you're accurately describing content types, fields, and their proper use, so that these details can
+  be fed into generative AI when it assists you in creating content. This is done through content type and field-level
+  descriptions, help, and constraints.
+
+  You also want to consider how AI will be used to consume and leverage your content within end-user experiences. Do you
+  need to modify your content model in any way in order to make your content easier for AI to leverage?
+  We recommend structured content as opposed to unstructured content as structured content makes it more ideal for
+  AI-related use cases. Further, CrafterCMS stores content modeling metadata and content as XML within files.
+  This is a format and storage implementation that is the ideal format for AI ingestion and training workloads.
+
+- **Consider Localization**
+  Localization, personalization, and accessibility concerns may add additional requirements to your model and/or new workflow.
+
+- **Personalization and Multivariate Testing**
+  Personalization and multivariate testing often require content model augmentation in the form of additional content
+  fields and metadata, as well as, in some cases, separate but related content. Consider your use cases to ensure the
+  model has been adjusted appropriately to support your needs.
+
+- **Accessibility**
+  Accessibility often requires additional fields, such as alternate text for images and other media, as well as further
+  information on links. It’s also important to review your use of markup in rich text editors and templates to ensure
+  that your markup is WCAG compliant. Accessibility is a crucial requirement, and the demand for strict adherence to
+  accessibility guidelines and standards is increasing. It’s much easier to support these needs when they are considered
+  up front rather than trying to retrofit support at a later date.
+
+''''''''''''''''''''''''''''''''''''''
+Consider Future Channels and Use Cases
+''''''''''''''''''''''''''''''''''''''
+More often than not, we begin developing a content model for a specific use case and a set of channels, and it’s natural
+and appropriate to focus a lot on these. That said, especially when it comes to high-value and evergreen content, we
+need to allocate some time to considering future channels and use cases, as well as how the design choices we make
+today may impact our ability to support these types of requirements in the future.
+
+Tips to help you future-proof your content:
+
+- Plan for multichannel delivery from the start.
+- Avoid over-specifying fields; add only what is necessary, note any relevant details, and keep track of potential
+  extensions. This can be seen as a statement in conflict with the previous item. Sometimes it is. That said, it is
+  also often true that less is more. Here, you must find a balance. Over time, lessons learned through experience will guide you.
+- Use taxonomies to classify content, making it more findable for reuse.
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Consider the Content Production and Workflow Process and Concerns
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Another area of requirements that can impact your content model is the content creation and workflow process. We want
+to ensure that we’re not creating hard dependencies and relationships between content that could create bottlenecks in
+everyday workflows.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Design and Document the Content Model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Once you have a clear understanding of the requirements and buy-in from the business and other stakeholders, we can
+begin the process of designing our content model.
+
+The following documentation here: :ref:`content-modeling`, provides detailed instructions on how to use the modeling
+tools within Crafter Studio.
+
+What we will do here, instead, is to provide you with additional background and guidance to assist you and help you
+think about and improve upon the models you create.
+
+''''''''''''''''''''''''''
+Identify the Content Types
+''''''''''''''''''''''''''
+The first step is to identify the content types. Content types refer to the objects or entities within our content model.
+These are the objects that represent articles, bios, product content, recipes, web and app pages, and screens, as well
+as the components displayed on those pages and screens.
+
+Pages vs Components
+CrafterCMS makes a distinction between content that is a page vs a component. A “page” is intended to represent a web
+page or a screen in an application. The reason we make this distinction is to enable a few pre-configured behaviors
+within Crafter Studio, the authoring environment, and Crafter Engine, the content delivery server, as well as our
+out-of-the-box OpenSearch indexes and integrations.
+
+Generally speaking, a page is any object that represents a page or a screen in an application and that, in the case of
+web pages, you want to be URL addressable.
+
+A common example of an entity type that causes some confusion is an article or product. The question often arises:
+Should each article or product be considered a page?  In the case of a product, it’s usually a bit clearer. A given
+product tends to be one of thousands or more instances in the system. The pages and screens they are rendered on tend
+to be the same structure for every product. Any changes to that page’s structure and layout should be managed centrally.
+In this case, we would create a Product Detail page object to render product details and make each product a component.
+
+Articles could follow the same pattern, but the template typically defines the structure. Articles are URL-addressable
+items, and we gain a greater benefit from making them a Page. Either approach will work for both use cases; choose the
+approach that makes authoring and primary rendering of the object as simple and easy as possible.
+
+'''''''''''''''''''''''''''''''''''''''''''''
+Identify the Attributes for each Content Type
+'''''''''''''''''''''''''''''''''''''''''''''
+The next step is to identify the attributes (often referred to as fields) for each content type. These correspond to
+visual and non-visual elements of content and metadata required to describe the content, support the use cases, and
+enable workflows. For each element, specify the following:
+
+- Attribute Name: The label of the attribute
+- Attribute variable: The variable name with type postfix
+- The data type: This corresponds to the postfix in the variable name
+- Field type:
+- Data type:
+- Constraints
+- Notes
+
+Let’s consider an Article page:
+
+Visual elements:
+
+.. list-table::
+    :header-rows: 1
+
+    * - Attribute Name
+      - Variable Name
+      - Field Type
+      - Data Type
+      - Constraints
+      - Notes
+    * - Title
+      - title_t
+      - Input box
+      - Text
+      - Required
+        250 chars
+      -
+    * - Author Name
+      - author_s
+      - Input box
+      - String
+      - Required
+        250 chars
+      -
+    * - Publish Date
+      - publish_dt
+      - Date Picker
+      - Date
+      - Required
+      -
+    * - Article Summary
+      - summary_html
+      - Rich Text Editor
+      - HTML
+      - Required
+      -
+    * - Article Body
+      - body_html
+      - Rich Text Editor
+      - HTML
+      - Required
+      -
+
+Functional (non-visual) elements:
+
+.. list-table::
+    :header-rows: 1
+
+    * - Attribute Name
+      - Field Type
+      - Data Type
+      - Notes
+    * - SEO Description
+      - Input box
+      - Text
+      -
+    * - SEO Keywords
+      - Input box
+      - Text
+      -
+    * - Featured
+      - Checkbox
+      - Boolean
+      -
+    * - Category
+      - Dropdown
+      - String
+      -
+    * - Disabled
+      - Checkbox
+      - Boolean
+      -
+
+'''''''''''''''''''''''''''''''''''
+Factor Familiar Entities and Fields
+'''''''''''''''''''''''''''''''''''
+A blog, a video, a press release, an article, etc., has a title field. It’s best to define what a title (or any other
+common field) looks like regarding length and other constraints. This significantly enhances clarity for authors,
+facilitates AI assistance, and ensures alignment with search indexes and GraphQL.
+
+This exercise involves both planning and design, as well as execution. To facilitate the planning and design phase,
+use a spreadsheet or data modeling tool to map out and label your content types and fields.
+
+To facilitate the execution of this practice, there are three approaches to consider:
+
+#. Capture common attributes in a component and build larger content types by embedding the components as referenced or
+   embedded objects.
+#. Build a robust version of the field with every parameter set up properly, and then copy the field to other types.
+#. Where common values in common fields apply, leverage Crafter CMS’s inheritance mechanism.
+
+''''''''''''''''''''''
+Identify Relationships
+''''''''''''''''''''''
+A lot of content can be modeled as stand-alone entities, and that’s ok. In fact, when the requirements are simple, it’s
+a best practice to keep the model simple.  For example, let’s imagine a blog article for a company’s main website where
+there’s a single unnamed author (the company) and where the publishing volume is relatively low, e.g., approximately a
+blog a week. In this case, it’s probably better to create a blog article that has all of its relevant fields associated
+with it, is not built up with a compositional approach (using drag and drop), and does not have any direct relationships
+with other content objects.
+
+On the other hand, if we are modeling an article type for a news room full of different authors that’s going to be
+presented on a site with thousands or millions of other articles where taxonomy will be a key driver of how the content
+is delivered, then yes, we’re going to want to correlate that article with author objects, related articles, and taxonomy.
+
+The point is that relationships are an essential aspect of our content model, and we need to think deeply about each
+relationship, its type, and what it means for the authoring experience and how it impacts the delivery of the content.
+
+There are two main types of relationships:
+
+#. Static relationships: One content item is explicitly declared related to another content object by id/name.
+#. Dynamic relationships: Content is related to other content via query criteria.
+
+To illustrate this, let’s consider articles that are “tagged” with category taxonomy objects. Each time we add a new
+category taxonomy object’s ID to the list of category IDs in the object, we are making an explicit relationship between
+that article and the taxonomy object.
+
+Now, if we create a category section page for each taxonomy object and write a query to retrieve all articles tagged
+with a given category, a dynamic relationship exists between the category page and the articles it displays.
+
+When we design our content model, we handle the two types of relationships differently. For dynamic relationships, we
+simply track them as use cases. This inventory can be used to help validate our model through a thought experiment and
+automated testing. As content modeling practitioners, our task is to define the static relationships in a logical way
+that will properly facilitate all of our authoring and delivery use cases.
+
+With this in mind, we can further subclass static relationships:
+
+- Parent-child: The referenced content is subordinate to the object. Virtual classes have lessons, which in turn have topics, and so on.
+- Sibling: The referenced object is equal with respect to structure, but is related in some way: For example, a curated related list of related articles.
+- Part-of: The referenced object is not meant to stand on its own. The parent is built up or composed of other objects for the convenience of the authors.
+
+.. image:: /_static/images/content-model/content-model-static-relationships.webp
+    :width: 75%
+    :alt: Content Model Static Relationships
+    :align: center
+
+|
+
+In CrafterCMS, most of the relationships are expressed in the same way: through the item selector.
+By taking the time to consider the relationships thoroughly, we allow ourselves to assess the impacts and side effects
+of our design choices.
+
+That said, the Part-of relationship does have specific implementation requirements in CrafterCMS.  Content modelers must
+decide if the child content portion of the part-of relationship will be stored as a standalone “shared” object or as an
+embedded object.
+
+**Embedded object**: The child object/component’s XML is stored inside the parent's XML document. This makes physically
+moving objects, removing objects, and reverting objects more straightforward.
+
+**Shared object**: It’s possible to create a standalone child content object in CrafterCMS, whereby the child object is
+stored as a separate XML document. This is essential if the child's content is going to be reused by multiple parents.
+A good example of this is videos that are part of multiple video Playlist objects.
+
+That said, it’s also possible to use a shared object even when only a single parent is expected. This is referred to as
+an item-specific shared object. The reason this exists is historical. Shared objects were made available before support
+for embedded objects was introduced. Given this, most of the time, item-specific content should be modeled as
+embedded objects.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Content Types, Content, APIs, Controllers, and Templates in CrafterCMS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+While the purpose of this article is to discuss content modeling, it can be helpful to understand how content types
+(the result of content modeling) fit into the bigger picture.
+
+Once we have completed the requirements and design phase of our content modeling exercise, we use the Crafter Studio
+application’s content modeling tool to create Content Type definitions. As shown below. These definitions are visualized
+in the application and are stored in our projects as XML documents.
+
+.. image:: /_static/images/content-model/content-model-content-type-definition.webp
+    :width: 75%
+    :alt: Content Model Content Type Definition
+    :align: center
+
+|
+
+As we’ll see more fully in the next section, these content type definitions are used by Crafter Studio to create content
+capture interfaces and forms that enable users to enter and modify content.
+
+.. image:: /_static/images/content-model/content-model-content-type-form-input.webp
+    :width: 75%
+    :alt: Content Model Content Type Definition
+    :align: center
+
+|
+
+Upon save, Crafter Studio saves a version of the content to the repository as an XML document, as shown below. This XML
+document is separate from the content type definition XML document, but it references the definition.
+
+.. image:: /_static/images/content-model/content-model-content-type-xml.webp
+    :width: 75%
+    :alt: Content Model Content Type Definition
+    :align: center
+
+|
+
+Upon save within Crafter Studio and upon publish operations within the delivery subsystem, content is loaded into
+Crafter Engine’s in-memory database and indexed into OpenSearch.
+
+.. image:: /_static/images/content-model/content-model-content-type-definition-xml.webp
+    :width: 75%
+    :alt: Content Model Content Type Definition
+    :align: center
+
+|
+
+Once loaded into Crafter Engine and indexed into OpenSearch, the content can then be consumed through APIs, server-side
+controllers, and/or server-side templates.
+
+.. image:: /_static/images/content-model/content-model-content-type-definition-to-rendered-content.webp
+    :width: 75%
+    :alt: Content Model Content Type Definition
+    :align: center
+
+|
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Use of Content Types by Crafter Studio and Deployer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Content type definitions are sometimes referred to as form definitions historically. This no longer accurately describes
+the full breadth of use cases for content type definitions. Today, content definitions power and drive several
+components and aspects of the platform. In this section, we’ll briefly identify these.
+
+- **Power Experience Builder** |br|
+  Experience Builder is a rich and robust in-context editing tool for websites and other types of digital experiences.
+
+  - Enables authors to edit content and drag-and-drop layouts directly in the browser.
+  - Utilizes Content Type definitions to facilitate content editing, enforce constraints, and relationship rules.
+
+- **Generate and Power Authoring Content Forms** |br|
+  Authoring Content Forms are content entry screens and dialog boxes. These forms are dynamically generated by rendering
+  the sections and fields described in the content type definitions as form sections and content entry fields.
+- **Drive Automated Schema Generation for GraphQL** |br|
+  GraphQL is a schema-backed, query language for APIs available in CrafterCMS. CrafterCMS automatically generates the
+  Schema for the GraphQL backend by interpreting the content type definitions and converting them to GraphQL schema definitions.
+- **Drive OpenSearch Indexing Integration with the Deployer** |br|
+  CrafterCMS provides out-of-the-box integration with OpenSearch. OpenSearch is a powerful document-based information
+  query and retrieval platform optimized for search use cases. CrafterCMS’s Deployer component is used to index content
+  into OpenSearch. The Deployer uses content type definitions to implement indexing rules related to field types,
+  tokenization, and relationship flattening.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Best Practices for Constructing Content Types
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To construct content types in CrafterCMS, developers and power users utilize the Content Modeler to define and modify
+content type definitions. The following document: :ref:`content-modeling`, covers the details of the content modelling
+tool, :ref:`form-controls`, and :ref:`data-sources`.
+
+We want to focus on the things that we can do to improve our outcomes when constructing content types.
+
+''''''''''''''''''''''''''''''''''''''
+Configure a Preview Image for the Type
+''''''''''''''''''''''''''''''''''''''
+Each type has an option for a preview image. Distinctive images that show the type of content or its use help authors
+quickly identify the correct type when browsing through lists of possible types.
+You can learn more about this here: :ref:`properties-of-content-types`
+
+'''''''''''''''''''''''''''''
+Organizing Section and Fields
+'''''''''''''''''''''''''''''
+Content Type definitions are broken up into Sections. Sections are intended to be logical groupings of related fields.
+Each section has a label, optionally a description, and any number of fields. How we organize and populate sections can
+significantly impact authors' editing experiences and integrations, such as Search and AI, as described above.
+Here are a few tips that can improve your outcomes:
+
+#. **Place like sections in the same order across all types**: By structuring similar sections in the same order across
+   all of our content types, we’re helping to create muscle memory for our content authors. This reduces the act and
+   sense of “hunting” for what they need, making them more efficient.
+#. **Always fill out the section label and description**: The label and description provide key information about the
+   fields in the section. A good description not only helps content authors but can be leveraged by generative AI to
+   improve the quality of the content.
+#. **Set rarely used sections to be collapsed/closed by default**: Sections can be configured to start open or closed.
+   A section with a required field will always open when a form is presented to a user, but if it has no unsatisfied
+   constraints and is configured to be closed, it will be rendered in a collapsed state initially. This is valuable for
+   sections that contain content or configuration that is rarely touched because it initially hides the details,
+   highlighting other sections and fields that are more actively managed.
+
+''''''''''''''''''''''''''''''''''''''''''''''''''
+Configuring the Field Label, Description, and Help
+''''''''''''''''''''''''''''''''''''''''''''''''''
+Similar to sections, fields also have labels, descriptions, and an additional help property. Filling out these
+properties thoroughly will enhance content authors' understanding of the field and its use case, and also facilitate
+the integration of generative AI. Here are a few tips to keep in mind:
+#. Use business user-friendly label names
+#. Use the description to provide essential and immediate details about the type of input you want and how it will be used.
+#. Use the Help property (which is a rich text field) to expand on the description with detailed information.
+#. For common fields, fill out this information once and copy the fields to other definitions to maintain consistency. Future versions of CrafterCMS will improve upon this.
+
+'''''''''''''''''''''''''''''
+Configuring Field Constraints
+'''''''''''''''''''''''''''''
+Every field in a content type definition can be marked as required or not. Additionally, each field type has constraint
+properties that are relevant to the kind of content it is intended to capture. Taking the time to configure constraints
+sensibly and thoroughly ensures that the system captures content in a way that is appropriate for the various delivery
+use cases. Constraints warn authors early, eliminating the need for them to do edge case testing of experiences
+before publishing.
+
+''''''''''''''''''''''''''''''''''''
+Configure Content type Applicability
+''''''''''''''''''''''''''''''''''''
+Content is stored in folder structures that align with the organizational aspects of our information architecture.
+In CrafterCMS, this aspect of the information architecture is expressed as a folder structure. In some cases, this
+organization aligns with our URL structures for websites or screen hierarchies for native apps. Often, the structure
+aligns with the type of content, the use case, or the authoring process, rather than with other types of content.
+Regardless, it is typically the case that certain content types should only be used to create content in specific
+folders. In CrafterCMS, you can configure each content type with the folders to which it applies. Crafter Studio
+utilizes this configuration to enhance the authoring experience by presenting only the types of content relevant to
+the author. See the following documentation for more details: :ref:`content-creation-permissions-section`
+
+'''''''''''''''''''''''''''''
+Configuring Rich Text Editors
+'''''''''''''''''''''''''''''
+Rich Text Editors (RTEs) are very powerful content entry controls. CrafterCMS uses TinyMCE as the foundation of its Rich
+Text Editor control. An administrator can precisely control the options available to authors in each rich text editor
+field. Follow this documentation for detailed configuration instructions: :ref:`properties-of-content-types`
+
+Here are a couple of items to think about and configure when using Rich Text Editors:
+
+- **Right-size the Toolbar Options**: TinyMCE is a powerful rich text editor with numerous tools and options.
+  Not all of these options make sense for every RTE input. Further, in some cases, you may want to eliminate options
+  because, while technically valid, they create brittle markup (for example, the color control). Consider each RTE,
+  its corresponding use case, and then eliminate all unnecessary options from the toolbars and other configurations.
+  Doing so streamlines the authoring experience and eliminates possibilities for authors to create brittle
+  markup unknowingly.
+- **Leverage the Insert Style dropdowns**: The style and format dropdowns enable you to format and stylize copy using
+  semantic markup and CSS, rather than brittle markup.
+- **Link the appropriate data sources to the RTE**: If you plan to allow authors to insert links, videos, and images,
+  ensure that you have configured the corresponding data sources. If you don’t want authors to insert these elements,
+  remember to remove the option.
+- **Configure the RTE height**: Rich Text Editors can occupy a significant amount of space. Sometimes you need less,
+  other times you need more. For small sections, set the height to be less to make forms smaller. For long article
+  bodies, set a large, “comfortable” RTE size.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Extending the Form Engine
+~~~~~~~~~~~~~~~~~~~~~~~~~
+CrafterCMS is a platform. This means you can extend it to meet the authoring and content delivery needs of your specific
+use cases. There are four mechanisms for extending the Content Types and the Form Engine behind Content Forms and the
+Experience Builder:
+
+- **Content Lifecycle Controller (Server Side)**
+  Configuring a content type with a Content Lifecycle Controller introduces the ability to execute code on specific
+  lifecycle events, such as create, update, copy, and delete. You can use these events to modify the content before
+  saving or to support integrations.
+
+  See the ``Controller`` field in :ref:`properties-of-content-types` for more information.
+
+- **Form Engine Controller (Client Side)**
+  On occasion, you want to enforce specific rules and actions between fields in the Form Engine. For example, if the
+  user chooses a particular country, show fields specific to that country. Such use cases apply to the Content Authoring
+  Forms (but not the Experience Builder). To support these use cases, you can introduce a Form Engine Controller,
+  which provides you with specific event hooks like “On Initialization” and “On Save” where you can execute custom
+  client-side code.
+
+  .. todo You can learn more about Form Engine Controllers here: <add link here>
+
+- **Custom Form Controls**
+  You can create and install custom form engine controls that provide authors with new ways to enter content. For
+  example, a custom slider control for picking a value in a range. Another example might be a custom asset picker with
+  a platform like Cloudinary or Bynder. Custom controls are written in React and packaged and installed as plugins.
+  You can learn more about custom form controls here: :ref:`building-plugins-controls`
+
+- **Custom Data Sources**
+  Sometimes we want to use the same form control (like an image or video picker) but supply a custom backend from which
+  to select the asset. As previously mentioned, this is why we have data sources in the content type system. It is
+  possible to create, package, and install your own custom data sources. Custom data sources are written in React and
+  packaged and installed as plugins. You can learn more about custom data sources here: :ref:`building-plugins-form-ds`
+
+|hr|
+
+.. _content-modeling-in-studio:
+
+--------------------------
+Content Modeling in Studio
+--------------------------
 Every content object in CrafterCMS is an object associated with a Content Model. Content Models allow you to add structure to your content and facilitate consumption via various visual representations or via APIs. One of the great things about CrafterCMS content models is that your content can be semi-structured which allows content authors the freedom to be as creative as they'd like to be, but provide the template/UI and API developers enough structure to produce solid multi-channel renditions of the content. This section will walk you through Content Type management in Crafter Studio to help you create the models that best fit your requirements.
 
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Content Types in Crafter Studio
--------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Content Type Management in Crafter Studio is located in the |projectTools|.
 
 .. image:: /_static/images/content-model/project-tools-link.webp
@@ -23,38 +733,35 @@ Content Type Management in Crafter Studio is located in the |projectTools|.
    :alt: Project Tools Link
    :align: center
 
-Content Types are limited to two core types: **Pages** and **Components**. Both are made up of three ingredients:
+Content Types are one of two core types: **Pages** and **Components**. Both are made up of three ingredients:
 
 #. Model: The content pieces that will be captured from the content authors for the page or component
 #. View: The view template that will render the content, typically to HTML markup (for Templated, not Headless, projects)
 #. Controller: The controller   that handles the incoming request for the page or component
 
-^^^^^
+"""""
 Pages
-^^^^^
-
+"""""
 Pages are top-level container types. Pages hold content, and optionally components. Content within
 pages is made up of various types, for example content can be a date, an image, or a rich text field.
 
-^^^^^^^^^^
+""""""""""
 Components
-^^^^^^^^^^
-
+""""""""""
 Components only differ from pages in that they can't render by themselves, instead, they must render
 within a container page or another component.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""
 When to model as a page vs component
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""
 Model content as a component for meaningful chunks of content, say content containing all things
 about our "Our Team", or say, content containing all things for a header or footer.
 
 Model content as a page for content made up of various texts, images, components, etc.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""
 Shared components vs embedded components
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+""""""""""""""""""""""""""""""""""""""""
 Components may be shared or embedded. Embedded components belong exclusively to a content object,
 while a shared component is shared across pages or components. For more information on how to
 use embedded and shared components, see :ref:`here <component-handling>`
@@ -63,9 +770,9 @@ use embedded and shared components, see :ref:`here <component-handling>`
 
 .. _content-model:
 
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Content Type Model Definition
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Content models are defined via Crafter Studio's graphical modeling tool under Content Types:
 
 .. image:: /_static/images/content-model/content-type-management.webp
@@ -93,10 +800,9 @@ You now specify:
 
 .. _form-builder-basics:
 
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 Form Builder Basics
-^^^^^^^^^^^^^^^^^^^
-
+"""""""""""""""""""
 .. figure:: /_static/images/content-model/create-content-type-2.webp
     :alt: Content Type Editor
 	:align: center
@@ -147,10 +853,11 @@ Crafter Studio's Form Builder
 || 9     || Save or Cancel the changes to the Content Type.                                      |
 +--------+---------------------------------------------------------------------------------------+
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Properties of Content Types
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. _properties-of-content-types:
 
+"""""""""""""""""""""""""""
+Properties of Content Types
+"""""""""""""""""""""""""""
 Let's select the content type itself, by clicking on the content type name at the top of the Form Builder and explore its properties.
 
 .. image:: /_static/images/content-model/create-content-type-3.webp
@@ -179,8 +886,10 @@ The fields available at this level are:
 || Configuration|| Contains config.xml which holds information about the content type such as the|
 ||              || limit where content can be created, is it previewable, etc.                   |
 +---------------+--------------------------------------------------------------------------------+
-|| Controller   || Contains controller.groovy which provides an extension/hook to authoring      |
+|| Controller   || Contains ``controller.groovy`` which provides an extension/hook to authoring  |
 ||              || lifecycle events.                                                             |
+||              || See this :ref:`example-component-plugin` which contains a sample code for     |
+||              || ``controller.groovy``                                                         |
 +---------------+--------------------------------------------------------------------------------+
 || Display      || View template to use when rendering this content                              |
 || Template     ||                                                                               |
@@ -205,10 +914,9 @@ The 2 key properties are: the display template (:ref:`content-view-templates`) w
 
 .. _content-creation-permissions-section:
 
-""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Content Creation Permissions
-""""""""""""""""""""""""""""
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Limiting where a content type can be created is through the Configuration Property of a content type (config.xml) using the following tags:
 
 .. code-block:: xml
@@ -287,10 +995,9 @@ From the **Sidebar** again, navigate from the **Pages** folder to the /Home/arti
 
 To see more examples, try creating content types in the other folders in the **Sidebar** such as the **Taxonomy** folder, the **Components** folder and anywhere under the **Pages** folder.
 
-"""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Cascade on Delete Configuration
-"""""""""""""""""""""""""""""""
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Cascade on delete allows the automatic deletion of child items matching a regexp when a content is deleted.
 
 Enabling cascade on delete is configured through the content type **Configuration** property (config.xml) using the following tags:
@@ -352,10 +1059,9 @@ Open the Sidebar and navigate to the newly created article. Right click on the n
 
 .. _copy-dependencies-configuration:
 
-"""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Copy Dependencies Configuration
-"""""""""""""""""""""""""""""""
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Copy dependencies allows the automatic copying of child items matching a regexp when a content is copied.
 
 Enabling copy dependencies is configured through the content type **Configuration** property (config.xml) using the following tags:
@@ -405,10 +1111,9 @@ Let's look at the dependencies of our copied article, where we expect a copy of 
 
 .. _item-specific-dependencies:
 
-""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 Item Specific Dependencies
-""""""""""""""""""""""""""
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 Item specific dependencies allows for the automatic copying of child items matching the regex pattern in the ``studio-config.yaml`` file when a content is copied. It also allows the automatic deletion of child items matching the regex pattern in the ``studio-config.yaml`` file when a content is deleted.
 
 Below is the regex pattern for item specific dependencies:
@@ -499,10 +1204,9 @@ Open the **Dashboard** and notice the items that are deleted in the ``My Activit
 
 .. _setting-up-quick-create:
 
-""""""""""""
+~~~~~~~~~~~~
 Quick Create
-""""""""""""
-
+~~~~~~~~~~~~
 Quick create allows content authors to create content with as few clicks as possible through a button from the context nav for configured content types.
 
 .. figure:: /_static/images/content-model/quick-create-button.webp
@@ -557,10 +1261,9 @@ Below is the site tree after using the quick create button to create a new artic
 
 .. _form-controls:
 
-^^^^^^^^^^^^^
+"""""""""""""
 Form Controls
-^^^^^^^^^^^^^
-
+"""""""""""""
 Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. CrafterCMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`building-plugins-controls`.
 
 .. image:: /_static/images/content-model/form-engine-controls.webp
@@ -603,9 +1306,9 @@ Here's a list of available Form Engine Controls:
 
 .. _form-control-variable-names:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 Form Control Variable Names
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 Every Form Control has a Variable Name property. The Variable Name is used by the form engine to store the content entered by the user in the content model and search index. This same Variable Name is used later by templates and controllers to retrieve the value.
 
 **Variable Name Best Practices**
@@ -713,35 +1416,71 @@ CrafterCMS indexes your content in the search index using your content model var
 
 To facilitate indexing, the following suffix should be appended to variable names depending on the variable data type:
 
-+------------+---------+-------------+----------------------------------------------------+
-||           || Field  || Multivalue || Description                                       |
-|| Type      || Suffix || Suffix     ||                                                   |
-||           ||        || (repeating ||                                                   |
-||           ||        || groups)    ||                                                   |
-+============+=========+=============+====================================================+
-|| integer   || _i     || _is        || a 32 bit signed integer                           |
-+------------+---------+-------------+----------------------------------------------------+
-|| string    || _s     || _ss        || String (UTF-8 encoded string or Unicode). A string|
-||           ||        ||            ||  value is indexed as a single unit.               |
-+------------+---------+-------------+----------------------------------------------------+
-|| long      || _l     || _ls        || a 64 bit signed integer                           |
-+------------+---------+-------------+----------------------------------------------------+
-|| text      || _t     || _txt       || Multiple words or tokens                          |
-+------------+---------+-------------+----------------------------------------------------+
-|| boolean   || _b     || _bs        || true or false                                     |
-+------------+---------+-------------+----------------------------------------------------+
-|| float     || _f     || _fs        || IEEE 32 bit floating point number                 |
-+------------+---------+-------------+----------------------------------------------------+
-|| double    || _d     || _ds        || IEEE 64 bit floating point number                 |
-+------------+---------+-------------+----------------------------------------------------+
-|| date      || _dt    || _dts       || A date in ISO 8601 date format                    |
-+------------+---------+-------------+----------------------------------------------------+
-|| time      || _to    || _tos       || A time in ``HH:mm:ss`` format (the value will be  |
-||           ||        ||            || set to date 1/1/1970 automatically)               |
-+------------+---------+-------------+----------------------------------------------------+
-|| text with || _html  ||            ||                                                   |
-|| html tags ||        ||            ||                                                   |
-+------------+---------+-------------+----------------------------------------------------+
+.. list-table::
+    :header-rows: 1
+    :widths: 10 10 10 10 60
+
+    * - Type
+      - Field Suffix
+      - Multivalue Suffix (repeating groups)
+      - Alternative Multivalue Suffix (for backwards compatibility)
+      - Description
+    * - integer
+      - _i
+      - _is
+      - _imv |br|
+        _mvi
+      - A 32 bit signed integer
+    * - string
+      - _s
+      - _ss
+      - _smv |br|
+        _mvs
+      - String (UTF-8 encoded string or Unicode). A string value is indexed as a single unit.
+    * - long
+      - _l
+      - _ls
+      - _lmv |br|
+        _mvl
+      - A 64 bit signed integer
+    * - text
+      - _t
+      - _txt
+      -
+      - Multiple words or tokens
+    * - boolean
+      - _b
+      - _bs
+      - _bmv |br|
+        _mvb
+      - true or false
+    * - float
+      - _f
+      - _fs
+      - _fmv |br|
+        _mvf
+      - IEEE 32 bit floating point number
+    * - double
+      - _d
+      - _ds
+      - _dmv |br|
+        _mvd
+      - IEEE 64 bit floating point number
+    * - date
+      - _dt
+      - _dts
+      -
+      - A date in ISO 8601 date format
+    * - time
+      - _to
+      - _tos
+      -
+      - A time in ``HH:mm:ss`` format (the value will be set to date 1/1/1970 automatically)
+    * - text with HTML tags
+      - _html
+      -
+      -
+      -
 
 Model fields require their respective data type postfix as listed above. The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.
 
@@ -796,7 +1535,7 @@ This default configuration can be modified by editing the element ``<cdata-escap
      names that require CDATA escaping.
    -->
    <cdata-escaped-field-patterns>
-     <pattern>(_html|_t|_s|_smv|mvs)$</pattern>
+     <pattern>(_html|_t|_s|_smv|_mvs)$</pattern>
      <pattern>internal-name</pattern>
    </cdata-escaped-field-patterns>
 
@@ -804,9 +1543,9 @@ This default configuration can be modified by editing the element ``<cdata-escap
 
 .. _data-sources:
 
-^^^^^^^^^^^^
+""""""""""""
 Data Sources
-^^^^^^^^^^^^
+""""""""""""
 .. index:: Data Sources
 
 .. image:: /_static/images/content-model/form-engine-data-sources.webp
@@ -822,6 +1561,9 @@ Data Sources allows the content model designer to decide where different assets 
 
 .. _component-handling:
 
+~~~~~~~~~~~~~~~~~~
+Component Handling
+~~~~~~~~~~~~~~~~~~
 There are a couple of data source that also dictates how components are handled during duplicate/copy events. The :ref:`Shared Content<form-source-shared-content>` data source will duplicate/copy the reference to a component during a duplicate/copy event and is used for components that need to be shared across pages or components. For components that belong exclusively to a content object, use the :ref:`Embedded Content<form-source-embedded-content>` data source.
 
 The ``shared-content`` data sources also provides an option to allow users to search for existing items (``Enable Search Existing`` property) in addition to browsing. This provides users ease of managing lots of items/assets.
@@ -901,10 +1643,9 @@ Form Engine Data Sources (please use the scrollbar to see more data sources)
 
 .. _macros-for-data-sources:
 
-"""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~
 Macros for Data Sources
-"""""""""""""""""""""""
-
+~~~~~~~~~~~~~~~~~~~~~~~
 There are a number of macros available for the content model designer to use in data sources. These macros are used when uploading assets to better organize project items, usually in the **Repository Path** property of the data source for uploading. Here are the available macros:
 
 +---------------------+--------------------------------------------------------------------------------+
@@ -951,6 +1692,8 @@ put a check next to ``Feature``, the data source we set up earlier. Save your ch
    :width: 70%
    :align: center
 
+|
+
 We'll now use the control and data source we set up and see how the ``{parentPath}`` macro works. Recall that we setup
 the data source ``Repository Path`` to ``/site/components/{parentPath}``. From the project preview, edit one of the articles,
 say the article ``Men Styles For Winter`` under ``/articles/2021/1/men-styles-for-winter``. Scroll down to the ``Content``
@@ -963,23 +1706,28 @@ created component is now stored in the ``/site/components/articles/2021/1/men-st
    :width: 90%
    :align: center
 
+|
+
 **Data Sources macro: parentPath[index]**
 
 The ``parentPath[index]`` macro provides resolution support for sub elements of a parent path in Crafter Studio.
-It pulls a single sub **/** of the parent path with the following syntax ``{parentpath[index]}``
+It pulls a single sub **/** of the parent path with the following syntax ``{parentPath[index]}``
 
 Here are some examples:
 
-If the parentPath is ``/en/mypage``, then to get the sub element ``en``, use **0** as the index in the macro like so  ``{parentpath[0]}``
+If the parentPath is ``/en/mypage``, then to get the sub element ``en``, use **0** as the index in the macro like so  ``{parentPath[0]}``
 
-If the parentPath is ``/products/household/cleaning`` then to get  the sub  element ``household``, use **1** as the index in the macro like so ``{parentpath[1]}``
+If the parentPath is ``/products/household/cleaning`` then to get  the sub  element ``household``, use **1** as the index in the macro like so ``{parentPath[1]}``
+
+|
 
 .. note::
-      For both the ``parentPath`` and ``parentPath[index]`` macros, the path starts **without** ``/site/website`` and ``/site/components``.
+      - For both the ``parentPath`` and ``parentPath[index]`` macros, the path starts **without** ``/site/website`` and ``/site/components``.
 
-      For example, if in the repository the parent is a page, and the page URL in the repository is ``/site/website/en/about-us/index.xml``, then the parentPath is ``/en/about-us/index.xml``.
+        For example, if in the repository the parent is a page, and the page URL in the repository is ``/site/website/en/about-us/index.xml``, then the parentPath is ``/en/about-us/index.xml``.
 
-      If in the repository the parent is a component, and the component URL in the repository is ``/site/components/en/products/myproduct.xml``, then the  parentPath is ``/en/products/myproduct.xml``.
+        If in the repository the parent is a component, and the component URL in the repository is ``/site/components/en/products/myproduct.xml``, then the  parentPath is ``/en/products/myproduct.xml``.
+      - Embedded components (and nested embedded components) use the parent path of the top-level (non-embedded) item.
 
 |
 
@@ -989,9 +1737,9 @@ when modeling your content, found in the content type ``Article``.
 The section :ref:`item-specific-dependencies` above also details the use of some of the macros in the website_editorial blueprint, content type ``Article``.
 
 
-^^^^^^^^^^^
+"""""""""""
 Form Canvas
-^^^^^^^^^^^
+"""""""""""
 The canvas is where the form actually gets built. The building process is performed by simply dragging the controls from the Form Controls over to the canvas, rearranging the controls in the order you'd like to present to the content authors, and configuring the controls individually.
 
 Controls on the canvas are configured by clicking on the control, and then editing the control's configuration in the Properties Explorer, see item #3 in :ref:`form-builder-basics`. Different controls have different configuration, so please review the individual form control configuration listed in :ref:`form-controls`.
@@ -1005,10 +1753,9 @@ The canvas allows the form-based content capture only, and is used by content au
 
 .. _content-view-templates:
 
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Content Type View Templates
----------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the primary CrafterCMS model or additional model (via APIs, please read :ref:`groovy-java-api` for that topic).
 
 An example view template
@@ -1064,24 +1811,23 @@ The `FreeMarker <http://freemarker.org>`_ language is supported. For detailed Fr
 
 |hr|
 
----------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Page and Component Controller (Page and Component Scripts) Definition
----------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Crafter page and components can have their own controller scripts too, that are executed before the page or component
 is rendered, and that can contribute to the model of the template. Learn more about page and script controllers in :ref:`page-and-component-controllers`.
 
 |hr|
 
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Creating Content Type Examples
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. _content-type-page:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""
 Page Content Type Example
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
+"""""""""""""""""""""""""
 Page content types are top level container types that lets you define the layout/structure and functionality of content/components. To create a new page content type, click on |projectTools| from the **Sidebar**
 
 .. figure:: /_static/images/templates/templates-site-config.webp
@@ -1110,10 +1856,9 @@ Enter a Display Label and content type name for your new page content type, then
 
 We'll now start to construct the layout of the page. A content type has three ingredients: the model, the view and the controller.
 
-"""""
+~~~~~
 Model
-"""""
-
+~~~~~
 We'll start building the model first, which is the form that Authors will be using to enter content into. We'll add a form section called *Content* to the form and name it accordingly.
 
 .. figure:: /_static/images/templates/templates-add-form-section.webp
@@ -1205,10 +1950,9 @@ In the Repeating Group control, we will add an RTE (Rich Text Editor). In order 
 
 The model for our template is done. You can add some other controls by dragging and dropping controls from the **Controls** section to the form. To learn more about all the controls available, please see :ref:`form-controls`. To learn more about the data sources available, please see :ref:`data-sources`.
 
-""""
+~~~~
 View
-""""
-
+~~~~
 We'll now build the view for our template, which is the freemarker template file that renders the content, typically to HTML markup.
 There are two ways to create the freemarker template file for our template. One way is to open the **Sidebar** menu in Studio, then navigate to the **Templates** folder, depending on how your project is setup, you may want to navigate to the subfolder in your Templates folder where you want to create the freemarker template file. Once you are in the desired subfolder, right click on that folder then select **Create Template**
 
@@ -1307,10 +2051,9 @@ We will now start filling in the template of how we want the content captured in
 
 |
 
-""""""""""
+~~~~~~~~~~
 Controller
-""""""""""
-
+~~~~~~~~~~
 A controller is not necessary for a content type. To show how to create a controller for our new content type, we will create a custom controller. In the preceding section, we created a new content type (template) Page - Blog. We will now add a couple of featured articles at the bottom of the page depending on the active segment set in targeting. To be able to display articles depending on the active segment set, we will need to get a list of articles tagged for the active segment. This can be done by adding a script that gets executed to get the list of articles tagged for the segment selected before the page is rendered.
 
 Open the **Sidebar** menu and navigate to the **Scripts** folder. Click on the **Scripts** folder then **scripts**. Right click on the folder **pages**, then select **Create Controller**
@@ -1402,10 +2145,9 @@ As you can see from the controller we just added, the controller is used to cust
 
 .. _content-type-component:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""
 Component Content Type Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+""""""""""""""""""""""""""""""
 Component content type templates are very similar to page content type templates, as mentioned in :ref:`content-modeling`, the only difference between components and pages is that components cannot render by itself, it needs a container to render into. In this section, we will look at the component content type, **Component - Articles Widget** found in the Website_Editorial blueprint that shows you how to create a component content type that can be rendered in the sidebar.
 
 To create a new component content type, click on |projectTools| in the **Sidebar**. Click on **Content Types**, then select **Create New Type**. Enter a Display Label and content type name for your new template, then select **Component** as Type and then click on the **Create** button.
@@ -1419,9 +2161,9 @@ To create a new component content type, click on |projectTools| in the **Sidebar
 
 We'll now show you how to construct the layout of our component. Just like a Page content type, a Component content type has three ingredients: the model, the view and the controller.
 
-"""""
+~~~~~
 Model
-"""""
+~~~~~
 The dialog that opens after clicking on the **Create** button is the form that is presented to authors to enter content into. The controls available are on the right side of the dialog, in the **Controls** section. Simply drag the desired control to the form section to add.
 
 Let's take a look at the model for the articles-widget component content type. The default dialog after clicking on the **Create** button  contains only the **Component ID** and **Internal Name** field. From the image below, we have a few input controls added, one for the **Title**, one for **Max Articles**, a check box for **Disable Component** and an item selector for **Controllers**.
@@ -1453,10 +2195,9 @@ We'll take a look at the property **Controllers** and notice that the data sourc
 
 That's the model for the component content type Articles - Widget. Remember that you can add some other controls by dragging and dropping controls from the **Controls** section to the form. To learn more about all the controls available, please see :ref:`form-controls`. To learn more about the data sources available, please see :ref:`data-sources`.
 
-""""
+~~~~
 View
-""""
-
+~~~~
 We'll now look at the view for our template, which is the freemarker template file that renders the content, typically to HTML markup. There are two ways to create the freemarker template file for our template. One way is to open the **Sidebar** menu in Studio, then navigate to the **Templates** folder, depending on how your project is setup, you may want to navigate to the subfolder in your Templates folder where you want to create the freemarker template file. Once you are in the desired subfolder, right click on that folder then select **Create Template**. In our example here, we navigated to **Templates->templates->components**, then right click on the **components** folder then select *Create Template*
 
 .. figure:: /_static/images/templates/templates-comp-create-controller.webp
@@ -1507,10 +2248,9 @@ We will now select the view template we just created by clicking on the magnifyi
 Our view template is now done. Next we'll see how to create a controller for our component and bind it to the articles-widget component content type template.
 
 
-""""""""""
+~~~~~~~~~~
 Controller
-""""""""""
-
+~~~~~~~~~~
 We will look at a controller that allows us to display the latest article entries in the sidebar of our project.
 
 There are two ways to bind a script/controller to a page/component. The first way, as we have seen in the previous section :ref:`content-type-page` is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type. We'll show the other way how to bind a script to a page/component in this section, by adding an item selector to the model with a corresponding data source **Shared Content** named ``scripts``. When we were looking at the model for our content type template (articles-widget), you may have noticed that there is an item selector named **Controllers** with a corresponding data source shared content named **Scripts**, we are now going to look at a script that can be used by the item selector of our content type.
@@ -1575,3 +2315,4 @@ As we can see from the figure above, the script we created is bound to the new a
 |
 
 The component is now ready to be used in the Sidebar.
+
