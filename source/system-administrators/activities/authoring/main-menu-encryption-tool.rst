@@ -21,7 +21,7 @@ Crafter Studio provides an encryption tool for encrypting configuration properti
 Encryption Tool
 ---------------
 
-Crafter Studio uses a default key and salt for the encryption tool.  To set the key and salt to desired values, in your Authoring installation directory, open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and modify the following values
+Crafter Studio uses a default key and salt for the encryption tool. To set the key and salt to desired values, in your Authoring installation directory, open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and modify the following values:
 
 .. code-block:: bash
    :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
@@ -31,6 +31,8 @@ Crafter Studio uses a default key and salt for the encryption tool.  To set the 
    export CRAFTER_ENCRYPTION_SALT=${CRAFTER_ENCRYPTION_SALT:="default_encryption_salt"}
 
 |
+
+Remember that you must change the pre-configured default values for the key and salt to secure your installation.
 
 To access the Studio encryption tool, from the top right of your browser, click on the ``Navigation Menu`` icon |mainMenu|, then click on ``Encryption Tool`` under *Global*.
 

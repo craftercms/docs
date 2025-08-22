@@ -439,11 +439,9 @@ Here are the environment variables used for MongoDB in ``crafter.sh``:
 ||                         || $CRAFTER_LOGS_DIR/mongodb                                          |
 +--------------------------+---------------------------------------------------------------------+
 
-Here are the environment variables used for MariaDb in ``crafter.sh``:
-
-.. important::
-    You must change the pre-configured default values for environment variables for passwords such as ``MARIADB_PASSWD``
-    to secure your installation. See :ref:`securing-your-crafter-cms-install` for more information on changing the values.
+Here are the environment variables used for MariaDb in ``crafter.sh``.
+You must change the pre-configured default values for environment variables for passwords such as ``MARIADB_PASSWD``
+to secure your installation. See :ref:`securing-your-crafter-cms-install` for more information on changing the values.
 
 +--------------------------+---------------------------------------------------------------------+
 || MariaDb                 || Description                                                        |
