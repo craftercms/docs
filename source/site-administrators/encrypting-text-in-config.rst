@@ -18,16 +18,18 @@ This section details how to encrypt passwords, access keys or other sensitive in
 
 The encryption algorithm used is PBE (Password Based Encryption) with AES, in which a password and a salt are specified to generate the key used on encryption/decryption.
 
-Crafter Studio uses a default key and salt for the encryption tool.  To set the key and salt to desired values, in your Authoring installation directory, open ``/bin/crafter-setenv.sh`` and modify the following values
+Crafter Studio uses a default key and salt for the encryption tool.  To set the key and salt to desired values, in your Authoring installation directory, open ``/bin/crafter-setenv.sh`` and modify the following values:
 
 .. code-block:: bash
    :caption: *bin/crafter-setenv.sh*
 
    # -------------------- Encryption variables --------------------
-   export CRAFTER_ENCRYPTION_KEY=${CRAFTER_ENCRYPTION_KEY:="default_encrytption_key"}
-   export CRAFTER_ENCRYPTION_SALT=${CRAFTER_ENCRYPTION_SALT:="default_encrytption_salt"}
+   export CRAFTER_ENCRYPTION_KEY=${CRAFTER_ENCRYPTION_KEY:="default_encryption_key"}
+   export CRAFTER_ENCRYPTION_SALT=${CRAFTER_ENCRYPTION_SALT:="default_encryption_salt"}
 
 |
+
+Remember that you must change the pre-configured default values for the key and salt to secure your installation.
 
 The encrypted properties work in the following project configuration files:
 
@@ -49,10 +51,10 @@ To encrypt passwords, access keys or other sensitive information in a configurat
 -------
 Example
 -------
-Let's take a look at an example of encrypting the ``accessKey`` and ``securityKey`` for the AWS Profiles configuration.
+Let's take a look at an example of encrypting the ``accessKey`` and ``secretKey`` for the AWS Profiles configuration.
 
 * Open the ``AWS Profiles`` configuration file by clicking on |projectTools| -> ``Configuration``, then select ``AWS Profiles`` from the dropdown box
-* We will add an ``AWS S3 profile``.  Notice that the ``accessKey`` and ``secureKey`` is in the clear.
+* We will add an ``AWS S3 profile``.  Notice that the ``accessKey`` and ``secretKey`` are in the clear.
 
   .. code-block:: xml
      :caption: *{REPOSITORY_ROOT}/sites/SITENAME/config/studio/aws/aws.xml*
@@ -120,5 +122,5 @@ Let's take a look at an example of encrypting the ``accessKey`` and ``securityKe
 
   |
 
-* The ``accessKey`` and ``secureKey`` is now encrypted and will be decrypted by Crafter Studio as needed
+* The ``accessKey`` and ``secretKey`` are now encrypted and will be decrypted by Crafter Studio as needed
 
