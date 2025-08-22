@@ -10,7 +10,9 @@
 Securing Your CrafterCMS Install
 ================================
 
-CrafterCMS installations are pre-configured with default passwords, tokens, keys, etc.  These default values are intended for initial testing, installation and configuration.  We recommend changing the default values for the following parameters to secure your CrafterCMS installation:
+CrafterCMS installations are pre-configured with default passwords, tokens, keys, etc.  These default values are intended for initial testing, installation and configuration.  Failure to change these default values creates a critical security vulnerability. To secure your CrafterCMS installation, **YOU MUST CHANGE THE PRE-CONFIGURED DEFAULT VALUES**.
+
+Here are the parameters for which you must change the default values:
 
 * Replace default values for configuration files encryption key and salt
 
@@ -49,7 +51,7 @@ CrafterCMS installations are pre-configured with default passwords, tokens, keys
         export ENGINE_MANAGEMENT_TOKEN=${ENGINE_MANAGEMENT_TOKEN:="defaultManagementToken"}
         export DEPLOYER_MANAGEMENT_TOKEN=${DEPLOYER_MANAGEMENT_TOKEN:="defaultManagementToken"}
         export SEARCH_MANAGEMENT_TOKEN=${SEARCH_MANAGEMENT_TOKEN:="defaultManagementToken"}
-        export PROFILE_MANAGEMENT_TOKEN=${PROFILE_MANAGEMENT_TOKEN:="defaultManagementToken"}/*
+        export PROFILE_MANAGEMENT_TOKEN=${PROFILE_MANAGEMENT_TOKEN:="defaultManagementToken"}
         export SOCIAL_MANAGEMENT_TOKEN=${SOCIAL_MANAGEMENT_TOKEN:="defaultManagementToken"}
 
      |

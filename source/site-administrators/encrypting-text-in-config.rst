@@ -49,10 +49,10 @@ To encrypt passwords, access keys or other sensitive information in a configurat
 -------
 Example
 -------
-Let's take a look at an example of encrypting the ``accessKey`` and ``securityKey`` for the AWS Profiles configuration.
+Let's take a look at an example of encrypting the ``accessKey`` and ``secretKey`` for the AWS Profiles configuration.
 
 * Open the ``AWS Profiles`` configuration file by clicking on |projectTools| -> ``Configuration``, then select ``AWS Profiles`` from the dropdown box
-* We will add an ``AWS S3 profile``.  Notice that the ``accessKey`` and ``secureKey`` is in the clear.
+* We will add an ``AWS S3 profile``.  Notice that the ``accessKey`` and ``secretKey`` are in the clear.
 
   .. code-block:: xml
      :caption: *{REPOSITORY_ROOT}/sites/SITENAME/config/studio/aws/aws.xml*
@@ -120,5 +120,5 @@ Let's take a look at an example of encrypting the ``accessKey`` and ``securityKe
 
   |
 
-* The ``accessKey`` and ``secureKey`` is now encrypted and will be decrypted by Crafter Studio as needed
+* The ``accessKey`` and ``secretKey`` are now encrypted and will be decrypted by Crafter Studio as needed
 

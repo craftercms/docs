@@ -5,9 +5,7 @@
 ==================
 Security Processes
 ==================
-
 In this section, we describe the security processes followed during the development, release, and support of CrafterCMS.
-
 
 This section is limited in scope to the following:
 
@@ -22,7 +20,6 @@ This section is limited in scope to the following:
 -----------
 Development
 -----------
-
 ^^^^^^^^^
 Code Flow
 ^^^^^^^^^
@@ -52,7 +49,6 @@ Code Flow
 -------
 Release
 -------
-
 * Full audit and update based on Snyk reports
 * Release commit GPG signing, 2FA to Sonatype (Maven)
 * MD5 and SHA512 checksums on all artifacts
@@ -64,7 +60,6 @@ Release
 -------------
 Crafter Cloud
 -------------
-
 * Crafter Cloud is based on the scanned AWS AMI
 * Penetration testing using OWASP ZAP during every release
 
@@ -80,7 +75,6 @@ How does CrafterCMS perform against the OWASP 2017 Top 10 security risks?
 ^^^^^^^^^^^^^^^^^
 A1:2017-Injection
 ^^^^^^^^^^^^^^^^^
-
 What is it?
 ^^^^^^^^^^^
 Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.
@@ -93,7 +87,6 @@ CrafterCMS doesn’t use/allow direct access to the operating system, database, 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A2:2017-Broken Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 What is it?
 ^^^^^^^^^^^
 Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities temporarily or permanently.
@@ -121,7 +114,6 @@ How does CrafterCMS help mitigate this risk?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A3:2017-Sensitive Data Exposure
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 What is it?
 ^^^^^^^^^^^
 Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser.
@@ -134,7 +126,6 @@ CrafterCMS does not natively store any sensitive data. Users may store whatever 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A4:2017-XML External Entities (XXE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 What is it?
 ^^^^^^^^^^^
 Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks.
@@ -145,15 +136,12 @@ How does CrafterCMS help mitigate this risk?
 * CrafterCMS audits all XML reading, writing and manipulating 3rd party libraries as part of the release process. Those libraries are kept up-to-date per security advisories.
 * CrafterCMS disables XML external entity and DTD processing in all XML parsers in the application, as per the OWASP Cheat Sheet 'XXE Prevention'.
 
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A5:2017-Broken Access Control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 What is it?
 ^^^^^^^^^^^
 Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access to other users' accounts, view sensitive files, modify other users' data, change access rights, etc.
-
 
 How does CrafterCMS help mitigate this risk?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -257,5 +245,4 @@ How does CrafterCMS help mitigate this risk?
 --------------------------------
 Securing your CrafterCMS Install
 --------------------------------
-
-CrafterCMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`securing-your-crafter-cms-install`
+CrafterCMS installations are pre-configured with default values. To secure your installation, you must change the pre-configured default values. For more information, see :ref:`securing-your-crafter-cms-install`

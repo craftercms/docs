@@ -22,19 +22,17 @@ Security Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Submitting Security Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 We request that customers, implementation partners, bounty-hunters, and users report security issues privately by emailing security@craftercms.com or via the support portal (for customers and partners).
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 Security Issue Workflow
 ^^^^^^^^^^^^^^^^^^^^^^^
-
 Upon submission of a security issue
 
 * You'll receive an acknowledgement indicating receipt of submission
 * You'll receive a timeframe for the triage of the issue to determine if there is a vulnerability
 * You'll be invited to an advisory issue tracker to track the progress through the embargo period
-* CrafterCMS has a dedicated CNA and an appropriate CVE will be issued there
+* CrafterCMS has a dedicated CNA, and an appropriate CVE will be issued there
 
 .. figure:: /_static/images/system-admin/crafter-cms-security-issue-flow.webp
     :alt: CrafterCMS Security Issue Flow
