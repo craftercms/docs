@@ -36,6 +36,6 @@ Configuration
 || Constraints           || * Minimum Selection: Set a minimum amount of checkboxes to be        |
 ||                       ||   selected.                                                          |
 +------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || * :ref:`Simple Taxonomy <form-source-kvp>`                           |
+|| Related Data Sources  || * :ref:`Simple Taxonomy <form-source-simple-taxonomy>`               |
 ||                       || * :ref:`Static Key Value Pairs <form-source-kvp>`                    |
 +------------------------+-----------------------------------------------------------------------+
