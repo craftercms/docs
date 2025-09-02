@@ -3399,7 +3399,7 @@ To enable updating the Git properties listed below, set the following to ``true`
     # affect unintended repositories. Opt-out of this by setting this property to false.
     studio.repo.git.global.update.enabled: true
 
-To configure the Git options "gc.prunePackExpire" and "gc.autoPackLimit", set the following properties:
+To configure the ``git gc`` options prune expire and auto pack limit, set the following properties:
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
@@ -3413,16 +3413,25 @@ To configure the Git options "gc.prunePackExpire" and "gc.autoPackLimit", set th
     # Set global gc.autoPackLimit property
     studio.repo.gc.autoPackLimit: 50
 
-These properties are configured on Studio startup as git global properties.
-Values configured are just passed to git. Please see the Git docs for the options for valid values:
+where:
 
-- `Prune expire <https://git-scm.com/docs/git-config#Documentation/git-config.txt-gcpruneExpire>`__
-- `Auto pack limit <https://git-scm.com/docs/git-config#Documentation/git-config.txt-gcautoPackLimit>`__
+- **studio.repo.gc.prunePackExpire**: This maps to Git's "gc.pruneExpire". Unreachable objects older than this value
+  are pruned when running ``git gc``. Example values accepted are: ``1.hour.ago``, ``2.weeks.ago`` , ``now``, or ``never``.
+  See `Prune expire <https://git-scm.com/docs/git-config#Documentation/git-config.txt-gcpruneExpire>`__ in the Git docs
+  for valid values for the option.
+
+- **studio.repo.gc.autoPackLimit**: This maps to Git's "gc.autoPackLimit". Packs are consolidated when the number
+  of packs exceeds the value in this property.
+  See `Auto pack limit <https://git-scm.com/docs/git-config#Documentation/git-config.txt-gcautoPackLimit>`__ in the Git
+  docs for valid values for the option.
+
+These properties are configured on Studio startup as git global properties. Values configured are just passed to git.
+Remember that you need to restart Studio for the changes you make to the above properties to take effect.
 
 .. important::
     The ``studio.repo.git.global.update.enabled`` property allows you to opt-out of the git config update.
     Note the importance of disabling this property for local developer deployment since it's a global change
-    of Git's default behavior.
+    of Git's default behavior and may affect unintended repositories.
 
 |
 
