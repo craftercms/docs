@@ -668,6 +668,9 @@ Here are the environment variables used for configuring MariaDB:
       - MariaDB process id file
       - \$MARIADB_HOME/\$HOSTNAME.pid
 
+You must change the pre-configured default values for environment variables for passwords such as ``MARIADB_PASSWD``
+to secure your installation. See :ref:`system-admin-security` for more information on changing the values.
+
 .. _env-var-git:
 
 ~~~
@@ -691,7 +694,7 @@ Here are the environment variables used for configuring Git:
 Management Tokens
 ~~~~~~~~~~~~~~~~~
 Here are the environment variables used for configuring Management Tokens.
-Remember to update these per installation and provide these tokens to the status monitors:
+You must update these per installation and provide these tokens to the status monitors:
 
 .. list-table:: Management Tokens Environment Variables
     :header-rows: 1
@@ -735,6 +738,7 @@ Here are the environment variables used to encrypt and decrypt values inside con
       - Salt used for encrypting properties
       - default_encryption_salt
 
+You must change the pre-configured default values for these environment variables to secure your installation.
 See the following for more information on using the configuration files encryption environment variables:
 
 - :ref:`change-the-defaults`
@@ -761,7 +765,8 @@ Here are the environment variables used to encrypt and decrypt values in the dat
       - Salt used for encrypting database values
       - \<someDefaultSaltValue\>
 
-See - :ref:`studio-cipher-configuration` for more information on using the above environment variables.
+You must change the pre-configured default values for these environment variables to secure your installation.
+See :ref:`studio-cipher-configuration` for more information on using the above environment variables.
 
 .. _env-var-serverless-deployments:
 

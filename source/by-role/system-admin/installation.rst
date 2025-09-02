@@ -13,6 +13,10 @@ of all content, and delivery is what users will be accessing from their devices/
 have been published. The installation steps for both the authoring and delivery is similar unless otherwise noted in
 the instructions below.
 
+.. important::
+    **You must change pre-configured defaults** to secure your installation.
+    See :ref:`system-admin-security` for more information.
+
 First we'll take a look at the requirements and supported platforms for installing and setting up CrafterCMS.
 
 .. _requirements_supported_platforms:
