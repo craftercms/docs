@@ -19,6 +19,25 @@ Breaking Changes in CrafterCMS 5.0.0
 ------------------------------------
 - The Spring profile ``crafter_studio_externalDb`` has been removed in CrafterCMS version 5.0.0.
 
+- The following APIs are removed from CrafterCMS 5.0:
+
+  - /api/1/services/api/1/publish/publish-items.json
+  - /api/1/services/api/1/publish/reset-staging.json
+
+  - /api/1/services/api/1/dependency/calculate-dependencies.json
+
+  - - /api/1/services/api/1/deployment/bulk-go-live.json
+
+  - /api/1/services/api/1/content/content-exists.json
+  - /api/1/services/api/1/content/change-content-type.json
+  - /api/1/services/api/1/content/get-item-versions.json
+
+
+  - /api/1/services/api/1/preview/sync-site.json
+
+  - /api/1/services/api/1/site/get-canned-message.json
+  - /api/1/services/api/1/site/delete-site.json
+
 |hr|
 
 .. _compatibility-with-3.1.x:
