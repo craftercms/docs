@@ -4,7 +4,7 @@
 CrafterCMS Version 4.4.3
 ------------------------
 
-Released *TBD, 2025*
+Released *September TBD, 2025*
 
 .. important::
 
@@ -35,6 +35,15 @@ Enhancements
 """""""""
 Studio UI
 """""""""
+- Upgrade to the latest version to date of the following libraries:
+
+  @mui/icons-material
+  @mui/lab
+  @mui/material
+  @mui/x-data-grid
+  @mui/x-date-pickers
+  @mui/x-tree-view
+
 - [utils/content]:
 
   * Moved ``isVideo``, ``isAudio` and ``isPdfDocument`` functions from ``PathNavigator/utils.ts`` to ``utils/content.ts``.
