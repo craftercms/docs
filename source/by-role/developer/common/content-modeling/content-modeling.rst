@@ -660,7 +660,7 @@ Configuring Rich Text Editors
 '''''''''''''''''''''''''''''
 Rich Text Editors (RTEs) are very powerful content entry controls. CrafterCMS uses TinyMCE as the foundation of its Rich
 Text Editor control. An administrator can precisely control the options available to authors in each rich text editor
-field. Follow this documentation for detailed configuration instructions: :ref:`properties-of-content-types`
+field. Follow this documentation for detailed configuration instructions: :ref:`rte-configuration`
 
 Here are a couple of items to think about and configure when using Rich Text Editors:
 
@@ -687,32 +687,42 @@ use cases. There are four mechanisms for extending the Content Types and the For
 Experience Builder:
 
 - **Content Lifecycle Controller (Server Side)**
+
   Configuring a content type with a Content Lifecycle Controller introduces the ability to execute code on specific
   lifecycle events, such as create, update, copy, and delete. You can use these events to modify the content before
   saving or to support integrations.
 
-  See the ``Controller`` field in :ref:`properties-of-content-types` for more information.
+  Content lifecycle controllers are automatically wired in through their ``controller.groovy``. This file lets you:
+
+  - Inspect the content, user, path, type, and lifecycle operation (create/update/move/etc).
+  - Run logic before the save completes, such as integration calls, data checks, or transformations.
+  - Block, modify, or enhance the save process without touching the UI.
+
+  See :ref:`server-side-form-controllers` for more information.
 
 - **Form Engine Controller (Client Side)**
+
   On occasion, you want to enforce specific rules and actions between fields in the Form Engine. For example, if the
   user chooses a particular country, show fields specific to that country. Such use cases apply to the Content Authoring
   Forms (but not the Experience Builder). To support these use cases, you can introduce a Form Engine Controller,
   which provides you with specific event hooks like “On Initialization” and “On Save” where you can execute custom
   client-side code.
 
-  .. todo You can learn more about Form Engine Controllers here: <add link here>
+  See :ref:`client-side-form-controllers` for more information.
 
 - **Custom Form Controls**
+
   You can create and install custom form engine controls that provide authors with new ways to enter content. For
   example, a custom slider control for picking a value in a range. Another example might be a custom asset picker with
   a platform like Cloudinary or Bynder. Custom controls are written in React and packaged and installed as plugins.
-  You can learn more about custom form controls here: :ref:`building-plugins-controls`
+  You can learn more about custom form controls here: :ref:`building-plugins-controls`.
 
 - **Custom Data Sources**
+
   Sometimes we want to use the same form control (like an image or video picker) but supply a custom backend from which
   to select the asset. As previously mentioned, this is why we have data sources in the content type system. It is
   possible to create, package, and install your own custom data sources. Custom data sources are written in React and
-  packaged and installed as plugins. You can learn more about custom data sources here: :ref:`building-plugins-form-ds`
+  packaged and installed as plugins. You can learn more about custom data sources here: :ref:`building-plugins-form-ds`.
 
 |hr|
 
@@ -883,13 +893,14 @@ The fields available at this level are:
 || Preview      ||                                                                               |
 || Image        ||                                                                               |
 +---------------+--------------------------------------------------------------------------------+
-|| Configuration|| Contains config.xml which holds information about the content type such as the|
-||              || limit where content can be created, is it previewable, etc.                   |
+|| Configuration|| Contains ``config.xml`` which holds information about the content type such   |
+||              || as the limit where content can be created, is it previewable, etc.            |
+||              || See :ref:`client-side-form-controllers` for more information on using form    |
+||              || engine controllers.                                                           |
 +---------------+--------------------------------------------------------------------------------+
 || Controller   || Contains ``controller.groovy`` which provides an extension/hook to authoring  |
 ||              || lifecycle events.                                                             |
-||              || See this :ref:`example-component-plugin` which contains a sample code for     |
-||              || ``controller.groovy``                                                         |
+||              || See :ref:`server-side-form-controllers` for more information.                 |
 +---------------+--------------------------------------------------------------------------------+
 || Display      || View template to use when rendering this content                              |
 || Template     ||                                                                               |
@@ -1748,6 +1759,260 @@ Two controls have a special significance to the form canvas: :ref:`form-section`
 Like the Form Section Control, Repeating Group Control is also a container that holds other controls, but the purpose is to allow a set of controls to repeat as configured. This is typically used to allow content authors to enter a set of meta-data and repeat it as many times as desired and permitted by configuration.
 
 The canvas allows the form-based content capture only, and is used by content authors when they're in that mode. In-Context Editing will leverage the form components, but not the canvas when authors are in that mode. Learn more about In-Context Editing configuration for projects :ref:`experience-builder` .
+
+|hr|
+
+.. _content-type-form-controllers:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Content Type Form Controllers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Content type form controllers are scriptable lifecycle event handlers that let you run custom logic either:
+
+- **On the client side** (in the form on load, on save and other events)
+- **On the server side** (during content write/delete operations in the backend)
+
+Form controllers are ideal for scenarios that require automation or custom validation across multiple fields, or when
+external information is needed before publishing content. Examples include:
+
+- **Synthesizing new values from existing fields** |br|
+  e.g., automatically generating a slug from a title.
+- **Tying two fields together** |br|
+  e.g., If one field changes, update another field dynamically.
+- **Validating content** |br|
+  e.g., Querying a remote system to verify a value before saving.
+- **Blocking saves** if the custom validation rule fails.
+
+You can use the client side and server side controller together to ensure that the data submitted from the client-side
+is validated and processed correctly on the server side. For instance, you might validate user input in
+``form-controller.js`` and then perform additional checks or transformations in ``controller.groovy``.
+
+.. _client-side-form-controllers:
+
+""""""""""""""""""""""""""""
+Client-Side Form Controllers
+""""""""""""""""""""""""""""
+Client-side controllers or form engine controllers allows you to define custom logic that executes during specific events,
+such as when the form loads or before saving. For example, you might want to validate a field or dynamically update
+another field based on user input.
+
+To add a client side controller, do the following:
+
+- Open the content type you wish to add a form controller in Studio via the ``Content Types`` tool under ``Project Tools``
+- In the ``Properties Explorer`` on the right side, look for the ``Configuration`` field. This field contains the
+  ``config.xml`` file which holds information about the content type such as the limit where content can be created,
+  is it previewable, etc. Click on the field then click on the pencil icon in the field to edit the configuration.
+- Add a ``<controller>`` tag if not already in the configuration and set the value to ``true`` to enable the
+  client-side controller
+
+  .. code-block:: xml
+      :caption: *Enabling loading of form-controller.js via the config.xml file*
+      :emphasize-lines: 6-7
+
+      <content-type name="/page/article" is-wcm-type="true">
+          <label>Article</label>
+          <form>/page/article</form>
+          <form-path>simple</form-path>
+          ...
+          <!-- Specifies whether a form-controller.js is present in the type definition and should be loaded by the Forms Engine -->
+          <controller>true</controller>
+          ...
+      </content-type>
+
+- Add your ``form-controller.js`` file to the content type definition folder located in:
+  ``CRAFTER_HOME/data/repos/sites/<PROJECT_NAME>/sandbox/config/studio/content-types/<CONTENT-TYPE-NAME>/``
+
+  Remember to add and commit your new ``form-controller.js`` file so Studio is aware of the change.
+
+~~~~~~~
+Example
+~~~~~~~
+Let's now look at an example where you want to ensure the ``Internal Name`` always ends with an asterisk (``*``).
+We'll use a project named ``Hello`` created in Studio using the ``Empty`` blueprint and we'll add the form controller
+to the ``Entry`` content type.
+
+First, we'll enable client-side controller to the content type by opening the sidebar in Studio then clicking on
+``Project Tools`` -> ``Content Types`` -> ``Entry``, then click on the ``Open Type`` button. On the right side of the
+screen under ``Properties Explorer``, click on the ``Configuration`` field then click on the pencil icon to edit the
+``config.xml`` file
+
+.. image:: /_static/images/content-model/open-config-dot-xml.webp
+    :width: 75%
+    :alt: Enable client-side controller via the config.xml file
+    :align: center
+
+|
+
+We'll now enable the controller by adding a ``<controller>`` tag in the configuration and set the value to ``true``
+then save our changes.
+
+.. raw:: html
+
+   <details>
+   <summary><a>Enable controller in the configuration file (config.xml) for the Entry content type</a></summary>
+
+.. code-block:: xml
+    :emphasize-lines: 14
+    :linenos:
+
+    <content-type name="/page/entry" is-wcm-type="true">
+        <label>Entry</label>
+        <form>/page/entry</form>
+        <form-path>simple</form-path>
+        <model-instance-path>NOT-USED-BY-SIMPLE-FORM-ENGINE</model-instance-path>
+        <file-extension>xml</file-extension>
+        <content-as-folder>true</content-as-folder>
+        <previewable>true</previewable>
+        <quickCreate>false</quickCreate>
+        <quickCreatePath></quickCreatePath>
+        <noThumbnail>true</noThumbnail>
+        <image-thumbnail>image.jpg</image-thumbnail>
+        <!-- Specifies whether a form-controller.js is present in the type definition and should be loaded by the Forms Engine -->
+        <controller>true</controller>
+    </content-type>
+
+.. raw:: html
+
+   </details>
+
+|
+
+.. image:: /_static/images/content-model/enable-form-controller-in-configuration.webp
+    :width: 75%
+    :alt: Enable client-side controller via the config.xml file
+    :align: center
+
+|
+
+The next step is to write a ``form-controller.js`` script. We'll put the file under the folder:
+``CRAFTER_HOME/data/repos/sites/hello/sandbox/config/studio/content-types/page/entry``
+
+.. code-block:: js
+    :caption: *CRAFTER_HOME/data/repos/sites/hello/sandbox/config/studio/content-types/page/entry/form-controller.js*
+    :linenos:
+    :emphasize-lines: 5, 7
+
+    CStudioForms.FormControllers.PageEntryController = CStudioForms.FormControllers.PageEntryController ||  function() {};
+
+    YAHOO.extend(CStudioForms.FormControllers.PageEntryController, CStudioForms.FormController, {
+
+        onBeforeSave : function () {
+            var internalName = this.form.model['internal-name'];
+            if(!internalName.endsWith("*")) {
+                this.form.model['internal-name'] =  internalName + '*'
+            }
+
+            return true
+        }
+    });
+
+    CStudioAuthoring.Module.moduleLoaded("/page/entry-controller", CStudioForms.FormControllers.PageEntryController );
+
+Note that the last line in the script informs the system that the controller is loaded and associates the name of the
+content type (-controller) with the class.
+
+Finally, we'll add and commit our new file ``form-controller.js`` so Studio is aware of the changes:
+
+.. code-block:: bash
+
+     $ cd CRAFTER_HOME/data/repos/sites/hello/sandbox/
+     $ git add config/studio/content-types/page/entry/form-controller.js
+     $ git commit
+
+In the ``onBeforeSave()`` method, we check if the value ends with an asterisk ``*``; if not, append it.
+This all happens before the save request is sent to the server.
+The result? Users save their content normally, but your rule ensures the formatting is always correct.
+
+.. _server-side-form-controllers:
+
+""""""""""""""""""""""""""""
+Server-Side Form Controllers
+""""""""""""""""""""""""""""
+Server-side controllers or content lifecycle controllers allow you to run custom logic during content write/delete
+operations in the backend. It's automatically wired in through the content type ``controller.groovy`` file.
+
+The ``controller.groovy`` file lets you:
+
+- Inspect the content, user, path, type, and lifecycle operation (create/update/move/etc).
+- Run logic before the save completes, such as integration calls, data checks, or transformations.
+- Block, modify, or enhance the save process without touching the UI.
+
+To access the ``controller.groovy`` script from Studio:
+
+- Open the content type you wish to add a form controller in Studio via the ``Content Types`` tool under ``Project Tools``
+- In the ``Properties Explorer`` on the right side, look for the ``Controller`` field. This field contains the
+  ``controller.groovy`` file. Click on the field then click on the pencil icon in the field to edit the script.
+
+~~~~~~~
+Example
+~~~~~~~
+Let's take a look at an example of a controller script that logs the lifecycle event type ``create``, ``update``, etc.
+to the server console. We'll use a project named ``Hello`` created in Studio using the ``Empty`` blueprint and we'll
+edit the controller ``controller.groovy`` of the ``Entry`` content type.
+
+First, we'll open the ``controller.groovy`` script of the content type by opening the sidebar in Studio then clicking on
+``Project Tools`` -> ``Content Types`` -> ``Entry``, then click on the ``Open Type`` button. On the right side of the
+screen under ``Properties Explorer``, click on the ``Controller`` field then click on the pencil icon to edit the
+``controller.groovy`` file
+
+.. image:: /_static/images/content-model/open-controller-dot-groovy.webp
+    :width: 75%
+    :alt: Open the controller.groovy file
+    :align: center
+
+|
+
+We'll now edit the controller to log lifecycle events by adding
+
+.. raw:: html
+
+   <details>
+   <summary><a>Log lifecycle events</a></summary>
+
+.. code-block:: groovy
+    :caption: *Example controller.groovy*
+    :emphasize-lines: 15
+
+    import scripts.libs.CommonLifecycleApi
+
+    def contentLifecycleParams =[:]
+    contentLifecycleParams.site = site
+    contentLifecycleParams.path = path
+    contentLifecycleParams.user = user
+    contentLifecycleParams.contentType = contentType
+    contentLifecycleParams.contentLifecycleOperation = contentLifecycleOperation
+    contentLifecycleParams.contentLoader = contentLoader
+    contentLifecycleParams.applicationContext = applicationContext
+
+    def controller = new CommonLifecycleApi(contentLifecycleParams)
+    controller.execute()
+
+    System.out.println("Server side content lifecycle event : " + contentLifecycleOperation)
+
+.. raw:: html
+
+   </details>
+
+|
+
+.. image:: /_static/images/content-model/edit-controller-dot-groovy.webp
+    :width: 75%
+    :alt: Open the controller.groovy file
+    :align: center
+
+|
+
+Save your changes to the ``controller.groovy`` file, then edit some content in your project using the content type you
+just edited. Once your changes have been saved, watch your logs and notice the entry made when we updated content:
+
+.. code-block:: text
+    :emphasize-lines: 2
+    :caption: *Tomcat log*
+
+    [INFO] 2025-08-20T10:32:35,265 [pool-23-thread-1] [ed] [context.SiteContext] | GraphQL schema build completed for site 'hello' in 0 secs
+    Server side content lifecycle event : UPDATE
+
+|
 
 |hr|
 

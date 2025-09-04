@@ -36,6 +36,6 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Required: Make field required to fill out.                         |
 +------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || * :ref:`Simple Taxonomy <form-source-kvp>`                           |
+|| Related Data Sources  || * :ref:`Simple Taxonomy <form-source-simple-taxonomy>`               |
 ||                       || * :ref:`Static Key Value Pairs <form-source-kvp>`                    |
 +------------------------+-----------------------------------------------------------------------+
