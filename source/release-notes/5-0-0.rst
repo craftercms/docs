@@ -21,6 +21,9 @@ New Features
 * New v2 Studio APIs
 
   - /api/2/groups/by_name/{name}
+  - Upload file: PUT /api/2/content/{siteId}
+  - Write content: POST /api/2/content/{siteId}
+  -
 
 ^^^^^^^^^^^^
 Enhancements
