@@ -4,7 +4,7 @@
 CrafterCMS Version 4.4.3
 ------------------------
 
-Released *September TBD, 2025*
+Released *September 4, 2025*
 
 .. important::
 
