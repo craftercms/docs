@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.3.1
+:last-updated: 4.4.3
 
 .. highlight:: xml
 
@@ -107,6 +107,8 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure the publishing blacklist
     * - :ref:`Configuration Files Maximum <configuration-files-maximum>`
       - Configure the maximum length of configuration content
+    * - :ref:`Git Configuration <git-configuration>`
+      - Configure Git properties
     * - :ref:`Content Type Editor Configuration <content-type-editor-configuration>`
       - Configure the content types
     * - :ref:`Dependency Resolver Configuration <dependency-resolver-configuration>`
@@ -3370,6 +3372,66 @@ To set the maximum size of a project/site configuration file for the :base_url:`
 
     # The maximum length of configuration content for the configuration service. Default to 512kB -> 512 * 1024
     studio.configuration.maxContentSize: 524288
+
+|
+
+|hr|
+
+.. _git-configuration:
+
+"""""""""""""""""
+Git Configuration
+"""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.4.3
+
+To enable updating the Git properties listed below, set the following to ``true``:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
+    :emphasize-lines: 6
+
+    ##################################################
+    ##        Git configuration properties          ##
+    ##################################################
+    # Git config update to following properties is performed on global configuration and might
+    # affect unintended repositories. Opt-out of this by setting this property to false.
+    studio.repo.git.global.update.enabled: true
+
+To configure the ``git gc`` options prune expire and auto pack limit, set the following properties:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
+    :emphasize-lines: 5,7
+
+    # git gc --auto will consolidate into one the packs older than this value
+    # Notice that this property works when the number of packs is greater than gc.autoPackLimit.
+    # See https://git-scm.com/docs/git-gc#Documentation/git-gc.txt-gcautoPackLimit
+    # This value is used to configure "gc.prunePackExpire" property, leave empty to skip property setting
+    studio.repo.gc.prunePackExpire: 1.hour.ago
+    # Set global gc.autoPackLimit property
+    studio.repo.gc.autoPackLimit: 50
+
+where:
+
+- **studio.repo.gc.prunePackExpire**: This maps to Git's "gc.pruneExpire". Unreachable objects older than this value
+  are pruned when running ``git gc``. Example values accepted are: ``1.hour.ago``, ``2.weeks.ago`` , ``now``, or ``never``.
+  See `Prune expire <https://git-scm.com/docs/git-config#Documentation/git-config.txt-gcpruneExpire>`__ in the Git docs
+  for valid values for the option.
+
+- **studio.repo.gc.autoPackLimit**: This maps to Git's "gc.autoPackLimit". Packs are consolidated when the number
+  of packs exceeds the value in this property.
+  See `Auto pack limit <https://git-scm.com/docs/git-config#Documentation/git-config.txt-gcautoPackLimit>`__ in the Git
+  docs for valid values for the option.
+
+These properties are configured on Studio startup as git global properties. Values configured are just passed to git.
+Remember that you need to restart Studio for the changes you make to the above properties to take effect.
+
+.. important::
+    The ``studio.repo.git.global.update.enabled`` property allows you to opt-out of the git config update.
+    Note the importance of disabling this property for local developer deployment since it's a global change
+    of Git's default behavior and may affect unintended repositories.
 
 |
 
