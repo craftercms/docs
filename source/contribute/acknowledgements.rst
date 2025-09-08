@@ -498,8 +498,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `rimraf <https://www.npmjs.com/package/rimraf>`_
 |br|
-`rimraf <https://www.npmjs.com/package/rimraf>`_
-|br|
 `rollup-plugin-copy <https://www.npmjs.com/package/rollup-plugin-copy>`_
 |br|
 `rollup-plugin-swc3 <https://www.npmjs.com/package/rollup-plugin-swc3>`_
