@@ -48,6 +48,9 @@ Studio UI
 
   * Moved ``isVideo``, ``isAudio` and ``isPdfDocument`` functions from ``PathNavigator/utils.ts`` to ``utils/content.ts``.
 
+- CrafterCMS version 4.4.3 works with JavaScript SDK version 5.0.0 and later as mentioned in :ref:`breaking-changes-in-craftercms-4-4-3`.
+  See :ref:`compatibility-with-craftercms-version` for more information.
+
 ^^^^^^^^^^^^^^^^^^
 Dependency Updates
 ^^^^^^^^^^^^^^^^^^
