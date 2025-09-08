@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.4.3
+:last-updated: 4.4.4
 
 .. index:: Open Source Acknowledgements
 
@@ -308,6 +308,8 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `@emotion/styled <https://www.npmjs.com/package/@emotion/styled>`_
 |br|
+`@eslint/compat <https://www.npmjs.com/package/@eslint/compat>`_
+|br|
 `@formatjs/cli <https://www.npmjs.com/package/@formatjs/cli>`_
 |br|
 `@graphiql/plugin-explorer <https://www.npmjs.com/package/@graphiql/plugin-explorer>`_
@@ -373,8 +375,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `@types/react <https://www.npmjs.com/package/@types/react>`_
 |br|
 `@types/rimraf <https://www.npmjs.com/package/@types/rimraf>`_
-|br|
-`@types/uuid <https://www.npmjs.com/package/@types/uuid>`_
 |br|
 `@types/video.js <https://www.npmjs.com/package/@types/video.js>`_
 |br|
@@ -495,6 +495,8 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 `redux <https://www.npmjs.com/package/redux>`_
 |br|
 `replace-in-file <https://www.npmjs.com/package/replace-in-file>`_
+|br|
+`rimraf <https://www.npmjs.com/package/rimraf>`_
 |br|
 `rimraf <https://www.npmjs.com/package/rimraf>`_
 |br|
