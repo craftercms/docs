@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.4.3
+:last-updated: 4.4.4
 
 .. index:: JavaScript SDK
 
