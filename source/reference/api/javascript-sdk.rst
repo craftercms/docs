@@ -56,6 +56,17 @@ The compatibility information between your CrafterCMS installation and the corre
       - `Experience Builder <https://www.npmjs.com/package/@craftercms/experience-builder>`__
       - `Studio UI <https://www.npmjs.com/package/@craftercms/studio-ui>`__
 
+    * - 4.4.4
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^5.0.0
+      - ^5.0.0
+
     * - 4.4.3
       - ^4.3.0
       - ^4.3.0
