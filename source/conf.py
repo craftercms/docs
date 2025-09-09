@@ -291,15 +291,13 @@ rst_epilog = """
 .. |groovy_link| replace:: :ref:`groovy-java-api`
 .. |static_asset_link| replace:: :ref:`static-content-access`
 .. |freemarker_link| replace:: :ref:`templating-api`
-
 """
 
 # Javadoc home and version
-javadoc_base = 'http://javadoc.craftercms.org/'
-javadoc_version = '5.0.0'
+javadoc_base = 'https://javadoc.craftercms.org/'
 
 # Shorten external links
-extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
+extlinks = {'javadoc_base_url': (javadoc_base + release + '/%s', None ),
             'base_url': ('/docs/' + version + '/%s', None),
             'docs_base_url': ('/docs' + '/%s', None)
             }
