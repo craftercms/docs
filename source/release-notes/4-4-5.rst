@@ -1,0 +1,34 @@
+.. index:: CrafterCMS version 4.4.5 Release Notes
+
+------------------------
+CrafterCMS Version 4.4.5
+------------------------
+
+Released *TBD, 2025*
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-x>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install, please see :ref:`upgrading-craftercms`
+
+^^^^^^^^^^^^
+Enhancements
+^^^^^^^^^^^^
+^^^^^^^^^
+Bug Fixes
+^^^^^^^^^
+* `Fixed issue with ... <https://github.com/craftercms/craftercms/issues/8200>`__
+
+^^^^^^^^^^^^^^^^^^
+Dependency Updates
+^^^^^^^^^^^^^^^^^^
+* Noteworthy dependency updates:
+
+For a complete list of community tickets, please visit: `GitHub 4.4.5 <https://github.com/orgs/craftercms/projects/34/views/1>`_
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+|hr|
+
