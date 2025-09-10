@@ -19,24 +19,57 @@ Breaking Changes in CrafterCMS 5.0.0
 ------------------------------------
 - The Spring profile ``crafter_studio_externalDb`` has been removed in CrafterCMS version 5.0.0.
 
-- The following APIs are removed from CrafterCMS 5.0:
+- The following APIs are removed from CrafterCMS 5.0.0:
 
-  - /api/1/services/api/1/publish/publish-items.json
-  - /api/1/services/api/1/publish/reset-staging.json
-
-  - /api/1/services/api/1/dependency/calculate-dependencies.json
-
-  - - /api/1/services/api/1/deployment/bulk-go-live.json
-
-  - /api/1/services/api/1/content/content-exists.json
+  - /api/1/services/api/1/site/delete-site.json
+  - /api/1/services/api/1/site/get-canned-message.json
   - /api/1/services/api/1/content/change-content-type.json
   - /api/1/services/api/1/content/get-item-versions.json
-
-
+  - /api/1/services/api/1/content/write-content.json
+  - /api/1/services/api/1/publish/commits.json
+  - /api/1/services/api/1/publish/start.json
+  - /api/1/services/api/1/publish/stop.json
+  - /api/2/publish/all
+  - /api/2/publish/packages
+  - /api/2/publish/package
+  - /api/2/publish/cancel
+  - /api/2/publish/status
+  - /api/2/dashboard/content/pending_approval
+  - /api/2/dashboard/content/pending_approval/{id}
+  - /api/2/dashboard/publishing/scheduled
+  - /api/2/dashboard/publishing/scheduled/{id}
+  - /api/2/dashboard/publishing/history
+  - /api/2/dashboard/publishing/history/{id}
+  - /api/2/workflow/affected_paths
+  - /api/2/workflow/request_publish
+  - /api/2/workflow/publish
+  - /api/2/workflow/approve
+  - /api/2/workflow/reject
+  - /api/2/workflow/packages
+  - /api/2/workflow/packages/{id}
+  - /api/2/workflow/packages/approve
+  - /api/2/workflow/packages/reject
+  - /api/1/services/api/1/deployment/bulk-golive.json
   - /api/1/services/api/1/preview/sync-site.json
+  - /api/2/dependency/dependent_items
 
-  - /api/1/services/api/1/site/get-canned-message.json
-  - /api/1/services/api/1/site/delete-site.json
+- Publishing blacklist configuration has been changed. |br|
+  From a regex:
+
+  .. code-block:: yaml
+      :caption: *Old property for the publishing blacklist*
+
+      studio.configuration.publishing.blacklist.regex: >-
+          .*/\.keep
+
+  To a git `pathspec <https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec>`__
+  that is empty by default because ``.keep`` files are always excluded:
+
+  .. code-block:: yaml
+      :caption: *New property for the publishing blacklist*
+      :emphasize-lines: 1
+
+       studio.configuration.publishing.blacklist.pathspecs: ""
 
 |hr|
 
