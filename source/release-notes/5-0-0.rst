@@ -20,10 +20,27 @@ New Features
 
 * New v2 Studio APIs
 
-  - /api/2/groups/by_name/{name}
-  - Upload file: PUT /api/2/content/{siteId}
-  - Write content: POST /api/2/content/{siteId}
-  -
+  - :base_url:`Get group by name <_static/api/studio.html#tag/groups/operation/getGroupByName>`: GET /api/2/groups/by_name/{name}
+  - :base_url:`Get the git log for a site repository <_static/api/studio.html#tag/repository/operation/getRepositoryLog>`: GET /api/2/repository/log
+  - :base_url:`Upload file <_static/api/studio.html#tag/content/operation/contentUpload>`: PUT /api/2/content/{siteId}
+  - :base_url:`Write content <_static/api/studio.html#tag/content/operation/contentWrite>`: POST /api/2/content/{siteId}
+  - :base_url:`Move content <_static/api/studio.html#tag/content/operation/contentMove>`: POST /api/2/content/{siteId}/move
+  - :base_url:`Move and update content <_static/api/studio.html#tag/content/operation/contentMoveAndUpdate>`: POST /api/2/content/{siteId}/move_and_update
+  - :base_url:`Revert content <_static/api/studio.html#tag/content/operation/contentRevert>`: POST /api/2/content/{siteId}/revert
+  - :base_url:`Create folder <_static/api/studio.html#tag/content/operation/contentCreateFolder>`: POST /api/2/content/{siteId}/folder
+  - :base_url:`Get list of dependent items for given content path <_static/api/studio.html#tag/dependency/operation/getDependentItems>`: GET /api/2/dependency/{siteId}/dependent_items
+  - :base_url:`Calculate the publish package given an item set <_static/api/studio.html#tag/publishing/operation/calculatePublishPackage>`: POST /api/2/publish/{siteId}/calculate
+  - :base_url:`Publishes the given content to the target (staging or live) <_static/api/studio.html#tag/publishing/operation/publish>`: POST /api/2/publish/{siteId}/package
+  - :base_url:`Get the list of packages in the publishing queue <_static/api/studio.html#tag/publishing/operation/GetPublishPackages>`: GET /api/2/publish/{siteId}/packages
+  - :base_url:`Get package details <_static/api/studio.html#tag/publishing/operation/getPublishPackage>`: GET /api/2/publish/{siteId}/package/{packageId}
+  - :base_url:`Get publish package items <_static/api/studio.html#tag/publishing/operation/getPublishPackageItems>`: GET /api/2/publish/{siteId}/package/{packageId}/items
+  - :base_url:`Recalculate a complete publish package user-requested items <_static/api/studio.html#tag/publishing/operation/recalculatePublishPackage>`: POST /api/2/publish/{siteId}/package/{packageId}/recalculate
+  - :base_url:`Get publishing status for site <_static/api/studio.html#tag/publishing/operation/getPublishingStatus>`: GET /api/2/publish/{siteId}/status
+  - :base_url:`Enable/disable publishing for a site <_static/api/studio.html#tag/publishing/operation/enablePublishing>`: POST /api/2/publish/{siteId}/enable
+  - :base_url:`Get workflow affected packages <_static/api/studio.html#tag/workflow/operation/getWorkflowAffectedPackages>`: GET /api/2/workflow/{site}/affected_packages
+  - :base_url:`Approve request publish submission <_static/api/studio.html#tag/workflow/operation/workflowApprove>`: POST /api/2/workflow/{site}/approve
+  - :base_url:`Reject publish package <_static/api/studio.html#tag/workflow/operation/workflowReject>`: POST /api/2/workflow/{site}/reject
+  - :base_url:`Cancel publish packages <_static/api/studio.html#tag/workflow/operation/cancelPublishPackages>`: POST /api/2/workflow/{site}/cancel
 
 ^^^^^^^^^^^^
 Enhancements
