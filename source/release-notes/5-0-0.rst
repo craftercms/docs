@@ -114,7 +114,7 @@ Studio UI
   - Removed ``pages``/``QuickCreateMenu`` component.
   - Removed ``SuspenseWithEmptyState`` and ``WithEmptyState`` components.
   - Removed ``resource`` prop from StoreProvider
-  - Removed ``styles`` prop from ``ErrorState``, ``ApiResponseErrorState``, ``BlueprintForm``, ``LoadingState``, ``ConfirmDialog``, ``AlertDialog``, ``LauncherSection``, ``AceEditor``, ``ItemDisplay``, ``PasswordRequirementsDisplay``, ``PublishDialogForm``, ``ItemStateIcon``, ``ResizeableDrawer``, ``GlobalAppToolbar``, ``ViewToolbar``, ``PublishingStatusAvatar``, ``ItemPublishingTargetIcon`` and ``EmptyState``. Replaced ``bysxs`` prop.
+  - Removed ``styles`` prop from ``ErrorState``, ``ApiResponseErrorState``, ``BlueprintForm``, ``LoadingState``, ``ConfirmDialog``, ``AlertDialog``, ``LauncherSection``, ``AceEditor``, ``ItemDisplay``, ``PasswordRequirementsDisplay``, ``PublishDialogForm``, ``ItemStateIcon``, ``ResizeableDrawer``, ``GlobalAppToolbar``, ``ViewToolbar``, ``PublishingStatusAvatar``, ``ItemPublishingTargetIcon`` and ``EmptyState``. Replaced by ``sxs`` prop.
   - Removed ``sectionStyles`` and ``tileStyles`` props from ``LauncherGlobalNav``. Replaced with ``sectionSxs`` and ``tileSxs``.
   - Added ``sxs`` prop to ``CrafterCMSLogo``, ``SiteSwitcherSelect``, ``ConfirmDialog``, ``ContextMenu``, ``BlueprintForm``, ``ErrorState``, ``GlobalAppToolbar``, ``ItemActionsMenu``, ``ItemDisplay``, ``ItemMegaMenuUI``, ``ItemPublishingTargetIcon``, ``ItemStateIcon``, ``LauncherSectionUI``, ``LauncherSiteCard``, ``LauncherTile``, ``LoadingState``, ``LoginForm``, ``LogoAndMenuBundleButton``, ``PagesSearchAhead``, ``PasswordRequirementsDisplay``, ``PathNavigator``, ``PathNavigatorBreadcrumbs``, ``PathNavigatorHeader``, ``PathNavigatorList``, ``PathNavigatorUI``, ``PathNavigatorTree``, ``PathNavigatorTreeItem``, ``PathNavigatorTreeUI``, ``PublishDialogForm``, ``PublishingStatusAvatar``, ``PublishingStatusTile``, ``ResizeableDrawer``, ``SearchBar``, ``SingleItemSelector``, ``SiteTools``, ``ToolPanel``, ``ViewToolbar`` and ``CrafterCMSIcon``.
   - Added ``sx`` prop to ``FilterDropdown``, ``PathNavigatorHeader``, ``SiteTools``, ``SiteSearchFilters`` and ``PublishingStatusAvatar``.
@@ -134,7 +134,7 @@ Studio UI
   - [ContentTypesLoader] Removed
   - [NewContentDialog] Props ``rootPath``, ``compact`` removed. Prop ``initialCompact`` added.
 
-    - Prop ``onContentTypeSelected changed its signature from sending an object with ``authoringBase``, ``path``, ``isNewContent``, ``contentTypeId``, ``onSaveSuccess`` to ``{ path: string; contentType: ContentType }``
+    - Prop ``onContentTypeSelected`` changed its signature from sending an object with ``authoringBase``, ``path``, ``isNewContent``, ``contentTypeId``, ``onSaveSuccess`` to ``{ path: string; contentType: ContentType }``
   - [CompareVersions] Removed.
   - [EnhancedDialog] Removed unused ``id`` prop.
   - [CompareVersionsDialog] Added ``subtitle``, ``selectionContent``, and ``fields`` properties.
@@ -186,7 +186,7 @@ Studio UI
       - ``approver`` is now ``reviewer``, of type ``Person``.
       - ``comment`` is removed, and now there's ``reviewerComment`` and ``submitterComment``.
       - ``environment`` is now ``target``.
-      - ``items is now of type ``PublishingItem[]``.
+      - ``items`` is now of type ``PublishingItem[]``.
       - ``state`` is now ``approvalState``.
       - Added ``title``, ``submittedOn``, ``reviewedOn``, ``packageState``, ``reviewer``, ``liveError``, ``stagingError``, ``publishedOn``, ``packageType``, ``commitId``, ``publishedStagingCommitId`` and ``publishedLiveCommitId`` props.
     - ``PublishFormData`` interface change: Added ``title`` prop.
