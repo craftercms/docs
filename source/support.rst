@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.4.4
+:last-updated: 5.0.0
 
 .. index:: Support
 
@@ -21,7 +21,12 @@ What's Supported?
       - Commercial Support
       - Latest
 
-    * - `4.4 <https://craftercms.com/download>`__
+    * - `5.0 <https://craftercms.com/download>`__
+      - TBD
+      - :green:`Active`
+      - :green:`Active`
+      - 5.0.0 (TBD)
+    * - 4.4
       - June 13, 2025
       - :green:`Active`
       - :green:`Active`

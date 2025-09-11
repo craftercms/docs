@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.4.3
+:last-updated: 5.0.0
 
 .. highlight:: xml
 
@@ -3367,10 +3367,14 @@ Add the following lines with the regex for the item you wish not to be published
 
 .. code-block:: yaml
     :caption: *studio-config-override.yaml*
+    :emphasize-lines: 6
 
-    # Publishing blacklist configuration, items matching regexes on this list will never be published
-    studio.configuration.publishing.blacklist.regex: >-
-        .*/\.keep
+    # Paths matching git pathspecs on this list will never be published.
+    # For information on git pathspec, see https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec
+    # .keep files are always ignored
+    # e.g.:
+    # studio.configuration.publishing.blacklist.pathspecs: "*.png"
+    studio.configuration.publishing.blacklist.pathspecs: ""
 
 |
 
