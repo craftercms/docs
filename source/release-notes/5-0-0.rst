@@ -124,7 +124,6 @@ Studio UI
   - ``PackageDetailsDialog``: Updated ``packageId`` prop to be of type ``number``.
   - ``PublishOnDemandForm``: Removed ``bulkPublishCommentRequired`` and ``publishByCommitCommentRequired`` props.
   - ``PublishingQueue/FilterDropdown``: Removed ``filterStates`` prop.
-  - ``PackageDetailsDialog``: Update ``packageId`` prop to be of type ``number``.
   - Removed ``WorkflowCancellationDialog``. Replaced by ``ViewPackagesDialog``.
   - Removed ``UnlockPublisherDialog`` component.
   - ``PackageItems``: Component no longer shows the publishing target icon for items.

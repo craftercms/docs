@@ -1,9 +1,5 @@
 :is-up-to-date: True
-<<<<<<< HEAD
 :last-updated: 5.0.0
-=======
-:last-updated: 4.4.4
->>>>>>> master
 
 ########################
 CrafterCMS Documentation

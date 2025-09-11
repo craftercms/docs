@@ -71,6 +71,8 @@ Breaking Changes in CrafterCMS 5.0.0
 
        studio.configuration.publishing.blacklist.pathspecs: ""
 
+  See :ref:`publishing-blacklist` for more information.
+
 |hr|
 
 .. _compatibility-with-3.1.x:

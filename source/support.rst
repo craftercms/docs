@@ -21,7 +21,7 @@ What's Supported?
       - Commercial Support
       - Latest
 
-    * - 5.0 <https://craftercms.com/download>`__
+    * - `5.0 <https://craftercms.com/download>`__
       - TBD
       - :green:`Active`
       - :green:`Active`
