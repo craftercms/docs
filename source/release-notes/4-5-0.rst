@@ -1,7 +1,7 @@
-.. index:: CrafterCMS version 4.4.5 Release Notes
+.. index:: CrafterCMS version 4.5.0 Release Notes
 
 ------------------------
-CrafterCMS Version 4.4.5
+CrafterCMS Version 4.5.0
 ------------------------
 
 Released *TBD, 2025*
@@ -12,6 +12,14 @@ Released *TBD, 2025*
     things to consider before upgrading
 
     For instructions on how to update your CrafterCMS install, please see :ref:`upgrading-craftercms`
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+* New Groovy sandbox whitelists |br|
+  See :ref:`Deployer Groovy Sandbox <deployer-groovy-sandbox-configuration>`,
+  :ref:`Engine Groovy Sandbox <groovy-sandbox-configuration>` and
+  :ref:`Studio Groovy Sandbox <studio-groovy-sandbox-configuration>` for more information on configuring the whitelists.
 
 ^^^^^^^^^^^^
 Enhancements
