@@ -1032,7 +1032,7 @@ To use a custom whitelist follow these steps:
 
     ``CRAFTER_HOME/bin/crafter-deployer/groovy/whitelist``
 
-#. Remove or comment (adding a ``#`` at the beginning of the line) or add the expressions that your scripts require
+#. Add, remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
 #. Update the ``application.yaml`` configuration file to load the custom whitelist:
 
     .. code-block:: yaml
@@ -1070,7 +1070,7 @@ To disable the whitelist for all targets update the ``application.yaml`` configu
       whitelist:
         # Indicates if the whitelist should be enabled for all targets
         # (this will have no effect if the sandbox is disabled)
-        enabled: true
+        enabled: false
 
 
 """""""""""""""""""

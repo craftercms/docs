@@ -5248,14 +5248,14 @@ To use a custom whitelist follow these steps:
 
     ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/groovy/whitelist``
 
-#. Remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
+#. Add, remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
 #. Update the ``studio-config-override.yaml`` configuration file to load the custom whitelist:
 
     .. code-block:: yaml
         :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
         # The location of the default whitelist to use (this will have no effect if the sandbox is disabled)
-        studio.scripting.sandbox.blacklist.path: classpath:crafter/studio/groovy/whitelist
+        studio.scripting.sandbox.whitelist.path: classpath:crafter/studio/groovy/whitelist
 
 #. Restart CrafterCMS
 

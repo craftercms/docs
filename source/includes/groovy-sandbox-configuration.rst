@@ -1,8 +1,9 @@
-When a Groovy script is executed all code is validated against either a whitelist of allowed expressions and/or a blacklist
-of insecure expressions, depending on what is used by your installation, to prevent code that could compromise the system.
+When a Groovy script is executed, all code is validated to prevent operations that could compromise the system.
+Depending on your installation, validation may use a whitelist (allowed expressions), a blacklist (blocked expressions),
+or both. If both are enabled, an expression must be allowed by the whitelist and must not match the blacklist.
 
-When you try to execute a script that contains insecure expressions from the blacklist, or contains an expression not in
-the whitelist depending on your configuration, you will see an error similar to this:
+When you try to execute a script that contains an expression not included in the whitelist, or an expression blocked by
+the blacklist , you’ll see an error similar to the following:
 
 .. code-block:: none
     :caption: *Error message encountered for scripts containing insecure expressions*
@@ -11,7 +12,7 @@ the whitelist depending on your configuration, you will see an error similar to 
 
 |
 
-It is recommended to keep the default configuration if possible. However, if access to one or more of the blacklisted
+It is recommended to keep the default configuration. However, if access to one or more of the blacklisted
 expressions is required, or access to one or more expressions not in the whitelist is required, it is possible to
 override the blacklist and/or whitelist configuration. Configuration is global and affects all scripts on the server.
 

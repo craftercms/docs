@@ -3831,7 +3831,7 @@ To use a custom whitelist follow these steps:
 
     ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/groovy/whitelist``
 
-#. Remove or comment (adding a ``#`` at the beginning of the line) or add the expressions that your scripts require
+#. Add, remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
 #. Update the :ref:`server-config.properties <engine-configuration-files>` configuration file to load the custom whitelist:
 
    .. code-block:: properties
