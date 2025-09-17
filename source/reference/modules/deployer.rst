@@ -333,7 +333,7 @@ The properties listed above are configured in ``CRAFTER_HOME/bin/crafter-deploye
             :label: Since
             :version: 4.5.0
 
-      - Allows you to configure search connection pool msx values for total connections and connections per route
+      - Allows you to configure search connection pool max values for total connections and connections per route
     * - :ref:`deployer-indexing-mime-types`
       - Allows you to configure MIME types used for document indexing
     * - :ref:`deployer-indexing-remote-documents-path-pattern`
@@ -471,7 +471,7 @@ for  a single search cluster (``target.search.openSearch``), read cluster (``rea
             maxTotalConnections: 40
             maxConnectionsPerRoute: 10
 
-By default, max connections per route is set to 2 and max total connections is set to 20.
+The default max connections per route is set to 2 and max total connections is set to 20.
 
 .. _deployer-indexing-mime-types:
 

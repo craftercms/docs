@@ -2601,7 +2601,7 @@ The following section of Studio's configuration overrides allows you to setup th
 
 |
 
-The following properties allows you to configure the search connection pool max values for total connections and connections per route:
+The following properties allow you to configure the search connection pool max values for total connections and connections per route:
 
 .. version_tag::
     :label: Since
@@ -2618,7 +2618,7 @@ The following properties allows you to configure the search connection pool max 
 
 |
 
-By default, max connections per route is set to 2 and max total connections is set to 20.
+The default max connections per route is set to 2 and max total connections is set to 20.
 
 |hr|
 

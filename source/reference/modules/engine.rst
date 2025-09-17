@@ -1644,7 +1644,7 @@ The following allows you to configure the search connection pool max values for 
 
 |
 
-By default, max connections per route is set to 2 and max total connections is set to 20.
+The default max connections per route is set to 2 and max total connections is set to 20.
 
 |hr|
 
