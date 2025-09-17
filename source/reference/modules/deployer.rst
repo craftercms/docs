@@ -1,6 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.2
-:orphan:
+:last-updated: 4.5.0
 
 .. index:: Modules; Crafter Deployer
 
@@ -328,6 +327,13 @@ The properties listed above are configured in ``CRAFTER_HOME/bin/crafter-deploye
       - Allows you to configure a target with a single search cluster
     * - :ref:`deployer-multiple-search-cluster`
       - Allows you to configure a target with multiple search clusters
+    * - :ref:`deployer-search-connection-pool`
+
+        .. version_tag::
+            :label: Since
+            :version: 4.5.0
+
+      - Allows you to configure search connection pool msx values for total connections and connections per route
     * - :ref:`deployer-indexing-mime-types`
       - Allows you to configure MIME types used for document indexing
     * - :ref:`deployer-indexing-remote-documents-path-pattern`
@@ -431,6 +437,41 @@ be performed against all search clusters:
               # Override the global auth for this cluster
               username: search2
               password: passw0rd2
+
+.. _deployer-search-connection-pool:
+
+""""""""""""""""""""""
+Search Connection Pool
+""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+The following allows you to configure the search connection pool max values for total connections and connections per route
+for  a single search cluster (``target.search.openSearch``), read cluster (``readCluster``) or write cluster (``writeClusters``):
+
+.. code-block:: yaml
+  :linenos:
+  :caption: Target configuration for search connection pool max values
+  :emphasize-lines: 4-6, 9-11, 14-15
+
+  target:
+    search:
+      openSearch:
+        maxTotalConnections: 40
+        maxConnectionsPerRoute: 10
+        readCluster:
+          urls:
+            - ${env:SEARCH_URL}
+          maxTotalConnections: 40
+          maxConnectionsPerRoute: 10
+        writeClusters:
+          - urls:
+              - ${env:SEARCH_URL}
+            maxTotalConnections: 40
+            maxConnectionsPerRoute: 10
+
+By default, max connections per route is set to 2 and max total connections is set to 20.
 
 .. _deployer-indexing-mime-types:
 

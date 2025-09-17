@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.3.1
+:last-updated: 4.5.0
 
 .. _crafter-engine:
 
@@ -770,6 +770,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure additional fields for dynamic navigation items
     * - :ref:`engine-search-timeouts`
       - Allows you to configure the search client connection timeout, socket timeout and number of threads
+    * - :ref:`engine-search-connection-pool`
+      - Allows you to configure the search connection pool max total connections and max connections per route
     * - :ref:`engine-content-length-headers`
       - Allows you to configure the content-length header
     * - :ref:`engine-static-methods-in-freemarker-templates`
@@ -1617,6 +1619,32 @@ The following allows you to configure the search client connection timeout, sock
     crafter.engine.search.threads=-1
 
 |
+
+|hr|
+
+.. _engine-search-connection-pool:
+
+""""""""""""""""""""""
+Search Connection Pool
+""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+The following allows you to configure the search connection pool max values for total connections and connections per route:
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+    :linenos:
+
+    # The max total connections, if set to -1 the default will be used
+    crafter.engine.search.maxTotalConnections=-1
+    # The max connections per route, if set to -1 the default will be used
+    crafter.engine.search.maxConnectionsPerRoute=-1
+
+|
+
+By default, max connections per route is set to 2 and max total connections is set to 20.
 
 |hr|
 

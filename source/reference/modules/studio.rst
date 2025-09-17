@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.4.3
+:last-updated: 4.5.0
 
 .. highlight:: xml
 
@@ -2600,6 +2600,25 @@ The following section of Studio's configuration overrides allows you to setup th
     studio.search.keepAlive: false
 
 |
+
+The following properties allows you to configure the search connection pool max values for total connections and connections per route:
+
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :linenos:
+
+    # The max total connections, if set to -1 the default will be used
+    studio.search.maxTotalConnections: -1
+    # The max connections per route, if set to -1 the default will be used
+    studio.search.maxConnectionsPerRoute: -1
+
+|
+
+By default, max connections per route is set to 2 and max total connections is set to 20.
 
 |hr|
 
