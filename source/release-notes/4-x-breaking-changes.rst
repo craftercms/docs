@@ -56,6 +56,8 @@ Here's the list of updated spring profile names:
       - crafter_studio_samlSecurity
     * - crafter.engine.samlSecurity
       - crafter_engine_samlSecurity
+    * - crafter.core.applicationCache
+      - crafter_core_applicationCache
 
 If you are using any of the old profile names listed above, admins will need to update the configuration overrides
 to use the new profile names. These are usually configured in the ``crafter-setenv.sh`` file located under the

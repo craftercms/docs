@@ -1352,7 +1352,7 @@ Engine has multiple caches:
     :version: 4.3.1
 
 - **Application cache** for objects cached by Groovy code. |br|
-  It's enabled by specifying the value ``crafter.core.applicationCache`` in the ``SPRING_PROFILES_ACTIVE`` env variable
+  It's enabled by specifying the value ``crafter_core_applicationCache`` in the ``SPRING_PROFILES_ACTIVE`` env variable
   in the ``CRAFTER_HOME/bin/crafter-setenv.sh`` file:
 
   .. code-block:: sh
@@ -1361,7 +1361,7 @@ Engine has multiple caches:
       # -------------------- Spring Profiles --------------------
       ...
       # Uncomment to enable application cache
-      export SPRING_PROFILES_ACTIVE=crafter.core.applicationCache
+      export SPRING_PROFILES_ACTIVE=crafter_core_applicationCache
       # For multiple active spring profiles, create comma separated list
 
   Active cache is only used in the application cache when the cache is enabled, if not enabled, Engine behaves like in
@@ -2501,7 +2501,7 @@ Update the Configuration
 """"""""""""""""""""""""
 To configure Engine SAML2, in your Delivery installation, we need to enable SAML security then we'll setup the required SAML configuration properties.
 
-To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter.engine.samlSecurity``:
+To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter_engine_samlSecurity``:
 
 .. code-block:: sh
    :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
@@ -2509,7 +2509,7 @@ To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.s
    # -------------------- Spring Profiles --------------------
    ...
    # Uncomment to enable SAML security
-   export SPRING_PROFILES_ACTIVE=crafter.engine.samlSecurity
+   export SPRING_PROFILES_ACTIVE=crafter_engine_samlSecurity
    # For multiple active spring profiles, create comma separated list
 
 |
