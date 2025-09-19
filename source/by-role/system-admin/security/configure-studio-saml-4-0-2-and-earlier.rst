@@ -92,7 +92,7 @@ Configure
 ---------
 To configure Studio SAML2, in your Authoring installation, we need to enable SAML security then we'll setup the required SAML configuration properties.
 
-To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter.studio.samlSecurity``:
+To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter_studio_samlSecurity``:
 
 .. code-block:: sh
     :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
@@ -100,7 +100,7 @@ To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.s
     # -------------------- Spring Profiles --------------------
     ...
     # Uncomment to enable SAML security
-    export SPRING_PROFILES_ACTIVE=crafter.studio.samlSecurity
+    export SPRING_PROFILES_ACTIVE=crafter_studio_samlSecurity
     # For multiple active spring profiles, create comma separated list
 
 |
