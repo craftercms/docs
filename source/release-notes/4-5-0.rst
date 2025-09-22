@@ -21,6 +21,9 @@ New Features
   :ref:`Engine Groovy Sandbox <groovy-sandbox-configuration>` and
   :ref:`Studio Groovy Sandbox <studio-groovy-sandbox-configuration>` for more information on configuring the whitelists.
 
+* Improved serverless performance |enterpriseOnly| |br|
+  Improved startup and first page load speeds by using Redis/ValKey as a cache in front of S3.
+
 ^^^^^^^^^^^^
 Enhancements
 ^^^^^^^^^^^^
@@ -28,25 +31,32 @@ Enhancements
   See the :ref:`Deployer <deployer-search-connection-pool>`, :ref:`Engine <engine-search-connection-pool>`,
   and :ref:`Studio <studio-search>` search configuration sections for more information.
 
-* `Improved built in search clause performance <https://github.com/craftercms/craftercms/issues/8350>`__ |br|
+* `Improved query performance and OpenSearch caching <https://github.com/craftercms/craftercms/issues/8350>`__ |br|
+  CrafterCMS by default now excludes disabled and expired content from search results via default filters. See :ref:`engine-search-default-filters` for more 
+  information on enabling/disabling the default filters.
 
+* `Search input field is now in focus when clicking the search button <https://github.com/craftercms/craftercms/issues/8352>`__
 
 ^^^^^^^^^
 Bug Fixes
 ^^^^^^^^^
 * `Fixed issue with repeating group control <https://github.com/craftercms/craftercms/issues/8355>`__
 
-* `Fixed issue with Studio UI breaking when searching for a user with [SA] in the name <https://github.com/craftercms/craftercms/issues/8351>`__
+* `Fixed issue with Studio UI breaking when searching for a user with [SA] in the name <https://github.com/craftercms/craftercms/issues/8351>`__ |br|
   Square brackets are now allowed by default in search queries. To allow other characters not permitted by default in search queries,
   simply modify the ``studio.validation.regex.SEARCH_KEYWORDS`` property in the Studio :ref:`Global Config <nav-menu-global-config>`.
-  See :ref:`studio-validations-regex ` to learn more on configuring the regex for validating user names to suit your needs.
+  
+  See :ref:`studio-validations-regex` to learn more on configuring the regex for validating user names to suit your needs.
 
 ^^^^^^^^^^^^^^^^^^
 Dependency Updates
 ^^^^^^^^^^^^^^^^^^
 * Noteworthy dependency updates:
 
-For a complete list of community tickets, please visit: `GitHub 4.4.5 <https://github.com/orgs/craftercms/projects/34/views/1>`_
+  - Spring security to version 6.5.4
+  - Mariadb4j to version 3.1.0.5
+
+For a complete list of community tickets, please visit: `GitHub 4.5.0 <https://github.com/orgs/craftercms/projects/34/views/1>`_
 
 For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
 
