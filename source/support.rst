@@ -21,11 +21,16 @@ What's Supported?
       - Commercial Support
       - Latest
 
-    * - `4.4 <https://craftercms.com/download>`__
-      - June 13, 2025
+    * - `4.5 <https://craftercms.com/download>`__
+      - TBD, 2025
       - :green:`Active`
       - :green:`Active`
       - 4.5.0 (TBD, 2025)
+    * - 4.4
+      - June 13, 2025
+      - :green:`TBD`
+      - :green:`TBD`
+      - 4.4.4 (September 6, 2025)
     * - 4.3
       - February 21, 2025
       - :maroon:`Ended on June 13, 2025`
