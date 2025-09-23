@@ -5288,6 +5288,26 @@ Grape Configuration
 .. include:: /includes/groovy-grape-configuration.rst
 
 ~~~~~~~~~~~~~~~
+Grapes Download
+~~~~~~~~~~~~~~~
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+The following allows you to enable or disable automatic Groovy dependency (grapes) downloads for scripts (@grab):
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :emphasize-lines: 3
+
+    # Indicates if @Grab annotations should download grapes
+    # If false, only already downloaded grapes will be available
+    studio.scripting.grapes.download.enabled: false
+
+Automatic grapes download is disabled by default. Set ``studio.scripting.grapes.download.enabled`` to true to enable
+automatic grapes download.
+
+~~~~~~~~~~~~~~~
 Important Notes
 ~~~~~~~~~~~~~~~
 .. include:: /includes/groovy-sandbox-important-notes.rst
