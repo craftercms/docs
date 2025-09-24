@@ -3892,7 +3892,7 @@ The following allows you to enable or disable automatic Groovy dependency (grape
     # If false, only already downloaded grapes will be available
     crafter.engine.groovy.grapes.download.enabled=false
 
-Automatic grapes download is disabled by default. Set ``crafter.engine.scripting.grapes.download.enabled`` to true to
+Automatic grapes download is disabled by default. Set ``crafter.engine.groovy.grapes.download.enabled`` to true to
  enable automatic grapes download.
 
 |
