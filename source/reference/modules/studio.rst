@@ -5185,6 +5185,10 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
     studio.scripting.sandbox.blacklist.enable: true
     # The location of the default blacklist to use (this will have no effect if the sandbox is disabled)
     studio.scripting.sandbox.blacklist.path: classpath:crafter/studio/groovy/blacklist
+    # Indicates if the whitelist should be enabled (this will have no effect if the sandbox is disabled)
+    studio.scripting.sandbox.whitelist.enable: true
+    # The location of the default whitelist to use (this will have no effect if the sandbox is disabled)
+    studio.scripting.sandbox.whitelist.path: classpath:crafter/studio/groovy/whitelist
 
 |
 

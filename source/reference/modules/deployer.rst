@@ -1088,7 +1088,7 @@ Grapes Download
 The following allows you to enable or disable automatic Groovy dependency (grapes) downloads for scripts (@grab):
 
 .. code-block:: yaml
-    :caption: :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
     :emphasize-lines: 8
 
     deployer:
