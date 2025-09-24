@@ -1030,7 +1030,7 @@ To use a custom whitelist follow these steps:
 
 #. Copy the default whitelist file to your classpath, for example:
 
-    ``CRAFTER_HOME/bin/crafter-deployer/groovy/whitelist``
+    ``CRAFTER_HOME/bin/crafter-deployer/config/groovy/whitelist``
 
 #. Add, remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
 #. Update the ``application.yaml`` configuration file to load the custom whitelist:
@@ -1077,6 +1077,31 @@ To disable the whitelist for all targets update the ``application.yaml`` configu
 Grape Configuration
 """""""""""""""""""
 .. include:: /includes/groovy-grape-configuration.rst
+
+"""""""""""""""
+Grapes Download
+"""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+The following allows you to enable or disable automatic Groovy dependency (grapes) downloads for scripts (@grab):
+
+.. code-block:: yaml
+    :caption: :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
+    :emphasize-lines: 8
+
+    deployer:
+        main:
+            scripting:
+                grapes:
+                    # Indicates if grapes automatic downloading should be enabled for all targets
+                    # If false, already downloaded grapes will be used, but no new grapes will be downloaded
+                    download:
+                        enabled: false
+
+Automatic grapes download is disabled by default. Set ``deployer.main.scripting.grapes.download.enabled`` to true to
+enable automatic grapes download.
 
 """""""""""""""
 Important Notes

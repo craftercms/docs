@@ -5208,7 +5208,7 @@ To use a custom blacklist follow these steps:
         :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
         # The location of the default blacklist to use (this will have no effect if the sandbox is disabled)
-        studio.scripting.sandbox.blacklist.path: classpath:crafter/studio/groovy/blacklist
+        studio.scripting.sandbox.blacklist.path: classpath:crafter/studio/extension/groovy/blacklist
 
 #. Restart CrafterCMS
 
@@ -5255,7 +5255,7 @@ To use a custom whitelist follow these steps:
         :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
         # The location of the default whitelist to use (this will have no effect if the sandbox is disabled)
-        studio.scripting.sandbox.whitelist.path: classpath:crafter/studio/groovy/whitelist
+        studio.scripting.sandbox.whitelist.path: classpath:crafter/studio/groovy/extension/whitelist
 
 #. Restart CrafterCMS
 
