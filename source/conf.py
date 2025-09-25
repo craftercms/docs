@@ -29,7 +29,7 @@ author = u'CrafterCMS'
 # The short X.Y version.
 version = u'current'
 # The full version, including alpha/beta/rc tags.
-release = u'4.3.2'
+release = u'4.4.4'
 
 
 # -- General configuration ---------------------------------------------------
@@ -153,7 +153,25 @@ html_favicon = "_static/images/favicon.ico"
 # Add versions for the bottom menu
 html_context = {
     'versions': ['current', '4.1', '4.0', '3.1'],
-    'docsUrl': '/docs'
+    'docsUrl': '/docs',
+    'productLinks': [
+			{
+				'label': 'Main Site',
+				'url': 'https://craftercms.com/'
+			},
+			{
+				'label': 'Blog',
+				'url': 'https://craftercms.com/blog'
+			},
+			{
+				'label': 'Crafter Cloud',
+				'url': 'https://craftercms.com/products/crafter-cloud'
+			},
+			{
+				'label': 'Contact',
+				'url': 'https://craftercms.com/about/contact'
+			}
+		]
 }
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -274,16 +292,13 @@ rst_epilog = """
 .. |groovy_link| replace:: :ref:`groovy-java-api`
 .. |static_asset_link| replace:: :ref:`static-content-access`
 .. |freemarker_link| replace:: :ref:`templating-api`
-
 """
 
-
-# Javadoc home and version
-javadoc_base = 'http://javadoc.craftercms.org/'
-javadoc_version = '4.3.2'
+# Javadoc home
+javadoc_base = 'https://javadoc.craftercms.org/'
 
 # Shorten external links
-extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
+extlinks = {'javadoc_base_url': (javadoc_base + release + '/%s', None ),
             'base_url': ('/docs/' + version + '/%s', None),
             'docs_base_url': ('/docs' + '/%s', None)
             }

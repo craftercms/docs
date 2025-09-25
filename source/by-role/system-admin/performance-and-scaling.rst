@@ -138,7 +138,7 @@ Crafter Studio Application Level
 ~~~~~~~~~~~~~~~~~~
 DB Connection Pool
 ~~~~~~~~~~~~~~~~~~
-To configure the DB connection pool, override the properties listed below as needed in the ``studio-config-oveeride.yaml`` file in the ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/`` folder, or via the ``GlobaL Config`` in the Studio |mainMenu| Navigation Menu
+To configure the DB connection pool, override the properties listed below as needed in the ``studio-config-override.yaml`` file in the ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/`` folder, or via the ``Global Config`` in the Studio |mainMenu| Navigation Menu:
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -574,7 +574,7 @@ Configuring Nodes in the Cluster
       # -------------------------------------------------------------------------------------
       # IMPORTANT: To enable clustering, please specify the following Spring profile
       # in your crafter-setenv.sh:
-      #  - SPRING_PROFILES_ACTIVE=crafter.studio.dbClusterPrimaryReplica
+      #  - SPRING_PROFILES_ACTIVE=crafter_studio_dbClusterPrimaryReplica
       #    You will need to uncomment the Hazelcast and Studio DB Cluster property sections too
       # -------------------------------------------------------------------------------------
 
@@ -700,7 +700,7 @@ Configuring Nodes in the Cluster
       :caption: *bin/crafter-setenv.sh*
 
       # Uncomment to enable clustering
-      export SPRING_PROFILES_ACTIVE=crafter.studio.dbClusterPrimaryReplica
+      export SPRING_PROFILES_ACTIVE=crafter_studio_dbClusterPrimaryReplica
       ...
 
       # -------------------- Cluster variables -------------------
@@ -739,7 +739,7 @@ Configuring Nodes in the Cluster
 
    where:
 
-   - **SPRING_PROFILES_ACTIVE**: with the value ``crafter.studio.dbClusterPrimaryReplica``, enables primary/replica clustering
+   - **SPRING_PROFILES_ACTIVE**: with the value ``crafter_studio_dbClusterPrimaryReplica``, enables primary/replica clustering
    - **CLUSTER_NODE_ADDRESS**: hostname or IP of the local node to be registered in the Git repository cluster, should
      be reachable to other cluster members.
    - **MARIADB_CLUSTER_NAME**: name of the MariaDB cluster.

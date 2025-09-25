@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.3.0
+:last-updated: 4.4.4
 
 .. index:: JavaScript SDK
 
@@ -33,8 +33,11 @@ The `Video Center Blueprint <https://craftercms.com/marketplace/video-center-blu
 
 The `Authoring Plugin Examples <https://github.com/craftercms/authoring-ui-plugin-examples>`__ repo showcases how to use the above JavaScript SDK packages to build Authoring Plugins.
 
+.. _compatibility-with-craftercms-version:
+
+-------------------------------------
 Compatibility with CrafterCMS Version
-=========================================
+-------------------------------------
 
 Beginning with versions released after 4.3.0, CrafterCMS NPM libraries will adopt Semantic Versioning instead of having the same version number as the product.
 The compatibility information between your CrafterCMS installation and the corresponding SDK versions is as follows:
@@ -52,6 +55,28 @@ The compatibility information between your CrafterCMS installation and the corre
       - `ICE <https://www.npmjs.com/package/@craftercms/ice>`__
       - `Experience Builder <https://www.npmjs.com/package/@craftercms/experience-builder>`__
       - `Studio UI <https://www.npmjs.com/package/@craftercms/studio-ui>`__
+
+    * - 4.4.4
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^5.0.0
+      - ^5.0.0
+
+    * - 4.4.3
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^4.3.0
+      - ^5.0.0
+      - ^5.0.0
 
     * - 4.3
       - 4.3.0

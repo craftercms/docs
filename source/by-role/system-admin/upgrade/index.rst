@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.3.0
+:last-updated: 4.4.1
 
 .. _upgrading-craftercms:
 
@@ -11,23 +11,33 @@ The following CrafterCMS versions are able to upgrade to the latest release:
 
 .. list-table::
 
-    * - **4.2**
+    * - **4.4**
+      - **4.3**
+      - **4.2**
       - **4.1**
       - **4.0**
       - **3.1**
     * - All
       - All
       - All
+      - All
+      - All
       - ``3.1.9``
     * -
+      -
+      -
       -
       -
       - ``3.1.12``
     * -
       -
       -
+      -
+      -
       - ``3.1.13``
     * -
+      -
+      -
       -
       -
       - ``3.1.17`` and onward

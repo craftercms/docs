@@ -99,6 +99,8 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure the regex used for validating various inputs
     * - :ref:`Notification Service Configuration <notification-service-configuration>`
       - Configure the notification service for workflow
+    * - :ref:`Disk Monitoring <studio-disk-monitoring>`
+      - Configure the disk monitoring notifications and thresholds
     * - :ref:`Workflow Notification Configuration <notifications-configuration>`
       - Configure the HTML notifications sent at each point in the workflow
     * - :ref:`Commit Message <studio-commit-message>`
@@ -109,6 +111,8 @@ In this section, we will highlight some of the more commonly used properties in 
       - Configure the publishing blacklist
     * - :ref:`Configuration Files Maximum <configuration-files-maximum>`
       - Configure the maximum length of configuration content
+    * - :ref:`Git Configuration <git-configuration>`
+      - Configure Git properties
     * - :ref:`Content Type Editor Configuration <content-type-editor-configuration>`
       - Configure the content types
     * - :ref:`Dependency Resolver Configuration <dependency-resolver-configuration>`
@@ -613,7 +617,7 @@ Project Policy
     :label: Since
     :version: 4.0.0
 
-TThe project policy configuration file allows the administrator to configure constraints for content being added to the project
+The project policy configuration file allows the administrator to configure constraints for content being added to the project
 (via uploads), such as filename constraints, minimum/maximum size of files, permitted content types or file types (MIME-types), etc.
 
 *Note that the project policy does not apply to content created directly on disk via the Git or APIs.*
@@ -3310,6 +3314,76 @@ files. Here are the default values configured:
 To learn more on configuring the workflow notification emails being sent, see
 :ref:`Workflow Notification Configuration <notifications-configuration>`.
 
+.. _studio-disk-monitoring:
+
+"""""""""""""""
+Disk Monitoring
+"""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.4.3
+
+Crafter Studio watches disk utilization for the ``data/repos`` directory and takes action when a threshold is reached.
+
+The following section of Studio's configuration overrides allows you to configure the thresholds, notification email
+and webhook when a threshold is reached.
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+    ##################################################
+    ##               Disk monitoring                ##
+    ##################################################
+    studio.monitoring.disk.highWaterMark: 90
+    studio.monitoring.disk.lowWaterMark: 85
+    studio.monitoring.disk.cron: '0 0/15 * * * ?'
+
+    studio.monitoring.disk.notifications.encoding: UTF-8
+    studio.monitoring.disk.notifications.dateTimePattern: MM/dd/yyyy hh:mm:ss.SSS a z
+
+    # Email configs
+    studio.monitoring.disk.notifications.email.enabled: true
+    studio.monitoring.disk.notifications.email.subject: Disk space warning
+    studio.monitoring.disk.notifications.email.to: admin@example.com
+    studio.monitoring.disk.notifications.email.template: notification/templates/email/disk-monitor-alarm.ftl
+    studio.monitoring.disk.notifications.email.html: true
+    # Webhook configs
+    studio.monitoring.disk.notifications.webhook.enabled: false
+    studio.monitoring.disk.notifications.webhook.url: http://example.com/notify
+    studio.monitoring.disk.notifications.webhook.method: POST
+    studio.monitoring.disk.notifications.webhook.contentType: application/json
+    studio.monitoring.disk.notifications.webhook.template: notification/templates/webhook/disk-monitor-alarm.ftl
+
+Where:
+
+- **studio.monitoring.disk.highWaterMark**: The disk utilization percentage level that triggers an action to perform
+  ``git gc``, then the low watermark threshold is checked after, which determines whether an alarm is set.
+- **studio.monitoring.disk.lowWaterMark**: The disk utilization percentage level that triggers the low disk space alarm.
+  Once the low disk space alarm is set, it gets cleared when the disk utilization percentage goes below the low watermark.
+  Note that the low watermark value **must be less than the high watermark value**.
+- **studio.monitoring.disk.cron**: The cron expression for scheduling how often disk utilization is checked against the
+  configured thresholds (high and low watermark).
+- **studio.monitoring.disk.notifications.webhook.method**: The webhook HTTP request method (verb), e.g. POST, PUT, GET, etc.
+- **studio.monitoring.disk.notifications.email.template**: The template used for sending the alarm state email
+  Note also that emails are sent using the email in ``studio.mail.from.default`` as the from address.
+  See :ref:`studio-smtp-config` for more information on configuring the mail client to send emails from Crafter Studio.
+- **studio.monitoring.disk.notifications.webhook.template**:
+  The default built-in template for webhook notification in ``studio.monitoring.disk.notifications.webhook.template``
+  works for `slack <https://slack.com>`_. If you wish to change the webhook response, simply add your customized templates
+  to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``.
+
+To change the default templates (webhook template or email template) to a custom one, simply add your customized
+templates to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``.
+
+For example, we have a custom webhook template ``my-disk-monitor-alarm.ftl`` that we will now place under
+``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/my-disk-monitor-alarm.ftl``
+that we want to use instead of the default. We'll now configure Studio to use our custom template by modifying the
+``studio.monitoring.disk.notifications.webhook.template`` value in the Studio configuration override file:
+
+.. code-block::
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+    studio.monitoring.disk.notifications.webhook.template: my-disk-monitor-alarm.ftl
 
 |hr|
 
@@ -3475,6 +3549,66 @@ To set the maximum size of a project/site configuration file for the :base_url:`
 
     # The maximum length of configuration content for the configuration service. Default to 512kB -> 512 * 1024
     studio.configuration.maxContentSize: 524288
+
+|
+
+|hr|
+
+.. _git-configuration:
+
+"""""""""""""""""
+Git Configuration
+"""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.4.3
+
+To enable updating the Git properties listed below, set the following to ``true``:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
+    :emphasize-lines: 6
+
+    ##################################################
+    ##        Git configuration properties          ##
+    ##################################################
+    # Git config update to following properties is performed on global configuration and might
+    # affect unintended repositories. Opt-out of this by setting this property to false.
+    studio.repo.git.global.update.enabled: true
+
+To configure the ``git gc`` options prune expire and auto pack limit, set the following properties:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
+    :emphasize-lines: 5,7
+
+    # git gc --auto will consolidate into one the packs older than this value
+    # Notice that this property works when the number of packs is greater than gc.autoPackLimit.
+    # See https://git-scm.com/docs/git-gc#Documentation/git-gc.txt-gcautoPackLimit
+    # This value is used to configure "gc.prunePackExpire" property, leave empty to skip property setting
+    studio.repo.gc.prunePackExpire: 1.hour.ago
+    # Set global gc.autoPackLimit property
+    studio.repo.gc.autoPackLimit: 50
+
+where:
+
+- **studio.repo.gc.prunePackExpire**: This maps to Git's "gc.pruneExpire". Unreachable objects older than this value
+  are pruned when running ``git gc``. Example values accepted are: ``1.hour.ago``, ``2.weeks.ago`` , ``now``, or ``never``.
+  See `Prune expire <https://git-scm.com/docs/git-config#Documentation/git-config.txt-gcpruneExpire>`__ in the Git docs
+  for valid values for the option.
+
+- **studio.repo.gc.autoPackLimit**: This maps to Git's "gc.autoPackLimit". Packs are consolidated when the number
+  of packs exceeds the value in this property.
+  See `Auto pack limit <https://git-scm.com/docs/git-config#Documentation/git-config.txt-gcautoPackLimit>`__ in the Git
+  docs for valid values for the option.
+
+These properties are configured on Studio startup as git global properties. Values configured are just passed to git.
+Remember that you need to restart Studio for the changes you make to the above properties to take effect.
+
+.. important::
+    The ``studio.repo.git.global.update.enabled`` property allows you to opt-out of the git config update.
+    Note the importance of disabling this property for local developer deployment since it's a global change
+    of Git's default behavior and may affect unintended repositories.
 
 |
 
@@ -4281,7 +4415,7 @@ Configure
 ~~~~~~~~~
 To configure Studio SAML2, in your Authoring installation, we need to enable SAML security then we'll setup the required SAML configuration properties.
 
-To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file, and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter.studio.samlSecurity``:
+To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file, and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter_studio_samlSecurity``:
 
 .. code-block:: sh
    :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
@@ -4289,7 +4423,7 @@ To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.s
    # -------------------- Spring Profiles --------------------
    ...
    # Uncomment to enable Crafter Studio SAML2 security
-   export SPRING_PROFILES_ACTIVE=crafter.studio.samlSecurity
+   export SPRING_PROFILES_ACTIVE=crafter_studio_samlSecurity
    # For multiple active spring profiles, create comma separated list
 
 |

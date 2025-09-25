@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.3.0
+:last-updated: 4.4.4
 :orphan:
 
 .. _breaking-changes-4-x:
@@ -20,6 +20,48 @@ before upgrading. Please review the following and apply changes as required:
 - CrafterCMS has upgraded the AWS client library to version 2. |br| This may contain breaking changes that impact custom Java and
   Groovy code. See https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/migration.html for more information
   on the changes in the library that may affect your project/s.
+
+|hr|
+
+.. _breaking-changes-in-craftercms-4-4-3:
+
+------------------------------------
+Breaking Changes in CrafterCMS 4.4.3
+------------------------------------
+CrafterCMS version 4.4.3 works with JavaScript SDK version 5.0.0 and later. See :ref:`compatibility-with-craftercms-version`
+for more information.
+
+.. _breaking-changes-in-craftercms-4-4-0:
+
+------------------------------------
+Breaking Changes in CrafterCMS 4.4.0
+------------------------------------
+Spring Boot 3.5 has updated the profile naming rules. Only dash( `-` ), underscore( `_` ), letters and digits are allowed now.
+We are updating spring profile names across CrafterCMS to comply with the new rules. So far only Deployer
+(the one using spring boot) would be affected. However, for consistency, we are updating all profiles even if not
+related to the Deployer
+
+Here's the list of updated spring profile names:
+
+.. list-table::
+    :header-rows: 1
+
+    * - Old Profile Name
+      - New Profile Name
+    * - crafter.studio.dbClusterPrimaryReplica
+      - crafter_studio_dbClusterPrimaryReplica
+    * - crafter.studio.externalDb
+      - crafter_studio_externalDb
+    * - crafter.studio.samlSecurity
+      - crafter_studio_samlSecurity
+    * - crafter.engine.samlSecurity
+      - crafter_engine_samlSecurity
+    * - crafter.core.applicationCache
+      - crafter_core_applicationCache
+
+If you are using any of the old profile names listed above, admins will need to update the configuration overrides
+to use the new profile names. These are usually configured in the ``crafter-setenv.sh`` file located under the
+``CRAFTER_HOME/bin/`` folder.
 
 |hr|
 

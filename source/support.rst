@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.3.2
+:last-updated: 4.4.4
 
 .. index:: Support
 
@@ -15,16 +15,21 @@ What's Supported?
 .. list-table::
     :header-rows: 1
 
-    * - Release
+    * - Version
       - Released
       - Open Source Support
       - Commercial Support
       - Latest
 
+    * - `4.4 <https://craftercms.com/download>`__
+      - June 13, 2025
+      - :green:`Active`
+      - :green:`Active`
+      - 4.4.4 (September 6, 2025)
     * - 4.3
       - February 21, 2025
-      - :green:`Active`
-      - :green:`Active`
+      - :maroon:`Ended on June 13, 2025`
+      - :orange:`December 31, 2025`
       - 4.3.2 (May 20, 2025)
     * - 4.2
       - November 13, 2024

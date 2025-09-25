@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.3.0
+:last-updated: 4.4.4
 
 ########################
 CrafterCMS Documentation
@@ -30,14 +30,18 @@ CrafterCMS's authoring system is built on Git and supports DevContentOps process
 
 CrafterCMS differentiates itself from existing CMSs with its architecture: microservices-based, serverless, elastic and planet-wide scalability. To learn more, see the :ref:`general-architecture`.
 
+|hr|
+
 ============================
 When/where to use CrafterCMS
 ============================
 CrafterCMS is best suited for:
 
-* Large-scale sites and apps that require a high degree of performance, security, availability, and scalability. 
+* Large-scale sites and apps that require a high degree of performance, security, availability, and scalability.
 * Content-rich applications that are authored by a non-technical content authors and consumed by many, many site visitors.
 * Enterprise-grade, complex, and integration-rich applications.
+
+|hr|
 
 ===================
 Who uses CrafterCMS
@@ -45,7 +49,7 @@ Who uses CrafterCMS
 CrafterCMS is used by three main constituencies:
 
 * Developers who build applications using CrafterCMS.
-* Authors who create and manage content using CrafterCMS.
+* Authors who create, manage and publish content using CrafterCMS.
 * DevOps who deploy and manage CrafterCMS.
 
 .. toctree::
@@ -61,3 +65,23 @@ CrafterCMS is used by three main constituencies:
     release-notes/index
     contribute/index
     faq
+
+|hr|
+
+=========================
+Latest CrafterCMS Release
+=========================
+The latest version of CrafterCMS is `version 4.4.4 <https://craftercms.com/download>`__.
+
+Start exploring the latest version of CrafterCMS in a few minutes using Docker by simply running the following command:
+
+.. code-block:: bash
+
+    docker run -p 8080:8080 craftercms/authoring_local:latest
+
+Just point your browser to ``http://localhost:8080/studio`` and it's ready for you to use!
+The default username is ``admin`` and the default password is ``admin``.
+
+See :ref:`getting-started` for more information on getting started quickly on using CrafterCMS.
+
+For more information on the release, see the :ref:`release-notes`.
