@@ -5259,7 +5259,7 @@ To use a custom whitelist follow these steps:
         :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
         # The location of the default whitelist to use (this will have no effect if the sandbox is disabled)
-        studio.scripting.sandbox.whitelist.path: classpath:crafter/studio/groovy/extension/whitelist
+        studio.scripting.sandbox.whitelist.path: classpath:crafter/studio/extension/groovy/whitelist
 
 #. Restart CrafterCMS
 

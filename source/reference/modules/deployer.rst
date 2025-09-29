@@ -1058,7 +1058,7 @@ Disabling the Sandbox Whitelist
     :version: 4.5.0
 
 It is possible to disable the whitelist to allow the execution of most expressions, in
-case you need to use a considerable number of the expression not included in the whitelist while keeping some basic
+case you need to use a considerable number of expressions not included in the whitelist while keeping some basic
 restrictions.
 
 To disable the whitelist for all targets update the ``application.yaml`` configuration file:
