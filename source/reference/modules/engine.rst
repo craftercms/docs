@@ -3897,6 +3897,13 @@ Automatic grapes download is disabled by default. Set ``crafter.engine.groovy.gr
 
 |
 
+"""""""""""""""""""""""""""""""""""""""
+Installing Grapes from the Command Line
+"""""""""""""""""""""""""""""""""""""""
+.. include:: /includes/groovy-grape-install.rst
+
+|
+
 """""""""""""""
 Important Notes
 """""""""""""""

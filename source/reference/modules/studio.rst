@@ -5291,6 +5291,8 @@ Grape Configuration
 ~~~~~~~~~~~~~~~~~~~
 .. include:: /includes/groovy-grape-configuration.rst
 
+|
+
 ~~~~~~~~~~~~~~~
 Grapes Download
 ~~~~~~~~~~~~~~~
@@ -5310,6 +5312,15 @@ The following allows you to enable or disable automatic Groovy dependency (grape
 
 Automatic grapes download is disabled by default. Set ``studio.scripting.grapes.download.enabled`` to true to enable
 automatic grapes download.
+
+|
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Installing Grapes from the Command Line
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. include:: /includes/groovy-grape-install.rst
+
+|
 
 ~~~~~~~~~~~~~~~
 Important Notes
