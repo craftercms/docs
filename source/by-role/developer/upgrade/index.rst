@@ -48,11 +48,6 @@ When upgrading from 3.1.x (running ES 6), we'll use the ``upgrade-search.sh`` sc
 
 See :ref:`upgrading-search` for more information on upgrading your search from Elasticsearch to OpenSearch along with some manual updates that may be required in some instances.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Migrate from Solr to OpenSearch
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If upgrading projects/sites built with Solr search, please follow :ref:`this guide <migrate-site-to-opensearch>` to help you migrate to OpenSearch.
-
 --------------------------
 Upgrade In-Context Editing
 --------------------------

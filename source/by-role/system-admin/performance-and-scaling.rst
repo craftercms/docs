@@ -574,7 +574,7 @@ Configuring Nodes in the Cluster
       # -------------------------------------------------------------------------------------
       # IMPORTANT: To enable clustering, please specify the following Spring profile
       # in your crafter-setenv.sh:
-      #  - SPRING_PROFILES_ACTIVE=crafter.studio.dbClusterPrimaryReplica
+      #  - SPRING_PROFILES_ACTIVE=crafter_studio_dbClusterPrimaryReplica
       #    You will need to uncomment the Hazelcast and Studio DB Cluster property sections too
       # -------------------------------------------------------------------------------------
 
@@ -700,7 +700,7 @@ Configuring Nodes in the Cluster
       :caption: *bin/crafter-setenv.sh*
 
       # Uncomment to enable clustering
-      export SPRING_PROFILES_ACTIVE=crafter.studio.dbClusterPrimaryReplica
+      export SPRING_PROFILES_ACTIVE=crafter_studio_dbClusterPrimaryReplica
       ...
 
       # -------------------- Cluster variables -------------------
@@ -739,7 +739,7 @@ Configuring Nodes in the Cluster
 
    where:
 
-   - **SPRING_PROFILES_ACTIVE**: with the value ``crafter.studio.dbClusterPrimaryReplica``, enables primary/replica clustering
+   - **SPRING_PROFILES_ACTIVE**: with the value ``crafter_studio_dbClusterPrimaryReplica``, enables primary/replica clustering
    - **CLUSTER_NODE_ADDRESS**: hostname or IP of the local node to be registered in the Git repository cluster, should
      be reachable to other cluster members.
    - **MARIADB_CLUSTER_NAME**: name of the MariaDB cluster.
