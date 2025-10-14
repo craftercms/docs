@@ -1943,6 +1943,9 @@ To access the ``controller.groovy`` script from Studio:
 - In the ``Properties Explorer`` on the right side, look for the ``Controller`` field. This field contains the
   ``controller.groovy`` file. Click on the field then click on the pencil icon in the field to edit the script.
 
+If you'd like to access the ``applicationContext`` variable or add to the list of available beans in the controller script,
+see :ref:`content-processors-configuration` for more information.
+
 ~~~~~~~
 Example
 ~~~~~~~
