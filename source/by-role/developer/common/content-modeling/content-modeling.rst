@@ -1943,6 +1943,28 @@ To access the ``controller.groovy`` script from Studio:
 - In the ``Properties Explorer`` on the right side, look for the ``Controller`` field. This field contains the
   ``controller.groovy`` file. Click on the field then click on the pencil icon in the field to edit the script.
 
+The following variables are available for server-side controllers in addition to the :ref:`global groovy variables <groovy-java-api>`:
+
+.. list-table::
+    :header-rows: 1
+
+    * - Name
+      - Description
+    * - site
+      - The site to use
+    * - user
+      - The user running the script
+    * - path
+      - The path of the content
+    * - contentType
+      - The content type the script is being executed from
+    * - contentLifecycleOperation
+      - The content operations, e.g. COPY, RENAME, etc.
+    * - contentLoader
+      - Used for loading content from the repository
+    * - lifecycleContent
+      - Provides access to the content being written
+
 If you'd like to access the ``applicationContext`` variable or add to the list of available beans in the controller script,
 see :ref:`content-processors-configuration` for more information.
 

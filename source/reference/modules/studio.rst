@@ -112,7 +112,7 @@ In this section, we will highlight some of the more commonly used properties in 
     * - :ref:`Git Configuration <git-configuration>`
       - Configure Git properties
     * - :ref:`Content Processors Configuration <content-processors-configuration>`
-      - Configure content lifecycle properties
+      - Configure content processors (content lifecycle) properties
     * - :ref:`Content Type Editor Configuration <content-type-editor-configuration>`
       - Configure the content types
     * - :ref:`Dependency Resolver Configuration <dependency-resolver-configuration>`
@@ -3562,7 +3562,7 @@ decide to include some specific beans from the context, e.g.: contentService, se
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
     # List of beans that should be available in the content lifecycle controller script.
-    studio.contentProcessor.contentLifecycle.includedBeans: []
+    studio.contentProcessor.contentLifecycle.includedBeans: [beanA, beanB]
 
 |
 
