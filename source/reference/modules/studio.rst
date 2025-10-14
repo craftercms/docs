@@ -3555,8 +3555,8 @@ by setting the property ``studio.contentProcessor.contentLifecycle.includeApplic
 |
 
 When ``studio.contentProcessor.contentLifecycle.includeApplicationContext`` is set to false, administrators might
-decide to include some specific beans from the context, e.g.: contentService, searchService. Those beans can be listed
-in ``studio.contentProcessor.contentLifeCycle.includedBeans`` property:
+decide to include some specific beans from the context, e.g.: contentService, searchService. Use the
+``studio.contentProcessor.contentLifecycle.includedBeans`` property to list the beans to be included:
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
