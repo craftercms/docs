@@ -4,7 +4,7 @@
 CrafterCMS Version 4.4.6E |enterpriseOnly|
 ------------------------------------------
 Released *October 14, 2025* |br|
-*This release is an enterprise only release.*
+*This release is an enterprise-only release.*
 
 .. important::
 

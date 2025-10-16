@@ -4,7 +4,7 @@
 CrafterCMS Version 4.4.5E |enterpriseOnly|
 ------------------------------------------
 Released *September 20, 2025* |br|
-*This release is an enterprise only release.*
+*This release is an enterprise-only release.*
 
 .. important::
 
@@ -18,9 +18,9 @@ Dependency Updates
 ^^^^^^^^^^^^^^^^^^
 * Noteworthy dependency updates:
 
-  - MariaDb4j to version 3.1.0.5
-  - Spring security to version 6.5.4
-  - Spring core to version 6.2.11
+  - MariaDB4j to version 3.1.0.5
+  - Spring Security to version 6.5.4
+  - Spring Core to version 6.2.11
 
 
 For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
