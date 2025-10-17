@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.4.4
+:last-updated: 4.4.6E
 
 .. index:: Support
 
@@ -25,7 +25,7 @@ What's Supported?
       - June 13, 2025
       - :green:`Active`
       - :green:`Active`
-      - 4.4.4 (September 6, 2025)
+      - 4.4.6E |enterpriseOnly| (October 14, 2025)
     * - 4.3
       - February 21, 2025
       - :maroon:`Ended on June 13, 2025`
@@ -34,7 +34,7 @@ What's Supported?
     * - 4.2
       - November 13, 2024
       - :maroon:`Ended on February 21,2025`
-      - :orange:`August 31, 2025`
+      - :maroon:`Ended on August 31, 2025`
       - 4.2.2 (January 15, 2025)
     * - 4.1
       - June 17, 2023

@@ -64,6 +64,7 @@ Dependency Updates
   - Handlebars to version 4.5
   - Commons-cli to version 1.10
   - Jgit to version 7.3
+  - OpenSearch to version 2.19.3
 
 For a complete list of community tickets, please visit: `GitHub 4.4.3 <https://github.com/orgs/craftercms/projects/32/views/1>`_
 
