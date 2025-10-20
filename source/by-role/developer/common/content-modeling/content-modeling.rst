@@ -1964,6 +1964,15 @@ The following variables are available for server-side controllers in addition to
       - Used for loading content from the repository
     * - lifecycleContent
       - Provides access to the content being written
+    * - logger
+      - The GroovyUtils SLF4J logger. For the controller scripts, the logger name contains the site and the content type
+        id (``[Lifecycle-{Site Id}-{Content Type Id}]``) e.g.
+
+        .. code-block:: text
+
+            [DEBUG] 2025-09-27T16:30:36,626 [http-nio-8080-exec-4] [Lifecycle-ed1-/page/category-landing] | Debug message
+            [ERROR] 2025-09-27T16:30:36,626 [http-nio-8080-exec-4] [Lifecycle-ed1-/page/category-landing] | Error message
+
 
 If you'd like to access the ``applicationContext`` variable or add to the list of available beans in the controller script,
 see :ref:`content-processors-configuration` for more information.
@@ -1987,7 +1996,7 @@ screen under ``Properties Explorer``, click on the ``Controller`` field then cli
 
 |
 
-We'll now edit the controller to log lifecycle events by adding
+We'll now edit the controller to log lifecycle events by adding the following in the ``controller.groovy`` file:
 
 .. raw:: html
 
@@ -1996,23 +2005,8 @@ We'll now edit the controller to log lifecycle events by adding
 
 .. code-block:: groovy
     :caption: *Example controller.groovy*
-    :emphasize-lines: 15
 
-    import scripts.libs.CommonLifecycleApi
-
-    def contentLifecycleParams =[:]
-    contentLifecycleParams.site = site
-    contentLifecycleParams.path = path
-    contentLifecycleParams.user = user
-    contentLifecycleParams.contentType = contentType
-    contentLifecycleParams.contentLifecycleOperation = contentLifecycleOperation
-    contentLifecycleParams.contentLoader = contentLoader
-    contentLifecycleParams.applicationContext = applicationContext
-
-    def controller = new CommonLifecycleApi(contentLifecycleParams)
-    controller.execute()
-
-    System.out.println("Server side content lifecycle event : " + contentLifecycleOperation)
+    logger.info('Server side content lifecycle event: ' + contentLifecycleOperation)
 
 .. raw:: html
 
@@ -2031,11 +2025,9 @@ Save your changes to the ``controller.groovy`` file, then edit some content in y
 just edited. Once your changes have been saved, watch your logs and notice the entry made when we updated content:
 
 .. code-block:: text
-    :emphasize-lines: 2
     :caption: *Tomcat log*
 
-    [INFO] 2025-08-20T10:32:35,265 [pool-23-thread-1] [ed] [context.SiteContext] | GraphQL schema build completed for site 'hello' in 0 secs
-    Server side content lifecycle event : UPDATE
+    [INFO] 2025-10-17T17:05:09,311 [http-nio-8080-exec-5] [Lifecycle-hello-/page/entry] | Server side content lifecycle event: UPDATE
 
 |
 
