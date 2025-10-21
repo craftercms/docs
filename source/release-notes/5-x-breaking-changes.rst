@@ -74,6 +74,71 @@ Breaking Changes in CrafterCMS 5.0.0
 
   See :ref:`publishing-blacklist` for more information.
 
+- Content type controllers now use the new content lifecycle API |br|
+  When upgrading to CrafterCMS version 5.0.0, the Upgrade Manager will compare ``controller.groovy`` to the
+  default script from built-in blueprints. If they match, the script will be deleted.
+
+  If they don't match, the entire file will be commented out and a ``logger.error`` statement will be added so admins
+  can manually check and fix as required. Below is an example of a commented out controller script after upgrading to
+  version 5.0. Notice the ``logger.error`` statement added:
+
+  .. code-block:: groovy
+      :caption: *Example controller script commented out when upgrading*
+      :emphasize-lines: 37
+
+      /*
+        WARNING: This controller script was not updated automatically.
+        Please review and update it manually to ensure compatibility with the new version of Crafter Studio.
+        Original content commented out below
+      */
+      ///*
+      // * Copyright (C) 2007-2022 Crafter Software Corporation. All Rights Reserved.
+      // *
+      // * This program is free software: you can redistribute it and/or modify
+      // * it under the terms of the GNU General Public License version 3 as published by
+      // * the Free Software Foundation.
+      // *
+      // * This program is distributed in the hope that it will be useful,
+      // * but WITHOUT ANY WARRANTY; without even the implied warranty of
+      // * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      // * GNU General Public License for more details.
+      // *
+      // * You should have received a copy of the GNU General Public License
+      // * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+      // */
+      //
+      //import scripts.libs.CommonLifecycleApi
+      //
+      //def contentLifecycleParams =[:]
+      //contentLifecycleParams.site = site
+      //contentLifecycleParams.path = path
+      //contentLifecycleParams.user = user
+      //contentLifecycleParams.contentType = contentType
+      //contentLifecycleParams.contentLifecycleOperation = contentLifecycleOperation
+      //contentLifecycleParams.contentLoader = contentLoader
+      //contentLifecycleParams.applicationContext = applicationContext
+      //
+      //def controller = new CommonLifecycleApi(contentLifecycleParams)
+      //controller.execute()
+      //
+      //System.out.println("Server side content lifecycle event : " + contentLifecycleOperation)
+      logger.error('This controller is disabled. Please review and upgrade to use the 5.0 content lifecycle API')
+
+  |
+
+  Here's the output of the controller script above after the upgrade:
+
+  .. code-block:: text
+      :caption: *Controller script logger output when running the commented out controller script after an upgrade*
+
+      [ERROR] 2025-10-16T16:15:24,277 [http-nio-8080-exec-5] [Lifecycle-edd-/page/article] | This controller is disabled. Please review and upgrade to use the 5.0 content lifecycle API
+
+  |
+
+  Please see :ref:`server-side-form-controllers` and :ref:`content-processors-configuration` for more information on
+  content type controller scripts and content processors configuration.
+
+
 |hr|
 
 .. _compatibility-with-3.1.x:

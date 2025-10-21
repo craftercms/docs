@@ -42,6 +42,17 @@ New Features
   - :base_url:`Reject publish package <_static/api/studio.html#tag/workflow/operation/workflowReject>`: POST /api/2/workflow/{site}/reject
   - :base_url:`Cancel publish packages <_static/api/studio.html#tag/workflow/operation/cancelPublishPackages>`: POST /api/2/workflow/{site}/cancel
 
+* New content type controller script |br|
+
+  - The new content type controller script now uses a new ``lifecycleContent`` object that provides access to the content
+    being written. See :ref:`server-side-form-controllers` for more information on content type controller scripts.
+
+  - New :ref:`content processor configuration properties <content-processors-configuration>` for configuring access to the
+    ``applicationContext`` variable and adding to the list of available beans in the content type controller scripts.
+
+    Note that the ``applicationContext`` variable is now disabled by default and can be enabled by setting the property
+    ``studio.contentProcessor.contentLifecycle.includeApplicationContext`` to ``true`` as described :ref:`here <content-processors-configuration>`
+
 ^^^^^^^^^^^^
 Enhancements
 ^^^^^^^^^^^^
