@@ -23,18 +23,6 @@ before upgrading. Please review the following and apply changes as required:
 
 |hr|
 
-.. _breaking-changes-in-craftercms-4-5-0:
-
-------------------------------------
-Breaking Changes in CrafterCMS 4.5.0
-------------------------------------
-- CrafterCMS version 4.5.0 added a whitelist for Groovy scripts that is enabled by default and might break existing
-  systems on upgrade because of this. Please see :ref:`Deployer Groovy Sandbox <deployer-groovy-sandbox-configuration>`,
-  :ref:`Engine Groovy Sandbox <groovy-sandbox-configuration>` and
-  :ref:`Studio Groovy Sandbox <studio-groovy-sandbox-configuration>` for more information on the whitelists.
-
-|hr|
-
 .. _breaking-changes-in-craftercms-4-4-3:
 
 ------------------------------------
