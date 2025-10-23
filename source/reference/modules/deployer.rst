@@ -959,7 +959,7 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
             whitelist:
               # Indicates if the whitelist should be enabled for all targets
               # (this will have no effect if the sandbox is disabled)
-              enabled: true
+              enabled: false
               # The location of the whitelist to use for all targets
               # (this will have no effect if the sandbox is disabled)
               path: 'file:${deployer.main.config.folderPath}/groovy/whitelist,classpath:groovy/whitelist'
@@ -1050,18 +1050,18 @@ Now you can execute the same script without any issues.
 
 |
 
-"""""""""""""""""""""""""""""""
-Disabling the Sandbox Whitelist
-"""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
+Enabling the Sandbox Whitelist
+""""""""""""""""""""""""""""""
 .. version_tag::
     :label: Since
     :version: 4.5.0
 
-It is possible to disable the whitelist to allow the execution of most expressions, in
-case you need to use a considerable number of expressions not included in the whitelist while keeping some basic
-restrictions.
+It is possible to only allow the execution of approved expressions included in a list to prevent operations that
+could compromise the system, by using the sandbox whitelist. To create your custom sandbox whitelist, see above.
 
-To disable the whitelist for all targets update the ``application.yaml`` configuration file:
+The sandbox whitelist is disabled by default. To enable the whitelist for all targets update the
+``application.yaml`` configuration file:
 
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
@@ -1070,7 +1070,7 @@ To disable the whitelist for all targets update the ``application.yaml`` configu
       whitelist:
         # Indicates if the whitelist should be enabled for all targets
         # (this will have no effect if the sandbox is disabled)
-        enabled: false
+        enabled: true
 
 |
 

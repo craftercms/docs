@@ -3763,7 +3763,7 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
    # The location of the default blacklist to use for all sites (this will have no effect if the sandbox is disabled)
    crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/groovy/blacklist
    # Indicates if the whitelist should be enabled for all sites (this will have no effect if the sandbox is disabled)
-   crafter.engine.groovy.sandbox.whitelist.enable=true
+   crafter.engine.groovy.sandbox.whitelist.enable=false
    # The location of the default whitelist to use for all sites (this will have no effect if the sandbox is disabled)
    crafter.engine.groovy.sandbox.whitelist.path=classpath:crafter/engine/groovy/whitelist
 
@@ -3846,25 +3846,24 @@ Now you can execute the same script without any issues.
 
 |
 
-"""""""""""""""""""""""""""""""
-Disabling the Sandbox Whitelist
-"""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
+Enabling the Sandbox Whitelist
+""""""""""""""""""""""""""""""
 .. version_tag::
     :label: Since
     :version: 4.5.0
 
-It is possible to disable the whitelist to allow the execution of most expressions, in
-case you need to use a considerable number of the expression not included in the whitelist while keeping some basic
-restrictions.
+It is possible to only allow the execution of approved expressions included in a list to prevent operations that
+could compromise the system, by using the sandbox whitelist. To create your custom sandbox whitelist, see above.
 
-To disable the whitelist for all projects/sites update the server configuration file
+The sandbox whitelist is disabled by default. To enable the whitelist for all projects/sites update the server configuration file
 :ref:`server-config.properties <engine-configuration-files>`:
 
 .. code-block:: properties
   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
   # Indicates if the whitelist should be enabled for all sites (this will have no effect if the sandbox is disabled)
-  crafter.engine.groovy.sandbox.whitelist.enable=false
+  crafter.engine.groovy.sandbox.whitelist.enable=true
 
 |
 

@@ -3,7 +3,7 @@ Depending on your installation, validation may use a whitelist (allowed expressi
 or both. If both are enabled, an expression must be allowed by the whitelist and must not match the blacklist.
 
 When you try to execute a script that contains an expression not included in the whitelist, or an expression blocked by
-the blacklist , you’ll see an error similar to the following:
+the blacklist, whichever is enabled, you’ll see an error similar to the following:
 
 .. code-block:: none
     :caption: *Error message encountered for scripts containing insecure expressions*
