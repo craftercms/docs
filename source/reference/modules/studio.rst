@@ -2880,7 +2880,7 @@ All configuration for the notification system is done by a site admin (on a per 
 Where
 '''''
 .. code-block:: xml
-    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notification-config.xml*
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/workflow/notification-config.xml*
 
     <notificationConfig>
         ...
@@ -2958,7 +2958,7 @@ Configure Who Gets Notifications
 Configure who gets notifications by entering the email addresses of the people you want to send notifications to, in between the tags ``<deploymentFailureNotification>`` and/or ``<approverEmails>``
 
 .. code-block:: xml
-    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notification-config.xml*
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/workflow/notification-config.xml*
     :linenos:
 
     <notificationConfig>
@@ -2981,7 +2981,7 @@ Configure Studio Workflow Dialog Messages
 Below is a sample of Studio workflow dialog messages defined in our notifications configuration file.
 
 .. code-block:: xml
-    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notification-config.xml*
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/workflow/notification-config.xml*
     :linenos:
 
         <notificationConfig>
@@ -3029,7 +3029,7 @@ Below is an example of a configured email messages for each point in the workflo
     <summary><a>Configured email messages in the notifications configuration file</a></summary>
 
 .. code-block:: xml
-    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notification-config.xml*
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/workflow/notification-config.xml*
     :linenos:
 
     <notificationConfig>
