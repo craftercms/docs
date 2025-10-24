@@ -3063,157 +3063,154 @@ Below is an example of a configured email messages for each point in the workflo
             ]]></body>
           </emailTemplate>
 
-          <emailTemplate key="contentApproval">
+          <emailTemplate key="contentApproved">
             <subject><![CDATA[<#if publishPackage.schedule??>Content Scheduled <#else>Content Approved</#if>]]></subject>
-            <!-- Timezone can/is being overwritten in the following template -->
-            <body><![CDATA[
-                     <#setting time_zone='EST'>
-                     <html>
-                       <head>
-                         <meta charset="utf-8"/>
-                       </head>
-                       <body style=" font-size: 12pt;">
-                         <p>
-                           <#if publishPackage.packageType == 'INITIAL_PUBLISH'>
-                             ${reviewer.first_name!submitter.username} ${reviewer.last_name} has approved your initial publish request.
-                           <#elseif publishPackage.packageType == 'PUBLISH_ALL'>
-                             ${reviewer.first_name!submitter.username} ${reviewer.last_name} has approved your publish all request.
-                           <#else>
-                             The following content has been reviewed and approved by ${approver.firstName!approver.username} ${approver.lastName!""}:
-                           </#if>
-                           <ul>
-                             <#list files as file>
-                               <li>
-                                 <#if file.page>
-                                   <a href="${liveUrl}/${file.browserUri!""}">
-                                 </#if>
-                                 ${file.internalName!file.name}
-                                 <#if file.page>
-                                   </a>
-                                 </#if>
-                               </li>
-                             </#list>
-                           </ul><br/>
-                           Site: ${siteName}
-                           <br />
-                           <#if scheduleDate??>
-                             Scheduled date: ${publishPackage.schedule?datetime.iso?string["MMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
-                             <br />
-                           </#if>
-                           Target: ${publishPackage.target}
-                           <br/>
-                           Reviewer comment:<br/>
-                           ${publishPackage.reviewerComment!""}
-                           <br/>
-                         </p>
-                       </body>
-                     </html>
-                     ]]></body>
-          </emailTemplate>
+			<!-- Timezone can/is being overwritten in the following template -->
+			<body><![CDATA[
+                    <#setting time_zone='EST'>
+                    <html>
+                        <head>
+                            <meta charset="utf-8"/>
+                        </head>
+                        <body style=" font-size: 12pt;">
+                            <p>
+                                <#if publishPackage.packageType == 'INITIAL_PUBLISH'>
+                                    ${reviewer.firstName} ${reviewer.lastName} has approved your initial publish request.
+                                <#elseif publishPackage.packageType == 'PUBLISH_ALL'>
+                                    ${reviewer.firstName} ${reviewer.lastName} has approved your publish all request.
+                                <#else>
+                                    The following content has been reviewed and approved by ${reviewer.firstName} ${reviewer.lastName!""}:
+                                </#if>
+                                <ul>
+                                   <#list files as file>
+                                       <li>
+                                           <#if file.page>
+                                               <a href="${liveUrl}/${file.browserUri!""}">
+                                           </#if>
+                                           ${file.internalName!file.name}
+                                           <#if file.page>
+                                               </a>
+                                           </#if>
+                                       </li>
+                                   </#list>
+                                </ul><br/>
+                                Site: ${siteName}
+                                <br />
+                                <#if publishPackage.schedule??>
+                                    Scheduled date: ${publishPackage.schedule?datetime.iso?string["MMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
+                                    <br />
+                                </#if>
+                                Target: ${publishPackage.target}
+                                <br/>
+                                Reviewer comment:<br/>
+                                ${publishPackage.reviewerComment!""}
+                                <br/>
+                            </p>
+                        </body>
+                    </html>]]></body>
+		  </emailTemplate>
 
-          <emailTemplate key="submitToApproval">
-            <subject>Content Review</subject>
-            <body><![CDATA[
-                     <#setting time_zone='EST'>
-                     <html>
-                       <head>
-                         <meta charset="utf-8"/>
-                       </head>
-                       <body style=" font-size: 12pt">
-                         <p>
-                           <#if publishPackage.packageType == 'PUBLISH_ALL'>
-                             ${submitter.first_name!submitter.username} ${submitter.last_name} has submitted a 'publish all' request for your review.
-                           <#elseif publishPackage.packageType == 'INITIAL_PUBLISH'>
-                             ${submitter.first_name!submitter.username} ${submitter.last_name} has submitted an 'initial publish' request for your review.
-                           <#else>
-                             ${submitter.first_name!submitter.username} ${submitter.last_name} has submitted items for your review:
-                           </#if>
-                           <#if files?? &amp;&amp; files?size gt 0>
-                             <ul>
-                               <#list files as file>
-                                 <li>
-                                   <#if file.page>
-                                     <a href="${authoringUrl}/studio/preview/#/?page=${file.browserUri!""}&site=${siteName}">
-                                   </#if>
-                                   ${file.internalName!file.name}
-                                   <#if file.page>
-                                     </a>
-                                   </#if>
-                                 </li>
-                               </#list>
-                             </ul>
-                           </#if>
-                           <br />
-                           Site: ${siteName}
-                           <br />
-                           <#if publishPackage.submitterComment?has_content>
-                             Comments:<br/>
-                             ${publishPackage.submitterComment!""}
-                             <br/>
-                           </#if>
-                           <#if publishPackage.schedule??>
-                             Scheduled date: ${publishPackage.schedule?datetime.iso?string["MMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
-                             <br/>
-                           </#if>
-                           Target: ${publishPackage.target}
-                           <br/>
-                           <a href="${authoringUrl}/studio/site-dashboard">Click Here to View Content Waiting for Approval</a>
-                           <br/><br/>
-                         </p>
-                       </body>
-                     </html>
-                     ]]></body>
-          </emailTemplate>
+          <emailTemplate key="submittedForReview">
+			<subject>Content Review</subject>
+			<body><![CDATA[
+                    <#setting time_zone='EST'>
+                    <html>
+                    <head>
+                        <meta charset="utf-8"/>
+                    </head>
+                    <body style=" font-size: 12pt">
+                        <p>
+                            <#if publishPackage.packageType == 'PUBLISH_ALL'>
+                                ${submitter.firstName} ${submitter.lastName} has submitted a 'publish all' request for your review.
+                            <#elseif publishPackage.packageType == 'INITIAL_PUBLISH'>
+                                ${submitter.firstName} ${submitter.lastName} has submitted an 'initial publish' request for your review.
+                            <#else>
+                                ${submitter.firstName} ${submitter.lastName} has submitted items for your review:
+                            </#if>
+                            <#if files?? &amp;&amp; files?size gt 0>
+                                <ul>
+                                    <#list files as file>
+                                        <li>
+                                            <#if file.page>
+                                                <a href="${authoringUrl}/studio/preview/#/?page=${file.browserUri!""}&site=${siteName}">
+                                            </#if>
+                                            ${file.internalName!file.name}
+                                            <#if file.page>
+                                                </a>
+                                            </#if>
+                                        </li>
+                                    </#list>
+                                </ul>
+                            </#if>
+                            <br />
+                            Site: ${siteName}
+                            <br />
+                            <#if publishPackage.submitterComment?has_content>
+                                Comments:<br/>
+                                ${publishPackage.submitterComment!""}
+                                <br/>
+                            </#if>
+                            <#if publishPackage.schedule??>
+                                Scheduled date: ${publishPackage.schedule?datetime.iso?string["MMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
+                                <br/>
+                            </#if>
+                            Target: ${publishPackage.target}
+                            <br/>
+                            <a href="${authoringUrl}/studio/site-dashboard">Click Here to View Content Waiting for Approval</a>
+                            <br/><br/>
+                        </p>
+                    </body>
+                </html>]]></body>
+		  </emailTemplate>
 
           <emailTemplate key="contentRejected">
-            <subject>Content Requires Revision</subject>
-            <body><![CDATA[
-   			         <#setting time_zone='EST'>
-                     <html>
-                       <head>
-                         <meta charset="utf-8"/>
-                       </head>
-                       <body style=" font-size: 12pt;">
-                         <p>
-                           <#if publishPackage.packageType == 'INITIAL_PUBLISH'>
-                             ${reviewer.first_name!submitter.username} ${reviewer.last_name} has reviewed your initial publish request and it requires some revision before it can be approved:
-                           <#elseif publishPackage.packageType == 'PUBLISH_ALL'>
-                             ${reviewer.first_name!submitter.username} ${reviewer.last_name} has reviewed your publish all request and it requires some revision before it can be approved:
-                           <#else>
-                             ${reviewer.first_name!submitter.username} ${reviewer.last_name} has reviewed the following content that requires some revision before it can be approved:
-                           </#if>
-                           <#if files?? &amp;&amp; files?size gt 0>
-                             <ul>
-                               <#list files as file>
-                                 <li>
-                                   <#if file.page>
-                                     <a href="${authoringUrl}/studio/preview/#/?page=${file.browserUri!""}&site=${siteName}">
-                                   </#if>
-                                   ${file.internalName!file.name}
-                                   <#if file.page>
-                                     </a>
-                                   </#if>
-                                 </li>
-                               </#list>
-                             </ul>
-                           </#if>
-                           <br />
-                           Site: ${siteName}
-                           <br />
-                           <#if publishPackage.schedule??>
-                             Scheduled date: ${publishPackage.schedule?datetime.iso?string["MMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
-                             <br/>
-                           </#if>
-                           Target: ${publishPackage.target}
-                           <br/>
-                           Reason:<br/>
-                           ${publishPackage.reviewerComment!""}
-                           <br/>
-                         </p>
-                       </body>
-                     </html>
-                     ]]></body>
-          </emailTemplate>
+			<subject>Content Requires Revision</subject>
+			<body><![CDATA[
+                    <#setting time_zone='EST'>
+                    <html>
+                        <head>
+                            <meta charset="utf-8"/>
+                        </head>
+                        <body style=" font-size: 12pt;">
+                            <p>
+                                <#if publishPackage.packageType == 'INITIAL_PUBLISH'>
+                                    ${reviewer.firstName} ${reviewer.lastName} has reviewed your initial publish request and it requires some revision before it can be approved:
+                                <#elseif publishPackage.packageType == 'PUBLISH_ALL'>
+                                    ${reviewer.firstName} ${reviewer.lastName} has reviewed your publish all request and it requires some revision before it can be approved:
+                                <#else>
+                                    ${reviewer.firstName} ${reviewer.lastName} has reviewed the following content that requires some revision before it can be approved:
+                                </#if>
+                                <#if files?? &amp;&amp; files?size gt 0>
+                                    <ul>
+                                        <#list files as file>
+                                            <li>
+                                                <#if file.page>
+                                                    <a href="${authoringUrl}/studio/preview/#/?page=${file.browserUri!""}&site=${siteName}">
+                                                </#if>
+                                                ${file.internalName!file.name}
+                                                <#if file.page>
+                                                    </a>
+                                                </#if>
+                                            </li>
+                                        </#list>
+                                    </ul>
+                                </#if>
+                                <br />
+                                Site: ${siteName}
+                                <br />
+                                <#if publishPackage.schedule??>
+                                    Scheduled date: ${publishPackage.schedule?datetime.iso?string["MMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
+                                    <br/>
+                                </#if>
+                                Target: ${publishPackage.target}
+                                <br/>
+                                Reason:<br/>
+                                ${publishPackage.reviewerComment!""}
+                                <br/>
+                            </p>
+                        </body>
+                    </html>]]></body>
+		  </emailTemplate>
         </emailTemplates>
       </lang>
     </notificationConfig>
