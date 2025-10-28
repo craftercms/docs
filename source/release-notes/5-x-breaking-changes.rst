@@ -138,6 +138,15 @@ Breaking Changes in CrafterCMS 5.0.0
   Please see :ref:`server-side-form-controllers` and :ref:`content-processors-configuration` for more information on
   content type controller scripts and content processors configuration.
 
+- The following permissions are removed from CrafterCMS 5.0.0:
+
+  - **cancel_publish**: replaced by **publish_cancel** for name consistency
+  - **get_publishing_queue**: replaced by **publish_get_queue** for name consistency
+  - **publish**: use the new **publish_approve** and **publish_request**
+  - **publish_by_commits**: use the new **publish_approve** and **publish_request**
+  - **publish_clear_lock**: removed
+
+  See :ref:`permission-mappings` for more information on permissions for version 5.0.0
 
 |hr|
 

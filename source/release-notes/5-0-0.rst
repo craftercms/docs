@@ -18,6 +18,16 @@ New Features
 ^^^^^^^^^^^^
 * **New publishing system**
 
+  - New publishing permissions:
+
+    - publish_approve: approve a publish package
+    - publish_cancel: cancel a publish package
+    - publish_get_queue: get the publishing queue
+    - publish_reject: reject a publish package awaiting approval
+    - publish_request: submit a publish package for approval and/or publishing
+
+    See :ref:`permission-mappings` for more information on the new and existing permissions.
+
 * New v2 Studio APIs
 
   - :base_url:`Get group by name <_static/api/studio.html#tag/groups/operation/getGroupByName>`: GET /api/2/groups/by_name/{name}
