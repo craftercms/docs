@@ -148,6 +148,53 @@ Breaking Changes in CrafterCMS 5.0.0
 
   See :ref:`permission-mappings` for more information on permissions for version 5.0.0
 
+- The deprecated Engine REST API Get Descriptor ``/api/1/site/content_store/descriptor`` code is now removed in version 5.0.0 |br|
+  To get the content of an item, please use the :base_url:`Get item <_static/api/engine.html#tag/content/operation/getItem>` API.
+
+  Here's an example of getting the content of the home page of a site created using the empty blueprint named ``hello``,
+  where the ``url`` for the home page is ``/site/website/index.xml``:
+
+  .. code-block:: text
+
+      GET http://localhost:8080/api/1/site/content_store/item.json?url=/site/website/index.xml&crafterSite=hello
+
+  |
+
+  Here's the output with the content of the page highlighted:
+
+  .. code-block:: xml
+      :caption: *Get Item API output*
+      :emphasize-lines: 6-24
+
+      {
+        "name": "index.xml",
+        "url": "/site/website/index.xml",
+        "descriptorUrl": "/site/website/index.xml",
+        "descriptorDom": {
+          "page": {
+            "content-type": "/page/entry",
+            "display-template": "/templates/web/entry.ftl",
+            "merge-strategy": "inherit-levels",
+            "objectGroupId": "8d7f",
+            "objectId": "8d7f21fa-5e09-00aa-8340-853b7db302da",
+            "file-name": "index.xml",
+            "folder-name": null,
+            "createdDate": "2024-01-31T16:18:14.000Z",
+            "createdDate_dt": "2024-01-31T16:18:14.000Z",
+            "lastModifiedDate": "2025-10-17T12:20:30.440Z",
+            "lastModifiedDate_dt": "2025-10-17T12:20:30.440Z",
+            "placeInNav": "false",
+            "internal-name": "Home",
+            "orderDefault_f": "-1",
+            "body_html": "\u003Ch1\u003EWelcome to Your CrafterCMS Project Yo.\u003C/h1\u003E\u003Cp\u003EEdit from API. This project blueprint is the equivalent of a Hello World. It's a blank slate on which you can build your own digital experience.\u003C/p\u003E\u003Cul\u003E\u003Cli\u003ETo create new content types use the Project Tools &gt; Content Types menu on the left Sidebar\u003C/li\u003E\u003Cli\u003ETo update markup, edit this template by clicking on the Options menu on the top toolbar and select \"Edit Template\"\u003C/li\u003E\u003Cli\u003ETo modify this text, hover/click on it or use the options menu and select \"Edit\" on the top toolbar\u003C/li\u003E\u003Cli\u003ECrafter documentation can be found \u003Ca href=\"https://craftercms.com/docs\" target=\"_blank\" rel=\"noopener\"\u003Ehere\u003C/a\u003E\u003C/li\u003E\u003Cli\u003ECrafterCMS authoring and developer training is available. Please contact \u003Ca href=\"mailto:info@craftercms.com\"\u003Einfo@craftercms.com\u003C/a\u003E\u003C/li\u003E\u003C/ul\u003E\u003Cdiv\u003E\u003Cp\u003EThis content is managed by the form. &nbsp;Click edit to change OR in the upper right hand corner, click the pencil to turn on edit mode.\u003C/p\u003E\u003Cp\u003EEdit from API.\u003C/p\u003E\u003C/div\u003E",
+            "title_t": "Hello!",
+            "disabled": "false"
+          }
+        },
+        "properties": null,
+        "folder": false
+      }
+
 |hr|
 
 .. _compatibility-with-3.1.x:
