@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.4.3
+:last-updated: 4.5.0
 
 .. highlight:: xml
 
@@ -5185,6 +5185,10 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
     studio.scripting.sandbox.blacklist.enable: true
     # The location of the default blacklist to use (this will have no effect if the sandbox is disabled)
     studio.scripting.sandbox.blacklist.path: classpath:crafter/studio/groovy/blacklist
+    # Indicates if the whitelist should be enabled (this will have no effect if the sandbox is disabled)
+    studio.scripting.sandbox.whitelist.enable: false
+    # The location of the default whitelist to use (this will have no effect if the sandbox is disabled)
+    studio.scripting.sandbox.whitelist.path: classpath:crafter/studio/groovy/whitelist
 
 |
 
@@ -5192,7 +5196,7 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
 Using a Custom Blacklist
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Crafter Studio includes a default blacklist that you can find
-`here <https://github.com/craftercms/studio/blob/support/4.x/src/main/resources/crafter/studio/groovy/blacklist>`_.
+`here <https://github.com/craftercms/studio/blob/support/4.x/src/main/resources/crafter/studio/groovy/blacklist>`__.
 Make sure you review the branch/tag you're using.
 
 To use a custom blacklist follow these steps:
@@ -5208,11 +5212,13 @@ To use a custom blacklist follow these steps:
         :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
         # The location of the default blacklist to use (this will have no effect if the sandbox is disabled)
-        studio.scripting.sandbox.blacklist.path: classpath:crafter/studio/groovy/blacklist
+        studio.scripting.sandbox.blacklist.path: classpath:crafter/studio/extension/groovy/blacklist
 
 #. Restart CrafterCMS
 
 Now you can execute the same script without any issues.
+
+|
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Disabling the Sandbox Blacklist
@@ -5229,10 +5235,93 @@ the blacklist for all projects/sites update the ``studio-config-override.yaml`` 
 
 |
 
+~~~~~~~~~~~~~~~~~~~~~~~~
+Using a Custom Whitelist
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+Crafter Studio includes a default whitelist that you can find `here <https://github.com/craftercms/studio/blob/support/4.x/src/main/resources/crafter/studio/groovy/whitelist>`__.
+Make sure you review the branch/tag you're using.
+
+To use a custom whitelist follow these steps:
+
+#. Copy the default whitelist file to your classpath, for example:
+
+    ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/groovy/whitelist``
+
+#. Add, remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
+#. Update the ``studio-config-override.yaml`` configuration file to load the custom whitelist:
+
+    .. code-block:: yaml
+        :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+        # The location of the default whitelist to use (this will have no effect if the sandbox is disabled)
+        studio.scripting.sandbox.whitelist.path: classpath:crafter/studio/extension/groovy/whitelist
+
+#. Restart CrafterCMS
+
+Now you can execute the same script without any issues.
+
+|
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enabling the Sandbox Whitelist
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+It is possible to only allow the execution of approved expressions included in a list to prevent operations that
+could compromise the system, by using the sandbox whitelist. To create your custom sandbox whitelist, see above.
+
+The sandbox whitelist is disabled by default. To enable the whitelist for all projects/sites update the
+``studio-config-override.yaml`` configuration file:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+    # Indicates if the whitelist should be enabled (this will have no effect if the sandbox is disabled)
+    studio.scripting.sandbox.whitelist.enable: true
+
+|
+
 ~~~~~~~~~~~~~~~~~~~
 Grape Configuration
 ~~~~~~~~~~~~~~~~~~~
 .. include:: /includes/groovy-grape-configuration.rst
+
+|
+
+~~~~~~~~~~~~~~~
+Grapes Download
+~~~~~~~~~~~~~~~
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+The following allows you to enable or disable automatic Groovy dependency (grapes) downloads for scripts (@grab):
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :emphasize-lines: 3
+
+    # Indicates if @Grab annotations should download grapes
+    # If false, only already downloaded grapes will be available
+    studio.scripting.grapes.download.enabled: false
+
+Automatic grapes download is disabled by default. Set ``studio.scripting.grapes.download.enabled`` to true to enable
+automatic grapes download.
+
+|
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Installing Grapes from the Command Line
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. include:: /includes/groovy-grape-install.rst
+
+|
 
 ~~~~~~~~~~~~~~~
 Important Notes
