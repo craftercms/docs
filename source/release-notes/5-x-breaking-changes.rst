@@ -162,7 +162,7 @@ Breaking Changes in CrafterCMS 5.0.0
 
   Here's the output with the content of the page highlighted:
 
-  .. code-block:: xml
+  .. code-block:: json
       :caption: *Get Item API output*
       :emphasize-lines: 6-24
 

@@ -133,7 +133,7 @@ After downloading and extracting CrafterCMS version 5.0.0 to ``/Users/myuser/cra
         :emphasize-lines: 2,25-26,28,40-49,57,59
 
         ➜  cd crafter-5.0.0/bin/upgrade
-        ➜  ./upgrade-target.sh /User/myuser/crafter-4-4-4
+        ➜  ./upgrade-target.sh /Users/myuser/crafter-4-4-4
         ========================================================================
         Shutting down Crafter
         ========================================================================
