@@ -17,7 +17,7 @@ CrafterCMS provides a couple of scripts for upgrading your installation.
 
 The upgrade script allows you to do an upgrade, where your ``bin`` directory is upgraded, keeping only Tomcat's ``shared`` folder, Tomcat's ``conf`` folder, the search config, the Deployer ``config`` folder, and the ``crafter-setenv`` scripts.
 
-When performing an upgrade, CrafterCMS is shut down, then the script asks if the user wants to backup the ``data`` folder. It will then ask if the user wants to backup the ``bin`` folder, then perform the upgrade. After  running  the upgrade script (either *upgrade-target*  or *start-upgrade*), run the ``post-upgrade`` script. Finally, you can :ref:`start your CrafterCMS  <start-crafter-after-upgrade>` install again.
+When performing an upgrade, CrafterCMS is shut down, then the script asks if the user wants to backup the ``data`` folder. It will then ask if the user wants to backup the ``bin`` folder, then perform the upgrade. After running the upgrade script (either *upgrade-target*  or *start-upgrade*), run the ``post-upgrade`` script. Finally, you can :ref:`start your CrafterCMS <start-crafter-after-upgrade>` install again.
 
 Depending on how recent the version you are upgrading from, there may be files that do not exist in the new release and the script will give the user the option to delete or keep the files.
 
@@ -225,7 +225,7 @@ After the ``upgrade-target`` script is finished running, the next step is to run
 
    |
 
-If Crafter is not started, you may :ref:`start CrafterCMS <start-crafter-after-upgrade>` now
+You may :ref:`start CrafterCMS <start-crafter-after-upgrade>` now.
 
 .. _upgrade-using-current-install:
 
