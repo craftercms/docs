@@ -242,8 +242,6 @@ Bug Fixes
 
 For a complete list of community tickets, please visit: `GitHub 5.0.0 <https://github.com/orgs/craftercms/projects/17/views/1>`_
 
-For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
-
 |hr|
 
 

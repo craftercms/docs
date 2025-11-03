@@ -27,5 +27,4 @@ For CrafterCMS version 4.0 release notes, see :docs_base_url:`4.0 Release Notes 
 
 |hr|
 
-For CrafterCMS version 3.1 release notes, see :docs_base_url:`3.1 Release Notes <3.1/release-notes/index.html>`.
 

@@ -151,7 +151,7 @@ html_favicon = "_static/images/favicon.ico"
 
 # Add versions for the bottom menu
 html_context = {
-    'versions': ['current', '4', '4.1', '4.0', '3.1'],
+    'versions': ['current', '4', '4.1', '4.0'],
     'docsUrl': '/docs',
     'productLinks': [
 			{
