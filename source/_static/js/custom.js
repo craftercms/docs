@@ -4,3 +4,4 @@ document.addEventListener('click', function (event) {
 		document.querySelector("[data-toggle='rst-versions']").classList.toggle("shift-up");
 	}
 });
+
