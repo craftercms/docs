@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.1
+:last-updated: 4.4.4
 
 ===
 FAQ
@@ -12,7 +12,7 @@ Follow these instructions to run CrafterCMS and to download and install Crafter 
 ------------------------------------------------------------------------------------------------------------------
 Does CrafterCMS require Git?  My company uses its own source code control system (GitHub, GitLab, Bitbucket, etc.)
 ------------------------------------------------------------------------------------------------------------------
-No. CrafterCMS does not _require_ your development team to use Git. CrafterCMS employs a Git-based repository and publishing system, which comes embedded in every CrafterCMS. Using Crafter's Git-based repository for your content application's source code is optional. You may continue to use the Source Code Management System of your choice for development.
+No. CrafterCMS does not require your development team to use Git. CrafterCMS employs a Git-based repository and publishing system, which comes embedded in every CrafterCMS. Using Crafter's Git-based repository for your content application's source code is optional. You may continue to use the Source Code Management System of your choice for development.
 
 ----------------------------------------------------------------------------------------------------
 Can we use my company's source code control system with CrafterCMS (GitHub, GitLab, Bitbucket, etc.)
