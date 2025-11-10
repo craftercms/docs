@@ -9,10 +9,15 @@ What do I need to run CrafterCMS
 --------------------------------
 Follow these instructions to run CrafterCMS and to download and install Crafter on your machine or server: :ref:`Quick Start Guide <getting-started>`
 
--------------------------------------------------------------------------------
-Does CrafterCMS require Git?  My company uses XYZ source code control system...
--------------------------------------------------------------------------------
-No. CrafterCMS does not require your development team to use Git. CrafterCMS employs a Git-based repository and publishing system, which comes embedded in every CrafterCMS. Using Crafter's Git-based repository for your content application's source code is optional. You may continue to use the Source Code Management System of your choice for development.
+------------------------------------------------------------------------------------------------------------------
+Does CrafterCMS require Git?  My company uses its own source code control system (GitHub, GitLab, Bitbucket, etc.)
+------------------------------------------------------------------------------------------------------------------
+No. CrafterCMS does not _require_ your development team to use Git. CrafterCMS employs a Git-based repository and publishing system, which comes embedded in every CrafterCMS. Using Crafter's Git-based repository for your content application's source code is optional. You may continue to use the Source Code Management System of your choice for development.
+
+----------------------------------------------------------------------------------------------------
+Can we use my company's source code control system with CrafterCMS (GitHub, GitLab, Bitbucket, etc.)
+----------------------------------------------------------------------------------------------------
+Yes. CrafterCMS works with any Git service provider, and there are a number of benefits to doing that. :ref:`DevContentOps` is easier with these services, and that facilitates faster and easier development team collaboration.
 
 -------------------------------
 Do my authors need to know Git?
@@ -28,7 +33,7 @@ No. MongoDB is not mandatory for CrafterCMS to operate. MongoDB backs optional f
 
 CrafterCMS is composed of independent services that you can activate/de-activate as needed. Two CrafterCMS services rely on MongoDB:
 
-Crafter Profile which provides identity management, a distributed user attribute store and advanced targeting capabilities.
+Crafter Profile, which provides identity management, a distributed user attribute store, and advanced targeting capabilities.
 Crafter Social which provides support for User Generated Content (UGC).
 These components add powerful capabilities to support your digital experiences but are not mandatory for CrafterCMS to deliver dynamic/personalized digital experiences.
 
