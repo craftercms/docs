@@ -53,8 +53,7 @@ For very large externally managed artifacts, AWS S3 is a great option.
 .. note::
     This mechanism allows CrafterCMS to *point* to assets in S3, but not manage it. This is *not* the same as the blob store. While the blob store is backed by S3, it's still an *internally managed* store that supports the project's workflow and publishing processes.
 
-S3 compatible storage such as Oracle S3, Azure Blob Storage and MinIO are also good options for very large externally
-managed artifacts, but, remember that performance is implementation specific and that there is **no guarantee of similar performance** to AWS S3.
+.. include:: /includes/s3-compatible-storage-note.rst
 
 |
 
