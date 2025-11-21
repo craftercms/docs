@@ -294,7 +294,11 @@ See :ref:`here <blob-stores-asset-access>` for more information
 AWS S3
 ~~~~~~
 AWS S3 is a great option for very large externally managed artifacts.
-See :ref:`here <use-s3-to-store-assets>` for more information
+
+S3 compatible storage such as Oracle S3, Azure Blob Storage and MinIO are also good options for very large externally
+managed artifacts, but, remember that performance is implementation specific and there is **no guarantee of similar performance** to AWS S3.
+
+See :ref:`here <use-s3-to-store-assets>` for more information on using S3 to store assets.
 
 ~~~
 Box
