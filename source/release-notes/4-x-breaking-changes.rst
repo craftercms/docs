@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.4.4
+:last-updated: 4.5.0
 :orphan:
 
 .. _breaking-changes-4-x:
@@ -30,6 +30,8 @@ Breaking Changes in CrafterCMS 4.4.3
 ------------------------------------
 CrafterCMS version 4.4.3 works with JavaScript SDK version 5.0.0 and later. See :ref:`compatibility-with-craftercms-version`
 for more information.
+
+|hr|
 
 .. _breaking-changes-in-craftercms-4-4-0:
 
