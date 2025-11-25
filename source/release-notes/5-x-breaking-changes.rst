@@ -195,4 +195,34 @@ Breaking Changes in CrafterCMS 5.0.0
         "folder": false
       }
 
+- OpenSearch 3 has removed the **_toQuery()** method from the ``QueryVariant`` interface. ``QueryVariant`` is the base for
+  Query variants, e.g.: BoolQuery, FuzzyQuery, MatchQuery, etc.
+
+  Search-related Groovy scripts might need to be updated to use **toQuery()** instead. Below is an example of a query
+  that will need to be updated:
+
+  .. code-block:: groovy
+      :caption: *Sample OpenSearch 2.x _toQuery() method that needs to be updated*
+      :emphasize-lines: 2
+
+      SearchRequest request = SearchRequest.of(r -> r
+			.query(query.build()._toQuery())
+			.from(start)
+			.size(rows)
+			.highlight(highlighter.build())
+		)
+
+  Here's the updated query:
+
+  .. code-block:: groovy
+      :caption: *Updated query with OpenSearch 3.x toQuery() method*
+      :emphasize-lines: 2
+
+      SearchRequest request = SearchRequest.of(r -> r
+			.query(query.build().toQuery())
+			.from(start)
+			.size(rows)
+			.highlight(highlighter.build())
+		)
+
 |hr|
