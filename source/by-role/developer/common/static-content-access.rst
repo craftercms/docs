@@ -53,6 +53,10 @@ For very large externally managed artifacts, AWS S3 is a great option.
 .. note::
     This mechanism allows CrafterCMS to *point* to assets in S3, but not manage it. This is *not* the same as the blob store. While the blob store is backed by S3, it's still an *internally managed* store that supports the project's workflow and publishing processes.
 
+.. include:: /includes/s3-compatible-storage-note.rst
+
+|
+
 The following guide is an example to illustrate how to:
 
 * Configure Studio to use an S3 bucket (this is not the same as the blob store).
