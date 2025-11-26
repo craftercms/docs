@@ -122,6 +122,9 @@ Enhancements
 
   See the :ref:`notifications-configuration` for more information.
 
+* To get the content of an item, please use the :base_url:`Get item <_static/api/engine.html#tag/content/operation/getItem>` API. |br|
+  `The deprecated Engine REST API Get Descriptor /api/1/site/content_store/descriptor is now removed <https://github.com/craftercms/craftercms/issues/8294>`__.
+
 """""""""
 Studio UI
 """""""""
