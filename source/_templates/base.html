@@ -115,8 +115,25 @@
 <script src="{{ pathto('_static/bootstrap/popper.min.js', 1) }}"></script>
 <script async src="{{ pathto('_static/bootstrap/bootstrap.min.js', 1) }}"></script>
 <script src="https://chat.crafterq.ai/embed.js"></script>
-<script>window.crafterq.init('0198ed35-9f87-7711-8a93-2dfdc027e007')</script>
-
+<script>
+    window.crafterq.init({
+        agentKey:'0198ed35-9f87-7711-8a93-2dfdc027e007',
+        openLinksInNewTab(e) {
+            // This is an example of opening external links in a new tab, whilst opening same-site links on the same tab...
+            const href = e.currentTarget.getAttribute('href');
+            if (!href) return;
+            try {
+                const url = new URL(href);
+                if (window.location.hostname !== url.hostname) {
+                    e.preventDefault();
+                    window.open(href, '_blank', 'noopener noreferrer');
+                }
+            } catch {
+                // Invalid URL - do nothing
+            }
+        }
+    })
+</script>
 {%- endblock regular_scripts -%}
 
 {# Theme-related JavaScript code #}

@@ -730,6 +730,14 @@ body > .skiptranslate > iframe.skiptranslate {
 	src: url(https://fonts.gstatic.com/s/sourcesanspro/v21/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwlxdu3cOWxw.woff2) format("woff2");
 }
 
+.admonition, .admonition-title {
+	font-size: 1rem !important;
+}
+
+.admonition-title {
+	font-weight: 600 !important;
+}
+
 /* endregion */
 
 /* region Side bar*/
