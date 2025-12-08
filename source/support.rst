@@ -30,7 +30,7 @@ What's Supported?
       - June 13, 2025
       - :green:`Active`
       - :green:`Active`
-      - 4.4.6E |enterpriseOnly| (October 14, 2025)
+      - 4.4.7E |enterpriseOnly| (December 5, 2025)
     * - 4.3
       - February 21, 2025
       - :maroon:`Ended on June 13, 2025`

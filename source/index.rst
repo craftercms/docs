@@ -71,7 +71,8 @@ CrafterCMS is used by three main constituencies:
 =========================
 Latest CrafterCMS Release
 =========================
-The latest community and enterprise version of CrafterCMS is `version 4.5.0 <https://craftercms.com/download>`__.
+The latest community version of CrafterCMS is `4.5.0 <https://craftercms.com/download>`__ and the latest
+enterprise version is ``4.4.7E``.
 
 Start exploring the latest version of CrafterCMS in a few minutes using Docker by simply running the following command:
 
