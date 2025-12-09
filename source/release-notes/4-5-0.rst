@@ -55,6 +55,8 @@ Dependency Updates
 
   - Spring security to version 6.5.4
   - Mariadb4j to version 3.1.0.5
+  - OpenSearch to version 3.3 |br|
+    Please see :ref:`breaking-changes-in-craftercms-4-5-0` for some important changes in OpenSearch 3.3
 
 For a complete list of community tickets, please visit: `GitHub 4.5.0 <https://github.com/orgs/craftercms/projects/34/views/1>`_
 
