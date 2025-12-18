@@ -40,7 +40,7 @@ These components add powerful capabilities to support your digital experiences b
 ----------------------------------------------
 Do I need to connect CrafterCMS to a database?
 ----------------------------------------------
-No. Crafter Studio embeds and manages its own database. It uses the small, internal database for managing users and workflow. This database does not require a DBA to manage it and it is not pluggable. Crafter Engine, our delivery server does not require a database at all. You can integrate with any database to support your specific delivery application use cases. Any/all common databases are supported in this capacity.
+No. Crafter Studio stores content in Git, not a database. It uses a small internal database for managing users and workflow. This database does not require a DBA to manage it and it is not pluggable. Crafter Engine is the delivery server and does not require a database at all. You can integrate with any database to support your specific delivery application use cases. Any common databases are supported in this capacity.
 
 Crafter Social and Crafter Profile leverage MongoDB. These are optional components.
 
