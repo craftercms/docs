@@ -15,7 +15,7 @@ Crafter Studio
 
 |
 
-Crafter Studio provides all the content management services and integrates with repositories like Git, Alfresco and other CMIS based platforms to enable authoring, management, and publishing of all content.
+Crafter Studio provides all the content management services and integrates with repositories like Git, Alfresco and other CMIS based platforms to enable authoring, management, and publishing of all content. It leverages a small, internal database for managing users and workflow.
 
 |hr|
 
