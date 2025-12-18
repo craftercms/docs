@@ -1627,6 +1627,7 @@ to meet specific requirements. Some examples of the use cases that can be addres
 - Pushing content created/edited in Crafter Studio to an external git repository
 - Pulling content created/edited from an external git repository
 - Execute actions every time a deployment succeeds or fails
+- Pushing content to external systems like databases upon a publish
 
 .. note::
   When adding processors or changing the deployment pipeline for a target keep in mind that the processors will be
