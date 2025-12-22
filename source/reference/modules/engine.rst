@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.3.1
+:last-updated: 4.5.0
 
 .. _crafter-engine:
 
@@ -770,6 +770,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure additional fields for dynamic navigation items
     * - :ref:`engine-search-timeouts`
       - Allows you to configure the search client connection timeout, socket timeout and number of threads
+    * - :ref:`engine-search-default-filters`
+      - Allows you to enable/disable default filters for search queries
     * - :ref:`engine-content-length-headers`
       - Allows you to configure the content-length header
     * - :ref:`engine-static-methods-in-freemarker-templates`
@@ -1615,6 +1617,29 @@ The following allows you to configure the search client connection timeout, sock
     crafter.engine.search.timeout.socket=-1
     # The number of threads to use, if set to -1 the default will be used
     crafter.engine.search.threads=-1
+
+|
+
+|hr|
+
+.. _engine-search-default-filters:
+
+""""""""""""""""""""""
+Search Default Filters
+""""""""""""""""""""""
+.. version_tag::
+   :label: Since
+   :version: 4.5.0
+
+CrafterCMS by default excludes disabled and expired content from search results using default filters.
+To enable/disable the default filters for all queries, set the following:
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+    :linenos:
+
+    # Indicates if the default filters (-disabled:"true",-expired_dt:[* TO now]) should be enabled (applies to all queries)
+    crafter.engine.search.defaultFilters.enabled=true
 
 |
 
