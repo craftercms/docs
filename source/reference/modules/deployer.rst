@@ -2129,6 +2129,13 @@ Here's another example script that pushes content (uploads a document) to an ext
         def pathToFilename(contentPath) {
             return contentPath.substring(contentPath.lastIndexOf("/")+1)
         }
+
+        /**
+         * @return true if path is an asset
+         */
+        def isAsset(contentPath) {
+            return (contentPath) ? contentPath.startsWith("/static-assets") : false
+        }
     }
 
     /**
