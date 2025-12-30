@@ -15,7 +15,7 @@ Crafter Studio
 
 |
 
-Crafter Studio provides all the content management services and enables authoring, version control, workflow, and publishing of content. It leverages a small, internal database for managing users and workflow.
+Crafter Studio provides all the content management services and enables authoring, version control, workflow, and publishing of content.
 
 |hr|
 
