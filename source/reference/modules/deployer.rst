@@ -2056,9 +2056,9 @@ Below is a script that only includes a file from the change-set if a parameter i
 |
 
 Here's another example script that pushes content (uploads a document) to an external service upon publish.
-For every newly created file, if the path is a static asset (path starts with "/static-assets"), it reads the file from
-the content store and uploads it (multipart/form-data) to a third‑party HTTP API using OkHttp, streaming the file upload
-so the file is read while sending.
+For every newly created file, upon publish (changeset), if the path is a static asset (path starts with "/static-assets"),
+it reads the file from the content store and uploads it (multipart/form-data) to a third‑party HTTP API using OkHttp,
+streaming the file upload so the file is read while sending.
 
 .. raw:: html
 
