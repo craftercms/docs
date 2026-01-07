@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.4.3
+:last-updated: 4.5.0
 
 .. highlight:: xml
 
@@ -5846,6 +5846,7 @@ To access the Global Config, click on the ``Navigation Menu`` icon at the top ri
 
 To find out more on what you can configure from the Global Config, see :ref:`studio-config`.
 
+|
 
 .. _main-menu-tool-encryption-tool:
 
@@ -5862,6 +5863,8 @@ The ``Encryption Tool`` allows the user to encrypt sensitive data such as access
 |
 
 For more information on how to use the encryption tool, see :ref:`studio-encryption-tool`.
+
+|
 
 .. _nav-menu-token-management:
 
@@ -5950,6 +5953,8 @@ To disable/enable a token, simply click on the slider on the right side of the t
 
 .. note:: Users needs the ``manage_access_token`` permission to create access tokens
 
+|
+
 .. _preview-token:
 
 ~~~~~~~~~~~~~
@@ -6007,6 +6012,54 @@ Here's an example of using the token with Curl, where ``{Generated-Preview-Token
 
 
 The dialog above that shows the preview token generated also shows other examples on how to use the preview token.
+
+|
+
+.. _settings:
+
+"""""""""""""""""""""""""
+Settings |enterpriseOnly|
+"""""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+The ``Settings Tool``  allows the user to configure system settings, such as enabling/disabling maintenance mode.
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-settings.webp
+    :alt: System Administrator - Navigation Menu Settings Tool
+    :align: center
+    :width: 70%
+
+|
+
+~~~~~~~~~~~~~~~~
+Maintenance Mode
+~~~~~~~~~~~~~~~~
+Maintenance mode is a status that tells users that your CrafterCMS install is under maintenance and temporarily unavailable.
+Turning on maintenance mode when making updates, functionality modifications or design changes to your CrafterCMS install
+helps prevent errors and issues and allows for a smooth user experience.
+
+To enable/disable maintenance mode, simply toggle the switch to on or off.
+
+.. image:: /_static/images/system-admin/main-menu/maintenance-mode-on.webp
+    :alt: System Administrator - Maintenance mode toggle switch
+    :align: center
+    :width: 70%
+
+|
+
+When turning on maintenance mode, a dialog will appear to confirm you want to turn on maintenance mode.
+
+.. image:: /_static/images/system-admin/main-menu/maintenance-mode-on-confirmation.webp
+    :alt: System Administrator - Maintenance mode on confirmation dialog
+    :align: center
+    :width: 70%
+
+|
+
+Once maintenance mode is enabled, the UI will show a maintenance mode screen to users as seen here: :ref:`author-maintenance-mode`
+
 
 """""""
 Account
