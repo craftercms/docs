@@ -24,6 +24,10 @@ New Features
 * Improved serverless performance |enterpriseOnly| |br|
   Improved startup and first page load speeds by using Redis/ValKey as a cache in front of S3.
 
+* `New maintenance mode to lock non-admin end users out of Studio during maintenance <https://github.com/craftercms/craftercms/issues/5652>`__ |enterpriseOnly| |br|
+  See :ref:`settings` for more information on enabling/disabling maintenance mode in Crafter Studio and
+  :ref:`author-maintenance-mode` for the screens displayed during maintenance mode.
+
 ^^^^^^^^^^^^
 Enhancements
 ^^^^^^^^^^^^
@@ -42,18 +46,26 @@ Bug Fixes
 ^^^^^^^^^
 * `Fixed issue with repeating group control <https://github.com/craftercms/craftercms/issues/8355>`__
 
+* `Fixed issue with deleting a renamed folder <https://github.com/craftercms/craftercms/issues/8354>`__
+
 * `Fixed issue with Studio UI breaking when searching for a user with [SA] in the name <https://github.com/craftercms/craftercms/issues/8351>`__ |br|
   Square brackets are now allowed by default in search queries. To allow other characters not permitted by default in search queries,
   simply modify the ``studio.validation.regex.SEARCH_KEYWORDS`` property in the Studio :ref:`Global Config <nav-menu-global-config>`.
   
   See :ref:`studio-validations-regex` to learn more on configuring the regex for validating user names to suit your needs.
 
+* Fixed issue with the load order for BouncyCastle jars
+
+* Fixed issue with unmapped user groups during SSO login
+
 ^^^^^^^^^^^^^^^^^^
 Dependency Updates
 ^^^^^^^^^^^^^^^^^^
 * Noteworthy dependency updates:
 
-  - Spring security to version 6.5.4
+  - Spring security to version 6.5.7
+  - Spring Core to version 6.2.15
+  - Tomcat to version 11.0.15
   - Mariadb4j to version 3.1.0.5
   - OpenSearch to version 3.3 |br|
     Please see :ref:`breaking-changes-in-craftercms-4-5-0` for some important changes in OpenSearch 3.3
