@@ -5881,6 +5881,8 @@ create tokens for accessing a project/site in Preview.
 
 |
 
+For more information on configuring settings for the Studio access tokens, see :ref:`studio-access-tokens`
+
 .. _api-token:
 
 ~~~~~~~~~
@@ -6058,8 +6060,12 @@ When turning on maintenance mode, a dialog will appear to confirm you want to tu
 
 |
 
-Once maintenance mode is enabled, the UI will show a maintenance mode screen to users as seen here: :ref:`author-maintenance-mode`
+Once maintenance mode is enabled, the UI will show a maintenance mode screen informing users that the system is
+temporarily unavailable, as seen here: :ref:`author-maintenance-mode`.
+For users with the ``allowed_in_maintenance`` permission, access to Crafter Studio/system APIs is still available
+during maintenance mode.
 
+|
 
 """""""
 Account
