@@ -28,6 +28,9 @@ New Features
   See :ref:`settings` for more information on enabling/disabling maintenance mode in Crafter Studio and
   :ref:`author-maintenance-mode` for the screens displayed during maintenance mode.
 
+  Using the API :base_url:`Set system maintenance mode status <_static/api/studio.html#tag/system/operation/setMaintenanceMode>`
+  also allows you to enable/disable maintenance mode.
+
 ^^^^^^^^^^^^
 Enhancements
 ^^^^^^^^^^^^
