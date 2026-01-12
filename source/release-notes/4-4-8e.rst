@@ -3,7 +3,7 @@
 ------------------------------------------
 CrafterCMS Version 4.4.8E |enterpriseOnly|
 ------------------------------------------
-Released *January TBD, 2026* |br|
+Released *January 12, 2026* |br|
 *This release is an enterprise-only release.*
 
 .. important::
