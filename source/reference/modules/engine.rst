@@ -18,34 +18,6 @@ from Studio via the Deployer and provides developers with APIs to consume the co
 
 .. include:: /includes/scripts-templates-security.rst
 
-
-.. TODO
-   ``HOST:PORT/?crafterSite=site1`` will render the home page for ``site1``
-
-   ``HOST:PORT/?crafterSite=site2`` will render the home page for ``site2``
-
-   |
-
-   Aside from the ``crafterSite`` parameter, a header can be sent to specify the site name, called
-   ``X-Crafter-Site`` for changing the current site. This is very useful when Crafter Engine is used
-   together with CDNs that can send headers, like AWS CloudFront
-
-   .. WARNING::
-       Using this configuration you need to be sure that the first request specifies the site name by
-       including the ``crafterSite`` parameter (or the ``X-Crafter-Site`` header) so that the site value
-       is set in the cookie for the next requests.
-
-   |
-
-   .. note::
-         Crafter Engine identifies which project to render by the mechanisms (in this order of precedence):
-            - Headers (``X-Crafter-Site={site}``)
-            - QSA (Query String Parameters: ``crafterSite={site}``)
-            - Cookie (``crafterSite={site}``)
-
-         Additionally, if the cookie is not aligned with other parameters, the cookie will be reset to what precedes it.
-         The above is only true when Crafter Engine is not in Preview mode.
-
 |hr|
 
 .. _engine-config:
@@ -179,6 +151,8 @@ To set ``crafterSite`` to the ``hello-world`` project, in your browser, type in
     :align: center
     :alt: Setup Project for Delivery - Hello World Project
 
+|
+
 To set the site to the ``myawesomesite``, in your browser, type in
 
 .. code-block:: sh
@@ -209,6 +183,8 @@ together with CDNs that can send headers, like AWS CloudFront
 
      Additionally, if the cookie is not aligned with other parameters, the cookie will be reset to what precedes it.
      The above is only true when Crafter Engine is not in Preview mode.
+
+|
 
 .. _setup-serverless-delivery:
 
@@ -724,7 +700,7 @@ The main files for configuring Crafter Engine at the instance level are:
     * - ``logging.xml``
       - Contains loggers, appenders, etc.
 
-These configuration files for Crafter Engine is located under  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension``, where ``CRAFTER_HOME`` is the install directory of your CrafterCMS authoring or delivery environment.
+These configuration files for Crafter Engine are located under  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension``, where ``CRAFTER_HOME`` is the install directory of your CrafterCMS authoring or delivery environment.
 
 The files can be accessed by opening the files using a text editor. Any changes made to any of the files listed above will require a restart of Crafter Engine.
 
@@ -784,9 +760,11 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure Crafter Engine access to MongoDB
     * - :ref:`engine-crafter-profile-configuration`
       - Allows you to configure Crafter Engine access to Crafter Profile APIs
+    * - :ref:`engine-custom-properties`
+      - Allows you to add custom properties to the project configuration
+    * - :ref:`engine-craftersite-cookie-configuration`
+      - Allows you to enable/disable the ``crafterSite`` cookie
 
-.. TODO  * - :ref:`adding-custom-properties`
-	- Allows you to add custom properties to the project configuration
 
 |
 
@@ -1985,6 +1963,75 @@ To get a boolean, use the ``getBoolean`` method, which we'll use to get the valu
     return siteConfig.getBoolean("db.enabled")
 
 |
+
+.. _engine-craftersite-cookie-configuration:
+
+"""""""""""""""""""""""""""""""""""""""
+Engine crafterSite Cookie Configuration
+"""""""""""""""""""""""""""""""""""""""
+One way Crafter Engine identifies which project to render is via the ``crafterSite`` cookie. This cookie is enabled by
+default in both the delivery and authoring environment:
+
+.. code-block:: xml
+    :caption: *The crafterSite cookie is enabled by default*
+    :emphasize-lines: 5
+
+    <bean id="crafter.siteResolver" class="org.craftercms.engine.service.context.SiteResolverChain">
+        <constructor-arg name="chain">
+            <list>
+                <ref bean="crafter.headerSiteResolver"/>
+                <ref bean="crafter.cookieSiteResolver"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+|
+
+To disable the ``crafterSite`` cookie, open the ``CRAFTER-HOME/bin/apache-tomcat/classes/crafter/engine/extension/services-context.xml`` file and add the following:
+
+.. code-block:: xml
+    :caption: *CRAFTER-HOME/bin/apache-tomcat/classes/crafter/engine/extension/services-context.xml*
+
+    <bean id="crafter.siteResolver" class="org.craftercms.engine.service.context.DefaultSiteResolver">
+        <constructor-arg name="defaultSiteName" value="${crafter.engine.site.default.name}"/>
+    </bean>
+
+|
+
+The configuration above makes Engine always reply to a single site, defined in the ``crafter.engine.site.default.name`` property.
+
+To set the default site, add the following to the ``CRAFTER-HOME/bin/apache-tomcat/classes/crafter/engine/extension/server-config.properties``
+file. Remember to replace ``mydefaultsite`` with the desired default site name for your CrafterCMS install.
+
+.. code-block:: properties
+    :caption: *CRAFTER-HOME/bin/apache-tomcat/classes/crafter/engine/extension/server-config.properties*
+
+    # The default site name, when not in preview or multi-tenant modes
+    crafter.engine.site.default.name=mydefaultsite
+
+|
+
+Another way to disable the ``crafterSite`` cookie is by removing the cookie site resolver from the chain:
+
+.. code-block:: xml
+    :caption: *CRAFTER-HOME/bin/apache-tomcat/classes/crafter/engine/extension/services-context.xml*
+
+    <bean id="crafter.siteResolver" class="org.craftercms.engine.service.context.SiteResolverChain">
+        <constructor-arg name="chain">
+            <list>
+                <ref bean="crafter.headerSiteResolver"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+|
+
+Note that if you remove the cookies site resolver (``<ref bean="crafter.cookieSiteResolver"/>``), you also remove the
+ability to pass the site as a request param (like ``?crafterSite=mysite``)
+
+|
+
+|hr|
 
 .. _engine-multi-environment-support:
 
