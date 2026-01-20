@@ -500,8 +500,6 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `rimraf <https://www.npmjs.com/package/rimraf>`_
 |br|
-`rimraf <https://www.npmjs.com/package/rimraf>`_
-|br|
 `rollup-plugin-copy <https://www.npmjs.com/package/rollup-plugin-copy>`_
 |br|
 `rollup-plugin-swc3 <https://www.npmjs.com/package/rollup-plugin-swc3>`_
@@ -520,7 +518,7 @@ CrafterCMS acknowledges the following Open Source Software used in this product:
 |br|
 `tss-react <https://www.npmjs.com/package/tss-react>`_
 |br|
-`typescript@patch <https://www.npmjs.com/package/typescript@patch>`_
+`typescript@patch <https://www.npmjs.com/package/typescript>`_
 |br|
 `uppy <https://www.npmjs.com/package/uppy>`_
 |br|

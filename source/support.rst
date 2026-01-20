@@ -22,7 +22,7 @@ What's Supported?
       - Latest
 
     * - `4.5 <https://craftercms.com/download>`__
-      - TBD, 2025
+      - TBD, 2026
       - :green:`Active`
       - :green:`Active`
       - 4.5.0 (TBD, 2026)
