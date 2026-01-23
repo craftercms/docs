@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.0
+:last-updated: 4.5.0
 
 .. _author:
 
@@ -593,6 +593,49 @@ width on your browser
 .. |publishLive| image:: /_static/images/content-author/publish-target-icon-live.webp
              :width: 9%
              :alt: Item Types Icons - Live
+
+|
+
+.. _author-maintenance-mode:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Maintenance Mode |enterpriseOnly|
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+Maintenance mode is a status that tells authors that Crafter Studio is under maintenance and temporarily unavailable.
+
+When maintenance mode is enabled while an author is working on a project, a popup informing the author that the system is
+in maintenance mode will appear like below:
+
+.. image:: /_static/images/content-author/maintenance-mode-on-while-working.webp
+    :width: 65 %
+    :align: center
+    :alt: Navigating Studio - Maintenance mode on popup while working
+
+|
+
+When maintenance mode is enabled, the login screen indicates to the user that the system is under maintenance:
+
+.. image:: /_static/images/content-author/maintenance-mode-on-login.webp
+    :width: 65 %
+    :align: center
+    :alt: Navigating Studio - Maintenance mode on full screen message
+
+|
+
+After logging in when the system is in maintenance mode, this is the screen displayed:
+
+.. image:: /_static/images/content-author/maintenance-mode-on-fullscreen.webp
+    :width: 95 %
+    :align: center
+    :alt: Navigating Studio - Maintenance mode on full screen message
+
+|
+
+For more information on enabling/disabling maintenance mode, see :ref:`System Settings <settings>`.
 
 |hr|
 

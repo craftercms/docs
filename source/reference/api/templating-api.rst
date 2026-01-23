@@ -29,29 +29,64 @@ Rendering Components
 --------------------
 Crafter Engine provides the ``renderComponent`` macro that can be used to render components in any template:
 
+**Render a Component by Referencing the Path**
+
 .. code-block:: html
   :force:
-  :linenos:
-  :caption: Using the RenderComponent Macro
+  :caption: Using the RenderComponent Macro to Render a component by referencing the path
 
   <!-- Render a component by referencing the path -->
   <@renderComponent componentPath='/site/components/headers/header.xml' />
 
+|
+
+**Render a Component by Referencing a Shared Component**
+
+.. code-block:: html
+  :force:
+  :caption: Using the RenderComponent Macro to Render a component by referencing a shared component
+
   <!-- Render a component by referencing a shared component from the current item -->
   <@renderComponent component=contentModel.mySharedComponent_o.item  />
 
+|
+
+**Render a Component by Referencing an Embedded Component**
+
+.. code-block:: html
+  :force:
+  :caption: Using the RenderComponent Macro to Render a component by referencing an embedded component
+
   <!-- Render a component by referencing an embedded component from the current item -->
   <@renderComponent component=contentModel.myEmbeddedComponent_o.item />
+
+|
+
+**Render an Embedded Component from Another Component**
+
+.. code-block:: html
+  :force:
+  :caption: Using the RenderComponent Macro to Render an Embedded Component from Another Component
 
   <!-- Render an embedded component from another component instead of the current item -->
   <#assign sharedItem = siteItemService.getSiteItem('/site/components/global.xml')/>
   <@renderComponent parent=sharedItem component=sharedItem.myEmbeddedComponent_o.item />
 
+|
+
+**Render a Component Passing Additional Variables (parameters)**
+
+.. code-block:: html
+  :force:
+  :caption: Using the RenderComponent Macro Render a Component Passing Additional Variables
+
   <!-- Render a component passing additional variables -->
   <!-- Inside the component's template 'theme' will be available as a global variable -->
   <@renderComponent component=contentModel.myComponent.item additionalModel={ 'theme': contentModel.theme_s } />
 
-Parameters:
+|
+
+where:
 
 * **componentPath**: a path for a shared component in the site
 * **component**: a XML node from a node selector field, supports both shared and embedded components

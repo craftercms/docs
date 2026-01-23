@@ -294,7 +294,10 @@ See :ref:`here <blob-stores-asset-access>` for more information
 AWS S3
 ~~~~~~
 AWS S3 is a great option for very large externally managed artifacts.
-See :ref:`here <use-s3-to-store-assets>` for more information
+
+.. include:: /includes/s3-compatible-storage-note.rst
+
+See :ref:`here <use-s3-to-store-assets>` for more information on using S3 to store assets.
 
 ~~~
 Box

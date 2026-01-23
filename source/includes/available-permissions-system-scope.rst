@@ -107,3 +107,18 @@ The system level (global) permissions are defined in the file ``global-permissio
         - :base_url:`Get all the members of the cluster <_static/api/studio.html#tag/cluster/operation/getClusterMembers>`
     * - write_global_configuration
       - User is permitted to write global configuration content for Studio
+    * - system_properties_manage
+      - User is allowed to update, write or delete system properties. |br|
+        Required when using the following APIs:
+
+        - :base_url:`Update system properties <_static/api/studio.html#tag/system/operation/updateSystemProperties>`
+        - :base_url:`Set system maintenance mode status <_static/api/studio.html#tag/system/operation/setMaintenanceMode>` |enterpriseOnly|
+
+    * - system_properties_read
+      - User is allowed to read system properties. |br|
+        Required when using the following API:
+
+        - :base_url:`Read system properties <_static/api/studio.html#tag/system/operation/getSystemProperties>`
+
+    * - allowed_in_maintenance |enterpriseOnly|
+      - User is allowed to access the system APIs during maintenance mode |br|

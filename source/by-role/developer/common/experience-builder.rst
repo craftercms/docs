@@ -769,7 +769,7 @@ Examples
 ''''''''
 .. code-block:: text
 
-   <@crafter.renderRepeatCollection
+   <@crafter.renderRepeatGroup
      $containerTag="section"
      $containerAttributes={ "class": "row" }
      $itemTag="div"
@@ -784,7 +784,7 @@ Examples
        $indexCarryover="${index}"
        $model=(contentModel + { "items_o": item.items_o })
      />
-   </@crafter.renderRepeatCollection>
+   </@crafter.renderRepeatGroup>
 
 The sample above would print out the following html:
 
