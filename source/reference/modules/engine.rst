@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.3.1
+:last-updated: 4.5.0
 
 .. _crafter-engine:
 
@@ -746,6 +746,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure additional fields for dynamic navigation items
     * - :ref:`engine-search-timeouts`
       - Allows you to configure the search client connection timeout, socket timeout and number of threads
+    * - :ref:`engine-search-connection-pool`
+      - Allows you to configure the search connection pool max total connections and max connections per route
     * - :ref:`engine-content-length-headers`
       - Allows you to configure the content-length header
     * - :ref:`engine-static-methods-in-freemarker-templates`
@@ -1595,6 +1597,32 @@ The following allows you to configure the search client connection timeout, sock
     crafter.engine.search.threads=-1
 
 |
+
+|hr|
+
+.. _engine-search-connection-pool:
+
+""""""""""""""""""""""
+Search Connection Pool
+""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+The following allows you to configure the search connection pool max values for total connections and connections per route:
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+    :linenos:
+
+    # The max total connections, if set to -1 the default will be used
+    crafter.engine.search.maxTotalConnections=-1
+    # The max connections per route, if set to -1 the default will be used
+    crafter.engine.search.maxConnectionsPerRoute=-1
+
+|
+
+The default max connections per route is set to 2 and max total connections is set to 20.
 
 |hr|
 
@@ -3801,6 +3829,7 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
 .. code-block:: properties
    :linenos:
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+   :emphasize-lines: 2
 
    # Indicates if the sandbox should be enabled for all sites
    crafter.engine.groovy.sandbox.enable=true
@@ -3808,6 +3837,10 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
    crafter.engine.groovy.sandbox.blacklist.enable=true
    # The location of the default blacklist to use for all sites (this will have no effect if the sandbox is disabled)
    crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/groovy/blacklist
+   # Indicates if the whitelist should be enabled for all sites (this will have no effect if the sandbox is disabled)
+   crafter.engine.groovy.sandbox.whitelist.enable=false
+   # The location of the default whitelist to use for all sites (this will have no effect if the sandbox is disabled)
+   crafter.engine.groovy.sandbox.whitelist.path=classpath:crafter/engine/groovy/whitelist
 
 |
 
@@ -3839,6 +3872,8 @@ To use a custom blacklist follow these steps:
 
 Now you can execute the same script without any issues.
 
+|
+
 """""""""""""""""""""""""""""""
 Disabling the Sandbox Blacklist
 """""""""""""""""""""""""""""""
@@ -3855,10 +3890,93 @@ restrictions. To disable the blacklist for all projects/sites update the server 
 
 |
 
+""""""""""""""""""""""""
+Using a Custom Whitelist
+""""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+Crafter Engine includes a default whitelist that you can find
+`here <https://github.com/craftercms/engine/blob/support/4.x/src/main/resources/crafter/engine/groovy/whitelist>`__. Make sure you review the branch/tag you're using.
+
+To use a custom whitelist follow these steps:
+
+#. Copy the default whitelist file to your classpath, for example:
+
+    ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/groovy/whitelist``
+
+#. Add, remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
+#. Update the :ref:`server-config.properties <engine-configuration-files>` configuration file to load the custom whitelist:
+
+   .. code-block:: properties
+       :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
+
+       # The location of the whitelist to use for all sites (this will have no effect if the sandbox is disabled)
+       crafter.engine.groovy.sandbox.whitelist.path=classpath:crafter/engine/extension/groovy/whitelist
+
+#. Restart CrafterCMS
+
+Now you can execute the same script without any issues.
+
+|
+
+""""""""""""""""""""""""""""""
+Enabling the Sandbox Whitelist
+""""""""""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+It is possible to only allow the execution of approved expressions included in a list to prevent operations that
+could compromise the system, by using the sandbox whitelist. To create your custom sandbox whitelist, see above.
+
+The sandbox whitelist is disabled by default. To enable the whitelist for all projects/sites update the server configuration file
+:ref:`server-config.properties <engine-configuration-files>`:
+
+.. code-block:: properties
+  :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+  # Indicates if the whitelist should be enabled for all sites (this will have no effect if the sandbox is disabled)
+  crafter.engine.groovy.sandbox.whitelist.enable=true
+
+|
+
 """""""""""""""""""
 Grape Configuration
 """""""""""""""""""
 .. include:: /includes/groovy-grape-configuration.rst
+
+|
+
+"""""""""""""""
+Grapes Download
+"""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+The following allows you to enable or disable automatic Groovy dependency (grapes) downloads for scripts (@grab):
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+    :emphasize-lines: 3
+
+    # Indicates if @Grab annotations should download grapes
+    # If false, only already downloaded grapes will be available
+    crafter.engine.groovy.grapes.download.enabled=false
+
+Automatic grapes download is disabled by default. Set ``crafter.engine.groovy.grapes.download.enabled`` to true to
+ enable automatic grapes download.
+
+|
+
+"""""""""""""""""""""""""""""""""""""""
+Installing Grapes from the Command Line
+"""""""""""""""""""""""""""""""""""""""
+.. include:: /includes/groovy-grape-install.rst
+
+|
 
 """""""""""""""
 Important Notes
