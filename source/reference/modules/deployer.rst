@@ -1,6 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.2
-:orphan:
+:last-updated: 4.5.0
 
 .. index:: Modules; Crafter Deployer
 
@@ -966,6 +965,7 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
 .. code-block:: yaml
     :linenos:
     :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
+    :emphasize-lines: 6
 
     deployer:
       main:
@@ -980,6 +980,16 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
               # The location of the blacklist to use for all targets
               # (this will have no effect if the sandbox is disabled)
               path: 'classpath:groovy/blacklist'
+            whitelist:
+              # Indicates if the whitelist should be enabled for all targets
+              # (this will have no effect if the sandbox is disabled)
+              enabled: false
+              # The location of the whitelist to use for all targets
+              # (this will have no effect if the sandbox is disabled)
+              path: 'file:${deployer.main.config.folderPath}/groovy/whitelist,classpath:groovy/whitelist'
+              # List of patterns for that is allowed to call as `staticMethod java.lang.System getenv java.lang.String` parameter (regexes separated by commas)
+              # NOTE: This property is applied even if the whitelist is disabled
+              getenvRegex: crafter_.*
 
 |
 
@@ -1011,6 +1021,8 @@ To use a custom blacklist follow these steps:
 
 Now you can execute the same script without any issues.
 
+|
+
 """""""""""""""""""""""""""""""
 Disabling the Sandbox Blacklist
 """""""""""""""""""""""""""""""
@@ -1029,15 +1041,110 @@ restrictions. To disable the blacklist for all targets update the ``application.
 
 |
 
+""""""""""""""""""""""""
+Using a Custom Whitelist
+""""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+Crafter Deployer includes a default whitelist that you can find `here <https://github.com/craftercms/deployer/blob/support/4.x/src/main/resources/groovy/whitelist>`__. Make sure you review the branch/tag you're using.
+
+To use a custom whitelist follow these steps:
+
+#. Copy the default whitelist file to your classpath, for example:
+
+    ``CRAFTER_HOME/bin/crafter-deployer/config/groovy/whitelist``
+
+#. Add, remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
+#. Update the ``application.yaml`` configuration file to load the custom whitelist:
+
+    .. code-block:: yaml
+        :caption: ``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml``
+
+        sandbox:
+          whitelist:
+            # The location of the whitelist to use for all targets
+            # (this will have no effect if the sandbox is disabled)
+            path: 'file:${deployer.main.config.folderPath}/groovy/whitelist,classpath:groovy/whitelist'
+
+#. Restart CrafterCMS
+
+Now you can execute the same script without any issues.
+
+|
+
+""""""""""""""""""""""""""""""
+Enabling the Sandbox Whitelist
+""""""""""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+It is possible to only allow the execution of approved expressions included in a list to prevent operations that
+could compromise the system, by using the sandbox whitelist. To create your custom sandbox whitelist, see above.
+
+The sandbox whitelist is disabled by default. To enable the whitelist for all targets update the
+``application.yaml`` configuration file:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
+
+    sandbox:
+      whitelist:
+        # Indicates if the whitelist should be enabled for all targets
+        # (this will have no effect if the sandbox is disabled)
+        enabled: true
+
+|
+
 """""""""""""""""""
 Grape Configuration
 """""""""""""""""""
 .. include:: /includes/groovy-grape-configuration.rst
 
+|
+
+"""""""""""""""
+Grapes Download
+"""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+The following allows you to enable or disable automatic Groovy dependency (grapes) downloads for scripts (@grab):
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
+    :emphasize-lines: 8
+
+    deployer:
+        main:
+            scripting:
+                grapes:
+                    # Indicates if grapes automatic downloading should be enabled for all targets
+                    # If false, already downloaded grapes will be used, but no new grapes will be downloaded
+                    download:
+                        enabled: false
+
+Automatic grapes download is disabled by default. Set ``deployer.main.scripting.grapes.download.enabled`` to true to
+enable automatic grapes download.
+
+|
+
+"""""""""""""""""""""""""""""""""""""""
+Installing Grapes from the Command Line
+"""""""""""""""""""""""""""""""""""""""
+.. include:: /includes/groovy-grape-install.rst
+
+|
+
 """""""""""""""
 Important Notes
 """""""""""""""
 .. include:: /includes/groovy-sandbox-important-notes.rst
+
+|
 
 ^^^^^^^^^^^^^^^^^^^^
 Cipher Configuration
