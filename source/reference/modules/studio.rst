@@ -3221,7 +3221,7 @@ The following section of Studio's configuration overrides allows you to configur
     # studio.validation.regex.USERNAME: "^[a-zA-Z][\\w.\\-@+]+$"
     # studio.validation.regex.GROUP_NAME: "^[a-zA-Z][\\w.\\-]*$"
     # studio.validation.regex.ALPHANUMERIC: "^[a-zA-Z0-9]*$"
-    # studio.validation.regex.SEARCH_KEYWORDS: "^[\\w\\s\\-\\\"\\.\\*]*$"
+    # studio.validation.regex.SEARCH_KEYWORDS: "^[\\w\\s\\-\\\"\\'\\.!@#$%&\\*\\/\\(\\)\\[\\]\\p{IsLatin}]*$"
     # studio.validation.regex.CONTENT_PATH_WRITE: "^/?([\\w\\- ]+/?)*(((crafter\\-level\\-descriptor\\.level)|([\\w\\- ]))+\\.[\\w]+)?$"
     # studio.validation.regex.CONTENT_PATH_READ: "^/?([\\w\\p{IsLatin}@$%^&{}\\[\\]()+\\-=,.:~'`]+(\\s*[\\w\\p{IsLatin}/@$%^&{}\\[\\]()+\\-=,.:~'`])*(/?))*$"
     # studio.validation.regex.CONTENT_FILE_NAME_WRITE: "^((crafter\\-level\\-descriptor\\.level)|([a-z0-9_\\-])+)\\.xml$"
