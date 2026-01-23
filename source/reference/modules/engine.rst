@@ -746,6 +746,8 @@ In this section we will highlight some of the more commonly used properties in t
       - Allows you to configure additional fields for dynamic navigation items
     * - :ref:`engine-search-timeouts`
       - Allows you to configure the search client connection timeout, socket timeout and number of threads
+    * - :ref:`engine-search-default-filters`
+      - Allows you to enable/disable default filters for search queries
     * - :ref:`engine-search-connection-pool`
       - Allows you to configure the search connection pool max total connections and max connections per route
     * - :ref:`engine-content-length-headers`
@@ -1623,6 +1625,29 @@ The following allows you to configure the search connection pool max values for 
 |
 
 The default max connections per route is set to 2 and max total connections is set to 20.
+
+|hr|
+
+.. _engine-search-default-filters:
+
+""""""""""""""""""""""
+Search Default Filters
+""""""""""""""""""""""
+.. version_tag::
+   :label: Since
+   :version: 4.5.0
+
+CrafterCMS by default excludes disabled and expired content from search results using default filters.
+To enable/disable the default filters for all queries, set the following:
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+    :linenos:
+
+    # Indicates if the default filters (-disabled:"true",-expired_dt:[* TO now]) should be enabled (applies to all queries)
+    crafter.engine.search.defaultFilters.enabled=true
+
+|
 
 |hr|
 
