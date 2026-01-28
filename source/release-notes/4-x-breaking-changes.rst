@@ -58,7 +58,7 @@ Breaking Changes in CrafterCMS 4.5.0
 			.highlight(highlighter.build())
 		)
 
-- Automatic grapes download is disabled by default.
+- Automatic grapes download for scripts (@grab) is disabled by default.
 
   See :ref:`Studio <studio-grapes-download>`, :ref:`Engine <engine-grapes-download>` and :ref:`Deployer <deployer-grapes-download>`
   grapes configuration for more information on enabling automatic grapes download.
