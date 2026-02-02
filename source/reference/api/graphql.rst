@@ -291,7 +291,7 @@ Additionally you can create complex filters using expressions like ``and``, ``or
     }
   }
 
-You can also include fields from child components in your model, this applies to fields like ``node-selector``,
+You can also include fields from child components in your model, this applies to fields like ``node-selector`` (item selector control),
 ``checkbox-group`` and ``repeat`` groups. Filters can also be added to fields from child components.
 
 .. code-block:: text

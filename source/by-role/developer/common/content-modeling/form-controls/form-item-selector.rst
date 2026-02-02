@@ -8,6 +8,9 @@ Item Selector Control
 =====================
 Item Selector control.
 
+The field type for an item selector control in a content model is ``node-selector``.
+Use a ``node-selector`` in your content model to allow cross-referencing and linking between items.
+
 -------
 Example
 -------

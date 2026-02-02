@@ -1400,9 +1400,9 @@ Here are some controls that authors may encounter while editing content:
 
   |
 
-* Item Selector - Allows the user to select an item from configured sources. Clicking the **Add**
-  button opens a menu that lets the user pick from the list. Clicking on **Add & Close** or
-  **Add Selection** adds the selected item to the selector list
+* Item Selector - Allows the user to select an item from configured sources. It allows cross-referencing
+  and linking between items. Clicking the **Add** button opens a menu that lets the user pick from the list.
+  Clicking on **Add & Close** or **Add Selection** adds the selected item to the selector list
 
   .. image:: /_static/images/form-controls/form-control-item-selector.webp
      :width: 30 %

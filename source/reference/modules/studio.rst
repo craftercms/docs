@@ -616,7 +616,7 @@ Project Policy
     :version: 4.0.0
 
 The project policy configuration file allows the administrator to configure constraints for content being added to the project
-(via uploads), such as filename constraints, minimum/maximum size of files, permitted content types or file types (MIME-types), etc.
+(via uploads), such as filename/item name constraints, minimum/maximum size of files, permitted content types or file types (MIME-types), etc.
 
 *Note that the project policy does not apply to content created directly on disk via the Git or APIs.*
 
