@@ -260,27 +260,29 @@ The next step is to configure SSL/TLS Connector in the authoring/delivery tomcat
     :caption: CRAFTER_HOME/bin/apache-tomcat/conf/server.xml
     :linenos:
 
-    <Connector port="8443"
-      SSLEnabled="true"
-      clientAuth="false"
-      maxThreads="150"
-      protocol="org.apache.coyote.http11.Http11NioProtocol"
-      keystoreFile="/path/to/your/keystore"
-      keystorePass="yourKeystorePassword"
-      scheme="https"
-      secure="true"
-      sslProtocol="TLS"
-    />
+    <Connector
+        protocol="org.apache.coyote.http11.Http11NioProtocol"
+        port="8443"
+        maxThreads="150"
+        SSLEnabled="true">
+        <SSLHostConfig>
+            <Certificate
+                certificateKeystoreFile="/path/to/your/keystore"
+                certificateKeystorePassword="yourKeystorePassword"
+                type="RSA"
+            />
+        </SSLHostConfig>
+    </Connector>
 
 where:
 
 * **port** : port number to be secured by your new keystore file
-* **keystoreFile** : path to your keystore file created from the previous step
-* **keystorePass** : password used when keystore file was created from the previous step
+* **certificateKeystoreFile** : path to your keystore file created from the previous step
+* **certificateKeystorePassword** : password used when keystore file was created from the previous step
 
 We'll use the above values for our CrafterCMS authoring example. Save the changes and restart CrafterCMS authoring/delivery.
 
-For more information on configuring SSL/TLS on Tomcat, see https://tomcat.apache.org/tomcat-9.0-doc/ssl-howto.html
+For more information on configuring SSL/TLS on Tomcat, see https://tomcat.apache.org/tomcat-11.0-doc/ssl-howto.html
 
 .. _ssl-test-your-setup:
 
