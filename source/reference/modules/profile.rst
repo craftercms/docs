@@ -3,9 +3,9 @@
 
 .. _crafter-profile:
 
-===============
-Crafter Profile
-===============
+================================
+Crafter Profile |enterpriseOnly|
+================================
 .. figure:: /_static/images/architecture/crafter-profile.webp
     :alt: Crafter Profile
     :width: 75%
