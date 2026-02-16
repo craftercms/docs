@@ -161,7 +161,7 @@ The **Publishing Queue** tab allows the user to see the items(publishing package
 * ``Package Title``: title for the publishing package
 * ``Publishing Target``: where package is published to/to be published
 * ``Submitter``:  user that sent/requested publishing package
-* ``Submission comment``
+* ``Submission Comment``
 * ``Status`` of the publishing package and depending on the status, may contain the following:
 
   - ``Reviewer``: user that reviewed and approved/rejected the package
