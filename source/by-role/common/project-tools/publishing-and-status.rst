@@ -156,7 +156,7 @@ The **Publishing Queue** tab allows the user to see the items(publishing package
 
 |
 
-**Publishing packages** contains the following information:
+**Publishing packages** contain the following information:
 
 * ``Package Title``: title for the publishing package
 * ``Publishing Target``: where package is published to/to be published
