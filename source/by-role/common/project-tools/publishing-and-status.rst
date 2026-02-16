@@ -133,7 +133,7 @@ target you choose.
 
 For example, using the Website Editorial blueprint, to publish all the changes made in the sandbox repo,
 simply select ``Publish everything`` and then fill in the ``Package Title`` and ``Submission Comment`` and choose the
-``Publishing Target``. Remember to click on the checkbox that you understand that the entire site will be published.
+``Publishing Target``. Remember to check the box confirming that you understand the entire site will be published.
 Finally click on the ``Publish`` button.
 
 
@@ -159,7 +159,7 @@ The **Publishing Queue** tab allows the user to see the items(publishing package
 **Publishing packages** contain the following information:
 
 * ``Package Title``: title for the publishing package
-* ``Publishing Target``: where package is published to/to be published
+* ``Publishing Target``: publishing package destination
 * ``Submitter``:  user that sent/requested publishing package
 * ``Submission Comment``: submission comment for publishing package
 * ``Status``: status of the publishing package and depending on the status, may contain the following:
