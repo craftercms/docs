@@ -293,6 +293,8 @@ You can sign up for `Crafter Cloud <https://craftercms.com/products/crafter-clou
 ^^^^^^
 Docker
 ^^^^^^
+You can run CrafterCMS locally using Docker:
+
 """"""""""""""""""""""""""""""""""""
 Quick Start for Evaluation in Docker
 """"""""""""""""""""""""""""""""""""
