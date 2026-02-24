@@ -818,7 +818,7 @@ The following example shows how to customize the schema to integrate a service w
 
 #. Verify how the GraphQL schema has changed:
 
-    The new field ``odmb.search`` is now available and can be called with different parameters, you can requests
+    The new field ``omdb.search`` is now available and can be called with different parameters, you can request
     different fields depending on the type of each result.
 
     For movies the ``Production`` field is returned:
