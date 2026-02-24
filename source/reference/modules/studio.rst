@@ -5361,7 +5361,7 @@ HTTP Security Response Headers
 Properly configured HTTP response headers help prevent security vulnerabilities like cross-site scripting (XSS),
 clickjacking, and other common types of attacks.
 
-HTTP security response headers for Crafter Studio is configured in the **studio-config-override.yaml** under
+HTTP security response headers for Crafter Studio are configured in the **studio-config-override.yaml** under
 ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``
 
 See :ref:`studio-policy-headers` and :ref:`studio-cors` for more information on how to configure HTTP security response

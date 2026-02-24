@@ -87,8 +87,8 @@ against the schema in real time.
 """""""""""""""""""""""""""""
 Rebuilding the GraphQL Schema
 """""""""""""""""""""""""""""
-To manually rebuild the GraphQL schema, rebuild the context by using the :base_url:`Rebuild GraphQL Schema <_static/api/engine.html#tag/context/operation/rebuildGraphQLSchema>` API.
-Restarting your CrafterCMS installation also rebuilds the GraphQL schema.
+Rebuilding the context rebuilds the GraphQL schema. To manually rebuild the GraphQL schema, use the :base_url:`Rebuild GraphQL Schema <_static/api/engine.html#tag/context/operation/rebuildGraphQLSchema>` API.
+Restarting your CrafterCMS installation also rebuilds the context.
 
 |
 
