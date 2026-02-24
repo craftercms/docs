@@ -45,7 +45,7 @@ Setup Crafter Deployer Target
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 CrafterCMS out of the box has a script to help you create your deployer target for the delivery environment.
 
-In the ``bin`` folder in your CrafterCMS delivery environment, we will use the script ``init-site.sh`` to help us create the deployer target. Remember to publish your project before running the ``init-site.sh`` script..
+In the ``bin`` folder in your CrafterCMS delivery environment, we will use the script ``init-site.sh`` to help us create the deployer target. Remember to publish your project before running the ``init-site.sh`` script.
 
 From your command line, navigate to your ``{Crafter-CMS-delivery-environment-directory}/bin/`` , and execute the init-site script. The following output of ``init-site.sh -h``
 explains how to use the script:
@@ -4111,14 +4111,14 @@ Configuration Properties Encryption
 """"""""""""""""""""""""""""""
 HTTP Security Response Headers
 """"""""""""""""""""""""""""""
-Properly configured HTTP response headers helps prevent security vulnerabilities like cross-site scripting (XSS),
+Properly configured HTTP response headers help prevent security vulnerabilities like cross-site scripting (XSS),
 clickjacking, and other common types of attacks.
 
 HTTP security response headers for Crafter Engine are configured per project in the **site-config.xml**  file under
 ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/`` and in the **server-config.properties** file under
 ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/``
 
-See :ref:`engine-policy-headers` and :ref:`engine-cors` for more information on how to configure HTTPS security response
+See :ref:`engine-policy-headers` and :ref:`engine-cors` for more information on how to configure HTTP security response
 headers in your project.
 
 |hr|

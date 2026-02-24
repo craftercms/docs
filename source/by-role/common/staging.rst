@@ -51,7 +51,7 @@ Under the **<published-repository>** tags, set **<enable-staging-environment>** 
 """"""""""""""""""""""
 Setup Staging Delivery
 """"""""""""""""""""""
-To view your project with respect to the staging preview, we need to set it up for delivery. To setup your project for the staging preview, run the ``init-site`` script and follow the instructions in :ref:`setup-project-for-delivery` using the staging branch in the options. Remember to publish your project to the ``staging`` publishing target before running the ``init-site`` script.
+To view your project with respect to the staging preview, we need to set it up for delivery. To set up your project for the staging preview, run the ``init-site`` script and follow the instructions in :ref:`setup-project-for-delivery` using the staging branch in the options. Remember to publish your project to the ``staging`` publishing target before running the ``init-site`` script.
 
     .. code-block:: bash
 
