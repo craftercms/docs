@@ -14,7 +14,7 @@ Run CrafterCMS
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Try CrafterCMS in Docker
 ^^^^^^^^^^^^^^^^^^^^^^^^
-If you have `Docker <https://www.docker.com/>`_ installed, you can start exploring CrafterCMS in a few minutes. Simply run the following command:
+If you have `Docker <https://www.docker.com/>`_ installed, you can start exploring CrafterCMS locally in a few minutes. Simply run the following command:
 
 .. code-block:: bash
 

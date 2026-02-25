@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.4.1
+:last-updated: 5.0.0
 
 .. _upgrading-craftercms:
 
@@ -11,7 +11,9 @@ The following CrafterCMS versions are able to upgrade to the latest release:
 
 .. list-table::
 
-    * - **4.4**
+    * - **5.0**
+      - **4.5**
+      - **4.4**
       - **4.3**
       - **4.2**
       - **4.1**
@@ -21,21 +23,31 @@ The following CrafterCMS versions are able to upgrade to the latest release:
       - All
       - All
       - All
+      - All
+      - ``3.1.9``
     * -
       -
       -
       -
       -
+      -
+      - ``3.1.12``
     * -
       -
       -
       -
       -
+      -
+      - ``3.1.13``
     * -
       -
       -
       -
       -
+      -
+      - ``3.1.17`` and onward
+
+If you are upgrading from a CrafterCMS 3.1.x version other than the ones listed above, you will need to upgrade to one of the above listed supported 3.1.x upgrade paths release version first before upgrading. See the Upgrading CrafterCMS page for 3.1 here: :docs_base_url:`Upgrading CrafterCMS <3.1/system-administrators/upgrade/index.html>` for more information.
 
 |
 

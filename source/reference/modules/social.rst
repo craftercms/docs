@@ -5,9 +5,9 @@
 
 .. _crafter-social:
 
-==============
-Crafter Social
-==============
+===============================
+Crafter Social |enterpriseOnly|
+===============================
 .. figure:: /_static/images/architecture/crafter-social.webp
     :alt: Crafter Social
     :width: 75%

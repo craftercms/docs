@@ -616,7 +616,7 @@ Project Policy
     :version: 4.0.0
 
 The project policy configuration file allows the administrator to configure constraints for content being added to the project
-(via uploads), such as filename constraints, minimum/maximum size of files, permitted content types or file types (MIME-types), etc.
+(via uploads), such as filename/item name constraints, minimum/maximum size of files, permitted content types or file types (MIME-types), etc.
 
 *Note that the project policy does not apply to content created directly on disk via the Git or APIs.*
 
@@ -2601,6 +2601,25 @@ The following section of Studio's configuration overrides allows you to setup th
 
 |
 
+The following properties allow you to configure the search connection pool max values for total connections and connections per route:
+
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :linenos:
+
+    # The max total connections, if set to -1 the default will be used
+    studio.search.maxTotalConnections: -1
+    # The max connections per route, if set to -1 the default will be used
+    studio.search.maxConnectionsPerRoute: -1
+
+|
+
+The default max connections per route is set to 2 and max total connections is set to 20.
+
 |hr|
 
 .. _cache-settings:
@@ -3202,7 +3221,7 @@ The following section of Studio's configuration overrides allows you to configur
     # studio.validation.regex.USERNAME: "^[a-zA-Z][\\w.\\-@+]+$"
     # studio.validation.regex.GROUP_NAME: "^[a-zA-Z][\\w.\\-]*$"
     # studio.validation.regex.ALPHANUMERIC: "^[a-zA-Z0-9]*$"
-    # studio.validation.regex.SEARCH_KEYWORDS: "^[\\w\\s\\-\\\"\\.\\*]*$"
+    # studio.validation.regex.SEARCH_KEYWORDS: "^[\\w\\s\\-\\\"\\'\\.!@#$%&\\*\\/\\(\\)\\[\\]\\p{IsLatin}]*$"
     # studio.validation.regex.CONTENT_PATH_WRITE: "^/?([\\w\\- ]+/?)*(((crafter\\-level\\-descriptor\\.level)|([\\w\\- ]))+\\.[\\w]+)?$"
     # studio.validation.regex.CONTENT_PATH_READ: "^/?([\\w\\p{IsLatin}@$%^&{}\\[\\]()+\\-=,.:~'`]+(\\s*[\\w\\p{IsLatin}/@$%^&{}\\[\\]()+\\-=,.:~'`])*(/?))*$"
     # studio.validation.regex.CONTENT_FILE_NAME_WRITE: "^((crafter\\-level\\-descriptor\\.level)|([a-z0-9_\\-])+)\\.xml$"
@@ -5189,6 +5208,10 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
     studio.scripting.sandbox.blacklist.enable: true
     # The location of the default blacklist to use (this will have no effect if the sandbox is disabled)
     studio.scripting.sandbox.blacklist.path: classpath:crafter/studio/groovy/blacklist
+    # Indicates if the whitelist should be enabled (this will have no effect if the sandbox is disabled)
+    studio.scripting.sandbox.whitelist.enable: false
+    # The location of the default whitelist to use (this will have no effect if the sandbox is disabled)
+    studio.scripting.sandbox.whitelist.path: classpath:crafter/studio/groovy/whitelist
 
 |
 
@@ -5196,7 +5219,7 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
 Using a Custom Blacklist
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Crafter Studio includes a default blacklist that you can find
-`here <https://github.com/craftercms/studio/blob/support/4.x/src/main/resources/crafter/studio/groovy/blacklist>`_.
+`here <https://github.com/craftercms/studio/blob/support/4.x/src/main/resources/crafter/studio/groovy/blacklist>`__.
 Make sure you review the branch/tag you're using.
 
 To use a custom blacklist follow these steps:
@@ -5212,11 +5235,13 @@ To use a custom blacklist follow these steps:
         :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
         # The location of the default blacklist to use (this will have no effect if the sandbox is disabled)
-        studio.scripting.sandbox.blacklist.path: classpath:crafter/studio/groovy/blacklist
+        studio.scripting.sandbox.blacklist.path: classpath:crafter/studio/extension/groovy/blacklist
 
 #. Restart CrafterCMS
 
 Now you can execute the same script without any issues.
+
+|
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Disabling the Sandbox Blacklist
@@ -5233,10 +5258,95 @@ the blacklist for all projects/sites update the ``studio-config-override.yaml`` 
 
 |
 
+~~~~~~~~~~~~~~~~~~~~~~~~
+Using a Custom Whitelist
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+Crafter Studio includes a default whitelist that you can find `here <https://github.com/craftercms/studio/blob/support/4.x/src/main/resources/crafter/studio/groovy/whitelist>`__.
+Make sure you review the branch/tag you're using.
+
+To use a custom whitelist follow these steps:
+
+#. Copy the default whitelist file to your classpath, for example:
+
+    ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/groovy/whitelist``
+
+#. Add, remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
+#. Update the ``studio-config-override.yaml`` configuration file to load the custom whitelist:
+
+    .. code-block:: yaml
+        :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+        # The location of the default whitelist to use (this will have no effect if the sandbox is disabled)
+        studio.scripting.sandbox.whitelist.path: classpath:crafter/studio/extension/groovy/whitelist
+
+#. Restart CrafterCMS
+
+Now you can execute the same script without any issues.
+
+|
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enabling the Sandbox Whitelist
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+It is possible to only allow the execution of approved expressions included in a list to prevent operations that
+could compromise the system, by using the sandbox whitelist. To create your custom sandbox whitelist, see above.
+
+The sandbox whitelist is disabled by default. To enable the whitelist for all projects/sites update the
+``studio-config-override.yaml`` configuration file:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+    # Indicates if the whitelist should be enabled (this will have no effect if the sandbox is disabled)
+    studio.scripting.sandbox.whitelist.enable: true
+
+|
+
 ~~~~~~~~~~~~~~~~~~~
 Grape Configuration
 ~~~~~~~~~~~~~~~~~~~
 .. include:: /includes/groovy-grape-configuration.rst
+
+|
+
+.. _studio-grapes-download:
+
+~~~~~~~~~~~~~~~
+Grapes Download
+~~~~~~~~~~~~~~~
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+The following allows you to enable or disable automatic Groovy dependency (grapes) downloads for scripts (@grab):
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+    :emphasize-lines: 3
+
+    # Indicates if @Grab annotations should download grapes
+    # If false, only already downloaded grapes will be available
+    studio.scripting.grapes.download.enabled: false
+
+Automatic grapes download is disabled by default. Set ``studio.scripting.grapes.download.enabled`` to true to enable
+automatic grapes download.
+
+|
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Installing Grapes from the Command Line
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. include:: /includes/groovy-grape-install.rst
+
+|
 
 ~~~~~~~~~~~~~~~
 Important Notes
@@ -5850,6 +5960,7 @@ To access the Global Config, click on the ``Navigation Menu`` icon at the top ri
 
 To find out more on what you can configure from the Global Config, see :ref:`studio-config`.
 
+|
 
 .. _main-menu-tool-encryption-tool:
 
@@ -5867,6 +5978,8 @@ The ``Encryption Tool`` allows the user to encrypt sensitive data such as access
 
 For more information on how to use the encryption tool, see :ref:`studio-encryption-tool`.
 
+|
+
 .. _nav-menu-token-management:
 
 """"""""""""""""
@@ -5881,6 +5994,8 @@ create tokens for accessing a project/site in Preview.
     :width: 70%
 
 |
+
+For more information on configuring settings for the Studio access tokens, see :ref:`studio-access-tokens`
 
 .. _api-token:
 
@@ -5954,6 +6069,8 @@ To disable/enable a token, simply click on the slider on the right side of the t
 
 .. note:: Users needs the ``manage_access_token`` permission to create access tokens
 
+|
+
 .. _preview-token:
 
 ~~~~~~~~~~~~~
@@ -6011,6 +6128,58 @@ Here's an example of using the token with Curl, where ``{Generated-Preview-Token
 
 
 The dialog above that shows the preview token generated also shows other examples on how to use the preview token.
+
+|
+
+.. _settings:
+
+"""""""""""""""""""""""""
+Settings |enterpriseOnly|
+"""""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+The ``Settings Tool``  allows the user to configure system settings, such as enabling/disabling maintenance mode.
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-settings.webp
+    :alt: System Administrator - Navigation Menu Settings Tool
+    :align: center
+    :width: 70%
+
+|
+
+~~~~~~~~~~~~~~~~
+Maintenance Mode
+~~~~~~~~~~~~~~~~
+Maintenance mode is a status that tells users that your CrafterCMS install is under maintenance and temporarily unavailable.
+Turning on maintenance mode when making updates, functionality modifications or design changes to your CrafterCMS install
+helps prevent errors and issues and allows for a smooth user experience.
+
+To enable/disable maintenance mode, simply toggle the switch to on or off.
+
+.. image:: /_static/images/system-admin/main-menu/maintenance-mode-on.webp
+    :alt: System Administrator - Maintenance mode toggle switch
+    :align: center
+    :width: 70%
+
+|
+
+When turning on maintenance mode, a dialog will appear to confirm you want to turn on maintenance mode.
+
+.. image:: /_static/images/system-admin/main-menu/maintenance-mode-on-confirmation.webp
+    :alt: System Administrator - Maintenance mode on confirmation dialog
+    :align: center
+    :width: 70%
+
+|
+
+Once maintenance mode is enabled, the UI will show a maintenance mode screen informing users that the system is
+temporarily unavailable, as seen here: :ref:`author-maintenance-mode`.
+For users with the ``allowed_in_maintenance`` permission, access to Crafter Studio/system APIs is still available
+during maintenance mode.
+
+|
 
 """""""
 Account
