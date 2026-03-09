@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 5.0.0
 
 .. index:: Workflow States
 
@@ -16,6 +16,8 @@ To manually set the workflow state of a file in your project, find the file/s yo
     :alt: Site Admin - Project Tools Set Workflow States
     :align: center
 
+|
+
 A dialog will launch prompting you to set the state for your selection, by clicking on the slider next to the state you want to set, then click on the ``Confirm`` button
 
 .. image:: /_static/images/site-admin/project-config-select-state-dialog.webp
@@ -23,10 +25,14 @@ A dialog will launch prompting you to set the state for your selection, by click
     :width: 70%
     :align: center
 
+|
+
 Here are the available workflow states:
 
     * Clear system processing
     * Clear user lock
+    * Clear new
+    * Clear modified
     * Set as published live
     * Clear as published live
     * Set as published to staging

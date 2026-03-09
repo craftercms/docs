@@ -175,8 +175,6 @@ The **Publishing Queue** tab allows the user to see the items(publishing package
     * The content path
 
 
-.. UPDATE NEEDED note that image below needs an update after merge of PR https://github.com/craftercms/studio-ui/pull/4779
-
 .. image:: /_static/images/site-admin/project-tools-publishing-package.webp
     :alt: Project Tools Publishing - Publishing Package
 	:align: center
@@ -225,3 +223,4 @@ Packages in the ``READY_FOR_LIVE`` state can be selected and the publishing pack
     :alt: Project Tools Publishing - Publishing Queue Filter Completed
     :align: center
 
+|
