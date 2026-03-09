@@ -117,7 +117,7 @@ To publish by commit id, let's use a project created using the Website Editorial
 - Go back to Studio and click on ``Project Tools`` -> ``Publishing``
 - Scroll down to the ``Publish on Demand`` section
 - Select the ``Publish changes made via direct git actions against the repository or pulled from a remote repository`` radio button
-- Paste the commit id from the step where we got the commit id, fill in the ``Package Title`` and ``Submission Comment``, then select the ``Publishing Target``, finally, click on the ``Publish`` button
+- Paste the commit id from the earlier step, fill in the ``Package Title`` and ``Submission Comment``, then select the ``Publishing Target``, finally, click on the ``Publish`` button
 
 .. _publish-everything:
 
@@ -168,7 +168,8 @@ The **Publishing Queue** tab allows the user to see the items(publishing package
   - ``Approved`` / ``Rejected``: whether the package is approved/rejected
   - ``Comment`` / ``Reason``: approval comment provided/ rejection reason provided
 
-* ``Submitted On`` / ``Scheduled For``: schedule for publishing the package
+* ``Submitted On``: date package was submitted for publishing
+* ``Scheduled For``: schedule for publishing the package
 * A list of file(s) contained in the publishing package with the following information:
 
     * The content title
@@ -195,7 +196,7 @@ You can filter the publishing queue displayed, based on the following:
     * **Live Failed**: The package failed to be published to live target
     * **Staging Success**: The package has been published to staging
     * **Staging Completed with Errors**: The package has been partially published to staging target due to errors
-    * **Staging Failed**: The package failed to be published to stage target
+    * **Staging Failed**: The package failed to be published to staging target
     * **Completed**: The package has been completed in at least one target
     * **Cancelled**: The package has been cancelled
 
