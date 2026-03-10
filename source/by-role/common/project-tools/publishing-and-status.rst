@@ -117,7 +117,7 @@ To publish by commit id, let's use a project created using the Website Editorial
 - Go back to Studio and click on ``Project Tools`` -> ``Publishing``
 - Scroll down to the ``Publish on Demand`` section
 - Select the ``Publish changes made via direct git actions against the repository or pulled from a remote repository`` radio button
-- Paste the commit id from the earlier step, fill in the ``Package Title`` and ``Submission Comment``, then select the ``Publishing Target``, finally, click on the ``Publish`` button
+- Paste the commit id from the earlier step, fill in the ``Package Title`` and ``Submission Comment``, select the ``Publishing Target``, then click the ``Publish`` button
 
 .. _publish-everything:
 

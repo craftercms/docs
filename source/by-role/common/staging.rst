@@ -8,7 +8,7 @@ Configuring Publishing to Staging Target
 ========================================
 CrafterCMS supports an intermediate publishing target, named ``staging``, where the project can be fully exercised with regards to system and integration points. This staging publishing target allows testing of your project. Once validated in staging, items can be pushed live. This ``staging`` publishing target precedes ``live``.
 
-When staging is setup, the **Publish** dialog gives the user the option to select which publishing target to publish to:
+When staging is set up, the **Publish** dialog gives the user the option to select which publishing target to publish to:
 
 .. image:: /_static/images/system-admin/staging-publish-option.webp
     :width: 75 %
