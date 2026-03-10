@@ -176,9 +176,12 @@ This section allows the user to set up a mail client by configuring the SMTP ser
 
 .. _studio-cors:
 
-""""
-CORS
-""""
+""""""""""""""""""""""""""""""""""""
+Cross-Origin Resource Sharing (CORS)
+""""""""""""""""""""""""""""""""""""
+Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a web page to access resources from
+a different domain.
+
 The following section of Studio's configuration overrides allows you to set CORS
 
 .. code-block:: yaml
@@ -2671,9 +2674,9 @@ The following section of Studio's configuration overrides allows you to configur
 """"""""""""""
 Policy Headers
 """"""""""""""
-~~~~~~~~~~~~~~~~~~~~~~~
-Content Security Policy
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Content Security Policy (CSP) Header
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. version_tag::
 	:label: Since
 	:version: 4.1.2
@@ -2693,9 +2696,9 @@ and the URLs that they can be loaded from.
 To block offending requests, set ``studio.security.headers.contentSecurityPolicy.reportOnly`` to ``false``.
 This property is set to ``true`` by default
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-X-Permitted-Cross-Domain-Policies
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+X-Permitted-Cross-Domain-Policies Header
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The following allows you to configure what other domains you want to allow access to your domain.
 The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow any embedding) by default.
 
@@ -2713,9 +2716,9 @@ The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow an
 
 .. _studio-referrer-policy:
 
-"""""""""""""""
-Referrer Policy
-"""""""""""""""
+""""""""""""""""""""""
+Referrer Policy Header
+""""""""""""""""""""""
 .. version_tag::
     :label: Since
     :version: 4.3.1
@@ -5348,6 +5351,21 @@ Installing Grapes from the Command Line
 Important Notes
 ~~~~~~~~~~~~~~~
 .. include:: /includes/groovy-sandbox-important-notes.rst
+
+|hr|
+
+
+""""""""""""""""""""""""""""""
+HTTP Security Response Headers
+""""""""""""""""""""""""""""""
+Properly configured HTTP response headers help prevent security vulnerabilities like cross-site scripting (XSS),
+clickjacking, and other common types of attacks.
+
+HTTP security response headers for Crafter Studio are configured in the **studio-config-override.yaml** under
+``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``
+
+See :ref:`studio-policy-headers` and :ref:`studio-cors` for more information on how to configure HTTP security response
+headers.
 
 
 |hr|
