@@ -645,6 +645,9 @@ Configuration Files
 ^^^^^^^^^^^^^^^^^^^
 Crafter Engine can be configured at the project/site level or at the instance level.
 
+.. note::
+    Environment variables can be used to override any property defined as ``${env:ENVIRONMENT_VARIABLE}`` in the configuration files. This allows you to inject these properties into a vanilla installation without modifying any actual files, which is especially useful when using Docker or Kubernetes. See :ref:`here <environment-variables>` for a list of environment variables used by CrafterCMS.
+
 .. _engine-site-configuration-files:
 
 """"""""""""""""""""""""""""""""""""""""""""
