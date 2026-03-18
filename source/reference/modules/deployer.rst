@@ -45,6 +45,9 @@ Crafter Deployer can be configured at the global level and individual target lev
 
 #. Individual target configuration files are in ``$CRAFTER_HOME/data/deployer/targets/{siteName}-{environment}.yaml``
 
+.. note::
+    Environment variables can be used to override any property defined as ``${env:ENVIRONMENT_VARIABLE}`` or ``${ENVIRONMENT_VARIABLE}`` in the configuration files. This allows you to inject these properties into a vanilla installation without modifying any actual files, which is especially useful when using Docker or Kubernetes. Environment variables are configured in the ``CRAFTER_HOME/bin/crafter-setenv.sh`` file. See :ref:`here <environment-variables>` for a list of environment variables used by CrafterCMS.
+
 """"""""""""""""""""""""""
 Global Configuration Files
 """"""""""""""""""""""""""
