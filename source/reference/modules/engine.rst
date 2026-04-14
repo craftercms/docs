@@ -45,7 +45,7 @@ Setup Crafter Deployer Target
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 CrafterCMS out of the box has a script to help you create your deployer target for the delivery environment.
 
-In the ``bin`` folder in your CrafterCMS delivery environment, we will use the script ``init-site.sh`` to help us create the deployer target.
+In the ``bin`` folder in your CrafterCMS delivery environment, we will use the script ``init-site.sh`` to help us create the deployer target. Remember to publish your project before running the ``init-site.sh`` script.
 
 From your command line, navigate to your ``{Crafter-CMS-delivery-environment-directory}/bin/`` , and execute the init-site script. The following output of ``init-site.sh -h``
 explains how to use the script:
@@ -645,6 +645,9 @@ Configuration Files
 ^^^^^^^^^^^^^^^^^^^
 Crafter Engine can be configured at the project/site level or at the instance level.
 
+.. note::
+    Environment variables can be used to override any property defined as ``${env:ENVIRONMENT_VARIABLE}`` in the configuration files. This allows you to inject these properties into a vanilla installation without modifying any actual files, which is especially useful when using Docker or Kubernetes. See :ref:`here <environment-variables>` for a list of environment variables used by CrafterCMS.
+
 .. _engine-site-configuration-files:
 
 """"""""""""""""""""""""""""""""""""""""""""
@@ -967,9 +970,12 @@ The following section allows you to configure Single Page Application (SPA) mode
 
 .. _engine-cors:
 
-""""
-CORS
-""""
+""""""""""""""""""""""""""""""""""""
+Cross-Origin Resource Sharing (CORS)
+""""""""""""""""""""""""""""""""""""
+Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a web page to access resources from
+a different domain.
+
 The following section allows you to configure CORS headers in REST API responses when not in preview mode.
 
 .. code-block:: xml
@@ -1491,9 +1497,9 @@ Policy Headers
     :label: Since
     :version: 4.1.2
 
-~~~~~~~~~~~~~~
-Referer Policy
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+Referer Policy Header
+~~~~~~~~~~~~~~~~~~~~~
 The following allows you to configure what information is made available in the Referer header in a request.
 This can be set to a different value as needed.
 
@@ -1506,9 +1512,11 @@ This can be set to a different value as needed.
     # origin-when-cross-origin, strict-origin-when-cross-origin, unsafe-url
     crafter.security.headers.referrerPolicy.value=no-referrer
 
-~~~~~~~~~~~~~~~~~~~~~~~
-Content Security Policy
-~~~~~~~~~~~~~~~~~~~~~~~
+|
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Content Security Policy (CSP) Header
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The following allows you to configure which resources can be loaded (e.g. JavaScript, CSS, Images, etc.)
 and the URLs that they can be loaded from. This should be tuned to the specific requirements of each project.
 
@@ -1521,12 +1529,14 @@ and the URLs that they can be loaded from. This should be tuned to the specific 
     # Set to true to enable the Content-Security-Policy-Report-Only header (this will report in the user agent console instead of actually blocking the requests)
     crafter.security.headers.contentSecurityPolicy.reportOnly=true
 
+|
+
 To block offending requests, set ``crafter.security.headers.contentSecurityPolicy.reportOnly`` to ``false``.
 This property is set to ``true`` by default.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-X-Permitted-Cross-Domain-Policies
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+X-Permitted-Cross-Domain-Policies Header
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The following allows you to configure what other domains you want to allow access to your domain.
 The X-PERMITTED-CROSS-DOMAIN-POLICIES header is set to ``none`` (do not allow any embedding) by default.
 
@@ -4090,6 +4100,20 @@ Configuration Properties Encryption
     crafter.security.encryption.salt=${CRAFTER_ENCRYPTION_SALT}
 
 |
+
+
+""""""""""""""""""""""""""""""
+HTTP Security Response Headers
+""""""""""""""""""""""""""""""
+Properly configured HTTP response headers help prevent security vulnerabilities like cross-site scripting (XSS),
+clickjacking, and other common types of attacks.
+
+HTTP security response headers for Crafter Engine are configured per project in the **site-config.xml**  file under
+``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/`` and in the **server-config.properties** file under
+``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/``
+
+See :ref:`engine-policy-headers` and :ref:`engine-cors` for more information on how to configure HTTP security response
+headers in your project.
 
 |hr|
 

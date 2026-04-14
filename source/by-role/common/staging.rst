@@ -32,6 +32,9 @@ Notice the pages published to staging and live with the same time in the above i
 ------------------------------
 Setting Up Staging per Project
 ------------------------------
+""""""""""""""""
+Enabling Staging
+""""""""""""""""
 Staging is setup per project and by default is not enabled. To enable staging for your project, click on |projectTools| from the **Sidebar**, then click on **Configuration** and select **Project Configuration** from the list.
 
 Under the **<published-repository>** tags, set **<enable-staging-environment>** to ``true``.
@@ -45,7 +48,10 @@ Under the **<published-repository>** tags, set **<enable-staging-environment>** 
 
 |
 
-To view your project with respect to the staging preview, we need to set it up for delivery. To setup your project for the staging preview, run the ``init-site`` script and follow the instructions in :ref:`setup-project-for-delivery` using the staging branch in the options.
+""""""""""""""""""""""
+Setup Staging Delivery
+""""""""""""""""""""""
+To view your project with respect to the staging preview, we need to set it up for delivery. To set up your project, run the ``init-site`` script and follow the instructions in :ref:`setup-project-for-delivery` using the staging branch in the options. Remember to publish your project to the ``staging`` publishing target before running the ``init-site`` script.
 
     .. code-block:: bash
 
