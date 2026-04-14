@@ -459,7 +459,7 @@ This article will describe examples of deploying CrafterCMS in Kubernetes.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Simple Authoring With a Single Instance Kubernetes Deployment
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-CrafterCMS has an example Kubernetes deployment for an Authoring with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/authoring/cluster. This guide covers how to install this example in a Kubernetes cluster.
+CrafterCMS has an example Kubernetes deployment for an Authoring with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/support/4.x/authoring/simple. This guide covers how to install this example in a Kubernetes cluster.
 
 .. important::
    This guide assumes you have a working understanding of Kubernetes
@@ -502,7 +502,7 @@ Create the SSH Keys Secrets (SSH mode only)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 Create the HTTPS Certificate and Key Secrets (HTTPS mode only)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-#. Go to ``kubernetes-deployments/authoring/simple/resources/secrets/git-ssh-server`` (create the folders if they don't exist). This is where you will create the ssh keys.
+#. Go to ``kubernetes-deployments/authoring/simple/resources/secrets/git-https-server`` (create the folders if they don't exist). This is where you will create the HTTPS certificate and key secrets.
 #. Run ``openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt`` and follow the prompts. It's up to you what to enter in each field, **EXCEPT** for the Common Name (CN). This should match
    the Authoring service name. If following the example, the CN value should be ``authoring-svc-headless``.
 
@@ -516,12 +516,12 @@ Create the ``craftercms`` namespace if it doesn't exist yet.
       ➜  kubectl create namespace craftercms
       namespace/craftercms created
 
-If using ``minikube``, pre-pull the Authoring and OpenSearch images to avoid ``context deadline exceeded`` errors (change ``CRAFTERCMS_VERSION`` for the actual CrafterCMS version, e.g. 4.1.1).
+If using ``minikube``, pre-pull the Authoring and OpenSearch images to avoid ``context deadline exceeded`` errors (change ``CRAFTERCMS_VERSION`` for the actual CrafterCMS version, e.g. 4.5.0).
 
    .. code-block:: bash
 
-      ➜  minikube image pull craftercms/authoring_tomcat:4.1.1
-      ➜  minikube image pull opensearchproject/opensearch:2.8.0
+      ➜  minikube image pull craftercms/authoring_tomcat:4.5.0
+      ➜  minikube image pull opensearchproject/opensearch:3.3.2
 
 Go to ``kubernetes-deployments/authoring/simple`` then run ``kubectl apply -k .``
 
@@ -584,7 +584,7 @@ To setup the project in delivery, follow the instructions listed here: :ref:`sim
 """""""""""""""""""""""""""""""""""""
 Simple Delivery Kubernetes Deployment
 """""""""""""""""""""""""""""""""""""
-CrafterCMS has an example Kubernetes deployment for a Delivery with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/delivery/simple. This guide covers how to install this example in a Kubernetes cluster.
+CrafterCMS has an example Kubernetes deployment for a Delivery with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/support/4.x/delivery/simple. This guide covers how to install this example in a Kubernetes cluster.
 
 .. important::
    This guide assumes you have a working understanding of Kubernetes
@@ -673,7 +673,7 @@ For example: ``kubectl logs -n craftercms -f -c tomcat authoring-0``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Bootstrap the Site in Delivery
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-You will need to run the ``init-site.sh`` in order to setup the project in Delivery. Either of the following commands will create the Deployer site target and create the index in Elasticsearch.
+You will need to run the ``init-site.sh`` in order to setup the project in Delivery. Either of the following commands will create the Deployer site target and create the index in OpenSearch.
 
 If Authoring is running with the Git SSH server container:
 
@@ -736,7 +736,7 @@ Also, now when making a change in Authoring and publishing it, the change will b
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Setup Studio Clustering with Kubernetes Deployment |enterpriseOnly|
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-CrafterCMS has an example Kubernetes deployment for a Studio cluster with 2 nodes, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/authoring/cluster. This guide covers how to install this example in a Kubernetes cluster.
+CrafterCMS has an example Kubernetes deployment for a Studio cluster with 2 nodes, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/support/4.x/authoring/cluster. This guide covers how to install this example in a Kubernetes cluster.
 
 .. important::
    This guide assumes you have a working understanding of Kubernetes
@@ -831,7 +831,7 @@ You can easily access Studio through the Authoring load balancer. To get the loa
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Setup Delivery (optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-You can use the Delivery Simple example under https://github.com/craftercms/kubernetes-deployments/tree/master/delivery/simple with this Authoring cluster example:
+You can use the Delivery Simple example under https://github.com/craftercms/kubernetes-deployments/tree/support/4.x/delivery/simple with this Authoring cluster example:
 
 #. The Authoring Cluster example creates an internal load balancer that can be used by the Delivery Deployer to pull the published content from Authoring. The load balancer will need to have a valid domain name and SSL certificate.
    Follow the next steps to setup a DNS record and a certificate for the load balancer in AWS:
