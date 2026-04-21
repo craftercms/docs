@@ -47,6 +47,7 @@ New Features
   - :base_url:`Recalculate a complete publish package user-requested items <_static/api/studio.html#tag/publishing/operation/recalculatePublishPackage>`: POST /api/2/publish/{siteId}/package/{packageId}/recalculate
   - :base_url:`Get publishing status for site <_static/api/studio.html#tag/publishing/operation/getPublishingStatus>`: GET /api/2/publish/{siteId}/status
   - :base_url:`Enable/disable publishing for a site <_static/api/studio.html#tag/publishing/operation/enablePublishing>`: POST /api/2/publish/{siteId}/enable
+  - :base_url:`Get available languages <_static/api/studio.html#tag/system/operation/getAvailableLanguages>`: GET /api/2/system/available_languages
   - :base_url:`Get workflow affected packages <_static/api/studio.html#tag/workflow/operation/getWorkflowAffectedPackages>`: GET /api/2/workflow/{site}/affected_packages
   - :base_url:`Approve request publish submission <_static/api/studio.html#tag/workflow/operation/workflowApprove>`: POST /api/2/workflow/{site}/approve
   - :base_url:`Reject publish package <_static/api/studio.html#tag/workflow/operation/workflowReject>`: POST /api/2/workflow/{site}/reject

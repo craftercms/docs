@@ -30,6 +30,7 @@ Breaking Changes in CrafterCMS 5.0.0
   - /api/1/services/api/1/publish/start.json
   - /api/1/services/api/1/publish/stop.json
   - /api/1/services/api/1/publish/publish-items.json
+  - /api/1/services/api/1/server/get-available-languages.json
   - /api/2/content/children_by_path
   - /api/2/publish/all
   - /api/2/publish/history
