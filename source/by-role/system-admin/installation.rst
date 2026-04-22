@@ -520,7 +520,7 @@ If using ``minikube``, pre-pull the Authoring and OpenSearch images to avoid ``c
 
    .. code-block:: bash
 
-      ➜  minikube image pull craftercms/authoring_tomcat:4.5.0
+      ➜  minikube image pull craftercms/authoring_tomcat:CRAFTERCMS_VERSION
       ➜  minikube image pull opensearchproject/opensearch:3.3.2
 
 Go to ``kubernetes-deployments/authoring/simple`` then run ``kubectl apply -k .``
@@ -627,12 +627,12 @@ Create the ``craftercms`` namespace if it doesn't exist yet.
       ➜  kubectl create namespace craftercms
       namespace/craftercms created
 
-If using ``minikube``, pre-pull the Authoring and OpenSearch images to avoid ``context deadline exceeded`` errors (change ``CRAFTERCMS_VERSION`` for the actual Crafter version, e.g. 4.1.1).
+If using ``minikube``, pre-pull the Delivery and OpenSearch images to avoid ``context deadline exceeded`` errors (change ``CRAFTERCMS_VERSION`` for the actual Crafter version, e.g. 4.5.0).
 
    .. code-block:: bash
 
-      ➜  minikube image pull craftercms/delivery_tomcat:4.0.2
-      ➜  minikube image pull opensearchproject/opensearch:2.8.0
+      ➜  minikube image pull craftercms/delivery_tomcat:CRAFTERCMS_VERSION
+      ➜  minikube image pull opensearchproject/opensearch:3.3.2
 
 Go to ``kubernetes-deployments/delivery/simple`` then run ``kubectl apply -k .``
 
