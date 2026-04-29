@@ -747,7 +747,7 @@ Content Types are one of two core types: **Pages** and **Components**. Both are 
 
 #. Model: The content pieces that will be captured from the content authors for the page or component
 #. View: The view template that will render the content, typically to HTML markup (for Templated, not Headless, projects)
-#. Controller: The controller   that handles the incoming request for the page or component
+#. Controller: The controller that handles the incoming request for the page or component
 
 """""
 Pages

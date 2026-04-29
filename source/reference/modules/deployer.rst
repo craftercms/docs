@@ -1,6 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.2.2
-:orphan:
+:last-updated: 4.5.0
 
 .. index:: Modules; Crafter Deployer
 
@@ -45,6 +44,9 @@ Crafter Deployer can be configured at the global level and individual target lev
    all targets loaded.
 
 #. Individual target configuration files are in ``$CRAFTER_HOME/data/deployer/targets/{siteName}-{environment}.yaml``
+
+.. note::
+    Environment variables can be used to override any property defined as ``${env:ENVIRONMENT_VARIABLE}`` or ``${ENVIRONMENT_VARIABLE}`` in the configuration files. This allows you to inject these properties into a vanilla installation without modifying any actual files, which is especially useful when using Docker or Kubernetes. Environment variables are configured in the ``CRAFTER_HOME/bin/crafter-setenv.sh`` file. See :ref:`here <environment-variables>` for a list of environment variables used by CrafterCMS.
 
 """"""""""""""""""""""""""
 Global Configuration Files
@@ -198,6 +200,13 @@ Target configurations vary a lot between authoring and delivery since an authori
 pulls the files from a remote repository. But target configurations between the same environment don't change a lot. Having said that, the
 following two examples can be taken as a base for most authoring/delivery target configuration files:
 
+|
+
+.. raw:: html
+
+   <details>
+   <summary><a>Authoring Target Configuration File Example</a></summary>
+
 .. code-block:: yaml
   :caption: *Authoring Target Configuration Example (editorial-preview.yaml)*
   :linenos:
@@ -232,6 +241,17 @@ following two examples can be taken as a base for most authoring/delivery target
         # Generates a deployment output file
         - processorName: fileOutputProcessor
 
+.. raw:: html
+
+    </details>
+
+|
+
+.. raw:: html
+
+   <details>
+   <summary><a>Delivery Target Configuration File Example</a></summary>
+
 .. code-block:: yaml
   :caption: *Delivery Target Configuration Example (editorial-dev.yaml)*
   :linenos:
@@ -250,7 +270,7 @@ following two examples can be taken as a base for most authoring/delivery target
           remoteRepo:
             # URL of the remote repo
             url: /opt/crafter/authoring/data/repos/sites/editorial/published
-            # Live of the repo to pull
+            # Branch of the repo to pull
             branch: live
         # Calculates the Git differences with the latest commit processed
         - processorName: gitDiffProcessor
@@ -267,6 +287,12 @@ following two examples can be taken as a base for most authoring/delivery target
           url: ${target.engineUrl}/api/1/site/cache/clear.json?crafterSite=${target.siteName}
         # Generates a deployment output file
         - processorName: fileOutputProcessor
+
+.. raw:: html
+
+    </details>
+
+|
 
 As you can see from the examples above, most of the configuration belongs to the deployment pipeline section. Each
 of the YAML list entries is an instance of a ``DeploymentProcessor`` prototype Spring bean that is already defined
@@ -328,6 +354,13 @@ The properties listed above are configured in ``CRAFTER_HOME/bin/crafter-deploye
       - Allows you to configure a target with a single search cluster
     * - :ref:`deployer-multiple-search-cluster`
       - Allows you to configure a target with multiple search clusters
+    * - :ref:`deployer-search-connection-pool`
+
+        .. version_tag::
+            :label: Since
+            :version: 4.5.0
+
+      - Allows you to configure search connection pool max values for total connections and connections per route
     * - :ref:`deployer-indexing-mime-types`
       - Allows you to configure MIME types used for document indexing
     * - :ref:`deployer-indexing-remote-documents-path-pattern`
@@ -431,6 +464,41 @@ be performed against all search clusters:
               # Override the global auth for this cluster
               username: search2
               password: passw0rd2
+
+.. _deployer-search-connection-pool:
+
+""""""""""""""""""""""
+Search Connection Pool
+""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+The following allows you to configure the search connection pool max values for total connections and connections per route
+for  a single search cluster (``target.search.openSearch``), read cluster (``readCluster``) or write cluster (``writeClusters``):
+
+.. code-block:: yaml
+  :linenos:
+  :caption: Target configuration for search connection pool max values
+  :emphasize-lines: 4-6, 9-11, 14-15
+
+  target:
+    search:
+      openSearch:
+        maxTotalConnections: 40
+        maxConnectionsPerRoute: 10
+        readCluster:
+          urls:
+            - ${env:SEARCH_URL}
+          maxTotalConnections: 40
+          maxConnectionsPerRoute: 10
+        writeClusters:
+          - urls:
+              - ${env:SEARCH_URL}
+            maxTotalConnections: 40
+            maxConnectionsPerRoute: 10
+
+The default max connections per route is set to 2 and max total connections is set to 20.
 
 .. _deployer-indexing-mime-types:
 
@@ -942,6 +1010,7 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
 .. code-block:: yaml
     :linenos:
     :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
+    :emphasize-lines: 6
 
     deployer:
       main:
@@ -956,6 +1025,16 @@ The Groovy sandbox is enabled by default and can be disabled by changing the pro
               # The location of the blacklist to use for all targets
               # (this will have no effect if the sandbox is disabled)
               path: 'classpath:groovy/blacklist'
+            whitelist:
+              # Indicates if the whitelist should be enabled for all targets
+              # (this will have no effect if the sandbox is disabled)
+              enabled: false
+              # The location of the whitelist to use for all targets
+              # (this will have no effect if the sandbox is disabled)
+              path: 'file:${deployer.main.config.folderPath}/groovy/whitelist,classpath:groovy/whitelist'
+              # List of patterns for that is allowed to call as `staticMethod java.lang.System getenv java.lang.String` parameter (regexes separated by commas)
+              # NOTE: This property is applied even if the whitelist is disabled
+              getenvRegex: crafter_.*
 
 |
 
@@ -987,6 +1066,8 @@ To use a custom blacklist follow these steps:
 
 Now you can execute the same script without any issues.
 
+|
+
 """""""""""""""""""""""""""""""
 Disabling the Sandbox Blacklist
 """""""""""""""""""""""""""""""
@@ -1005,15 +1086,112 @@ restrictions. To disable the blacklist for all targets update the ``application.
 
 |
 
+""""""""""""""""""""""""
+Using a Custom Whitelist
+""""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+Crafter Deployer includes a default whitelist that you can find `here <https://github.com/craftercms/deployer/blob/support/4.x/src/main/resources/groovy/whitelist>`__. Make sure you review the branch/tag you're using.
+
+To use a custom whitelist follow these steps:
+
+#. Copy the default whitelist file to your classpath, for example:
+
+    ``CRAFTER_HOME/bin/crafter-deployer/config/groovy/whitelist``
+
+#. Add, remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
+#. Update the ``application.yaml`` configuration file to load the custom whitelist:
+
+    .. code-block:: yaml
+        :caption: ``CRAFTER_HOME/bin/crafter-deployer/config/application.yaml``
+
+        sandbox:
+          whitelist:
+            # The location of the whitelist to use for all targets
+            # (this will have no effect if the sandbox is disabled)
+            path: 'file:${deployer.main.config.folderPath}/groovy/whitelist,classpath:groovy/whitelist'
+
+#. Restart CrafterCMS
+
+Now you can execute the same script without any issues.
+
+|
+
+""""""""""""""""""""""""""""""
+Enabling the Sandbox Whitelist
+""""""""""""""""""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+It is possible to only allow the execution of approved expressions included in a list to prevent operations that
+could compromise the system, by using the sandbox whitelist. To create your custom sandbox whitelist, see above.
+
+The sandbox whitelist is disabled by default. To enable the whitelist for all targets update the
+``application.yaml`` configuration file:
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
+
+    sandbox:
+      whitelist:
+        # Indicates if the whitelist should be enabled for all targets
+        # (this will have no effect if the sandbox is disabled)
+        enabled: true
+
+|
+
 """""""""""""""""""
 Grape Configuration
 """""""""""""""""""
 .. include:: /includes/groovy-grape-configuration.rst
 
+|
+
+.. _deployer-grapes-download:
+
+"""""""""""""""
+Grapes Download
+"""""""""""""""
+.. version_tag::
+    :label: Since
+    :version: 4.5.0
+
+The following allows you to enable or disable automatic Groovy dependency (grapes) downloads for scripts (@grab):
+
+.. code-block:: yaml
+    :caption: *CRAFTER_HOME/bin/crafter-deployer/config/application.yaml*
+    :emphasize-lines: 8
+
+    deployer:
+        main:
+            scripting:
+                grapes:
+                    # Indicates if grapes automatic downloading should be enabled for all targets
+                    # If false, already downloaded grapes will be used, but no new grapes will be downloaded
+                    download:
+                        enabled: false
+
+Automatic grapes download is disabled by default. Set ``deployer.main.scripting.grapes.download.enabled`` to true to
+enable automatic grapes download.
+
+|
+
+"""""""""""""""""""""""""""""""""""""""
+Installing Grapes from the Command Line
+"""""""""""""""""""""""""""""""""""""""
+.. include:: /includes/groovy-grape-install.rst
+
+|
+
 """""""""""""""
 Important Notes
 """""""""""""""
 .. include:: /includes/groovy-sandbox-important-notes.rst
+
+|
 
 ^^^^^^^^^^^^^^^^^^^^
 Cipher Configuration
@@ -1383,6 +1561,13 @@ and indexes everything under ``/static-assets/documents/contracts/2024-contract.
 
 Below is an example Deployer configuration for jackets. Note that in the example below, jacket files live under ``/site/documents``:
 
+|
+
+.. raw:: html
+
+    <details>
+    <summary><a>Example Deployer configuration for jackets</a></summary>
+
 .. code-block:: yaml
     :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
     :linenos:
@@ -1468,6 +1653,12 @@ Below is an example Deployer configuration for jackets. Note that in the example
               - //item/key
               - //item/url
               - //*[@remote="true"]
+
+.. raw:: html
+
+    </details>
+
+|
 
 """""""
 Example
@@ -1627,6 +1818,7 @@ to meet specific requirements. Some examples of the use cases that can be addres
 - Pushing content created/edited in Crafter Studio to an external git repository
 - Pulling content created/edited from an external git repository
 - Execute actions every time a deployment succeeds or fails
+- Pushing content to external systems like databases upon a publish
 
 .. note::
   When adding processors or changing the deployment pipeline for a target keep in mind that the processors will be
@@ -2014,6 +2206,202 @@ Below is a script that only includes a file from the change-set if a parameter i
 
    // return the new change set
    return originalChangeSet
+
+|
+
+Here's another example script that pushes content (uploads a document) to an external service upon publish.
+In this example, for every newly created file and upon publish (changeset), if the path is a static asset (path starts with "/static-assets"),
+it reads the file from the content store and uploads it (multipart/form-data) to a third‑party HTTP API using OkHttp,
+streaming the file upload so the file is read while sending.
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample script to upload document to an external service</a></summary>
+
+.. code-block:: groovy
+    :caption: *Example Groovy script to be run by a script processor*
+    :linenos:
+
+    @Grab(group='com.squareup.okhttp3', module='okhttp', version='4.12.0', initClass=false)
+
+    import okhttp3.MediaType
+    import okhttp3.MultipartBody
+    import okhttp3.OkHttpClient
+    import okhttp3.Request
+    import okhttp3.RequestBody
+    import okhttp3.Response
+
+    import okio.BufferedSink
+    import okio.Okio
+
+    import java.util.concurrent.TimeUnit
+
+    // =====================================================
+    // Config
+    // =====================================================
+    def token = applicationContext.getEnvironment().getProperty('target.myservice.token')
+
+    def agentId  = applicationContext.getEnvironment().getProperty('target.myservice.agentId')
+
+    OkHttpClient client = new OkHttpClient.Builder()
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(300, TimeUnit.SECONDS)
+            .writeTimeout(300, TimeUnit.SECONDS)
+            .build()
+
+    // =====================================================
+    // Helpers
+    // =====================================================
+    class ContentAccessHelper {
+        def contentStoreService
+        def context
+        def remoteAssetPattern = ""
+
+        def ContentAccessHelper(contentStoreService, context) {
+            this.contentStoreService = contentStoreService
+            this.context = context
+        }
+
+        /**
+         * Get the input stream of an asset
+         *  This service should be used to get asset input streams for the following 3 reasons:
+         * 1. This code works with blob store and without
+         * 2. This code does not assume direct access to system resources (which is disabled for scripting)
+         * 3. This code future-proofs your code for other repository updates
+         */
+        def retrieveStaticAsset(binaryPath) throws Exception {
+
+            // item is in our repository
+            def binaryContent = contentStoreService.findContent(this.context, binaryPath)
+
+            if(binaryContent != null) {
+                return binaryContent
+            }
+            else {
+                throw new Exception("Content at path returned null via findContent {}", binaryPath)
+            }
+        }
+
+        def pathToFilename(contentPath) {
+            return contentPath.substring(contentPath.lastIndexOf("/")+1)
+        }
+
+        /**
+         * @return true if path is an asset
+         */
+        def isAsset(contentPath) {
+            return (contentPath) ? contentPath.startsWith("/static-assets") : false
+        }
+    }
+
+    /**
+     * Upload the document to Acme Service (Example an LLM/Rag framework) (streaming)
+     */
+    def addDocumentToMyThirdPartyService(agentId, fileName, fileLength, fileInputStream, client, token) {
+
+        MediaType MEDIA_TYPE_OCTET = MediaType.parse("application/octet-stream")
+
+        // Streaming RequestBody: OkHttp will read from disk as it writes to the network
+        RequestBody fileBody = new RequestBody() {
+            @Override
+            MediaType contentType() {
+                return MEDIA_TYPE_OCTET
+            }
+
+            @Override
+            long contentLength() throws IOException {
+                return fileLength
+            }
+
+            @Override
+            void writeTo(BufferedSink sink) throws IOException {
+                def source = Okio.source(fileInputStream)
+                try {
+                    sink.writeAll(source)
+                } finally {
+                    fileInputStream.close()
+                }
+            }
+        }
+
+        // Multipart body (form + file)
+        RequestBody requestBody = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                // .addFormDataPart("description", "A file description here")
+                .addFormDataPart("file", fileName, fileBody)
+                .build()
+
+        // Third Party URL
+        String sourceUrl = "https://api.mythirdparty.com/v1/agents/${agentId}/sources"
+
+        // Build the request
+        Request request = new Request.Builder()
+                .url(sourceUrl)
+                .post(requestBody)
+                .header("Authorization", "Bearer "+token)
+                .build()
+
+        // Execute synchronously
+        Response response = client.newCall(request).execute()
+
+        try {
+            String body = response.body()?.string()
+            println "Status: ${response.code()}"
+            println "Response body:\n${body}"
+            // do something or return success/failure
+            // this is a happy path example
+        } finally {
+            response.close()
+        }
+    }
+
+    /**
+     * Process a changeset
+     */
+    def processChangeSet(changeSet, contentAccessHelper, token, agentId, client) {
+        changeSet.getCreatedFiles().each { itemPath ->
+            if(contentAccessHelper.isAsset(itemPath)) {
+
+                def asset = contentAccessHelper.retrieveStaticAsset(itemPath)
+                def fileName = contentAccessHelper.pathToFilename(itemPath)
+                def fileLength = asset.getLength()
+                def fileInputStream = asset.getInputStream()
+
+                addDocumentToMyThirdPartyService(agentId, fileName, fileLength, fileInputStream, client, token)
+            }
+            else {
+                println "Not a document (skipping): ${itemPath}"
+            }
+        }
+
+        // changeSet.getUpdatedFiles().each { itemPath ->
+        //     Don't do anything for now
+        // }
+
+        // changeSet.getDeletedFiles().each { itemPath ->
+        //     Don't do anything for now
+        // }
+
+    }
+
+    // =====================================================
+    // Main flow
+    // =====================================================
+    def contextFactory = applicationContext.getBean("contextFactory")
+    def contentStoreService = applicationContext.getBean("crafter.contentStoreService")
+    def context = contextFactory.getObject()
+    def contentAccessHelper = new ContentAccessHelper(contentStoreService, context)
+
+    processChangeSet(originalChangeSet, contentAccessHelper, token, agentId, client)
+
+    return originalChangeSet
+
+.. raw:: html
+
+   </details>
+
+|
 
 """""""""""""""""""""""""""""""""""""
 File Based Deployment Event Processor
@@ -2494,6 +2882,11 @@ Full Pipeline Example
 ^^^^^^^^^^^^^^^^^^^^^
 The following example shows how the deployment processors work together to deliver a serverless site using AWS services.
 
+.. raw:: html
+
+    <details>
+    <summary><a>Example serverless delivery pipeline</a></summary>
+
 .. code-block:: yaml
   :linenos:
   :caption: *Serverless Delivery Pipeline*
@@ -2569,6 +2962,10 @@ The following example shows how the deployment processors work together to deliv
         - admin@example.com
         - author@example.com
       status: ON_ANY_FAILURE
+
+.. raw:: html
+
+    </details>
 
 |
 

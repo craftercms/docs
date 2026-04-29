@@ -18,35 +18,76 @@ What is a Project/Site?
 -----------------------
 A project or a site is a collection of related pages/components and assets.
 
-For the project repository, the project structure looks like this::
+For the project repository, the project structure looks like this on creation:
 
-        {REPOSITORY_ROOT}/sites/PROJECTNAME/sandbox/
-            config
-                engine
-                studio
-                    administration
-                    content-types
-                    data-sources
-                    dependency
-                    workflow
-            scripts
-                classes
-                components
-                pages
-                rest
-            site
-                components
-                taxonomy
-                website
-            static-assets
-                css
-                fonts
-                images
-                js
-            templates
-                system
-                web
+.. code-block:: text
+    :caption: *Project Repository Structure*
+    :emphasize-lines: 2
 
+        {REPOSITORY_ROOT}/sites/PROJECTNAME/
+            sandbox/
+                config/
+                    engine/
+                    studio/
+                        administration/
+                        content-types/
+                        dependency/
+                        workflow/
+                scripts/
+                    classes/
+                    components/
+                    pages/
+                    rest/
+                site/
+                    components/
+                    taxonomy/
+                    website/
+                sources/
+                static-assets/
+                    css/
+                    fonts/
+                    images/
+                    js/
+                templates/
+                    web/
+
+|
+
+After publishing your project for the first time, a ``published`` folder is created by CrafterCMS:
+
+.. code-block:: text
+    :caption: *Project Repository Structure After First Publish*
+    :emphasize-lines: 3
+
+    {REPOSITORY_ROOT}/sites/PROJECTNAME/
+        sandbox/
+        published/
+            config/
+                engine/
+                studio/
+                    administration/
+                    content-types/
+                    dependency/
+                    workflow/
+            scripts/
+                classes/
+                components/
+                pages/
+                rest/
+            site/
+                components/
+                taxonomy/
+                website/
+            sources/
+            static-assets/
+                css/
+                fonts/
+                images/
+                js/
+            templates/
+                web/
+
+|
 
 Credentials may be required in some project configurations. For more information on how to
 manage/encode your secrets such as AWS credentials, please see :ref:`managing-secrets`.
@@ -294,7 +335,10 @@ See :ref:`here <blob-stores-asset-access>` for more information
 AWS S3
 ~~~~~~
 AWS S3 is a great option for very large externally managed artifacts.
-See :ref:`here <use-s3-to-store-assets>` for more information
+
+.. include:: /includes/s3-compatible-storage-note.rst
+
+See :ref:`here <use-s3-to-store-assets>` for more information on using S3 to store assets.
 
 ~~~
 Box

@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.0
+:last-updated: 4.5.0
 
 .. _graphql:
 
@@ -27,7 +27,7 @@ To implement a project that uses GraphQL you would follow a workflow like this:
 All content changes made by authors in Crafter Studio will be immediately available in GraphQL queries.
 
 When a change is made in the content model, for example adding a new field or creating a new content-type, the
-GraphQL schema will be rebuilt to reflect the same changes. So for a CrafterCMS projecct that uses GraphQL queries the
+GraphQL schema will be rebuilt to reflect the same changes. So for a CrafterCMS project that uses GraphQL queries the
 development process would look like this:
 
 1. Developers define the base content model
@@ -40,45 +40,61 @@ development process would look like this:
 You can also use the CrafterCMS GraphQL API from an external project or application, however in this case you will need to
 handle the schema reload using third party tools.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""
 Using GraphiQL in Crafter Studio
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""
 GraphiQL is a simple GraphQL client that you can use in Crafter Studio to run GraphQL queries and explore the schema
 documentation for a site without the need of any other tool. To access GraphiQL follow these steps:
 
 1. Login to Crafter Studio
 2. Click the name of your project from the ``Projects`` screen and open the left sidebar
 3. Click ``Project Tools`` in the left sidebar
-4. Click ``GraphiQL`` in the left sidebar
+4. Click ``GraphQL`` in the left sidebar
 
-To explore the GraphQL schema you can click the ``Docs`` icon on the right side:
+To explore the GraphQL schema you can click the ``Docs`` icon on the left side:
 
 .. image:: /_static/images/developer/graphql/graphql.webp
-        :width: 75%
-        :alt: GraphiQL
+        :width: 95%
+        :alt: GraphQL
         :align: center
+
+|
 
 GraphiQL provides a convenient search navigation to quickly find a specific type or field:
 
 .. image:: /_static/images/developer/graphql/graphiql-doc.webp
-        :width: 75%
+        :width: 95%
         :alt: GraphiQL Schema Documentation Explorer
         :align: center
+
+|
 
 To test GraphQL queries type them in the left text editor, GraphiQL will provide suggestions and validate the query
 against the schema in real time.
 
 .. image:: /_static/images/developer/graphql/graphiql-query.webp
-        :width: 75%
+        :width: 95%
         :alt: GraphiQL Query Editor
         :align: center
+
+|
 
 .. note::
     If the GraphQL server host name used is not ``localhost``, the ``<graphql-server-url />`` in your proxy configuration file needs to be set to the appropriate url. For more information on the proxy configuration file, see: :ref:`proxy-configuration`
 
-^^^^^^^^^^^^^^^^
+|
+
+"""""""""""""""""""""""""""""
+Rebuilding the GraphQL Schema
+"""""""""""""""""""""""""""""
+Rebuilding the context rebuilds the GraphQL schema. To manually rebuild the GraphQL schema, use the :base_url:`Rebuild GraphQL Schema <_static/api/engine.html#tag/context/operation/rebuildGraphQLSchema>` API.
+Restarting your CrafterCMS installation also rebuilds the context.
+
+|
+
+""""""""""""""""
 GraphQL Examples
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 Here you can find some examples on how to query content using GraphQL. The following examples use the built-in
 ``Website Editorial`` blueprint but the same concepts apply to any CrafterCMS site.
 
@@ -106,8 +122,8 @@ One of simplest GraphQL queries you can run in CrafterCMS sites is to find all i
       items { # list of items found
         # content-type fields that will be returned
         # (names are based on the content-type configuration)
-        title
-        author
+        title_t
+        author_s
         date_dt
       }
     }
@@ -191,8 +207,8 @@ will return only the first five items found.
       items { # list of items found
         # content-type fields that will be returned
         # (names are based on the content-type configuration)
-        title
-        author
+        title_t
+        author_s
         date_dt
       }
     }
@@ -214,8 +230,8 @@ the ``sortBy`` and ``sortOrder`` parameters. For example you can use the ``date_
       items { # list of items found
         # content-type fields that will be returned
         # (names are based on the content-type configuration)
-        title
-        author
+        title_t
+        author_s
         date_dt
       }
     }
@@ -237,9 +253,9 @@ a specific author.
       items { # list of items found
         # content-type fields that will be returned
         # (names are based on the content-type configuration)
-        title
+        title_t
         # only return articles from this author
-        author (filter: { matches: "Jane" })
+        author_s (filter: { regex: "Jane.*" })
         date_dt
       }
     }
@@ -256,8 +272,8 @@ Additionally you can create complex filters using expressions like ``and``, ``or
     page_article {
       total
       items {
-        title
-        author
+        title_t
+        author_s
         date_dt
         # Filter articles that are not featured
         featured_b (
@@ -270,7 +286,7 @@ Additionally you can create complex filters using expressions like ``and``, ``or
           }
         )
         # Filter articles from category style or health
-        categories {
+        categories_o {
           item {
             key (
               filter: {
@@ -291,7 +307,7 @@ Additionally you can create complex filters using expressions like ``and``, ``or
     }
   }
 
-You can also include fields from child components in your model, this applies to fields like ``node-selector``,
+You can also include fields from child components in your model, this applies to fields like ``node-selector`` (item selector control),
 ``checkbox-group`` and ``repeat`` groups. Filters can also be added to fields from child components.
 
 .. code-block:: text
@@ -306,11 +322,11 @@ You can also include fields from child components in your model, this applies to
       items { # list of items found
         # content-type fields that will be returned
         # (names are based on the content-type configuration)
-        title
+        title_t
         # only return articles from this author
-        author (filter: { matches: "Jane" })
+        author_s (filter: { regex: "Jane.*" })
         date_dt
-        categories {
+        categories_o {
           item {
             # only return articles from this category
             key (filter: { matches: "health" })
@@ -326,20 +342,20 @@ type fields).
 
 .. code-block:: text
    :linenos:
-   :caption: Query for 2016 and 2017 articles using aliases
+   :caption: Query for 2020 and 2021 articles using aliases
 
    # root query
    {
-     # query for 2016 articles
-     articlesOf2016: page_article {
+     # query for 2020 articles
+     articlesOf2020: page_article {
        items {
-         localId(filter: {regex: ".*2016.*"})
+         localId(filter: {regex: ".*2020.*"})
        }
      },
-     # query for 2017 articles
-     articlesOf2017: page_article {
+     # query for 2021 articles
+     articlesOf2021: page_article {
        items {
-         localId(filter: {regex: ".*2017.*"})
+         localId(filter: {regex: ".*2021.*"})
        }
      }
    }
@@ -364,8 +380,8 @@ queries by extracting repeated fields or request specific fields for different c
       items {
         # Fragment spread
         ... CommonFields
-        title
-        author
+        title_t
+        author_s
       }
     }
 
@@ -374,8 +390,8 @@ queries by extracting repeated fields or request specific fields for different c
       items {
         # Fragment spread
         ... CommonFields
-        title
-        icon
+        title_t
+        icon_s
       }
     }
   }
@@ -395,13 +411,13 @@ queries by extracting repeated fields or request specific fields for different c
 
         # Query for fields from specific types
         ... on page_article {
-          title
-          author
+          title_t
+          author_s
         }
 
         ... on component_feature {
-          title
-          icon
+          title_t
+          icon_s
         }
       }
     }
@@ -438,9 +454,9 @@ for the request scope). Additionally there is a global variable specific for thi
   All customizations to the GraphQL schema need to be done programmatically, you can find more details & examples in
   the `GraphQL Java documentation <https://www.graphql-java.com>`_
 
-^^^^^^^
+"""""""
 Example
-^^^^^^^
+"""""""
 The following example shows how to customize the schema to integrate a service written in Groovy.
 
 .. note::
@@ -802,7 +818,7 @@ The following example shows how to customize the schema to integrate a service w
 
 #. Verify how the GraphQL schema has changed:
 
-    The new field ``odmb.search`` is now available and can be called with different parameters, you can requests
+    The new field ``omdb.search`` is now available and can be called with different parameters, you can request
     different fields depending on the type of each result.
 
     For movies the ``Production`` field is returned:
