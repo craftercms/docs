@@ -3042,8 +3042,8 @@ Below is a sample of Studio workflow dialog messages defined in our notification
 ~~~~~~~~~~~~~~~~~~~
 Configure Templates
 ~~~~~~~~~~~~~~~~~~~
-Below is an example of a configured email messages for each point in the workflow, found in between the tag
-``<emailTemplates>`` in the notifications configuration file.
+Below is an example of configured email messages for each point in the workflow, found between ``<emailTemplates>`` tags
+in the notifications configuration file.
 
 .. raw:: html
 
