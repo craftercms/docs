@@ -6009,8 +6009,8 @@ create tokens for accessing a project/site in Preview.
 
 |
 
-Note that only users that have the required permission ``manage_access_token``, such as users with the system
-administrator role, has access to the ``Token Management Tool``.
+Note that only users with the required permission ``manage_access_token``, such as users with the ``system_admin`` role,
+have access to the ``Token Management Tool``.
 
 For more information on configuring settings for the Studio access tokens, see :ref:`studio-access-tokens`
 
