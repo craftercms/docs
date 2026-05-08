@@ -152,13 +152,15 @@ for authoring and delivery. A similar approach can be used for other HTTPd serve
 """""""""""""""""""""""""""""""
 Reverse Proxy with Apache HTTPd
 """""""""""""""""""""""""""""""
-Below are the directives used for setting up a reverse proxy with Apache:
+Below are the directives used for setting up a reverse proxy with Apache.
+The directive on line 7 below is used for setting up the websocket proxy for Studio (authoring) events.
 
 .. _configure-reverse-proxy-for-authoring:
 
 .. code-block:: apache
    :caption: *Authoring Configuration*
-   :emphasize-lines: 7
+   :emphasize-lines: 4,7-9
+   :linenos:
 
    <VirtualHost *:80>
         ServerName authoring.example.com
@@ -181,6 +183,8 @@ Below are the directives used for setting up a reverse proxy with Apache:
 
 .. code-block:: apache
    :caption: *Delivery Configuration*
+   :emphasize-lines: 31,37,38
+   :linenos:
 
    <VirtualHost *:80>
         ServerName example.com
@@ -234,7 +238,7 @@ specified in your config should be proxied to ``http://localhost:8080/`` for you
 as a reverse proxy setup.
 
 The ``ProxyPassMatch`` directive is equivalent to ``ProxyPass`` but makes use of regular expressions instead of simple
-prefix matching. In the above authoring example, the ``ProxyPassMatch`` line configures the websocket for Studio.
+prefix matching. In the above authoring example, the ``ProxyPassMatch`` line configures the websocket for Studio events.
 
 """"""""""""""""""""""""
 Reverse Proxy with NGINX
@@ -245,6 +249,7 @@ Below are the directives used for setting up a reverse proxy with NGINX:
 
 .. code-block:: nginx
     :caption: *NGINX Authoring Configuration*
+    :linenos:
 
     server {
         listen 80;
@@ -277,6 +282,7 @@ Below are the directives used for setting up a reverse proxy with NGINX:
 
 .. code-block:: nginx
     :caption: *NGINX Delivery Configuration*
+    :linenos:
 
     server {
         listen 80;
