@@ -149,12 +149,16 @@ Reverse Proxy (Apache HTTPd / NGINX)
 It's often times desirable to use a reverse proxy like Apache HTTPd, NGINX, or a CDN to front the CrafterCMS Studio and Engine web applications. This can be helpful for faster serving of static assets, caching, and SSL termination among other benefits. In this section, we discuss how to configure a reverse proxy using Apache 2 HTTPd vhost configuration
 for authoring and delivery. A similar approach can be used for other HTTPd servers.
 
+"""""""""""""""""""""""""""""""
+Reverse Proxy with Apache HTTPd
+"""""""""""""""""""""""""""""""
 Below are the directives used for setting up a reverse proxy with Apache:
 
 .. _configure-reverse-proxy-for-authoring:
 
 .. code-block:: apache
    :caption: *Authoring Configuration*
+   :emphasize-lines: 7
 
    <VirtualHost *:80>
         ServerName authoring.example.com
@@ -170,6 +174,8 @@ Below are the directives used for setting up a reverse proxy with Apache:
         ErrorLog ${APACHE_LOG_DIR}/crafter-studio-error.log
         CustomLog ${APACHE_LOG_DIR}/crafter-studio-access.log combined
    </VirtualHost>
+
+|
 
 .. _configure-reverse-proxy-for-delivery:
 
@@ -220,13 +226,19 @@ Below are the directives used for setting up a reverse proxy with Apache:
         CustomLog ${APACHE_LOG_DIR}/crafter-engine-access.log combined
     </VirtualHost>
 
-The ``ProxyPreserveHost`` directive indicates whether it uses incoming Host HTTP request header for proxy request
+The ``ProxyPreserveHost`` directive indicates whether it uses incoming Host HTTP request header for proxy request.
 
 The ``ProxyPass`` and ``ProxyPassReverse`` directives in the above example specify that traffic to the server name
 specified in your config should be proxied to ``http://localhost:8080/`` for your authoring install and
 ``http://localhost:9080/`` for your delivery install. The ``ProxyPassReverse`` distinguishes your configuration
 as a reverse proxy setup.
 
+The ``ProxyPassMatch`` directive is equivalent to ``ProxyPass`` but makes use of regular expressions instead of simple
+prefix matching. In the above authoring example, the ``ProxyPassMatch`` line configures the websocket for Studio.
+
+""""""""""""""""""""""""
+Reverse Proxy with NGINX
+""""""""""""""""""""""""
 Below are the directives used for setting up a reverse proxy with NGINX:
 
 .. _configure-reverse-proxy-for-authoring-nginx:
@@ -258,6 +270,8 @@ Below are the directives used for setting up a reverse proxy with NGINX:
         error_log ${NGINX_LOG_DIR}/crafter-studio-error.log;
         access_log ${NGINX_LOG_DIR}/crafter-studio-access.log combined;
     }
+
+|
 
 .. _configure-reverse-proxy-for-delivery-nginx:
 
