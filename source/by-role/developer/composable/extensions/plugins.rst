@@ -958,52 +958,6 @@ to place our plugin files in,
 
 |
 
-Here are the plugin files:
-
-.. raw:: html
-
-   <details>
-   <summary><a>authoring/content-types/component/mycomponent/config.xml</a></summary>
-
-.. literalinclude:: /_static/code/developer/plugins/component-content-type/config.xml
-   :language: xml
-   :linenos:
-
-.. raw:: html
-
-   </details>
-
-
-.. raw:: html
-
-   <details>
-   <summary><a>authoring/content-types/component/mycomponent/form-definition.xml</a></summary>
-
-.. literalinclude:: /_static/code/developer/plugins/component-content-type/form-definition.xml
-   :language: xml
-   :linenos:
-
-.. raw:: html
-
-   </details>
-
-
-.. raw:: html
-
-   <details>
-   <summary><a>authoring/content-types/component/mycomponent/controller.groovy</a></summary>
-
-.. literalinclude:: /_static/code/developer/plugins/component-content-type/controller.groovy
-   :language: groovy
-   :linenos:
-
-.. raw:: html
-
-   </details>
-
-|
-
-
 The plugin is now ready to be tested. We'll install our plugin located  under ``/users/myuser/component-plugin``
 using the ``crafter-cli`` command ``copy-plugin`` to test it out to a project named editorial
 
