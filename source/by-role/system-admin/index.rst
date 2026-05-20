@@ -1,10 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
 
-.. meta::
-    :description lang=en:
-        CrafterCMS documentation for the system administrator role.
-
 .. index:: System Administrator, System Administration
 
 .. meta::

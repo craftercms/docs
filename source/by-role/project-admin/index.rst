@@ -1,10 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.3.0
 
-.. meta::
-    :description lang=en:
-        CrafterCMS documentation for the project administrator role.
-
 .. TODO Review this article and see if it should be changes from the format: authoring - delivery to more general topics and how to implement the topic/concern
    Also, check for flow. We moved the site configuration to the top, make sure it flows well.
 
