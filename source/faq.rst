@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.4.4
 
+.. meta::
+    :description lang=en:
+        Documentation listing the frequently asked questions about setting up, running and using CrafterCMS.
+
 ===
 FAQ
 ===

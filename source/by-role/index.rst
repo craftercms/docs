@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+    :description lang=en:
+        CrafterCMS documentation by role or interest.
+
 .. _by-role:
 
 =====================

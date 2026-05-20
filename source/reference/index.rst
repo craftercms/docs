@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+    :description lang=en:
+        CrafterCMS APIs, modules, and complementary projects that work together for creating your experiences.
+
 .. _reference:
 
 .. TODO Review

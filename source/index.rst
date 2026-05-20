@@ -6,6 +6,10 @@ CrafterCMS Documentation
 ########################
 
 .. default-domain:: craftercms
+.. meta::
+    :description lang=en:
+        Home page for the official documentation for CrafterCMS.
+
 
 This documentation introduces key concepts in CrafterCMS, details the decoupled authoring and development systems, and provides operational and administrative considerations and procedures as well as a comprehensive reference section.
 
