@@ -4,6 +4,10 @@
 
 .. index:: Composable, Composable DXP, Composable CMS, Composable Digital Experience Platform, Composable Digital Experience
 
+.. meta::
+   :description: Build composable digital experiences with CrafterCMS using Packaged Business Capabilities (PBC), blueprints, plugins, and the Crafter Marketplace.
+   :keywords: composable CMS, PBC, extensions, blueprints, plugins, Crafter Marketplace, CrafterCMS, composable DXP
+
 .. _composable:
 
 ==========

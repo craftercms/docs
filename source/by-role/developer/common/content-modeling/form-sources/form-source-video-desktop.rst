@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Video Uploaded from Desktop data source reference — configure desktop video upload with repository path for Video form controls.
+   :keywords: video upload, data source, CrafterCMS, desktop upload, video desktop, form sources, content modeling
+
 .. _form-source-video-desktop:
 
 =======================================

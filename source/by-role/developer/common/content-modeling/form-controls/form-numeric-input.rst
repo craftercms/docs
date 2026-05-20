@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS Numeric Input form control reference — configure numeric fields with min/max, regex validation, and tokenize for indexing options.
+   :keywords: numeric input, form control, CrafterCMS, content type, minimum, maximum, regex, tokenize, content modeling
+
 .. _form-numeric-input:
 
 =====================
@@ -33,8 +37,6 @@ Configuration
    :widths: 1 2
    :width: 70%
 
-   * -
-     -
    * - Display Size
      - How much of the input to show on the author input form
    * - Maximum

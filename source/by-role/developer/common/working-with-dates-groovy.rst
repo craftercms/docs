@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.2
 
+.. meta::
+   :description: Learn how to format, parse, and perform date/time zone operations in Groovy scripts for CrafterCMS Crafter Engine page controllers.
+   :keywords: Groovy, dates, time zones, date formatting, date parsing, Crafter Engine, CrafterCMS, controllers
+
 .. _working-with-dates-in-groovy:
 
 ===========================================

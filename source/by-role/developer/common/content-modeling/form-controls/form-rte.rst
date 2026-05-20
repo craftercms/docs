@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS Rich Text Editor (RTE) form control reference — configure WYSIWYG text areas with image, video, and file managers and custom RTE configuration.
+   :keywords: rich text editor, RTE, form control, CrafterCMS, content type, WYSIWYG, TinyMCE, image manager, content modeling
+
 .. _form-rte:
 
 ========================
@@ -31,7 +35,7 @@ Configuration
 || Description/Purpose   || Rich Text Area field.                                                |
 +------------------------+-----------------------------------------------------------------------+
 || Properties            || * Width: Width of the Rich Text Area.                                |
-|| Properties            || * Height: Height of the Rich Text Area.                              |
+||                       || * Height: Height of the Rich Text Area.                              |
 ||                       || * Force Root Block p Tag.                                            |
 ||                       || * Force p tags New Lines: Adds a p tag on every new line.            |
 ||                       || * Force br New Lines: Adds br for each new line.                     |

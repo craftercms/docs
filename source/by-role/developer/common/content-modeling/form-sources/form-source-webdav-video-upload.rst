@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS WebDAV Video Upload data source reference — upload videos to a WebDAV server using a configured WebDAV profile in content type forms.
+   :keywords: WebDAV video upload, data source, CrafterCMS, WebDAV, video upload, profile ID, form sources, content modeling
+
 .. _form-source-webdav-video-upload:
 
 ===============================

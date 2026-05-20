@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.8
 
+.. meta::
+   :description: Troubleshoot common CrafterCMS problems including search, publishing, Deployer, SSH, and SSL issues with step-by-step debugging guides.
+   :keywords: troubleshooting, CrafterCMS, search issues, publishing issues, Deployer issues, SSH issues, SSL issues, debugging
+
 .. _troubleshooting:
 
 ==========================

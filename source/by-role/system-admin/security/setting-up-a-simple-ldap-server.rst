@@ -2,6 +2,10 @@
 :last-updated: 4.0.3
 :orphan:
 
+.. meta::
+   :description: Set up a simple LDAP server with Apache Directory Studio to test LDAP authentication in CrafterCMS enterprise edition.
+   :keywords: LDAP, Apache Directory Studio, Crafter Studio, authentication, LDAP server, CrafterCMS, enterprise, LDAP configuration
+
 .. _setting-up-simple-ldap-server:
 
 =============================================================

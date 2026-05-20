@@ -1,6 +1,10 @@
 :is-up-to-date: False
 :last-update: 4.1.2
 
+.. meta::
+   :description: Learn how to implement content localization and internationalization in CrafterCMS using Crafter Engine's targeted content and language-based configuration.
+   :keywords: localization, internationalization, targeted content, Crafter Engine, language, CrafterCMS, content targeting, i18n
+
 .. index:: Localization, Internationalization
 
 ============

@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS File Browse data source reference — configure file selection from the project repository for content type Item Selector controls.
+   :keywords: file browse, data source, CrafterCMS, file repository, item selector, form sources, content modeling
+
 .. _form-source-file-browse:
 
 =======================

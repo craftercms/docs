@@ -3,6 +3,10 @@
 
 .. index:: Crafter Studio Navigation Menu Plugin Example, Studio Plugins, Plugins
 
+.. meta::
+   :description: Step-by-step example of creating a Navigation Menu plugin for CrafterCMS Crafter Studio to add custom tools to the global navigation menu.
+   :keywords: navigation menu plugin, Studio plugin, CrafterCMS, Crafter Studio, plugin example, authoring plugins, craftercms-plugin.yaml
+
 .. _plugin-navmenu-example:
 
 =============================================

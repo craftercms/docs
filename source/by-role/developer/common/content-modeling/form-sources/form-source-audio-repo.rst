@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.4
 
+.. meta::
+   :description: CrafterCMS Audio from Repository data source reference — browse and search audio files from the CrafterCMS repository in content type forms.
+   :keywords: audio repository, data source, CrafterCMS, content type, audio browse, form sources, content modeling
+
 .. _form-source-audio-repo:
 
 =================================

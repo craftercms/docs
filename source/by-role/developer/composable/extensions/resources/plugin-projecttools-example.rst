@@ -3,6 +3,10 @@
 
 .. index:: Crafter Studio Project Tools Plugin Example, Studio Plugins, Plugins
 
+.. meta::
+   :description: Step-by-step example of creating a Project Tools plugin for CrafterCMS Crafter Studio to add custom tools to the project tools panel.
+   :keywords: project tools plugin, Studio plugin, CrafterCMS, Crafter Studio, plugin example, authoring plugins, craftercms-plugin.yaml
+
 .. _plugin-project-tools-example:
 
 ===========================================

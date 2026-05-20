@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS Image form control reference — configure image selectors with dimension constraints, crop dialog, and S3, WebDAV, or repository data sources.
+   :keywords: image control, form control, CrafterCMS, content type, image upload, S3, WebDAV, crop image, content modeling
+
 .. _form-image:
 
 =============

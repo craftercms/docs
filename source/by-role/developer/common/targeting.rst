@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.8
 
+.. meta::
+   :description: Implement CrafterCMS content targeting using taxonomies, segments, geolocation, and personalization to deliver the right content to the right audience.
+   :keywords: targeting, personalization, taxonomies, segments, geolocation, Crafter Engine, CrafterCMS, audience, content targeting
+
 .. _targeting:
 
 =========

@@ -3,6 +3,10 @@
 
 .. index:: Crafter Studio Sidebar Plugin Example, Studio Plugins, Plugins
 
+.. meta::
+   :description: Step-by-step example of creating a Sidebar plugin for CrafterCMS Crafter Studio using React to add custom panels to the Studio sidebar.
+   :keywords: sidebar plugin, Studio plugin, CrafterCMS, Crafter Studio, React, plugin example, authoring plugins, craftercms-plugin.yaml
+
 .. _plugin-sidebar-example:
 
 =====================================

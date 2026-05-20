@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :since-version: 4.0.2
 
+.. meta::
+   :description: CrafterCMS Components data source reference — configure drag-and-drop regions for shared and embedded components in content type forms.
+   :keywords: components data source, form source, CrafterCMS, shared components, embedded components, drag and drop, content modeling
+
 .. _form-source-components:
 
 ======================

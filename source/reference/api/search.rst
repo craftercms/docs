@@ -3,6 +3,10 @@
 
 .. index:: Search, Query, OpenSearch, GraphQL
 
+.. meta::
+   :description: CrafterCMS Search API reference — query content using OpenSearch, configure indexing, MIME types, and remote document patterns.
+   :keywords: CrafterCMS, search API, OpenSearch, content indexing, full-text search, Groovy
+
 .. _content-search:
 
 ======

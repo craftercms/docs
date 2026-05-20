@@ -4,6 +4,10 @@
 
 .. index:: Crafter Marketplace, Marketplace
 
+.. meta::
+   :description: Create and submit CrafterCMS extensions including blueprints and plugins to the Crafter Marketplace for community use and discovery.
+   :keywords: Crafter Marketplace, extensions, blueprints, plugins, CrafterCMS, community, submit extension, marketplace
+
 .. _marketplace:
 
 ===================

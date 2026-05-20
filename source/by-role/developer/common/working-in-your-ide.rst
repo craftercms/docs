@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: Develop CrafterCMS projects in your local IDE using Git repository synchronization with Crafter Studio for an efficient developer workflow.
+   :keywords: IDE development, Git, Crafter Studio, local development, DevContentOps, CrafterCMS, repository sync
+
 .. _working-in-your-ide:
 
 ===================

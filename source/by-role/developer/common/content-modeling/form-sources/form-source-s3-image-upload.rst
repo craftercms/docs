@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS S3 Image Upload data source reference — upload images directly to AWS S3 storage using a configured S3 profile in content type forms.
+   :keywords: S3 image upload, data source, CrafterCMS, AWS S3, image upload, profile ID, form sources, content modeling
+
 .. _form-source-s3-image-upload:
 
 ===========================

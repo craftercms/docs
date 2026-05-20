@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.5.0
 
+.. meta::
+   :description: Guide for CrafterCMS content authors: creating pages, managing assets, workflow, publishing, audience targeting, and Experience Builder in Crafter Studio.
+   :keywords: content authoring, Crafter Studio, workflow, publishing, Experience Builder, in-context editing, audience targeting, pages
+
 .. _author:
 
 ======

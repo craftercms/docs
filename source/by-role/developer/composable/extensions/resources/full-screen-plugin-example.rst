@@ -3,6 +3,10 @@
 
 .. index:: Crafter Studio Full Screen Plugin Example, Studio Plugins, Plugins
 
+.. meta::
+   :description: Step-by-step example of creating a full screen vanilla JavaScript plugin for the CrafterCMS Studio Plugin Host using craftercms-plugin.yaml configuration.
+   :keywords: full screen plugin, plugin host, CrafterCMS, Crafter Studio, vanilla JavaScript, plugin example, authoring plugins
+
 .. _full-screen-plugin-example:
 
 =========================================

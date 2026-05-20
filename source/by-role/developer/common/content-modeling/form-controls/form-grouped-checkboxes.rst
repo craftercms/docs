@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS Grouped Checkboxes form control reference — configure multiple checkbox groups with Simple Taxonomy or Key Value Pairs data sources.
+   :keywords: grouped checkboxes, form control, CrafterCMS, content type, simple taxonomy, data source, content modeling
+
 .. _form-grouped-checkboxes:
 
 ==========================

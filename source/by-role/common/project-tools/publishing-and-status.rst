@@ -3,6 +3,10 @@
 
 .. index:: Publishing Status, Bulk Publish, Publish by Commit Id
 
+.. meta::
+   :description: Manage CrafterCMS publishing: view status, bulk publish by path, publish by commit/tag ID, publish everything, and monitor the publishing queue.
+   :keywords: publishing, publishing status, bulk publish, publish by commit, publishing queue, Crafter Studio, project tools, Crafter Deployer
+
 .. _publishing-and-status:
 
 =================

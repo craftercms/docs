@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.5.0
 
+.. meta::
+   :description: Crafter Engine is the CrafterCMS content delivery module — serving REST, GraphQL, and FreeMarker-rendered content for web and mobile apps.
+   :keywords: Crafter Engine, CrafterCMS, content delivery, headless CMS, REST API, GraphQL, FreeMarker
+
 .. _crafter-engine:
 
 ==============

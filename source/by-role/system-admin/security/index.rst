@@ -3,6 +3,10 @@
 
 .. index:: Security, SAML, LDAP, Header-based, Headers-based, Headers Based, Authentication, Password, SSL, TLS, HTTPS, Secrets, Managing Secrets, External Secrets, Internal Secrets, Encryption, Encrypting Text in a Configuration File
 
+.. meta::
+   :description: Secure CrafterCMS with SAML2, LDAP, header-based authentication, HTTPS/TLS, managing secrets, changing default passwords, and encryption configuration.
+   :keywords: security, SAML2, LDAP, HTTPS, TLS, encryption, authentication, secrets, CrafterCMS, system admin
+
 .. _system-admin-security:
 
 ========

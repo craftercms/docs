@@ -3,6 +3,10 @@
 
 .. index:: Templating
 
+.. meta::
+   :description: Learn CrafterCMS templating with FreeMarker to transform content models into HTML pages using templates, controllers, and dynamic rendering.
+   :keywords: templating, FreeMarker, CrafterCMS, Crafter Engine, HTML rendering, templates, content model, page rendering
+
 .. _templating:
 
 ==========

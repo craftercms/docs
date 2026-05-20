@@ -2,6 +2,10 @@
 :last-updated: 4.0.1
 :orphan:
 
+.. meta::
+   :description: Migrate JavaScript applications from CrafterCMS 3.x In Context Editing (ICE) to the 4.x Experience Builder (XB) system with field-level editing support.
+   :keywords: in-context editing, ICE, Experience Builder, XB, upgrade, CrafterCMS 4.x, migration, JavaScript
+
 .. _upgrading-in-context-editing:
 
 =====================================================

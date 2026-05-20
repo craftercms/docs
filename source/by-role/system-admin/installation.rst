@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.2.0
 
+.. meta::
+   :description: Install CrafterCMS via binary bundles, Docker, or Kubernetes for authoring and delivery environments with system requirements and platform support information.
+   :keywords: installation, CrafterCMS, binary bundles, Docker, Kubernetes, authoring, delivery, Java 21, system requirements
+
 .. _system-admin-installation:
 
 ============

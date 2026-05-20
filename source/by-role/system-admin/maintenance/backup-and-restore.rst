@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.4
 
+.. meta::
+   :description: Backup and restore CrafterCMS environments using the provided scripts to protect indexes, repositories, MongoDB, and other critical data.
+   :keywords: backup, restore, CrafterCMS, Crafter Studio, clustered, non-clustered, MongoDB, repos, system admin
+
 .. _backup-and-restore:
 
 ==================
