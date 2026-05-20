@@ -3,6 +3,10 @@
 
 .. index:: Building Form Engine Data Source Project Plugins, Form  Data Source Project Plugin, Project Plugins
 
+.. meta::
+   :description: Build custom Form Engine data source plugins for CrafterCMS Crafter Studio using the getPluginFile API to create swappable data retrieval components.
+   :keywords: form data source plugins, Form Engine, CrafterCMS, Crafter Studio, custom data sources, project plugins, getPluginFile API
+
 .. _building-plugins-form-ds:
 
 ================================================

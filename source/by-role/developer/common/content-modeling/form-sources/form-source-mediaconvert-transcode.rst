@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Video Transcoding from S3 using MediaConvert data source reference — upload and transcode videos with AWS MediaConvert input/output S3 profiles.
+   :keywords: MediaConvert, video transcode, S3, data source, CrafterCMS, AWS, video upload, form sources, content modeling
+
 .. _form-source-mediaconvert-transcode:
 
 ==================================================================

@@ -3,6 +3,10 @@
 
 .. index:: Crafter Studio Dashboard Plugin Example, Studio Plugins, Plugins
 
+.. meta::
+   :description: Step-by-step example of creating a custom Dashboard plugin for CrafterCMS Crafter Studio to add dashlets to the project dashboard using craftercms-plugin.yaml.
+   :keywords: dashboard plugin, dashlet, CrafterCMS, Crafter Studio, plugin example, authoring plugins, craftercms-plugin.yaml
+
 .. _plugin-dashboard-example:
 
 =======================================

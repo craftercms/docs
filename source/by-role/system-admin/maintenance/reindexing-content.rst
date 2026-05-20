@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.8
 
+.. meta::
+   :description: Reindex CrafterCMS site content for search and queries using Crafter Deployer's reprocess feature after schema changes, migrations, or other scenarios.
+   :keywords: reindexing, search, CrafterCMS, Crafter Deployer, OpenSearch, content index, schema migration, reprocess
+
 .. _reindexing-content:
 
 =========================================

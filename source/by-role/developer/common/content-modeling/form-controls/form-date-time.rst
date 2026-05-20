@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Date/Time form control reference — configure date and time pickers with timezone support, populate expressions, and past date options.
+   :keywords: date time, form control, CrafterCMS, date picker, time picker, content modeling, content type, populate expression
+
 .. _form-date-time:
 
 =================

@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS Rich Text Editor (RTE) form control reference — configure WYSIWYG text areas with image, video, and file managers and custom RTE configuration.
+   :keywords: rich text editor, RTE, form control, CrafterCMS, content type, WYSIWYG, TinyMCE, image manager, content modeling
+
 .. _form-rte:
 
 ========================

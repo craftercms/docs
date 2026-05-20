@@ -3,6 +3,10 @@
 
 .. index:: Content Modeling Guide, Modeling Guide
 
+.. meta::
+   :description: Learn CrafterCMS content modeling: structured vs unstructured content, content type creation, form controls, data sources, and information architecture best practices.
+   :keywords: content modeling, content types, form controls, data sources, structured content, Crafter Studio, information architecture, CrafterCMS
+
 .. _content-modeling:
 
 ================

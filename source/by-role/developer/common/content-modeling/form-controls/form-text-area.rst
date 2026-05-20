@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS Text Area form control reference — configure multi-line text input with columns, rows, max length, resize, and escape content options.
+   :keywords: text area, form control, CrafterCMS, content type, multi-line text, max length, content modeling
+
 .. _form-text-area:
 
 =================

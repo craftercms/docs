@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Page Order form control reference — allow authors to control page navigation ordering within the content hierarchy.
+   :keywords: page order, form control, CrafterCMS, content type, navigation, page ordering, content modeling
+
 .. _form-page-order:
 
 ==================

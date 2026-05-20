@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS Label form control reference — display static text or HTML labels to guide content authors within content type forms.
+   :keywords: label control, form control, CrafterCMS, content type, static text, HTML label, content modeling
+
 .. _form-label:
 
 =============

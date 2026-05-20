@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Locale Selector form control reference — indicate and manage the locale/language used for content in content type forms.
+   :keywords: locale selector, form control, CrafterCMS, content type, locale, language, localization, content modeling
+
 .. _form-locale-selector:
 
 =======================

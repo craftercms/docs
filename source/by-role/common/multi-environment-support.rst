@@ -3,6 +3,10 @@
 
 .. index:: Multi-Environment, Multi-Environment Support
 
+.. meta::
+   :description: Configure CrafterCMS multi-environment support for Dev, QA, and Prod with separate settings for Crafter Studio and Crafter Engine per environment.
+   :keywords: multi-environment, CrafterCMS environments, Dev QA Prod, Crafter Studio, Crafter Engine, environment configuration
+
 .. _multi-environment-support:
 
 =========================

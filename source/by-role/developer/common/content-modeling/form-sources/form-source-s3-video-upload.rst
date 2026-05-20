@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS S3 Video Upload data source reference — upload videos directly to AWS S3 storage using a configured S3 profile in content type forms.
+   :keywords: S3 video upload, data source, CrafterCMS, AWS S3, video upload, profile ID, form sources, content modeling
+
 .. _form-source-s3-video-upload:
 
 ===========================

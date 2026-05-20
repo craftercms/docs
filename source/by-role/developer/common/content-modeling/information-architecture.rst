@@ -3,6 +3,10 @@
 
 .. index:: Information Architecture, IA
 
+.. meta::
+   :description: CrafterCMS information architecture overview: project folder structure including site, static-assets, templates, scripts, sources, and config directories.
+   :keywords: information architecture, repository structure, CrafterCMS, site, static-assets, templates, scripts, content types, quick create
+
 .. _information-architecture:
 
 ========================

@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS Filename form control reference — configure text filename input with max length and read-only options for content type forms.
+   :keywords: filename, form control, CrafterCMS, content type, max length, read-only, content modeling
+
 .. _form-filename:
 
 ================

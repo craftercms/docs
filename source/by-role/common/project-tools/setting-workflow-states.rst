@@ -3,6 +3,10 @@
 
 .. index:: Workflow States
 
+.. meta::
+   :description: Manually set workflow states for files in your CrafterCMS project including clearing locks, setting published live, and staging states.
+   :keywords: workflow states, Crafter Studio, project tools, published live, published staging, system processing, user lock
+
 .. _setting-workflow-states:
 
 ===============

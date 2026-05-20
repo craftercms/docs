@@ -3,6 +3,10 @@
 
 .. index:: Upgrade CrafterCMS, Upgrade
 
+.. meta::
+   :description: Step-by-step instructions for upgrading CrafterCMS on a server using the upgrade-target and start-upgrade scripts with backup and rollback guidance.
+   :keywords: CrafterCMS server upgrade, upgrade-target script, start-upgrade, backup before upgrade, CrafterCMS upgrade steps, server upgrade, Crafter Studio upgrade
+
 .. _upgrading-craftercms-on-a-server:
 
 ================================

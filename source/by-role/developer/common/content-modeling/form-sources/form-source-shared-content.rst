@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Shared Content data source reference — create, browse, or search for shared content items to use in Item Selector form controls.
+   :keywords: shared content, data source, CrafterCMS, content type, browse, search, item selector, form sources, content modeling
+
 .. _form-source-shared-content:
 
 ==========================

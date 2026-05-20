@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS WebDAV Image Upload data source reference — upload images to a WebDAV server using a configured WebDAV profile in content type forms.
+   :keywords: WebDAV image upload, data source, CrafterCMS, WebDAV, image upload, profile ID, form sources, content modeling
+
 .. _form-source-webdav-image-upload:
 
 ===============================

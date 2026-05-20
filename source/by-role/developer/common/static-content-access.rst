@@ -3,6 +3,10 @@
 
 .. index:: Static Assets, Static Content Access, S3, Transcode, Transcode Video, WebDAV, Transform, Transform Image, Renditions
 
+.. meta::
+   :description: Manage static assets in CrafterCMS including images, videos, CSS, JS, and SPA files via blob stores, S3, WebDAV, and image/video transformation renditions.
+   :keywords: static assets, blob store, S3, WebDAV, image transform, video transcode, static content, CrafterCMS, renditions
+
 .. _static-content-access:
 
 =====================

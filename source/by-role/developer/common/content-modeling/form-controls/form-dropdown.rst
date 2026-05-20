@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS Dropdown form control reference — configure dropdown selects with Simple Taxonomy or Static Key Value Pairs data sources in content types.
+   :keywords: dropdown, form control, CrafterCMS, content type, simple taxonomy, key value pairs, data source, content modeling
+
 .. _form-dropdown:
 
 ================

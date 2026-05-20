@@ -3,6 +3,10 @@
 
 .. index:: Disaster Recovery, DR
 
+.. meta::
+   :description: Configure CrafterCMS for high availability and disaster recovery with geo-distributed delivery nodes, authoring clustering, and backup strategies.
+   :keywords: disaster recovery, high availability, CrafterCMS, geo-distributed, delivery nodes, authoring cluster, backup, DR
+
 .. _system-admin-disaster-recovery:
 
 =================

@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS Input form control reference — configure text input with display size, max length, regex validation, and tokenize for indexing options.
+   :keywords: input control, form control, CrafterCMS, content type, text input, regex, tokenize, content modeling
+
 .. _form-input:
 
 =============

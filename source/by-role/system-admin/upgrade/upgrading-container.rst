@@ -3,6 +3,10 @@
 
 .. index:: Upgrade CrafterCMS, Upgrade Docker, Upgrade Kubernetes
 
+.. meta::
+   :description: Instructions for upgrading CrafterCMS on Docker Compose and Kubernetes, including container image updates and data migration steps.
+   :keywords: Docker upgrade, Kubernetes upgrade, CrafterCMS containers, Docker Compose, upgrade CrafterCMS, container deployment, Helm chart
+
 .. _upgrading-dockers:
 
 ====================================

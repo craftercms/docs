@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.2.0
 
+.. meta::
+   :description: Guide to upgrading CrafterCMS search from Elasticsearch to OpenSearch, including the upgrade-search.sh script and reindexing steps.
+   :keywords: OpenSearch upgrade, Elasticsearch migration, CrafterCMS search, upgrade-search.sh, search reindex, CrafterCMS 4.1, search engine upgrade
+
 .. _upgrading-search:
 
 ================

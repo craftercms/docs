@@ -4,6 +4,10 @@
 
 .. index:: Local Development with Docker, Docker, Local Development
 
+.. meta::
+   :description: Configure CrafterCMS on Docker for local development by mounting authoring project repositories to a host directory for IDE access.
+   :keywords: Docker, local development, CrafterCMS, docker-compose, authoring, IDE, container, mounted volume
+
 .. _local-dev-with-docker:
 
 =============================
