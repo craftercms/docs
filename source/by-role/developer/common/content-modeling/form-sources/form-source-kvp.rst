@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Static Key Value Pairs data source reference — define static key/value option lists for Dropdown and Grouped Checkboxes form controls.
+   :keywords: key value pairs, data source, CrafterCMS, static options, dropdown, grouped checkboxes, form sources, content modeling
+
 .. _form-source-kvp:
 
 ==================================

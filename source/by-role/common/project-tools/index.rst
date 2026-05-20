@@ -3,6 +3,10 @@
 
 .. index:: Project Tools
 
+.. meta::
+   :description: Overview of CrafterCMS Project Tools in Crafter Studio: Content Types, Encryption Tool, Configuration, Audit, Publishing, Git, GraphQL, and Plugin Management.
+   :keywords: project tools, Crafter Studio, content types, encryption, publishing, audit, GraphQL, plugin management, configuration
+
 .. _project-tools:
 
 =============

@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
 
+.. meta::
+   :description: Configure CrafterCMS staging publishing target to test content before going live, including enabling staging, delivery setup, and syncing with live.
+   :keywords: staging, publishing target, CrafterCMS, staging environment, publish to staging, sync staging, Crafter Studio
+
 .. _staging-env:
 
 ========================================

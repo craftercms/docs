@@ -3,6 +3,10 @@
 
 .. index:: Plugin Management
 
+.. meta::
+   :description: Install and manage CrafterCMS project plugins from the Crafter Marketplace using Studio's Plugin Management tool or the REST API.
+   :keywords: plugin management, CrafterCMS plugins, Crafter Marketplace, install plugins, uninstall plugins, Crafter Studio, project plugins
+
 .. _plugin-management:
 
 =================

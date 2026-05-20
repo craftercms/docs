@@ -1,11 +1,11 @@
 :is-up-to-date: True
 :last-updated: 4.5.0
 
-.. meta::
-    :description lang=en:
-        Crafter Studio documentation describing configuration, security and administration.
-
 .. highlight:: xml
+
+.. meta::
+   :description: Crafter Studio (CrafterCMS authoring module) documentation describing configuration, security and administration.
+   :keywords: Crafter Studio, CrafterCMS, content authoring, CMS, publishing, workflow, studio-config
 
 .. _crafter-studio:
 

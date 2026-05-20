@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS WebDAV File Upload data source reference — upload files to a WebDAV server using a configured WebDAV profile in content type forms.
+   :keywords: WebDAV file upload, data source, CrafterCMS, WebDAV, file upload, profile ID, form sources, content modeling
+
 .. _form-source-webdav-file-upload:
 
 ==============================

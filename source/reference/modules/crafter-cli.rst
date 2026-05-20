@@ -4,6 +4,10 @@
 
 .. index:: Crafter CLI, CLI
 
+.. meta::
+   :description: Crafter CLI is the CrafterCMS DevContentOps toolkit for authenticating and exercising CrafterCMS APIs from Unix, Mac, or Windows terminals.
+   :keywords: Crafter CLI, CrafterCMS, DevContentOps, command line interface, CLI
+
 .. _crafter-cli:
 
 ===========

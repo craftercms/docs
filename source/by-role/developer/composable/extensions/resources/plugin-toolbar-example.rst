@@ -3,6 +3,10 @@
 
 .. index:: Crafter Studio Toolbar Plugin Example, Studio Plugins, Plugins
 
+.. meta::
+   :description: Step-by-step example of creating a Toolbar plugin for CrafterCMS Crafter Studio to add custom items to the Studio toolbar.
+   :keywords: toolbar plugin, Studio plugin, CrafterCMS, Crafter Studio, plugin example, authoring plugins, craftercms-plugin.yaml
+
 .. _plugin-toolbar-example:
 
 =====================================

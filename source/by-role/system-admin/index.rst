@@ -7,6 +7,10 @@
 
 .. index:: System Administrator, System Administration
 
+.. meta::
+   :description: CrafterCMS system administrator guide covering installation, configuration, security, performance, maintenance, upgrades, and disaster recovery.
+   :keywords: system admin, CrafterCMS, installation, configuration, security, performance, maintenance, upgrade, disaster recovery
+
 .. _system-admin:
 
 ====================

@@ -3,6 +3,10 @@
 
 .. index:: Modules; Crafter Deployer
 
+.. meta::
+   :description: Crafter Deployer is the CrafterCMS publishing and indexing engine, delivering content changes from Studio to Engine and search indexes.
+   :keywords: Crafter Deployer, CrafterCMS, publishing, content indexing, deployment, search
+
 .. _crafter-deployer:
 
 ================

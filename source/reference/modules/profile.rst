@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.2
 
+.. meta::
+   :description: Crafter Profile is CrafterCMS's enterprise user profile and attribute management module — enabling personalization and access control.
+   :keywords: Crafter Profile, CrafterCMS, user profile, personalization, enterprise, access control
+
 .. _crafter-profile:
 
 ================================

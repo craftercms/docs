@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS Repeating Group form control reference — capture repeating data records like image carousels or widget lists with min/max occurrence settings.
+   :keywords: repeating group, form control, CrafterCMS, content type, carousel, widget, repeating data, content modeling
+
 .. _form-repeating-group:
 
 =======================

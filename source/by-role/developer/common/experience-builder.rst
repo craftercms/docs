@@ -3,6 +3,10 @@
 
 .. index:: Experience Builder, XB, In-Context Editing, ICE
 
+.. meta::
+   :description: Integrate CrafterCMS Experience Builder (XB) to enable in-context editing for authors in FreeMarker and React applications with content type field binding.
+   :keywords: Experience Builder, XB, in-context editing, ICE, CrafterCMS, FreeMarker, React, content types, developer
+
 .. _experience-builder:
 
 =======================

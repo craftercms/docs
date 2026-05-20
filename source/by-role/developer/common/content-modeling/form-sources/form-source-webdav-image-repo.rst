@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Image from WebDAV Repository data source reference — browse and select images from a WebDAV server using a configured WebDAV profile.
+   :keywords: WebDAV image repository, data source, CrafterCMS, WebDAV, image browse, profile ID, form sources, content modeling
+
 .. _form-source-webdav-image-repo:
 
 ========================================

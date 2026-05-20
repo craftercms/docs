@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.5
 
+.. meta::
+   :description: Create custom error pages in CrafterCMS to handle 404, 403, 500 and other HTTP errors with user-friendly templates for your Crafter Engine project.
+   :keywords: custom error pages, 404, 500, error handling, CrafterCMS, Crafter Engine, FreeMarker, error templates
+
 .. _custom-error-pages:
 
 ==================

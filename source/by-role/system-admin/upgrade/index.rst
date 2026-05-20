@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.5.0
 
+.. meta::
+   :description: Complete guide to upgrading CrafterCMS on servers, Docker, Kubernetes, and clusters, including search migration to OpenSearch and MongoDB upgrades.
+   :keywords: CrafterCMS upgrade, upgrade guide, server upgrade, Docker upgrade, Kubernetes upgrade, OpenSearch migration, MongoDB upgrade, cluster upgrade
+
 .. _upgrading-craftercms:
 
 ====================

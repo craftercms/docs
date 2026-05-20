@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.4
 
+.. meta::
+   :description: CrafterCMS Audio Uploaded from Desktop data source reference — configure desktop audio upload with repository path for content type forms.
+   :keywords: audio upload, data source, CrafterCMS, content type, audio desktop, form sources, content modeling
+
 .. _form-source-audio-desktop:
 
 =======================================

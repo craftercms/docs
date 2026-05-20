@@ -4,6 +4,10 @@
 
 .. index:: Blueprints, Blueprint, Create a Blueprint
 
+.. meta::
+   :description: Create CrafterCMS blueprints — project templates with predefined content types, static assets, and configuration — and submit them to the Crafter Marketplace.
+   :keywords: blueprints, CrafterCMS, project templates, Crafter Marketplace, content types, Website Editorial Blueprint, Empty Blueprint
+
 .. _blueprints:
 
 ==========

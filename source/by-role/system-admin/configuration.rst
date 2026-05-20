@@ -3,6 +3,10 @@
 
 .. index:: Configuration, Ports, Hostnames, Apache HTTPd, Configure Reverse Proxy
 
+.. meta::
+   :description: CrafterCMS system configuration guide covering security, project delivery setup, reverse proxy, ports, hostnames, and serverless deployment options.
+   :keywords: system configuration, CrafterCMS, security, delivery setup, serverless, Apache HTTPd, reverse proxy, system admin
+
 .. _system-admin-configuration:
 
 =============

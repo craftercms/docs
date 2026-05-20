@@ -4,6 +4,10 @@
 .. index::
    single: Logging, Log Files
 
+.. meta::
+   :description: Learn how to manage CrafterCMS log files, override logging levels, use custom Log4j2 appenders, and locate Tomcat and Deployer logs.
+   :keywords: CrafterCMS logging, log files, Log4j2, logging levels, Tomcat logs, Crafter Deployer, custom appender, crafter.sh
+
 .. _logging:
 
 =======

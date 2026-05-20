@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS File from WebDAV Repository data source reference — browse and select files from a WebDAV server using a configured WebDAV profile.
+   :keywords: WebDAV file repository, data source, CrafterCMS, WebDAV, file browse, profile ID, form sources, content modeling
+
 .. _form-source-webdav-file-repo:
 
 =======================================

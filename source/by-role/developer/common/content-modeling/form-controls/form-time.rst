@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-update: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Time form control reference — configure time pickers with custom timezone, populate expression, and set-now link options in content types.
+   :keywords: time control, form control, CrafterCMS, content type, time picker, timezone, populate expression, content modeling
+
 .. _form-time:
 
 ============

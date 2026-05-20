@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Image Uploaded from Desktop data source reference — configure desktop image upload with repository path for Image form controls.
+   :keywords: image upload, data source, CrafterCMS, desktop upload, image desktop, form sources, content modeling
+
 .. _form-source-image-desktop:
 
 =======================================

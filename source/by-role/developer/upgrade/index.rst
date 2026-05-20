@@ -2,6 +2,10 @@
 :last-updated: 4.1.0
 :orphan:
 
+.. meta::
+   :description: Developer guide for upgrading CrafterCMS with notes on features, configuration, and migration steps.
+   :keywords: upgrade, CrafterCMS, version upgrade, developer upgrade, migration
+
 .. _developers-upgrade:
 
 =======

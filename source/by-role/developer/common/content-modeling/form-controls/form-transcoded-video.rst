@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Transcoded Video form control reference — select transcoded videos from AWS MediaConvert data source in content type forms.
+   :keywords: transcoded video, form control, CrafterCMS, content type, MediaConvert, video transcoding, S3, content modeling
+
 .. _form-transcoded-video:
 
 ========================

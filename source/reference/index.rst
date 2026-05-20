@@ -2,8 +2,8 @@
 :last-updated: 4.1.0
 
 .. meta::
-    :description lang=en:
-        CrafterCMS APIs, modules, and complementary projects that work together for creating your experiences.
+   :description: Reference documentation for CrafterCMS modules, APIs, and configuration — covering Studio, Engine, Deployer, Profile, Social, and more.
+   :keywords: CrafterCMS, reference, modules, API, Studio, Engine, Deployer, Profile, Social
 
 .. _reference:
 

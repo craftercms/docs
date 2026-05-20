@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.8
 
+.. meta::
+   :description: Reindex CrafterCMS content in a live production environment without disrupting service by freezing authoring and using the Deployer recreateIndex API.
+   :keywords: reindexing, production, CrafterCMS, Crafter Deployer, search index, OpenSearch, zero downtime, reindex
+
 .. _reindexing-content-in-production:
 
 ===========================================================

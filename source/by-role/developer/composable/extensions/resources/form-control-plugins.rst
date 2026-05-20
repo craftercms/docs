@@ -3,6 +3,10 @@
 
 .. index:: Building Form Engine Controls Project Plugins, Form Control Project Plugins, Project Plugins
 
+.. meta::
+   :description: Build custom Form Engine control plugins for CrafterCMS Crafter Studio using the getPluginFile API to create reusable UX elements for content authors.
+   :keywords: form control plugins, Form Engine, CrafterCMS, Crafter Studio, custom controls, project plugins, getPluginFile API
+
 .. _building-plugins-controls:
 
 ============================================

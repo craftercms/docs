@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.4
 
+.. meta::
+   :description: CrafterCMS Video from Repository data source reference — browse and search videos from the CrafterCMS project repository for Video form controls.
+   :keywords: video repository, data source, CrafterCMS, video browse, video search, form sources, content modeling
+
 .. _form-source-video-repo:
 
 =================================

@@ -4,6 +4,10 @@
 
 .. index:: Plugins, Create a Plugin
 
+.. meta::
+   :description: Build CrafterCMS plugins to extend Crafter Studio authoring UI and Crafter Engine delivery with custom widgets, REST APIs, content types, and integrations.
+   :keywords: plugins, CrafterCMS, Crafter Studio, Crafter Engine, authoring plugins, delivery plugins, composable, extensions
+
 .. _plugins:
 
 =======

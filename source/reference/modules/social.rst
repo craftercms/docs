@@ -3,6 +3,10 @@
 
 .. index:: Modules; Crafter Social
 
+.. meta::
+   :description: Crafter Social is CrafterCMS's enterprise user-generated content module — enabling comments, ratings, and community features in your projects.
+   :keywords: Crafter Social, CrafterCMS, user-generated content, comments, ratings, enterprise
+
 .. _crafter-social:
 
 ===============================

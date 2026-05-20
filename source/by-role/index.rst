@@ -2,8 +2,8 @@
 :last-updated: 4.1.0
 
 .. meta::
-    :description lang=en:
-        CrafterCMS documentation by role or interest.
+   :description: Browse CrafterCMS documentation by role: architect, developer, content author, project admin, and system administrator.
+   :keywords: CrafterCMS, by role, architect, developer, content author, project admin, system admin
 
 .. _by-role:
 

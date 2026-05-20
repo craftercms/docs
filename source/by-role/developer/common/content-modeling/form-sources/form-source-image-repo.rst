@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.4
 
+.. meta::
+   :description: CrafterCMS Image from Repository data source reference — browse and search images from the project repository in Image form controls.
+   :keywords: image repository, data source, CrafterCMS, image browse, form sources, content modeling, image search
+
 .. _form-source-image-repo:
 
 =================================

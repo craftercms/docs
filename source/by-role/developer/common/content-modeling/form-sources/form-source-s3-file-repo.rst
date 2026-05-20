@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS S3 Repository data source reference — browse and select files from AWS S3 storage using a configured S3 profile in content type forms.
+   :keywords: S3 repository, data source, CrafterCMS, AWS S3, file browse, profile ID, form sources, content modeling
+
 .. _form-source-s3-file-repo:
 
 =========================

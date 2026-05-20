@@ -3,6 +3,10 @@
 
 .. index:: Engine Jobs, Jobs, Cron, Cron Expression, Scheduled Jobs
 
+.. meta::
+   :description: Schedule Groovy scripts as jobs in CrafterCMS Crafter Engine using hourly/daily/weekly/monthly folders or custom cron expressions via site-config.xml.
+   :keywords: scheduled jobs, cron, Groovy scripts, Crafter Engine, CrafterCMS, cron expression, job scheduling
+
 .. _scheduled-jobs:
 
 ==============

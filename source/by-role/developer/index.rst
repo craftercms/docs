@@ -2,8 +2,8 @@
 :last-updated: 4.2.2
 
 .. meta::
-    :description lang=en:
-        CrafterCMS documentation for developer role.
+   :description: CrafterCMS developer guide covering content modeling, headless and templated projects, composable CMS, DevContentOps, Groovy, GraphQL, and security.
+   :keywords: CrafterCMS developer, content modeling, headless, FreeMarker, Groovy, GraphQL, composable, DevContentOps, Crafter Engine
 
 .. _developer:
 

@@ -1,6 +1,10 @@
 :is-up-to-date: False
 :orphan:
 
+.. meta::
+   :description: CrafterCMS deployment architecture overview covering authoring vs delivery, code flow, content flow, Git, search, and on-premises vs cloud deployments.
+   :keywords: deployment architecture, CrafterCMS, authoring, delivery, Crafter Studio, Crafter Engine, Crafter Deployer, Kubernetes
+
 .. _system-admin-deployment-architecture:
 
 =======================

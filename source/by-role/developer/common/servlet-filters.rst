@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: Create and configure Groovy-based servlet filters in CrafterCMS to intercept requests, modify responses, and apply rules using the J2EE Filter interface.
+   :keywords: servlet filters, Groovy, CrafterCMS, Crafter Engine, filter chain, request interceptor, J2EE filter
+
 .. _servlet-filters:
 
 ===============

@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.2.2
 
+.. meta::
+   :description: Add or change the default screenshot for a CrafterCMS project using Git or by pushing to a remote repository and pulling changes into Studio.
+   :keywords: default screenshot, project screenshot, CrafterCMS, Crafter Studio, Git, project image, sandbox
+
 .. _adding-a-default-screenshot-to-a-project:
 
 =============================================

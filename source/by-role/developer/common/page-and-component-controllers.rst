@@ -3,6 +3,10 @@
 
 .. index:: Page Controllers, Component Controllers
 
+.. meta::
+   :description: Build Groovy page and component controllers in CrafterCMS to populate template models and execute logic before rendering in Crafter Engine.
+   :keywords: page controllers, component controllers, Groovy, CrafterCMS, Crafter Engine, templateModel, contentModel, scripts
+
 .. _page-and-component-controllers:
 
 ------------------------------

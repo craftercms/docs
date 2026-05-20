@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS File Uploaded from Desktop data source reference — configure desktop file upload with repository path for Item Selector controls.
+   :keywords: file upload, data source, CrafterCMS, desktop upload, file desktop, form sources, content modeling
+
 .. _form-source-file-desktop:
 
 ======================================

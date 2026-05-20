@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Embedded Content data source reference — create and manage inline components within content type forms.
+   :keywords: embedded content, data source, CrafterCMS, inline components, content type, form sources, content modeling
+
 .. _form-source-embedded-content:
 
 ============================
