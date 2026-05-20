@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.5.0
 
+.. meta::
+   :description: CrafterCMS GraphQL reference — auto-generated schema per project, supporting flexible content queries without additional backend code.
+   :keywords: CrafterCMS, GraphQL, content query, schema, headless CMS, GraphiQL, API
+
 .. _graphql:
 
 =======

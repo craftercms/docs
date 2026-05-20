@@ -3,6 +3,10 @@
 
 .. index:: REST, REST API
 
+.. meta::
+   :description: CrafterCMS REST Content Retrieval API reference — access published content from Crafter Engine via HTTP endpoints in any application.
+   :keywords: CrafterCMS, REST API, content retrieval, Crafter Engine, HTTP API, headless CMS
+
 .. _rest-content-retrieval-api:
 
 ===========================
