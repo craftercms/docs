@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS Form Section control reference — organize content type forms into logical sections with configurable titles and default open/closed states.
+   :keywords: form section, form control, CrafterCMS, content type, form organization, content modeling
+
 .. _form-section:
 
 ====================

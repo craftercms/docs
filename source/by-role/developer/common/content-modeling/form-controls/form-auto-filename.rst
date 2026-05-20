@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Auto Filename form control reference — a simple text control that automatically generates filenames in content type forms.
+   :keywords: auto filename, form control, CrafterCMS, content type, form controls, content modeling
+
 .. _form-auto-filename:
 
 =====================

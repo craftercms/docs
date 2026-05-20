@@ -4,6 +4,10 @@
 
 .. index:: Studio SAML, Studio SAML version 4.0.2 and earlier
 
+.. meta::
+   :description: Configure SAML2 SSO for CrafterCMS v4.0.2 and earlier using Java KeyStore, Identity Provider settings, and studio-config-override.yaml.
+   :keywords: SAML2, SSO, Crafter Studio, CrafterCMS 4.0.2, KeyStore, Identity Provider, authentication, enterprise
+
 .. _crafter-studio-configure-studio-saml-up-to-4-0-2:
 
 =============================================================================

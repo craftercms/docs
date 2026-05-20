@@ -4,6 +4,10 @@
 
 .. index:: Anatomy of a CrafterCMS Repository
 
+.. meta::
+   :description: Understand the CrafterCMS Git repository structure including config, scripts, site, static-assets, templates, and sources directories.
+   :keywords: CrafterCMS repository, repository structure, Git repository, config, scripts, static-assets, templates, site
+
 .. _anatomy-of-a-craftercms-repository:
 
 ==================================

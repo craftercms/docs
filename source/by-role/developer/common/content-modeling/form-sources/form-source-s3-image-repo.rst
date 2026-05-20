@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Image from S3 Repository data source reference — browse and select images from AWS S3 storage with a configured S3 profile.
+   :keywords: S3 image repository, data source, CrafterCMS, AWS S3, image browse, profile ID, form sources, content modeling
+
 .. _form-source-s3-image-repo:
 
 ====================================

@@ -4,6 +4,10 @@
 
 .. index:: Plugin Host
 
+.. meta::
+   :description: Use the CrafterCMS Plugin Host route in Studio to render custom authoring apps with access to Studio UI components and APIs via craftercms global variable.
+   :keywords: plugin host, Crafter Studio, custom authoring apps, plugins, studio-ui, CrafterCMS, composable
+
 .. _plugin-host:
 
 ===========

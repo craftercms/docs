@@ -4,6 +4,10 @@
 
 .. index:: DevContentOps
 
+.. meta::
+   :description: Learn CrafterCMS DevContentOps processes for flowing code forward and content back across Dev, QA, and Prod environments using Git branching strategies.
+   :keywords: DevContentOps, Git branching, code forward, content back, multi-environment, CrafterCMS, Crafter Studio, deployment workflow
+
 .. _devcontentops:
 
 =============

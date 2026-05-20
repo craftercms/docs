@@ -3,6 +3,10 @@
 
 .. index::  Studio Logging, Logging
 
+.. meta::
+   :description: View CrafterCMS audit logs and the Log Console in Crafter Studio to monitor user actions, log levels, and application messages.
+   :keywords: studio logging, audit logs, log console, Crafter Studio, logging levels, log4j, project tools
+
 .. _studio-logging:
 
 ===================================

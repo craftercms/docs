@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS Internal Name form control reference — configure the internal name text input with max length, tokenize for indexing, and escape content options.
+   :keywords: internal name, form control, CrafterCMS, content type, tokenize, indexing, content modeling
+
 .. _form-internal-name:
 
 =====================

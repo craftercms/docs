@@ -3,6 +3,10 @@
 
 .. index:: Crafter Studio Experience Builder Panel Plugin Example, Studio Plugins, Plugins
 
+.. meta::
+   :description: Step-by-step example of creating an Experience Builder panel plugin for CrafterCMS Crafter Studio to extend the XB panel with custom tools.
+   :keywords: Experience Builder plugin, XB panel, CrafterCMS, Crafter Studio, plugin example, authoring plugins, craftercms-plugin.yaml
+
 .. _plugin-experience-builder-plugin-example:
 
 ================================================

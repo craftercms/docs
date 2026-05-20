@@ -3,6 +3,10 @@
 
 .. index:: Upgrading Studio Cluster, Cluster Upgrade
 
+.. meta::
+   :description: Step-by-step guide to upgrading a CrafterCMS Studio cluster, covering backup, node upgrade order, and cluster-specific considerations.
+   :keywords: Studio cluster upgrade, CrafterCMS upgrade, cluster nodes, backup before upgrade, enterprise upgrade, Crafter Studio, high availability
+
 .. _upgrading-studio-cluster:
 
 =========================================

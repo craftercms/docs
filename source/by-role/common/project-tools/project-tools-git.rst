@@ -3,6 +3,10 @@
 
 .. index:: Project Tools Git
 
+.. meta::
+   :description: Use CrafterCMS Studio Git project tools to manage remote repositories, pull changes, push to remotes, and resolve merge conflicts.
+   :keywords: Git, remote repositories, pull, push, merge conflicts, Crafter Studio, project tools, conflict resolution
+
 .. _project-tools-git:
 
 ===

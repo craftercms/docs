@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: Browse CrafterCMS documentation by role: architect, developer, content author, project admin, and system administrator.
+   :keywords: CrafterCMS, by role, architect, developer, content author, project admin, system admin
+
 .. _by-role:
 
 =====================

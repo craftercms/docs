@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.2
 
+.. meta::
+   :description: Optimize CrafterCMS performance and scaling with horizontal delivery scaling, CDN integration, clustering, multi-region global delivery, and tuning recommendations.
+   :keywords: performance, scaling, CrafterCMS, CDN, clustering, global delivery, Crafter Engine, multi-region, optimization
+
 .. index:: Performance and Scaling, Optimization, Clustering, CDN, Multi-region, Global Delivery
 
 =======================

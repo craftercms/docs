@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS Item Selector form control reference — configure node-selector for cross-referencing content with shared, embedded, file, S3, or WebDAV data sources.
+   :keywords: item selector, node-selector, form control, CrafterCMS, content type, shared content, embedded content, S3, WebDAV
+
 .. _form-item-selector:
 
 =====================

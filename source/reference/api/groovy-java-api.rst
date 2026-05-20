@@ -6,6 +6,10 @@
 
 .. index:: Groovy, Groovy API, Java API, Custom Services, Services, Controllers, Unit Testing
 
+.. meta::
+   :description: CrafterCMS Groovy/Java API reference — build REST services, MVC controllers, scheduled jobs, and filters using server-side Groovy scripting.
+   :keywords: CrafterCMS, Groovy API, Java API, server-side scripting, REST services, controllers, scripting
+
 .. _groovy-java-api:
 
 ===============

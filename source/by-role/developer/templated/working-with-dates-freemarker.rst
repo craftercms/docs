@@ -2,6 +2,10 @@
 :last-updated: 4.0.0
 
 
+.. meta::
+   :description: Format and display dates and time zones in CrafterCMS FreeMarker templates using built-in date operations and Engine project time zone configuration.
+   :keywords: FreeMarker, dates, time zones, date formatting, CrafterCMS, Crafter Engine, templates, date built-ins
+
 .. _working-with-dates-in-freemarker:
 
 ===============================================

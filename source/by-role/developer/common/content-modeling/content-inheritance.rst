@@ -4,6 +4,10 @@
 
 .. index:: Content Inheritance, Inheritance
 
+.. meta::
+   :description: Learn how CrafterCMS content inheritance works using level descriptors and merge strategies to share common metadata across content hierarchies.
+   :keywords: content inheritance, level descriptor, merge strategy, CrafterCMS, content modeling, inherit-levels, Crafter Engine
+
 .. _content-inheritance:
 
 ===================

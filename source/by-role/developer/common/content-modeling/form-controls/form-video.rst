@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
 
+.. meta::
+   :description: CrafterCMS Video form control reference — configure video selectors from desktop upload, repository, WebDAV, or S3 data sources in content types.
+   :keywords: video control, form control, CrafterCMS, content type, video upload, S3, WebDAV, video repository, content modeling
+
 .. _form-video:
 
 =============

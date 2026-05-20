@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: Secure CrafterCMS delivery projects with SAML2, headers-based authentication, authorization for sections and content items, and delivery tier security.
+   :keywords: security, authentication, SAML2, authorization, Crafter Engine, CrafterCMS, headers-based authentication, delivery security
+
 .. _project-security:
 
 ===================

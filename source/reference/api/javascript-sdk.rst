@@ -3,6 +3,10 @@
 
 .. index:: JavaScript SDK
 
+.. meta::
+   :description: CrafterCMS JavaScript SDK reference — NPM packages for content retrieval, navigation, search, Redux integration, and in-context editing.
+   :keywords: CrafterCMS, JavaScript SDK, NPM, content delivery, in-context editing, React, TypeScript
+
 .. _javascript-sdk:
 
 ==============

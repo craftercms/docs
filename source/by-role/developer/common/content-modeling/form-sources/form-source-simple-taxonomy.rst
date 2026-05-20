@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.2
 
+.. meta::
+   :description: CrafterCMS Simple Taxonomy data source reference — define and use XML taxonomy files for Dropdown and Grouped Checkboxes form controls.
+   :keywords: simple taxonomy, data source, CrafterCMS, taxonomy XML, dropdown, grouped checkboxes, form sources, content modeling
+
 .. _form-source-simple-taxonomy:
 
 ===========================

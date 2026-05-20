@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
 
+.. meta::
+   :description: Use Sass in CrafterCMS by compiling Sass to CSS with a UI toolchain, committing the output to Git, and integrating with the project static-assets structure.
+   :keywords: Sass, CSS, CrafterCMS, static assets, yarn, build toolchain, UI toolchain, developer
+
 .. _working-with-sass:
 
 =================

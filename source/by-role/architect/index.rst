@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+   :description: CrafterCMS architecture overview: decoupled CMS, headless, composable, deployment, scalability, security, and availability for enterprise architects.
+   :keywords: CrafterCMS architecture, headless CMS, decoupled CMS, composable, scalability, deployment, Crafter Studio, Crafter Engine
+
 .. _architect:
 
 ==========

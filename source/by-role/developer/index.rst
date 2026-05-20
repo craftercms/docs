@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.2.2
 
+.. meta::
+   :description: CrafterCMS developer guide covering content modeling, headless and templated projects, composable CMS, DevContentOps, Groovy, GraphQL, and security.
+   :keywords: CrafterCMS developer, content modeling, headless, FreeMarker, Groovy, GraphQL, composable, DevContentOps, Crafter Engine
+
 .. _developer:
 
 =========

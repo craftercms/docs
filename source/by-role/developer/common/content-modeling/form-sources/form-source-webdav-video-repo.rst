@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Video from WebDAV Repository data source reference — browse and select videos from a WebDAV server using a configured WebDAV profile.
+   :keywords: WebDAV video repository, data source, CrafterCMS, WebDAV, video browse, profile ID, form sources, content modeling
+
 .. _form-source-webdav-video-repo:
 
 ========================================

@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+.. meta::
+   :description: CrafterCMS Checkbox form control reference — configure a simple boolean checkbox input with required constraint and read-only options in content types.
+   :keywords: checkbox, form control, CrafterCMS, content type, boolean, form controls, content modeling
+
 .. _form-checkbox:
 
 ================

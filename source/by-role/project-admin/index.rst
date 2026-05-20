@@ -4,6 +4,10 @@
 .. TODO Review this article and see if it should be changes from the format: authoring - delivery to more general topics and how to implement the topic/concern
    Also, check for flow. We moved the site configuration to the top, make sure it flows well.
 
+.. meta::
+   :description: CrafterCMS project administration guide covering site configuration, content types, permissions, targeting, publishing, workflow, and localization in Crafter Studio.
+   :keywords: project administration, Crafter Studio, site configuration, content types, permissions, workflow, publishing, project admin
+
 .. _project-admin:
 
 =============================

@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.2
 
+.. meta::
+   :description: Step-by-step guide to adding a new language to Crafter Studio UI including translation files, API updates, FreeMarker templates, and React locale bundles.
+   :keywords: add language, Crafter Studio, localization, i18n, translation, React, FreeMarker, ISO 639, locale
+
 .. _adding-a-new-language:
 
 =====================
