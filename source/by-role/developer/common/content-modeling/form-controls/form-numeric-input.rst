@@ -37,8 +37,6 @@ Configuration
    :widths: 1 2
    :width: 70%
 
-   * -
-     -
    * - Display Size
      - How much of the input to show on the author input form
    * - Maximum

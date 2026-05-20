@@ -35,7 +35,7 @@ Configuration
 || Description/Purpose   || Rich Text Area field.                                                |
 +------------------------+-----------------------------------------------------------------------+
 || Properties            || * Width: Width of the Rich Text Area.                                |
-|| Properties            || * Height: Height of the Rich Text Area.                              |
+||                       || * Height: Height of the Rich Text Area.                              |
 ||                       || * Force Root Block p Tag.                                            |
 ||                       || * Force p tags New Lines: Adds a p tag on every new line.            |
 ||                       || * Force br New Lines: Adds br for each new line.                     |
