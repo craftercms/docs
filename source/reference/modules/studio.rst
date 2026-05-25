@@ -4,7 +4,7 @@
 .. highlight:: xml
 
 .. meta::
-   :description: Crafter Studio is the CrafterCMS authoring module — providing content management, workflow, versioning, and publishing for teams.
+   :description: Crafter Studio (CrafterCMS authoring module) documentation describing configuration, security and administration.
    :keywords: Crafter Studio, CrafterCMS, content authoring, CMS, publishing, workflow, studio-config
 
 .. _crafter-studio:

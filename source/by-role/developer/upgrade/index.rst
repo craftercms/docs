@@ -3,8 +3,8 @@
 :orphan:
 
 .. meta::
-   :description: Developer guide for upgrading CrafterCMS covering changes from version 3.1 to 4.x and 4.0 to 4.1 with notes on features, configuration, and migration steps.
-   :keywords: upgrade, CrafterCMS, version upgrade, 4.1, 3.1, developer upgrade, migration
+   :description: Developer guide for upgrading CrafterCMS with notes on features, configuration, and migration steps.
+   :keywords: upgrade, CrafterCMS, version upgrade, developer upgrade, migration
 
 .. _developers-upgrade:
 

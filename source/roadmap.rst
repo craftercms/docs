@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.1
 
+.. meta::
+    :description lang=en:
+        CrafterCMS roadmap information.
+
 .. index:: Roadmap
 
 .. _roadmap:
