@@ -80,7 +80,7 @@ Breaking Changes in CrafterCMS 5.0.0
       :caption: *New property for the publishing blacklist*
       :emphasize-lines: 1
 
-       studio.configuration.publishing.blacklist.pathspecs: ""
+      studio.configuration.publishing.blacklist.pathspecs: ""
 
   See :ref:`publishing-blacklist` for more information.
 
@@ -88,7 +88,7 @@ Breaking Changes in CrafterCMS 5.0.0
   When upgrading to CrafterCMS version 5.0.0, the Upgrade Manager will compare ``controller.groovy`` to the
   default script from built-in blueprints. If they match, the script will be deleted.
 
-  If they don't match, the entire file will be commented out and a ``logger.error`` statement will be added so admins
+  If they don't match, the original file contents will be commented out and a ``logger.error`` statement will be added so admins
   can manually check and fix as required. Below is an example of a commented out controller script after upgrading to
   version 5.0. Notice the ``logger.error`` statement added:
 

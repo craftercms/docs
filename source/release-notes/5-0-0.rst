@@ -247,7 +247,7 @@ Studio UI
     - ``publishing/fetchPackage``: packageId is now of type ``number``.
     - Updated ``workflow/approve``: Now it receives ``packageId`` as a parameter.
     - Updated ``workflow/reject``: Now it receives ``packageId`` as a parameter instead of ``items``.
-    - Removed ``workflow/publish`` and ``workflow/requestPublish``, replaced by ``publishing/publish`` and ``publishing/publish``.
+    - Removed ``workflow/publish`` and ``workflow/requestPublish``, replaced by ``publishing/publish``.
     - Removed ``publishing/cancelPackage`` service, replaced by ``workflow/cancel``.
     - Removed ``publishing/start`` and ``publishing/stop`` services, replaced by ``publishing/enable``.
     - Removed ``publishing/bulkGoLive``, ``publishing/publishByCommits`` and ``publishing/publishAll`` services, replaced by ``publishing/publish``.
