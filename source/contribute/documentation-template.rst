@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.2
 
+.. meta::
+    :description lang=en:
+        High level template for contributing to the CrafterCMS docs
+
 .. index:: Documentation Standards
 
 .. _documentation-standards:

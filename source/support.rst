@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 5.0.0
 
+.. meta::
+    :description lang=en:
+        List of released CrafterCMS versions and support period and how CrafterCMS users can request enterprise and community support.
+
 .. index:: Support
 
 .. _support:

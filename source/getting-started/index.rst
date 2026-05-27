@@ -1,6 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
+.. meta::
+    :description lang=en:
+        CrafterCMS documentation to help users get started with running CrafterCMS, and creating your sites whether it's headless or templated.
+
 .. _getting-started:
 
 ===============

@@ -1,5 +1,9 @@
 :last-updated: 5.0.0
 
+.. meta::
+    :description lang=en:
+        CrafterCMS acknowledgements
+
 .. index:: Open Source Acknowledgements
 
 .. _oss-acknowledgements:
