@@ -1,0 +1,23 @@
+{%- if meta is defined and meta is not none %}
+{%- set check_meta = True %}
+{%- else %}
+{%- set check_meta = False %}
+{%- endif %}
+
+{%- if check_meta and 'github_url' in meta %}
+{%- set display_github = True %}
+{%- endif %}
+
+{%- if display_github %}
+<div class="edit-this-page">
+	{%- if check_meta and 'github_url' in meta %}
+	<!-- User defined GitHub URL -->
+	<a class="muted-link" href="{{ meta['github_url'] }}" target="_blank" title="Edit on GitHub">
+		{%- else %}
+		<a class="muted-link" href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/{{ theme_vcs_pageview_mode or "blob" }}/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ page_source_suffix }}" target="_blank" title="Edit on GitHub">
+		{%- endif %}
+		<svg><use href="#svg-pencil"></use></svg>
+		<span class="visually-hidden">{{ _("Edit this page") }}</span>
+	</a>
+</div>
+{%- endif %}

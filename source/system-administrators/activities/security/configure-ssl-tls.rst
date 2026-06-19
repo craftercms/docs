@@ -133,7 +133,7 @@ From the above screen, just click on ``Advanced``, then allow it to proceed to `
 Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Docker Container
 --------------------------------------------------------------------------------
 
-Setting up SSL/TLS for CrafterCMS authoring and delivery in a Docker Container is similar to the steps done for CrafterCMS Authoring and Delivery installed in a server, which just a few differences.
+Setting up SSL/TLS for CrafterCMS authoring and delivery in a Docker Container is similar to the steps done for CrafterCMS Authoring and Delivery installed in a server, with just a few differences.
 
 * Step 1: Create a keystore file
 
@@ -204,10 +204,10 @@ In your ``docker-compose.yml`` file, under ``tomcat``:
 Your ``docker-compose.yml`` should look like below:
 
 .. code-block:: yaml
-   :linenos:
-   :emphasize-lines: 25, 33-35
+    :linenos:
+    :emphasize-lines: 25, 33-35
 
-   version: '3.7'
+    version: '3.7'
     services:
       elasticsearch:
         image: docker.elastic.co/elasticsearch/elasticsearch:6.6.0

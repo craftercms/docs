@@ -484,6 +484,8 @@ Here are the environment variables used for MongoDB in ``crafter.sh``:
 .. _mariadb-environment-variables:
 
 Here are the environment variables used for MariaDb in ``crafter.sh``:
+You must change the pre-configured default values for environment variables for passwords such as ``MARIADB_PASSWD``
+to secure your installation. See :ref:`securing-your-crafter-cms-install` for more information on changing the values.
 
 +--------------------------+---------------------------------------------------------------------+
 || MariaDb                 || Description                                                        |
@@ -540,7 +542,7 @@ Here are the environment variables used for Git in ``crafter.sh``:
 +--------------------------+---------------------------------------------------------------------+
 
 Here are the environment variables used for Management Tokens.
-Remember to update these per installation and provide these tokens to the status monitors:
+You must update these per installation and provide these tokens to the status monitors:
 
 +----------------------------+-------------------------------------------------------------------+
 || Management Token          || Description                                                      |
@@ -585,7 +587,9 @@ Remember to update these per installation:
 ||                           || defaultAccessToken                                               |
 +----------------------------+-------------------------------------------------------------------+
 
-Here are the environment variables used to encrypt and decrypt values inside configuration files:
+Here are the environment variables used to encrypt and decrypt values inside configuration files.
+You must change the pre-configured default values for these environment variables to secure your installation.
+See :ref:`securing-your-crafter-cms-install` for more information on changing the default values.
 
 +--------------------------+---------------------------------------------------------------------+
 || Encryption              || Description                                                        |
@@ -601,7 +605,9 @@ Here are the environment variables used to encrypt and decrypt values inside con
 ||                         || default_encryption_salt                                            |
 +--------------------------+---------------------------------------------------------------------+
 
-Here are the environment variables used to encrypt and decrypt values in the database:
+Here are the environment variables used to encrypt and decrypt values in the database.
+You must change the pre-configured default values for these environment variables to secure your installation.
+See :ref:`securing-your-crafter-cms-install` for more information on changing the default values.
 
 +---------------------------------+---------------------------------------------------------------------+
 || Encryption                     || Description                                                        |

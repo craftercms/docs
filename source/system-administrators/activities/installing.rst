@@ -10,6 +10,9 @@ Installing
 
 This section describes various ways of installing/setting up CrafterCMS.
 
+.. important::
+    **You must change pre-configured defaults** to secure your installation.
+    See :ref:`securing-your-crafter-cms-install` for more information.
 
 First we'll take a look at the requirements and supported platform for installing/setting up CrafterCMS
 

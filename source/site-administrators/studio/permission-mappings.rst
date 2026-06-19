@@ -121,7 +121,7 @@ Sample
       For example, to grant the role component_author the ability to read/write
       components and read-only to everything else:
 
-          <role name="author">
+          <role name="component_author">
               <rule regex="/site/website/.*">
                 <allowed-permissions>
                   <permission>Read</permission>
@@ -158,7 +158,7 @@ Sample
           </rule>
 
     -->
-    permissions>
+    <permissions>
       <version>12</version>
       <role name="author">
         <rule regex="/site/website/.*">

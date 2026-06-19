@@ -4,61 +4,22 @@
 {%- set check_meta = False %}
 {%- endif %}
 
-{%- if check_meta and 'github_url' in meta %}
-{%- set display_github = True %}
-{%- endif %}
-
-{%- if check_meta and 'bitbucket_url' in meta %}
-{%- set display_bitbucket = True %}
-{%- endif %}
-
-{%- if check_meta and 'gitlab_url' in meta %}
-{%- set display_gitlab = True %}
-{%- endif %}
-
 {%- set display_vcs_links = display_vcs_links if display_vcs_links is defined else True %}
 
 {#- Translators: This is an ARIA section label for page links, including previous/next page link and links to GitHub/GitLab/etc. -#}
 <div role="navigation" aria-label="{{ _('Page navigation') }}">
     <ul class="wy-breadcrumbs">
         {%- block breadcrumbs %}
-        <li><a href="{{ pathto(master_doc) }}" class="icon icon-home"></a> &raquo;</li>
+        <li class="home">
+            <a href="{{ pathto(master_doc) }}">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+            </a>
+        </li>
+        &raquo;
         {%- for doc in parents %}
         <li><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</li>
         {%- endfor %}
         <li>{{ title }}</li>
-        {%- endblock %}
-        {%- block breadcrumbs_aside %}
-        <li class="wy-breadcrumbs-aside">
-            {%- if hasdoc(pagename) and display_vcs_links %}
-            {%- if display_github %}
-            {%- if check_meta and 'github_url' in meta %}
-            <!-- User defined GitHub URL -->
-            <a href="{{ meta['github_url'] }}" target="_blank" class="fa fa-github"> {{ _('Edit on GitHub') }}</a>
-            {%- else %}
-            <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/{{ theme_vcs_pageview_mode or "blob" }}/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ page_source_suffix }}" target="_blank" class="fa fa-github"> {{ _('Edit on GitHub') }}</a>
-            {%- endif %}
-            {%- elif display_bitbucket %}
-            {%- if check_meta and 'bitbucket_url' in meta %}
-            <!-- User defined Bitbucket URL -->
-            <a href="{{ meta['bitbucket_url'] }}" target="_blank" class="fa fa-bitbucket"> {{ _('Edit on Bitbucket') }}</a>
-            {%- else %}
-            <a href="https://bitbucket.org/{{ bitbucket_user }}/{{ bitbucket_repo }}/src/{{ bitbucket_version}}{{ conf_py_path }}{{ pagename }}{{ page_source_suffix }}?mode={{ theme_vcs_pageview_mode or "view" }}" target="_blank" class="fa fa-bitbucket"> {{ _('Edit on Bitbucket') }}</a>
-            {%- endif %}
-            {%- elif display_gitlab %}
-            {%- if check_meta and 'gitlab_url' in meta %}
-            <!-- User defined GitLab URL -->
-            <a href="{{ meta['gitlab_url'] }}" target="_blank" class="fa fa-gitlab"> {{ _('Edit on GitLab') }}</a>
-            {%- else %}
-            <a href="https://{{ gitlab_host|default("gitlab.com") }}/{{ gitlab_user }}/{{ gitlab_repo }}/{{ theme_vcs_pageview_mode or "blob" }}/{{ gitlab_version }}{{ conf_py_path }}{{ pagename }}{{ page_source_suffix }}" target="_blank" class="fa fa-gitlab"> {{ _('Edit on GitLab') }}</a>
-            {%- endif %}
-            {%- elif show_source and source_url_prefix %}
-            <a href="{{ source_url_prefix }}{{ pagename }}{{ page_source_suffix }}" target="_blank">{{ _('View page source') }}</a>
-            {%- elif show_source and has_source and sourcename %}
-            <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow" target="_blank"> {{ _('View page source') }}</a>
-            {%- endif %}
-            {%- endif %}
-        </li>
         {%- endblock %}
     </ul>
 
