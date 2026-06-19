@@ -23,6 +23,31 @@ before upgrading. Please review the following and apply changes as required:
 
 |hr|
 
+.. _breaking-changes-in-craftercms-4-5-1:
+
+------------------------------------
+Breaking Changes in CrafterCMS 4.5.1
+------------------------------------
+Starting version 4.5.1, the version information and system information for Studio, Engine and Deployer are now separate.
+Use the following monitoring APIs for retrieving version or system information:
+
+.. list-table::
+    :header-rows: 1
+
+    * - Module
+      - Get version information
+      - Get system information
+    * - Studio
+      - :base_url:`/api/2/monitoring/version <_static/api/studio.html#tag/monitoring/operation/getVersion>`
+      - :base_url:`/api/2/monitoring/sysinfo <_static/api/studio.html#tag/monitoring/operation/getSysInfo>`
+    * - Engine
+      - :base_url:`/api/1/monitoring/version.json <_static/api/engine.html#tag/monitoring/operation/version>`
+      - :base_url:`/api/1/monitoring/sysinfo.json <_static/api/engine.html#tag/monitoring/operation/sysInfo>`
+    * - Deployer
+      - :base_url:`/api/1/monitoring/version <_static/api/deployer.html#tag/monitoring/operation/version>`
+      - :base_url:`/api/1/monitoring/sysinfo <_static/api/deployer.html#tag/monitoring/operation/sysInfo>`
+
+
 .. _breaking-changes-in-craftercms-4-5-0:
 
 ------------------------------------
