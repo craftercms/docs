@@ -4,11 +4,12 @@
 CrafterCMS Version 4.5.1
 ------------------------
 
-Released *June TBD, 2026*
+Released *June 18, 2026*
 
 .. important::
 
-    Please see :ref:`Breaking changes <breaking-changes-4-x>` for breaking changes and other
+    Please see :ref:`upgrade-notes-for-craftercms-4.5.1` for an important note and
+    :ref:`Breaking changes <breaking-changes-4-x>` for breaking changes and other
     things to consider before upgrading
 
     For instructions on how to update your CrafterCMS install, please see :ref:`upgrading-craftercms`
