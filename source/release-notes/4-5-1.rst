@@ -17,7 +17,7 @@ Released *June 18, 2026*
 ^^^^^^^^^^^^
 New Features
 ^^^^^^^^^^^^
-* New :base_url:`Studio <_static/api/studio.html#tag/monitoring/operation/getSysInfo>`, :base_url:`Engine <_static/api/engine.html#tag/monitoring/operation/sysInfo>`, and :base_url:`Deployer <_static/api/deployer.html#tag/monitoring/operation/sysInfo>`  monitoring APIs for retrieving system information
+* New :base_url:`Studio <_static/api/studio.html#tag/monitoring/operation/getSysInfo>`, :base_url:`Engine <_static/api/engine.html#tag/monitoring/operation/sysinfo>`, and :base_url:`Deployer <_static/api/deployer.html#tag/monitoring/operation/sysinfo>`  monitoring APIs for retrieving system information
 
 ^^^^^^^^^^^^
 Enhancements
