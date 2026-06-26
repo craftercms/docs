@@ -42,10 +42,10 @@ Use the following monitoring APIs for retrieving version or system information:
       - :base_url:`/api/2/monitoring/sysinfo <_static/api/studio.html#tag/monitoring/operation/getSysInfo>`
     * - Engine
       - :base_url:`/api/1/monitoring/version.json <_static/api/engine.html#tag/monitoring/operation/version>`
-      - :base_url:`/api/1/monitoring/sysinfo.json <_static/api/engine.html#tag/monitoring/operation/sysInfo>`
+      - :base_url:`/api/1/monitoring/sysinfo.json <_static/api/engine.html#tag/monitoring/operation/sysinfo>`
     * - Deployer
       - :base_url:`/api/1/monitoring/version <_static/api/deployer.html#tag/monitoring/operation/version>`
-      - :base_url:`/api/1/monitoring/sysinfo <_static/api/deployer.html#tag/monitoring/operation/sysInfo>`
+      - :base_url:`/api/1/monitoring/sysinfo <_static/api/deployer.html#tag/monitoring/operation/sysinfo>`
 
 
 .. _breaking-changes-in-craftercms-4-5-0:
