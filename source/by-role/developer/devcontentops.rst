@@ -213,28 +213,28 @@ Using the Git Project Tool in Studio
 """"""""""""""""""""""""""""""""""""
 The steps above describe code and content moving between Git branches and external repositories. On each Crafter Studio authoring environment, the :ref:`Git project tool <project-tools-git>` is how developers and DevOps personnel sync the project's sandbox repository with those shared branches.
 
-Open it from the **Sidebar** by clicking on |projectTools|, then **Git**. From there you can add a remote repository, pull changes into Studio, and push sandbox commits to a remote when appropriate. For UI walkthroughs of each operation, see :ref:`project-tools-git`.
+Open it from the **Sidebar** by clicking on |projectTools|, then **Git**. From there you can add a remote repository, pull changes into Studio, and push sandbox commits to a remote when appropriate. For UI walk-throughs of each operation, see :ref:`project-tools-git`.
 
-The Git project tool is typically used **after** branch promotion work has been done in your external Git service (merge, pull request, or fast-forward on the target branch). Studio pulls the result into the authoring environment so authors and developers can preview and test against the updated sandbox.
+The Git project tool is typically used **after** branch promotion work has been done in your Git server (merge, pull request, or fast-forward on the target branch). Studio pulls the result into the authoring environment so authors and developers can preview and test against the updated sandbox.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Example: Deploy Code to Shared Dev
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-After a feature branch is merged into *dev* and that branch is updated on your Git server:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Example: Deploy Code to Delivery Dev
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+After a feature branch is merged into *dev* (code forward) and the *studio-dev* branch is updated on the Git server:
 
-#. On the shared **Dev** authoring environment, ensure the project is linked to the upstream repository (see :ref:`create-project-based-on-a-blueprint-then-add-a-remote-bare-git-repository` if the remote is not yet configured).
-#. In the Git project tool, pull from the remote branch that tracks *studio-dev* (or the branch your team uses for the Dev Studio sandbox).
-#. Review the changes in Studio, then publish as needed so the Dev delivery environment can be updated.
+#. On the ``Authoring Dev`` (the authoring environment), ensure the project is linked to the upstream repository (see :ref:`create-project-based-on-a-blueprint-then-add-a-remote-bare-git-repository` if the remote is not yet configured). The upstream repository should be the *studio-dev* branch on *Dev* on the ``Git Server``.
+#. In the Git project tool, pull from the remote branch that tracks *studio-dev* (or the branch your team uses for the Dev Studio sandbox), by clicking on the down arrow next to the remote repository branch that tracks the *studio-dev* branch on the ``Git server``.
+#. Review the changes in Studio, then publish as needed so Delivery Dev is updated.
 
-This corresponds to the step in the flow above where code moves from *dev* to *studio-dev* and is pulled into Crafter Studio.
+This corresponds to the step in the flow :ref:`above <devcontentops-flow-diagram>` where code moves from *dev* to *studio-dev* on the Git server and is then pulled into Crafter Studio in ``Authoring Dev``.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Example: Promote Code to QA or Prod
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The same pattern applies when promoting code forward:
+The same pattern applies when promoting code forward to QA and Prod:
 
-#. Merge or promote code on the external Git server (for example, from *dev* to *qa*, or from *qa* to *prod*).
-#. On the **QA** or **Prod** authoring environment, use the Git project tool to pull the updated *studio-qa* or *studio-prod* branch into Studio.
+#. Merge or promote code on the ``Git Server`` (for example, from *dev* to *qa*, or from *qa* to *prod*) via a PR.
+#. On the **QA** or **Prod** authoring environment, use the Git project tool to pull the updated *studio-qa* or *studio-prod* branch on the ``Git Server`` into Studio by clicking on the down arrow next to the desired remote repository branch.
 #. Validate in Studio (and Staging, if enabled), then publish to the target delivery environment.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -242,19 +242,19 @@ Example: Sync a Developer Workstation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When a developer creates an orphan project from *dev-a-fork* or needs to align a local Studio sandbox with their fork:
 
-#. Add the developer's fork as a remote in the Git project tool.
+#. Add the developer's fork as a remote in the Git project tool on the ``Developer Workstation``.
 #. Pull from the *dev-a-fork* branch (or the feature branch being actively developed).
 #. Continue Studio-side work, carrying patches to the local *feature-x* branch in the IDE as described above.
 
-To publish IDE work back to the shared flow, push from the workstation to the fork and open a pull request into *dev*—not directly into *studio-dev*.
+To publish IDE work back to the shared flow, push from the workstation to the fork and open a pull request into *dev*—not directly into *studio-dev* on the ``Git Server``.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Example: Pull Content Back into Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-After a *Content Back* operation merges production content from *studio-prod* into *dev* (or from *qa* into lower branches), the updated content must still be pulled into the lower authoring environments:
+After a *Content Back* operation syncs production content from *studio-prod* into *prod* then *prod* to *dev* (or *qa*) on the ``Git Server``, the updated content must still be pulled into the lower authoring environments:
 
-#. Confirm the content merge landed on the target branch in your external Git repository.
-#. On the **Dev** or **QA** authoring environment, pull that branch into Studio using the Git project tool.
+#. Confirm the content merge landed on the target branch in your ``Git Server``.
+#. On the **Dev** or **QA** authoring environment, pull that branch into Studio using the Git project tool, by clicking on the down arrow next to the desired remote repository branch.
 #. If blob storage is in use, sync blob content separately as described in :ref:`Blob Storage and Content Back <devcontentops-blob-storage-content-back>` below.
 
 .. note::
