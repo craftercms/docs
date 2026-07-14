@@ -1110,8 +1110,9 @@ Here's the complete example form control plugin file for the ``text-input`` cont
 
 |
 
+""""""""""""""""""""""""""""""""""""""""""""""
 Saving additional form control elements to XML
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""
 
 To save additional elements from your form control into the XML content, call ``registerDynamicField`` from the form when initializing the form control. When ``updateField`` is called, your element will be saved into the XML content.
 
@@ -1252,7 +1253,7 @@ Data Source Interface
     /**
      * Constructor: Where .X is substituted with your class name
      */
-    CStudioForms.Datasources.ConfiguredList = CStudioForms.Datasources.X ||
+    CStudioForms.Datasources.X = CStudioForms.Datasources.X ||
     function(id, form, properties, constraints)  {
     }
 
