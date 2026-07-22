@@ -35,13 +35,13 @@ Configuration
 
     * - Name
       - Description
-    * - Data Source Basics
+    * - **Data Source Basics**
       -
     * - Title
       - Data source title to show on the form
     * - Name
       - Name of variable to store the final result in
-    * - Properties
+    * - **Properties**
       -
     * - Input Profile Id
       - AWS profile id (MediaConvert) to be used for uploading and triggering the transcode job, setup in aws.xml
