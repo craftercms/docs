@@ -25,7 +25,7 @@ Configuration
 .. image:: /_static/images/form-sources/form-source-image-desktop-conf.webp
     :align: center
     :width: 40%
-    :alt: Form Control Input 1
+    :alt: Form Source Image From Desktop Configuration
 
 |
 

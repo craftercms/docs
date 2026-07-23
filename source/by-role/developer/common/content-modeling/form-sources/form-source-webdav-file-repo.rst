@@ -21,7 +21,7 @@ Data source to select files from WebDAV repository.
 -------------
 Configuration
 -------------
-.. image:: /_static/images/form-sources/form-source-webdav-conf.webp
+.. image:: /_static/images/form-sources/form-source-basics-conf.webp
     :align: center
     :width: 40%
     :alt: Source Control WebDAV Repository Configuration
@@ -45,4 +45,4 @@ Configuration
     * - Repository Path
       - Path where to browse the WebDAV repository.
     * - Profile Id
-      - WebDAV profile id to be used setup in webdav.xml
+      - WebDAV profile id configured in webdav.xml

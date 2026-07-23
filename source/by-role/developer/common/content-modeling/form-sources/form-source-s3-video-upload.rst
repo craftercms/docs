@@ -22,7 +22,7 @@ Data source to upload videos to the S3 bucket.
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-webdav-conf.webp
+.. image:: /_static/images/form-sources/form-source-basics-conf.webp
     :align: center
     :width: 40%
     :alt: Source Control File Upload S3
@@ -46,5 +46,5 @@ Configuration
     * - Repository Path
       - S3 repository path where to store the new uploaded video
     * - Profile Id
-      - S3 profile id to be used setup in aws.xml
+      - S3 profile id configured in aws.xml
 

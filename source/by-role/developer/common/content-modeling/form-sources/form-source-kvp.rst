@@ -48,7 +48,7 @@ Configuration
     * - Options
       - Key Value pairs to be added on the datasource.
     * - Show keys
-      -
+      - Enable or disable showing the keys
 
 --------------
 Adding Options

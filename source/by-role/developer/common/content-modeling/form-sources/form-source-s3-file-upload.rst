@@ -22,7 +22,7 @@ Data source to upload files to S3 repository.
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-webdav-conf.webp
+.. image:: /_static/images/form-sources/form-source-basics-conf.webp
     :align: center
     :width: 40%
     :alt: Source Control S3 Repository Configuration
@@ -46,4 +46,4 @@ Configuration
     * - Repository Path
       - S3 repository path where to store the new uploaded file
     * - Profile Id
-      - S3 profile id to be used setup in aws.xml
+      - S3 profile id configured in aws.xml

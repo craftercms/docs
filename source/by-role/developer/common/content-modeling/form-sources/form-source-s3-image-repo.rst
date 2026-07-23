@@ -19,7 +19,7 @@ Data source to select images from repository.
 -------------
 Configuration
 -------------
-.. image:: /_static/images/form-sources/form-source-webdav-conf.webp
+.. image:: /_static/images/form-sources/form-source-basics-conf.webp
     :align: center
     :width: 40%
     :alt: Source Control Image From S3 Repository Configuration
@@ -43,4 +43,4 @@ Configuration
     * - Repository Path
       - Path where to browse the S3 repository.
     * - Profile Id
-      - S3 profile id to be used setup in aws.xml
+      - S3 profile id configured in aws.xml
