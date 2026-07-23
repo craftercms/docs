@@ -58,4 +58,4 @@ Configuration
     * - Content Types
       - Components that can be accepted
     * - Tags
-      -
+      - String identifiers
