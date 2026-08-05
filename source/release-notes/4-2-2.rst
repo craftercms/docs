@@ -37,7 +37,6 @@ Enhancements
 ^^^^^^^^^
 Bug Fixes
 ^^^^^^^^^
-* `Fixed issue with permission evaluation of uppercase role names <https://github.com/craftersoftware/craftercms/issues/7001>`__
 * `Fixed issue with deleting and recreating an item with the same name and page URL <https://github.com/craftersoftware/craftercms/issues/7608>`__
 * `Fixed issue with existing component drag and drop not working when XB is enabled <https://github.com/craftersoftware/craftercms/issues/7656>`__
 * `Fixed issue with AWS SSO authentication <https://github.com/craftersoftware/craftercms/issues/7663>`__

@@ -10,7 +10,7 @@
 ==========
 Contribute
 ==========
-CrafterCMS welcomes your contributions! All of our code is open source and is hosted on GitHub at at https://github.com/craftersoftware/craftercms.
+CrafterCMS welcomes your contributions! All of our code is open source and is hosted on GitHub at https://github.com/craftersoftware/craftercms.
 CrafterCMS is written in Java and React.
 
 ----------
@@ -35,9 +35,9 @@ We use Sphinx-doc to build our documentation using the following high-level temp
 Source Code
 -----------
 To contribute code, start by reading our `contribution policy <https://github.com/craftersoftware/craftercms/blob/support/4.x/CONTRIBUTING.md>`_.
-CrafterCMS source code lives in a monorepo at https://github.com/craftersoftware/craftercms, with modules such as Studio, Engine, Deployer, Profile, Social, Studio UI, CLI, and others as top-level folders in that repository as well as Docker Compose, and Kubernetes examples.
+CrafterCMS source code lives in a monorepo at https://github.com/craftersoftware/craftercms, with modules such as Studio, Engine, Deployer, Profile, Social, Studio UI, CLI, and others as top-level folders in that repository as well as Docker Compose and Kubernetes examples.
 
-Marketplace plugins and blueprints, remain under https://github.com/craftercms.
+Marketplace plugins and blueprints remain under https://github.com/craftercms.
 
 ----------------
 Acknowledgements

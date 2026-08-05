@@ -16,7 +16,6 @@ Released *June 13, 2025*
 ^^^^^^^^^
 Bug Fixes
 ^^^^^^^^^
-* `Fixed issue with uppercase role names not recognized by the permission evaluation system <https://github.com/craftersoftware/craftercms/issues/7001>`__
 * `Fixed issue with modifying page URL not reloading the page URL on Save & Close <https://github.com/craftersoftware/craftercms/issues/7870>`__
 * `Fixed issue with image cropper dialog <https://github.com/craftersoftware/craftercms/issues/7985>`__
 * `Fixed issue with inserting links to pages in the RTE <https://github.com/craftersoftware/craftercms/issues/7987>`__
